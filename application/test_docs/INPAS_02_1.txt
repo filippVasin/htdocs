@@ -1,0 +1,3433 @@
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="User">
+	<META NAME="CREATED" CONTENT="20170803;24000000000000">
+	<META NAME="CHANGEDBY" CONTENT="User">
+	<META NAME="CHANGED" CONTENT="20170803;24000000000000">
+	<META NAME="AppVersion" CONTENT="15.0000">
+	<META NAME="Company" CONTENT="Krokoz™">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.49in; margin-bottom: 0.49in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ru-RU" LINK="#0000ff" DIR="LTR">
+<DIV TYPE=HEADER>
+	<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%">     
+	                               <FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>ООО
+	«ИНПЭС»                </B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ВНД-3.9(АУП)-02-ред.1</FONT></FONT><IMG SRC="02_1_html_91c38392.jpg" NAME="Рисунок 2" ALIGN=LEFT HSPACE=12 WIDTH=229 HEIGHT=91 BORDER=0></P>
+	<P STYLE="margin-bottom: 0in; line-height: 100%">                   
+	                                         
+	</P>
+	<P STYLE="margin-bottom: 0in; line-height: 100%">                   
+	                     <FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Инструкция
+	по охране труда для </B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>I</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+	группы</B></FONT></FONT></P>
+	<P STYLE="text-indent: 1.97in; margin-bottom: 0in; line-height: 100%">
+	 <FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>по
+	электробезопасности неэлектротехнического</B></FONT></FONT></P>
+	<P STYLE="text-indent: 1.97in; margin-bottom: 0in; line-height: 100%">
+	 <FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>персонала</B></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.26in; line-height: 100%">	</P>
+</DIV>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><A NAME="_GoBack"></A>
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 3.94in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>УТВЕРЖДАЮ</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 3.94in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Генеральный
+директор</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 3.94in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ООО «ИНПЭС»</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 3.94in; margin-bottom: 0in; line-height: 100%">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 3.94in; margin-bottom: 0in; line-height: 100%">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 3.94in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>____________
+/Д.В. Гладких/</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 3.94in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>«___»
+_____________ 2017 год</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ВНУТРЕННИЙ
+НОРМАТИВНЫЙ ДОКУМЕНТ</B></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ИНСТРУКЦИЯ
+ПО ОХРАНЕ ТРУДА </B></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ДЛЯ
+</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en-US"><B>I</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>
+ГРУППЫ ПО ЭЛЕКТРОБЕЗОПАСНОСТИ </B></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>НЕЭЛЕКТРОТЕХНИЧЕСКОГО
+ПЕРСОНАЛА </B></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 1.58in; margin-bottom: 0in; line-height: 100%">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 1.58in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Введено в
+действие с «___» ______________ 2015 года</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 1.58in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Приказом №
+________________ от «___»_________ 2015 года</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; page-break-before: always">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Содержание
+</B></FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<TABLE WIDTH=638 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=589>
+	<COL WIDTH=22>
+	<TR>
+		<TD WIDTH=589 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.
+			Общие требования охраны
+			труда......................................................................................</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=22 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>3</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=589 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.
+			Требования охраны труда перед началом
+			работы...........................................................</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=22 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>4</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=589 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.
+			Требования охраны труда во время
+			выполнения работы
+			..............................................</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=22 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>4</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=589 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>4.
+			Требования охраны труда в аварийных
+			ситуациях.........................................................</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=22 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>5</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=589 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>5.
+			Требования безопасности по окончании
+			работы….........................................................</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=22 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>5</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=589 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>6.
+			Лист регистрации
+			изменений..………………...................................................................</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=22 VALIGN=BOTTOM STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>6</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=589 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>7.
+			Лист ознакомления с
+			инструкцией……………………………………..……………......</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=22 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>7</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"> 
+</P>
+<OL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; page-break-before: always">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Общие
+	требования охраны труда</B></FONT></FONT></P>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.1	Работник
+допускается к самостоятельной работе
+после прохождения:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>медицинского
+	освидетельствования за исключением
+	случаев, если работа за ПЭВМ занимает
+	менее 50% рабочего времени;</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>вводного
+	инструктажа, проведенного специалистом
+	по охране труда, по утвержденной
+	инструкции вводного инструктажа;</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>первичного
+	инструктажа на рабочем месте, проведенного
+	руководителем структурного подразделения,
+	службы или участка, производителем
+	работ или мастером;</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>обучения
+	безопасным методам работы в течение
+	1-2 дней;</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>обучения
+	элементарным правилам электробезопасности,
+	проверки знаний элементарных правил
+	электробезопасности с. присвоением 1
+	квалификационной группы.</FONT></FONT></P>
+</UL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.2	Проверка
+знаний настоящей инструкции для
+работников проводится один раз в год.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.3	Работник
+обязан выполнять должностные обязанности,
+работать по заданию своего руководителя,
+соблюдать дисциплину труда, своевременно
+и точно выполнять  распоряжения
+администрации, требования по охране
+труда, бережно относиться к имуществу.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.4	Работник
+должен выполнять правила внутреннего
+трудового распорядка, режим труда и
+отдыха.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.5	При
+эксплуатации электрооборудования на
+работника могут оказывать действие
+следующие опасные производственные
+факторы: повышенный или пониженный
+уровень освещенности; опасность поражения
+электрическим током.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.6	Работник,
+эксплуатирующий электрооборудование
+при выполнении трудовых обязанностей
+должен иметь:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>элементарное
+	знакомство с эксплуатируемой
+	электроустановкой (инструкция по
+	эксплуатации, место подключения
+	электроустановки в распределительном
+	устройстве, входной рубильник,
+	принципиальную электрическую схему
+	трассы подключения, кнопки управления,
+	корпус, ручки управления, заземления,
+	зануления и т.д.);</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>знать основные
+	меры предосторожности по охране труда,
+	соблюдать организационно-технические
+	меры при выполнении работ (знание
+	настоящей инструкции), исправность
+	питающей линии подключения - перегибы,
+	оголенные участки, места смятия;
+	применение основных и дополнительных
+	средств защиты; </FONT></FONT>
+	</P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>иметь
+	отчетливое представление об опасности
+	поражения электрическим током и
+	опасности приближения к токоведущим
+	частям (опасное напряжение, опасная
+	сила тока, классификация помещения по
+	электробезопасности);</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>иметь
+	практические навыки оказания первой
+	доврачебной помощи пострадавшим от
+	электротока.</FONT></FONT></P>
+</UL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.7	При
+эксплуатации электрооборудования
+опасным производственным фактором
+является электрический ток.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Факторами,
+определяющими степень поражения
+электротоком, являются: сила тока,
+продолжительность воздействия электротока
+на человека,  место соприкосновения и
+путь прохождения проникновения тока,
+состояние кожи, электрическое сопротивление
+тела, физиологическое состояние
+организма.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Виды поражения
+электротоком: электрический удар
+(паралич сердца и дыхания); термический
+ожог (электроожог); электрометаллизация
+кожи, механические повреждения;
+электроофтальмия (воспаление глаз
+вследствие действия электротока).</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.8	Работник
+обязан соблюдать требования по обеспечению
+пожарной безопасности, знать место
+нахождения средств пожаротушения, уметь
+пользоваться первичными средствами
+пожаротушения, в том числе огнетушителями
+углекислотными или порошковыми марки.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Углекислотный
+и порошковый огнетушители позволяют
+тушить огонь на электрооборудовании
+до 380В без снятия напряжения.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.9	За нарушение
+требований настоящей инструкции
+относящейся к выполняемой им работе,
+работник несет ответственность в
+соответствии с действующими трудовым,
+уголовным и административным
+законодательствами.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<BR>
+</P>
+<P STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>2.	Требования
+охраны труда перед началом работы</B></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.1	Работник
+ перед началом работы обязан:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.1.1	Осмотреть
+и привести в порядок рабочее место.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.1.2	Отрегулировать
+освещенность на рабочем месте, убедиться
+в достаточности освещенности.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.1.3	Проверить
+исправность кабеля (шнура).</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.2	Работнику
+запрещается производить протирание
+влажной или мокрой салфеткой
+электрооборудование, которое находится
+под напряжением (вилка вставлена в
+розетку).</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Влажную или
+любую другую уборку производить при
+отключенном оборудовании.  </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.3	Работник
+обязан  сообщить  руководителю 
+подразделения об обнаруженной
+неисправности инструмента. Не пользоваться
+неисправным оборудованием. Приступить
+к работе после устранения неисправностей
+оборудования, инструмента.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.4	Монтаж
+электрических сетей 50, 220/380 В и ремонтные
+работы сетей, оборудования и инструмента
+с электроприводом должен выполнять
+электротехнический персонал, имеющий
+группу допуска по электробезопасности
+не ниже </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en-US">III</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Работник,
+имеющий </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en-US">I</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>
+группу по электробезопасности, может
+работать только с электроинструментом
+и машинами класса </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en-US">II</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>
+и </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN LANG="en-US">III</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>
+по типу защиты от поражения электрическим
+током в помещениях с повышенной
+опасностью, кроме работы в сосудах и
+металлических емкостях.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.5	Работник
+перед началом работы с электрооборудованием
+должен произвести:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.5.1	Осмотр
+электрооборудования, электроинструмента.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.5.2	Проверку
+комплектности и надежности крепления
+деталей.</FONT></FONT></P>
+<OL START=2>
+	<OL START=5>
+		<OL START=3>
+			<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Проверку
+			четкости работы выключателя.</FONT></FONT></P>
+		</OL>
+	</OL>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<BR>
+</P>
+<OL START=3>
+	<LI><P STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Требования
+	охраны труда во время работы</B></FONT></FONT></P>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1	При работе
+электрооборудования запрещается:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.1	Оставлять
+включенное электрооборудование без
+надзора.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.2	Передавать
+электрооборудование лицам, не имеющим
+право работать с ним.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.3	Ударять
+по электрооборудованию.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.4	Снимать
+средства защиты.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.5	Дергать
+за подводящий кабель (шнур) для отключения
+электроинструмента.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.6	Держать
+палец на включателе при переносе
+электроинструмента.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.7	Натягивать,
+перекручивать, перегибать подводящий
+кабель.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.8	Ставить
+на кабель (шнур) посторонние предметы.
+</FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>З.1.9	Допускать
+касание кабеля (шнура) горячими или
+теплыми предметами.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1.10	Производить
+разборку или ремонт электрооборудования.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.2	Работник
+обязан выполнять с электрооборудованием
+только ту работу, для которой предназначено
+оборудование.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.3	Если во
+время работы обнаружится неисправность
+электрооборудования или работающий с
+ним почувствует хотя бы слабое действие
+тока, работа должна быть немедленно
+прекращена и неисправное оборудование
+должно быть сдано для проверки или
+ремонта.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.4	Отключение
+электрооборудования необходимо
+производить: при перерыве в работе, при
+окончании рабочего процесса.</FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<BR>
+</P>
+<OL START=3>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Требования
+	охраны труда в аварийных ситуациях:</B></FONT></FONT></P>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>4.1	Работник
+обязан:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>4.1.1	Во всех
+случаях обнаружения обрыва проводов
+питания, повреждений электро&shy;оборудования,
+появления запаха гари немедленно
+отключить питание и сообщить об аварийной
+ситуации.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>4.1.2	Не
+приступать к работе с неисправным
+электрооборудованием до устранения
+неисправности.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>4.1.3	При
+обнаружении человека, попавшего под
+напряжение, немедленно   отключить
+электропитание, оказать доврачебную
+помощь и вызвать скорую медицинскую
+помощь.</FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<BR>
+</P>
+<OL START=3>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Требования
+	безопасности по окончании работы:</B></FONT></FONT></P>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>5.1	По окончании
+работы выключить оборудование.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>5.2	Выключить
+местное освещение.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>5.3	Снять
+спецодежду, убрать в отведенное место.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%; widows: 0; orphans: 0">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>5.4	Сообщить
+непосредственному руководителю об
+обнаруженных во время работы неисправностях
+оборудования и инструмента.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; page-break-before: always">
+<FONT COLOR="#000000"><FONT FACE="Calibri, serif"><FONT SIZE=3><B><FONT FACE="Times New Roman, serif">6.
+Лист регистрации изменений</FONT></B></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%">
+<BR>
+</P>
+<TABLE WIDTH=637 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=106>
+	<COL WIDTH=184>
+	<COL WIDTH=145>
+	<COL WIDTH=144>
+	<TR>
+		<TD WIDTH=106 HEIGHT=4 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000">№ <FONT FACE="Times New Roman, serif"><FONT SIZE=3>редакции</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Содержание
+			изменения</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Номер
+			приказа о введении в действие</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Дата
+			вступления в действие</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Ред.1
+			</FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Новый
+			документ </FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=11 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%; page-break-before: always">
+<FONT COLOR="#000000"><FONT FACE="Calibri, serif"><FONT SIZE=3><B><FONT FACE="Times New Roman, serif">7.
+Лист ознакомления с инструкцией</FONT></B></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%">
+<BR>
+</P>
+<TABLE WIDTH=640 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=30>
+	<COL WIDTH=364>
+	<COL WIDTH=99>
+	<COL WIDTH=89>
+	<TR>
+		<TD WIDTH=30 HEIGHT=14 BGCOLOR="#d9d9d9" STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=CENTER><FONT COLOR="#000000">№</FONT></P>
+		</TD>
+		<TD WIDTH=364 BGCOLOR="#d9d9d9" STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Фамилия
+			Имя Отчество</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=99 BGCOLOR="#d9d9d9" STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Дата
+			ознакомления</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=89 BGCOLOR="#d9d9d9" STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Подпись</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=2>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=3>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=4>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=5>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=6>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=7>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=8>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=9>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=10>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=11>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=12>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=13>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=14>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=15>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=16>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=17>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=18>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=19>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=20>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=21>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=22>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=23>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=24>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=25>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=26>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=27>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=28>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=29>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=30>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=31>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=32>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=33>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=34>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=35>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=36>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=37>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=38>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=39>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=40>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=41>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=42>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=43>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=44>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=45>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=46>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=47>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=48>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=49>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=50>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=51>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=52>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=53>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=54>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=55>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=56>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=57>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=58>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=59>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=60>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=61>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=62>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=63>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=64>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=65>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=66>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=67>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=68>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=69>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=70>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=71>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=72>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=73>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=74>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=75>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=76>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=77>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=78>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=79>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=80>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=81>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=82>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=83>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=84>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=85>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=86>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=87>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=88>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=89>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=90>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=91>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=92>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=93>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=94>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=95>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=96>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=97>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=98>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=99>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=100>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=101>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=102>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=103>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=104>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=105>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=106>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=107>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=108>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=109>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=110>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=111>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=112>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=113>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=114>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=115>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=116>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=117>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=118>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=119>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=120>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=121>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=122>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=123>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=124>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=125>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=126>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=127>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=128>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=129>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=130>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=131>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=132>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=133>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=134>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=135>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=16 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=136>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=30 HEIGHT=15 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<OL START=137>
+				<LI><P></P>
+			</OL>
+		</TD>
+		<TD WIDTH=364 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=99 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=89 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in; line-height: 100%">
+<BR>
+</P>
+<DIV TYPE=FOOTER>
+	<P ALIGN=RIGHT STYLE="margin-top: 0.26in; margin-bottom: 0in; line-height: 100%">
+	<SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>2</SDFIELD></P>
+	<P STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

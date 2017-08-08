@@ -1,0 +1,1036 @@
+
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>ИНСТРУКЦИЯ
+</B></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>по действиям
+персонала организации, учреждения,
+предприятия численностью до 50 чел. </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>(далее
+малого объекта) при угрозе или возникновении
+ЧС </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>природного
+и техногенного характера </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>и выполнении
+мероприятий гражданской обороны&nbsp;<BR>(вариант)</B></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-left: -0.1in; margin-bottom: 0in; line-height: 200%">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 200%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Общие
+положения</B></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Настоящая
+инструкция определяет порядок действий
+персонала малого объекта при угрозе и
+возникновении ЧС природного и техногенного
+характера и ведении гражданской обороны
+и является обязательной для исполнения
+всеми лицами, постоянно или временно
+работающими на объекте.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Весь
+персонал независимо от занимаемой
+должности, обязан четко знать и строго
+выполнять установленный порядок действий
+при угрозе и возникновении ЧС мирного
+и военного времени и не допускать
+действий, которые могут вызвать угрозу
+жизни и здоровью персонала (переменного
+состава, посетителей и т.д.).</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>ЧС природного
+и техногенного характера могут возникнуть
+внезапно или после различного по
+продолжительности периода угрозы
+возникновения. Исходя из этого период
+угрозы возникновения ЧС, должен быть в
+максимальной мере использован для
+предотвращения ЧС или уменьшения
+возможного ущерба. С этой целью, исходя
+из режима функционирования территориальной
+или местной подсистемы Единой
+государственной системы предупреждения
+и ликвидации чрезвычайных ситуаций
+(РСЧС), малый объект также переводится
+в соответствующий режим функционирования:
+в режим повышенной готовности или в
+чрезвычайный режим.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Гражданская
+оборона может переводиться на военное
+положение планомерно или в условиях
+внезапного нападения вероятного
+противника.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Весь персонал
+предприятия независимо от занимаемой
+должности обязан четко знать и строго
+выполнять установленный настоящей
+Инструкцией порядок действий при угрозе
+или возникновении ЧС природного и
+техногенного характера, а также
+опасностей, возникающих вследствие
+военных действий.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>За невыполнение
+требований настоящей Инструкции по
+вопросам предупреждения ЧС, защиты
+персонала и материальных ценностей от
+ЧС работники предприятия могут
+привлекаться к материальной и
+административной ответственности
+вплоть до увольнения с работы.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Инструкция
+хранится в папке руководителя малого
+объекта. Ее содержание доводится до
+всего персонала. Для ответственных лиц
+делаются выписки из календарного плана
+с перечнем выполняемых ими задач в ЧС.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>1. Действия
+персонала при угрозе и возникновении
+чрезвычайных ситуаций природного и
+техногенного характера</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>1.1. Возможная
+обстановка на малом объекте при
+возникновении крупных аварий,</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>катастроф
+и стихийных бедствий</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Перечень
+потенциально опасных объектов, которые
+могут оказывать воздействие на нормальное
+функционирование малого объекта.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Объект
+______ территориально расположен в границах
+__________. Вблизи от объекта расположены
+следующие потенциально опасные объекты:
+(перечислить)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Примечание.
+Сведения о потенциальных источниках и
+характере их воздействия на предприятие
+могут быть получены в территориальном
+управлении (отделе) местных органов
+власти по ГО и ЧС.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>1.2. Порядок
+оповещения администрации и персонала
+об угрозе возникновения ЧС</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Оповещение
+администрации и персонала предприятия
+о ЧС на занимаемой предприятием территории
+производится по разработанной схеме
+оповещения. (приложение 1).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Оповещение
+администрации и персонала предприятия
+о ЧС в нерабочее (ночное) время производится
+по телефону (указать должность
+ответственного за оповещение
+сотрудника).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>В
+первую очередь оповещается администрация
+предприятия, а затем, в зависимости от
+обстановки, остальной персонал.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>В
+рабочее время сотрудники предприятия
+оповещаются ____(указать каким способом).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>При
+приеме городского предупредительного
+сигнала «Внимание всем» (вой сирен) все
+радиоточки, телевизоры и радиоприемники
+предприятия перевести в режим приема
+речевых сообщений, передаваемых главным
+управлением по делам ГО и ЧС города
+(области, края и т.д.).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1.3.
+Порядок выделения автотранспорта для
+проведения эвакуационных мероприятий</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>При проведении
+экстренной эвакуации персонала из
+опасной зоны привлекается весь имеющийся
+в наличии служебный автотранспорт, а
+также личный автотранспорт сотрудников
+предприятия.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Сотрудники
+предприятия, имеющие личный автотранспорт,
+должны беспрекословно представлять
+его в распоряжение администрации для
+осуществления экстренной эвакуации
+сотрудников, посетителей предприятия
+из опасной зоны.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>1.4. Требования
+к персоналу предприятия по соблюдению
+противоэпидемических</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>мероприятий
+при угрозе распространения особо опасных
+инфекционных</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>заболеваний</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>В случае
+выявления на территории предприятия
+или вблизи него опасности распространения
+особо опасных инфекционных заболеваний
+все сотрудники обязаны строго выполнять
+требования санитарно-эпидемиологической
+службы по проведению экстренной
+профилактики и иммунизации, по изоляции
+и лечению выявленных больных, соблюдать
+режим, предотвращающий занос и
+распространение инфекции.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>При
+необходимости все сотрудники должны
+проходить по прибытию на работу санитарную
+обработку (указать место проведения),
+дезинфекцию или смену одежды, а водители
+транспортных средств проводить
+специальную обработку автомобилей
+(указать место проведения), а также
+выполнять другие требования, препятствующие
+распространению особо опасных инфекционных
+заболеваний.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1.5.
+О мерах по сохранению материальных
+ценностей в период угрозы и</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>возникновения
+ЧС</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Все сотрудники
+предприятия должны принимать меры по
+сохранению материальных ценностей при
+угрозе или возникновении ЧС.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>В
+период поведения мероприятий по защите
+от ЧС или ликвидации их последствий
+должны приниматься меры по предотвращению
+или уменьшению возможного материального
+ущерба предприятию, по охране имущества
+и оборудования.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ответственность
+за организацию охраны материальных
+средств в период угрозы и возникновения
+ЧС возлагается на (указать должность и
+фамилию).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Приложение
+1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Календарный
+план действий при угрозе возникновения
+ЧС на малом объекте _______</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>(режим
+повышенной готовности)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>При
+ухудшении обстановки и получении
+информации об опасности или угрозе
+возникновения ЧС временно прекратить
+выполнение повседневных задач и
+сосредоточить все силы и средства на
+выполнении работ по предотвращению или
+уменьшению последствий возникшей
+угрозы, для чего:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR></FONT></FONT><BR><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>При
+угрозе взрыва</B></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Сообщить
+о полученной информации в УВД муниципального
+образования, оперативному дежурному
+управления по делам ГО и ЧС муниципального
+образования и в окружную аптеку</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 15 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Безаварийно
+приостановить все работы (указать где),
+эвакуировать посетителей и сотрудников
+из помещений (указать каких), проверить
+наличие всех сотрудников работающей
+смены в установленном месте сбора</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч+
+30 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Встретить
+прибывшее спецподразделение органов
+внутренних дел и обеспечить обследование
+территории и помещений (указать каких).
+Работу возобновить после получения от
+командира подразделения разрешающего
+документа</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>По
+прибытию и проведению работ</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>При угрозе
+возникновения пожара</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+наблюдение за обстановкой в помещениях
+и на прилегающей территории</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Привести
+в готовность пожарные расчёты и имеющиеся
+средства пожаротушения</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 20 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Приготовиться
+к экстренной эвакуации персонала
+(посетителей и т.д.), имущества, материальных
+ценностей и необходимой документации</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Ч + 2 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>При угрозе
+возникновения аварии на энергетических,
+инженерных</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>и
+технологических системах</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Оценить
+обстановку и её возможные последствия
+в случае аварии</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 15 мин.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+наблюдение за опасным участком, вывод
+сотрудников и _______из опасной зоны</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>При угрозе
+химического заражения (подхода облака,
+зараженного АХОВ)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>I</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Организовать
+наблюдение за обстановкой в районе
+объекта. Оповестить и привести сотрудников
+и ______в готовность к возможным действиям
+в условиях ЧС, сократить до минимума
+присутствие в аптеке посетителей</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+выдачу сотрудникам СИЗ (сохранность
+СИЗ обеспечивать в режиме повседневной
+деятельности)</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Ч + 3 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Подготовиться
+к возможной герметизации помещений
+объекта, отключению вентиляции и
+кондиционеров, создать на объекте запас
+воды или готовиться к экстренной
+эвакуации Ч + 4 час.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Подготовить
+медикаменты и имущество для оказания
+первой медицинской помощи пострадавшим
+Ч + 1 час.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR></FONT></FONT><BR><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<BR><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>При
+угрозе радиоактивного заражения</B></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR></FONT></FONT><BR><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Постоянно
+прослушивать городские программы
+радиовещания и телевидения для получения
+информации Управления по делам ГО и ЧС
+по вопросам РЗМ (радиоактивного заражения
+местности)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Через
+Управление по делам ГО и ЧС организовать
+периодическое (через 1 час или другой
+промежуток времени) получение информации
+об уровне РЗМ в районе объекта</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 1 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Выдать
+сотрудникам СИЗ, организовать, при
+необходимости, изготовление ватно-марлевых
+повязок</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 2 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4 Подготовиться
+к отключению вентиляционных систем и
+кондиционеров, создать на объекте запасы
+материалов для герметизации помещений,
+запас воды в герметичной таре, быть в
+готовности к эвакуации</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ I час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>5</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+накопление необходимых количеств
+препаратов стабильного йода</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 24 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>6 Обеспечить
+постоянное взаимодействие с управлением
+по ГОЧС и комиссией по ЧС муниципального
+образования</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<BR><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>При
+угрозе возникновения стихийных бедствий</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+</FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>(резком
+изменении температуры воздуха, сильном
+ветре. ливневых дождях, снегопадах и
+т..п.)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR></FONT></FONT><BR><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+наблюдение за состоянием окружающей
+среды;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+на объекте посменное круглосуточное
+дежурство руководящего состава</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 1 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Оценить
+противопожарное состояние объекта,
+провести мероприятия по повышению
+уровня готовности пожарного расчёта,
+противопожарной защищённости объекта,
+подготовительные мероприятия по
+безаварийной остановке работы
+аптеки;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>усилить
+контроль за состоянием коммунально-энергетических
+сетей</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 3 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+взаимодействие с управлением по ГОЧС
+и комиссией по ЧС муниципального
+образования. Быть в готовности к
+эвакуации</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>При получении
+анонимной информации об угрозе на
+территории предприятия или вблизи
+него</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>террористической
+акции</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1
+Немедленно доложить руководителю
+предприятия и в правоохранительные
+органы и действовать согласно полученных
+от них распоряжений и рекомендаций</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Приложение
+2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Календарный
+план действий при возникновении и во
+время ликвидации ЧС</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>на
+малом объекте _______ (режим чрезвычайной
+ситуации)</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Независимо
+от вида ЧС при её возникновении и
+ликвидации:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1.
+Немедленно организовать защиту
+сотрудников объекта от поражения;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>2.
+Провести работы по обеспечению
+минимального ущерба от ЧС;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>3.
+Принять возможные меры по локализации
+ЧС и уменьшению размеров опасной
+зоны;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>4.
+Обеспечить постоянное изучение обстановки
+на прилегающей территории и в помещениях
+объекта для своевременного принятия
+мер по её нормализации;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>5.
+Организовать обмен информацией об
+обстановке в с управлением по делам ГО
+и ЧС муниципального образования.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>С
+учётом вида ЧС и особенностей её развития
+выполнить:</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>В
+случае срабатывания взрывного
+устройства</B></FONT></FONT><FONT SIZE=4 STYLE="font-size: 16pt"><B>&nbsp;</B></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B><BR></B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Немедленно
+приступить к организации и производству
+аварийно-спасательных и других неотложных
+работ (АСДНР), сообщить о факте взрыва
+оперативному дежурному Управления по
+делам ГО и ЧС</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>При
+возникновении пожара</B></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Немедленно
+сообщить о возникновении пожара в
+пожарную охрану округа или города</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+локализацию и тушение пожара имеющимися
+силами и средствами</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Отключить
+подачу на объект электроэнергии</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 5 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Эвакуировать
+людей (постоянный, переменный состав,
+посетителей) из прилегающих к месту
+пожара помещений</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 15 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>5</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Отключить
+вентиляционные системы, кондиционеры,
+закрыть окна и двери в районе возникновения
+пожара для предотвращения его
+распространения</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 15 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>6</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Начать
+вынос документации и имущества из
+прилегающих к месту пожара
+помещений</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>7</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+тщательную проверку всех задымленных
+и горящих помещений с целью выявления
+пострадавших или потерявших сознание
+сотрудников, обеспечить пострадавших
+первой медицинской помощью и отправить
+их в ЛПУ</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>8</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+встречу пожарной команды, сообщить
+старшему пожарной команды сведения об
+очаге пожара, принятых мерах и специфических
+особенностях объекта, которые могут
+повлиять на развитие и ликвидацию
+пожара</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>по
+прибытию</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>9</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+охрану вынесенного имущества</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>с
+момента выноса</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>10 Доложить
+о сложившейся на объекте ситуации,
+количестве пострадавших и принятых
+мерах по ликвидации пожара в Управление
+по делам ГО и ЧС округа, окружную комиссию
+по ЧС</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 30 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>При аварии
+на энергетических, инженерных и
+технологических системах объекта</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1
+Оповестить персонал объекта (постоянный,
+переменный состав, посетителей) и
+организовать его вывод из опасной
+зоны</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 1 5 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2 Доложить
+об аварии дежурному по Управлению по
+делам ГО и ЧС округа и, при необходимости,
+вызвать аварийные бригады соответствующих
+служб округа или города</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 30 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Выявить
+пострадавших при аварии, оказать им
+первую медицинскую помощь и направить
+в ЛПУ</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 1 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+эвакуацию имущества и документации из
+прилегающих к месту аварии помещений</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>по
+обстановке</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>5</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Подготовиться
+к эвакуации при необходимости персонала
+(постоянного, переменного состава,
+посетителей)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>по
+обстановке</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>6</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Доложить
+о сложившейся на объекте ситуации,
+количестве пострадавших и принятых
+мерах по ликвидации ЧС в Управление по
+делам ГО и ЧС округа, окружную комиссию
+по ЧС</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 1.5 час.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>При химическом
+заражении (аварии с выбросом АХОВ)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Услышав
+сигнал «Внимание всем» и речевую
+информацию, включить радио (телевизор),
+прослушать сообщение по городу (округу)
+о факте и характере аварии, немедленно
+оповестить персонал (постоянный,
+переменный состав, посетителей)
+объекта.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>по
+сигналу</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2 Отключить
+вентиляционные системы и, кондиционеры,
+закрыть и загерметизировать окна, двери,
+из помещения никого не выпускать Ч + 15
+мин.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR></FONT></FONT><BR><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Выдать
+персоналу противогазы, а при их
+отсутствии:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>при
+угрозе заражения аммиаком - повязки,
+смоченные водой, 2% раствором лимонной
+или уксусной кислоты;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>при
+угрозе заражения хлором - повязки,
+смоченные 2 % раствором пищевой соды</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 20 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Во
+избежание взрыва запретить пользоваться
+в помещениях открытым огнём</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>5</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>При
+появлении и усилении в помещениях
+объекта запаха посторонних веществ
+организовать выход персонала (постоянного,
+переменного состава, посетителей) из
+зоны заражения</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>6</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>После
+выхода из зоны заражения при наличии
+пострадавших оказать им первую медицинскую
+помощь и отправить ЛПУ</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>7&nbsp;Доложить
+о факте ЧС в Управление по делам ГО и ЧС
+округа, окружную комиссию по ЧС</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>По сигналу</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>При
+радиоактивном заражении территории</B></FONT></FONT><FONT SIZE=4 STYLE="font-size: 16pt"><B>&nbsp;</B></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B><BR></B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Постоянно
+прослушивать городские программы
+радиовещания и телевидения для получения
+информации Управления по делам ГО и ЧС
+по ситуации постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Оповестить
+персонал о заражении территории объекта
+и прилегающей территории РВ</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 5 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Обеспечить
+периодические запросы и получение
+информации об уровне РЗМ в районе объекта
+через Управление по делам ГО и ЧС
+муниципального образования</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Отключить
+вентиляционные системы и кондиционеры
+объекта и провести герметизацию
+помещений</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 5 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>5</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Аптекам
+по команде Управления по делам ГО и ЧС
+при подтверждении необходимости
+Управлением фармации КЗ выдать препараты
+стабильного йода в ДЕЗ для проведения
+йодной профилактики населения</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>по
+согласованному графику</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>6</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Сократить
+до минимума выход персонала из помещений
+на открытую местность, в случае выхода
+применять средства защиты органов
+дыхания и кожи. Режим поведения в
+сложившихся условиях довести до персонала
+объекта постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>7</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Уточнить
+через Управление по делам ГО и ЧС
+планируемую необходимость (целесообразность,
+возможность) эвакуации персонала объекта
+(постоянный, переменный состав,
+посетителей) и порядок дальнейших
+действий</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>периодически
+(постоянно)</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>При
+стихийных бедствиях</B></FONT></FONT><FONT SIZE=4 STYLE="font-size: 16pt"><B>&nbsp;</B></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B><BR></B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+постоянное наблюдение за состоянием
+окружающей среды и происходящими в ней
+изменениями</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Прекратить
+производственную деятельность объекта,
+вывести посетителей за его территорию.
+Не допускать паники среди персонала,
+запретить сотрудникам покидать служебные
+помещения</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Провести
+противопожарные мероприятия, отключить
+всё неиспользуемое оборудование,
+организовать контроль за состоянием
+всех помещений объекта Ч + 10 мин.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>При
+ухудшении обстановки или угрозе
+затопления вывести материальные ценности
+и документацию из опасной зоны</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>по
+обстановке</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>5</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Организовать
+первую медицинскую помощь пострадавшим
+и отправить их в ЛПУ. Организовать
+жизнеобеспечение сотрудников
+объекта</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>6 Обеспечить
+постоянную связь Управлением по делам
+ГО и ЧС округа, окружной комиссией по
+ЧС</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>При массовых
+пищевых отравлениях и особо опасных
+ситуациях</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>В
+случае проявления признаков группового
+отравления сотрудников или других
+инфекционных заболеваний немедленно
+вызвать скорую медицинскую помощь</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>по
+факту</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Оказать
+содействие бригаде скорой медицинской
+помощи в оказании неотложной помощи
+пострадавшим</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>немедленно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Доложить
+о признаках заболевания или инфекции
+в Управление по делам ГО и ЧС муниципального
+образования, комиссию по ЧС</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ч
++ 10 мин</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>При
+появлении в округе инфекционных
+заболеваний обеспечить строгое соблюдение
+сотрудниками объекта противоэпидемических
+мероприятий и тре-бований, предписанных
+Управлением здравоохранения и
+Санитарно-эпидемиологической службой
+округа</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Постоянно</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2. Организация
+и выполнение основных мероприятий
+гражданской обороны</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.1. Действия
+персонала _________ по сигналу «Воздушная
+тревога»</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>1.
+Дежурный (ответственный) по _____ поступивший
+сигнал ВТ немедленно доводит до всего
+персонала ____ голосом или ___ (указать
+конкретно какими дублирующими
+средствами).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>2.
+Услышав сигнал ВТ, персонал уходит в
+защитное сооружение ____________.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.2. Порядок
+укрытия персонала в защитных
+сооружениях</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>При
+возникновении ЧС, связанной с угрозой
+или началом заражения воздуха АХОВ,
+радиоактивными веществами или по сигналу
+«Воздушная тревога», весь персонал
+подлежит укрытию в ЗС (указать место
+нахождения ЗС и его принадлежность).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Для
+экстренного укрытия персонала при
+опасности поражения АХОВ использовать
+загерметизированное помещение (указать
+какое), обеспечивающее безопасное
+пребывание в нем _____ чел. без подачи
+воздуха в течение __ часов.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>При
+получении информации о радиационной
+опасности укрытие персонала проводить
+в (указать наименование помещения),
+обеспечивающем ослабление мощности
+дозы излучения в __ раз.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Для
+дошкольных учреждений:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+няни, воспитатели группы № ___
+_______________________</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+няни, воспитатели группы № ___
+_______________________</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>и
+т.д.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>быстро
+одевают детей, надевают на них (в походное
+положение) противогазы, берут часть
+игрушек и в течение _ минут вместе с
+детьми уходят в защитное сооружение
+___;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+няни и обслуживающий персонал групп
+детей ясельного возраста _____ быстро
+укладывают детей в камеры зенитные
+детские (КЗД) и переносят их в защитные
+сооружения ______ ;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+заведующий и старшие воспитатели ___
+проверяют наличие детей в защитном
+сооружении, обеспечение их и средствами
+индивидуальной защиты, организацию
+питания, сна и бодрствования детей;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+медицинская сестра ___ берет с собой
+необходимые документы, аптечки
+индивидуальные, перевязочные пакеты и
+укрывается в защитном сооружении вместе
+с детьми, готовая оказать им первую
+медицинскую помощь;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>старший
+повар ____ выключает электрические,
+газовые плиты (при дровяном или угольном
+нагреве плит производит заливку их
+водой) и совместно с работниками кухни
+____ берут с собой имеющиеся на кухне
+продукты питания, часть посуды и
+укрываются в ___ защитном сооружении;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>заведующий
+хозяйством________ совместно с дежурным
+отключают электро-, газо- и водоснабжёние
+и укрываются в _____ защитном сооружении;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>при
+наличии средств связи, заведующий
+докладывает районному штабу ГО об
+укрытии личного состава.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Время,
+отводимое для укрытия, определяется
+территориальным органом управления по
+делам ГОЧС.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.3. Порядок
+выдачи персоналу средств индивидуальной
+защиты (СИЗ)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Выдача
+персоналу СИЗ (указать каких) производится
+после получения соответствующего
+распоряжения или по решению руководителя
+предприятия в (указать место
+выдачи).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Работники,
+получившие СИЗ, должны проверить их
+состояние, произвести подгонку и меть
+их постоянно при себе или на рабочем
+месте.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Перевод
+противогазов в боевое положение
+осуществляется по команде или
+самостоятельно при наличии опасности
+заражения воздуха.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.4. Действия
+по сигналу &quot;Отбой воздушной
+тревоги&quot;:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Руководитель
+_____ дает указание на вывод укрываемых
+из защитного сооружения (укрытия) только
+с разрешения территориального органа
+управления по делам ГОЧС. При необходимости
+обращается в орган управления по делам
+ГОЧС с просьбой о выделении сил и средств
+для ликвидации последствий нападения
+противника.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.5. Проведение
+подготовительных мероприятий гражданской
+обороны</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Руководитель
+____ получив указание на проведение
+подготовительных мероприятий ГО,
+организует сбор сотрудников ___ , доводит
+до них задачи по выполнению мероприятий
+ГО подготовительного периода.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Ответственному
+лицу ______ (при наличии собственного
+убежища):</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+в течение короткого времени, но не более
+7-12 часов подготовить защитное сооружение
+к приему укрываемых;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+совместно с ___ (уполномоченный орган)
+заложить в убежище продукты питания,
+воду, медикаменты .из расчёта трехсуточного
+пребывания в убежище _ человек;.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+провести инструктаж командира звена
+убежищ ____о порядке приема укрываемых,
+местах размещения их в защитном сооружении
+и работе фильтровентиляционной
+установки.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>При
+отсутствии собственного убежища:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+уточнить у руководителя закрепленного
+за ____ защитного сооружения, порядок
+размещения и приема укрываемых в защитном
+сооружении;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+получить на складе .№ __ органа управления
+по делам ГОЧС в соответствии с накладной
+№ __ противогазов ГП-7 ____ шт., ДП-6М __шт. и
+КЗД (для ДОУ)_____ шт.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+подтвердить заявку на выделение
+транспорта для перевозки имущества в
+загородную зону, если это предусмотрено
+по плану.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Назначенному
+сотруднику _____ выдать всему персоналу
+средства индивидуальной защиты,
+организовать изготовление ватно-марлевых
+повязок.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Для
+дошкольных учреждений:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Воспитателям,
+няням к обслуживающему персоналу группы
+№ __, группы № _ - и т.д.:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+получить у заведующего хозяйством ___
+на весь состав групп средства индивидуалъной
+защиты;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+заполнить списки передачи детей
+родителям;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+подготовить документы к сдаче в
+территориальный отдел образования;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+изготовить ватно-марлевые повязки на
+всю грушу;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+провести с детьми занятия по укрытию
+детей в защитном сооружении, надевании
+противогазов, респираторов и ватно-марлевых
+повязок на детей;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Няни
+и обслуживающий персонал групп детей
+ясельного возраста, изучают КЗД и правила
+пользования ими.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.6. Эвакуация
+в загородную зону (разрабатывается
+учреждением,</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>подлежащим
+эвакуации)</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Руководитель
+__ получив указание на проведение
+эвакомеропрятий дает указание прекратить
+свою деятельность, сотрудники распускаются
+по квартирам готовятся к выезду в
+загородную зону вместе со своими
+семьями.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Для
+дошкольных учреждений:</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Няням,
+воспитателям приступить к передаче
+детей родителям под расписку;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>-
+сдать заведующему ______ списки о передаче
+детей родителям;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>После
+передачи детей родителям __ учреждение
+прекращает свою деятельность, сотрудники
+распускаются по квартирам готовятся к
+выезду в загородную зону вместе со
+своими семьями.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Сотрудники
+и члены их семей самостоятельно к Ч +
+__часам прибывают на СЭП № __ по адресу:
+____ , тел № __; с указанного СЭП сотрудники
+и члены их семей под руководством
+старшего группы __ следуют на пункт
+посадки (исходный пункт) по адресу: ___ и
+выезжают поездом № _ (эшелоном,
+автомашинами) в __ час__ минут с вокзала
+__.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>В
+загородной зоне сотрудники поступают
+в распоряжение заведующего __ РОНО или
+конкретно ______ учреждения.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>В
+загородной зоне ___ учреждения, имеющие
+задания на прием детей, ведут подготовку
+по расширению используемых помещений,
+приспособлению административных зданий
+под детские дошкольные учреждения с
+указанием ответственных лиц за проведение
+этих мероприятии.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>Приложения:
+I. Схема сбора сотрудников.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>2.
+Расчёт на укрытие.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>3.
+Ведомость на выдачу средств индивидуальной
+защиты.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>4.
+Списки групп детей на передачу их
+родителям.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>и
+другие приложения.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Начальник
+штаба ГОЧС ___________________ (фамилия, подпись)</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Список
+нормативных правовых и нормативно-методических
+документов</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-left: -0.1in; margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>1. Федеральный
+закон Российской Федерации от 21 декабря
+1994 г. № 68-ФЗ «О защите населения и
+территорий от чрез¬вычайных ситуаций
+природного и техногенного характера».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>2.
+Федеральный закон Российской Федерации
+от 12 февраля 1998 г. № 28-ФЗ «О гражданской
+обороне».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>3.
+Федеральный закон Российской Федерации
+от 21 декабря 1994 г. № 698-ФЗ «О пожарной
+безопасности».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>4.
+Федеральный закон Российской Федерации
+от 9 января 1996 г. № 3-ФЗ «О радиационной
+безопасности».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>5.
+Федеральный закон Российской Федерации
+от 21 июня 1997 г. № 116-ФЗ «О промышленной
+безопасности опасных производственных
+объектов».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>6.
+Федеральный закон Российской Федерации
+от 21 июля 1997 г. № 117-ФЗ «О безопасности
+на гидротехнических сооружениях».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>7.
+Федеральный закон Российской Федерации
+от 25 июля 1998 г. № 130-ФЗ «О борьбе с
+терроризмом».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>8.
+Федеральный закон Российской Федерации
+от 29 декабря 1999 г. № 79-ФЗ «О государственном
+материальном резерве».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>9.
+Постановление Правительства Российской
+Федерации от 10 июня 1999 г. № 620 «О гражданских
+организациях гражданской обороны».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>10.
+Постановление Правительства Российской
+Федерации от 10 ноября 1996 г. № 1340 «О
+порядке создания и использования
+резервов материальных ресурсов для
+ликвидации чрезвычайных ситуаций
+природного и техногенного характера».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>11.
+Постановление Правительства Российской
+Федерации от 14 апреля 1994 г. № 330-1б «О
+мерах по накоплению и использованию
+имущества гражданской обороны».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>12.
+Постановление Правительства Российской
+Федерации от 27 апреля 2000 г. № 379 «О
+накоплении, хранении и использовании
+в целях гражданской обороны запасов
+материально-технических, продовольственных,
+медицинских и иных средств».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>13.
+Постановление Правительства Российской
+Федерации от 28 августа 1994 г. № 989 «О
+порядке финансирования мероприятий по
+предупреждению и ликвидации чрезвычайных
+ситуаций на промышленных предприятиях,
+в строительстве и на транспорте»</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>14.
+Постановление Правительства Российской
+Федерации от 16 марта 2000 г. № 227 «О
+возмещении расходов на подготовку и
+проведение мероприятий гражданской
+обороны».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>15.
+Постановление Правительства Российской
+Федерации от 5 ноября 1995 г. № 1113 «О единой
+государственной системе предупреждения
+и ликвидации чрезвычайных ситуаций».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>16.
+Постановление Правительства Российской
+Федерации от 10 сентября 1998 г. № 1115 «О
+порядке отнесения организаций к
+категориям по гражданской обороне».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>17.
+Постановление Правительства Российской
+Федерации от 3 октября 1998 г. № 1149 «О
+порядке отнесения территорий к группам
+по гражданской обороне».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>18.
+Постановление Правительства Российской
+Федерации от 3 августа 1996 г. № 924 «О силах
+и средствах единой государственной
+системы предупреждения и ликвидации
+чрезвычайных ситуаций».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>19.
+Постановление Правительства Российской
+Федерации от 1 июля 1995 г. № 675 «Об
+утверждении Положения о декларации
+безопасности промышленного объекта
+Российской Федерации».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>20.
+Постановление Правительства Российской
+Федерации от 26 октября 2000 г. № 810 «О
+порядке выделения средств из резервного
+фонда Правительства Российской Федерации
+по предупреждению и ликвидации
+чрезвычайных ситуаций и последствий
+стихийных бедствий».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>21.
+Постановление Правительства Российской
+Федерации от 10 июля 1999 г. № 782 «О создании
+(назначении) в организациях структурных
+подразделений (работников), специально
+уполномоченных на решение задач в
+области гражданской обороны».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>22.
+Директива начальника Гражданской
+обороны от 27 мая 1997 г. № ДНГО-02.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>23.
+Дополнения к письму МЧС России от
+24.01.1996 г. N 40-138-8 за N 8-1/122 от 28.05.1996 г.
+(разъяснения по разработке Плана
+действий.....).</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>24.
+Приказ МЧС России от 25.07.2000 г. № 399 «Об
+утверждении Инструкции по проверке
+деятельности территориальных подсистем,
+звеньев территориальных подсистем,
+объектовых звеньев РСЧС по выполнению
+возложенных на них задач в области
+защиты населения и территорий от
+чрезвычайных ситуаций природного и
+техногенного характера».</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>25.
+Методические указания МЧС России от
+03.04.2000 г. № 33-860 по созданию гражданских
+организаций гражданской обороны.</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&nbsp;</FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><BR>26.
+Организационные указания МЧС России
+по обучению населения в области
+гражданской обороны и защиты от
+чрезвычайных ситуаций на 2001-2005 годы.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
+</P>

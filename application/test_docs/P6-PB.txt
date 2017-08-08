@@ -1,0 +1,903 @@
+
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	
+<BODY LANG="en-US" TEXT="#000000" LINK="#0563c1" DIR="LTR">
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.59in; margin-bottom: 0in">
+ 
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 4.13in; margin-right: 0.1in; margin-bottom: 0.01in">
+<FONT SIZE=4><B>Приложение 1</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 4.13in; margin-bottom: 0in">
+<B>Утверждено Приказом </B>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 4.13in; margin-bottom: 0in">
+№<B>_______ от ___ ______ 2017 г.</B></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+<FONT SIZE=4><B>Инструкция вводного инструктажа</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+<FONT SIZE=4><B>по пожарной безопасности</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+<FONT SIZE=3 STYLE="font-size: 13pt">Новосибирск 2017</FONT></P>
+<H1 LANG="ru-RU" CLASS="western" ALIGN=LEFT></H1>
+<H1 LANG="ru-RU" CLASS="western">1. Общая часть</H1>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4><B>Пожарная безопасность
+</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>- состояние
+защищенности личности, имущества,
+общества и государства от пожаров.
+Обеспечение пожарной безопасности
+является одной из важнейших функций
+предприятия. Соблюдение противопожарного
+режима на предприятии осуществляется
+в соответствии с Федеральным законом
+«О пожарной безопасности» от 21 декабря
+1994 года № 69-ФЗ,</FONT></FONT><FONT SIZE=4> &quot;Правила
+противопожарного режима в Российской
+Федерации&quot; (утв. постановлением
+Правительства РФ от 25 апреля 2012 г. №
+390).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4><B>Первая</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>
+и безусловно, важная цель, которая должна
+достигаться при любых материальных
+затратах, является обеспечение
+безопасности рабочих, служащих,
+посетителей при возникновении пожара.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4><B>Вторая</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>
+цель – это сохранение имущества
+предприятия от уничтожения и повреждения
+различными опасными факторами пожара
+и огнетушащими средствами (вода, пена).</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Работники предприятия обязаны
+выполнять требования пожарной
+безопасности, соблюдать и поддерживать
+противопожарный режим, установленный
+на предприятии, нарушившие несут
+ответственность в соответствии с
+законодательством Российской Федерации.
+Все вновь принятые на работу независимо
+от их образования, стажа работы по данной
+профессии или, временные работники,
+командированные, учащиеся и студенты,
+прибывшие на производственное обучение
+или практику не прошедшие вводный
+инструктаж к исполнению обязанностей
+не допускаются. </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Лица прошедшие вводный инструктаж,
+на рабочем месте проходят первичный
+инструктаж. </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Цель проведения
+вводного инструктажа – дать работникам
+знания по организации пожарной
+безопасности на производстве. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Изложенные в настоящей инструкции
+требования пожарной безопасности
+обязательны для исполнения всеми
+работниками предприятия.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+ 
+</P>
+<H1 LANG="ru-RU" CLASS="western">2. Проведение инструктажей
+по пожарной безопасности</H1>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0.04in"><FONT SIZE=4><B>2.1.
+Вводный и первичный инструктаж по
+пожарной безопасности.</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Вводный инструктаж
+по пожарной безопасности и первичный
+инструктаж по пожарной безопасности
+на служебном и рабочем местах (далее –
+на рабочем месте) должны пройти все
+работники. Как вводный инструктаж, так
+и инструктажи на рабочем месте по темам:</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>пожарная опасность
+объекта, требования противопожарного
+режима, наличие и использование средств
+пожаротушения и спасения и т.д. проводит
+руководитель структурного подразделения
+или назначенное им должностное лицо. </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0.04in"><FONT SIZE=4><B>2.2.
+Регистрация проведённых инструктажей
+по пожарной безопасности.</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>После проведения
+каждого инструктажа по пожарной
+безопасности в журнале обучения и
+регистрации делается соответствующая
+установленная запись о прохождении
+инструктажа конкретным работником;
+обязательно также указываются название
+инструкций, по которым был проведён
+инструктаж.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0.04in"><FONT SIZE=4><B>2.3.
+Периодичность проведения инструктажей
+по пожарной безопасности.</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Периодичность
+проведения инструктажей по пожарной
+безопасности в зависимости от
+пожароопасности объекта, определяется
+руководителем предприятия или
+руководителем структурного подразделения.
+При малой пожарной опасности объекта
+можно ограничиться только первичным
+инструктажем.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0.04in"><FONT SIZE=4><B>2.4.
+Дополнительный инструктаж по пожарной
+безопасности.</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Дополнительный
+инструктаж по пожарной безопасности
+проводит руководитель структурного
+подразделения в следующих случаях:</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>- в случае, если
+изменилось содержание требований
+пожарной безопасности или инструкций;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- в случае изменения противопожарного
+режима на объекте;</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>- в случае изменений
+процесса выполняемой работы, технологий,
+изменения вида деятельности, а также
+при возрастании пожарной опасности
+используемых материалов;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>- в случае направления
+работника на выполнение пожароопасной
+работы (например, огневая работа на
+временном месте её проведения), на
+проведение которой должно быть выдано
+согласно утверждённой форме письменное
+разрешение;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>- после произошедшего
+пожара или какого-либо аварийного
+события;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>- в случае нарушения
+работником правил пожарной безопасности.</FONT></FONT></P>
+<P LANG="ru-RU" STYLE="text-indent: 0.59in; margin-bottom: 0in"><BR>
+</P>
+<H1 LANG="ru-RU" CLASS="western">3.Требования к помещениям</H1>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>Во всех производственных,
+административных, складских и
+производственных помещениях на видных
+местах вывешиваются таблички с указанием
+номера телефона вызова пожарной охраны
+</FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><B>01</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>
+(сотовый-</FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><B>010</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>).</FONT></FONT></P>
+<P LANG="ru-RU" STYLE="text-indent: 0.59in; margin-bottom: 0in"><FONT SIZE=4>Работники
+предприятия обязаны:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4><B>- </B></FONT><FONT SIZE=4>соблюдать
+требования пожарной безопасности
+&quot;Правила противопожарного режима в
+Российской Федерации&quot; (утв. постановлением
+Правительства РФ от 25 апреля 2012 г. №
+390);</FONT></P>
+<P LANG="ru-RU" STYLE="text-indent: 0.59in; margin-bottom: 0in"><FONT SIZE=4>-
+соблюдать и поддерживать противопожарный
+режим;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- выполнять меры предосторожности
+при пользовании газовыми приборами,
+проведении работ с легковоспламеняющимися
+и горючими жидкостями, другими опасными
+в пожарном отношении веществами,
+материалами и оборудованием;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- в случае возникновения возгорания
+принять все зависящие от них меры по
+спасению людей и тушению пожара.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>На объекте с массовым пребыванием
+людей, а также на объекте с рабочими
+местами на этаже для 10 и более человек
+разрабатываются и на видных местах
+вывешиваются планы (схемы) эвакуации
+людей в случае пожара.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT SIZE=4>В зданиях, сооружениях предприятия
+запрещается:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- снимать предусмотренные проектом
+двери эвакуационных выходов из поэтажных
+коридоров, тамбуров и лестничных клеток,
+другие двери, препятствующие распространению
+опасных факторов пожара на путях
+эвакуации; </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- загромождать эвакуационные
+пути и выходы (в том числе проходы,
+коридоры, тамбуры, лифтовые холлы,
+лестничные площадки, марши лестниц,
+двери, эвакуационные люки) различными
+материалами, изделиями, оборудованием,
+производственными отходами, мусором и
+другими предметами, а также забивать
+двери эвакуационных выходов.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>Не разрешается
+курение на территории, в помещениях
+складов, взрывопожароопасных и
+пожароопасных участках. Курение на
+предприятии допускается только в
+специально отведенных местах, оборудованных
+урнами для окурков и емкостями с водой.
+В этих местах должны быть вывешены
+надписи: «Место для курения». </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT SIZE=4>При эксплуатации действующих
+электроустановок запрещается:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- монтаж и ремонт электросети
+неподготовленными лицами; </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- пользоваться поврежденными
+розетками, рубильниками;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- обертывать электролампы и
+светильники бумагой, тканью и другими
+горючими материалами, а также
+эксплуатировать светильники со снятыми
+колпаками (рассеивателями), предусмотренными
+конструкцией светильника;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>-пользоваться электроутюгами,
+электроплитками, электрочайниками и
+другими электронагревательными
+приборами, не имеющими устройств тепловой
+защиты, без подставок из негорючих
+теплоизоляционных материалов, исключающих
+опасность возникновения пожара;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>-применять нестандартные
+(самодельные) электронагревательные
+приборы, использовать некалиброванные
+плавкие вставки или другие самодельные
+аппараты защиты от перегрузки и короткого
+замыкания;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- размещать (складировать) у
+электрощитов, электродвигателей и
+пусковой аппаратуры горючие (в том числе
+легковоспламеняющиеся) вещества и
+материалы;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- устраивать временные электросети,
+удлинители проводов с открытыми
+соединениями;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- подключать несколько потребителей
+эл.энергии (токоприемников) к одной
+штепсельной розетке с помощью переходной
+вилки на 3-4 ответвления;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- использовать электропровода
+для подвешивания одежды, картин и т.д.;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- </FONT><FONT COLOR="#000000"><FONT SIZE=4>использовать
+удлинители для питания</FONT></FONT><FONT SIZE=4>
+электроприборов, не предназначенные
+для проведения аварийных и других
+временных работ;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>- оставлять эл.нагревательные
+приборы, включенные в электросеть, без
+присмотра. </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Электроприборы должны включатся
+в сеть только через штепсельные розетки
+заводского исполнения, неисправная
+электроаппаратура должна немедленно
+отключаться от электросети. </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<H1 LANG="ru-RU" CLASS="western">4. Основные причины
+пожаров и загораний</H1>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.1.Курение в запрещённых
+для этого местах, забытые или непотушенные
+окурки могут быть достаточным источником
+возгорания </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.2. Несоответствие
+электрической защиты.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.3. Не соблюдение
+правил противопожарного режима при
+выполнении сварочных и других огневых
+работ (газоэлектросварка, паяльная
+лампа, костры) в местах, где хранятся
+горючие материалы, жидкости и газы.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.4. Нарушение правил
+пожарной безопасности и ПУЭ при
+эксплуатации электропроводки:</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT SIZE=4>- от короткого замыкания (замыкания
+двух и более фаз эл. проводов);</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>- от перегрузки
+(включение в одну эл. сеть нескольких
+эл. потребителей, мощность которых
+превышает мощность эл. сети);</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT SIZE=4>- от переходного сопротивления
+(наличие на эл. проводах плохих соединений
+в виде скруток, паек и т.д.).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.5. Несоблюдение
+правил противопожарного режима при
+использовании эл. оборудования (в связи
+с несвоевременного планово-предупредительного
+ремонта и др. причин).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.6. Несоблюдение
+правил противопожарного режима при
+эксплуатации бытовых электрических
+устройств (оставление без надзора
+включенных эл. нагревательных приборов).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.7. Несоблюдение
+пожаробезопасного расстояния. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.8. Неэффективность
+теплоотвода.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.9. Разрыв электролампочки.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.10.Разряд статического
+электричества.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; text-indent: 0.59in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT COLOR="#000000"><FONT SIZE=4>4.11.Самовоспламенение
+веществ.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<H1 LANG="ru-RU" CLASS="western">5. Условия загораний
+и пути распространения огня</H1>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>5.1</FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><B>
+</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>Для
+возникновения загорания необходимы
+следующие три условия: </FONT></FONT>
+</P>
+<UL>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>Горючий материал
+	(дерево, бумага, вата, горючие жидкость
+	и химикаты и т.д.);</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>Источник зажигания
+	(короткое замыкание электропроводки,
+	сигарета, спичка и т.д.);</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>Окислитель (кислород,
+	хлор).</FONT></FONT></P>
+</UL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.89in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>5.2 Разрастание
+загорания в пожар и пути распространения
+огня.</FONT></FONT></P>
+<UL>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>По горючему материалу
+	(например, по сгораемым стенам);</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>Через оконные и
+	дверные проёмы (поэтому на двери ставятся
+	самозакрывающие устройства, пружины);</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT SIZE=4>По воздуховодам вентиляции;</FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>Через технологические
+	проёмы;</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>Трубопроводы,
+	электропроводы и электрокабеля.</FONT></FONT></P>
+</UL>
+<P LANG="ru-RU" STYLE="text-indent: 0.59in; margin-bottom: 0in"><BR>
+</P>
+<H1 LANG="ru-RU" CLASS="western">6. Первичные средства
+пожаротушения и правила пользования
+ими</H1>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4><B>6.1. Первичные средства
+пожаротушения. </B></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>К первичным средствам пожаротушения
+относятся устройства, инструменты и
+материалы, предназначенные для локализации
+или тушения пожара на начальной стадии
+его развития (огнетушитель, вода, песок,
+войлок, асбестовое полотно, ведра лопаты
+и т.д.).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Выбор типа огнетушителя
+производится в зависимости от класса
+пожара горючих веществ и материалов:</FONT></P>
+<UL>
+	<LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><FONT SIZE=1 STYLE="font-size: 8pt"><FONT COLOR="#000000"><FONT SIZE=4>класс
+	А - пожары твердых веществ, которые
+	сопровождаются тлением (древесина,
+	текстиль, бумага);</FONT></FONT></FONT></P>
+	<LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><FONT SIZE=4>класс
+	В – пожары горючих жидкостей или
+	плавящихся твердых веществ;</FONT></P>
+	<LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><FONT SIZE=4>класс
+	С – пожары газов;</FONT></P>
+	<LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><FONT SIZE=4>класс
+	Д – пожары металлов и их сплавов;</FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT SIZE=4>класс Е – пожары, связанные с
+	горением электроустановок.</FONT></P>
+</UL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"> <FONT SIZE=4><B>6.2. Расположение
+первичных средств пожаротушения.</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"> <FONT SIZE=4>Первичные средства
+пожаротушения следует устанавливать
+в помещениях на видных и легкодоступных
+для их использования местах, по
+возможности, ближе к выходам из этих
+помещений. Подходы к средствам
+пожаротушения, а также к электрощитам,
+должны быть свободны. Для обозначения
+мест расположения средств пожаротушения,
+а также средств связи (телефоны), следует
+пользоваться знаками пожарной
+безопасности.       Ручные огнетушители
+следует располагать:</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>1) - на стене и таким
+образом, чтобы высота от пола до дна
+огнетушителя была не более 1,5 м. и
+огнетушитель, расположенный у выхода
+из помещения не мешал полному и свободному
+открытию дверей;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>2) - на кронштейнах,
+в шкафах внутреннего пожарного крана,
+в ящиках, на пожарных стендах, на
+специальных основаниях (полках) так,
+чтобы в любом случае было видно наставление
+по использованию огнетушителя в случае
+загорания. Каждый работник должен знать
+местонахождение наиболее близко
+расположенных в зоне его рабочего места
+огнетушителей и должен уметь ими
+пользоваться.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"> <FONT SIZE=4><B>6.3. Пользование
+первичными средствами пожаротушения.</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>1) При тушении твёрдых
+предметов и материалов следует подавать
+гасящее вещество в очаг загорания, в
+самое интенсивно горящее место. Огонь
+следует тушить последовательно, гася
+в направлении от тушителя в глубину
+загорания, сверху вниз, так сказать,
+«метущими» движениями, покрывая горящие
+предметы огнегасительным составом.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>2) При тушении огня
+углекислотным огнетушителем, следует
+огнетушитель держать, по возможности,
+вертикально, чтобы не препятствовать
+нормальному выходу из огнетушителя
+углекислого газа.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>3) Во избежание ожогов
+от создающегося углекислотным
+огнетушителем искусственного холода,
+нельзя руками без рукавиц браться
+непосредственно за направляющую воронку
+(раструб) работающего и выпускающего
+струю углекислоты углекислотного
+огнетушителя; нельзя направлять струю
+на людей! Углекислотные огнетушители
+хорошо применимы для тушения загораний
+электроустановок, электросетей с
+напряжением до 1000 V, а также для тушения
+загораний на автотранспорте.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>4) Если углекислотным
+огнетушителем тушили в помещении, то
+следует людям из этого помещения выйти
+и хорошо его проветрить.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>5) Огнетушители
+порошкового типа являются многоцелевыми
+огнетушителями. Их можно использовать
+почти на всех видах пожаров. Эти
+огнетушители способны одинаково хорошо
+тушить как деревянные конструкции,
+папку, бумагу, так и бензин, масло и
+другие горюче-смазочные вещества.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>6) Огнегасящий порошок
+надёжен при низких температурах
+(например, зимой) и не проводит электрический
+ток. Порошковыми огнетушителями можно
+тушить загорания в электроустановках
+и электросетях напряжением до 1000 вольт.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>7) Для тушения загораний
+электроустановок и электросетей,
+электроприборов под напряжением до
+1000 V можно использовать только:</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>- углекислотные
+огнетушители;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>- порошковые
+огнетушители. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4><B>Пенные огнетушители
+и воду для тушения электроустановок,
+сетей и электроприборов, находящихся
+под напряжением использовать нельзя!
+</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>Пена и вода
+проводят электроток, и он может поразить
+человека. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Запрещается тушение горящей
+одежды на человеке всеми вида&shy;ми
+огнетушителей.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<H1 LANG="ru-RU" CLASS="western">7. Пожарное водоснабжение</H1>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>У каждого отдельного
+пожарного крана и пожарного насоса
+должны быть вывешены пояснения по их
+эксплуатации в случае пожара. Кран
+внутреннего пожарного водопровода
+должен быть снабжён требуемой длины
+пожарным рукавом со стволом, при этом,
+рукав должен быть соединён с краном, а
+ствол – с рукавом. Каждый кран внутреннего
+пожарного водоснабжения должен быть
+обозначен стандартным знаком пожарной
+безопасности.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<H1 LANG="ru-RU" CLASS="western">8. Действия в случае
+пожара</H1>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>В случае возникновения загорания
+или пожара, или же в случае признаков
+загорания или пожара, работник обязан:</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>1. Сообщить немедленно
+в пожарную охрану (номер телефона – 01,
+сот. 010) следующее:</FONT></FONT></P>
+<UL>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>точный адрес (улица,
+	номер здания или строения, этаж);</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>что горит
+	(электроустановка, легковоспламеняющиеся
+	жидкости, стена здания, потолок, подвал,
+	чердак и т. п.);</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>кто сообщает о
+	загорании (имя, фамилия, должность);</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>номер телефона, с
+	которого делается сообщение и вызывается
+	пожарная и спасательная службы.</FONT></FONT></P>
+</UL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>2. В зоне загорания
+выключить работающую вентиляцию и
+электропитание (за исключением, жизненно
+важного оборудования, если таковое
+имеется);</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>3. Приступить к эвакуации попавших
+в опасное положение людей и эвакуации
+имущества;</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>4. Незамедлительно
+приступить к тушению загорания первичными
+средствами пожаротушения;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>5. Сообщить руководству о
+возникновении загорания или пожара и
+о принятых мерах;</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>6. По прибытию службы
+пожаротушения и спасательной службы,
+провести пожарных и спасателей к месту
+загорания или пожара и сообщить –
+имеется ли опасность для людей, дать
+наиболее точную и полную информацию о
+месте пожара и возможной опасности в
+ходе его развития;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>7. В случае необходимости,
+показать руководству пожаротушения
+местонахождение электрощитов и главных
+общих рубильников, посредством которых
+можно отключить электричество;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>8. Организовать
+препятствие допуску на место пожара
+посторонних лиц и по возможности
+обозначить зону пожара предупредительной
+лентой опасности или иным образом.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<BR>
+</P>
+<H1 LANG="ru-RU" CLASS="western"> 9. Первая помощь</H1>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4><B>9.1 Особо важно
+действовать спокойно и продуманно:</B></FONT></FONT></P>
+<UL>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>попытаться наиболее
+	точно выяснить состояние потерпевшего;</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>в случае тяжёлого
+	случая немедленно дополнительно
+	сообщить по телефону 03, сот.030 (если ещё
+	медики не прибыли на место пожара);</FONT></FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT COLOR="#000000"><FONT SIZE=4>в соответствии
+	имеющимся возможностям оказать помощь
+	пострадавшему.</FONT></FONT></P>
+</UL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>В случае если у
+работника отсутствует необходимые для
+оказания первой помощи знания и навыки,
+то следует дождаться прибытия, обученного
+оказанию первой помощи работника и
+службы скорой помощи.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4><B>9.2 Ожоги.</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Действия в случае ожогов:</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>1. Спасайте человека
+– потушите горящую одежду, например,
+одеялом или ковром. Во время тушения
+следует попытаться сделать так, чтобы
+пламя не попало на шею и лицо.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>2. В случае если у вас
+самих загорелось одежда, тушите её,
+катаясь по земле и гася пламя.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>3. Если пожар произошёл
+в помещении, то пострадавшего следует
+незамедлительно эвакуировать на свежий
+воздух.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>4. Если полости рта
+и носа пострадавшего забиты пеплом или
+сажей, то их следует немедленно очистить
+пальцами, обёрнутыми мокрой материей.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>5. Обгоревшую область
+немедленно охладите проточной водой
+или, держа в воде в течение 5 минут.
+Небольшие ожоги можно охлаждать более
+длительное время, поскольку это заглушает
+боль, снимает ожоговый шок.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>6. Наложите на место
+ожога чистую повязку, при этом, обгоревшие
+остатки одежды снимать или отдирать от
+тела ни в коем случае нельзя.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>7. Не используйте
+мази, не открывайте волдыри.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>8. Защитите пострадавшего
+от переохлаждения (это следует иметь
+ввиду и делать даже летом).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>9. Если у пострадавшего
+затруднено дыхание, положи его в
+полусидячее положение; если пострадавший
+находится без сознания, то следует
+принять меры, предупреждающие западения
+корня языка – в этом случае нужно
+выдвинуть ему нижнюю челюсть вперёд и
+пальцами захватить язык.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>10. Потерявшего сознание потерпевшего
+положите на бок в устойчивое положение.
+</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>11. Вызовите скорую помощь.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>12. Если пострадавший
+находится в сознании и у него нет
+повреждений живота, то наиболее доступное
+средство борьбы с ожоговым шоком –
+обильное питьё. Пострадавшего нужно
+заставить выпить, как можно больше
+тёплой воды, растворив в каждом литре
+по 1 столовой ложке поваренной соли и 1
+чайной ложке питьевой соды (несмотря
+на рвоту и отвращение к жидкости у
+пострадавшего).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4><B>9.3 Вредное влияние
+перегрева.</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Независимо от
+постоянных температурных колебаний
+окружающей среды, организм человека
+старается сохранять внутреннюю
+температуру – примерно до + 37 С.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Повышение внутренней
+температуры выше + 42 С чревато серьёзными
+последствиями для органов человека и
+зачастую это может иметь летальный
+исход.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4><B>9.4 Спазмы от
+перегрева.      </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Спазмы от перегрева
+могут случиться с некоторыми группами
+мышц, например, мышцами икр, ног, мышцами
+рук, живота в том случае, если в жаркую
+погоду при большой потери жидкости для
+питья используется только вода. Симптомом
+является 1-3 минуты продолжающаяся
+болезненная спазма в напряжённой группе
+мышц. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Действия в случае спазм от
+перегрева.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>1. Дайте пострадавшему
+пить подсоленные (0,1 % - ую) воду или сок;
+соли возьмите половину чайной ложки,
+или же – примерно, 2 грамма на два литра
+воды.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>2. В тяжёлом случае,
+пострадавшего следует доставить в
+больницу.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>3. Тепловой удар.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT SIZE=4>Тепловой удар – одна из самых
+серьёзных для здоровья человека
+опасностей.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Тепловой удар – это
+случай, когда человек не может оказать
+сопротивление возникнувшей в силу
+физической нагрузки или же полученному
+из вне излишку тепловой энергии,
+вследствие чего, внутренняя температура
+организма становится очень высокой. В
+результате этого быстро возникает
+серьёзная угроза здоровью, которая
+может привести к летальному исходу. Для
+спасения человека, следует немедленно
+оказать ему первую помощь и вызвать
+скорую врачебную помощь. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Действия в случае
+теплового удара.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>Прогноз болезни
+пострадавшего в большой мере зависит
+от того, как быстро был опознан тепловой
+удар и как быстро - без промедления,
+приступили, ещё на месте несчастного
+случая, к охлаждению организма.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>1. Немедленно следует
+пострадавшего переместить в тень,
+раздеть и уложить в положение «набок».</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>2. Для ускорения
+охлаждения, создайте перемещение воздуха
+около пострадавшего, например, обмахивая
+его платком, полотенцем или какой-то
+частью одежды.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>3. Внимательно следите
+за состоянием пострадавшего.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in; margin-bottom: 0in">
+<FONT COLOR="#000000"><FONT SIZE=4>4. Вызовите скорую
+помощь.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.59in"><FONT COLOR="#000000"><FONT SIZE=4><B>10.
+Знаки пожарной безопасности </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.59in">
+<FONT SIZE=4>Государственным стандартом
+устанавливаются следующие знаки
+безопасности:</FONT></P>
+<UL>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; margin-bottom: 0in; widows: 0; orphans: 0">
+	<FONT SIZE=4>знаки пожарной безопасности
+	(пожарный кран, огнетушитель и т.д.);</FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; margin-bottom: 0in; widows: 0; orphans: 0">
+	<FONT SIZE=4>запрещающие (запрещающие курить,
+	пользоваться открытым огнем, тушить
+	водой);</FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; margin-bottom: 0in; widows: 0; orphans: 0">
+	<FONT SIZE=4>предупреждающие (пожароопасно,
+	взрывоопасно и т.д. );</FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; margin-bottom: 0in; widows: 0; orphans: 0">
+	<FONT SIZE=4>предписывающие;</FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; margin-bottom: 0in; widows: 0; orphans: 0">
+	<FONT SIZE=4>эвакуационные знаки и знаки
+	медицинского и санитарного назначения
+	(аптечка, телефон, медицинский пункт и
+	т.д.);</FONT></P>
+	<LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: 0in; margin-bottom: 0in; widows: 0; orphans: 0">
+	<FONT SIZE=4>указательные (запасной выход,
+	выход и т.д.).</FONT></P>
+</UL>

@@ -1,0 +1,703 @@
+
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	
+
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><A NAME="OLE_LINK2"></A><A NAME="OLE_LINK1"></A><A NAME="OLE_LINK6"></A><A NAME="OLE_LINK5"></A><A NAME="OLE_LINK4"></A>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Общество
+с ограниченной ответственностью </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Микрофинансовая
+организация </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>«Бюро
+финансовых решений»</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.11in; line-height: 107%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=2 STYLE="font-size: 11pt">675000,
+Амурская область, г. Благовещенск, ул.
+Калинина, д. 29/1</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.11in; line-height: 107%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=2 STYLE="font-size: 9pt">ОГРН
+1123926053844 ИНН 3906275049 КПП 280101001</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0.11in; line-height: 107%">
+<BR><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=733 CELLPADDING=7 CELLSPACING=0>
+		<COL WIDTH=370>
+		<COL WIDTH=333>
+		<TR VALIGN=TOP>
+			<TD WIDTH=370 STYLE="border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>СОГЛАСОВАНО:</B></FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Уполномоченный
+				по охране труда</FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>трудового
+				коллектива</FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>____________ / </FONT></FONT>
+				</P>
+				<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">«
+				</FONT><FONT FACE="Times New Roman, serif"><U>__</U></FONT><FONT FACE="Times New Roman, serif">
+				»  </FONT><FONT FACE="Times New Roman, serif"><U>____________</U></FONT><FONT FACE="Times New Roman, serif">
+				2016г.</FONT></FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<BR>
+				</P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<BR>
+				</P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY><BR>
+				</P>
+			</TD>
+			<TD WIDTH=333 STYLE="border: 1px solid #ffffff; padding: 0in 0.08in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>УТВЕРЖДАЮ:</B></FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Генеральный
+				директор</FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<BR>
+				</P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>______________ /
+				Н.В. Ванин</FONT></FONT></P>
+				<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">«
+				</FONT><FONT FACE="Times New Roman, serif"><U>___</U></FONT><FONT FACE="Times New Roman, serif">
+				»  </FONT><FONT FACE="Times New Roman, serif"><U>_________</U></FONT><FONT FACE="Times New Roman, serif">
+				2016г.</FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">
+				                                         </FONT></FONT></FONT></FONT>
+				</P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY><BR>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT SIZE=4><B>ИНСТРУКЦИЯ</B></FONT></P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT SIZE=2><FONT SIZE=4><B>по охране труда для
+офисных сотрудников</B></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT SIZE=2><FONT SIZE=4><B>ИОТ № 04-16</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=RIGHT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+ 
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><B>2016г.</B></FONT></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<OL>
+	<LI VALUE=1><P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 200%">
+	<FONT SIZE=4 STYLE="font-size: 16pt"><B>Общие требования
+	охраны труда </B></FONT>
+	</P>
+</OL>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">1.1.
+Настоящая инструкция разработана для
+офисных работников (далее - работник). </FONT></FONT></FONT>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">1.2.
+Работник допускается к самостоятельной
+работе после прохождения: медицинского
+освидетельствования; вводного инструктажа;
+первичного инструктажа на рабочем
+месте; обучения безопасным методам
+работы в течение 1-2 дней (или смен);
+проверки знаний элемен&shy;тарных правил
+электробезопасности с присвоением </FONT><FONT FACE="Times New Roman, serif">I</FONT><FONT FACE="Times New Roman, serif">
+квалификационной группы.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">1.3.
+Работник обязан выполнять должностные
+обязанности, работать по зада&shy;нию
+своего руководителя, соблюдать дисциплину
+труда, своевременно и точно выпол&shy;нять
+распоряжения администрации, требования
+охраны труда, бережно относиться к
+имуществу работодателя.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">1.4.
+Работник должен выполнять свои обязанности
+в течение рабочей недели и рабочего дня
+продолжительностью согласно правилам
+внутреннего распорядка организации.
+При выезде на объект - в установленном
+администрацией по&shy;рядке на каждом
+конкретном объекте в зависимости от
+производственной ситуации.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">1.5.
+Офисный работник обязан: </FONT></FONT></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="background: #ffffff">-
+пользоваться исправными выключателями,
+розетками, вилками, патронами и другой
+электроарматурой;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<SPAN STYLE="background: #ffffff"> <FONT FACE="Times New Roman, serif"><FONT SIZE=3>-
+не оставлять без присмотра включенное
+оборудование и электроприборы, отключать
+электрическое освещение (кроме аварийного)
+по окончании работы; </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="background: #ffffff">-
+курить только в специально отведенных
+и оборудованных местах; </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="background: #ffffff">-
+при использовании в работе горючих и
+легковоспламеняющихся веществ убирать
+их в безопасное в пожарном отношении
+место, не оставлять использованный
+обтирочный материал в помещении по
+окончании работы;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- знать
+инструкции по эксплуатации применяемого
+оборудования, вычислительной техники,
+оргтехники;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- знать места
+подключения токоприемников, коммутирующие
+устройства, а также уметь определять
+их исправное состояние;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- знать пути
+эвакуации персонала и действия в случае
+возникновения аварийных ситуаций;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- знать места
+нахождения средств пожаротушения и
+уметь их применять;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<SPAN STYLE="background: #ffffff"> <FONT FACE="Times New Roman, serif"><FONT SIZE=3>-
+соблюдать действующие Правила
+противопожарного режима в Российской
+Федерации.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">1.6.
+</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">При
+ухудшении состояния здоровья в связи
+с проявлениями признаков острого
+отравления (заболевания) или получении
+травмы на производстве работник обязан
+поставить в известность своего
+непосредственного или вышестоящего
+руководителя.</FONT></FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Несчастные
+случаи, о которых не было своевременно
+сообщено работодателю (его представителю)
+или в результате которых нетрудоспособность
+наступила не сразу, </FONT></FONT>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">расследуются
+в установленном порядке по заявлению
+пострадавшего или его доверенных лиц
+в течение одного месяца со дня поступления
+указанного заявления.</FONT></FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Работник
+обязан сообщать о каждом происшедшем
+несчастном случае на производстве или
+обнаруженных неисправностей оборудования.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">1.7.
+Работник обязан уметь оказывать
+доврачебную помощь.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">1.8.
+</FONT><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">Использовать
+в работе только по прямому назначению
+и только исправные мебель, приспособления,
+средства оргтехники и другое оборудование
+рабочего места.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">1.9.
+</FONT><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">Не
+допускать нахождение на своем рабочем
+месте посторонних предметов, мешающих
+работе.</FONT><FONT FACE="Times New Roman, serif">
+ </FONT><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">Не
+допускать присутствия без производственной
+необходимости на своем рабочем месте
+посторонних лиц.</FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">1.10.
+Работник должен знать и выполнять
+правила личной гигиены </FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">и
+производственной санитарии:</FONT></FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="background: #ffffff">-
+приходить на работу в чистой одежде и
+обуви; </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="background: #ffffff">-
+постоянно следить за чистотой тела,
+рук, волос; </FONT></FONT>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">-
+мыть руки с мылом после посещения
+туалета, соприкосновения с загрязненными
+предметами, по окончании работы;</FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">-
+х</FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">ранить
+и принимать пищу разрешается только в
+установленных и оборудованных местах;</FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">-
+курить разрешается только в специально
+отведенных для этого местах.</FONT></FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Запрещается
+употребление алкогольных напитков на
+работе, а также выход на работу в состоянии
+алкогольного или наркотического
+опьянения.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">1.11.
+</FONT></FONT><FONT FACE="Times New Roman, serif">Лица,
+виновные в нарушении требований настоящей
+инструкции, несут ответственность
+согласно действующего законодательства
+РФ. </FONT></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<BR>
+</P>
+<OL START=2>
+	<LI><P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 200%">
+	<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>Требования
+	охраны труда перед началом работы </B></FONT></FONT>
+	</P>
+</OL>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.1. Каждый
+работник перед началом работы обязан:
+</FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- при
+необходимости проветрить помещение,
+устранить повышенную подвижность
+воздуха (сквозняки) и т.д.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- осмотреть
+и привести в порядок рабочее место.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- отрегулировать
+освещенность на рабочем месте и убедиться
+в ее достаточности. </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- проверить
+правильность установки стола, стула,
+подставки для ног. </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Дополнительные
+требования при работе с любыми
+токоприемниками: </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- убедиться
+в наличии защитного заземления.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- проверить
+правильность подключения используемых
+токоприемников в электросеть.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- проверить
+исправность проводящих проводов и
+отсутствие оголенных участков проводов.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- производить
+включение электрооборудования в сеть
+путем вставки ис&shy;правной вилки в
+исправную розетку.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- запрещается
+приступать к работе с неисправным
+оборудованием, производить протирание
+влажной или мокрой салфет&shy;кой
+электрооборудование, которое находится
+под напряжением (вилка вставлена в
+ро&shy;зетку). Влажную или любую другую
+уборку производить при отключенном
+оборудова&shy;нии.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">2.2.
+Работник обязан сообщить руководителю
+подразделения, службы или участка об
+обнаруженной неисправности оборудования
+и приступить к работе после устранения
+нарушений в работе или неисправностей
+обо&shy;рудования. Монтаж сетей 36, 220 и
+380В для подключения электрооборудования
+производит электротехнический персонал
+(электрослесарь, электротехник).</FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+ <FONT FACE="Times New Roman, serif"><FONT SIZE=3>2.4. Работник
+должен убедиться, что включение
+оборудования никого не подвергает
+опасности.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">2.5.
+</FONT><SPAN STYLE="background: #ffffff">Проверить,
+достаточно ли освещено рабочее место.
+При недостаточной освещенности необходимо
+организовать местное освещение, причем
+расположить светильники местного
+освещения так, чтобы при выполнении
+работы источник света не слепил глаза
+как самому работающему, так и окружающим.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<BR>
+</P>
+<OL START=3>
+	<LI><P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 200%">
+	<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>Требования
+	охраны труда во время работы </B></FONT></FONT>
+	</P>
+</OL>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.1. Каждый
+работник во время работы обязан: </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- выполнять
+порученную работу, если она предусмотрена
+его должностной инструкцией и по ней с
+ним был проведен инструктаж;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- в течение
+всего рабочего времени содержать в
+порядке и чистоте рабочее место;  </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- выполнять
+санитарные нормы и соблюдать режимы
+работы и отдыха, регламентированные
+перерывы в работе и выполнять в
+физкультурных паузах рекомендованные
+упражнения для глаз, шеи, рук, туловища,
+ног;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- держать
+открытыми вентиляционные отверстия,
+которыми оборудованы прибо&shy;ры;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- не загромождать
+оборудование посторонними предметами;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- не допускать
+загораживания огнеопасными материалами
+(тканями, бумагой и т.д.) настольных ламп
+и обогревателей с открытой спиралью;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- не вешать
+одежду на выключатели или розетки;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- не применять
+открытый огонь;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- не сушить
+одежду и обувь на нагревательных
+приборах;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- курить
+только в отведенных местах; </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- не загромождать
+запасных выходов и проходов, используемых
+для эвакуации персонала.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.2. Дополнительные
+требования во время работы с
+электрооборудованием: </FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- запрещается
+пользоваться неисправными и самодельными
+электроприборами, оставлять включенное
+электрооборудование без надзора,
+передавать электрооборудование лицам,
+не имеющим право работать с ним, ударять
+по электрооборудованию, снимать средства
+защиты, дергать за подводящий провод
+для отключения, держать палец на
+включателе при переносе электрооборудования,
+натягивать, перекручивать и перегибать
+подводящий кабель, ставить на кабель
+(шнур) посторонние предметы, допускать
+касание кабеля (шнура) с горячими или
+теплыми предметами, производить разборку
+или ремонт электрооборудования;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- работник
+обязан выполнять с электрооборудованием
+только ту работу, для которой оно
+предназначено;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- если во
+время работы обнаружится неисправность
+электрооборудования или работающий с
+ним почувствует хотя бы слабое действие
+тока, работа должна быть немедленно
+прекращена и неисправное оборудование
+должно быть сдано для провер&shy;ки или
+ремонта;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- при перерыве
+в работе электрооборудование необходимо
+отключать.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>3.3. Работник,
+выполняющий свои обязанности в местной
+командировке, обязан:</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- при движении
+пешком необходимо выполнять правила
+дорожного движения для пешехода;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- при переходе
+через проезжую часть необходимо
+пользоваться пешеходны&shy;ми мостами и
+тоннелями;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- при отсутствии
+пешеходных мостов и тоннелей переходить
+проезжую часть по зеленому сигналу
+светофора по обозначенному переходу;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- при отсутствии
+инженерных сооружений или светофоров,
+стоя на обочине дороги или на тротуаре,
+оценить расстояние до приближающихся
+автомашин, условия перехода проезжей
+части и переходить проезжую часть по
+перпендикулярному направлению при
+отсутствии транспорта и безопасности
+перехода;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- железнодорожные
+пути переходить по пешеходным тоннелям
+и мостам;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- при пользовании
+служебной машиной, оборудованной ремнем
+безопасности, работник обязан быть
+пристегнут им;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- работник
+обязан производить посадку и высадку
+в служебную машину со сто&shy;роны тротуара
+или обочины, посадка со стороны проезжей
+части возможна при усло&shy;вии, что это
+будет безопасно и не создаст помех
+другим участникам движения;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- работнику
+при езде в служебной машине или в другом
+транспортном средстве запрещается
+отвлекать водителя от управления
+транспортным средством во время дви&shy;жения
+автомобиля и открывать двери транспортного
+средства во время его движения;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- работник,
+который выполняет работу по сопровождению
+груза, обязан быть оде&shy;тым в оранжевый
+сигнальный жилет.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">3.4.
+Во время работы не допускается:</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">3.4.1.
+Прикасаться к движущимся частям средств
+оргтехники и другого оборудования.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">3.4.2.
+Работать при снятых и поврежденных
+кожухах средств оргтехники и другого
+оборудования.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">3.4.3.
+Работать при недостаточной освещенности
+рабочего места.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">3.4.4.
+Касаться элементов средств оргтехники
+и другого оборудования влажными руками.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">3.4.5.
+Переключать интерфейсные кабели,
+вскрывать корпуса средств оргтехники
+и другого оборудования и самостоятельно
+производить их ремонт.</FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN STYLE="background: #ffffff">3.4.6.
+Использовать самодельные электроприборы
+и электроприборы, не имеющие отношения
+к выполнению производственных
+обязанностей.</FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<BR>
+</P>
+<OL START=4>
+	<LI><P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 200%">
+	<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>Требования
+	охраны труда в аварийных ситуациях  </B></FONT></FONT>
+	</P>
+</OL>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>4.1. Во всех
+случаях обнаружения обрыва проводов
+питания, неисправности зазем&shy;ления,
+других повреждений электрооборудования,
+инженерных коммуникаций, конструктивных
+элементов здания, помещения, в случае
+появления резких ухудшений самочувствия,
+а также в любых других ситуациях, которые,
+по мнению работника, создают непосредственную
+угрозу жизни или здоровью людей, он
+обязан немедленно сообщить руководителю.</FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 115%"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif">4.2.
+</FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">При
+ухудшении состояния здоровья в связи
+с проявлениями признаков острого
+отравления (заболевания) или получении
+травмы на производстве работник обязан
+поставить в известность своего
+непосредственного или вышестоящего
+руководителя. Несчастные случаи на
+производстве оформляются актом по форме
+Н-1.</FONT></FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Несчастные
+случаи, о которых не было своевременно
+сообщено работодателю (его представителю)
+или в результате которых нетрудоспособность
+наступила не сразу, расследуются в
+установленном порядке по заявлению
+пострадавшего или его доверенного лица
+в течение одного месяца со дня поступления
+указанного заявления.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Работники,
+находящиеся вблизи места происшествия
+несчастного случая, должны оказать
+доврачебную помощь пострадавшему и
+сообщить об этом руководителю. При
+расследовании причин несчастного случая
+работники обязаны сообщить известные
+им обстоятельства происшедшего случая.</FONT></FONT></P>
+<OL>
+	<OL START=3>
+		<LI><P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+		<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Работник
+		при обнаружении пожара или признаков
+		горения (задымление, запах гари,
+		повышение температуры и т.п.) обязан
+		немедленно сообщить об этом руководителю,
+		принять по возможности меры по эвакуации
+		людей, тушению пожара и сохранности
+		материальных ценностей.</FONT></FONT></P>
+	</OL>
+	<LI><P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 200%">
+	<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>Требования
+	охраны труда по окончании работы    </B></FONT></FONT>
+	</P>
+</OL>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>5.1. После
+окончания работы необходимо:</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- привести в
+порядок рабочее место;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- отключить
+приборы и оборудование за исключением
+оборудования работающего в ждущем
+режиме (факс, сигнализация и т.п.);</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in; line-height: 115%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>- о замеченных
+во время работы неисправностях и
+неполадках доложить руководителю.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">Разработана
+специалистами по охране труда ООО «АОТ»
+</FONT></FONT></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in">
+<BR>
+</P>
+<DIV TYPE=FOOTER>
+	<P LANG="en-US" STYLE="margin-top: 0.08in; margin-bottom: 0in"><BR>
+	</P>
+</DIV>

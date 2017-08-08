@@ -1,0 +1,14 @@
+
+.container {
+    width: 800px;
+    padding-left: 80px;
+    padding-right: 80px;
+margin: 0 auto;
+}
+.container>p{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-size: 18px;
+    color: #2e1f1f;
+    line-height: 30px;
+}

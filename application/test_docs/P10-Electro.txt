@@ -1,0 +1,690 @@
+
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" BGCOLOR="#ffffff" DIR="LTR">
+
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><A NAME="OLE_LINK2"></A><A NAME="OLE_LINK1"></A><A NAME="OLE_LINK6"></A><A NAME="OLE_LINK5"></A><A NAME="OLE_LINK4"></A>
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Общество
+с ограниченной ответственностью </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Микрофинансовая
+организация </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>«Бюро
+финансовых решений»</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.11in; line-height: 107%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=2 STYLE="font-size: 11pt">675000,
+Амурская область, г. Благовещенск, ул.
+Калинина, д. 29/1</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.11in; line-height: 107%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=2 STYLE="font-size: 9pt">ОГРН
+1123926053844 ИНН 3906275049 КПП 280101001</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0.11in; line-height: 107%">
+<BR><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=733 CELLPADDING=7 CELLSPACING=0>
+		<COL WIDTH=370>
+		<COL WIDTH=333>
+		<TR VALIGN=TOP>
+			<TD WIDTH=370 STYLE="border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>СОГЛАСОВАНО:</B></FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Уполномоченный
+				по охране труда</FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>трудового
+				коллектива</FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>____________ / </FONT></FONT>
+				</P>
+				<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">«
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU"><U>__</U></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">
+				»  </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU"><U>____________</U></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">
+				2016г.</SPAN></FONT></FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<BR>
+				</P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<BR>
+				</P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY><BR>
+				</P>
+			</TD>
+			<TD WIDTH=333 STYLE="border: 1px solid #ffffff; padding: 0in 0.08in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>УТВЕРЖДАЮ:</B></FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Генеральный
+				директор</FONT></FONT></P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<BR>
+				</P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+				<FONT FACE="Times New Roman, serif"><FONT SIZE=3>______________ /
+				Н.В. Ванин</FONT></FONT></P>
+				<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">«
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU"><U>___</U></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">
+				»  </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU"><U>_________</U></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">
+				2016г.</SPAN></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">
+				                                         </SPAN></FONT></FONT></FONT></FONT>
+				</P>
+				<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY><BR>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT SIZE=4><B>ИНСТРУКЦИЯ</B></FONT></P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT SIZE=4><B>по охране труда для
+неэлектротехнического персонала,</B></FONT></P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT SIZE=4><B>которому присваивается группа
+по электробезопасности I</B></FONT></P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT SIZE=2><FONT SIZE=4><B>ИОТ № 03-16</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.2in; margin-bottom: 0in">
+<FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU"><B>2016г.</B></SPAN></FONT></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.21in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.21in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.21in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 200%">
+<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>1. Общие
+требования охраны труда  </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.21in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.1.&nbsp;Настоящая
+Инструкция предусматривает основные
+требования по охране труда для
+</FONT><FONT COLOR="#000000">неэлектротехнического</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персонала</FONT><FONT COLOR="#000000">,
+выполняющего работы, при которых может
+возникнуть опасность электрическим
+током.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.2.&nbsp;Неэлектрическому</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персоналу</FONT><FONT COLOR="#000000">,
+имеющему 1 группу по электробезопасности,
+необходимо выполнять свои обязанности
+в соответствии с требованиями настоящей
+Инструкции.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.3.&nbsp;К
+производственному</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">неэлектротехническому</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персоналу</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">с
+1-й квалификационной группой относится
+</FONT><FONT COLOR="#000000">персонал</FONT><FONT COLOR="#000000">:</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+обслуживающий&nbsp;электротехнические
+установки, если по возложенным функциям
+ему не требуется присвоение более
+высокой квалификационной группы;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+обслуживающий&nbsp;передвижные машины и
+механизмы с электроприводом;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+водители&nbsp;всех автомашин, кроме
+работающих в действующих электроустановках
+или охранной зоне высоковольтных линий;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">-
+персонал</FONT><FONT COLOR="#000000">,&nbsp;работающий
+в помещениях и вне их, где при возникновении
+неблагоприятных условий и отсутствии
+необходимых знаний по электробезопасности
+может появиться опасность поражения
+электрическим током.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>1.4.&nbsp;Перечень
+должностей и профессий, требующих
+присвоения 1-й группы по электробезопасности
+определяется и утверждается руководителем
+предприятия.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.5.&nbsp;Инструктаж
+на 1-ю группу электробезопасности должен
+производиться лицом из
+электротехнического</FONT><FONT COLOR="#000000">персонала</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">с
+группой не ниже 3, назначенного приказом
+по организации. Инструктаж должен
+производиться с проверкой полученных
+знаний, а при необходимости, проверкой
+приобретенных навыков безопасной
+работы.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>1.6.&nbsp;Инструктаж
+должен быть зарегистрирован в специальном
+журнале под роспись инструктируемого
+и инструктирующего.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.7.&nbsp;Неэлектрическому</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персоналу</FONT><FONT COLOR="#000000">,
+имеющему 1 группу по электробезопасности,
+необходимо знать и строго соблюдать
+требования по охране труда, пожарной
+безопасности, производственной санитарии.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.8.&nbsp;Неэлектрический</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персонал</FONT><FONT COLOR="#000000">,
+имеющий 1 группу по электробезопасности,
+извещает своего непосредственного
+руководителя о любой ситуации, угрожающей
+жизни и здоровью людей, о каждом несчастном
+случае, произошедшем на рабочем месте,
+об ухудшении состояния своего здоровья,
+в том числе о проявлении признаков
+острого заболевания.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.9.&nbsp;Неэлектрический</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персонал</FONT><FONT COLOR="#000000">,
+имеющий 1 группу по электробезопасности,
+должен проходить обучение по охране
+труда в виде: вводного инструктажа,
+первичного инструктажа на рабочем
+месте, повторного инструктажа, внепланового
+инструктажа, целевого инструктажа и
+специального обучения в объеме программы
+подготовки по профессии, включающей
+вопросы охраны труда и требования
+должностных обязанностей по профессии.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.10.&nbsp;Присвоение
+1-й группы по электробезопасности</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персоналу</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">организации
+производится ежегодно. Для вновь принятых
+в организацию работников присвоение
+1-й группы допускается осуществлять
+одновременно с проведением вводного
+инструктажа.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.11.&nbsp;</FONT><FONT COLOR="#000000">Персонал</FONT><FONT COLOR="#000000">,
+имеющий 1-ю группу по электробезопасности,
+должен знать, что:<BR></FONT></FONT><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+автоматические&nbsp;выключатели и пробочные
+предохранители должны быть всегда
+исправны;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+замена&nbsp;заводских предохранителей
+даже временно различными металлическими
+проводками, например &quot;жучками&quot;,
+может послужить причиной несчастного
+случая, пожара;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+изоляция&nbsp;электропроводки, электроприборов
+и аппаратов, выключателей, штепсельных
+розеток, ламповых патронов и светильников,
+а также шнуров, с помощью которых
+включаются в электросеть электроприборы,
+телевизоры, холодильники, компьютеры
+и др., должна быть в исправном состоянии.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.12.&nbsp;</FONT><FONT COLOR="#000000">Персонал</FONT><FONT COLOR="#000000">,
+имеющий 1 группу по электробезопасности,
+обязан:</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+соблюдать&nbsp;правила внутреннего
+трудового распорядка;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+соблюдать&nbsp;требования настоящей
+инструкции;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+соблюдать&nbsp;требования к эксплуатации
+оборудования.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">1.13.&nbsp;</FONT><FONT COLOR="#000000">Персонал</FONT><FONT COLOR="#000000">,
+имеющий 1 группу по электробезопасности,
+должен:</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+уметь&nbsp;оказывать первую (доврачебную)
+помощь пострадавшему при несчастном
+случае;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+знать&nbsp;местоположение средств оказания
+доврачебной помощи, первичных средств
+пожаротушения, главных и запасных
+выходов, путей эвакуации в случае аварии
+или пожара;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+выполнять&nbsp;только порученную работу
+и не передавать ее другим без разрешения
+руководителя работ;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+во&nbsp;время работы быть внимательным,
+не отвлекаться и не отвлекать других,
+не допускать на рабочее место лиц, не
+имеющих отношения к работе;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+содержать&nbsp;рабочее место в чистоте и
+порядке.</FONT></P>
+<P CLASS="western" ALIGN=LEFT  STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.21in">
+<FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">1.14.</SPAN></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif">&nbsp;</FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">Курить
+и принимать пищу разрешается только в
+специально отведенных для этой цели
+местах.</SPAN></FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=LEFT  STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.21in">
+<FONT FACE="Cambria, serif"><FONT SIZE=3><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">1.15.
+</SPAN></FONT></FONT><FONT COLOR="#1c1c1c"><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU"><B>Не
+допускается</B></SPAN></FONT></FONT><FONT COLOR="#1c1c1c"><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU">
+выполнять работу, находясь в состоянии
+алкогольного опьянения либо в состоянии,
+вызванном употреблением наркотических
+средств, психотропных или токсических
+веществ, а также распивать спиртные
+напитки, употреблять наркотические
+средства, психотропные или токсические
+вещества на рабочем месте или в рабочее
+время.</SPAN></FONT></FONT></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 200%">
+<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>2. Требования
+охраны труда перед началом работы</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.15in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.1.&nbsp;Застегнуть
+одетую спецодежду на все пуговицы
+(завязать завязки), не допуская свисающих
+концов одежды.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>Не&nbsp;закалывать
+одежду булавками, иголками, не держать
+в карманах одежды острые, бьющиеся
+предметы.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.2.&nbsp;Получить
+задание от руководителя на выполнение
+работ.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.3.&nbsp;Проверить
+работу местной вытяжной вентиляции,
+воздушного душирования и оснащенность
+рабочего места необходимым для работы
+оборудованием, инвентарем, приспособлениями
+и инструментом.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.4.&nbsp;Проверить
+достаточность освещения.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.5.&nbsp;Подготовить
+рабочее место для безопасной работы:</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+надежно&nbsp;установить (закрепить)
+передвижное (переносное) оборудование
+и инвентарь;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+проверить&nbsp;достаточность освещения
+рабочей поверхности (зоны);</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+отсутствие&nbsp;свисающих и оголенных
+концов электропроводки;<BR></FONT><BR>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+надежность&nbsp;закрытия всех токоведущих
+и пусковых устройств электрооборудования;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+наличие&nbsp;и надежность заземляющих
+соединений (отсутствие обрывов, прочность
+контакта между металлическими
+нетоковедущими частями оборудования
+и заземляющим проводом);</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+наличие,&nbsp;исправность, правильную
+установку и надежное крепление ограждения
+движущихся частей оборудования,
+нагревательных поверхностей;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+исправность&nbsp;блокирующих устройств;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+отсутствие&nbsp;посторонних предметов
+внутри и вокруг оборудования;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+состояние&nbsp;полов (отсутствие выбоин,
+неровностей, скользкости);</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+исправность&nbsp;применяемого инвентаря,
+приспособлений и инструмента.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.6.&nbsp;Убедиться
+в целостности крышек электророзеток и
+выключателей, электровилки и силового
+электрокабеля.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.7.&nbsp;Проверить
+наличие и исправность средств
+индивидуальной защиты, отсутствие их
+внешних повреждений.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.8.&nbsp;Проверить
+отсутствие внешних повреждений
+электроустановки, наличие и исправность
+контрольных, измерительных и сигнальных
+приборов, тумблеров, переключателей и
+т.п.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.9.&nbsp;Не
+допускается работа:</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+на&nbsp;неисправном оборудовании;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+со&nbsp;снятыми защитными устройствами;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+при&nbsp;неисправной сигнализации, а также
+при отсутствии или неисправности
+заземления и средств индивидуальной
+защиты.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.10.&nbsp;Проверить
+наличие и исправность противопожарного
+инвентаря, наличие средств индивидуальной
+защиты.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.11.&nbsp;Проверить
+наличие аптечки первой медицинской
+помощи.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>2.12.&nbsp;Обо
+всех обнаруженных неисправностях
+оборудования, инвентаря, электропроводки
+и других неполадках сообщить своему
+непосредственному руководителю и
+приступить к работе только после их
+устранения.</FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.15in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 200%">
+<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>3. Требования
+охраны труда во время работы </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.1.&nbsp;Выполнять
+только ту работу, по которой прошел
+обучение, инструктаж по охране труда и
+к которой допущен работником, ответственным
+за безопасное выполнение работ.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.2.&nbsp;Не
+допускать к своей работе необученных
+и посторонних лиц.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">3.3.&nbsp;Применять
+необходимые для безопасной работы
+исправное оборудование, инструмент,
+приспособления; использовать их только
+для тех работ, для которых они предназначены.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.4.&nbsp;Не
+включать электроустановку в электрическую
+сеть мокрыми и влажными руками.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.5.&nbsp;Соблюдать
+правила эксплуатации электроустановки,
+не подвергать ее механическим ударам,
+не допускать падений.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.6.&nbsp;Не
+касаться проводов и других токоведущих
+частей, находящихся под напряжением.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.7.&nbsp;Следить
+за исправной работой электрооборудования,
+целостностью изоляции.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.8.&nbsp;Не
+допускается подвешивать электропровода
+на гвоздях, металлических и деревянных
+предметах, перекручивать провод,
+закладывать провода, шнуры на водопроводные
+трубы и батареи отопления, вешать
+что-либо на провода, вытягивать за шнур
+вилку из розетки, закрашивать и белить
+шнуры и провода.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.9.&nbsp;Все
+виды ремонта электрооборудования и
+электросетей должен выполнять только
+специалист.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.10.&nbsp;Запрещается
+прикасаться одновременно к компьютеру
+или другому электрооборудованию и
+устройствам, имеющим соединение с землей
+(радиаторы отопления, водопроводные
+краны, трубы и т.п.).</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.11.&nbsp;Если
+появился специфический запах подгорающей
+резины или пластмассы, перегрелась
+розетка или вилка шнура электропитания
+или начали мигать лампочки, то необходимо
+немедленно отключить электроэнергию,
+сообщить руководителю. Запрещается
+самостоятельно производить устранение
+неисправностей. Включать электроэнергию
+можно только после устранения обнаруженной
+неисправности силами специалистов и с
+их разрешения.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.12.&nbsp;Бытовые
+электроприборы и переносные светильники,
+предназначенные только для пользования
+в помещениях, применять на открытом
+воздухе запрещается. Запрещается
+пользоваться электронагревательными
+приборами с открытой спиралью.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">3.13.&nbsp;Очистку
+светильников и замену перегоревших
+ламп должен производить
+электротехнический</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персонал</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">с
+устройств, обеспечивающих удобный и
+безопасный доступ к светильникам с
+группой не ниже 3.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.14.&nbsp;Поврежденные
+выключатели, ламповые патроны, штепсельные
+розетки и электроприборы и аппараты
+запрещается ремонтировать самостоятельно.
+Об их неисправностях следует сообщить
+руководителю.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.15.&nbsp;Необходимо
+соблюдать особую осторожность при
+пользовании электроэнергией в сырых
+помещениях, в помещениях с кирпичными
+и бетонными полами, являющимися хорошими
+проводниками тока, так как эти помещения
+относятся к особо опасным, и в этих
+условиях опасность поражения электрическим
+током увеличивается.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.16.&nbsp;Нельзя
+использовать хозяйственные резиновые
+перчатки для защиты от электрического
+тока. Они не выдерживают рабочее
+напряжение электрической сети.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.17.&nbsp;Переносные
+ручные электрические светильники должны
+питаться от сети напряжением от не выше
+42 вольт.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.18.&nbsp;Не
+загромождать рабочее место, проходы к
+нему и между оборудованием, столами,
+стеллажами, проходы к пультам управления,
+рубильникам, пути эвакуации и другие
+проходы порожней тарой, инвентарем.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">3.19.&nbsp;При
+выполнении работ неэлектрическому</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">персоналу</FONT><FONT COLOR="#000000">,
+имеющего 1 группу по электробезопасности,
+запрещается:</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+эксплуатировать&nbsp;электрооборудование
+без заземления;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+включать&nbsp;электропривод при снятом
+с оборудования ограждении.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.20.&nbsp;При
+уборке в производственных и бытовых
+помещениях запрещается:</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+прикасаться&nbsp;к электрооборудованию
+и аппаратам;</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>-
+проникать&nbsp;за сетчатое ограждение
+электрощитов, протирать пыль с арматуры
+светильников, находящихся под напряжением.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.21.&nbsp;На
+наружных установках пусковые устройства
+включают только в диэлектрических
+перчатках, стоя на изолирующей подставке.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.22.&nbsp;Запрещается
+использовать самодельные электроприборы
+и электроприборы, не имеющие отношения
+выполнению производственных обязанностей.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.23.&nbsp;Не
+облокачиваться на случайные предметы,
+ящики, материалы и прочее.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.24.&nbsp;Работать
+при наличии и исправности ограждений,
+блокировочных и других устройств,
+обеспечивающих безопасность труда, при
+достаточной освещенности.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.25.&nbsp;Не
+прикасаться к находящимся в движении
+механизмам и вращающимся частям машин,
+а также находящимся под напряжением
+токоведущим частям оборудования.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.26.&nbsp;Не
+принимать пищу на рабочем месте.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.27.&nbsp;Быть
+внимательным, не отвлекаться и не
+отвлекать других.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>3.28.&nbsp;Соблюдать
+правила перемещения в помещении и на
+территории организации, пользоваться
+только установленными проходами.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">3.29.&nbsp;Работы
+производить в соответствии с</FONT><FONT COLOR="#000000">&nbsp;</FONT><FONT COLOR="#000000">Правилами
+противопожарного режима N 390 от 25.04.2012г</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.15in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 200%">
+<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>4. Требования
+охраны труда в аварийных ситуациях </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>4.1.&nbsp;При
+возникновении поломки оборудования,
+угрожающей аварией на рабочем месте
+или в цехе: прекратить его эксплуатацию,
+а также подачу к нему электроэнергии,
+газа, воды, сырья, продукта и т.п.; доложить
+о принятых мерах непосредственному
+руководителю (лицу, ответственному за
+безопасную эксплуатацию оборудования)
+и действовать в соответствии с полученными
+указаниями.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>4.2.&nbsp;В
+аварийной обстановке: оповестить об
+опасности окружающих людей, доложить
+непосредственному руководителю о
+случившемся и действовать в соответствии
+с планом ликвидации аварий.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>4.3.&nbsp;В
+случае возникновения загорания необходимо
+немедленно прекратить работу, обесточить
+оборудование, вызвать пожарную охрану
+и сообщить руководству, принять меры к
+эвакуации сотрудников, по возможности
+приступить к тушению пожара. Запрещается
+тушение электроустановок водой и пенными
+огнетушителями.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>4.4.&nbsp;При
+появлении неисправности в работе
+электроустановки, искрении, нарушении
+изоляции проводов или обрыве заземления,
+прекратить работу и сообщить руководству.
+Работу продолжать только после устранения
+неисправности специалистами и с
+разрешения руководителя.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>4.5.&nbsp;При
+обнаружении оборванного электрического
+провода, свисающего или касающегося
+пола (земли), не приближаться к нему,
+немедленно сообщить руководству, самому
+оставаться на месте и предупреждать
+других людей об опасности.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>4.6.&nbsp;При
+поражении электрическим током немедленно
+освободить пострадавшего от воздействия
+электрического тока (отключить напряжение
+или отбросить провод сухой доской и
+т.п.). При отсутствии дыхания и пульса у
+пострадавшего сделать ему искусственное
+дыхание или провести непрямой (закрытый)
+массаж сердца до восстановления дыхания
+и пульса или прибытия медперсонала.
+Сообщить о несчастном случае руководству,
+при необходимости вызвать скорую
+медицинскую помощь или отправить
+пострадавшего в ближайшее лечебное
+учреждение.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">4.7.&nbsp;Оказывая
+помощь пострадавшему при переломах
+костей, ушибах, растяжениях надо
+обеспечить неподвижность поврежденной
+части тела с помощью наложения тугой
+повязки (шины), приложить холод. При
+открытых переломах необходимо сначала
+наложить повязку и только затем - шину.</FONT><FONT COLOR="#000000">&nbsp;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>4.8.&nbsp;При
+наличии ран необходимо наложить повязку,
+при артериальном кровотечении - наложить
+жгут.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">4.9.&nbsp;В
+случае обнаружения какой-либо
+неисправности, нарушающей нормальный
+режим работы, ее необходимо остановить.
+Обо всех замеченных недостатках
+непосредственного руководителя поставить
+в известность.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>4.10.&nbsp;При
+несчастном случае необходимо оказать
+пострадавшему доврачебную помощь, при
+необходимости вызвать скорую медицинскую
+помощь, сообщить своему непосредственному
+руководителю и сохранить без изменений
+обстановку на рабочем месте до
+расследования, если она не создаст
+угрозу для работающих и не приведет к
+аварии.</FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.15in">
+<BR>
+</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 200%">
+<FONT SIZE=2><FONT SIZE=4 STYLE="font-size: 16pt"><B>5. Требования
+охраны труда по окончании работы </B></FONT></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>5.1.&nbsp;Отключить
+оборудование от электропитания.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>5.2.&nbsp;Привести
+в порядок рабочее место.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3><FONT COLOR="#000000">5.3.&nbsp;Очистить
+и убрать защитные средства, приспособления
+в отведённые для их хранения места.</FONT><FONT COLOR="#000000">&nbsp;</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>5.4.&nbsp;Убрать
+средства индивидуальной защиты,
+спецодежду в установленное место;
+принять душ, вымыть лицо, руки теплой
+водой с мылом.</FONT></P>
+<P LANG="ru-RU" ALIGN=LEFT STYLE="margin-bottom: 0in; line-height: 0.23in"><FONT SIZE=3>5.5.&nbsp;Обо
+всех замеченных в процессе работы
+неполадках и неисправностях используемого
+оборудования, а также о других нарушениях
+требований охраны труда следует сообщить
+своему непосредственному руководителю.</FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.15in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; line-height: 0.15in">
+<BR>
+</P>
+<P CLASS="western" ALIGN=LEFT  STYLE="margin-bottom: 0in"><FONT FACE="Cambria, serif"><FONT SIZE=3><FONT FACE="Times New Roman, serif"><SPAN LANG="ru-RU"><SPAN STYLE="background: #ffffff">Разработана
+специалистами по охране труда ООО «АОТ»</SPAN></SPAN></FONT></FONT></FONT></P>
+<DIV TYPE=FOOTER>
+	<P LANG="en-US" STYLE="margin-top: 0.08in; margin-bottom: 0in"><BR>
+	</P>
+</DIV>

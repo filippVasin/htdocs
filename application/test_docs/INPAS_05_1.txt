@@ -1,0 +1,1496 @@
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="User">
+	<META NAME="CREATED" CONTENT="20170802;110000000000000">
+	<META NAME="CHANGEDBY" CONTENT="User">
+	<META NAME="CHANGED" CONTENT="20170802;110000000000000">
+	<META NAME="AppVersion" CONTENT="15.0000">
+	<META NAME="Company" CONTENT="Krokoz™">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.49in; margin-bottom: 0.49in }
+		@page:first { }
+		P { text-indent: 0.39in; margin-bottom: 0.08in; direction: ltr; line-height: 100%; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt }
+		P.cjk { font-size: 12pt }
+		H4 { text-indent: 0.39in; margin-top: 0in; margin-bottom: 0in; direction: ltr; line-height: 100%; text-align: justify; widows: 2; orphans: 2; page-break-after: auto }
+		H4.western { font-family: "inherit", serif; font-size: 13pt; font-weight: normal }
+		H4.cjk { font-family: "Times New Roman"; font-size: 13pt; so-language: ru-RU; font-weight: normal }
+		H4.ctl { font-family: "Times New Roman"; font-size: 13pt; font-weight: normal }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ru-RU" LINK="#0000ff" DIR="LTR">
+<DIV TYPE=HEADER>
+	<P STYLE="margin-bottom: 0in">                                      
+	     <B>ООО «ИНПЭС»                    
+	</B>ВНД-3.9(АУП)-05-ред.1<IMG SRC="05_1_html_91c38392.jpg" NAME="Рисунок 1" ALIGN=LEFT HSPACE=12 WIDTH=229 HEIGHT=91 BORDER=0></P>
+	<P STYLE="margin-bottom: 0in">                                      
+	                      
+	</P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0in">                           
+	                <B>Вводная инструкция по охране
+	труда для<BR>                                               
+	     работников ООО «ИНПЭС»</B></P>
+	<P STYLE="margin-bottom: 0.26in"><BR>
+	</P>
+</DIV>
+<P CLASS="western" STYLE="margin-bottom: 0in"><A NAME="_GoBack"></A><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 3.94in; margin-bottom: 0in"><B>УТВЕРЖДАЮ</B></P>
+<P CLASS="western" STYLE="text-indent: 3.94in; margin-bottom: 0in"><B>Генеральный
+директор</B></P>
+<P CLASS="western" STYLE="text-indent: 3.94in; margin-bottom: 0in"><B>ООО
+«ИНПЭС»</B></P>
+<P CLASS="western" STYLE="text-indent: 3.94in; margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 3.94in; margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 3.94in; margin-bottom: 0in"><B>____________
+/Д.В. Гладких/</B></P>
+<P CLASS="western" STYLE="text-indent: 3.94in; margin-bottom: 0in"><B>«___»
+_____________ 2017 год</B></P>
+<P CLASS="western" STYLE="text-indent: 3.94in; margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><B>ВНУТРЕННИЙ
+НОРМАТИВНЫЙ ДОКУМЕНТ</B></P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; widows: 0; orphans: 0">
+<FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B><FONT FACE="Times New Roman, serif"><FONT SIZE=3>ВВОДНАЯ
+ИНСТРУКЦИЯ </FONT></FONT></B></FONT></FONT>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><B>ПО
+ОХРАНЕ ТРУДА ДЛЯ РАБОТНИКОВ ООО «ИНПЭС»</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 1.58in; margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 1.58in; margin-bottom: 0in">Введено
+в действие с «___» ______________ 2016 года</P>
+<P CLASS="western" STYLE="text-indent: 1.58in; margin-bottom: 0in">Приказом
+№ ________________ от «___»_________ 2016 года</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; page-break-before: always">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in"><FONT COLOR="#000000"><B>Содержание
+</B></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=623 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=574>
+	<COL WIDTH=21>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">1.
+			Общие сведения о предприятии</FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">3</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">2.
+			Общие требования безопасности  </FONT>
+			</P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">3</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">3.
+			Основные положения законодательства
+			РФ об охране труда</FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">5</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">4.
+			Опасные и вредные производственные
+			факторы, воздействующие на<BR>    работника
+			и причины несчастных случаев</FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">6</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">5.
+			Основные требования производственной
+			санитарии и личной гигиены</FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">7</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">6.
+			Обеспечение работника специальной
+			одеждой, специальной обувью и другими<BR>
+			   средствами индивидуальной защиты</FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">7</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">7.
+			Порядок расследования и оформления
+			несчастных случаев и профессиональных<BR>
+			   заболеваний</FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">8</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in; widows: 0; orphans: 0"><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">8.
+			</SPAN></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">Требования
+			по обеспечению пожаро- и взрывобезопасности</SPAN></FONT></FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">8</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">9.
+			Оказание первой (доврачебной) медицинской
+			помощи</FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">9</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><FONT COLOR="#000000">10.
+			Лист регистрации изменений</FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">13</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="text-indent: 0in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER STYLE="text-indent: 0in"><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; font-weight: normal; widows: 0; orphans: 0">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; font-weight: normal; widows: 0; orphans: 0">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"> 
+</P>
+<OL>
+	<LI><H4 CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; page-break-before: always">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ОБЩИЕ
+	СВЕДЕНИЯ О ПРЕДПРИЯТИИ</B></FONT></FONT></H4>
+</OL>
+<H4 CLASS="western" ALIGN=LEFT><BR>
+</H4>
+<H4 CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Предприятие
+ООО «ИНПЭС»  создано в 2014 году.   </FONT></FONT>
+</H4>
+<H4 CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>Вид
+деятельности – проектирование и
+инженерные изыскания в области объектов
+электроэнергетики.</FONT></FONT></H4>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL START=2>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ОБЩИЕ
+	ТРЕБОВАНИЯ БЕЗОПАСНОСТИ</B></FONT></FONT></H4>
+</OL>
+<P CLASS="western" STYLE="margin-right: 0.01in; margin-bottom: 0in; background: #ffffff">
+<FONT COLOR="#000000">1. При поступлении на работу
+и во время работы на предприятии с
+работником проводятся инструктажи по
+безопасности труда: </FONT><FONT COLOR="#000000"><B>вводный,
+первичный на рабочем месте, повторный,
+внеплановый и целевой.</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Вводный
+инструктаж проводится с каждым вновь
+поступающим на предприятие работником.</FONT></P>
+<P CLASS="western" STYLE="margin-right: 0.02in; margin-bottom: 0in; background: #ffffff">
+<FONT COLOR="#000000">После проведения вводного
+инструктажа, а затем первичного
+инструктажа на рабочем месте работник
+должен в течение первых 2-14 смен (в
+зависимости от характера работы и
+квалификации) пройти стажировку и
+приобрести навыки безопасных способов
+работы под руководством лица, назначенного
+приказом (распоряжением, решением) по
+предприятию.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">2. От получения
+первичного и повторного инструктажей
+на рабочем месте может быть освобожден
+работник, который не связан с эксплуатацией
+оборудования, использованием инструмента,
+хранением и применением сырья и
+материалов.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">3. Руководство
+предприятия, по согласованию с инженером
+охраны труда, может сократить срок
+стажировки работника, имеющего стаж
+работы по специальности не менее 3-х
+лет, переходящего из одного отдела в
+другой, если характер его работы и тип
+оборудования, на котором он работал,
+ранее не меняется – до 2-х смен.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">4. Внеплановый
+инструктаж проводят:</P>
+<UL>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">при введении в действие
+	новых или переработанных стандартов,
+	правил, инструкций по охране труда, а
+	также изменений к ним;</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">при изменении технологического
+	процесса, замене или модернизации
+	оборудования, приспособлений и
+	инструмента, исходного сырья, материалов
+	и других факторов, влияющих на безопасность
+	труда;</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">при нарушении работником
+	требований безопасности труда, которые
+	могут привести или привели к травме,
+	аварии, взрыву или пожару, отравлению;</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">по требованию органов
+	надзора;</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">при перерывах в работе для
+	работ, к которым предъявляют дополнительные
+	(повышенные) требования безопасности
+	труда более чем на 30 календарных дней,
+	а для остальных работ – 60 дней.</FONT></P>
+</UL>
+<P CLASS="western" STYLE="margin-bottom: 0in">5. Целевой
+инструктаж проводят при выполнении
+разовых работ, не связанных с прямыми
+обязанностями по специальности (погрузка,
+выгрузка, уборка территории, разовые
+работы вне предприятия; ликвидации
+последствий аварий, стихийных бедствий
+и катастроф; производстве работ, на
+которые оформляется наряд-допуск,
+разрешение и другие документы.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">6. Инструктажи
+на рабочем месте завершаются проверкой
+знаний. Получение инструктажа по
+безопасности труда и прохождение
+стажировки работник подтверждает своей
+подписью в соответствующем журнале
+(документе о приеме на работу, личной
+карточке прохождения обучения).</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">7. В соответствии
+с требованиями органов здравоохранения
+работник проходит медицинские осмотры
+(предварительный при поступлении на
+работу и периодические), лабораторные
+и функциональные исследования, делает
+профилактические прививки. Периодичность
+медицинских осмотров, которые работник
+должен проходить во время работы,
+периодичность и виды лабораторных и
+функциональных исследований, прививок,
+а также участие врачей-специалистов в
+предварительном и периодических осмотрах
+устанавливается в соответствии с
+требованиями органов здравоохранения.
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">8. В процессе
+работ, согласно имеющейся профессии и
+квалификации, работники обязаны выполнять
+требования инструкций по охране труда
+для работников соответствующих профессий
+и видов работ, а также требования
+инструкций заводов-изготовителей по
+эксплуатации применяемых ими в процессе
+работ машин, средств защиты, оснастки,
+инструмента.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">9.
+В процессе повседневной производственной
+деятельности работники обязаны
+сотрудничать с работодателями в целях
+обеспечения совместных действий по
+защите работников и других лиц от опасных
+и вредных производственных факторов в
+том числе:</FONT></P>
+<UL>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">защиты работников от падения
+	с высоты;</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">защиты работников и других
+	лиц от падения предметов с высоты;</FONT></P>
+	<LI><P STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff">
+	<FONT COLOR="#000000">обеспечение электробезопасности;</FONT></P>
+	<LI><P STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff">
+	<FONT COLOR="#000000">обеспечение пожаро-
+	взрывобезопасности;</FONT></P>
+	<LI><P STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff">
+	<FONT COLOR="#000000">обеспечение безопасности
+	дорожного движения;</FONT></P>
+	<LI><P STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff">
+	<FONT COLOR="#000000">защиты работников и других
+	лиц от воздействия движущихся машин и
+	механизмов;</FONT></P>
+	<LI><P STYLE="margin-right: -0.09in; text-indent: 0in; margin-bottom: 0in; background: #ffffff">
+	<FONT COLOR="#000000">защиты работников и других
+	лиц от воздействия вредных веществ,
+	шума, вибрации;</FONT></P>
+	<LI><P STYLE="margin-right: -0.09in; text-indent: 0in; margin-bottom: 0in; background: #ffffff">
+	<FONT COLOR="#000000">защиты работников от вредных
+	климатических воздействий.</FONT></P>
+</UL>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">10.
+В случае обнаружения нарушений требований
+безопасности работ, которые не могут
+быть устранены собственными силами, и
+возникновения угрозы личной безопасности
+или здоровью работники должны обратиться
+к руководителю работ или вышестоящему
+руководителю. Работники имеют право
+приостановить работу и покинуть опасную
+зону в ситуации, угрожающей жизни и
+здоровью.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">11.
+Работники обязаны поддерживать порядок
+на рабочем месте.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">12.
+Применяемые в процессе работы средства
+защиты, механизированный инструмент,
+оборудование и технологическая оснастка
+должны быть использованы по назначению,
+в соответствии с инструкциями
+заводов-изготовителей по их эксплуатации
+и в порядке, установленном проектами
+производства работ, технологическими
+нормами и другими документами.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL START=3>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in; page-break-before: always">
+	<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ОСНОВНЫЕ
+	ПОЛОЖЕНИЯ ЗАКОНОДАТЕЛЬСТВА РФ ОБ ОХРАНЕ
+	ТРУДА</B></FONT></FONT></FONT></H4>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Законодательство
+РФ об охране труда следует рассматривать
+в совокупности с Конституцией РФ,
+Трудовым Кодексом, Указами Президента,
+Постановлениями Правительства по
+вопросам обеспечения безопасности
+труда, предоставления льгот, компенсаций
+и др.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">1.
+Работник обязан соблюдать действующее
+на предприятии правила внутреннего
+трудового распорядка и графики работы,
+которыми предусматриваются: время
+начала и окончания работы, перерывы для
+отдыха и питания, порядок предоставления
+дней отдыха, чередование смен и другие
+вопросы использования рабочего времени.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+<FONT COLOR="#000000">2. Продолжительность рабочего
+времени составляет 40 часов в неделю.
+Как правило, для работника устанавливается
+8 часовой рабочий день</FONT><FONT COLOR="#000000"><B>
+</B></FONT><FONT COLOR="#000000">при пятидневной
+рабочей неделе с двумя выходными днями.
+На предприятии, там, где по условиям
+производства не может быть соблюдена
+установленная ежедневная или еженедельная
+продолжительность рабочего времени,
+для работника допускается суммированный
+учет рабочего времени с тем, чтобы
+продолжительность рабочего времени за
+учетный период (месяц или квартал) не
+превышала нормального числа рабочих
+часов. Максимальная продолжительность
+рабочего дня не должна превышать 11 часов
+30 минут при условии обязательного
+предоставления отдыха на следующий
+после работы день. Суммированный учет
+рабочего времени не может применяться
+для подростков в возрасте до 18 лет,
+беременных женщин, матерей, кормящих
+грудью, женщин, имеющих детей в возрасте
+до одного года, других работников в
+соответствии с законодательством о
+труде.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+<FONT COLOR="#000000">3. Труд беременных женщин
+должен использоваться только в дневную
+смену, продолжительность рабочего дня
+не должна превышать 8 часов.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+<FONT COLOR="#000000">4. Во время рабочего дня
+работнику предоставляются следующие,
+включаемые в рабочее время, перерывы:</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">–
+на личные надобности общей продолжительностью
+10 минут. Там, где места личного пользования
+находятся в отдалении, время на личные
+надобности увеличивается до 15 минут в
+смену;</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">–
+для обогревания и отдыха (работающим в
+холодное время года на открытом воздухе
+или в закрытых обогреваемых помещениях,
+грузчикам, занятым на погрузочно-разгрузочных
+работах, а также другим категориям
+работников в случаях, предусмотренных
+законодательством) – в среднем 10 минут
+через каждый час работы.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">5.
+Перерыв для отдыха и принятия пищи
+устанавливается не позднее, чем через
+4 часа после начала работы. Продолжительность
+перерыва не может быть менее 30 минут в
+смену. Для приема пищи должно быть
+выделено специальное помещение или
+место. Употребление алкогольных напитков,
+наркотических и психотропных веществ
+до и во время работы, а также на рабочем
+месте и на территории предприятия после
+окончания работы не допускается.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">6.
+Внутренний трудовой распорядок:</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">а)
+Начало рабочего дня – 07.30 (8.00).</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">б)
+Окончание рабочего дня – 16.30 (17.00).</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">в)
+Обеденный перерыв – 12.00-12.45 (время может
+меняться в зависимости от условий и
+места работы, по согласованию с
+непосредственным начальником).</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">г)
+Технические перерывы 15 мин через каждые
+2 часа работы (периодичность перерывов
+может меняться в зависимости от условий
+и места работы, по согласованию с
+непосредственным начальником).</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+<FONT COLOR="#000000">7. За нарушение требований
+нормативных актов по охране труда
+работник привлекается к дисциплинарной,
+а в соответствующих случаях к материальной
+и уголовной ответственности в порядке,
+установленном законодательством РФ.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><BR>
+</P>
+<OL START=4>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in">
+	<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ОПАСНЫЕ
+	И ВРЕДНЫЕ ПРОИЗВОДСТВЕННЫЕ ФАКТОРЫ,
+	ВОЗДЕЙСТВУЮЩИЕ НА РАБОТНИКА И ПРИЧИНЫ
+	НЕСЧАСТНЫХ СЛУЧАЕВ</B></FONT></FONT></FONT></H4>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000"><B>1.</B></FONT><FONT COLOR="#000000">
+</FONT><FONT COLOR="#000000"><B>Физические факторы</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">1.1.
+Движущиеся машины и механизмы, перемещаемые
+товары, тара, обрушившиеся штабели
+складируемых товаров.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Действие
+фактора: возможно травмирование
+работника.</FONT></P>
+<OL START=2>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000"> Повышенная запыленность
+	воздуха рабочей зоны. Действие фактора:
+	попадая в легкие, на слизистые оболочки,
+	кожные покровы пыль растительного и
+	животного происхождения, синтетические
+	моющие средства и т.п. могут вызвать
+	аллергические заболевания органов
+	зрения и дыхания, кожных покровов и
+	другие заболевания.</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000"> Пониженная температура.
+	Действие фактора: длительный контакт
+	может служить причиной сосудистых
+	заболеваний, особенно пальцев рук.</FONT></P>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">1.4.
+Повышенная температура воздуха рабочей
+зоны. Действие фактора: способствует
+возникновению различных острых и
+хронических простудных заболеваний.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">1.5.
+Повышенный уровень шума на рабочем
+месте. Действие фактора: способствует
+снижению остроты слуха, нарушению
+функционального состояния сердечно-сосудистой
+и нервной системы.</FONT></P>
+<OL START=6>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000"> Повышенная влажность
+	воздуха. Действие фактора: затрудняется
+	теплообмен организма человека с
+	окружающей средой.</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000"> Пониженная влажность
+	воздуха. Действие фактора: вызывает
+	неприятное ощущение сухости слизистых
+	оболочек дыхательных путей, затрудняет
+	дыхание.</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000"> Повышенная подвижность
+	воздуха. Действие фактора: вызывает
+	потерю организмом человека тепла и
+	может быть причиной простудных
+	заболеваний.</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000"> Повышенное значение
+	напряжения в электрической цепи,
+	замыкание которой может пройти через
+	тело человека. Действие фактора:
+	несоблюдение правил по электробезопасности
+	может вызвать местные поражения
+	организма человека электрическим током
+	(ожоги, механические повреждения и
+	т.п.) или электрический удар.</FONT></P>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">1.10.
+Отсутствие или недостаток естественного
+света. Действие фактора: может привести
+к световому голоданию организма человека.</FONT></P>
+<OL START=11>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000"> Недостаточная освещенность
+	рабочей зоны. Действие фактора: возникает
+	зрительное утомление, боль в глазах,
+	общая вялость, которые приводят к
+	снижению внимания и возможности
+	травмирования работника.</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000"> Острые кромки, заусенцы и
+	шероховатость на поверхностях
+	инструмента, оборудования, инвентаря,
+	товаров и тары. Действие фактора:
+	возможны ранения, мелкие повреждения
+	рук и других незащищенных частей тела.</FONT></P>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; page-break-before: always">
+<FONT COLOR="#000000"><B>2. Химические факторы</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">2.1. Акролеин,
+аммиак, оксид углерода, формальдегид и
+другие вредные вещества в воздухе
+рабочей зоны. Действие фактора: возможно
+раздражение верхних дыхательных путей,
+воспаление слизистых оболочек глаз,
+отравление организма и другие заболевания.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">2.2. Смазочные
+масла. Действие фактора: при частом
+попадании масел на открытые участки
+тела, при длительной работе в одежде,
+пропитанной маслом, могут возникнуть
+острые и хронические заболевания кожи.
+Вдыхание масляных паров вызывает
+отравление.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">2.3. Дезинфицирующие,
+моющие и другие средства. Действие
+фактора: возможны аллергические и другие
+заболевания.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000"><B>3.
+Психофизические факторы</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">3.1. Физические
+перегрузки (работа «стоя», подъем и
+переноска тяжестей). Действие фактора:
+возможны заболевания опорно-двигательного
+аппарата, ощущение внутренних органов,
+сосудистые и другие заболевания.
+Нервно-психические перегрузки
+(перенапряжение анализаторов, монотонность
+труда, эмоциональные перегрузки).</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">3.2. Монотонность
+труда. Действие фактора: приводит к
+повышению утомляемости, снижению
+внимания, и как следствие, к возможности
+травмирования работника. 
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">3.3. Эмоциональные
+перегрузки. Действие фактора: возможны
+заболевания сердечно-сосудистой системы.</P>
+<P CLASS="western" STYLE="margin-left: 0.39in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Возможные
+</FONT><FONT COLOR="#000000"><U>причины несчастных
+случаев</U></FONT><FONT COLOR="#000000"> делят на две
+группы: организационные и технические.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">К
+</FONT><FONT COLOR="#000000"><U>организационным</U></FONT><FONT COLOR="#000000">
+причинам относятся недостаточный
+инструктаж, отсутствие у работников
+необходимых средств защиты, нарушение
+требований правил охраны труда или
+отступление от него, использование
+работников не по специальности,
+неправильная организация рабочего
+места.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000"><U>Техническими</U></FONT><FONT COLOR="#000000">
+причинами являются: неисправность
+машины, механизмов, наличие тока высокого
+напряжения, недостаточное освещение и
+др.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><BR>
+</P>
+<OL START=5>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in">
+	<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ОСНОВНЫЕ
+	ТРЕБОВАНИЯ ПРОИЗВОДСТВЕННОЙ САНИТАРИИ
+	И ЛИЧНОЙ ГИГИЕНЫ</B></FONT></FONT></FONT></H4>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">1.
+Приходить на работу в чистой одежде и
+обуви, оставлять верхнюю одежду, головной
+убор и личные вещи в гардеробной или в
+шкафу.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">2.
+Мыть руки с мылом после посещения
+туалета, соприкосновения с загрязненными
+предметами и по окончании работы.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><BR>
+</P>
+<OL START=6>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ОБЕСПЕЧЕНИЕ
+	РАБОТНИКА СПЕЦИАЛЬНОЙ ОДЕЖДОЙ,
+	СПЕЦИАЛЬНОЙ ОБУВЬЮ И ДРУГИМИ СРЕДСТВАМИ
+	ИНДИВИДУАЛЬНОЙ ЗАЩИТЫ</B></FONT></FONT></H4>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">На
+работах с вредными условиями труда, а
+также на работах, производимых в особых
+температурных условиях или связанных
+с загрязнением, работнику выдается
+бесплатно по установленным нормам
+специальная одежда, специальная обувь
+и другие средства индивидуальной защиты.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Если
+работа в условиях запыленности превышает
+нормативную, кратковременна, в качестве
+индивидуальной защиты применяют
+респираторы, шлемы, респираторные
+повязки, защитные очки, от воздействия
+шума применяются наушники.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><BR>
+</P>
+<OL START=7>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in">
+	<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ПОРЯДОК
+	РАССЛЕДОВАНИЯ И ОФОРМЛЕНИЯ НЕСЧАСТНЫХ
+	СЛУЧАЕВ И ПРОФЕССИОНАЛЬНЫХ ЗАБОЛЕВАНИЙ</B></FONT></FONT></FONT></H4>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">О
+каждом несчастном случае на производстве
+пострадавший или очевидец немедленно
+должен сообщить непосредственно
+руководителю.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+обнаружении неисправности используемого
+оборудования, инвентаря, приспособлений
+и инструмента работник должен сообщить
+об этом непосредственному руководителю
+и до ее устранения к работе не приступать.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Статьи
+227-230 ТК РФ, обязывают работодателя к
+проведению расследования несчастных
+случаев.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Расследование
+несчастных случаев проводится комиссией,
+образуемой из представителей работодателя.
+Состав комиссии утверждается приказом
+руководителя организации или
+уполномоченного и ответственного
+должностного лица. Руководитель,
+непосредственно отвечающий за безопасность
+на производстве, в указанном расследовании
+не участвует.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">По
+требованию пострадавшего (в случае
+смерти пострадавшего – его родственников)
+в расследовании несчастного случая
+может принимать участие его доверенное
+лицо. В случае, когда доверенное лицо
+не принимает участие в расследовании,
+работодатель обязан ознакомить его с
+материалами расследования.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Расследование
+обстоятельств и причин несчастного
+случая должно быть проведено в течение
+3 суток с момента его происшествия, при
+легкой травме, а при тяжелой и со
+смертельным исходом – до 15 суток.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Каждый
+несчастный случай, вызвавший необходимость
+перевода работника в соответствии с
+медицинским заключением на другую
+работу на один рабочий день и более,
+потерю им трудоспособности не менее
+чем на один рабочий день или его смерть,
+оформляется актом о несчастном случае
+на производстве по форме Н-1 в двух
+Экземплярах на русском языке, для
+застрахованного, в 4-х экземплярах (в
+вышестоящие или надзорные организации
+– при тяжелой травме).</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">В
+акте по форме Н-1 должны быть подробно
+изложены обстоятельства и причины
+несчастного случая, а также лица,
+допустившие нарушения нормативных
+требований по охране труда.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><BR>
+</P>
+<OL START=8>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in">
+	<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ТРЕБОВАНИЯ
+	ПО ОБЕСПЕЧЕНИЮ ПОЖАРО- И ВЗРЫВОБЕЗОПАСНОСТИ</B></FONT></FONT></FONT></H4>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in">1. Перед началом
+работы на предприятии получить
+противопожарный инструктаж, а в помещениях
+и на работах с повышенной пожароопасностью
+– пройти пожарно-технический минимум.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">2. Пользоваться
+исправными выключателями, розетками,
+вилками, патронами и другой электроарматурой.
+Не оставлять без присмотра включенное
+оборудование и электроприборы, отключать
+электрическое освещение (кроме аварийного)
+по окончании работы.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">3. Курить только
+в специально отведенных и оборудованных
+местах.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">4. При использовании
+в работе горючих и легковоспламеняющихся
+веществ убирать их в безопасные в
+пожарном отношении места.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">5. Соблюдать
+действующие Правила противопожарного
+режима в РФ (ППР в РФ). При обнаружении
+пожара или признаков горения (задымления,
+запах гари, повышение температуры и т.
+п.) необходимо:</P>
+<UL>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">прекратить работу и отключить
+	с помощью кнопки «Стоп» (выключателя,
+	рубильника, крана и т. п.) используемое
+	оборудование и электроприборы;</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">немедленно сообщить об
+	этом по телефону 01 или 112 в пожарную
+	охрану (при этом необходимо назвать
+	адрес объекта, место возникновения
+	пожара, а также сообщить свою фамилию);</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">принять по возможности
+	меры по эвакуации людей, тушению пожара
+	и сохранности материальных ценностей;</FONT></P>
+	<LI><P CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; background: #ffffff; widows: 0; orphans: 0">
+	<FONT COLOR="#000000">принять меры по вызову к
+	месту пожара администрацию объекта и
+	действовать в соответствии с полученными
+	указаниями.</FONT></P>
+</UL>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL START=9>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in">
+	 <FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ОКАЗАНИЕ
+	ПЕРВОЙ (ДОВРАЧЕБНОЙ) МЕДИЦИНСКОЙ ПОМОЩИ</B></FONT></FONT></H4>
+</OL>
+<P CLASS="western" STYLE="margin-right: 0in; margin-bottom: 0in; background: #ffffff">
+<FONT COLOR="#000000"><B>Каждый работник обязан
+знать и применять правила оказания
+первой медицинской помощи пострадавшим:
+</B></FONT><FONT COLOR="#000000">временная остановка
+кровотечения, перевязка раны, иммобилизация
+перелома (неподвижная повязка), оживляющие
+мероприятия (искусственное дыхание,
+массаж сердца), освобождение потерпевшего
+от источника поражения и переноска его
+в безопасное место.</FONT></P>
+<P CLASS="western" STYLE="margin-right: 0in; margin-bottom: 0in; background: #ffffff">
+<FONT COLOR="#000000"><B>Внезапная остановка сердца
+и прекращение дыхания:</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Пострадавшего
+немедленно уложить на ровное жесткое
+основание (пол, землю, доску) и расстегнуть
+стесняющее дыхание одежду.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Прежде чем
+начать искусственное дыхание, необходимо
+обеспечить проходимость верхних
+дыхательных путей. Для этого нужно
+повернуть голову пострадавшего на бок,
+удалить пальцем, обернутым платком
+(тканью) или бинтом, инородное содержимое
+полости (рвотные массы, слизь и др.) и
+предотвратить западание языка в
+дыхательные пути.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Если помощь
+оказывает один человек то, расположившись
+сбоку от пострадавшего, одну руку
+подсовывает под шею пострадавшего, а
+ладонью другой руки, надавливая на лоб,
+максимально запрокидывает его голову.
+Затем делает глубокий вдох открытым
+ртом и, прижимая свой рот (через платок)
+ко рту пострадавшего, сильно и резко
+выдыхает воздух в его дыхательные пути,
+одновременно закрывая нос своей щекой
+или пальцами руки.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Если после 3-5
+выдохов в быстром темпе пульс на сонной
+артерии пострадавшего не появится,
+следует немедленно приступать к наружному
+массажу сердца. Для этого, оставаясь на
+той же стороне от пострадавшего,
+оказывающий помощь кладет ладонь одной
+руки на нижнюю половину грудины
+пострадавшего, отступив на два пальца
+выше от ее нижнего края и приподняв
+пальцы. Ладонь второй руки кладет поверх
+первой или вдоль и надавливает на
+грудину, помогая наклоном своего корпуса.
+Руки при надавливании должны быть
+выпрямлены в локтевых суставах.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Массаж сердца
+следует производить одновременно с
+искусственным дыханием, чередуя 2
+вдувания с 15 надавливаниями на грудину.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Если около
+пострадавшего находятся два человека
+или более, один из них должен вызвать
+врача, а затем принять участие в проведении
+оживляющих мероприятий. При участии в
+реанимации двух человек после каждого
+вдувания воздуха производится пять
+надавливаний на грудину. Темп мероприятий
+должен быть высоким – за 1 мин. необходимо
+сделать не менее 60 надавливаний и 12
+вдуваний.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Оказывать
+помощь следует без перерыва до
+восстановления сердечной деятельности
+и полноценного самостоятельного дыхания
+или констатации смерти пострадавшего
+медицинским работником.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><B>Ранения:</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Осторожно
+снять грязь вокруг раны, очищая кожу от
+ее краев наружу, чтобы не загрязнить
+рану. Очищенный участок вокруг раны
+смазать настойкой йода перед наложением
+повязки.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">При наложении
+повязки (индивидуального пакета, чистого
+носового платка чистой ткани) не касаться
+руками той части, которая должна быть
+наложена непосредственно на рану.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Если из раны
+выпадает какая-либо ткань или орган
+(мозг, кишечник), то повязку накладывают
+сверху, ни в коем случае не пытаясь
+вправлять эту ткань или орган внутрь
+раны.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Оказывающий
+помощь при ранениях должен вымыть руки
+или смазать пальцы настойкой йода.
+Прикасаться к самой ране даже вымытыми
+руками не допускается.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><B>Кровотечения:</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Для остановки
+кровотечения необходимо:</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">поднять раненую
+конечность;</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">закрыть
+кровоточащую рану перевязочным материалом
+(из пакета), сложенным в комочек и
+придавить сверху, не касаясь пальцами
+самой раны. В таком положении, не отпуская
+пальцев, держать 4-5 мин. Если кровотечение
+остановится, то не снимая наложенного
+материала, поверх него наложить еще
+одну подушечку из другого пакета или
+кусок ваты и забинтовать раненое место
+с небольшим нажимом;</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">при сильном
+кровотечении следует сдавить кровеносные
+сосуды, питающие раненую область,
+пальцами, жгутом или закруткой, либо
+согнуть конечность в суставах. Во всех
+случаях при большом кровотечении
+необходимо срочно вызвать врача и
+указать ему точное время наложения
+жгута (закрутки).</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><B>Термические
+и электрические ожоги:</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Если на
+пострадавшем загорелась одежда, надо
+сбить пламя водой, снегом или набросить
+на него любую плотную ткань (пальто,
+одеяло, брезент), голову пострадавшего
+при этом не закрывать, так как возможно
+поражение дыхательных путей, отравление
+продуктами горения. Нельзя бежать в
+горящей одежде, так как ветер, раздувая
+пламя, увеличит ожог.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">При небольшой
+площади ожогов I и II степеней нужно не
+вскрывая пузырей наложить на обожженный
+участок кожи стерильную повязку.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">Одежду и обувь
+на обожженном месте разрезать ножницами.
+Если куски одежды прилипли к обожженному
+участку тела, то поверх них наложить
+стерильную повязку и направить
+пострадавшего в лечебное учреждение.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">При тяжелых и
+обширных ожогах пострадавшего необходимо
+завернуть (не раздевая) в чистую простыню
+или ткань укрыть потеплее, напоить
+теплым чаем и создать покой до прибытия
+врача. Обожженное лицо следует закрыть
+стерильной марлей.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><B>Химические
+ожоги:</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">При попадании
+кислоты или щелочи на кожу пораженные
+участки обильно промыть струей холодной
+воды в течение 15-20 мин, затем сделать
+примочки:</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">при ожоге
+кислотой – раствором питьевой соды
+(одна чайная ложка на стакан воды);</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">при ожоге кожи
+щелочью – раствором борной кислоты
+(одна чайная ложка кислоты на стакан
+воды) или слабым раствором уксусной
+кислоты (одна чайная ложка столового
+уксуса на стакан воды).</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">При попадании
+кислоты в виде жидкости, паров или газов
+в глаза или полость рта промыть их
+большим количеством воды, а затем
+раствором питьевой соды (половина чайной
+ложки на стакан воды).</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">При попадании
+брызг щелочи или паров в глаза и полость
+рта необходимо промыть пораженные места
+большим количеством воды, а затем
+раствором борной кислоты (половина
+чайной ложки кислоты на стакан воды).</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">При попадании
+кислоты или щелочи в пищевод необходимо
+срочно вызвать врача. До врачебной
+помощи удалить слюну и слизь изо рта
+пострадавшего, уложить его и тепло
+укрыть, а на живот для ослабления боли
+положить «холод».</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000"><B>Электротравмы:</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">В
+первую очередь следует освободить
+пострадавшего от действия электрического
+тока. Для этого немедленно отключить
+от электрической сети токоведущий
+участок, которого касается пострадавший
+(разомкнуть рубильник, штепсельное
+соединение, удалить предохранители)
+или перерубить (каждый провод в
+отдельности) инструментами, имеющими
+сухие деревянные ручки (топором, лопатой
+и др.). Если быстро отключить токоведущий
+участок нельзя, то для отделения
+пострадавшего от токоведущего элемента
+следует воспользоваться палкой, доской,
+канатом, другим предметом, не проводящим
+электрический ток или оттянуть его за
+одежду (если она сухая). При этом следует
+воспользоваться изолирующими предметами
+(надеть диэлектрические перчатки,
+обмотать руку сухим шарфом, натянуть
+рукав пиджака, пальто) или же накинуть
+на пострадавшего прорезиненную или
+просто сухую материю. Можно использовать
+диэлектрические галоши, встать на
+резиновый коврик, сухую доску или любую
+подстилку, не проводящую электрический
+ток.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+отделении пострадавшего от токоведущего
+элемента следует действовать одной
+рукой.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Если
+после освобождения от действия тока
+пострадавший дышит самостоятельно, у
+него есть сердцебиение и на крупных
+сосудах прощупывается пульс, то
+необходимо:</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">-
+уложить на подстилку и расстегнуть
+одежду, стесняющую дыхание;</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">-
+согреть тело (если холодно), обеспечить
+прохладу (если жарко);</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">-
+создать приток свежего воздуха;</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">-
+непрерывно наблюдать за пульсом и
+дыханием.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+отсутствии у пострадавшего сердцебиения
+и дыхания немедленно начать делать
+искусственное дыхание и массаж сердца.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Во
+всех случаях необходимо срочно вызвать
+врача.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000"><B>Тепловой
+удар:</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Пострадавшего
+уложить так, чтобы голова была выше
+туловища, расстегнуть стесняющую дыхание
+одежду и обеспечить приток свежего
+воздуха. Смочить грудь холодной водой,
+на голову делать холодные примочки и
+давать нюхать нашатырный спирт с ватки.
+Если пострадавший находится в сознании,
+дать ему выпить 15-20 капель настойки
+валерианы на одну треть стакана воды,
+холодный чай, подсоленную воду.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Если
+дыхание прекратилось или очень слабое
+и пульс не прощупывается, необходимо
+сразу же начать делать искусственное
+дыхание, массаж сердца и срочно вызвать
+врача.</FONT></P>
+<P CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0.14in; line-height: 115%">
+<BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff; page-break-before: always">
+<FONT COLOR="#000000"><B>Отравления:</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+отравлении от вдыхания оксида углерода
+(II), паров бензина, природных газов
+вынести или вывести пострадавшего на
+свежий воздух. Уложить, приподняв ноги,
+укрыть потеплее, дать горячий чай, кофе,
+снятое молоко, дать нашатырный спирт
+на ватке. При рвоте повернуть голову на
+бок.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+отравлении парами серной кислоты
+пострадавшему необходимо вдыхать пары
+содового раствора.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+отравлении свинцом, соединениями свинца
+промыть желудок теплой водой с магнезией
+сернокислой (30 г на 2-3 л воды). Вызвать
+рвоту, дать солевое слабительное и
+обильное питье – снятое молоко, овощные
+(фруктовые) соки.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Во
+всех случаях острых отравлений следует
+незамедлительно эвакуировать пострадавших
+в медицинское учреждение.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000"><B>Переломы
+костей и травмы черепа:</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+наложении шины на поврежденную конечность
+следует обеспечить полную неподвижность,
+по крайней мере, двух суставов – одного
+выше, другого ниже места перелома, а при
+переломе крупных костей – даже трех.
+Центр шины (для нее используется любой
+подручный материал: обрезки доски,
+палка, зонт, картон, щепка и т. п.) должен
+находиться у места перелома. Фиксирует
+шину бинтом, косынкой, ремнем и т. п.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+отсутствии шины следует прибинтовать
+поврежденную верхнюю конечность к
+туловищу, а поврежденную нижнюю конечность
+– к здоровой.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+открытых переломах края раны обработать
+перекисью водорода или настойкой йода,
+на рану наложить стерильную повязку.</FONT></P>
+<P CLASS="western" STYLE="margin-right: 0.01in; margin-bottom: 0in; background: #ffffff">
+<FONT COLOR="#000000">При переломе ребер необходимо
+туго забинтовать грудь или стянуть ее
+полотенцем. </FONT>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+повреждении ключицы положить в подмышечную
+впадину с поврежденной стороны небольшой
+комок ваты, и прибинтовать к туловищу
+руку, согнутую в локте под прямым углом,
+подвесить руку к шее косынкой или бинтом.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">При
+падении, ударе возможны перелом черепа
+(кровотечения из ушей, рта, бессознательное
+состояние) или сотрясение мозга (головная
+боль, тошнота, рвота, потеря сознания).
+Пострадавшего уложить на спину, на
+голову наложить тугую повязку (при
+наличии раны – стерильную) и положить
+«холод», обеспечить полный покой до
+прибытия врача.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">У
+пострадавшего, находящегося в
+бессознательном состоянии, может быть
+рвота. В этом случае следует повернуть
+его голову на бок, для предотвращения
+попадания рвотных масс в дыхательные
+пути. При наступлении удушья вследствие
+западания языка необходимо выдвинуть
+нижнюю челюсть пострадавшего вперед и
+поддерживать ее в таком положении.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000"><B>Ушибы:</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; background: #ffffff"><FONT COLOR="#000000">Наиболее
+опасны ушибы головы, живота и грудной
+клетки. Признаки ушиба: кровоподтек,
+припухлость, боль в месте ушиба. До
+врачебной помощи положить на ушибленное
+место «холод» и обеспечить больному
+покой и возвышенное положение ушибленной
+части тела.</FONT></P>
+<P CLASS="western" STYLE="margin-left: 0.39in; margin-bottom: 0in; background: #ffffff">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in">
+<BR>
+</P>
+<OL START=10>
+	<LI><H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in; page-break-before: always">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ЛИСТ
+	РЕГИСТРАЦИИ ИЗМЕНЕНИЙ</B></FONT></FONT></H4>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in">
+<BR>
+</P>
+<TABLE WIDTH=637 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=106>
+	<COL WIDTH=184>
+	<COL WIDTH=145>
+	<COL WIDTH=144>
+	<TR>
+		<TD WIDTH=106 HEIGHT=4 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">№
+			редакции</FONT></P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">Содержание
+			изменения</FONT></P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">Номер
+			приказа о введении в действие</FONT></P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">Дата
+			вступления в действие</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.02in"><FONT COLOR="#000000">Ред.1</FONT></P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in"><FONT COLOR="#000000">Новый
+			документ</FONT></P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=11 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in; margin-bottom: 0in">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.5in; text-indent: 0in; margin-bottom: 0in">
+<BR>
+</P>
+</BODY>
+</HTML>

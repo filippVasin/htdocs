@@ -1,0 +1,4 @@
+.idea/
+*.xml
+config.php
+/nbproject/private/

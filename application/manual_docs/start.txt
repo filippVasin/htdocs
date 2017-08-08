@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="User">
+	<META NAME="CREATED" CONTENT="20170802;91700000000000">
+	<META NAME="CHANGEDBY" CONTENT="User">
+	<META NAME="CHANGED" CONTENT="20170802;91800000000000">
+	<META NAME="AppVersion" CONTENT="15.0000">
+	<META NAME="Company" CONTENT="SPecialiST RePack">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ru-RU" DIR="LTR">
+<P STYLE="margin-bottom: 0.11in"><A NAME="_GoBack"></A>Вы успешно
+авторизовались в системе LaborPRO. Данная
+система поможет Вам ознакомиться с
+материалами   по безопасности на вашем
+рабочем месте. Вашему вниманию будет
+представлен набор инструкций обязательный
+для ознакомления в соответствии с вашей
+профессией. Каждый вид инструктажа
+(кроме водного), будет заканчиваться
+тестированием, в случае не прохождения
+Вами тестирования, система будет
+возвращать Вас к изучению материала до
+момента успешного прохождения
+тестирования. Для успешного прохождения
+тестирования, внимательно изучайте
+материалы инструкций. В случае
+возникновения у Вас вопросов, либо
+обнаружении сбоев работы системы
+обратитесь по телефону 89293812214</P>
+</BODY>
+</HTML>

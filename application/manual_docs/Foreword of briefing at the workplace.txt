@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="User">
+	<META NAME="CREATED" CONTENT="20170802;91700000000000">
+	<META NAME="CHANGEDBY" CONTENT="User">
+	<META NAME="CHANGED" CONTENT="20170802;91800000000000">
+	<META NAME="AppVersion" CONTENT="15.0000">
+	<META NAME="Company" CONTENT="SPecialiST RePack">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ru-RU" DIR="LTR">
+<P STYLE="margin-bottom: 0.11in"><A NAME="_GoBack"></A>Вашему внимаю предлагается комплект обязательных инструкций по безопасности на Вашем рабочем месте. После ознакомления с ними Вас будет предложено пройти тестирование. Для успешного прохождения Вам будет необходимо ответить правильно на 3 из 5 ти вопросов. В случае если правильных ответов будет меньше 3-х, вы возвращаетесь к изучению материала  инструкций. В случе успешного прохождения тестирования Вам необходимо поставить совю подпись в соотрветсвующем журнале.
+</P>
+</BODY>
+</HTML>

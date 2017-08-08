@@ -1,0 +1,1008 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="Admin">
+	<META NAME="CREATED" CONTENT="20170803;43500000000000">
+	<META NAME="CHANGEDBY" CONTENT="User">
+	<META NAME="CHANGED" CONTENT="20170803;43500000000000">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-right: 0.59in; margin-top: 0.2in; margin-bottom: 0.49in }
+		P { margin-bottom: 0.08in; direction: ltr; color: #000000; line-height: 115%; widows: 2; orphans: 2 }
+		P.western { font-family: "Calibri", sans-serif; font-size: 11pt; so-language: ru-RU }
+		P.cjk { font-family: "Calibri", sans-serif; font-size: 11pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 11pt; so-language: ar-SA }
+		A:link { color: #05327a; font-size: 8pt; font-weight: bold; text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#05327a" DIR="LTR">
+<P LANG="ru-RU" CLASS="western" ALIGN=RIGHT STYLE="margin-bottom: 0.07in; line-height: 100%; widows: 0; orphans: 0">
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>	</FONT></FONT></P>
+<P LANG="en-US" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in">
+<SPAN ID="Frame1" DIR="LTR" STYLE="float: left; width: 3.2in; height: 1.34in; border: none; padding: 0in; background: #ffffff">
+	<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>УТВЕРЖДАЮ</B></FONT></FONT></P>
+	<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Генеральный
+	директор </FONT></FONT>
+	</P>
+	<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=3>ООО «»</FONT></FONT></P>
+	<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
+	<BR>
+	</P>
+	<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0.14in"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>_______________/_________________</FONT></FONT></P>
+</SPAN><BR><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in">
+<BR><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in">
+<BR><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in">
+<BR><BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ИНСТРУКЦИЯ
+ПО ДЕЙСТВИЯМ ПРИ ЧРЕЗВЫЧАЙНЫХ СИТУАЦИЯХ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; text-indent: 0.35in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ЧРЕЗВЫЧАЙНАЯ
+СИТУАЦИЯ</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>
+(ЧС),</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>обстановка
+на определенной территории, сложив&shy;шаяся
+в результате аварии, опасного природного
+явления, катастрофы, стихийного или
+иного бедствия, которые могут повлечь
+или повлекли за собой человеческие
+жертвы, ущерб здоро&shy;вью людей или
+окружающей природной среде, значительные
+материальные потери и наруше&shy;ние
+условий жизнедеятельности людей</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>.
+В зависимости от количества пострадавших
+людей, размера материального ущерба и
+границы зон распространения поражающих
+факторов ЧС подразделяются на локальные,
+местные, территориальные, региональные,
+федеральные и трансграничные ЧС.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ГОЛОЛЕД</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; text-indent: 0.35in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><I>ГОЛОЛЕД </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>-
+это слой плотного льда, образовавшийся
+на поверхности земли, тротуарах, проезжей
+части улицы и на предметах (деревьях,
+проводах и т.д.) при намерзании
+переохлажденного дождя и мороси (тумана).
+Обычно гололед наблюдается при температуре
+воздуха от 0°С до минус 3°С. Корка
+намерзшего льда может достигать
+нескольких сантиметров.<BR></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><I>&nbsp;
+      ГОЛОЛЕДИЦА</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>
+- это тонкий слой льда на поверхности
+земли, образующийся после оттепели или
+дождя в результате похолодания, а также
+замерзания мокрого снега и капель дождя.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ПОДГОТОВИТЬСЯ К ГОЛОЛЕДУ (ГОЛОЛЕДИЦЕ)</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Если
+в прогнозе погоды дается сообщение о
+гололеде или гололедице, примите меры
+для снижения вероятности получения
+травмы. Подготовьте малоскользящую
+обувь, прикрепите на каблуки металлические
+набойки или поролон, а на сухую подошву
+наклейте лейкопластырь или изоляционную
+ленту, можете натереть подошвы песком
+(наждачной бумагой).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ДЕЙСТВОВАТЬ ВО ВРЕМЯ ГОЛОЛЕДА (ГОЛОЛЕДИЦЫ)</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Передвигайтесь
+осторожно, не торопясь, наступая на всю
+подошву. При этом ноги должны быть слегка
+расслаблены, руки свободны. Пожилым
+людям рекомендуется использовать трость
+с резиновым наконечником или специальную
+палку с заостренными шипами. Если Вы
+поскользнулись, присядьте, чтобы снизить
+высоту падения. В момент падения
+постарайтесь сгруппироваться, и,
+перекатившись, смягчить удар о землю.
+Гололед зачастую сопровождается
+обледенением. В этом случае особое
+внимание обращайте на провода линий
+электропередач, контактных сетей
+электротранспорта. Если Вы увидели
+оборванные провода, сообщите администрации
+населенного пункта о месте обрыва. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ДЕЙСТВОВАТЬ ПРИ ПОЛУЧЕНИИ ТРАВМЫ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in"><A NAME="chapter_3"></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Обратитесь
+в травматологический пункт или пункт
+неотложной медицинской помощи. Оформите
+бюллетень или справку о травме, которые
+могут быть использованы Вами при
+обращении в суд по месту жительства или
+по месту получения травмы с исковым
+заявлением о возмещении ущерба.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ПОДГОТОВИТЬСЯ К МЕТЕЛЯМ И ЗАНОСАМ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Если
+Вы получили предупреждение о сильной
+метели, плотно закройте окна, двери,
+чердачные люки и вентиляционные
+отверстия. Стекла окон оклейте бумажными
+лентами, закройте ставнями или щитами.
+Подготовьте двухсуточный запас воды и
+пищи, запасы медикаментов, средств
+автономного освещения (фонари, керосиновые
+лампы, свечи), походную плитку, радиоприемник
+на батарейках. Уберите с балконов и
+подоконников вещи, которые могут быть
+захвачены воздушным потоком. Включите
+радиоприемники и телевизоры&nbsp;- по ним
+может поступить новая важная информация.
+Подготовьтесь к возможному отключению
+электроэнергии. Перейдите из легких
+построек в более прочные здания.
+Подготовьте инструмент для уборки
+снега.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ДЕЙСТВОВАТЬ ВО ВРЕМЯ СИЛЬНОЙ МЕТЕЛИ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Лишь
+в исключительных случаях выходите из
+зданий. Запрещается выходить в одиночку.
+Сообщите членам семьи или соседям, куда
+Вы идете и когда вернетесь. В автомобиле
+можно двигаться только по большим
+дорогам и шоссе. При выходе из машины
+не отходите от нее за пределы видимости.
+Остановившись на дороге, подайте сигнал
+тревоги прерывистыми гудками, поднимите
+капот или повесьте яркую ткань на
+антенну, ждите помощи в автомобиле. При
+этом можно оставить мотор включённым,
+приоткрыв стекло для обеспечения
+вентиляции и предотвращения отравления
+угарным газом. Если Вы потеряли ориентацию,
+передвигаясь пешком вне населённого
+пункта, зайдите в первый попавшийся
+дом, уточните место Вашего нахождения
+и, по возможности, дождитесь окончания
+метели. Если Вас покидают силы, ищите
+укрытие и оставайтесь в нём. Будьте
+внимательны и осторожны при контактах
+с незнакомыми Вам людьми, так как во
+время стихийного бедствия резко
+возрастает число краж из автомобилей,
+квартир и служебных помещений.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ДЕЙСТВОВАТЬ ПОСЛЕ СИЛЬНОЙ МЕТЕЛИ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Если
+в условиях сильных заносов Вы оказались
+блокированным в помещении, осторожно,
+без паники выясните, нет ли возможности
+выбраться из-под заносов самостоятельно
+(используя имеющийся инструмент и
+подручные средства). Сообщите в управление
+по делам ГО и ЧС или в администрацию
+населённого пункта о характере заносов
+и возможности их самостоятельной
+разборки. Если самостоятельно разобрать
+снежный занос не удайтся, попытайтесь
+установить связь со спасательными
+подразделениями. Включите радиотрансляционный
+приёмник (телевизор) и выполняйте
+указания местных властей. Примите меры
+к сохранению тепла и экономному
+расходованию продовольственных запасов.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ПЕРВАЯ
+ПОМОЩЬ ПРИ ОБМОРОЖЕНИИ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>В
+отапливаемом помещении согрейте
+обмороженную часть тела, растерев сухой
+мягкой тканью, затем поместите ее в
+теплую воду и постепенно доведите
+температуру воды до 40-45&nbsp;градусов.
+Если боль проходит и чувствительность
+восстанавливается, то вытрите руку
+(ногу) насухо, наденьте носки (перчатки)
+и, по возможности, обратитесь к хирургу.
+</FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in"><A NAME="chapter_4"></A>
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ЗЕМЛЕТРЯСЕНИЕ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+         <FONT FACE="Times New Roman, serif"><FONT SIZE=3>ЗЕМЛЕТРЯСЕНИЕ
+- это подземные толчки и колебания земной
+поверхности, возникающие в результате
+внезапных смещений и разрывов в земной
+коре или верхней мантии и передающиеся
+на большие расстояния в виде упругих
+колебаний. Точку в земной коре, из которой
+расходятся сейсмические волны, называют
+гипоцентром землетрясения. Место на
+земной поверхности над гипоцентром
+землетрясения по кратчайшему расстоянию
+называют эпицентром. Интенсивность
+землетрясения оценивается по 12-бальной
+сейсмической шкале (MSK-86), для энергетической
+классификации землетрясений пользуются
+магнитудой. </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Условно
+землетрясения подразделяются на слабые
+(1-4&nbsp;балла), сильные (5-7&nbsp;баллов) и
+разрушительные (8 и более баллов). </B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>При
+землетрясениях лопаются и вылетают
+стекла, с полок падают лежащие на них
+предметы, шатаются книжные шкафы качаются
+люстры, с потолка осыпается побелка, а
+в стенах и потолках появляются трещины.
+Все это сопровождается оглушительным
+шумом. После 10-20&nbsp;секунд тряски подземные
+толчки усиливаются, в результате чего
+происходят разрушения зданий и сооружений.
+Всего десяток сильных сотрясений
+разрушает все здание. В среднем
+землетрясение длится 5-20&nbsp;секунд. Чем
+дольше длятся сотрясения, тем тяжелее
+повреждения. При землетрясении в
+г.Нефтегорске Сахалинской области
+(1995&nbsp;г.) под обломками разрушенного
+города погибло около 2&nbsp;тыс.человек. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ПОДГОТОВИТЬСЯ К ЗЕМЛЕТРЯСЕНИЮ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Заранее
+продумайте план действий во время
+землетрясения при нахождении дома, на
+работе, в кино, театре, на транспорте и
+на улице. Разъясните членам своей семьи,
+что они должны делать во время землетрясения
+и обучите их правилам оказания первой
+медицинской помощи. Держите в удобном
+месте документы, деньги, карманный
+фонарик и запасные батарейки. Имейте
+дома запас питьевой воды и консервов в
+расчете на несколько дней. Уберите
+кровати от окон и наружных стен. Закрепите
+шкафы, полки и стеллажи в квартирах, а
+с верхних полок и антресолей снимите
+тяжелые предметы. Опасные вещества
+(ядохимикаты, легковоспламеняющиеся
+жидкости) храните в надежном, хорошо
+изолированном месте. Все жильцы должны
+знать, где находится рубильник,
+магистральные газовые и водопроводные
+краны, чтобы в случае необходимости
+отключить электричество, газ и воду.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ДЕЙСТВОВАТЬ ВО ВРЕМЯ ЗЕМЛЕТРЯСЕНИЯ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Ощутив
+колебания здания, увидев качание
+светильников, падение предметов, услышав
+нарастающий гул и звон бьющегося стекла,
+не поддавайтесь панике (от момента,
+когда Вы почувствовали первые толчки
+до опасных для здания колебаний у Вас
+есть 15-20&nbsp;секунд). Быстро выйдите из
+здания, взяв документы, деньги и предметы
+первой необходимости. Покидая помещение
+спускайтесь по лестнице, а не на лифте.
+Оказавшись на улице&nbsp;- оставайтесь
+там, но не стойте вблизи зданий, а
+перейдите на открытое пространство.
+Сохраняйте спокойствие и постарайтесь
+успокоить других! Если Вы вынужденно
+остались в помещении, то встаньте в
+безопасном месте: у внутренней стены,
+в углу, во внутреннем стенном проеме
+или у несущей опоры. Если возможно,
+спрячьтесь под стол&nbsp;- он защитит вас
+от падающих предметов и обломков.
+Держитесь подальше от окон и тяжелой
+мебели. Если с Вами дети&nbsp;- укройте их
+собой. Не пользуйтесь свечами, спичками,
+зажигалками&nbsp;- при утечке газа возможен
+пожар. Держитесь в стороне от нависающих
+балконов, карнизов, парапетов, опасайтесь
+оборванных проводов. Если Вы находитесь
+в автомобиле, оставайтесь на открытом
+месте, но не покидайте автомобиль, пока
+толчки не прекратятся. Будьте в готовности
+к оказанию помощи при спасении других
+людей.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ДЕЙСТВОВАТЬ ПОСЛЕ ЗЕМЛЕТРЯСЕНИЯ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in"><A NAME="chapter_6"></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Окажите
+первую медицинскую помощь нуждающимся.
+Освободите попавших в легкоустранимые
+завалы. Будьте осторожны! Обеспечьте
+безопасность детей, больных, стариков.
+Успокойте их. Без крайней нужды не
+занимайте телефон. Включите радиотрансляцию.
+Подчиняйтесь указаниях местных властей,
+штаба по ликвидации последствий
+стихийного бедствия. Проверьте, нет ли
+повреждений электропроводки. Устранит
+неисправность или отключите электричество
+в квартире. Помните, что при сильном
+землетрясении электричество в городе
+отключается автоматически. Проверьте,
+нет ли повреждений газо- и водопроводных
+сетей. Устраните неисправность или
+отключите сети. Не пользуйтесь открытым
+огнем. Спускаясь по лестнице, будьте
+осторожны, убедитесь в ее прочности. Не
+подходите к явно поврежденным зданиям,
+не входите в них. Будьте готовы к сильным
+повторным толчкам, так как наиболее
+опасны первые 2-3&nbsp;часа после землетрясения.
+Не входите в здания без крайней нужды.
+Не выдумывайте и не передавайте никаких
+слухов о возможных повторных толчках.
+Пользуйтесь официальными сведениями.
+Если Вы оказались в завале, спокойно
+оцените обстановку, по возможности
+окажите себе медицинскую помощь.
+Постарайтесь установить связь с людьми,
+находящимися вне завала (голосом,
+стуком). Помните, что зажигать огонь
+нельзя, воду из бачка унитаза можно
+пить, а трубы и батареи можно использовать
+для подачи сигнала. Экономьте силы.
+Человек может обходиться без пищи более
+полумесяца.</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>
+</B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>МОЛНИЯ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>МОЛНИЯ
+- это искровой разряд электростатического
+заряда кучевого облака, сопровождающийся
+ослепительной вспышкой и резким звуком
+(громом). Опасность. Молниевой разряд
+характеризуется большими токами, а его
+температура доходит до 300000 градусов.
+Дерево при ударе молнии расщепляется
+и даже может загореться. Расщепление
+дерева происходит вследствие внутреннего
+взрыва из-за мгновенного испарения
+внутренней влаги древесины. Прямое
+попадание молнии для человека обычно
+заканчивается смертельным исходом.
+Ежегодно в мире от молнии погибает около
+3000 человек. Куда ударяет молния? Разряд
+статического электричества обычно
+проходит по пути наименьшего электрического
+сопротивления. Так как между самым
+высоким предметом, среди аналогичных,
+и кучевым облаком расстояние меньшее,
+значит меньше и электрическое
+сопротивление. Следовательно, молния
+поразит в первую очередь высокий предмет
+(мачту, дерево и т.п.).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ПОДГОТОВИТЬСЯ К МОЛНИИ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Для
+снижения опасности поражения молнией
+объектов экономики, зданий и сооружений
+устраивается молниезащита в виде
+заземленных металлических мачт и
+натянутых высоко над сооружениями
+объекта проводами. Перед поездкой на
+природу уточните прогноз погоды. Если
+предсказывается гроза, то перенесите
+поездку на другой день. Если Вы заметили
+грозовой фронт, то в первую очередь
+определите примерное расстояние до
+него по времени задержки первого раската
+грома, первой вспышки молнии, а также
+оцените, приближается или удаляется
+фронт. Поскольку скорость света огромна
+(300 000&nbsp;км/с), то вспышку молнии мы
+наблюдаем мгновенно. Следовательно,
+задержка звука будет определяться
+расстоянием и его скоростью (около
+340&nbsp;м/с). Пример: Если после вспышки до
+грома прошло 5&nbsp;секунд, то расстояние
+до грозового фронта равно
+340&nbsp;м/с&nbsp;х&nbsp;5с&nbsp;=&nbsp;1700&nbsp;м. Если
+запаздывание звука растет, то грозовой
+фронт удаляется, а если запаздывание
+звука сокращается, то грозовой фронт
+приближается.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ДЕЙСТВОВАТЬ ВО ВРЕМЯ ГРОЗЫ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Молния
+опасна тогда, когда вслед за вспышкой
+следует раскат грома. В этом случае
+срочно примите меры предосторожности.
+Если Вы находитесь в сельской местности:
+закройте окна, двери, дымоходы и
+вентиляционные отверстия. Не растапливайте
+печь, поскольку, высокотемпературные
+газы, выходящие из печной трубы, имеют
+низкое сопротивление. Не разговаривайте
+по телефону: молния иногда попадает в
+натянутые между столбами провода. Во
+время ударов молнии не подходите близко
+к электропроводке, молниеотводу,
+водостокам с крыш, антенне, не стойте
+рядом с окном, по возможности выключите
+телевизор, радио и другие электробытовые
+приборы. Если Вы находитесь в лесу, то
+укройтесь на низкорослом участке леса.
+Не укрывайтесь вблизи высоких деревьев,
+особенно сосен, дубов и тополей. Не
+находитесь в водоеме или на его берегу.
+Отойдите от берега, спуститесь с
+возвышенного места в низину. В степи,
+поле или при отсутствии укрытия (здания)
+не ложитесь на землю, подставляя
+электрическому току все свое тело, а
+сядьте на корточки в ложбине, овраге
+или другом естественном углублении,
+обхватив ноги руками. Если грозовой
+фронт настиг Вас во время занятий
+спортом, то немедленно прекратите их.
+Металлические предметы (мотоцикл,
+велосипед, ледоруб и т.д.) положите в
+сторону, отойдите от них на 20-30&nbsp;м. Если
+Вас гроза застала Вас в автомобиле, не
+покидайте его, при этом закройте окна
+и опустите антенну радиоприемника.</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>
+</B></FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ТЕРРОРИСТИЧЕСКИЙ&nbsp;&nbsp;АКТ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in"><A NAME="chapter_11"></A><A NAME="chapter_8"></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>ПОМНИТЕ!
+Правильные и грамотные действия помогут
+сохранить Вашу жизнь.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Террористы
+могут установить взрывные устройства
+в самых неожиданных местах: на дорогах,
+жилых ломах, на транспорте, в общественных
+местах, припаркованных автомобилях. В
+настоящее время могут использоваться
+как промышленные так и самодельные
+взрывные устройства, замаскированные
+под любые предметы.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>МЕРЫ
+БЕЗОПАСНОСТИ ПРИ УГРОЗЕ ПРОВЕДЕНИЯ
+ТЕРАКТА</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.
+Будьте предельно внимательны,
+доброжелательны к окружающим вас
+людям.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.
+Ни при каких условиях НЕ ДОПУСКАЙТЕ
+ПАНИКИ !!!<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.
+Если есть возможность, отправьтесь с
+детьми и престарелыми на несколько дней
+на дачу, в деревню, к родственникам за
+город.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.
+Обезопасьте свое жилище:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+уберите пожароопасные предметы - старые
+запасы красок, лаков, бензина и
+т.п.;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+уберите с окон горшки с цветами (поставьте
+их на пол);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+задерните шторы на окнах - это защитит
+вас от повреждения осколками
+стекла;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.
+Сложите в сумку необходимые вам документы,
+вещи, деньги для случая экстренной
+эвакуации.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.
+По возможности реже пользуйтесь
+общественным транспортом.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.
+Отложите посещение общественных
+мест.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.
+Окажите психологическую поддержку
+старым, больным, детям.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ВЫ ОБНАРУЖИЛИ
+ВЗРЫВООПАСНЫЙ ПРЕДМЕТ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Заметив
+взрывоопасный предмет (гранату, снаряд,
+бомбу и т.п.), не подходите близко к нему,
+позовите находящихся поблизости людей
+и попросите немедленно сообщить о
+находке в милицию. Не позволяйте случайным
+людям прикасаться к опасному предмету
+или пытаться обезвредить его.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Совершая
+поездки в общественном транспорте
+(особенно в метро), обращайте внимание
+на оставленные сумки, портфели, свертки,
+игрушки и другие бесхозные предметы, в
+которых могут находиться самодельные
+взрывные устройства. Немедленно сообщите
+об этом водителю, машинисту поезда,
+любому работнику милиции. Не открывайте
+их, не трогайте руками, предупредите
+стоящих рядом людей о возможной
+опасности.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Заходя в
+подъезд обращайте внимание на посторонних
+людей и незнакомые предметы. Как правило
+взрывное устройство в здании закладывается
+в подвалах, на первых этажах, около
+мусоропроводов, под лестницами. Будьте
+бдительны и внимательны!</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ЕСЛИ ВДРУГ
+ПРОИЗОШЕЛ ВЗРЫВ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>1.
+Спокойно уточните обстановку.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.
+В случае необходимой эвакуации возьмите
+документы и предметы первой
+необходимости.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.
+Продвигайтесь осторожно, не трогайте
+поврежденные конструкции и оголившиеся
+провода.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.
+В разрушенном или поврежденном помещении
+из-за опасности взрыва скопившихся
+газов нельзя пользоваться открытым
+пламенем (спичками, свечами, факелами
+и т.п.).<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.
+Действуйте в строгом соответствии с
+указаниями должностных лиц.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>ВАС ЗАВАЛИЛО
+ОБЛОМКАМИ СТЕН</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in"><A NAME="chapter_12"></A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Постарайтесь
+не падать духом, дышите глубоко и ровно,
+приготовьтесь терпеть голод и жажду.
+Голосом и стуком привлекайте внимание
+людей. Если вы глубоко от поверхности
+земли, перемещайте влево&nbsp;- вправо
+любой металлический предмет (кольцо,
+ключи и т.п.), для обнаружения вас
+металлолокатором.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Если
+пространство около вас относительно
+свободно, не зажигайте спички, свечи,
+берегите кислород. Продвигайтесь
+осторожно, стараясь не вызвать нового
+обвала, ориентируйтесь по движению
+воздуха, поступающего снаружи. Если у
+вас есть возможность, с помощью подручных
+предметов (доски, кирпича и т.п.) укрепите
+потолок от обрушения и дожидайтесь
+помощи. При сильной жажде положите в
+рот небольшой гладкий камешек или
+обрывок носового платка и сосите его,
+дыша носом.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>УРАГАН,&nbsp;&nbsp;БУРЯ,&nbsp;&nbsp;СМЕРЧ</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>УРАГАН
+- это атмосферный вихрь больших размеров
+со скоростью ветра до 120&nbsp;км/ч, а в
+приземном слое&nbsp;- до 200&nbsp;км/ч.<BR></B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;БУРЯ
+- длительный, очень сильный ветер со
+скоростью более 20&nbsp;м/с, наблюдается
+обычно при прохождении циклона и
+сопровождается сильным волнением на
+море и разрушениями на суше.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;СМЕРЧ
+- атмосферный вихрь, возникающий в
+грозовом облаке и распространяющийся
+вниз, часто до самой поверхности Земли
+в виде темного облачного рукава или
+хобота диаметром в десятки и сотни
+метров. Существует недолго, перемещаясь
+вместе с облаком. <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Опасность
+для людей при таких природных явлениях
+заключается в разрушении дорожных и
+мостовых покрытий, сооружений, воздушных
+линий электропередачи и связи, наземных
+трубопроводов, а также поражении людей
+обломками разрушенных сооружений,
+осколками стекол, летящими с большой
+скоростью. Кроме того, люди могут
+погибнуть и получить травмы в случае
+полного разрушения зданий. При снежных
+и пыльных бурях опасны снежные заносы
+и скопления пыли (&quot;черные бури&quot;) на
+полях, дорогах и населенных пунктах, а
+также загрязнение воды. Основными
+признаками возникновения ураганов,
+бурь и смерчей являются: усиление
+скорости ветра и резкое падение
+атмосферного давления; ливневые дожди
+и штормовой нагон воды; бурное выпадение
+снега и грунтовой пыли. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Если
+Вы проживаете в районе, подверженном
+воздействию ураганов, бурь и смерчей
+(Дальневосточный, Центральный и другие
+экономические районы Российской
+Федерации), ознакомьтесь с:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-сигналами
+оповещения о приближающемся данном
+стихийном бедствии;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-способами
+защиты людей и повышения устойчивости
+зданий (сооружений) к воздействию
+ураганного ветра и штормового нагона
+воды;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-правилами
+поведения людей при наступлении ураганов,
+снежных и песчаных бурь, смерчей;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-способами
+и средствами ликвидации последствий
+ураганов, смерчей, штормового нагона
+воды, снежных и песчаных бурь, а также
+приемами оказания помощи пострадавшим,
+оказавшимся в завалах разрушенных
+зданий и сооружений; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-местами
+укрытия в ближайших подвалах, убежищах
+или наиболее прочных и устойчивых
+зданиях членов вашей семьи, родственников
+и соседей; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-путями
+выхода и районами размещения при
+организованной эвакуации из зон
+повышенной опасности;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-адресами
+и телефонами управления ГО и ЧС,
+администрации и комиссии по чрезвычайным
+ситуациям Вашего населенного пункта.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;После
+получения сигнала о штормовом
+предупреждении приступайте к:
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-укреплению
+крыши, печных и вентиляционных труб;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-заделыванию
+окон в чердачных помещениях (ставнями,
+щитами из досок или фанеры);
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-освобождению
+балконов и территории двора от
+пожароопасных предметов; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-к
+сбору запасов продуктов и воды на 2-3
+суток на эвакуации в безопасный район,
+а также автономных источников освещения
+(фонарей, керосиновых ламп,
+свечей);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-переходите
+из легких построек в более прочные
+здания или в защитные сооружения
+гражданской обороны.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>КАК
+ДЕЙСТВОВАТЬ ВО ВРЕМЯ УРАГАНА, БУРИ,
+СМЕРЧА</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman, serif"><FONT SIZE=3>Если
+ураган (буря, смерч) застал Вас в здании,
+отойдите от окон и займите безопасное
+место у стен внутренних помещений, в
+коридоре, у встроенных шкафов, в ванных
+комнатах, туалете, кладовых, в прочных
+шкафах, под столами. Погасите огонь в
+печах, отключите электроэнергию, закройте
+краны на газовых сетях. В темное время
+суток используйте фонари, лампы, свечи;
+включите радиоприемник для получения
+информации управления ГО и ЧС и комиссии
+по чрезвычайным ситуациям; по возможности,
+находитесь в заглубленном укрытии, в
+убежищах, погребах и т.п. Если ураган,
+буря или смерч застали Вас на улицах
+населенного пункта, держитесь как можно
+дальше от легких построек, зданий,
+мостов, эстакад, линий электропередачи,
+мачт, деревьев, рек, озер и промышленных
+объектов. Для защиты от летящих обломков
+и осколков стекла используйте листы
+фанеры, картонные и пластмассовые ящики,
+доски и другие подручные средства.
+Старайтесь быстрее укрыться в подвалах,
+погребах и противорадиационных укрытиях,
+имеющихся в населенных пунктах. Не
+заходите в поврежденные здания, так как
+они могут обрушиться при новых порывах
+ветра. При снежной буре укрывайтесь в
+зданиях. Если вы оказались в поле или
+на проселочной дороге, выходите на
+магистральные дороги, которые периодически
+расчищаются и где большая вероятность
+оказания Вам помощи. При пыльной буре
+закройте лицо марлевой повязкой, платком,
+куском ткани, а глаза очками. При
+поступлении сигнала о приближении
+смерча необходимо немедленно спуститься
+в укрытие, подвал дома или погреб, либо
+укрыться под кроватью и другой прочной
+мебелью. Если смерч застает Вас на
+открытой местности, укрывайтесь на дне
+дорожного кювета, в ямах, рвах, узких
+оврагах, плотно прижимаясь к земле,
+закрыв голову одеждой или ветками
+деревьев. Не оставайтесь в автомобиле,
+выходите из него и укрывайтесь как
+указано выше.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in"><A NAME="chapter_13"></A>
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.04in; margin-right: 0.04in; margin-bottom: 0in; line-height: 0.17in">
+<BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in">
+<BR><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 100%">
+	<SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>7</SDFIELD></P>
+	<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

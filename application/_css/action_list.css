@@ -1,0 +1,101 @@
+.row{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #323232;
+    height: 25px;
+    align-items: center;
+    cursor: pointer;
+}
+.popup_context_menu_title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.title{
+    background-color: #00BCD4;
+}
+.cell_one{
+    width: 10%;
+}
+.cell_two{
+    width: 10%;
+}
+.cell_three{
+    width: 40%;
+}
+.cell_four{
+    width: 40%;
+}
+
+.button_plus{
+    position: absolute;
+    top: 3px;
+    right: -50px;
+    background-image: url('../../templates/simple_template/images/plus.png');
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.button_plus:hover::after {
+     content: attr(data-title);
+    width: 160px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: #80d864;
+ }
+#action_list{
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+}
+
+
+
+
+
+#popup_action_list{
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    top: 20px;
+    left: 20px;
+    width: 500px;
+    height: 150px;
+    background-color: #ccc;
+    left: calc(50% - 250px);
+    top: calc(50% - 75px);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+
+#popup_action_list::before {
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.canvas{
+    z-index: 999999;
+    position: relative;
+    background-color: #ccc;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.block{
+    display: block!important;
+}
+

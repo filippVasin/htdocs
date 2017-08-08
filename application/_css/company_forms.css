@@ -1,0 +1,27 @@
+body{
+    margin-top: 40px;
+}
+
+.form_table {
+    width: 800px;
+    margin: 0 auto;
+}
+.form_table .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid;
+    margin-top: -1px;
+}
+.form_table .row div{
+    text-align: center;
+    width: 400px;
+}
+
+.form_table .row div:first-child{
+    border-right: 1px solid;
+}
+.title_column_form{
+    font-size: 16px;
+    font-weight: 700;
+}

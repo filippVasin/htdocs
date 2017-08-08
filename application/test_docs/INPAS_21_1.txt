@@ -1,0 +1,2099 @@
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="User">
+	<META NAME="CREATED" CONTENT="20170803;20500000000000">
+	<META NAME="CHANGEDBY" CONTENT="User">
+	<META NAME="CHANGED" CONTENT="20170803;20500000000000">
+	<META NAME="AppVersion" CONTENT="15.0000">
+	<META NAME="Company" CONTENT="Krokoz™">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.49in; margin-bottom: 0.49in }
+		@page:first { }
+		P { margin-bottom: 0in; direction: ltr; line-height: 100%; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Times New Roman", serif; font-size: 14pt }
+		P.cjk { font-family: "Times New Roman"; font-size: 14pt; so-language: ru-RU }
+		P.ctl { font-family: "Times New Roman"; font-size: 10pt }
+		H4 { text-indent: 0.39in; margin-top: 0in; margin-bottom: 0in; direction: ltr; line-height: 100%; text-align: justify; widows: 2; orphans: 2; page-break-after: auto }
+		H4.western { font-family: "inherit", serif; font-size: 13pt; font-weight: normal }
+		H4.cjk { font-family: "Times New Roman"; font-size: 13pt; so-language: ru-RU; font-weight: normal }
+		H4.ctl { font-family: "Times New Roman"; font-size: 13pt; font-weight: normal }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ru-RU" LINK="#0000ff" DIR="LTR">
+<DIV TYPE=HEADER>
+	<P STYLE="text-indent: 0.39in">                                     
+	  <FONT SIZE=3><B>ООО «ИНПЭС»                    
+	</B>ВНД-3.9(АУП)-21-ред.1</FONT><IMG SRC="21_1_html_91c38392.jpg" NAME="Рисунок 1" ALIGN=LEFT HSPACE=12 WIDTH=229 HEIGHT=91 BORDER=0></P>
+	<P STYLE="text-indent: 0.39in">                                     
+	                       
+	</P>
+	<P CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.39in">          
+	                             <FONT SIZE=3><B>И</B><B>нструкция
+	по охране труда для водителей <BR>         
+	                                       автотранспорта
+	ООО «ИНПЭС»</B></FONT></P>
+	<P STYLE="text-indent: 0.39in; margin-bottom: 0.26in"><BR>
+	</P>
+</DIV>
+<P CLASS="western" STYLE="text-indent: 0.39in"><A NAME="_GoBack"></A><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 3.94in"><FONT SIZE=3><B>УТВЕРЖДАЮ</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 3.94in"><FONT SIZE=3><B>Управляющий
+ООО «ИНПЭС»</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 3.94in"><FONT SIZE=3><B>____________
+/Ю.А. Абрамов/</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 3.94in"><FONT SIZE=3><B>«___»
+_____________ 2016 год</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER><FONT SIZE=3><B>ВНУТРЕННИЙ
+НОРМАТИВНЫЙ ДОКУМЕНТ</B></FONT></P>
+<P CLASS="western" ALIGN=CENTER><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER><FONT SIZE=3><B>ИНСТРУКЦИЯ
+ПО ОХРАНЕ ТРУДА ДЛЯ ВОДИТЕЛЕЙ
+<BR>АВТОТРАНСПОРТА ООО «ИНПЭС»</B><B> </B></FONT>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 1.58in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 1.58in"><FONT SIZE=3>Введено
+в действие с «___» ______________ 2016 года</FONT></P>
+<P CLASS="western" STYLE="text-indent: 1.58in"><FONT SIZE=3>Приказом
+№ ________________ от «___»_________ 2016 года</FONT></P>
+<P ALIGN=JUSTIFY STYLE="page-break-before: always"><BR>
+</P>
+<P ALIGN=JUSTIFY><BR>
+</P>
+<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT SIZE=3><B>Содержание
+</B></FONT></FONT>
+</P>
+<TABLE WIDTH=623 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=574>
+	<COL WIDTH=21>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT><BR>
+			</P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="widows: 0; orphans: 0"><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">1.
+			Общие требования охраны труда</SPAN></FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT SIZE=3>3</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="widows: 0; orphans: 0"><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">2.
+			Обязанности руководителей работ</SPAN></FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT SIZE=3>5</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="widows: 0; orphans: 0"><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">3.
+			Требования безопасности к техническому
+			состоянию и оборудованию <BR>    подвижного
+			состава</SPAN></FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><BR>
+			</P>
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT SIZE=3>5</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="widows: 0; orphans: 0"><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">4.
+			Обязанности водителя автомобиля перед
+			началом работы</SPAN></FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT SIZE=3>7</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="widows: 0; orphans: 0"><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">5.
+			Обязанности водителя автомобиля во
+			время работы</SPAN></FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT SIZE=3>7</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="widows: 0; orphans: 0"><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">6.
+			Специальные требования при работе </SPAN></FONT></FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT SIZE=3>11</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=LEFT STYLE="widows: 0; orphans: 0"><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-weight: normal">7.
+			Лист регистрации изменений</SPAN></FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT SIZE=3>13</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT SIZE=3>8. Лист
+			ознакомления с инструкцией </FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><FONT COLOR="#000000"><FONT SIZE=3>14</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=574 VALIGN=TOP STYLE="border: none; padding: 0in">
+			<P ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=21 STYLE="border: none; padding: 0in">
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" STYLE="text-indent: 0.39in"> 
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; page-break-before: always">
+<BR>
+</P>
+<P CLASS="western" STYLE="widows: 0; orphans: 0"><FONT SIZE=3><B>1.
+ОБЩИЕ ТРЕБОВАНИЯ ОХРАНЫ ТРУДА</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.1.
+Настоящая Инструкция предназначена
+для водителей и предусматривает основные
+вопросы безопасного ведения работ,
+связанных с эксплуатацией, обслуживанием
+и ремонтом автомобилей.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">В
+ней изложены требования безопасного
+ведения работ, как по основной, так и по
+смежным профессиям и видам работ.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.2.
+К управлению автомобилем допускаются
+лица: не моложе 18 лет; имеющие медицинский
+допуск; прошедшие обучение безопасным
+методам и приемам работ, вводный
+инструктаж и инструктаж на рабочем
+месте, </FONT><FONT COLOR="#000000"><B>а также стажировку
+на рабочем месте от 2-х до 14-ти смен под
+руководством опытного наставника</B></FONT><FONT COLOR="#000000">;
+имеющие удостоверение на вождение,
+выданное органами ГИБДД.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.3.
+Водители должны быть обучены по
+безопасности труда в течение одного
+месяца со дня зачисления на работу.
+После окончания обучения и в дальнейшем
+ежегодно должны сдавать экзамены на
+знание требований безопасности труда.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.4.
+Водитель обязан через каждые 2 года
+сдавать зачет по знанию «Правил дорожного
+движения».</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.5.
+До прохождения обучения и получения
+удостоверения по технике безопасности
+водители к самостоятельной работе (без
+наблюдения со стороны квалифицированных
+рабочих, назначенных администрацией с
+их согласия) не допускаются.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.6.
+Допуск к самостоятельной работе
+фиксируется руководителем работ датой
+и своей подписью в Журнале регистрации
+инструктажа на рабочем месте.</FONT> </FONT>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.7.
+</FONT><FONT COLOR="#000000"><B>Всем водителям должны
+проводиться повторные инструктажи не
+реже одного раза в</B></FONT><FONT COLOR="#000000"><I><B>
+</B></I></FONT><FONT COLOR="#000000"><B>три месяца,</B></FONT><FONT COLOR="#000000">
+а также внеплановый инструктаж при
+изменении условий труда, вида
+автотранспорта, нарушении водителем
+требований безопасности и т. д. Кроме
+того, при изменении вида автотранспорта,
+водитель должен пройти стажировку.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.8.
+Водитель может выполнять только ту
+работу, которая ему поручена непосредственным
+руководителем, по которой он обучен,
+проинструктирован и имеет медицинский
+допуск.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.9.
+При несчастном случае на производстве,
+даже при таком, как порез или ушиб пальца,
+засорение глаза и т.д. сам пострадавший
+и очевидец должны принять меры по
+оказанию первой помощи и немедленно
+сообщить об этом руководству.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.10.
+Каждый водитель автотранспорта обязан
+знать способы оказания первой помощи
+при несчастном случае, в том числе при
+поражении электрическим током.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.11.
+Каждый водитель автотранспорта должен
+твердо знать и строго выполнять правила,
+предусмотренные в настоящей инструкции
+и «Правилах дорожного движения».</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.12.
+Находясь на территории предприятия (во
+дворе, здании, на подъездных путях,
+стройплощадке) выполняйте следующие
+требования:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">будьте
+	внимательны к сигналам, подаваемым
+	крановщиком, или водителем движущегося
+	транспорта и механизмов и выполняйте
+	их;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	стойте и не проходите под поднимаемым
+	грузом независимо </FONT><FONT COLOR="#000000"><SPAN LANG="en-US">o</SPAN></FONT><FONT COLOR="#000000">т
+	его массы;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	ходите в местах, не предусмотренных
+	для прохода;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	перебегайте дорогу перед любым движущимся
+	транспортом, механизмами <BR>и т. п.;</FONT></FONT></P>
+	<LI><P><FONT SIZE=3><FONT COLOR="#000000">не ходите внутри
+	железнодорожной колеи и вблизи нее, по
+	транспортно-дорожным путям, особенно
+	в период движения транспорта. Ходите
+	только по выделенным для хождения
+	путям. Если пути совмещены для автомашины
+	и пешеходов, то при езде и хождении
+	соблюдайте особую осторожность;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">переходите
+	дорогу под прямым углом, а не острым;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">будьте
+	осторожны, особенно в зимнее время,
+	спускаясь, поднимаясь по лестницам и
+	площадкам и идя по дорогам и проходам,
+	так как они могут быть скользкими и
+	обледенелыми;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">берегите
+	плакаты и предупредительные надписи
+	по безопасному ведению работ, не
+	допускайте их срыва, порчи и разрушения;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">курите
+	только в отведенных для этого местах;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	перепрыгивайте через канавы, кюветы,
+	траншеи – их следует переходить только
+	через мостик или обходить;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	останавливайтесь в узких проходах,
+	дверях при пропуске транспорта, так
+	как при этом может произойти несчастные
+	случаи;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	ходите без дела по другим рабочим
+	местам, цехам, помещениям, площадкам;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">применяйте
+	правильные (неопасные) приемы в работе,
+	предупреждайте товарища по работе и
+	друг друга об опасности;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">прекратите
+	работу при создании условий опасных
+	для жизни или здоровья водителя или
+	лиц, находящихся в машине, и поставьте
+	об этом в известность своего руководителя,
+	инспектора или представителя, в чьём
+	распоряжении работает автомашина;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">берегите
+	инструмент, содержите его в исправном
+	состоянии, а неисправный удаляйте с
+	рабочего места;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	стойте вблизи движущихся частей
+	оборудования и механизмов;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	вскакивайте в попутно идущий транспорт;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	появляйтесь на производстве в нетрезвом
+	состоянии;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">при
+	возникновении пожара сообщите
+	руководству, в пожарную часть и примите
+	меры по тушению;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">водитель
+	на автотранспорте является ответственным
+	за соблюдение правил техники безопасности
+	всеми лицами, находящимися на
+	автотранспорте и обязан требовать
+	выполнения этих правил от всех лиц,
+	связанных с работой и обслуживанием
+	машины.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.13.
+Соблюдайте следующие правила санитарной
+и личной гигиены: не переодевайтесь и
+не храните личную одежду в кабин</FONT><FONT COLOR="#000000"><SPAN LANG="en-US">e</SPAN></FONT><FONT COLOR="#000000">
+автомашины (или на рабочем месте);
+содержите в исправности выданную
+спецобувь и спецодежду, своевременно
+сдавайте ее в ремонт, чистку и стирку;
+содержите в чистоте и порядке индивидуальный
+шкаф для хранения одежды и бытовые
+помещения; своевременно проходите
+медосмотр и являйтесь на прививки</FONT><SPAN STYLE="font-variant: small-caps"><FONT COLOR="#000000">;
+</FONT></SPAN><FONT COLOR="#000000">не мойте руки в
+бензине, керосине, ацетоне, не вытирайте
+их песком, тряпками, загрязненными
+песком, стружкой и т. п.; мойте руки водой
+с мылом перед приемом пищи и курением,
+а также посла окончания работы; при
+работе с ядовитыми и легковоспламеняющимися
+веществами и жидкостями выполняйте
+требования дополнительных инструкций.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">1.14.
+Невыполнение требований настоящей
+Инструкции является нарушением трудовой
+дисциплины. Виновные в этом несут
+ответственность в установленном порядке:
+дисциплинарную, административную,
+уголовную.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000"><B>2.
+ОБЯЗАННОСТИ РУКОВОДИТЕЛЕЙ РАБОТ</B></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">2.1.
+Лицо, ответственное за исправное
+состояние автомобиля обязано: обеспечить
+содержание автомобиля в исправном
+состоянии; систематически проводить
+инструктаж по технике безопасности
+водителям автомобилей; установить
+порядок приема и сдачи смены водителя
+и выделить время, необходимое для
+ежедневного технического обслуживания
+автомобиля; обеспечить управление
+автомобилем, постоянно закрепленным
+персоналам и не допускать к управлению
+необученных лиц.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">2.2.
+Администрация не имеет права заставлять
+водителя, а водитель не имеет права
+выезжать на автомобиле, если техническое
+состояние автомобиля или прицепа не
+отвечает техническим условиям и правилам
+техники безопасности.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">2.3.
+При направлении двух или более автомобилей
+для работы в одном месте администрация
+обязана приказом назначить лицо,
+ответственное за выполнение правил
+всеми водителями.</FONT></FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.39in; background: #ffffff">
+<BR>
+</P>
+<P CLASS="western" STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000"><B>3.
+ТРЕБОВАНИЯ БЕЗОПАСНОСТИ К ТЕХНИЧЕСКОМУ
+СОСТОЯНИЮ И ОБОРУДОВАНИЮ ПОДВИЖНОГО
+СОСТАВА</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.39in; background: #ffffff">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">3.1.
+К кабине предъявляются следующие
+требования:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">ветровое
+	и боковые стекла не должны иметь трещин
+	и затемнений, затрудняющих видимость,
+	боковые стекла должны плавно открываться
+	от руки или стеклоподъемного механизма;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">щетки
+	включенного стеклоочистителя должны
+	перемещаться свободно, без заедания
+	обеспечивая нормальную очистку ветрового
+	стекла;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">на
+	сиденье и его спинке не допускаются
+	провалы, рваные места, выступающие
+	пружины, острые углы, сиденье и спинка
+	должны быть отрегулированы так, чтобы
+	обеспечить удобную посадку водителя;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">замки
+	дверей кабины должны быть исправными
+	и исключать возможность их самопроизвольного
+	открывания во время движения автомобиля;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">отопительное
+	устройство в кабине и салоне должно
+	быть исправно;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">пол
+	кабины должен быть исправным и застелен
+	резиновым ковриком.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in; margin-top: 0.04in; background: #ffffff">
+<FONT SIZE=3><FONT COLOR="#000000">3.2. Система питания,
+охлаждения и смазки не должны иметь
+течи, а также пропуска отработанных
+газов через неплотности соединений.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">3.3.
+Труба глушителя должна плотно соединяться
+с выпускным трубопроводом двигателя.
+Трубопроводы и глушитель не должны
+иметь трещин и пробоин. Вентиляционные
+устройства двигателя должны работать
+исправно, не допуская прорыва газов в
+подкапотное устройство.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">3.4.
+Состояние рулевого управления должно
+обеспечивать легкость и надежность
+управления колесами при всех скоростях
+движения автомобиля.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">В
+рулевом управлении не допускаются:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">суммарный
+	люфт рулевого управления превышает
+	предельные значения для соответствующего
+	типа транспортного средства;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">изгиб
+	и вмятины рулевой колонки или наличие
+	других повреждений, препятствующих
+	свободному вращению рулевого вала;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">ослабление
+	крепления и наличие повреждений
+	крепежных деталей;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">ослабление
+	крепления рулевой сошки на валу;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">неисправности
+	продольных и поперечных рулевых тяг и
+	их деталей (изгиб, трещины, повреждение
+	резьбы, поломки шплинтов и др.);</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">повышенный
+	люфт в шарнирных соединениях рулевых
+	тяг.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">3.5.
+Передний мост не должен иметь:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">погнутости,
+	трещин в балках или деталях подвески;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">люфта
+	передних колес более положенного (по
+	паспорту завода-изготовителя автомобиля);</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">заеданий
+	и повреждений в подшипниках колес.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>3.6.
+Состояние тормозов должно обеспечивать
+своевременную остановку автомобиля и
+одновременность начала торможения всех
+колес.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">В
+тормозной системе не допускаются:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">заедания
+	механического привода, поломки и трещины
+	в какой-либо из деталей;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">просачивание
+	жидкости из системы гидравлического
+	привода или попадания в нее воздуха:</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">заедание
+	колодок хотя бы в одном рабочем тормозе;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">замена
+	тормозной жидкости минеральными или
+	иными маслами, а также жидкостями-суррогатами;</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>При
+регулировке и проверке ручного тормоза
+необходимо убедиться в отсутствии
+трещин тормозного диска. Рычаг (рукоятка
+ручного</FONT><SPAN STYLE="font-variant: small-caps"><FONT SIZE=3>
+</FONT></SPAN><FONT SIZE=3>тормоза) должен надежно
+удерживаться запирающим устройством.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">3.7.
+Состояние шин должно гарантировать
+безопасность движения автомобиля.
+Запрещается устанавливать шины:</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=JUSTIFY STYLE="widows: 0; orphans: 0"><FONT SIZE=2><FONT SIZE=3>не
+	соответствующие марке транспортного
+	средства по размеру и допускаемой
+	нагрузке;</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="widows: 0; orphans: 0"><FONT SIZE=2><FONT SIZE=3>шины,
+	имеющие остаточную высоту рисунка
+	протектора ниже допустимых норм;</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="widows: 0; orphans: 0"><FONT SIZE=2><FONT SIZE=3>шины
+	со сквозным отверстием, расслоением,
+	другими механическими повреждениями
+	покрышки;</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="widows: 0; orphans: 0"><FONT SIZE=2><FONT SIZE=3>шины
+	с давлением воздуха, не соответствующим
+	уставленной норме;</FONT></FONT></P>
+	<LI><P ALIGN=JUSTIFY STYLE="widows: 0; orphans: 0"><FONT SIZE=2><FONT SIZE=3>новые
+	шины, спаренные с шинами, имеющими
+	значительный износ рисунка протектора.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>3.8.
+Диски колес должны быть надежно закреплены
+на ступицах. Не допускается разработка
+в дисках колес отверстий, нарушающих
+надежность крепления их гайками. Замковые
+кольца должны быть исправны и правильно
+установлены. Не допускается наличие
+трещин и погнутости дисков колес.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>3.9.
+Состояние электрооборудования автомобиля
+должно надежно обеспечивать пуск
+двигателя при помощи стартера,
+бесперебойное и своевременное зажигание
+смеси в цилиндрах двигателя, безотказную
+работу приборов освещения, сигнализации
+и приборов, а также исключать возможность
+искрообразования в проводах и зажимах.
+Все провода электрооборудования должны
+иметь надежную неповрежденную изоляцию.
+Аккумуляторная батарея должна быть
+надежно укреплена. Не допускается течь
+электролита из моноблока аккумуляторной
+батареи.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>3.10.
+Автомобиль должен быть укомплектован
+набором исправных инструментов и
+приспособлений, в частности:</FONT></P>
+<UL>
+	<LI><P><FONT SIZE=3>подъемным приспособлением
+	(домкратом) необходимой грузоподъемности;</FONT></P>
+	<LI><P><FONT SIZE=3>переносной лампой со шнуром,
+	длиной не менее 4 м или электрическим
+	фонарем;</FONT></P>
+	<LI><P><FONT SIZE=3>ручным насосом для накачивания
+	шин и продувки системы питания двигателя;</FONT></P>
+	<LI><P><FONT SIZE=3>набором инструмента.</FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>3.11. Для
+предотвращения возникновения пожара
+на автомобиле запрещается:</FONT></P>
+<UL>
+	<LI><P><FONT SIZE=3>допускать скопление на
+	двигателе и его картере грязи, смешанной
+	с топливом и маслом;</FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">оставлять
+	в кабине и на двигателе загрязненные
+	маслом и топливом использованные
+	обтирочные материалы;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">эксплуатировать
+	неисправные приборы системы питания;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">курить
+	в непосредственной близости от приборов
+	системы питания (в частности от топливных
+	баков);</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">пользоваться
+	открытым огнем при определении и
+	устранении неисправности механизмов;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">подогревать
+	двигатель открытым пламенем.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000"><B>4.
+ОБЯЗАННОСТИ ВОДИТЕЛЯ АВТОМОБИЛЯ ПЕРЕД
+НАЧАЛОМ РАБОТ</B></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">4.1.
+Получить задание на выполнение работ
+и инструктаж по охране труда.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">4.2.
+Надеть положенные по нормам спецодежду,
+спецобувь, другие защитные и
+предохранительные средства, привести
+их в порядок.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">4.3.
+Проверить техническое состояние
+автомобиля, обратив особое внимание на
+исправность: шин, тормозов, рулевого
+управления, фар, задних фонарей
+стоп-сигнала, указателей поворотов,
+звукового сигнала, а также на отсутствие
+подтекания топлива, масла, охлаждающей
+жидкости, давление воздуха в шинах в
+соответствии с нормами; наличие
+инструмента и инвентаря; заправку
+автомобиля топливом, маслом, охлаждающей
+жидкостью, тормозной жидкостью;
+исправность автомобиля перед выездом
+на линию подтверждается лицом,
+ответственным за выпуск технически
+исправных автомобилей и водителем
+подписью в путевом листе.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">4.4.
+Привести в порядок рабочее место,
+проверить наличие и исправность ручного
+инструмента, защитных средств,
+приспособлений при выполнении других
+работ (например, ремонтные работы в
+гараже).</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><BR>
+</P>
+<P CLASS="western" STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000"><B>5.
+ОБЯЗАННОСТИ ВОДИТЕЛЯ АВТОМОБИЛЯ ВО
+ВРЕМЯ РАБОТЫ</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.39in; background: #ffffff">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000"><B>5.1.
+Требования к инструменту</B></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.1.1.
+К ручным инструментам предъявляются
+следующие требования:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">рабочие
+	концы не должны иметь повреждений
+	(выбоин, сколов);</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">боковые
+	грани в местах зажима их рукой не должны
+	иметь заусенцев и острых ребер;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">затылочная
+	часть ударных инструментов должна быть
+	гладкой, не иметь трещин, заусенцев,
+	скосов наклепа;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">инструмент
+	не должен быть перекален;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">молотки
+	и кувалды должны быть надежно насаженными
+	на деревянные ручки и расклинены
+	металлическими клинья;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">поверхность
+	всех ручек инструментов должна быть
+	гладкой без заусенцев и трещин.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.1.2.
+Подбирайте ключи соответственно размерам
+гаек и болтов. Не разрешается работать
+гаечными ключами с непараллельными,
+изношенными губками. Запрещается
+применять любой формы подкладки между
+зевом ключа и гаек, а также наращивать
+рычаг ключа путем присоединения другого
+ключа, трубы или другого предмета.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.1.3.
+Работайте только в защитных очках при
+рубке металла, расклепке или выбивке
+болтов и шпилек.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.1.4.
+Если имеется разрешение (удостоверение)
+на работу с электро-пневмо инструментами,
+работайте им, но выполняйте требования
+специальных инструкций по электро и
+пневмо- инструменту, пользуясь защитными
+средствами.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.1.5.
+Без обучения, инструктажа и знания
+инструкции по паяльной лампе, пользоваться
+паяльной лампой запрещается.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.1.6.
+Гидравлические и пневматические домкраты
+должны иметь плотные соединения,
+исключающие утечку жидкости или воздуха
+из рабочих цилиндров во время перемещения
+(подъема) груза. Обратный клапан
+(диафрагма) должна обеспечивать медленное
+плавное опускание штока или остановку.
+Опорная поверхность головок домкратов
+должна иметь форму, не допускающую
+соскальзывания груза.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">Домкраты
+должны иметь клеймо об испытании.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.1.7
+Ручные, рычажно-реечные домкраты должны
+иметь исправные устройства, исключающие
+самопроизвольное опускание груза при
+снятии усилия с рычага или рукоятки.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.1.8.
+Переносная лампа должна быть напряжением
+не выше 12 В и иметь защитную сетку, шнур
+должен быть исправен и не иметь повреждения
+изоляции.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000"><B>5.2.
+Специальные требования при техническом
+обслуживании (ТО) и ремонте автомобиля</B></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.1.
+При постановке автомобиля на ТО и ремонт
+водитель обязан на рулевом колесе
+вывесить табличку с надписью «Двигатель
+не пускать – работают люди», а под колеса
+установить, не менее 2-х упоров, включить
+ручной тормоз, поставить низшую передачу.
+При обслуживании автомобиля на подъемнике,
+в поднятом положении плунжер подъемника
+необходимо надежно зафиксировать упором
+(штангой), на пульте механизма управления
+подъемником водитель должен вывесить
+табличку с надписью: «Не трогать – под
+автомобилем работают люди!».</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.2.
+Соблюдать особую осторожность при
+перемещении автомобиля в ремонтной
+зоне, извещая о движении автомобиля
+звуковым сигналом. Если путь плохо
+просматривается, движение без специального
+наблюдающего лица – запрещается.
+Скорость движения автомобиля – не более
+5 км/час.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.3.
+При работах, связанных с провертыванием
+коленчатого и карданного валов, проверьте
+выключение зажигания, подачу топлива
+(для дизельных автомобилей), поставьте
+рычаг переключения передач в нейтральное
+положение, освободите рычаг ручного
+тормоза (при этом предварительно
+убедитесь в наличии упоров под колесами).</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">После
+выполнения необходимых операций снова
+затяните ручной тормоз и включите низшую
+передачу.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.4.
+Не работайте под автомобилем без лежаков
+(подстилок), непосредственно на земле
+или полу.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.5.
+При выполнении работ, связанных со
+снятием колес, поставьте под приподнятый
+(подвешенный) автомобиль (прицеп) козелки,
+а под неснятые колеса – упоры (башмаки).
+Выполнять какие-либо работы на автомобиле
+(прицепе), подвешенном (приподнятом)
+только на одних подъемных меха</FONT>низмах
+(домкратах, талях и т.п.) запрещается.
+Запрещается подкладывать под приподнятый
+автомобиль (прицеп) диски колес, кирпичи
+и другие случайные предметы.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>5.2.6.
+При снятии и установке рессор на
+автомобилях (прицепах) обязательна
+предварительная их разгрузка путем
+поднятия кузова подъемным механизмом
+с последующей постановкой на козелки.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>5.2.7.
+Запрещается ТО и ремонт автомобиля при
+работающем двигателе, <B>за исключением,
+регулировки системы питания и
+электрооборудования двигателя и
+опробования тормозов.</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.8.
+Не допускать расплескивания и слива на
+пол топлива, охлаждающей жидкости,
+масла. Слив масла и охлаждающей жидкости
+из агрегатов автомобиля производить
+только в специально отведенную тару.
+Случайно попавшее на пол масло или
+солидол немедленно засыпать опилками
+или сухим песком, собрать и отправить
+в специально отведенное место.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.9.
+Не допускать к ТО и ремонту автомобиля
+посторонних людей, в том числе пассажиров
+и</FONT><FONT COLOR="#000000"><I> </I></FONT><FONT COLOR="#000000">грузчиков.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.10.
+При ремонте и работе по ТО работать
+только на тех станках, механизмах, работе
+на которых обучены, допущены и
+проинструктированы.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.11.
+Если вблизи рабочего места производятся
+электросварочные работы, требовать
+установки щита (ширмы) для защиты глаз
+и лица от действия ультрафиолетовых
+лучей, или надевать специальные защитные
+очки. Невыполнение этого требования
+приводит к серьезному заболеванию глаз.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.12.
+Закрыть огнеупорными чехлами все
+бензобаки при установке автомобиля на
+ремонтную яму.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.13.
+Не работать под автомобилем, находящимся
+на наклонной плоскости. В случае крайней
+необходимости принять все меры,
+обеспечивающие безопасность работы:
+затормозить автомобиль и включить
+низшую передачу, поставить упоры под
+колеса, ключ от замка зажигания убрать,
+кабину закрыть.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.14.
+При подъеме и установке автомобиля на
+домкрат устанавливать его только на
+твердый грунт. В случае необходимости
+установки домкрата на рыхлой или вязкой
+почве, под домкрат подкладывайте толстые
+и широкие доски, обеспечивающие его
+устойчивое положение.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.15.
+Не работать и не находиться под
+автомобилем, если он стоит на домкрате
+без специальных страхующих подставок.
+При работе под автомобилем размещаться
+между колесами вдоль машины.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.16.
+Влезать под автомобиль и вылезать из-под
+него только со стороны противоположной
+проезду.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.17.
+Использованный обтирочный материал
+собирать в специально установленные
+для этой цели металлические ящики с
+крышками.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.18.
+Не подходить к открытому огню, не курить
+и не зажигать спичек, если спецодежда
+или руки смочены бензином.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.19.
+Перед началом работы по ремонту
+автомобиля, установленного на смотровой
+яме:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">проверить
+	правильность установки колес по
+	отношению направляющих;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">поставить
+	автомобиль на тормоза и подложить под
+	колеса распорные клинья;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">убедиться
+	в наличии свободного доступа в канаву,
+	исправности лестницы и напольной
+	решетки в канаве.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.20.
+Находясь под машиной, осмотр и ремонт
+автомобиля производить в защитных
+очках.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.21.
+Работая у верстака, следить за тем, чтобы
+поверхность его была гладкой, обита
+листовой сталью, не было заусениц. При
+рубке, чеканке и подобных работах
+надевать защитные очки. Для защиты людей
+от отлетающих частиц металла на верстаке
+должны быть поставлены предохранительные
+сетки или ширмы высотой не менее 1 м.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.22.
+Пыль и стружку с верстака и оборудования
+сметать щеткой. Не сдувать пыль и стружку
+сжатым воздухом и не убирать стружку
+голой рукой.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.23.
+При работе на станке, если к работе на
+нем имеется допуск, соблюдать требования,
+изложенные в Инструкции по безопасной
+работе на этих станках.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.24.
+Не производить ремонта или исправления
+отдельных частей автомобиля, находящихся
+в движении, а также не находиться под
+автомобилем при работающем двигателе.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.25.
+При работе вблизи крыльчатки вентилятора,
+во избежание несчастного случая, снимать
+с него приводной ремень. </FONT></FONT>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.26.
+Выполняя работу совместно, согласовывать
+свои действия с товарищами по работе.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.27.
+При пуске двигателя при открытом капоте
+не допускать, чтобы люди находились в
+непосредственной близости от двигателя.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.28.
+Во избежание загазованности воздуха
+не допускать продолжительную (более 5
+мин.) работу двигателя в закрытом
+невентилируемом помещении.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.29.
+При мойке автомобиля соблюдать следующие
+требования: при открытой мойке ставить
+автомобиль так, чтобы струя воды не
+достигала токоведущих проводников и
+оборудования находящегося под напряжением;
+не направлять струю воды на людей;
+пользоваться лестницей-стремянкой при
+протирании кузова и кабины.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.30.
+Проверку технического состояния
+автомобиля и его агрегатов, производить
+при неработающем двигателе и заторможенных
+колесах.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.31.
+Испытывать тормоза автомобиля на стенде
+или территории с применением деселерометров,
+при испытании на стенде автомобиль
+закрепить тросом или цепью.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">При
+испытании тормозов на ходу выбрать
+ровную, с твёрдым покрытием, специально
+предназначенную для этого площадку.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">Двигатель
+пускать после того, как убедитесь, что
+лицо, производившее регулировку тормозов,
+отошло на безопасное расстояние.
+Запрещается регулировать тормоза при
+включенном двигателе.</FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in; background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">5.2.32.
+При шиномонтажных работах выполнять
+следующие требования:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">при
+	демонтаже шины с диска колеса воздух
+	должен быть полностью спущен; демонтаж
+	шины, плотно приставшей к ободу колеса,
+	осуществлять съемником; запрещается
+	выбивать диски кувалдой или молотком;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">не
+	монтировать шину на обод, покрытый
+	ржавчиной или имеющей вмятины, трещины,
+	заусеницы;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">при
+	накачивании шины воздухом исправлять
+	ее положение на диске можно только
+	после прекращения поступления воздуха;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">запрещается
+	производить монтаж шин на неисправном
+	диске, а также применять не соответствующие
+	размеру шин диска колес и съемные
+	фланцы;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">запрещается
+	осаживать стопорное кольцо кувалдой
+	(молотком) во время накачивания шины;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">подкачивать
+	шину без демонтажа можно, если давление
+	воздуха снизилось не более чем на 40
+	процентов по сравнению с нормальным и
+	если есть уверенность в том, что
+	уменьшение давления не нарушило
+	правильность монтажа, при меньшем
+	давлении колесо надо снять;</FONT></FONT></P>
+	<LI><P STYLE="background: #ffffff"><FONT SIZE=3><FONT COLOR="#000000">шину
+	колеса, снятого с автомобиля, разрешается
+	подкачивать только с применением
+	ограждения (клетки) или страхующего
+	приспособления (вилки), в противном
+	случае стопорное кольцо может вырваться.</FONT></FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3><B>5.3.
+Специальные требования при работе с
+антифризом</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>5.3.1.
+Антифриз перевозить и хранить в исправных,
+металлических бидонах с герметичными
+крышками, или в бочках с завинчивающимися
+пробками.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>5.3.2.
+Перед тем, как налить антифриз, тщательно
+очистить тару от твердых осадков, налетов
+и ржавчины, промыть щелочным раствором
+и пропарить. В таре не должно быть
+остатков нефтепродуктов. Антифриз
+наливать в тару на 5-8 см ниже пробки.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>5.3.3.
+Тщательно мыть руки водой с мылом после
+каждой операции с антифризом (заправка
+автомобиля, проверка качества). При
+случайном заглатывании антифриза
+немедленно обратиться к врачу.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>5.3.4. Не
+допускаются к работе, связанного с
+применением антифриза, водители и другие
+лица не ознакомленные с правилами его
+применения.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western"><FONT SIZE=3><B>6. СПЕЦИАЛЬНЫЕ
+ТРЕБОВАНИЯ ПРИ РАБОТЕ </B></FONT>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>6.1.
+Водителю запрещается:</FONT></P>
+<UL>
+	<LI><P><FONT SIZE=3>управлять транспортным
+	средством в состоянии алкогольного
+	или наркотического опьянения;</FONT></P>
+	<LI><P><FONT SIZE=3>выезжать в болезненном
+	состоянии или при такой степени
+	утомления, которая может повлиять на
+	безопасность движения;</FONT></P>
+	<LI><P><FONT SIZE=3>передать управление
+	транспортным средством лицам, находящимся
+	в состоянии алкогольного или наркотического
+	опьянения, а также в болезненном
+	состоянии, в состоянии утомления или
+	под воздействием лекарственных
+	препаратов;</FONT></P>
+	<LI><P><FONT SIZE=3>передавать управление
+	транспортным средством лицам, не имеющим
+	при себе удостоверения на право
+	управления транспортным средством
+	данной категории или не внесенным в
+	путевой лист и страховой полис;</FONT></P>
+	<LI><P><FONT SIZE=3>превышать установленную
+	правилами скорость движения, техническую
+	скорость установленную паспортом
+	автомобиля и дорожными знаками.</FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>6.2. При
+работе:</FONT></P>
+<UL>
+	<LI><P><FONT SIZE=3>соблюдать правила дорожного
+	движения;</FONT></P>
+	<LI><P><FONT SIZE=3>следить за показаниями
+	приборов автомобиля;</FONT></P>
+	<LI><P><FONT SIZE=3>при появлении неисправности
+	в автомобиле принять меры к ее устранению,
+	а если это невозможно – вызвать техпомощь
+	или вернуться в гараж с соблюдением
+	необходимых мер предосторожности.</FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>6.3. С
+наступлением темноты выполнить следующие
+требования:</FONT></P>
+<UL>
+	<LI><P><FONT SIZE=3>при движении на освещённых
+	участках дорог должен быть включен
+	ближний свет фар (противотуманные фары)
+	или габаритные огни;</FONT></P>
+	<LI><P><FONT SIZE=3>при движении с дальним светом
+	фар в случае сближения со встречным
+	транспортом переключаться на ближний
+	свет не менее чем за 150 м. При ослеплении
+	включить аварийную сигнализацию и не
+	меняя полосу движения, снизить скорость
+	и остановить автомобиль;</FONT></P>
+	<LI><P><FONT SIZE=3>при аварийной остановке
+	автомобиля в пути на неосвещенных
+	участках дорог и в условиях недостаточной
+	видимости включить аварийную сигнализацию;</FONT></P>
+	<LI><P><FONT SIZE=3>при остановке с неисправными
+	осветительными приборами вывести
+	автомобиль за пределы дороги, а если
+	это невозможно, то выставить знак
+	аварийной остановки или мигающий
+	красный фонарь.</FONT></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>6.4. При
+движении в условиях ограниченной
+видимости (менее 300 м, туман, дождь,
+снегопад, пыль) снизить скорость, включить
+свет фар. </FONT>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><FONT SIZE=3>6.5.
+Оставляя автомобиль на остановке
+(вынужденной стоянке) принять меры
+против его угона (убрать ключ зажигания,
+закрыть стёкла, запереть двери, включить
+охранную сигнализацию и т. п.).</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<H4 CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0.17in; page-break-before: always">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>7. ЛИСТ
+РЕГИСТРАЦИИ ИЗМЕНЕНИЙ</B></FONT></FONT></H4>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in"><BR>
+</P>
+<TABLE WIDTH=637 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=106>
+	<COL WIDTH=184>
+	<COL WIDTH=145>
+	<COL WIDTH=144>
+	<TR>
+		<TD WIDTH=106 HEIGHT=4 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER><FONT COLOR="#000000">№ <FONT SIZE=3>редакции</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT COLOR="#000000">Содержание
+			изменения</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT COLOR="#000000">Номер
+			приказа о введении в действие</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT COLOR="#000000">Дата
+			вступления в действие</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.02in"><FONT SIZE=3><FONT COLOR="#000000">Ред.1</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT COLOR="#000000">Новый
+			документ</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=12 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=106 HEIGHT=11 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=184 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=144 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.39in; text-indent: -0.39in"><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.5in"><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0.14in; line-height: 115%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.5in; page-break-before: always">
+<BR>
+</P>
+<P CLASS="western"><FONT SIZE=3><B>8. ЛИСТ ОЗНАКОМЛЕНИЯ
+С ИНСТРУКЦИЕЙ</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+</P>
+<TABLE WIDTH=655 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=45>
+	<COL WIDTH=334>
+	<COL WIDTH=130>
+	<COL WIDTH=88>
+	<TR>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: -0in">№</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=3><B>Фамилия Имя
+			Отчество</B></FONT></P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.01in"><FONT SIZE=3><B>Дата
+			ознакомления</B></FONT></P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.02in"><FONT SIZE=3><B>Подпись</B></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=45 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=334 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=88 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<P CLASS="western" STYLE="text-indent: 0.39in"><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.5in"><BR>
+</P>
+</BODY>
+</HTML>
