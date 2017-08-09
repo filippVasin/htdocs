@@ -26,7 +26,8 @@ class Controller_menu extends Controller{
         // Есть ли управляемая компания;
         if( $_SESSION['role_id'] == 4){
             $company_buttons = '
-
+            <a href="/structure"><div class="menu_button">Организационная структура</div></a>
+            <a href="/creator"><div class="menu_button">Добавить элемент</div></a>
             <a href="/docs_report"><div class="menu_button">Отчёт по документам</div></a>
             <a href="/report_step"><div class="menu_button">Отчёт о сотрудникам</div></a>
             <a href="/action_list"><div class="menu_button">Действия с документами</div></a>
@@ -60,7 +61,6 @@ class Controller_menu extends Controller{
 
         }   else{
             $login_buttons = '
-            <a href="/sing_in"><div class="menu_button">Регистрация</div></a>
             <a href="/login"><div class="menu_button">Войти</div></a>
             ';
         }

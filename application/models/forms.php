@@ -346,17 +346,17 @@ class Model_forms{
         $form_content = $db->row($sql);
 
         // Запись начала шага
-//        $doc_status = $this->doc_status($_SESSION['real_form_id']);
         $doc_status = 3;// Подписан сотрудником
         $this->history_insert($doc_status);
 
         $doc_item = $form_content['path'];
-        $page = file_get_contents($doc_item);
-        $page .='<div id="popup_update_select_position">
+        $doc_name = $form_content['name'];
+   //     $page = file_get_contents($doc_item);
+        $page ='<div id="popup_update_select_position">
                     <div class="canvas" style="height: 120px; box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
-                        <div class="popup_context_menu_title"> Подпишите документ и передайте ответственному лицу </div>
+                        <div class="popup_context_menu_title"> Подпишите '. $doc_name .' в 417м кабинете</div>
                             <div class="button" id="popup_update_select_node_yes">Я подписал</div>
-//                            <div class="button" id="popup_update_select_position_cancel">Я не подписал</div>
+                            <div class="button" id="popup_update_select_position_cancel">Я не подписал</div>
                         </div>
                     </div>
                 </div>';
@@ -450,10 +450,6 @@ class Model_forms{
     private function email_alert(){
         global $db;
 
-        // подключение класса PHPMailer
-//        require(ROOT_PATH.'/lib_del/phpmailer/class.phpmailer.php');
-//        require(ROOT_PATH.'/lib_del/phpmailer/class.smtp.php');
-
 
         $sql = "SELECT *
                 FROM save_temp_files, form_status_now
@@ -500,9 +496,9 @@ class Model_forms{
 //требует ли СМТП сервер авторизацию/идентификацию
         $mail->SMTPAuth = true;
 // логин от вашей почты
-        $mail->Username = 'labropro2';
+        $mail->Username = 'noreply';
 // пароль от почтового ящика
-        $mail->Password = 'Rtyuehe1984';
+        $mail->Password = 'asd8#fIw2)l45Ab@!4Sa3';
 //указываем способ шифромания сервера
         $mail->SMTPSecure = 'ssl';
 //указываем порт СМТП сервера
@@ -511,7 +507,7 @@ class Model_forms{
 //указываем кодировку для письма
         $mail->CharSet = 'UTF-8';
 //информация от кого отправлено письмо
-        $mail->From = 'labropro2@yandex.ru';
+        $mail->From = 'noreply@laborpro.ru';
         $mail->FromName = 'Охрана Труда';
         $mail->addAddress($email);
 

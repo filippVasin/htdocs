@@ -2,8 +2,7 @@ body{
     font-family: sans-serif;
     margin: 0px;
     overflow-x: hidden;
-    background-color: aliceblue;
-    padding: 50px 0px 50px 0px;
+    padding: 80px 0px 50px 0px;
 }
 
 #header{
@@ -128,8 +127,11 @@ body{
     top: 41px;
     background-color: #8bc34a;
     padding: 10px;
-    border-radius: 0px 0px 0px 15px;
-    /* border: 1px solid black; */
+    position: absolute;
+    left: 4px;
+    top: 40px;
+    width: 200px;
+    display: none;
 }
 
 .list_item{

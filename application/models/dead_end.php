@@ -64,6 +64,9 @@ class Model_dead_end{
         $db->query($sql);
         $sql = "DELETE FROM `save_temp_files` WHERE  `employee_id` =" . $reset_id;
         $db->query($sql);
+        $sql = "DELETE FROM `manual_history` WHERE  `employee_id` =" . $reset_id;
+        $db->query($sql);
+
 
         $html = $reset_id;
         $result_array['content'] = $html;
@@ -76,19 +79,18 @@ class Model_dead_end{
     // cron тестим здесь
     public function cron()
     {
-
-//        require(ROOT_PATH.'/core/systems/classes/class_mysql.php');
         global $db;
         // логи
+
         $result_status = "Start";
         $cron_task = "cron_start";
         $comment = "Начали работать";
         $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
         $db->query($sql);
 
-//    $this->drop_every_day();
-//    $this->transfer_alert();
-//    $this->transfer_to_history_alert();
+        $this->drop_every_day();
+        $this->transfer_alert();
+        $this->transfer_to_history_alert();
 
         // формируем список инициаторов и проходим по списку
         $sql="SELECT * FROM cron_every_day GROUP BY cron_every_day.initiator_employee_id";
@@ -100,14 +102,22 @@ class Model_dead_end{
         $this->send_report_to_test($observer_emplyoee_id);
         sleep(3);
         // отчёт по сотрудникам
-//        $this->send_report($observer_emplyoee_id);
+        $this->send_report($observer_emplyoee_id);
 
         // логи
         $result_status = "Stop";
         $cron_task = "cron_stop";
-        $comment = "Законьчили работать";
+        $comment = "Закончили работать";
         $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
         $db->query($sql);
+
+        // логи
+        $result_status = "Stop";
+        $cron_task = "cron_stop";
+        $comment = "Закончили работать";
+        $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
+        $db->query($sql);
+
     }
 
 
@@ -131,9 +141,8 @@ class Model_dead_end{
                 (save_temp_files.path IS NULL)
                 GROUP BY id";
 
-
+        // перенос утсраевших строк в историю
         $alert_array = $db->all($sql);
-        $coutn = 0;
         foreach ($alert_array as $key => $alert_item) {
             $sql = "INSERT INTO `alert_history` (`initiator_employee_id`,
                                                   `observer_org_str_id`,
@@ -155,7 +164,6 @@ class Model_dead_end{
             // удаляем перенесённую строку
             $sql="DELETE FROM `local_alerts` WHERE `id`=". $alert_item['id'];
             $db->query($sql);
-            $coutn = $key;
         }
     }
 
@@ -182,7 +190,7 @@ class Model_dead_end{
 
 
         $alert_array = $db->all($sql);
-        $coutn = 0;
+        // переносим оставшийся массив в таблицу cron_every_day
         foreach ($alert_array as $key=>$alert_item) {
             $sql = "INSERT INTO `cron_every_day` (`initiator_employee_id`,
                                                   `observer_org_str_id`,
@@ -199,7 +207,6 @@ class Model_dead_end{
                                                    '". $alert_item['step_id']  ."',
                                                    '". $alert_item['date_create']  ."');";
                 $db->query($sql);
-            $coutn = $key;
         }
     }
 
@@ -208,10 +215,6 @@ class Model_dead_end{
     private  function send_report_to_test($observer_emplyoee_id){
 
         global $db;
-//        require_once(ROOT_PATH.'/lib_del/phpexcel/PHPExcel.php');
-//        require_once(ROOT_PATH.'/lib_del/phpexcel/PHPExcel/Writer/Excel5.php');
-
-
         // Создаем объект класса PHPExcel
         $xls = new PHPExcel();
 // Устанавливаем индекс активного листа
@@ -278,16 +281,6 @@ class Model_dead_end{
                 )
             )
         );
-
-// подключение к БД
-//        $db_host = "127.0.0.1";
-//        $db_name = "laborpro";
-//        $db_user = "root";
-//        $db_password ="Ci2OheR7";
-//
-//        $d_b = new MySQL;
-//        $d_b->connect($db_host, $db_name, $db_user, $db_password);
-//        $d_b->query("SET NAMES `UTF8`");
 
         // какие права имеет получатель
         $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
@@ -565,6 +558,7 @@ class Model_dead_end{
             $sql= "Select *
            FROM save_temp_files
            WHERE save_temp_files.id IN(".implode(', ', $docs).")";
+            echo $sql;
             $sql_docs = $db->all($sql);
             if (empty($sql_docs)) {
                 $result_status = "error";
@@ -708,10 +702,6 @@ class Model_dead_end{
     // cron тестим здесь
     public function mail_send($email,$mail_subject,$mail_body,$attached_file){
 
-//        require_once(ROOT_PATH.'/lib_del/phpmailer/class.phpmailer.php');
-//        require_once(ROOT_PATH.'/lib_del/phpmailer/class.smtp.php');
-
-
         // отправка письма:
         $mail = new PHPMailer;
 //будем отравлять письмо через СМТП сервер
@@ -721,9 +711,9 @@ class Model_dead_end{
 //требует ли СМТП сервер авторизацию/идентификацию
         $mail->SMTPAuth = true;
 // логин от вашей почты
-        $mail->Username = 'labropro2';
+        $mail->Username = 'noreply@laborpro.ru';
 // пароль от почтового ящика
-        $mail->Password = 'Rtyuehe1984';
+        $mail->Password = 'asd8#fIw2)l45Ab@!4Sa3';
 //указываем способ шифромания сервера
         $mail->SMTPSecure = 'ssl';
 //указываем порт СМТП сервера
@@ -732,7 +722,7 @@ class Model_dead_end{
 //указываем кодировку для письма
         $mail->CharSet = 'UTF-8';
 //информация от кого отправлено письмо
-        $mail->From = 'labropro2@yandex.ru';
+        $mail->From = 'noreply@laborpro.ru';
         $mail->FromName = 'Охрана Труда';
         $mail->addAddress($email);
 
@@ -755,9 +745,6 @@ class Model_dead_end{
     private function send_report($observer_emplyoee_id)
     {
         global $db;
-//        require_once(ROOT_PATH.'/lib_del/phpexcel/PHPExcel.php');
-//        require_once(ROOT_PATH.'/lib_del/phpexcel/PHPExcel/Writer/Excel5.php');
-
 
         // Создаем объект класса PHPExcel
         $xls_two = new PHPExcel();
@@ -828,15 +815,6 @@ class Model_dead_end{
                 )
             )
         );
-// Подключаемся к базе
-//        $db_host = "127.0.0.1";
-//        $db_name = "laborpro";
-//        $db_user = "root";
-//        $db_password ="Ci2OheR7";
-//
-//        $db = new MySQL;
-//        $db->connect($db_host, $db_name, $db_user, $db_password);
-//        $db->query("SET NAMES `UTF8`");
 
         // какие права имеет получатель
         $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,

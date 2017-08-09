@@ -16,9 +16,9 @@ $mail->Host = 'smtp.yandex.ru';
 //требует ли СМТП сервер авторизацию/идентификацию
 $mail->SMTPAuth = true;
 // логин от вашей почты
-$mail->Username = 'labropro';
+$mail->Username = 'noreply';
 // пароль от почтового ящика
-$mail->Password = 'Rtyuehe1984';
+$mail->Password = 'asd8#fIw2)l45Ab@!4Sa3';
 //указываем способ шифромания сервера
 $mail->SMTPSecure = 'ssl';
 //указываем порт СМТП сервера
@@ -27,7 +27,7 @@ $mail->Port = '465';
 //указываем кодировку для письма
 $mail->CharSet = 'UTF-8';
 //информация от кого отправлено письмо
-$mail->From = 'labropro@yandex.ru';
+$mail->From = 'noreply@laborpro.ru';
 $mail->FromName = 'Охрана Труда';
 $mail->addAddress($email);
 
@@ -36,7 +36,7 @@ $mail->isHTML(true);
 $mail->Subject = "Тест крона";
 $mail->Body = "Привет это крон";
 
-$mail->send();
+//$mail->send();
 
 //$handle = fopen("cronLog.txt", "a");
 //$str = "Last timestamp: ".date("H:i:s")."\n";

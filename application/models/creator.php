@@ -136,7 +136,7 @@ class Model_creator
                 $html.=        '<input type="text" id="form_birthday"  name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp " required="">';
                 $html.=        '<input type="text" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp " required="">';
                 $html.=        '<input type="hidden" id="form_id_item" name="id_item" value="'. $item_id .'" required="">';
-                $html.=        '<input type="submit" form="landing_form_offer_one"  value="Записа" style="margin-left: 100px;" class="button">';
+                $html.=        '<input type="submit" form="landing_form_offer_one"  value="Записать" style="margin-left: 100px;" class="button">';
                 $html.=    '</form>';
                 $html.=  '</div>';
             // скрипт валидации форм
@@ -161,12 +161,7 @@ class Model_creator
     public function create_form()
     {
         // подключение БД
-        global $db, $systems, $elements;
-
-        // подключение класса PHPMailer
-
-//        require(ROOT_PATH.'/lib_del/phpmailer/class.phpmailer.php');
-//        require(ROOT_PATH.'/lib_del/phpmailer/class.smtp.php');
+        global $db, $systems, $elements, $labro;
 
         // получаем данные из POST запроса
                 $name = $this->post_array['name'];
@@ -204,8 +199,9 @@ class Model_creator
                     WHERE employees.email ='" . $email . "'";
             $form_content_jj = $db->row($sql);
             // генерируем логин и пароль
-            $login = $this->generate_password();
-            $pass = $this->generate_password();
+            $login = $labro->generate_password();
+            $pass = $labro->generate_password();
+
             $role_id = 3;
             $employee_id = $form_content_jj['id'];
             $sql = "INSERT INTO `users` (`name`, `password`, `role_id`,`employee_id`,`full_name`) VALUES('" . $login . "','" . md5($pass) . "','" . $role_id . "','" . $employee_id . "','" . $surname . "');";
@@ -227,7 +223,9 @@ class Model_creator
             // данные для логов
             $template_mail_id = $email_temp['id'];
 
-            $message = $email_temp['template_name'];
+            $path = ROOT_PATH.'/application/templates_mail/'. $email_temp['path'];
+            $message = file_get_contents($path);
+
             $message = str_replace('%fio%', $fio, $message);
             $message = str_replace('%login%', $login, $message);
             $message = str_replace('%pass%', $pass, $message);
@@ -299,30 +297,6 @@ class Model_creator
         die($result);
     }
 
-
-    private function generate_password()
-    {
-        $arr = array('a','b','c','d','e','f',
-            'g','h','i','j','k','l',
-            'm','n','o','p','r','s',
-            't','u','v','x','y','z',
-            'A','B','C','D','E','F',
-            'G','H','I','J','K','L',
-            'M','N','O','P','R','S',
-            'T','U','V','X','Y','Z',
-            '1','2','3','4','5','6',
-            '7','8','9','0');
-        // Генерируем пароль
-        $pass = "";
-        $number = 9; // количество символов
-        for($i = 0; $i < $number; $i++)
-        {
-            // Вычисляем случайный индекс массива
-            $index = rand(0, count($arr) - 1);
-            $pass .= $arr[$index];
-        }
-        return $pass;
-    }
 
     // добавляем тип
     public function button_plus()

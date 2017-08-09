@@ -49,7 +49,13 @@ class Model_test
         // Перемешение узла
 //        $this->MoveNode($move_item,$new_parent,$company_id);
         // Проверка дерева
-        $this->TreeCheck($company_id);
+//        $this->TreeCheck($company_id);
+
+
+
+        // присвоить пароли и логины сотрудникам
+//        $this->creator_user_and_pass();
+
     }
 
     private  function MoveNode($move_item,$new_parent,$company_id){
@@ -217,5 +223,33 @@ class Model_test
             echo "Тест №2: В дереве не найдено ошибок <br>";
         }
 
+    }
+
+    private  function creator_user_and_pass(){
+
+        global $db, $labro;
+        // если есть документ, если есть шаг, если сотрудник не уволен и если действие не завершено
+        $sql = "SELECT * FROM employees WHERE id >= 73";
+
+        // перенос утсраевших строк в историю
+        $users_array = $db->all($sql);
+
+        foreach ($users_array as $key => $user_array) {
+            $pass = $labro->generate_password();
+//            $login = $labro->generate_password();
+            $role = 3;
+            $login = str_ireplace('(SOBAKA)','@',$user_array['email']);
+            $sql = "INSERT INTO `users` (         `name`,
+                                                  `password`,
+                                                  `role_id`,
+                                                  `employee_id`,
+                                                  `full_name`) VALUES (
+                                                   '" . $login. "',
+                                                   '" . $pass . "',
+                                                   '" . $role. "',
+                                                   '" . $user_array['id'] . "',
+                                                   '" . $user_array['surname'] . "');";
+            $db->query($sql);
+        }
     }
 }

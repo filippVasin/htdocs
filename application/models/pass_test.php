@@ -196,7 +196,7 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
                     $img_link = 'SRC="/application/test_docs/';
                     $result = str_replace('SRC="', $img_link, $result);
                     // Создали кнопку
-                    $result .= $elements->button('Я ознакомился с документом.', 'go_to_testing', '', '', '', 'test_id ="' . $test_id . '"');
+                    $result .= $elements->button('Перейти к тестированию', 'go_to_testing', '', '', '', 'test_id ="' . $test_id . '"');
                     // информационный блок
                     $result .= $elements->info_box("Информированние", $doc_name, $_SESSION['employee_id'], $_SESSION['$employee_full_name']);
                     // прогресс бар с количеством вопросов($need_count);
@@ -319,8 +319,8 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
         $result .= $elements->nav_button('Вверх', 'up');
         $result .= $elements->nav_button('Вниз', 'down');
         // Снопка для завершения тестированияж
-        $result .= $elements->button('Завершить тестирование', 'finish_test');
-        $result .= $elements->button('Закрыть тест', 'close_test');
+        $result .= $elements->button('Проверить ответы', 'finish_test');
+        $result .= $elements->button('Вернуться к инструкции', 'close_test');
 
 
         $result .= '</div>';

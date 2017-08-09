@@ -62,7 +62,7 @@ class Model_local_alert
         $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,
 CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,
 local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
-items_control.name AS `position`,document_status_now.name as doc_status
+items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual
 FROM (local_alerts,employees_items_node, employees AS init_em,
 cron_action_type)
 LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
@@ -77,6 +77,7 @@ LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_contr
 LEFT JOIN form_status_now ON form_status_now.save_temps_file_id = local_alerts.save_temp_files_id
 LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
 LEFT JOIN save_temp_files ON save_temp_files.id = local_alerts.save_temp_files_id
+LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
 
 WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
 
@@ -156,7 +157,7 @@ AND local_alerts.cron_action_type_id = 3";
                         <div class="position">' . $alert_every_day['position'] . '</div>
                         <div  class="doc_name">' . $alert_every_day['file'] . '</div>
                         <div  class="doc_type">' . $alert_every_day['doc_status'] . '</div>
-                        <div class="status">' . $alert_every_day['step_id'] . '</div>
+                        <div class="status">' . $alert_every_day['manual'] . '</div>
                         <div class="status_date">' . $alert_every_day['date_create'] . '</div>
 
                     </div>';

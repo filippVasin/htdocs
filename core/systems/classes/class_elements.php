@@ -104,13 +104,13 @@ class elements{
         global $current_template;
         $html = '';
         if ($caption != ''){
-            $html = '<div  class="'.$class.'"><div>' .$caption. '</div><img_del src="/templates/' . $current_template . '/images/down.svg"></div>';
+            $html = '<div  class="'.$class.'"><div>' .$caption. '</div><img src="/templates/' . $current_template . '/images/down.svg"></div>';
         }
         if ($class == 'up'){
-            $html = '<div id="up" class="'.$class.'"><img_del src="/templates/' . $current_template . '/images/down.svg"><div>' .$caption. '</div></div>';
+            $html = '<div id="up" class="'.$class.'"><img src="/templates/' . $current_template . '/images/down.svg"><div>' .$caption. '</div></div>';
         }
         if ($class == 'down'){
-            $html = '<div id="down" class="'.$class.'"><div>' .$caption. '</div><img_del src="/templates/' . $current_template . '/images/down.svg"></div>';
+            $html = '<div id="down" class="'.$class.'"><div>' .$caption. '</div><img src="/templates/' . $current_template . '/images/down.svg"></div>';
         }
 
         return $html;
