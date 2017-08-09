@@ -16,8 +16,21 @@ class Model_test
     }
 
     // тестим здесь
-    public function test()
-    {
+    public function test(){
+
+        global $db;
+        // заблокировали строки компании для парралельной модернизации
+        $this->lock_company($_SESSION['control_company']);
+
+
+        $sql = "SELECT * FROM lock_org_str WHERE id_lock_company =". $_SESSION['control_company'];
+        $result = $db->row($sql);
+        $status = $result['status'];
+        if($status==0){
+            // работаем
+        } else {
+            // ждём
+        }
         // нуменклатура узлов
         $kladr_id = 0;
         // тип узла
@@ -55,6 +68,9 @@ class Model_test
 
         // присвоить пароли и логины сотрудникам
 //        $this->creator_user_and_pass();
+
+        // разблокировали строки компании для модернизации
+        $this->unlock_company($_SESSION['control_company']);
 
     }
 
@@ -145,7 +161,7 @@ class Model_test
             $sql = "UPDATE organization_structure SET `level` = `level` - ". $level_delta ."
                 WHERE left_key >= " . $new_left_key . "
                 AND right_key <= " . $new_right_key;
-            echo $sql;
+//            echo $sql;
             $db->query($sql);
         }
     }
@@ -165,7 +181,7 @@ class Model_test
         $sql="DELETE FROM `organization_structure` WHERE `left_key` >= {$left_key} AND `right` <= {$right_key} AND `company_id` = {$company_id};
                   UPDATE `organization_structure` SET `left_key` = `left_key` - {$right_key} + {$left_key} - 1 WHERE `left_key` > {$right_key} AND `company_id` = {$company_id};
                   UPDATE `organization_structure` SET `right_key` = `right_key` - {$right_key} + {$left_key} - 1 WHERE `right_key` > {$right_key} AND `company_id` = {$company_id};";
-        echo $sql;
+//        echo $sql;
 //        $db->query($sql);
     }
 
@@ -191,7 +207,7 @@ class Model_test
                                                         `boss_type` = {$boss_type},
                                                         `level` = {$parent_level } + 1,
                                                          `parent`={$new_parent_id} ;";
-        echo $sql;
+//        echo $sql;
 //        $db->query($sql);
     }
 
@@ -251,5 +267,17 @@ class Model_test
                                                    '" . $user_array['surname'] . "');";
             $db->query($sql);
         }
+    }
+
+    private  function lock_company($id_company){
+        global $db;
+//    $sql = "SELECT * FROM lock_org_str WHERE id_lock_company =". $id_company;
+    $sql = "UPDATE `lock_org_str` SET `status` = 1 WHERE `id_lock_company` = {$id_company}";
+    $db->query($sql);
+    }
+
+    private  function unlock_company($id_company){
+        $sql = "UPDATE `lock_org_str` SET `status` = 0 WHERE `id_lock_company` = {$id_company}";
+        $db->query($sql);
     }
 }

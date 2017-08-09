@@ -1,7 +1,9 @@
 <?php
 
-class Model_docs_report
-{
+class Model_docs_report{
+    // Данные для обработки POST запросов;
+    public $post_array;
+
     function __construct()
     {
         //echo 'Это конструкционный метод вызванный подключение модели '.__CLASS__.'<br>';

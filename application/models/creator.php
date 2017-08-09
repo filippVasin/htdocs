@@ -10,6 +10,7 @@ class Model_creator
     // Данные для обработки POST запросов;
     public $post_array;
     public $employees;
+
     function __construct()
     {
         //echo 'Это конструкционный метод вызванный подключение модели '.__CLASS__.'<br>';
@@ -161,7 +162,7 @@ class Model_creator
     public function create_form()
     {
         // подключение БД
-        global $db, $systems, $elements, $labro;
+        global $db, $systems, $elements, $labro, $mail;;
 
         // получаем данные из POST запроса
                 $name = $this->post_array['name'];
@@ -230,25 +231,25 @@ class Model_creator
             $message = str_replace('%login%', $login, $message);
             $message = str_replace('%pass%', $pass, $message);
 
-            // отправка письма:
-            $mail = new PHPMailer;
-//будем отравлять письмо через СМТП сервер
-            $mail->isSMTP();
-//хост
-            $mail->Host = 'smtp.yandex.ru';
-//требует ли СМТП сервер авторизацию/идентификацию
-            $mail->SMTPAuth = true;
-// логин от вашей почты
-            $mail->Username = 'labropro2';
-// пароль от почтового ящика
-            $mail->Password = 'Rtyuehe1984';
-//указываем способ шифромания сервера
-            $mail->SMTPSecure = 'ssl';
-//указываем порт СМТП сервера
-            $mail->Port = '465';
+//            // отправка письма:
+//            $mail = new PHPMailer;
+////будем отравлять письмо через СМТП сервер
+//            $mail->isSMTP();
+////хост
+//            $mail->Host = 'smtp.yandex.ru';
+////требует ли СМТП сервер авторизацию/идентификацию
+//            $mail->SMTPAuth = true;
+//// логин от вашей почты
+//            $mail->Username = 'labropro2';
+//// пароль от почтового ящика
+//            $mail->Password = 'Rtyuehe1984';
+////указываем способ шифромания сервера
+//            $mail->SMTPSecure = 'ssl';
+////указываем порт СМТП сервера
+//            $mail->Port = '465';
 
-//указываем кодировку для письма
-            $mail->CharSet = 'UTF-8';
+////указываем кодировку для письма
+//            $mail->CharSet = 'UTF-8';
 //информация от кого отправлено письмо
             $mail->From = 'labropro2@yandex.ru';
             $mail->FromName = 'Охрана Труда';

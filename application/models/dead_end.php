@@ -6,7 +6,8 @@
  * Time: 15:07
  */
 class Model_dead_end{
-
+// Данные для обработки POST запросов;
+    public $post_array;
 
     function __construct(){
         //echo 'Это конструкционный метод вызванный подключение модели '.__CLASS__.'<br>';
@@ -88,9 +89,9 @@ class Model_dead_end{
         $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
         $db->query($sql);
 
-        $this->drop_every_day();
-        $this->transfer_alert();
-        $this->transfer_to_history_alert();
+//        $this->drop_every_day();
+//        $this->transfer_alert();
+//        $this->transfer_to_history_alert();
 
         // формируем список инициаторов и проходим по списку
         $sql="SELECT * FROM cron_every_day GROUP BY cron_every_day.initiator_employee_id";
@@ -102,7 +103,7 @@ class Model_dead_end{
         $this->send_report_to_test($observer_emplyoee_id);
         sleep(3);
         // отчёт по сотрудникам
-        $this->send_report($observer_emplyoee_id);
+//        $this->send_report($observer_emplyoee_id);
 
         // логи
         $result_status = "Stop";
@@ -111,12 +112,6 @@ class Model_dead_end{
         $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
         $db->query($sql);
 
-        // логи
-        $result_status = "Stop";
-        $cron_task = "cron_stop";
-        $comment = "Закончили работать";
-        $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
-        $db->query($sql);
 
     }
 
@@ -283,7 +278,7 @@ class Model_dead_end{
         );
 
         // какие права имеет получатель
-        $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+        $sql="SELECT employees.id AS emp_id, employees.email,organization_structure.`company_id`, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
                     organization_structure.boss_type,
                        CASE
                        WHEN organization_structure.boss_type = 1
@@ -311,6 +306,7 @@ class Model_dead_end{
         $email = $observer_data['email'];
         $left = $observer_data['left'];
         $right = $observer_data['right'];
+        $company_id = $observer_data['company_id'];
 
         $sql="SELECT
 /* Вывод даннных */
@@ -410,7 +406,7 @@ class Model_dead_end{
 
    AND
    /* по фирме*/
-    route_doc.company_id = 14";
+    route_doc.company_id =".$company_id;
 
         // частичный доступ
         if(($left!='none')&&($left!="all")) {
@@ -701,27 +697,29 @@ class Model_dead_end{
 
     // cron тестим здесь
     public function mail_send($email,$mail_subject,$mail_body,$attached_file){
+            global $mail;
 
-        // отправка письма:
-        $mail = new PHPMailer;
-//будем отравлять письмо через СМТП сервер
-        $mail->isSMTP();
-//хост
-        $mail->Host = 'smtp.yandex.ru';
-//требует ли СМТП сервер авторизацию/идентификацию
-        $mail->SMTPAuth = true;
-// логин от вашей почты
-        $mail->Username = 'noreply@laborpro.ru';
-// пароль от почтового ящика
-        $mail->Password = 'asd8#fIw2)l45Ab@!4Sa3';
-//указываем способ шифромания сервера
-        $mail->SMTPSecure = 'ssl';
-//указываем порт СМТП сервера
-        $mail->Port = '465';
+//        // отправка письма:
+//        $mail = new PHPMailer;
+////будем отравлять письмо через СМТП сервер
+//        $mail->isSMTP();
+////хост
+//        $mail->Host = 'smtp.yandex.ru';
+////требует ли СМТП сервер авторизацию/идентификацию
+//        $mail->SMTPAuth = true;
+//// логин от вашей почты
+//        $mail->Username = 'noreply@laborpro.ru';
+//// пароль от почтового ящика
+//        $mail->Password = 'asd8#fIw2)l45Ab@!4Sa3';
+////указываем способ шифромания сервера
+//        $mail->SMTPSecure = 'ssl';
+////указываем порт СМТП сервера
+//        $mail->Port = '465';
 
-//указываем кодировку для письма
-        $mail->CharSet = 'UTF-8';
+////указываем кодировку для письма
+//        $mail->CharSet = 'UTF-8';
 //информация от кого отправлено письмо
+
         $mail->From = 'noreply@laborpro.ru';
         $mail->FromName = 'Охрана Труда';
         $mail->addAddress($email);
