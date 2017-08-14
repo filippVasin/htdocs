@@ -65,10 +65,8 @@ $(document).ready(function() {
         $('.test_question').each(function(){
             test_question++;
         });
-        $('.progress_plan').html("");
         $('.progress_plan').html(test_question);
 
-        $('.progress_fact').html("");
         $('.progress_fact').html(answer_count);
         $(".progress_bar_item").each(function(index) {
             if(index<answer_count) {
@@ -234,7 +232,6 @@ $(document).ready(function() {
         $(".progress_bar_line_back").css({
             "width": (100 * proc | 0) + "%"
         });
-        $('.progress_line_proc').html("");
         $('.progress_line_proc').html((100*proc|0) + "%");
 
     })

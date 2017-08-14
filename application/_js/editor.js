@@ -45,11 +45,11 @@ $(document).ready(function() {
                     // если 'ok' - рисуем тест
                     if(request_result == 'ok'){
                         $(".table_row").each(function() {
-                            if(($(this).attr("item_id")==item_id)&&(type == $(this).attr("type"))) {
-                                $(this).children(".type_name").html("");
+                            if (!(($(this).attr("item_id") == item_id) && (type == $(this).attr("type")))) {
+                            } else {
                                 $(this).children(".type_name").html(content);
-                                $(this).attr("item_id",item_id);
-                                $(this).attr("item_name",item_name);
+                                $(this).attr("item_id", item_id);
+                                $(this).attr("item_name", item_name);
                             }
                         });
                         $("#edit_popup").css("display","none");
@@ -108,7 +108,6 @@ $(document).ready(function() {
                 if(request_result == 'ok'){
 
                         $("#edit_popup_employees").attr("item_id",item_id);
-                        $("#title_employees_item_id").html("");
                         $("#title_employees_item_id").html(item_id);
                         $("#edit_popup_input_surname").val(surname);
                         $("#edit_popup_input_name").val(name);
@@ -164,7 +163,6 @@ $(document).ready(function() {
                     $(".table_row_employee").each(function() {
                         if($(this).attr("item_id")==item_id) {
                             var content = surname + " " + name + " " + second_name;
-                            $(this).children(".type_name").html("");
                             $(this).children(".type_name").html(content);
                         }
                     });
@@ -201,7 +199,6 @@ $(document).ready(function() {
                 if(request_result == 'ok'){
 
                     $("#edit_popup_user").attr("item_id",item_id);
-                    $("#title_user_item_id").html("");
                     $("#title_user_item_id").html(login);
 
                     $("#edit_popup_input_full_name").val(full_name);

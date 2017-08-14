@@ -41,8 +41,6 @@ class Model_node_update
         $employees = $db->all($sql);
 
         $html = "";
-        $parent_id = "";
-        $parent_name = "";
         foreach($employees as $employee){
                 $left = $employee['left_key'];
                 $right = $employee['right_key'];
@@ -90,8 +88,6 @@ class Model_node_update
         $employees = $db->all($sql);
 
         $html = "";
-        $parent_id = "";
-        $parent_name = "";
         $left = "";
         $right = "";
         foreach($employees as $employee_key) {
@@ -183,13 +179,6 @@ class Model_node_update
             die($result);
         } else {
 
-            // запрашиваем данные для удаляемого узла для истории
-//            $sql = "SELECT * FROM organization_structure WHERE organization_structure.id =" . $item_id;
-//            $result = $db->row($sql);
-//            $kladr_id = $result['kladr_id'];
-//            $items_control_id = $result['items_control_id'];
-//            $company_id = $result['company_id'];
-//            $parent = $result['parent'];
 
             // удаляем элемент
             $this->DeleteNode($item_id, $_SESSION['control_company']);

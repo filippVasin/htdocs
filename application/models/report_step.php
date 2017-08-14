@@ -14,8 +14,8 @@ class Model_report_step{
         //echo 'Это результат выполнения метода модели вызванного из контроллера<br>';
     }
 
-    public function start()
-    {
+    public function start(){
+
         global $db;
         $left_key = $this->post_array['left_key'];
         $right_key = $this->post_array['right_key'];
@@ -158,18 +158,18 @@ class Model_report_step{
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
     ";
 
-        // частичный доступ
+        // частичный доступ у сотрудика котрый запрашивает отчёт
         if(($left!='none')&&($left!="all")) {
             $sql .= " AND organization_structure.left_key >= " . $left . "
                 AND organization_structure.right_key <= " . $right ;
         }
 
-        // полный доступ
+        // полный доступ на данные у сотрудника которые запрашивает отчёт
         if($left=='all') {
             // не добавляем фильтры
         }
 
-        // без доступа
+        // без доступа, отчёт не показываеи
         if($left=='none') {
             // не показываем ничего
         } else {
@@ -215,14 +215,6 @@ class Model_report_step{
                 }
             }
 
-//        $sql= "Select form_step_action.action_name
-//FROM form_step_action";
-//        $select_array = $db->all($sql);
-//        $select = "<option value='' ></option>";
-//        foreach ($select_array as $select_array_item) {
-//            $select .= "<option value=" .$select_array_item['action_name'] . "  >".$select_array_item['action_name']."</option>";
-//        }
-
 
             $select = '  <select class="target " id="node_docs_select" style="float:left;width:200px;margin-top:15px;">
                         <option value=""></option>
@@ -256,7 +248,7 @@ class Model_report_step{
                 inner join items_control_types on organization_structure.items_control_id = items_control_types.id
                 left join employees_items_node on employees_items_node.org_str_id = organization_structure.id
                 left join employees on employees_items_node.employe_id = employees.id
-                Where organization_structure.company_id =14  ORDER BY left_key";
+                Where organization_structure.company_id = ". $_SESSION['control_company'] ."  ORDER BY left_key";
 
 
         $employees = $db->all($sql);

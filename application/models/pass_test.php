@@ -26,11 +26,7 @@ class Model_pass_test{
         $test_id="";
         $doc_id="";
         $form_id="";
-//        if($_SESSION['step_id']==""){
-//            $result_array['status'] = 'next_step';
-//            $result = json_encode($result_array, true);
-//            die($result);
-//        }
+
 //    echo $_SESSION['step_id'];
         // получаем контент по шагу
         $sql ="SELECT

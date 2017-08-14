@@ -64,7 +64,6 @@ $(document).ready(function() {
         $(".progress_bar_line_back").css({
             "width": (100 * proc | 0) + "%"
         });
-        $('.progress_line_proc').html("");
         $('.progress_line_proc').html((100*proc|0) + "%");
 
     })

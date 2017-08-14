@@ -162,7 +162,7 @@ class Model_creator
     public function create_form()
     {
         // подключение БД
-        global $db, $systems, $elements, $labro, $mail;;
+        global $db, $systems, $elements, $labro, $mailer;;
 
         // получаем данные из POST запроса
                 $name = $this->post_array['name'];
@@ -250,17 +250,18 @@ class Model_creator
 
 ////указываем кодировку для письма
 //            $mail->CharSet = 'UTF-8';
+
 //информация от кого отправлено письмо
-            $mail->From = 'labropro2@yandex.ru';
-            $mail->FromName = 'Охрана Труда';
-            $mail->addAddress($email);
+            $mailer->From = 'labropro2@yandex.ru';
+            $mailer->FromName = 'Охрана Труда';
+            $mailer->addAddress($email);
 
-            $mail->isHTML(true);
+            $mailer->isHTML(true);
 
-            $mail->Subject = $subject;
-            $mail->Body = $message;
+            $mailer->Subject = $subject;
+            $mailer->Body = $message;
 
-            if ($mail->send()) {
+            if ($mailer->send()) {
                 $result_array['massege'] = 'Письмо отправлено';
                 $result_array['status'] = 'ok';
                 $send_result = 'Письмо отправлено';
@@ -275,7 +276,7 @@ class Model_creator
                 $db->query($sql);
 
             } else {
-                $send_result = 'Ошибка при отправки письма: ' . $mail->ErrorInfo;
+                $send_result = 'Ошибка при отправки письма: ' . $mailer->ErrorInfo;
                 $result_array['massege'] = $send_result;
                 $result_array['status'] = 'Ошибка';
                 // пишим логи

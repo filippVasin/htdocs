@@ -697,44 +697,45 @@ class Model_dead_end{
 
     // cron тестим здесь
     public function mail_send($email,$mail_subject,$mail_body,$attached_file){
-            global $mail;
-
-//        // отправка письма:
-//        $mail = new PHPMailer;
+            global $mailer;
+//        require_once(ROOT_PATH.'/core/systems/classes/class_phpmailer.php');
+        // отправка письма:
+//        $mailer = new phpmailer;
 ////будем отравлять письмо через СМТП сервер
-//        $mail->isSMTP();
+//        $mailer->isSMTP();
 ////хост
-//        $mail->Host = 'smtp.yandex.ru';
+//        $mailer->Host = 'smtp.yandex.ru';
 ////требует ли СМТП сервер авторизацию/идентификацию
-//        $mail->SMTPAuth = true;
+//        $mailer->SMTPAuth = true;
 //// логин от вашей почты
-//        $mail->Username = 'noreply@laborpro.ru';
+//        $mailer->Username = 'noreply@laborpro.ru';
 //// пароль от почтового ящика
-//        $mail->Password = 'asd8#fIw2)l45Ab@!4Sa3';
+//        $mailer->Password = 'asd8#fIw2)l45Ab@!4Sa3';
 ////указываем способ шифромания сервера
-//        $mail->SMTPSecure = 'ssl';
+//        $mailer->SMTPSecure = 'ssl';
 ////указываем порт СМТП сервера
-//        $mail->Port = '465';
-
+//        $mailer->Port = '465';
 ////указываем кодировку для письма
-//        $mail->CharSet = 'UTF-8';
+//        $mailer->CharSet = 'UTF-8';
 //информация от кого отправлено письмо
 
-        $mail->From = 'noreply@laborpro.ru';
-        $mail->FromName = 'Охрана Труда';
-        $mail->addAddress($email);
 
-        $mail->isHTML(true);
 
-        $mail->Subject = $mail_subject;
-        $mail->Body = $mail_body;
+        $mailer->From = 'noreply@laborpro.ru';
+        $mailer->FromName = 'Охрана Труда';
+        $mailer->addAddress($email);
+
+        $mailer->isHTML(true);
+
+        $mailer->Subject = $mail_subject;
+        $mailer->Body = $mail_body;
 
 // прикрепляемый файл:
         if($attached_file!=""){
-            $mail->addAttachment($attached_file);
+            $mailer->addAttachment($attached_file);
         }
 
-        $mail->send();
+        $mailer->send();
     }
 
 
@@ -877,7 +878,7 @@ class Model_dead_end{
                   AND company_temps.company_id =  14
                   AND employees.id = save_temp_files.employee_id";
 
-        // частичный доступ
+        // частичный доступ у сотрудика котрый запрашивает отчёт
         if(($left!='none')&&($left!="all")) {
             $sql .= " AND organization_structure.left_key >= " . $left . "
                 AND organization_structure.right_key<= " . $right . "
@@ -885,13 +886,13 @@ class Model_dead_end{
                                             ORDER BY  emp";
         }
 
-        // полный доступ
+        // полный доступ на данные у сотрудника которые запрашивает отчёт
         if($left=='all') {
             $sql .= " GROUP BY save_temp_files.id
                                             ORDER BY  emp";
         }
 
-        // без доступа
+        // без доступа, отчёт не показываеи
         if($left=='none') {
             $result_status = "error";
             $cron_task = "mail_to_org";

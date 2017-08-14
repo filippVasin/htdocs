@@ -1,8 +1,8 @@
-
-<div class="container">
+<div class="page_title">Отчёт по сотрудникам</div>
+<div class="container box">
     <div class="button" style="float: right" id="rebut_node_docs">Сброс</div>
     <div class="button" style="float: right" id="node_docs">Выбор узла</div>
-    <select class="target " id="node_docs_select" style="float:left;width:200px;margin-top:15px;">
+    <select class="target " id="node_docs_select" style="float:left;width:200px;">
 
     </select>
     <div class="list" style="clear: both">

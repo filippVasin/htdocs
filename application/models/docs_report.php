@@ -89,18 +89,18 @@ class Model_docs_report{
 
 
 
-        // частичный доступ
+        // частичный доступ у сотрудника которые запрашивает отчёт
         if(($left!='none')&&($left!="all")) {
             $sql .= " AND organization_structure.left_key >= " . $left . "
                 AND organization_structure.right_key <= " . $right ;
         }
 
-        // полный доступ
+        // полный доступ у сотрудника которые запрашивает отчёт
         if($left=='all') {
             // не добавляем фильтры
         }
 
-        // без доступа
+        // без доступа, отчёт не показываем
         if($left=='none') {
             // не показываем ничего
         } else {

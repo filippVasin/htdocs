@@ -1,72 +1,75 @@
-.container {
-    width: 1170px;
-    margin: 0px auto;
-}
-
-.header > div {
-    float: left;
-    height: 40px;
-    padding: 13px 10px;
-    box-sizing: border-box;
-    background-color: #f9fafb;
-    border-right: 1px solid #e3e4e8;
-    color: #4a4b4b;
-    font-family: 'SF_UI_Text_Bold';
-    font-size: 11px;
-    text-align: center;
-}
-.list_of_vacancies > .container > .list > .header > div:first-child {
-    border-left: 1px solid #e3e4e8;
-}
-.value > div {
-    overflow: hidden;
-    border-bottom: 1px solid #e3e4e8;
-}
-.value > div > div:first-child {
-    border-left: 1px solid #e3e4e8;
-}
-.value > div > div {
-    float: left;
-    height: 30px;
-    padding: 8px 10px;
-    box-sizing: border-box;
-    cursor: pointer;
-    background-color: #ffffff;
-    border-right: 1px solid #e3e4e8;
-    color: #4a4b4b;
-    font-family: 'SF_UI_Text_Regular';
-    font-size: 11px;
-    line-height: 22px;
-    text-align: center;
-    white-space: nowrap;
-}
-.number {
-    width: 70px;
-}
-.otdel {
-    width: 300px;
-}
-.fio {
-    width: 250px;
-}
-.position {
-    width: 200px;
-}
-.manual_name {
-    width: 100px;
-}
-.start_date {
-    width: 125px;
-}
-.end_date {
-    width: 125px;
-}
 
 
 
-.value>div{
-    width: 1170px;
-}
+/*.container {*/
+    /*width: 1170px;*/
+    /*margin: 0px auto;*/
+/*}*/
+
+/*.header > div {*/
+    /*float: left;*/
+    /*height: 40px;*/
+    /*padding: 13px 10px;*/
+    /*box-sizing: border-box;*/
+    /*background-color: #f9fafb;*/
+    /*border-right: 1px solid #e3e4e8;*/
+    /*color: #4a4b4b;*/
+    /*font-family: 'SF_UI_Text_Bold';*/
+    /*font-size: 11px;*/
+    /*text-align: center;*/
+/*}*/
+/*.list_of_vacancies > .container > .list > .header > div:first-child {*/
+    /*border-left: 1px solid #e3e4e8;*/
+/*}*/
+/*.value > div {*/
+    /*overflow: hidden;*/
+    /*border-bottom: 1px solid #e3e4e8;*/
+/*}*/
+/*.value > div > div:first-child {*/
+    /*border-left: 1px solid #e3e4e8;*/
+/*}*/
+/*.value > div > div {*/
+    /*float: left;*/
+    /*height: 30px;*/
+    /*padding: 8px 10px;*/
+    /*box-sizing: border-box;*/
+    /*cursor: pointer;*/
+    /*background-color: #ffffff;*/
+    /*border-right: 1px solid #e3e4e8;*/
+    /*color: #4a4b4b;*/
+    /*font-family: 'SF_UI_Text_Regular';*/
+    /*font-size: 11px;*/
+    /*line-height: 22px;*/
+    /*text-align: center;*/
+    /*white-space: nowrap;*/
+/*}*/
+/*.number {*/
+    /*width: 70px;*/
+/*}*/
+/*.otdel {*/
+    /*width: 300px;*/
+/*}*/
+/*.fio {*/
+    /*width: 250px;*/
+/*}*/
+/*.position {*/
+    /*width: 200px;*/
+/*}*/
+/*.manual_name {*/
+    /*width: 100px;*/
+/*}*/
+/*.start_date {*/
+    /*width: 125px;*/
+/*}*/
+/*.end_date {*/
+    /*width: 125px;*/
+/*}*/
+
+
+
+/*.value>div{*/
+    /*width: 1170px;*/
+/*}*/
 
 .canvas{
     z-index: 999999;
@@ -117,7 +120,7 @@
     box-sizing: border-box;
 }
 .popup_context_menu_title{
-    /*margin-top: 20px;*/
+    margin-top: 20px;
 }
 .new_parent{
     color:indianred;
@@ -184,4 +187,79 @@
 .docs_report_step_row>div{
     cursor: pointer!important;
     color:#0000ff!important;
+}
+/* таблица */
+.header > div {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    float: left;
+    height: 50px;
+    padding: 13px 10px;
+    box-sizing: border-box;
+    background-color: #f9fafb;
+    border-right: 1px solid #e3e4e8;
+    color: #4a4b4b;
+    font-family: 'SF_UI_Text_Bold';
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    border: 1px solid #f4f4f4;
+    border-bottom: 2px solid #f4f4f4;
+    background-color: #fff;
+    height: 38px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.number {
+    width: 70px;
+}
+.otdel {
+    width: 300px;
+}
+.fio {
+    width: 200px;
+}
+.position {
+    width: 200px;
+}
+.manual_name {
+    width: 150px;
+}
+.start_date {
+    width: 125px;
+}
+.end_date {
+    width: 125px;
+}
+
+
+
+.value>div{
+    width: 1170px;
+}
+.value > div {
+    overflow: hidden;
+    border-bottom: 1px solid #e3e4e8;
+}
+.value > div > div:first-child {
+    border-left: 1px solid #e3e4e8;
+}
+.value > div > div {
+    float: left;
+    height: 30px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-right: 1px solid #e3e4e8;
+    color: #4a4b4b;
+    font-size: 11px;
+    line-height: 22px;
+    white-space: nowrap;
+    text-align: left!important;
 }

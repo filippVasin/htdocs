@@ -87,6 +87,7 @@ AND local_alerts.initiator_employee_id = init_em.id
 AND local_alerts.date_finish IS NULL
 AND local_alerts.cron_action_type_id = 3";
 
+        // если указаны даты выборки
         if ($time_from != "") {
             $sql .= " AND DATE(cron_every_day.date_create) >= STR_TO_DATE('". $time_from ."', '%m/%d/%Y %h%i')";
         }

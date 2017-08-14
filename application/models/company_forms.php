@@ -44,27 +44,5 @@ class Model_company_forms{
         return $html;
     }
 
-    // тестим здесь
-//    public function reset_progress()
-//    {
-//        global $db;
-//        $reset_id = $this->post_array['reset_id'];
-//
-//        $sql = "DELETE FROM `history_docs` WHERE  `employee_id`=" . $reset_id;
-//
-//
-////        $date_finish = NULL;
-////        $sql = "UPDATE `history_docs` SET `date_finish`='" . $date_finish . "' WHERE  `employee_id`='" . $reset_id . "'";
-////        $db->query($sql);
-//
-//        $db->query($sql);
-//
-//        $html = $reset_id;
-//        $result_array['content'] = $html;
-//        $result_array['status'] = 'ok';
-//
-//        $result = json_encode($result_array, true);
-//        die($result);
-//    }
 
 }

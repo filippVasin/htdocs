@@ -451,7 +451,7 @@ class Model_forms{
 
 
     private function email_alert(){
-        global $db;
+        global $db, $mailer;
 
 
         $sql = "SELECT *
@@ -490,36 +490,36 @@ class Model_forms{
         $email = $emails['email'];
 
 
-        // отправка письма:
-        $mail = new PHPMailer;
-//будем отравлять письмо через СМТП сервер
-        $mail->isSMTP();
-//хост
-        $mail->Host = 'smtp.yandex.ru';
-//требует ли СМТП сервер авторизацию/идентификацию
-        $mail->SMTPAuth = true;
-// логин от вашей почты
-        $mail->Username = 'noreply';
-// пароль от почтового ящика
-        $mail->Password = 'asd8#fIw2)l45Ab@!4Sa3';
-//указываем способ шифромания сервера
-        $mail->SMTPSecure = 'ssl';
-//указываем порт СМТП сервера
-        $mail->Port = '465';
+//        // отправка письма:
+//        $mailer = new PHPMailer;
+////будем отравлять письмо через СМТП сервер
+//        $mailer->isSMTP();
+////хост
+//        $mailer->Host = 'smtp.yandex.ru';
+////требует ли СМТП сервер авторизацию/идентификацию
+//        $mailer->SMTPAuth = true;
+//// логин от вашей почты
+//        $mailer->Username = 'noreply';
+//// пароль от почтового ящика
+//        $mailer->Password = 'asd8#fIw2)l45Ab@!4Sa3';
+////указываем способ шифромания сервера
+//        $mailer->SMTPSecure = 'ssl';
+////указываем порт СМТП сервера
+//        $mailer->Port = '465';
+////указываем кодировку для письма
+//        $mailer->CharSet = 'UTF-8';
 
-//указываем кодировку для письма
-        $mail->CharSet = 'UTF-8';
 //информация от кого отправлено письмо
-        $mail->From = 'noreply@laborpro.ru';
-        $mail->FromName = 'Охрана Труда';
-        $mail->addAddress($email);
+        $mailer->From = 'noreply@laborpro.ru';
+        $mailer->FromName = 'Охрана Труда';
+        $mailer->addAddress($email);
 
-        $mail->isHTML(true);
+        $mailer->isHTML(true);
 
-        $mail->Subject = $subject;
-        $mail->Body = $message;
+        $mailer->Subject = $subject;
+        $mailer->Body = $message;
 
-        if ($mail->send()) {
+        if ($mailer->send()) {
             $result_array['massege'] = 'Письмо отправлено';
             $result_array['status'] = 'ok';
             $send_result = 'Письмо отправлено';
@@ -533,7 +533,7 @@ class Model_forms{
                 '",NOW())';
             $db->query($sql);
         } else {
-            $send_result = 'Ошибка при отправки письма: ' . $mail->ErrorInfo;
+            $send_result = 'Ошибка при отправки письма: ' . $mailer->ErrorInfo;
             $result_array['massege'] = $send_result;
             $result_array['status'] = 'Ошибка';
             // пишим логи

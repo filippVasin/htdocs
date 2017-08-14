@@ -28,16 +28,17 @@ $email = $email_temp['email'];
 ////указываем кодировку для письма
 //$mail->CharSet = 'UTF-8';
 //информация от кого отправлено письмо
-$mail->From = 'noreply@laborpro.ru';
-$mail->FromName = 'Охрана Труда';
-$mail->addAddress($email);
 
-$mail->isHTML(true);
+$mailer->From = 'noreply@laborpro.ru';
+$mailer->FromName = 'Охрана Труда';
+$mailer->addAddress($email);
 
-$mail->Subject = "Тест крона";
-$mail->Body = "Привет это крон";
+$mailer->isHTML(true);
 
-//$mail->send();
+$mailer->Subject = "Тест крона";
+$mailer->Body = "Привет это крон";
+
+//$mailer->send();
 
 //$handle = fopen("cronLog.txt", "a");
 //$str = "Last timestamp: ".date("H:i:s")."\n";

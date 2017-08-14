@@ -27,7 +27,8 @@ if (session_id() == '') {
     Подключаем классы;
  */
 function __autoLoad($class){
-    require(ROOT_PATH.'/core/systems/classes/class_'.mb_strtolower($class).'.php');
+    require_once(ROOT_PATH.'/core/systems/classes/class_'.mb_strtolower($class).'.php');
+
 }
 
 
@@ -83,25 +84,24 @@ if(!isset($router)) {
 
 
 // подключаем обьект класса mail-рассылка
-if(!isset($mail)) {
+if(!isset($mailer)) {
     // Создаем объект
     // отправка письма:
-    $mail = new PHPMailer;
+    $mailer = new phpmailer;
 //будем отравлять письмо через СМТП сервер
-    $mail->isSMTP();
+    $mailer->isSMTP();
 //хост
-    $mail->Host = 'smtp.yandex.ru';
+    $mailer->Host = 'smtp.yandex.ru';
 //требует ли СМТП сервер авторизацию/идентификацию
-    $mail->SMTPAuth = true;
+    $mailer->SMTPAuth = true;
 // логин от вашей почты
-    $mail->Username = 'noreply';
+    $mailer->Username = 'noreply';
 // пароль от почтового ящика
-    $mail->Password = 'asd8#fIw2)l45Ab@!4Sa3';
+    $mailer->Password = 'asd8#fIw2)l45Ab@!4Sa3';
 //указываем способ шифромания сервера
-    $mail->SMTPSecure = 'ssl';
+    $mailer->SMTPSecure = 'ssl';
 //указываем порт СМТП сервера
-    $mail->Port = '465';
+    $mailer->Port = '465';
 //указываем кодировку для письма
-    $mail->CharSet = 'UTF-8';
-
+    $mailer->CharSet = 'UTF-8';
 }
