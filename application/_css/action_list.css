@@ -1,11 +1,46 @@
-.row{
-    margin: 0 auto;
+.title>div{
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #323232;
-    height: 25px;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    float: left;
+    height: 50px;
+    padding: 13px 10px;
+    box-sizing: border-box;
+    background-color: #f9fafb;
+    border-right: 1px solid #e3e4e8;
+    color: #4a4b4b;
+    font-family: 'SF_UI_Text_Bold';
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    border: 1px solid #f4f4f4;
+    border-bottom: 2px solid #f4f4f4;
+    background-color: #fff;
+    height: 38px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.row>div{
+    float: left;
+    height: 30px;
+    padding: 8px 10px;
+    box-sizing: border-box;
     cursor: pointer;
+    background-color: #ffffff;
+    border-right: 1px solid #e3e4e8;
+    color: #4a4b4b;
+    font-size: 11px;
+    line-height: 22px;
+    white-space: nowrap;
+    text-align: left!important;
+}
+.row {
+    overflow: hidden;
+    border-bottom: 1px solid #e3e4e8;
 }
 .popup_context_menu_title{
     margin-top: 20px;

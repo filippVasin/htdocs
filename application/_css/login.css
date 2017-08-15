@@ -2,6 +2,7 @@
     position: absolute;
     margin: 0;
     left: calc(50% - 125px);
+    margin-top: 50px;
 }
 #header{
     display: none;
@@ -9,6 +10,9 @@
 #menu_open{
     display: none;
 }
-.page_title{
-    margin: 20px 0;
+
+.page_title {
+    width: 280px;
+    margin: 0 auto;
+    left: calc(50% - 150px);
 }

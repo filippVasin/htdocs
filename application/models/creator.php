@@ -41,11 +41,11 @@ class Model_creator
 
         $employees = $db->all($sql);
 
-        $html = '<br><br><br><br><br>';
+        $html = '';
         $item_id = 0;
         foreach($employees as $employee){
             if($employee['left_key']==1){
-                $html .= '<div>'.  $employee['erarh'].'</div><br>';
+                $html .= '<div>'.  $employee['erarh'].'</div>';
                 $item_id = $employee['id'];
 
             }

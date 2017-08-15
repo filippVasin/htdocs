@@ -1,3 +1,4 @@
+<div class="page_title">Действия с документами</div>
 <div id="action_list">%list%
 <!--    <div id="add_action" class="button_plus" data-title="Добавить действие"></div>-->
 </div>

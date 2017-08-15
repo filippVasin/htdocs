@@ -86,7 +86,6 @@ if(isset($_SESSION['control_company_name'])){
 
             if($("#header div").hasClass("display_none")){
                 $("#header>a").removeClass('attr');
-                $("#header div").removeClass("display_none");
 
                 $("#topBar .logo").css("width", "220px");
                 $("#header>a").css("width", "220px");
