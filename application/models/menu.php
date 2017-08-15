@@ -22,9 +22,9 @@ class Model_menu{
         // Есть ли управляемая компания;
         if(isset($_SESSION['control_company']) && $_SESSION['role_id'] == 1){
             $company_buttons = '
-            <a href="/items_control"><img src="../../templates/simple_template/images/main_icon.svg"><div class="">Управление элементами</div></a>
-            <a href="/employees_control"><img src="../../templates/simple_template/images/employees.svg"><div class="">Сотрудники</div></a>
-            <a href="/documents_download"><img src="../../templates/simple_template/images/main_icon.svg"><div class="">Выгрузка документов</div></a>
+            <a href="/items_control" class="attr" name="Управление элементами"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Управление элементами</div></a>
+            <a href="/employees_control" class="attr" name="Сотрудники"><img src="../../templates/simple_template/images/employees.svg"><div class="display_none">Сотрудники</div></a>
+            <a href="/documents_download" class="attr" name="Выгрузка документов"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Выгрузка документов</div></a>
             ';
         }   else{
             $company_buttons = '';
@@ -33,12 +33,12 @@ class Model_menu{
         // Есть ли управляемая компания;
         if( $_SESSION['role_id'] == 4){
             $company_buttons = '
-            <a href="/structure" class="active"><img src="../../templates/simple_template/images/org_str_icon.svg"><div class="">Организационная структура</div></a>
-            <a href="/creator"><img src="../../templates/simple_template/images/create_node.svg"><div class="">Добавить элемент</div></a>
-            <a href="/docs_report"><img src="../../templates/simple_template/images/report_doc_icon.svg"><div class="">Отчёт по документам</div></a>
-            <a href="/report_step"><img src="../../templates/simple_template/images/report_em_icon.svg"><div class="">Отчёт по сотрудникам</div></a>
-            <a href="/action_list"><img src="../../templates/simple_template/images/doc_action_icon.svg"><div class="">Действия с документами</div></a>
-            <a href="/local_alert"><img src="../../templates/simple_template/images/alarm.svg"><div class="">Уведомления</div></a>
+            <a href="/structure" class="attr" name="Организационная структура"><img src="../../templates/simple_template/images/org_str_icon.svg"><div class="display_none">Организационная структура</div></a>
+            <a href="/creator" class="attr" name="Добавить элемент"><img src="../../templates/simple_template/images/create_node.svg"><div class="display_none">Добавить элемент</div></a>
+            <a href="/docs_report" class="attr" name="Отчёт по документам"><img src="../../templates/simple_template/images/report_doc_icon.svg"><div class="display_none">Отчёт по документам</div></a>
+            <a href="/report_step" class="attr" name="Отчёт по сотрудникам"><img src="../../templates/simple_template/images/report_em_icon.svg"><div class="display_none">Отчёт по сотрудникам</div></a>
+            <a href="/action_list" class="attr" name="Действия с документами"><img src="../../templates/simple_template/images/doc_action_icon.svg"><div class="display_none">Действия с документами</div></a>
+            <a href="/local_alert" class="attr" name="Уведомления"><img src="../../templates/simple_template/images/alarm.svg"><div class="display_none">Уведомления</div></a>
             ';
         }   else{
             $company_buttons = '';
@@ -54,13 +54,13 @@ class Model_menu{
         if(isset($_SESSION['user_id'])){
 
             if($_SESSION['role_id'] == 1){
-                $login_buttons = '<a href="/company_control"><img src="../../templates/simple_template/images/main_icon.svg"><div class="">Компании</div></a>';
-                $login_buttons .= '<a href="/structure"><img src="../../templates/simple_template/images/org_str_icon.svg"><div class="">Организационная структура</div></a>';
-                $login_buttons .= '<a href="/creator"><img src="../../templates/simple_template/images/create_node.svg"><div class="">Добавить элемент</div></a>';
-                $login_buttons .= '<a href="/editor"><img src="../../templates/simple_template/images/main_icon.svg"><div class="">Редактор элементов</div></a>';
-                $login_buttons .= '<a href="/employee_update"><img src="../../templates/simple_template/images/main_icon.svg"><div class="">Перемещение сотрудников</div></a>';
-                $login_buttons .= '<a href="/node_update"><img src="../../templates/simple_template/images/main_icon.svg"><div class="">Перемещение узлов</div></a>';
-                $login_buttons .= '<a href="/company_forms"><img src="../../templates/simple_template/images/company_docs.svg"><div class="">Документы компании</div></a>';
+                $login_buttons = '<a href="/company_control" class="attr" name="Компании"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Компании</div></a>';
+                $login_buttons .= '<a href="/structure" class="attr" name="Организационная структура"><img src="../../templates/simple_template/images/org_str_icon.svg"><div class="display_none">Организационная структура</div></a>';
+                $login_buttons .= '<a href="/creator" class="attr" name="Добавить элемент"><img src="../../templates/simple_template/images/create_node.svg"><div class="display_none">Добавить элемент</div></a>';
+                $login_buttons .= '<a href="/editor" class="attr" name="Редактор элементов"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Редактор элементов</div></a>';
+                $login_buttons .= '<a href="/employee_update" class="attr" name="Перемещение сотрудников"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Перемещение сотрудников</div></a>';
+                $login_buttons .= '<a href="/node_update" class="attr" name="Перемещение узлов" ><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Перемещение узлов</div></a>';
+                $login_buttons .= '<a href="/company_forms" class="attr"name="Документы компании"><img src="../../templates/simple_template/images/company_docs.svg"><div class="display_none">Документы компании</div></a>';
 
             }
 
@@ -75,7 +75,7 @@ class Model_menu{
     public function role_three(){
 
         if ($_SESSION['role_id'] != 3) {
-            $role_three = '<a href="/main"><img src="../../templates/simple_template/images/main_icon.svg"><div class="">Главная страница</div></a>';
+            $role_three = '<a href="/main" class="attr" name="Главная страница"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Главная страница</div></a>';
         } else {
             $role_three = '';
         }

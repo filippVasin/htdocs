@@ -33,13 +33,24 @@ $(document).ready(function() {
                 }
 
                 if(request_result == 'ok'){
-
+                    $("#content_box .page_title").css("font-size","30px");
+                    $("#content_box .page_title").css("text-align","center");
                     $(".page_title").css("display","none");
                     $(".control_test_item").css("display","none");
+                    $("#menu_open").css("display","none");
+                    $("#topBar").css("height","70px");
                     $("#test_block").css("margin-top","-40px");
-                    $("#content_box").css("padding-top","65px")
+                    $("#content_box").css("padding-top","55px");
+                    $(".logo").css("height","70px");
+                    $(".logo").css("line-height","70px");
+                    $("#body").css("float","none");
+                    $("#body").css("margin-left","0px");
+                    $("#content_box").css("position","relative");
                     $('#test_block').fadeIn(0);
                     $('#content_box').html(content);
+                    $(".logo").css("line-height","70px");
+
+
                 }
 
                 message(request_message, request_result);

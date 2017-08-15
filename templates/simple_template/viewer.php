@@ -22,7 +22,7 @@
 <body>
 <div id="topBar">
     <div class="left transform">
-        <div class="logo">Labro<span>Pro</span></div>
+        <div class="logo">LP</div>
         <div id="menu_open" class="mune_icon transform"><img src="../../templates/simple_template/images/menu_icon.svg"></div>
     </div>
     <? if(isset($_SESSION['user_id'])){
@@ -85,17 +85,23 @@ if(isset($_SESSION['control_company_name'])){
         $(document).on("click", "#menu_open", function () {
 
             if($("#header div").hasClass("display_none")){
+                $("#header>a").removeClass('attr');
+                $("#header div").removeClass("display_none");
 
-                $("#header>a").removeAttr('style');
-                $("#header>a>img").removeAttr('style');
-                $("#topBar .logo").removeAttr('style');
-                $("#header>a>img").removeAttr('style');
+                $("#topBar .logo").css("width", "220px");
+                $("#header>a").css("width", "220px");
+                $("#header>a").css("padding-left", "10px");
+                $("#header>a>img").css("height", "20px");
+
+
                 setTimeout(function() { $("#header div").removeClass("display_none")}, 350);
                 setTimeout(function() { $("#topBar .logo").html('LabroPro') }, 350);
 
             } else {
+                $("#header>a").addClass('attr');
                 $("#header div").addClass("display_none");
                 $("#topBar .logo").html('LP');
+
                 $("#topBar .logo").css("width", "50px");
                 $("#header>a").css("width", "50px");
                 $("#header>a").css("padding-left", "0px");

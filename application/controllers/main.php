@@ -9,7 +9,7 @@ class Controller_main extends Controller{
     // model, view и pointer - объявлены в родительском классе;
 
     public function exec_default(){
-
+//        $this->view = str_replace('%title%', 'Главная страница', $this->view);
     }
 
     public function show_something(){

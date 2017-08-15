@@ -13,6 +13,7 @@
 	background: url('../images/cal.gif') 100% 50% no-repeat;
 	padding-right: 20px;
 	cursor: pointer;
+    background-color: #fff;
 }
 
 /* additional properties for input boxe in activated state, above still applies unless in conflict */

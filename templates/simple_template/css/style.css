@@ -10,6 +10,8 @@ body{
 }
 
 #topBar{
+    position: fixed;
+    z-index: 1;
     height: 50px;
     background-color: #3c8dbc;
     width: 100%;
@@ -73,6 +75,8 @@ body{
 }
 
 #header{
+    position: fixed;
+    z-index: 10;
     display: flex;
     float: left;
     flex-direction: column;
@@ -99,6 +103,7 @@ body{
     transition:all 0.35s ease-out 0s;
     box-sizing: border-box;
     height: 58px;
+    position: relative;
 }
 
 #header>a>img{
@@ -136,10 +141,11 @@ body{
 }
 
 #body{
+    margin-top: 50px;
     padding: 10px 0px 25px 0px;
     text-align: center;
     float: left;
-    margin-left: 15px;
+    margin-left: 70px;
 
 }
 
@@ -160,16 +166,28 @@ body{
 }
 
 .input{
-    height: 38px;
-    width: 300px;
-    border-radius: 40px;
-    border: 0px solid black;
+    outline: none;
     padding-left: 13px;
     padding-right: 13px;
     margin-left: 4px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-color: #d2d6de;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border: 1px solid #ccc;
+    background-color: #fff!important;
+    text-align: left;
 }
-
+.input:focus{
+    border-color: #3c8dbc;
+}
 .button{
     background-color: #8bc34a;
     min-width: 200px;
@@ -276,7 +294,7 @@ select{
     background: url(/templates/simple_template/images/arrow_down.svg) no-repeat right #ffffff;
     background-size: 15px;
     background-position-y: 14px;
-    background-position-x: 175px;
+    background-position-x: calc(100% - 5px);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
     outline: none;
 }
@@ -286,13 +304,18 @@ select{
     font-weight: bold;
     margin: 8px;
 }
+
+.top50{
+    top: 50px;
+}
+
 .down{
     border: 2px solid #91dc5a;
     position: fixed;
     height: 75px;
     width: 70px;
     top: 150px;
-    right: 190px;
+    left: calc(100% - 314px);
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -314,13 +337,15 @@ select{
     user-select: none;
 }
 
+
+
 .up{
     border: 2px solid #91dc5a;
     position: fixed;
     height: 75px;
     width: 70px;
     top: 70px;
-    right: 190px;
+    left: calc(100% - 314px);
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -356,8 +381,7 @@ select{
     height: 24px;
     padding-top: 4px;
     box-sizing: border-box;
-    left: 190px;
-    right: 190px;
+    width: 960px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -365,6 +389,8 @@ select{
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    left: calc(50% - 480px);
+    z-index: 10;
 }
 .progress_bar_items{
     display: flex;
@@ -387,20 +413,21 @@ select{
 }
 
 #progress_bar_line{
+    width: 960px;
     position: fixed;
+    left: calc(50% - 480px);
     top: 41px;
     height: 24px;
     padding-top: 4px;
     box-sizing: border-box;
-    left: 190px;
-    right: 190px;
     background-color: #fff;
     display: flex;
     flex-direction: row;
     border: 2px solid #91dc5a;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    border-radius: 4px
+    border-radius: 4px;
+    z-index: 10;
 }
 
 .progress_bar_title_line{
@@ -423,14 +450,15 @@ select{
 }
 
 #info_box{
+    width: 960px;
     position: fixed;
+    left: calc(50% - 480px);
     top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    left: 190px;
-    right: 224px;
     box-sizing: border-box;
+    z-index: 10;
 }
 .info_box{
     background-color: #fff;
@@ -453,7 +481,6 @@ select{
 }
 .info_box_fio{
     width: 200px;
-    margin-right: 5px;
 }
 .info_box_doc{
     width: 480px;
@@ -490,7 +517,6 @@ select{
 .button{
     width: 150px;
     margin-top: 10px;
-    margin-right: 10px;
     background-color: #3c8dbc;
     border-color: #367fa9;
     color: #fff;
@@ -583,4 +609,52 @@ select{
 }
 .display_none{
     display: none!important;
+}
+
+.canvas>.row{
+    display: flex;
+}
+
+.attr:before {
+    position: absolute;
+    z-index: 99999;
+    top: 17px;
+    left: 51px;
+    visibility: hidden;
+    display: block;
+    padding: 6px;
+    box-sizing: border-box;
+    content: attr(name);
+    opacity: 0;
+    background-color: rgba(17, 17, 17, 0.75);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #ffffff;
+    font-family: 'Roboto_Regular';
+    font-size: 13px;
+    line-height: 15px;
+    white-space: nowrap;
+    z-index: 10;
+}
+.attr:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.page_title {
+    position: fixed;
+    top: 10px;
+    left: 270px;
+    color: #fff;
+    z-index: 3;
+}
+#topBar .logo, #header>a{
+width: 50px;
+}
+#header>a{
+padding-left:0px;
+}
+#header>a>img{
+height: 30px;
 }

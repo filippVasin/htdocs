@@ -46,3 +46,6 @@
             </div>
         </div>
     </div>
+    <iframe width="1200" height="600" src="https://xn--80akibcicpdbetz7e2g.xn--p1ai/inspector/prechecks?category_id=popular">
+
+    </iframe>

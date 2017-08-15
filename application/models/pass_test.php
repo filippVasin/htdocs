@@ -235,7 +235,6 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
 
         $result = '<div id="test" test_id="'.$test_id.'">';
 
-        $result .= '<br>';
 
         // Название теста;
         $result .= '<div class="page_title">'.$test_name.'</div>';
@@ -291,7 +290,7 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
 
             $result .= '<div class="test_question" question_id="'.$question['id'].'">';
             $result .= '<b>'.$question['question_text'].'</b>';
-            $result .= '<br><br>';
+
 
             foreach($answers as $question_id => $answer_array){
                 if($question['id'] == $question_id){
@@ -304,7 +303,6 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
             }
 
             $result .= '</div>';
-            $result .= '<br>';
         }
         global $test_name_box;
         // информационный блок

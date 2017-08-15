@@ -39,12 +39,6 @@ class Model_structure
 
 
         $employees = $db->all($sql);
-
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
         $html = '<select id="tree" class="" style="">';
         foreach ($employees as $key => $employee_box) {
 
