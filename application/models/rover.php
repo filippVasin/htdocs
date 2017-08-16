@@ -99,7 +99,7 @@ class Model_rover{
    ) AS StepResult  /*  - таблица всех степов для конкретного сотрудника */
     LEFT JOIN
       (SELECT  /* все шаги сотрудника */
-          history_step.step_id AS History
+          history_step.step_id AS History,history_step.`data_finish`
           FROM
              history_step
           WHERE
@@ -112,7 +112,9 @@ class Model_rover{
       route_control_step.id = StepResult.StepID  /* добавлили все шоги сотрудника, даже те которые он не начинал проходить */
   WHERE
   /* Только незаконьченные шаги*/
-    HistoryStep.History IS NULL";
+    HistoryStep.History IS NULL OR (
+    periodicity is not NULL AND  now() >=  (data_finish + INTERVAL periodicity MONTH)
+    )";
 //                echo $sql . " -<br><br><br>";
                 $control_test = $db->row($sql);
 //                $track = "";
@@ -122,19 +124,19 @@ class Model_rover{
                     // запрашиваем массив матералов сотрудника с учётом трека
                     $sql = "SELECT
   CompanyRoute.id AS TRACK, route_control_step.id, route_control_step.son_step,
-  StartStep.route_start_step, HISTORYRESULT.HistoryStep
+  StartStep.route_start_step, HISTORYRESULT.HistoryStep,periodicity,data_finish
   FROM route_control_step
   LEFT JOIN route_doc AS StartStep
     ON (route_control_step.id = StartStep.route_start_step AND StartStep.id = route_control_step.track_number_id)
   LEFT JOIN route_doc AS CompanyRoute
     ON CompanyRoute.id = route_control_step.track_number_id
   LEFT JOIN
-    (SELECT history_step.step_id AS HistoryStep
+    (SELECT history_step.step_id AS HistoryStep,history_step.data_finish
       FROM history_step
       WHERE history_step.employee_id = " . $_SESSION['employee_id'] . ") AS HISTORYRESULT
     ON HISTORYRESULT.HistoryStep = route_control_step.id
 
-  WHERE route_control_step.track_number_id = ". $track ." AND CompanyRoute.company_id =" . $_SESSION['control_company'];
+  WHERE route_control_step.track_number_id = ". $track ." AND CompanyRoute.company_id =". $_SESSION['control_company'];
 //            echo $sql . " <br><br>";
                     $control_test_array = $db->all($sql);
                     $step_pointer = 0; // пункт начала пути
@@ -144,6 +146,9 @@ class Model_rover{
                         $link[$control_tests_item['id']] =
                             ["son_step" => $control_tests_item['son_step'],
                                 "HistoryStep" => $control_tests_item['HistoryStep'],
+                                "periodicity" => $control_tests_item['periodicity'],
+                                "data_finish" => $control_tests_item['data_finish'],
+                                "threeMonth" => date('Y-m-d', strtotime(date("Y-m-d") . '+ 3 month')),
 //                        "step_content_id"=>$control_tests_item['step_content_id'],
                             "id" => $control_tests_item['id']
                         ];
@@ -153,15 +158,15 @@ class Model_rover{
                         };
                     }
 //                    print_r($link);
-                    // поиск нужного шага для сотрудника
+
                     $content = "";
                     do {
-                        if ($link[$step_pointer]["HistoryStep"] == NULL) {
+                        if (($link[$step_pointer]["HistoryStep"] == NULL) || (isset($link[$step_pointer]["periodicity"])
+                                && ($link[$step_pointer]["data_finish"] <= date('Y-m-d', strtotime(date("Y-m-d") . '-'. $link[$step_pointer]["periodicity"] .' month'))))) {
                             $content = "1";
                         } else {
                             if ($link[$step_pointer]["son_step"] != 0) {
                                 $step_pointer = $link[$step_pointer]["son_step"];
-
                             } else { // законьчились материалы для проходжения
                                 $content = "No";
                                 header("Location: /dead_end");// переходим в тупик

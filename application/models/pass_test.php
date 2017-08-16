@@ -18,7 +18,7 @@ class Model_pass_test{
     public function start(){
         global $db, $elements;
 
-//        print_r($_SESSION);
+        print_r($_SESSION);
 //        echo "<br>";
         $write_doc = $this->post_array['write_doc'];
         $go_to_testing = $this->post_array['go_to_testing'];
@@ -26,6 +26,8 @@ class Model_pass_test{
         $test_id="";
         $doc_id="";
         $form_id="";
+
+
 
 //    echo $_SESSION['step_id'];
         // получаем контент по шагу
