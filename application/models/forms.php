@@ -15,7 +15,7 @@ class Model_forms{
     public function start(){
         global $db;
         $action_name = $this->post_array['action_name'];
-        print_r($_SESSION);
+//        print_r($_SESSION);
         if($action_name!=""){
          // если пришли не с rover
 
@@ -34,11 +34,19 @@ class Model_forms{
             $periodicity = $periodicitys['periodicity'];
 
 
-            $sql="SELECT save_temp_files.id AS real_form_id, MAX(history_forms.`step_end_time`), periodicity
+            if($periodicity=="") {
+                $sql = "SELECT save_temp_files.id AS real_form_id
+             FROM save_temp_files
+             WHERE save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
+             AND save_temp_files.company_temps_id =" . $_SESSION['form_id'];
+
+            } else {
+                $sql = "SELECT save_temp_files.id AS real_form_id, MAX(history_forms.`step_end_time`), periodicity
             FROM save_temp_files,history_forms,route_control_step
             WHERE save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
             AND save_temp_files.company_temps_id = " . $_SESSION['form_id'] . "
-     		AND now() <  (history_forms.`step_end_time` + INTERVAL ". $periodicity ." MONTH)";
+     		AND now() <  (history_forms.`step_end_time` + INTERVAL " . $periodicity . " MONTH)";
+            }
 
             $condition_test = $db->row($sql);
             $_SESSION['real_form_id'] = $condition_test['real_form_id'];
@@ -519,8 +527,9 @@ class Model_forms{
 //        $mailer->Port = '465';
 ////указываем кодировку для письма
 //        $mailer->CharSet = 'UTF-8';
-
 //информация от кого отправлено письмо
+
+
         $mailer->From = 'noreply@laborpro.ru';
         $mailer->FromName = 'Охрана Труда';
         $mailer->addAddress($email);

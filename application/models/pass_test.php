@@ -18,7 +18,7 @@ class Model_pass_test{
     public function start(){
         global $db, $elements;
 
-        print_r($_SESSION);
+//        print_r($_SESSION);
 //        echo "<br>";
         $write_doc = $this->post_array['write_doc'];
         $go_to_testing = $this->post_array['go_to_testing'];
@@ -109,7 +109,7 @@ class Model_pass_test{
                           AND
                           pass_test_form_history.data_finish IS NOT NULL GROUP BY FormFinish) AS FormHistory
                     ON FormHistory.FormFinish = route_control_step.id
-WHERE route_control_step.id = 2". $_SESSION['step_id'];
+WHERE route_control_step.id =". $_SESSION['step_id'];
 
         $condition_test = $db->row($sql);
 //    echo $sql;

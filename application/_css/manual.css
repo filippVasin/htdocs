@@ -12,3 +12,6 @@ margin: 0 auto;
     color: #2e1f1f;
     line-height: 30px;
 }
+#body {
+    margin-left: 200px;
+}

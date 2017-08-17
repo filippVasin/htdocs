@@ -699,7 +699,7 @@ class Model_dead_end{
     public function mail_send($email,$mail_subject,$mail_body,$attached_file){
             global $mailer;
 //        require_once(ROOT_PATH.'/core/systems/classes/class_phpmailer.php');
-        // отправка письма:
+////         отправка письма:
 //        $mailer = new phpmailer;
 ////будем отравлять письмо через СМТП сервер
 //        $mailer->isSMTP();
@@ -717,7 +717,7 @@ class Model_dead_end{
 //        $mailer->Port = '465';
 ////указываем кодировку для письма
 //        $mailer->CharSet = 'UTF-8';
-//информация от кого отправлено письмо
+////информация от кого отправлено письмо
 
 
 

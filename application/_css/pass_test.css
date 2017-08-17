@@ -85,7 +85,9 @@ body{
     left: calc(50% - 500px);
     z-index: 5;
 }
-
+#body {
+      margin-top: 0px;
+ }
 
 
 @media print{@page {size: landscape}  body{display: block}}

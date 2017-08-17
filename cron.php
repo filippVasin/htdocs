@@ -38,7 +38,7 @@ $mailer->isHTML(true);
 $mailer->Subject = "Тест крона";
 $mailer->Body = "Привет это крон";
 
-//$mailer->send();
+$mailer->send();
 
 //$handle = fopen("cronLog.txt", "a");
 //$str = "Last timestamp: ".date("H:i:s")."\n";

@@ -162,7 +162,7 @@ class Model_rover{
                     $content = "";
                     do {
                         if (($link[$step_pointer]["HistoryStep"] == NULL) || (isset($link[$step_pointer]["periodicity"])
-                                && ($link[$step_pointer]["data_finish"] <= date('Y-m-d', strtotime(date("Y-m-d") . '-'. $link[$step_pointer]["periodicity"] .' month'))))) {
+                                && ($link[$step_pointer]["data_finish"] >= date('Y-m-d', strtotime(date("Y-m-d") . '-'. $link[$step_pointer]["periodicity"] .' month'))))) {
                             $content = "1";
                         } else {
                             if ($link[$step_pointer]["son_step"] != 0) {

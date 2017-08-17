@@ -3,11 +3,11 @@
     Объявляем константы;
  */
 // Путь к скрипту на сервере;
-define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT']);
+define('ROOT_PATH', isset($_SERVER['DOCUMENT_ROOT']) && $_SERVER['DOCUMENT_ROOT']!=''? $_SERVER['DOCUMENT_ROOT']:'/../..');
 // Маршрут который нам передал пользователь;
-define('ROUTE', $_SERVER['REQUEST_URI']);
+define('ROUTE', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI']:'');
 // Адрес ресурса;
-define('URL', isset($_SERVER["HTTPS"]) ? 'https://'.$_SERVER['SERVER_NAME'] : 'http://'.$_SERVER['SERVER_NAME']);
+define('URL', isset($_SERVER['SERVER_NAME']) ? (isset($_SERVER["HTTPS"]) ? 'https://'.$_SERVER['SERVER_NAME'] : 'http://'.$_SERVER['SERVER_NAME']) : '');
 
 /**
 Подключаем конфиг;
@@ -77,7 +77,7 @@ if(!isset($systems)){
     Включаем маршрутизатор;
  */
 // Если маршрутизатор не подключен - подключаем;
-if(!isset($router)) {
+if(!isset($router) && ROUTE!="") {
     // Создаем объект
     $router = new router;
 }
