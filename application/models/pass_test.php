@@ -31,25 +31,38 @@ class Model_pass_test{
 
 //    echo $_SESSION['step_id'];
         // получаем контент по шагу
-        $sql ="SELECT
-                route_control_step.step_content_id,
+        $sql ="SELECT route_control_step.step_content_id, periodicity, ManualHistory.ManualFinish, ManualHistory.finish_data,
                 CASE
-                  WHEN ManualHistory.ManualFinish IS NULL
+                  WHEN ManualHistory.ManualFinish IS NULL OR (
+    				periodicity is not NULL AND  now() >=  (ManualHistory.finish_data + INTERVAL periodicity MONTH)
+   				)
                   THEN step_content.manual_id
                   ELSE NULL
                   END AS ManualActual,
-           CASE
-                  WHEN DocHistory.DocFinish IS NULL
+
+           		CASE
+                  WHEN DocHistory.DocFinish IS NULL OR (
+    				periodicity is not NULL AND  now() >=  (DocHistory.finish_data + INTERVAL periodicity MONTH)
+   				)
+
                   THEN step_content.test_id
                   ELSE NULL
                   END AS TestActual,
+
                 CASE
-                  WHEN DocHistory.DocFinish IS NULL
+                  WHEN DocHistory.DocFinish IS NULL OR (
+    				periodicity is not NULL AND  now() >=  (DocHistory.finish_data + INTERVAL periodicity MONTH)
+   				)
                   THEN step_content.doc_id
                   ELSE NULL
                   END AS DocActual,
+
                 CASE
-                  WHEN FormHistory.FormFinish IS NULL
+                  WHEN FormHistory.FormFinish IS NULL OR (
+    				periodicity is not NULL AND  now() >=  (FormHistory.finish_data + INTERVAL periodicity MONTH)
+   				)
+
+
                   THEN step_content.form_id
                   ELSE NULL
                   END AS FormActual
@@ -59,39 +72,45 @@ class Model_pass_test{
                 LEFT JOIN step_content
                 ON step_content.id = route_control_step.step_content_id
                  LEFT JOIN
-                    (SELECT manual_history.step_id AS ManualFinish
+                    (SELECT manual_history.step_id AS ManualFinish, manual_history.date_finish AS finish_data
                       FROM
-                        manual_history
+                        manual_history, route_control_step
                       WHERE
-                        manual_history.step_id = ".$_SESSION['step_id'] ."
+                        manual_history.step_id = ". $_SESSION['step_id'] ."
                         AND
                         manual_history.employee_id = ". $_SESSION['employee_id'] ."
                         AND
-                        manual_history.date_finish IS NOT NULL  GROUP BY ManualFinish) AS ManualHistory
+                        manual_history.date_finish IS NOT NULL
+
+                        GROUP BY ManualFinish) AS ManualHistory
                     ON ManualHistory.ManualFinish = route_control_step.id
-             LEFT JOIN
-                    (SELECT history_docs.step_id AS DocFinish
+
+            	 LEFT JOIN
+                    (SELECT history_docs.step_id AS DocFinish, history_docs.date_finish AS finish_data
                       FROM
                         history_docs
                       WHERE
-                        history_docs.step_id = ".$_SESSION['step_id'] ."
+                        history_docs.step_id = ". $_SESSION['step_id'] ."
                         AND
                         history_docs.employee_id = ". $_SESSION['employee_id'] ."
                         AND
                         history_docs.date_finish IS NOT NULL  GROUP BY DocFinish) AS DocHistory
                       ON DocHistory.DocFinish = route_control_step.id
+
+
                     LEFT JOIN
-                      (SELECT pass_test_form_history.step_id AS FormFinish
+                      (SELECT pass_test_form_history.step_id AS FormFinish, pass_test_form_history.data_finish AS finish_data
                         FROM
                           pass_test_form_history
                         WHERE
-                          pass_test_form_history.step_id = ".$_SESSION['step_id'] ."
+                          pass_test_form_history.step_id = ". $_SESSION['step_id'] ."
                           AND
                           pass_test_form_history.employee = ". $_SESSION['employee_id'] ."
                           AND
                           pass_test_form_history.data_finish IS NOT NULL GROUP BY FormFinish) AS FormHistory
                     ON FormHistory.FormFinish = route_control_step.id
-WHERE route_control_step.id =". $_SESSION['step_id'];
+WHERE route_control_step.id = 2". $_SESSION['step_id'];
+
         $condition_test = $db->row($sql);
 //    echo $sql;
         // получаем данные:

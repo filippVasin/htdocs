@@ -53,7 +53,7 @@ class Model_report_step{
 /* Вывод даннных */
 
   employees.id AS EMPLOY, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
-   route_control_step.id AS STEP,
+   route_control_step.id AS STEP, route_control_step.`periodicity`, history_docs.`id` AS history_docs,history_docs.date_finish,
    /* условный вывод */
   CASE
    WHEN MIN(history_docs.date_start) IS NULL
@@ -151,12 +151,12 @@ class Model_report_step{
 
     route_doc.company_id = ". $_SESSION['control_company'] ."
     		AND employees.id = employees_items_node.employe_id
+			AND ((history_docs.date_finish + INTERVAL route_control_step.`periodicity` MONTH) <= now() OR (history_docs.date_finish is NULL))
     		AND organization_structure.id = employees_items_node.org_str_id
     		AND organization_structure.company_id = ". $_SESSION['control_company'] ."
 	     AND
     /* для всех сотрудников или только для конкретного */
-    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
-    ";
+    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)";
 
         // частичный доступ у сотрудика котрый запрашивает отчёт
         if(($left!='none')&&($left!="all")) {
