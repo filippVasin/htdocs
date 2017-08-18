@@ -496,7 +496,7 @@ class Model_dead_end{
 //        header ( "Content-type: application/vnd.ms-excel" );
 //        header ( "Content-Disposition: attachment; filename=matrix.xls" );
 
-            $file_url = 'C:\MAMP\htdocs\application\real_forms\report.xls';
+            $file_url = ROOT_PATH .'\Application\real_forms\report.xls';
             $objWriter = new PHPExcel_Writer_Excel5($xls);
 //                $objWriter->save('php://output');
             $objWriter->save($file_url);
@@ -697,45 +697,23 @@ class Model_dead_end{
 
     // cron тестим здесь
     public function mail_send($email,$mail_subject,$mail_body,$attached_file){
-            global $mailer;
-//        require_once(ROOT_PATH.'/core/systems/classes/class_phpmailer.php');
-////         отправка письма:
-//        $mailer = new phpmailer;
-////будем отравлять письмо через СМТП сервер
-//        $mailer->isSMTP();
-////хост
-//        $mailer->Host = 'smtp.yandex.ru';
-////требует ли СМТП сервер авторизацию/идентификацию
-//        $mailer->SMTPAuth = true;
-//// логин от вашей почты
-//        $mailer->Username = 'noreply@laborpro.ru';
-//// пароль от почтового ящика
-//        $mailer->Password = 'asd8#fIw2)l45Ab@!4Sa3';
-////указываем способ шифромания сервера
-//        $mailer->SMTPSecure = 'ssl';
-////указываем порт СМТП сервера
-//        $mailer->Port = '465';
-////указываем кодировку для письма
-//        $mailer->CharSet = 'UTF-8';
-////информация от кого отправлено письмо
+        global $systems;
 
+        $send_mailer = $systems->create_mailer_object();
 
+        $send_mailer->From = 'noreply@laborpro.ru';
+        $send_mailer->FromName = 'Охрана Труда';
+        $send_mailer->addAddress($email);
+        $send_mailer->isHTML(true);
 
-        $mailer->From = 'noreply@laborpro.ru';
-        $mailer->FromName = 'Охрана Труда';
-        $mailer->addAddress($email);
+        $send_mailer->Subject = $mail_subject;
+        $send_mailer->Body = $mail_body;
 
-        $mailer->isHTML(true);
-
-        $mailer->Subject = $mail_subject;
-        $mailer->Body = $mail_body;
-
-// прикрепляемый файл:
         if($attached_file!=""){
-            $mailer->addAttachment($attached_file);
+            $send_mailer->addAttachment($attached_file);
         }
 
-        $mailer->send();
+        $send_mailer->send();
     }
 
 

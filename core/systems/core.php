@@ -3,9 +3,9 @@
     Объявляем константы;
  */
 // Путь к скрипту на сервере;
-define('ROOT_PATH', isset($_SERVER['DOCUMENT_ROOT']) && $_SERVER['DOCUMENT_ROOT']!=''? $_SERVER['DOCUMENT_ROOT']:'/../..');
+define('ROOT_PATH', isset($_SERVER['DOCUMENT_ROOT']) && $_SERVER['DOCUMENT_ROOT'] !='' ? $_SERVER['DOCUMENT_ROOT'] : '/../..');
 // Маршрут который нам передал пользователь;
-define('ROUTE', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI']:'');
+define('ROUTE', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '');
 // Адрес ресурса;
 define('URL', isset($_SERVER['SERVER_NAME']) ? (isset($_SERVER["HTTPS"]) ? 'https://'.$_SERVER['SERVER_NAME'] : 'http://'.$_SERVER['SERVER_NAME']) : '');
 
@@ -26,10 +26,19 @@ if (session_id() == '') {
 /**
     Подключаем классы;
  */
-function __autoLoad($class){
-    require_once(ROOT_PATH.'/core/systems/classes/class_'.mb_strtolower($class).'.php');
 
-}
+require_once(ROOT_PATH . '/core/systems/classes/class_control_tests.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_controller.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_elements.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_Labro.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_mysql.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_node.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_phpexcel.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_phpmailer.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_router.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_smtp.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_systems.php');
+
 
 
 /**
@@ -80,28 +89,4 @@ if(!isset($systems)){
 if(!isset($router) && ROUTE!="") {
     // Создаем объект
     $router = new router;
-}
-
-
-// подключаем обьект класса mail-рассылка
-if(!isset($mailer)) {
-    // Создаем объект
-    // отправка письма:
-    $mailer = new phpmailer;
-//будем отравлять письмо через СМТП сервер
-    $mailer->isSMTP();
-//хост
-    $mailer->Host = 'smtp.yandex.ru';
-//требует ли СМТП сервер авторизацию/идентификацию
-    $mailer->SMTPAuth = true;
-// логин от вашей почты
-    $mailer->Username = 'noreply';
-// пароль от почтового ящика
-    $mailer->Password = 'asd8#fIw2)l45Ab@!4Sa3';
-//указываем способ шифромания сервера
-    $mailer->SMTPSecure = 'ssl';
-//указываем порт СМТП сервера
-    $mailer->Port = '465';
-//указываем кодировку для письма
-    $mailer->CharSet = 'UTF-8';
 }

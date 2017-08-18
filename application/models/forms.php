@@ -15,7 +15,7 @@ class Model_forms{
     public function start(){
         global $db;
         $action_name = $this->post_array['action_name'];
-//        print_r($_SESSION);
+        print_r($_SESSION);
         if($action_name!=""){
          // если пришли не с rover
 
@@ -23,30 +23,20 @@ class Model_forms{
         } else {
 
 
-
-            // создан ли документ если да тогда вернёс его ID
-            $sql = "SELECT id, route_control_step.periodicity
-                    FROM route_control_step
-                    WHERE id =". $_SESSION['step_id'];
-//        echo $sql . "<br>";
-
-            $periodicitys = $db->row($sql);
-            $periodicity = $periodicitys['periodicity'];
-
-
-            if($periodicity=="") {
-                $sql = "SELECT save_temp_files.id AS real_form_id
-             FROM save_temp_files
-             WHERE save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
-             AND save_temp_files.company_temps_id =" . $_SESSION['form_id'];
-
-            } else {
-                $sql = "SELECT save_temp_files.id AS real_form_id, MAX(history_forms.`step_end_time`), periodicity
+            $sql="SELECT save_temp_files.id AS real_form_id, MAX(history_forms.`step_end_time`), periodicity
             FROM save_temp_files,history_forms,route_control_step
-            WHERE save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
+            WHERE
+            (save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
             AND save_temp_files.company_temps_id = " . $_SESSION['form_id'] . "
-     		AND now() <  (history_forms.`step_end_time` + INTERVAL " . $periodicity . " MONTH)";
-            }
+            AND route_control_step.`id`= ". $_SESSION['step_id'] ." )
+     		OR
+     		(save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
+            AND save_temp_files.company_temps_id = " . $_SESSION['form_id'] . "
+            AND route_control_step.`id`= ". $_SESSION['step_id'] ."
+            AND route_control_step.periodicity is not NULL
+            AND now() <  (history_forms.`step_end_time` + INTERVAL route_control_step.periodicity MONTH))";
+
+
 
             $condition_test = $db->row($sql);
             $_SESSION['real_form_id'] = $condition_test['real_form_id'];

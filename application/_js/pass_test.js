@@ -145,7 +145,7 @@ $(document).ready(function() {
 
                 setTimeout(function(){
                     window.location = "/pass_test";
-                }, 3000);
+                }, 5000);
 
             },
             error: function () {

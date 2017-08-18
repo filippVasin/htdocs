@@ -162,7 +162,7 @@ class Model_creator
     public function create_form()
     {
         // подключение БД
-        global $db, $systems, $elements, $labro, $mailer;;
+        global $db, $systems, $elements, $labro;
 
         // получаем данные из POST запроса
                 $name = $this->post_array['name'];
@@ -231,37 +231,18 @@ class Model_creator
             $message = str_replace('%login%', $login, $message);
             $message = str_replace('%pass%', $pass, $message);
 
-//            // отправка письма:
-//            $mail = new PHPMailer;
-////будем отравлять письмо через СМТП сервер
-//            $mail->isSMTP();
-////хост
-//            $mail->Host = 'smtp.yandex.ru';
-////требует ли СМТП сервер авторизацию/идентификацию
-//            $mail->SMTPAuth = true;
-//// логин от вашей почты
-//            $mail->Username = 'labropro2';
-//// пароль от почтового ящика
-//            $mail->Password = 'Rtyuehe1984';
-////указываем способ шифромания сервера
-//            $mail->SMTPSecure = 'ssl';
-////указываем порт СМТП сервера
-//            $mail->Port = '465';
+            $send_mailer = $systems->create_mailer_object();
 
-////указываем кодировку для письма
-//            $mail->CharSet = 'UTF-8';
+            $send_mailer->From = 'labropro2@yandex.ru';
+            $send_mailer->FromName = 'Охрана Труда';
+            $send_mailer->addAddress($email);
 
-//информация от кого отправлено письмо
-            $mailer->From = 'labropro2@yandex.ru';
-            $mailer->FromName = 'Охрана Труда';
-            $mailer->addAddress($email);
+            $send_mailer->isHTML(true);
 
-            $mailer->isHTML(true);
+            $send_mailer->Subject = $subject;
+            $send_mailer->Body = $message;
 
-            $mailer->Subject = $subject;
-            $mailer->Body = $message;
-
-            if ($mailer->send()) {
+            if ($send_mailer->send()) {
                 $result_array['massege'] = 'Письмо отправлено';
                 $result_array['status'] = 'ok';
                 $send_result = 'Письмо отправлено';
@@ -276,7 +257,7 @@ class Model_creator
                 $db->query($sql);
 
             } else {
-                $send_result = 'Ошибка при отправки письма: ' . $mailer->ErrorInfo;
+                $send_result = 'Ошибка при отправки письма: ' . $send_mailer->ErrorInfo;
                 $result_array['massege'] = $send_result;
                 $result_array['status'] = 'Ошибка';
                 // пишим логи

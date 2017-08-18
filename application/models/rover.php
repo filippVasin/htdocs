@@ -17,9 +17,9 @@ class Model_rover{
     public function start()
     {
 //        echo $_SESSION['form_id'];
-//        print_r($_SESSION) .  " <br><br><>br" ;
+
         global $db;
-        if ($_SESSION['form_id'] != "") {
+        if (!(isset($_SESSION['form_id']))) {
             header("Location:/forms");
         } else {
 
@@ -115,7 +115,7 @@ class Model_rover{
     HistoryStep.History IS NULL OR (
     periodicity is not NULL AND  now() >=  (data_finish + INTERVAL periodicity MONTH)
     )";
-//                echo $sql . " -<br><br><br>";
+
                 $control_test = $db->row($sql);
 //                $track = "";
                 //  есть ли хоть один трек для прохождения
@@ -137,7 +137,7 @@ class Model_rover{
     ON HISTORYRESULT.HistoryStep = route_control_step.id
 
   WHERE route_control_step.track_number_id = ". $track ." AND CompanyRoute.company_id =". $_SESSION['control_company'];
-//            echo $sql . " <br><br>";
+
                     $control_test_array = $db->all($sql);
                     $step_pointer = 0; // пункт начала пути
 
@@ -174,12 +174,17 @@ class Model_rover{
                         }
                     } while ($content == "");
 
-                    // записываем в сессию шаг и идём в pass_test
-//               echo  "step -". $link[$step_pointer]['id'];
-//                    print_r($_SESSION) .  " <br><br><>br";
-                   $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
+                    $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
 
-                    header("Location:/pass_test");// переходим на тест
+                    if($_SESSION['step_id']!=""){
+//                        header("Location:/pass_test");// переходим на тест
+                        echo   $_SESSION['step_id']; // номер шага
+                    } else {
+                        print_r($_SESSION) .  " <br><br><>br" ;
+
+                    }
+
+
                 } else {
 
                     header("Location:/dead_end");// переходим в тупик

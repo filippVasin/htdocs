@@ -5,7 +5,7 @@ function message(text, type){
     var message_div = $('#message');
     var icon = '';
 
-    message_div.fadeOut(200);
+    message_div.fadeOut(500);
 
     setTimeout(function(){
 
@@ -31,9 +31,9 @@ function message(text, type){
 
         window.show_message = setTimeout(function(){
             message_div.fadeOut(200);
-        }, 500);
+        }, 5000);
 
-    }, 200);
+    }, 500);
 }
 
 function preloader(text, type){
@@ -46,6 +46,6 @@ function preloader(text, type){
     }   else{
         setTimeout(function(){
             preloader_div.fadeOut(200);
-        }, 500);
+        }, 5000);
     }
 }
