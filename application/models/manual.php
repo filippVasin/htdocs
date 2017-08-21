@@ -38,7 +38,7 @@ class Model_manual
             $img_link = 'SRC="/application/manual_docs/';
             $result = str_replace('SRC="', $img_link, $result);
             // Создали кнопку
-            $result .= $elements->button('Я ознакомился с документом: <br>"' . $name.'"', 'go_to_testing', '', '', '', '');
+            $result .= $elements->button('Ок', 'go_to_testing', '', '', '', '');
             // информационный блок
             $result .= $elements->info_box("Вы читаете:", $name, $_SESSION['employee_id'], $_SESSION['$employee_full_name']);
             // прогресс бар с количеством вопросов($need_count);

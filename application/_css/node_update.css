@@ -3,9 +3,7 @@
     margin: 0 auto;
     text-align: left;
 }
-.page_title {
-    margin-top: 50px;
-}
+
 .table_row{
     display: flex;
     flex-direction: row;

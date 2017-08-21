@@ -40,7 +40,7 @@ $(document).ready(function() {
                     $("#menu_open").css("display","none");
                     $("#topBar").css("height","70px");
                     $("#test_block").css("margin-top","-40px");
-                    $("#content_box").css("padding-top","55px");
+                    $("#content_box").css("padding-top","105px");
                     $(".logo").css("height","70px");
                     $(".logo").css("line-height","70px");
                     $("#body").css("float","none");

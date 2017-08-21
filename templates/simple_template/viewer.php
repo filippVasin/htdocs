@@ -23,7 +23,12 @@
 <div id="topBar">
     <div class="left transform">
         <div class="logo">LP</div>
-        <div id="menu_open" class="mune_icon transform"><img src="../../templates/simple_template/images/menu_icon.svg"></div>
+        <? if($_SESSION['role_id'] == 3){
+
+        } else {
+           echo  '<div id="menu_open" class="mune_icon transform"><img src="../../templates/simple_template/images/menu_icon.svg"></div>';
+        } ?>
+
     </div>
     <? if(isset($_SESSION['user_id'])){
        echo '<a href="/exit" class="dors_button"><div>Выход</div><img src="../../templates/simple_template/images/exit_icon.svg"></a>';

@@ -497,8 +497,8 @@ select{
     position: absolute;
     top: 2px;
 }
-#finish_test, #close_test {
-    margin-bottom: 50px;
+#finish_test, #close_test, #go_to_testing {
+    margin-bottom: 100px!important;
 }
 
 .page_title{

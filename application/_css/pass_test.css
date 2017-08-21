@@ -89,7 +89,9 @@ body{
       margin-top: 0px;
  }
 
-
+#topBar, #topBar .logo, #header>a{
+    height: 70px;
+}
 @media print{@page {size: landscape}  body{display: block}}
 .content_box
 

@@ -299,3 +299,6 @@
     content: '';
     background-color: rgba(0, 0, 0, 0.75);
 }
+#topBar, #topBar .logo, #header>a{
+    height: 70px;
+}

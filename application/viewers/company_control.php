@@ -25,7 +25,6 @@
 <br>
 <br>
 
-<div class="page_title">Список компаний</div>
 <div id="company_list" align="center">
     %company_list%
 </div>

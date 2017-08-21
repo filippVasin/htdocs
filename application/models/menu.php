@@ -54,12 +54,12 @@ class Model_menu{
         if(isset($_SESSION['user_id'])){
 
             if($_SESSION['role_id'] == 1){
-                $login_buttons = '<a href="/company_control" class="attr" name="Компании"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Компании</div></a>';
+                $login_buttons = '<a href="/company_control" class="attr" name="Компании"><img src="../../templates/simple_template/images/factory.svg"><div class="display_none">Компании</div></a>';
                 $login_buttons .= '<a href="/structure" class="attr" name="Организационная структура"><img src="../../templates/simple_template/images/org_str_icon.svg"><div class="display_none">Организационная структура</div></a>';
                 $login_buttons .= '<a href="/creator" class="attr" name="Добавить элемент"><img src="../../templates/simple_template/images/create_node.svg"><div class="display_none">Добавить элемент</div></a>';
-                $login_buttons .= '<a href="/editor" class="attr" name="Редактор элементов"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Редактор элементов</div></a>';
-                $login_buttons .= '<a href="/employee_update" class="attr" name="Перемещение сотрудников"><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Перемещение сотрудников</div></a>';
-                $login_buttons .= '<a href="/node_update" class="attr" name="Перемещение узлов" ><img src="../../templates/simple_template/images/main_icon.svg"><div class="display_none">Перемещение узлов</div></a>';
+                $login_buttons .= '<a href="/editor" class="attr" name="Редактор элементов"><img src="../../templates/simple_template/images/font-selection-editor.svg"><div class="display_none">Редактор элементов</div></a>';
+                $login_buttons .= '<a href="/employee_update" class="attr" name="Перемещение сотрудников"><img src="../../templates/simple_template/images/user-profile-edition.svg"><div class="display_none">Перемещение сотрудников</div></a>';
+                $login_buttons .= '<a href="/node_update" class="attr" name="Перемещение узлов" ><img src="../../templates/simple_template/images/anchor-point.svg"><div class="display_none">Перемещение узлов</div></a>';
                 $login_buttons .= '<a href="/company_forms" class="attr"name="Документы компании"><img src="../../templates/simple_template/images/company_docs.svg"><div class="display_none">Документы компании</div></a>';
 
             }

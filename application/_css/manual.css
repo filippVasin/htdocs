@@ -15,3 +15,6 @@ margin: 0 auto;
 #body {
     margin-left: 200px;
 }
+#topBar, #topBar .logo, #header>a{
+    height: 70px;
+}

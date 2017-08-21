@@ -162,7 +162,7 @@ class Model_creator
     public function create_form()
     {
         // подключение БД
-        global $db, $systems, $elements, $labro;
+        global $db, $systems, $labro;
 
         // получаем данные из POST запроса
                 $name = $this->post_array['name'];
@@ -185,8 +185,7 @@ class Model_creator
 
         if($email_data['id'] != '') {
             // уже есть такая почта
-            $result_array['massege'] = 'Почта занята';
-            $result_array['status'] = 'Ошибка';
+            $result = 'Ошибка, Почта занята';
         } else {
             // почта девственная - продолжаем
 
@@ -213,7 +212,7 @@ class Model_creator
             $db->query($sql);
 
             $subject = "Уведомление";
-            $mail_type = "Регистрания";
+            $mail_type = "reg";
             // запрашиваем шаблон письма
             $sql="Select *
                   FROM mail_template
@@ -225,15 +224,16 @@ class Model_creator
             $template_mail_id = $email_temp['id'];
 
             $path = ROOT_PATH.'/application/templates_mail/'. $email_temp['path'];
+//            echo $path;
             $message = file_get_contents($path);
 
             $message = str_replace('%fio%', $fio, $message);
             $message = str_replace('%login%', $login, $message);
             $message = str_replace('%pass%', $pass, $message);
-
+//            echo $message;
             $send_mailer = $systems->create_mailer_object();
 
-            $send_mailer->From = 'labropro2@yandex.ru';
+            $send_mailer->From = 'noreply@laborpro.ru';
             $send_mailer->FromName = 'Охрана Труда';
             $send_mailer->addAddress($email);
 
@@ -243,8 +243,7 @@ class Model_creator
             $send_mailer->Body = $message;
 
             if ($send_mailer->send()) {
-                $result_array['massege'] = 'Письмо отправлено';
-                $result_array['status'] = 'ok';
+                $result = 'Сотрудник добавлен, письмо с паролем отправленно';
                 $send_result = 'Письмо отправлено';
                 // пишим логи
                 $sql = 'INSERT INTO `mails_log` (`employee_id`, `email`,`mail_type`,`template_mail_id`,`send_result`,`send_date`)
@@ -258,8 +257,7 @@ class Model_creator
 
             } else {
                 $send_result = 'Ошибка при отправки письма: ' . $send_mailer->ErrorInfo;
-                $result_array['massege'] = $send_result;
-                $result_array['status'] = 'Ошибка';
+                $result = $send_result;
                 // пишим логи
                 $sql = 'INSERT INTO `mails_log` (`employee_id`, `email`,`mail_type`,`template_mail_id`,`send_result`,`send_date`)
                                           VALUES("' . $employee_id .
@@ -275,9 +273,9 @@ class Model_creator
 
             $html = '<div> Данные добавлены </div>';
         }
-        $result_array['content'] = $html;
-        $result = json_encode($result_array, true);
-        die($result);
+
+
+        return $result;
     }
 
 

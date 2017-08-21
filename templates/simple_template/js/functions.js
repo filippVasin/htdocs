@@ -33,7 +33,7 @@ function message(text, type){
             message_div.fadeOut(200);
         }, 5000);
 
-    }, 500);
+    }, 200);
 }
 
 function preloader(text, type){
