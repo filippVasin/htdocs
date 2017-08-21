@@ -68,6 +68,9 @@ class Model_dead_end{
         $sql = "DELETE FROM `manual_history` WHERE  `employee_id` =" . $reset_id;
         $db->query($sql);
 
+        unset($_SESSION['form_id']);
+        unset($_SESSION['step_id']);
+
 
         $html = $reset_id;
         $result_array['content'] = $html;

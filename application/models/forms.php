@@ -15,7 +15,7 @@ class Model_forms{
     public function start(){
         global $db;
         $action_name = $this->post_array['action_name'];
-        print_r($_SESSION);
+//        print_r($_SESSION);
         if($action_name!=""){
          // если пришли не с rover
 
@@ -322,9 +322,9 @@ class Model_forms{
 
     // отчистка сессии
     private function session_clear(){
-        $_SESSION['real_form_id'] = "";
-        $_SESSION['temps_form_step_id'] = "";
-        $_SESSION['temps_form_track'] = "";
+        unset($_SESSION['real_form_id']);
+        unset($_SESSION['temps_form_step_id']);
+        unset($_SESSION['temps_form_track']);
     }
 
 
@@ -450,8 +450,8 @@ class Model_forms{
 
             $this->logs_form_file();
             $this->session_clear();
-            $_SESSION['form_id'] = "";
-            $_SESSION['step_id'] = "";
+            unset($_SESSION['form_id']);
+            unset($_SESSION['step_id']);
 
             $form_actoin = "user_pass_form_end";
             $result_array['form_actoin'] = $form_actoin;

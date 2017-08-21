@@ -129,27 +129,17 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
         if(isset($condition_test['ManualActual'])) {
             $manual_id = $condition_test['ManualActual'];
         }
-//        echo "<br>";
-//        echo  "step -".$step_content_id = $condition_test['step_content_id'];
-//        echo "test -". $test_id = $condition_test['TestActual'];
-//        echo  "doc -".$doc_id = $condition_test['DocActual'];
-//            echo  "form -".$form_id = $condition_test['FormActual'];
-
-
-//        echo $form_id ." - form_id<br>";
-//        echo $test_id ." - test<br>";
-//        echo $doc_id ." - doc<br>";
 
         // тесты прошли, а доки нет
-        if($manual_id!=""){
+        if(isset($manual_id)){
 //            header("Location:/manual" );// уходим на мануал
             $result_array['status'] = 'manual';
         } else {
 
             if (($form_id != "") && ($test_id == "") && ($doc_id == "")) {
+
                 $_SESSION['form_id'] = $form_id;
                 $result_array['status'] = 'form';
-
 //            header("Location:/rover" );// уходим на новый круг
             }
 
@@ -242,10 +232,10 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
     }
     // отчистка сессии
     private function session_clear(){
-        $_SESSION['test_id'] = "";
-        $_SESSION['step_id'] = "";
-        $_SESSION['test_name'] = "";
-        $_SESSION['form_id'] = "";
+        unset($_SESSION['test_id']);
+        unset($_SESSION['step_id']);
+        unset($_SESSION['test_name']);
+        unset($_SESSION['form_id']);
     }
 
 

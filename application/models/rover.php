@@ -17,15 +17,14 @@ class Model_rover{
     public function start()
     {
 //        echo $_SESSION['form_id'];
-
+//        print_r($_SESSION);
         global $db;
-        if (!(isset($_SESSION['form_id']))) {
+        if ((isset($_SESSION['form_id'])) && (isset($_SESSION['step_id']))) {
             header("Location:/forms");
         } else {
 
             //  если пользователь сотрудник
             if (($_SESSION['role_id']) && ($_SESSION['role_id'] == 3)) {
-
                 // ищим непройденный материалы
                 $sql = "SELECT
 /* Вывод наименьшего непройденого трека*/
@@ -176,9 +175,10 @@ class Model_rover{
 
                     $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
 
-                    if($_SESSION['step_id']!=""){
-//                        header("Location:/pass_test");// переходим на тест
-                        echo   $_SESSION['step_id']; // номер шага
+                    if(isset($_SESSION['step_id'])){
+                        header("Location:/pass_test");// переходим на тест
+
+//                        print_r($_SESSION);
                     } else {
                         print_r($_SESSION) .  " <br><br><>br" ;
 
