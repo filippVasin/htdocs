@@ -35,8 +35,8 @@ class Model_manual
         if ($file != "") {
             $result = file_get_contents(ROOT_PATH . '/application/manual_docs/' . $file);
             // правим пути к рисункам
-            $img_link = 'SRC="/application/manual_docs/';
-            $result = str_replace('SRC="', $img_link, $result);
+            $img_link = 'src="/application/manual_docs/';
+            $result = str_replace('src="', $img_link, $result);
             // Создали кнопку
             $result .= $elements->button('Ок', 'go_to_testing', '', '', '', '');
             // информационный блок
