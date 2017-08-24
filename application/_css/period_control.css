@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .period_row {
+=======
+.peroid_row {
+>>>>>>> origin/master
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,5 +60,8 @@
     width: 800px;
     padding-bottom: 10px;
     padding-top: 10px;
+<<<<<<< HEAD
     padding-right: 10px;
+=======
+>>>>>>> origin/master
 }

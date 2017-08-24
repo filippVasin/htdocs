@@ -19,6 +19,7 @@ class Model_step_editor
     public function start(){
         global $db;
 
+<<<<<<< HEAD
         if(!(isset($_SESSION['control_company']))){
             header("Location:/company_control");
         }
@@ -82,10 +83,28 @@ class Model_step_editor
         $html .='</div>';
         $html .='</div>';
         $html .='</div>';
+=======
+        $sql="SELECT route_control_step.id,route_control_step.step_name,route_control_step.periodicity
+                FROM route_control_step, route_doc
+                WHERE route_doc.company_id = ". $_SESSION['control_company'] ."
+                AND route_doc.id = route_control_step.`track_number_id`";
+
+        $period_data = $db->all($sql);
+        $html = "";
+        foreach ($period_data as $period_data) {
+            $html .= "<div class='peroid_row' attr_id='". $period_data['id']  ."'>";
+            $html .="<div class='period_id'>". $period_data['id'] ."</div>";
+            $html .="<div class='period_name'>". $period_data['step_name'] ."</div>";
+            $html .="<input type='text' class='period_count' value='" . $period_data['periodicity'] ."' period_count='". $period_data['id']  ."' placeholder='нет'>";
+            $html .="<div class='save_period' id='". $period_data['id']  ."'>Сохранить</div>";
+            $html .="</div>";
+        };
+>>>>>>> origin/master
         return $html;
     }
 
 
+<<<<<<< HEAD
     public function save_test(){
         global $db;
 
@@ -166,6 +185,23 @@ class Model_step_editor
             $sql = "UPDATE step_content
                 SET manual_id = ". $manual_id ."
                 WHERE id =" .$content_id;
+=======
+    // Обработка результатов тестирования;
+    public function save_period(){
+        global $db;
+
+        $id = $this->post_array['id'];
+        $period_id = $this->post_array['period_id'];
+
+        if($period_id == 0){
+            $sql = "UPDATE route_control_step
+                SET periodicity = NULL
+                WHERE id =" .$id;
+        } else {
+            $sql = "UPDATE route_control_step
+                SET periodicity = ". $period_id ."
+                WHERE id =" .$id;
+>>>>>>> origin/master
         }
         $db->query($sql);
         $result_array['status'] = 'ok';
@@ -173,9 +209,12 @@ class Model_step_editor
 
         die($result);
     }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> origin/master
 }
 
 

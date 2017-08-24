@@ -14,6 +14,7 @@ class Controller_step_editor extends Controller{
     }
 
 
+<<<<<<< HEAD
     public function save_test($post_data){
         // Записываем массив с даннми в домель;
         $this->model->post_array = $post_data;
@@ -37,5 +38,13 @@ class Controller_step_editor extends Controller{
         $this->model->post_array = $post_data;
         // Обрабатываем результат;
         $this->model->save_manual();
+=======
+    // Обработка результатов тестирования;
+    public function save_period($post_data){
+        // Записываем массив с даннми в домель;
+        $this->model->post_array = $post_data;
+        // Обрабатываем результат;
+        $this->model->save_period();
+>>>>>>> origin/master
     }
 }
