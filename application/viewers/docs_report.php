@@ -19,7 +19,7 @@
         <div class="status_date">Дата изменения</div>
 
     </div>
-    <div class="value" id="strings">
+    <div class="value" id="strings" style="clear: both;">
 
 
     </div>

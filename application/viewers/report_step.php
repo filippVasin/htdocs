@@ -1,7 +1,7 @@
 <div class="page_title">Отчёт по сотрудникам</div>
 <div class="container box">
     <div class="button" style="float: right" id="rebut_node_docs">Сброс</div>
-    <div class="button" style="float: right" id="node_docs">Выбор узла</div>
+    <div class="button" style="float: right" id="node_docs">Выбор подразделения</div>
     <select class="target " id="node_docs_select" style="float:left;width:200px;">
 
     </select>
@@ -14,7 +14,6 @@
             <div class="manual_name">Наименование Инструкции</div>
             <div class="start_date"> Начало прохождения</div>
             <div class="end_date">Окончание прохождения</div>
-
         </div>
         <div class="value" id="strings">
 

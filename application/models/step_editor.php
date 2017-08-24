@@ -19,6 +19,10 @@ class Model_step_editor
     public function start(){
         global $db;
 
+        if(!(isset($_SESSION['control_company']))){
+            header("Location:/company_control");
+        }
+
         $sql="SELECT
                 step_content.id AS content_id,
                 step_content.test_id,
@@ -62,16 +66,18 @@ class Model_step_editor
         $sql="SELECT * FROM control_tests";
         $test_data = $db->all($sql);
         $html .='<div id="control_tests">';
+        $html .='<div class="row_tests" test_id="0"><div class="num">0</div><div class="name">Сбросить тест</div></div>';
         foreach ($test_data as $test_item) {
             $html .='<div class="row_tests" test_id="'. $test_item['id'] .'">';
                 $html .='<div class="num">'. $test_item['id'] .'</div><div class="name">'. $test_item['test_name'] .'</div>';
             $html .='</div>';
         }
+
         $html .='</div>';
 
 
         $html .='<div class="button_row">';
-//        $html .='<div class="button" id="save_popup_input">Сохранить</div>';
+//        $html .='<div class="button" id="drop_popup_input">Сбросить</div>';
         $html .='<div class="button" id="cancel_popup">Отмена</div>';
         $html .='</div>';
         $html .='</div>';

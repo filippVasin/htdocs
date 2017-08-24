@@ -32,12 +32,12 @@ $(document).ready(function() {
             var content = result.content;
             var select = result.select;
             var select_em = result.select_em;
-            if(content !="") {
+
                 $('#node_docs_select').html(select);
-            }
-            if(content !="") {
+
+
                 $('#node_docs_select_em').html(select_em);
-            }
+
             if(content !="") {
                 $('#strings').html(content);
             }

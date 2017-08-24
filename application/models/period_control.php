@@ -19,6 +19,10 @@ class Model_period_control
     public function start(){
         global $db;
 
+        if(!(isset($_SESSION['control_company']))){
+            header("Location:/company_control");
+        }
+
         $sql="SELECT route_control_step.id,route_control_step.step_name,route_control_step.periodicity
                 FROM route_control_step, route_doc
                 WHERE route_doc.company_id = ". $_SESSION['control_company'] ."

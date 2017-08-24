@@ -22,7 +22,7 @@ $(document).ready(function() {
                     var request_result = result.status;
                     if(request_result=="ok"){
                         $("#edit_popup").css("display", "none");
-                        $('.test_id [content_id = '+ content_id +']').html(test_id);
+                        $('.test_id.item[content_id = '+ content_id +']').html(test_id);
                     }
                     message('Запись прошла успешна', request_result);
                 }

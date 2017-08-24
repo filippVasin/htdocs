@@ -21,9 +21,11 @@ class Model_company_forms{
     // тестим здесь
     public function start()
     {
-
-
         global $db;
+
+        if(!(isset($_SESSION['control_company']))){
+            header("Location:/company_control");
+        }
 
         $sql = "SELECT temp_doc_form.name AS `temp`, type_form.name AS `type`
                 FROM company_temps

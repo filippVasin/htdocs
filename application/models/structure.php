@@ -18,8 +18,11 @@ class Model_structure
     // тестим здесь
     public function test()
     {
-        global $db, $systems, $elements;;
+        global $db, $systems, $elements;
 
+        if(!(isset($_SESSION['control_company']))){
+            header("Location:/company_control");
+        }
 
         $sql = "SELECT
                 CONCAT_WS (':', items_control_types.name, items_control.name) AS erarh,

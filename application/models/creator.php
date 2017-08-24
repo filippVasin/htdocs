@@ -21,6 +21,9 @@ class Model_creator
     {
         global $db, $systems, $elements, $employees;;
 
+        if(!(isset($_SESSION['control_company']))){
+            header("Location:/company_control");
+        }
 
         $sql = "SELECT
                 CONCAT_WS (':', items_control_types.name, items_control.name) AS erarh,
@@ -130,8 +133,8 @@ class Model_creator
         } else{
                 $html = '<div class="create_form_box">';
                 $html.=    '<form class="create_form" method="POST" action="/creator/create_form" id="landing_form_offer_one">';
-                $html.=        '<input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp" required="">';
                 $html.=        '<input type="text" id="form_surname" name="surname" placeholder="Фамилия" class="contacts-inp" required="">';
+                $html.=        '<input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp" required="">';
                 $html.=        '<input type="text" id="form_patronymic" name="patronymic" placeholder="Отчество" class="contacts-inp" required="">';
                 $html.=        '<input type="text" id="form_work_start" name="work_start" placeholder="Дата устройства" class="contacts-inp form_work_start_cl" required="">';
                 $html.=        '<input type="text" id="form_birthday"  name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp " required="">';

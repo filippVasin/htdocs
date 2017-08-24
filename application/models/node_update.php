@@ -19,6 +19,10 @@ class Model_node_update
     public function upload_data(){
         global $db;
 
+        if(!(isset($_SESSION['control_company']))){
+            header("Location:/company_control");
+        }
+
         $sql = "SELECT
                 CONCAT_WS (':', items_control_types.name, items_control.name) AS erarh,
                 organization_structure.`level`,

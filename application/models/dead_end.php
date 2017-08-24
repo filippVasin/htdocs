@@ -67,6 +67,8 @@ class Model_dead_end{
         $db->query($sql);
         $sql = "DELETE FROM `manual_history` WHERE  `employee_id` =" . $reset_id;
         $db->query($sql);
+        $sql = "DELETE FROM local_alerts WHERE  local_alerts.initiator_employee_id =" . $reset_id;
+        $db->query($sql);
 
         unset($_SESSION['form_id']);
         unset($_SESSION['step_id']);

@@ -1,0 +1,37 @@
+#dashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#dashboard>div{
+    margin: 20px 10px;
+    width: 330px;
+}
+#test_report, #emp_report, #doc_report{
+    font-family: 'Source Sans Pro',sans-serif;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.test_report_title, .emp_report_title, .doc_report_title{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: #c77437;
+}
+.metric{
+    color: #307bbb;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.c100{
+    margin: 0;
+}

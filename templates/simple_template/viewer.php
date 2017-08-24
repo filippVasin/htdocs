@@ -5,8 +5,10 @@
     <title>Labor Protection</title>
     <link rel="icon" type="/image/png" href="/templates/<?echo $current_template;?>/images/icon_core.png" />
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/templates/<?echo $current_template;?>/css/circle.css" type="text/css" />
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/css/preloader.css" type="text/css" />
     <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.js"></script>
+    <script type="text/javascript" src="/templates/<?echo $current_template;?>/js/ajax_preloader.js"></script>
     <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/functions.js"></script>
     <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.maskedinput.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/templates/<?echo $current_template;?>/css/tcal.css" />

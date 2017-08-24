@@ -226,12 +226,13 @@
     box-sizing: border-box;
 }
 .date_time{
+    float: left;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    left: calc(50% - 180px);
+    margin-top: -20px;
+    margin-left: 15px;
     width: 200px;
-    top: 50px;
+    margin-bottom: 10px;
 }
 .select_styte{
     margin-right: 10px;

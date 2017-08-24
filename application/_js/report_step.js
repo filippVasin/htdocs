@@ -10,7 +10,6 @@ $(document).ready(function() {
     var fio = "";
     var dol =  "";
 
-
     $.ajax({
         type: "POST",
         url: "/report_step/start",
@@ -140,10 +139,11 @@ $(document).ready(function() {
         }
         // не начинал
         if(select_item=="Не начатые"){
+            $(".report_step_row").css("display","none");
             $(".report_step_row").each(function() {
                 var start_date = $(this).find(".start_date").html();
-                if(start_date != "Не начинал"){
-                    $(this).css("display","none");
+                if(start_date = "Не начинал"){
+                    $(this).css("display","block");
                 }
             });
         }
@@ -153,7 +153,7 @@ $(document).ready(function() {
             $(".report_step_row").each(function() {
                 var start_date = $(this).find(".start_date").html();
                 var end_date = $(this).find(".end_date").html();
-                if((start_date != "Не начинал")&&(end_date=="Не прошол")){
+                if((start_date != "Не начинал")&&(end_date=="Не прошел")){
                     $(this).css("display","block");
                 }
             });
@@ -163,7 +163,7 @@ $(document).ready(function() {
             $(".report_step_row").css("display","none");
             $(".report_step_row").each(function() {
                 var end_date = $(this).find(".end_date").html();
-                if(end_date!="Не прошол"){
+                if(end_date!="Не прошел"){
                     $(this).css("display","block");
                 }
             });

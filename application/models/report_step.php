@@ -62,7 +62,7 @@ class Model_report_step{
    END AS StartStep,
    CASE
    WHEN MAX(history_docs.date_finish) IS NULL
-   THEN 'Не прошол'
+   THEN 'Не прошел'
    ELSE MAX(history_docs.date_finish)
    END  AS FinishStep,
   items_control.name,

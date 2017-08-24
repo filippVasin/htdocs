@@ -27,14 +27,13 @@ $(document).ready(function() {
             var select = result.select;
             var status_select = result.status_select;
             if(content !="") {
-                $('#node_docs_select').html(select);
-
-                $('#node_docs_status_select').html(status_select);
-
                 $('#strings').html(content);
             } else {
                 $('#strings').html("По запросу ничего нет");
             }
+
+            $('#node_docs_select').html(select);
+            $('#node_docs_status_select').html(status_select);
         },
         error: function () {
         }
