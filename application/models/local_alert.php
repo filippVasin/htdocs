@@ -62,9 +62,10 @@ class Model_local_alert{
 
 // запрашиваем все алерты(документ на подпись)
         $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,
-CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,
+CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
 local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
-items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual
+items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
+document_status_now.id AS doc_trigger
 FROM (local_alerts,employees_items_node, employees AS init_em,
 cron_action_type)
 LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
@@ -89,10 +90,10 @@ AND local_alerts.cron_action_type_id = 3";
 
         // если указаны даты выборки
         if ($time_from != "") {
-            $sql .= " AND DATE(cron_every_day.date_create) >= STR_TO_DATE('". $time_from ."', '%m/%d/%Y %h%i')";
+            $sql .= " AND DATE(local_alerts.date_create) >= STR_TO_DATE('". $time_from ."', '%m/%d/%Y %h%i')";
         }
         if ($time_to != "") {
-            $sql .= " AND DATE(cron_every_day.date_create) <= STR_TO_DATE('". $time_to ."', '%m/%d/%Y %h%i')";
+            $sql .= " AND DATE(local_alerts.date_create) <= STR_TO_DATE('". $time_to ."', '%m/%d/%Y %h%i')";
         }
 
 
@@ -173,7 +174,7 @@ AND local_alerts.cron_action_type_id = 3";
             $result = array_unique($employees);
             $select_em = "<option value='' >Все сотрудники</option>";
             foreach ($result as $key => $value) {
-                $select_em .= "<option value=" . $result[$key]['em_id'] . "  >" . $result[$key]['fio'] . "</option>";
+                $select_em .= "<option value='" . $result[$key]['em_id'] . "'>" . $result[$key]['fio'] . "</option>";
             }
 
 
@@ -182,7 +183,7 @@ AND local_alerts.cron_action_type_id = 3";
             $select_array = $db->all($sql);
             $select = "<option value='' >Все статусы</option>";
             foreach ($select_array as $select_array_item) {
-                $select .= "<option value='" . $select_array_item['id'] . "'  >" . $select_array_item['name'] . "</option>";
+                $select .= "<option value='" . $select_array_item['id'] . "'>" . $select_array_item['name'] . "</option>";
             }
 
 

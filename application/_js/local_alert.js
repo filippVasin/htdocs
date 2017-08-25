@@ -120,7 +120,7 @@ $(document).ready(function() {
 
 
 // выбор статуса
-    $(document).on("change", ".target", function () {
+    $(document).on("change", "#node_docs_select", function () {
         select_item = $(this).val();
         $.ajax({
             type: "POST",
@@ -153,8 +153,9 @@ $(document).ready(function() {
     });
 
     // выбор сотрудника
-    $(document).on("change", ".target_em", function () {
+    $(document).on("change", "#node_docs_select_em", function () {
         select_item_em = $(this).val();
+
         $.ajax({
             type: "POST",
             url: "/local_alert/start",
@@ -252,8 +253,11 @@ $(document).ready(function() {
     $(document).on("click", ".new_parent", function () {
         left_key =  $(this).attr("left_key");
         right_key =  $(this).attr("right_key");
-        select_item = "";
-        select_item_em = "";
+        time_from = $("#time_from").val();
+        time_to = $("#time_to").val();
+        select_item = $(".target").val();
+        select_item_em = $(".target_em").val();
+
         $(".cancel_popup").click();
         $.ajax({
             type: "POST",
@@ -271,9 +275,8 @@ $(document).ready(function() {
                 var result = jQuery.parseJSON(answer);
                 var content = result.content;
 
-                if(content !="") {
+
                     $('#strings').html(content);
-                }
             },
             error: function () {
             }
@@ -369,5 +372,9 @@ $(document).ready(function() {
         });//ajax
     });
 
+
+    $("#time_to").keyup(function(){
+        alert('Элемент foo потерял фокус.');
+    });
 });
 

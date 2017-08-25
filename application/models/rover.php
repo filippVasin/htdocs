@@ -117,6 +117,7 @@ class Model_rover{
 
                 $control_test = $db->row($sql);
 //                $track = "";
+//                echo $sql;
                 //  есть ли хоть один трек для прохождения
                 if ($control_test['track'] != NULL) {
                    $track = $control_test['track'];// если есть тогда присваеваем
@@ -139,7 +140,7 @@ class Model_rover{
 
                     $control_test_array = $db->all($sql);
                     $step_pointer = 0; // пункт начала пути
-
+//                echo $sql;
                     // Формируем ассоциативный массив из ответа
                     foreach ($control_test_array as $control_tests_item) {
                         $link[$control_tests_item['id']] =
@@ -173,7 +174,9 @@ class Model_rover{
                         }
                     } while ($content == "");
 
-                    $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
+
+                   $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
+
 
                     if(isset($_SESSION['step_id'])){
                         header("Location:/pass_test");// переходим на тест

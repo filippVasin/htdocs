@@ -1,2 +1,2 @@
-<div id="page">Forms</div>
+<div id="page"></div>
 

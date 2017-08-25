@@ -56,6 +56,7 @@ class Model_docs_report{
         $sql="SELECT employees.id AS emp,
                 organization_structure.id AS org,
                 CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+                CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
                 items_control.name AS dol,
                 PAR.name AS otdel,document_status_now.name AS doc_status, document_status_now.id AS doc_status_id,
                  save_temp_files.id AS file_id ,save_temp_files.employee_id AS Sotrudnik, temp_doc_form.name,
@@ -69,6 +70,11 @@ class Model_docs_report{
                 LEFT JOIN organization_structure AS org_par ON org_par.id = organization_structure.parent
                 LEFT JOIN items_control AS PAR ON PAR.id = org_par.kladr_id
                 LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
+                LEFT JOIN organization_structure AS org_parent
+				     ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
+				     AND org_parent.level = (organization_structure.level - 1) )
+				     LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+    					LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
                 WHERE
                   temps_form_step.id = form_status_now.track_form_step_now
                   AND
@@ -83,7 +89,8 @@ class Model_docs_report{
                   AND type_temp.type_form_id = type_form.id
 
                   AND company_temps.temp_type_id = type_temp.id
-                  AND company_temps.company_id =  '". $_SESSION['control_company'] ."'
+                  AND company_temps.company_id = ". $_SESSION['control_company'] ."
+                  AND org_parent.company_id = ". $_SESSION['control_company'] ."
                   AND employees.id = save_temp_files.employee_id";
 
 
@@ -139,7 +146,7 @@ class Model_docs_report{
                         $html .= '<div class="report_step_row"  file_id="' . $docs_array_item['file_id'] . '" fio="' . $docs_array_item['fio'] . '" dol="' . $docs_array_item['dol'] . '"  name="' . $docs_array_item['name'] . '">
                         <div  class="number_doc">' . $docs_array_item['file_id'] . '</div>
                         <div  class="fio">' . $docs_array_item['fio'] . '</div>
-                        <div class="otdel">' . $docs_array_item['otdel'] . '</div>
+                        <div class="otdel">' . $docs_array_item['dir'] . '</div>
                         <div class="position">' . $docs_array_item['dol'] . '</div>
                         <div  class="doc_name">' . $docs_array_item['name'] . '</div>
                         <div  class="doc_type">' . $docs_array_item['form_type'] . '</div>
@@ -192,16 +199,12 @@ class Model_docs_report{
                 inner join items_control_types on organization_structure.items_control_id = items_control_types.id
                 left join employees_items_node on employees_items_node.org_str_id = organization_structure.id
                 left join employees on employees_items_node.employe_id = employees.id
-                Where organization_structure.company_id =14  ORDER BY left_key";
-
+                Where organization_structure.company_id = ". $_SESSION['control_company'] ."  ORDER BY left_key";
 
         $employees = $db->all($sql);
-
         $html = "";
 
-
         foreach($employees as $employee){
-
                 $item = str_repeat('&#8195;', $employee['level'] - 1);
                 if ($employee['type'] == 3) {
 //                    $position = '<div class="position" id_position = "' . $employee[id] . '" parent_id = "' . $parent_id . '" parent_name = "' . $parent_name . '" erarh = "' . $employee['erarh'] . '" >' . $item . $employee['erarh'] . '</div>';
@@ -211,10 +214,7 @@ class Model_docs_report{
                     $html .= '<div class="new_parent" left_key = "' . $employee['left_key'] . '" right_key = "' . $employee['right_key'] . '" new_parent_id = "' . $employee['id'] . '"  new_parent_name = "' . $employee['erarh'] . '" >' . $erarh. '</div>';
 
                 }
-
-
         }
-
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
@@ -233,7 +233,7 @@ class Model_docs_report{
         $sql ="SELECT history_forms.id , form_step_action.user_action_name,document_status_now.name AS doc_status,
                 CASE
                 WHEN history_forms.start_data IS NULL
-                   THEN 'Не не начинал'
+                   THEN 'Не начинал'
                    ELSE history_forms.start_data
                    END  AS start_data,
                 CASE

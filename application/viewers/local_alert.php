@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="button" style="float: right" id="rebut_node_docs">Сброс</div>
-    <div class="button" style="float: right" id="node_docs">Выбор узла</div>
+    <div class="button" style="float: right" id="node_docs">Выбор подразделения</div>
     <select class="target  select_styte" id="node_docs_select" style="float:left;width:200px;margin-top:15px;">
 
     </select>

@@ -142,7 +142,7 @@ $(document).ready(function() {
             $(".report_step_row").css("display","none");
             $(".report_step_row").each(function() {
                 var start_date = $(this).find(".start_date").html();
-                if(start_date = "Не начинал"){
+                if(start_date == "Не начинал"){
                     $(this).css("display","block");
                 }
             });

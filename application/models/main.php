@@ -55,26 +55,26 @@ class Model_main{
         </div>
     </div>
 
-
+        <div id="doc_report">
+        <div class="doc_report_title">Документы</div>
+        <div class="metric">
+            <div class="doc_target"><span id="doc_target">%doc_target%</span> должно быть</div>
+            <span>/</span>
+            <div class="doc_fact"><span id="doc_fact">%doc_fact%</span> сдано</div>
+        </div>
+        <div id="doc_circle" class="c100 p%doc_proc% %doc_color% big">
+            <span id="doc_proc">%doc_proc%%</span>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+            </div>
+        </div>
+    </div>
 </div>
 HERE;
 
 
-//        <div id="doc_report">
-//        <div class="doc_report_title">Документы</div>
-//        <div class="metric">
-//            <div class="doc_target"><span id="doc_target">%doc_target%</span> должно быть</div>
-//            <span>/</span>
-//            <div class="doc_fact"><span id="doc_fact">%doc_fact%</span> сдано</div>
-//        </div>
-//        <div id="doc_circle" class="c100 p%doc_proc% %doc_color% big">
-//            <span id="doc_proc">%doc_proc%%</span>
-//            <div class="slice">
-//                <div class="bar"></div>
-//                <div class="fill"></div>
-//            </div>
-//        </div>
-//    </div>
+
 
         $sql="SELECT
 /* Вывод даннных */
@@ -186,6 +186,8 @@ HERE;
     (route_doc.employee_id IS NULL OR route_doc.employee_id = employees.id)
     GROUP BY EMPLOY, STEP
     ORDER BY EMPLOY";
+
+//        echo $sql;
         $test_array = $db->all($sql);
         $test_target = 0;
         $test_fact = 0;

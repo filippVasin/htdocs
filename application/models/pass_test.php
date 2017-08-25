@@ -248,7 +248,7 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
 
 
         // Название теста;
-        $result .= '<div class="page_title">'.$test_name.'</div>';
+        $result .= '<div class="page_title"></div>';
 
         // Поулчаем списко вопросов;
         $sql = "SELECT * FROM `control_tests_questions` WHERE `test_id` = '".$test_id."';";

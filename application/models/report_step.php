@@ -144,16 +144,15 @@ class Model_report_step{
      AND
      organization_structure.right_key <= TreeOfParents.right_key)
      )
-
 	AND	organization_structure.company_id
    AND
    /* по фирме*/
 
     route_doc.company_id = ". $_SESSION['control_company'] ."
     		AND employees.id = employees_items_node.employe_id
-			AND ((history_docs.date_finish + INTERVAL route_control_step.`periodicity` MONTH) <= now() OR (history_docs.date_finish is NULL))
     		AND organization_structure.id = employees_items_node.org_str_id
     		AND organization_structure.company_id = ". $_SESSION['control_company'] ."
+    		AND org_parent.company_id = ". $_SESSION['control_company'] ."
 	     AND
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)";
@@ -196,6 +195,7 @@ class Model_report_step{
 
             $docs_array = $db->all($sql);
             $html = "";
+
             foreach ($docs_array as $docs_array_item) {
                 if (($docs_array_item['action_name'] == $select_item) || ($select_item == "")) {
                     if ($docs_array_item['SaveTempID'] != "") {
