@@ -115,6 +115,7 @@ function f_tcalRelDate (d_date, d_diff, s_units) {
 		if (d_result.getDate() != d_date.getDate())
 			d_result.setDate(0);
 	}
+
 	return ' onclick="f_tcalUpdate(' + d_result.valueOf() + (d_diff ? ',1' : '') + ')"';
 }
 
@@ -155,6 +156,7 @@ function f_tcalUpdate (n_date, b_keepOpen) {
 		e_input.value = f_tcalGenerateDate(d_date, A_TCALCONF.format);
 		f_tcalCancel();
 	}
+
 }
 
 function f_tcalOnClick () {
@@ -185,6 +187,7 @@ function f_tcalOnClick () {
 	e_cal.style.top = n_top + 'px';
 	e_cal.style.left = (n_left + this.offsetWidth - e_cal.offsetWidth) + 'px';
 	e_cal.style.visibility = 'visible';
+
 }
 
 function f_tcalParseDate (s_date, s_format) {
@@ -228,6 +231,7 @@ function f_tcalGenerateDate (d_date, s_format) {
 		s_date += A_TCALTOKENS_IDX[s_char] ? A_TCALTOKENS_IDX[s_char]['g'](d_date) : s_char;
 	}
 	return s_date;
+
 }
 
 function f_tcalGetInputs (b_active) {
@@ -249,6 +253,7 @@ function f_tcalGetInputs (b_active) {
 
 		a_result[a_result.length] = e_input;
 	}
+
 	return b_active ? null : a_result;
 }
 
@@ -259,6 +264,7 @@ function f_tcalHasClass (e_elem, s_class) {
 	var a_classes = s_classes.split(' ');
 	for (var n = 0; n < a_classes.length; n++)
 		if (a_classes[n] == s_class)
+
 			return true;
 	return false;
 }
@@ -285,8 +291,43 @@ function f_tcalRemoveClass (e_elem, s_class) {
 		a_newClasses[a_newClasses.length] = a_classes[n];
 	}
 	e_elem.className = a_newClasses.join(' ');
+    time_filter();
+
+
 	return true;
 }
+//  кастомная функция для запуска по событию смены даты
+// сами получаем все данные
+function time_filter(){
+    var time_from = $("#time_from").val();
+    var time_to = $("#time_to").val();
+    var select_item = $("#node_docs_select").val();
+    var select_item_em = $("#node_docs_select_em").val();
+    var left_key =  $("#popup_update_tree").attr("left_key");
+    var right_key =  $("#popup_update_tree").attr("right_key");
+    $.ajax({
+        type: "POST",
+        url: "/local_alert/start",
+        data: {
+            left_key:left_key,
+            right_key:right_key,
+            select_item:select_item,
+            select_item_em:select_item_em,
+            time_from:time_from,
+            time_to:time_to
+        },
+        success: function (answer) {
+            var result = jQuery.parseJSON(answer);
+            var content = result.content;
+
+
+            $('#strings').html(content);
+        },
+        error: function () {
+        }
+    });
+}
+
 
 function f_getPosition (e_elemRef, s_coord) {
 	var n_pos = 0, n_offset,

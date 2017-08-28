@@ -64,7 +64,7 @@ class Model_creator
                 $html .= '<option value="' . $employee_box['id'] . '" >' . $employee_box['erarh'] . '</option>';
             }
         }
-        $html .= '</select> <div class="button_clear" level="2"></div><div class="button_plus" level="2" item="'. $item_id .'"></div>';
+        $html .= '</select> <div class="button_clear" id="button_clear" level="2"></div><div class="button_plus" level="2" item="'. $item_id .'"></div>';
         $html .= '<div>';
         return $html;
 
@@ -132,21 +132,17 @@ class Model_creator
             $html .= '<div>';
         } else{
                 $html = '<div class="create_form_box">';
-                $html.=    '<form class="create_form" method="POST" action="/creator/create_form" id="landing_form_offer_one">';
-                $html.=        '<input type="text" id="form_surname" name="surname" placeholder="Фамилия" class="contacts-inp" required="">';
-                $html.=        '<input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp" required="">';
-                $html.=        '<input type="text" id="form_patronymic" name="patronymic" placeholder="Отчество" class="contacts-inp" required="">';
-                $html.=        '<input type="text" id="form_work_start" name="work_start" placeholder="Дата устройства" class="contacts-inp form_work_start_cl" required="">';
-                $html.=        '<input type="text" id="form_birthday"  name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp " required="">';
-                $html.=        '<input type="text" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp " required="">';
+                $html.=        '<div title="Фамилия" class="bef_input"><input type="text" id="form_surname" name="surname"  placeholder="Фамилия" class="contacts-inp input_form" required=""></div>';
+                $html.=        '<div title="Имя" class="bef_input"><input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp input_form" required=""></div>';
+                $html.=        '<div title="Отчество" class="bef_input"><input type="text" id="form_patronymic" name="patronymic" placeholder="Отчество" class="contacts-inp input_form" required=""></div>';
+                $html.=        '<div title="Дата устройства" class="bef_input"><input type="date" id="form_work_start" name="work_start" placeholder="Дата устройства" class="contacts-inp form_work_start_cl input_form" required=""></div>';
+                $html.=        '<div title="Дата рождения" class="bef_input"><input type="date" id="form_birthday"  name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp input_form" required=""></div>';
+                $html.=        '<div title="Электронная почта" class="bef_input"><input type="text" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form" required=""></div>';
                 $html.=        '<input type="hidden" id="form_id_item" name="id_item" value="'. $item_id .'" required="">';
-                $html.=        '<input type="submit" form="landing_form_offer_one"  value="Записать" style="margin-left: 100px;" class="button">';
-                $html.=    '</form>';
+                $html.=        '<div id="landing_form_offer_one" style="margin-left: 100px;" class="button">Записать</div>';
                 $html.=  '</div>';
             // скрипт валидации форм
-            $html.=  ' <script> $(function() {$("#form_work_start").mask("99.99.9999", {placeholder: "дд.мм.гггг" }); $("#form_birthday").mask("99.99.9999", {placeholder: "дд.мм.гггг" });});</script>';
-
-
+//            $html.=  ' <script> $(function() {$("#form_work_start").mask("99.99.9999", {placeholder: "дд.мм.гггг" }); $("#form_birthday").mask("99.99.9999", {placeholder: "дд.мм.гггг" });});</script>';
 
         }
 
@@ -188,7 +184,7 @@ class Model_creator
 
         if($email_data['id'] != '') {
             // уже есть такая почта
-            $result = 'Ошибка, Почта занята';
+            $result_array['content'] = 'Ошибка, Почта занята';
         } else {
             // почта девственная - продолжаем
 
@@ -239,14 +235,13 @@ class Model_creator
             $send_mailer->From = 'noreply@laborpro.ru';
             $send_mailer->FromName = 'Охрана Труда';
             $send_mailer->addAddress($email);
-
             $send_mailer->isHTML(true);
 
             $send_mailer->Subject = $subject;
             $send_mailer->Body = $message;
 
             if ($send_mailer->send()) {
-                $result = 'Сотрудник добавлен, письмо с паролем отправленно';
+                $result_array['content'] = 'Сотрудник добавлен, письмо с паролем отправленно';
                 $send_result = 'Письмо отправлено';
                 // пишим логи
                 $sql = 'INSERT INTO `mails_log` (`employee_id`, `email`,`mail_type`,`template_mail_id`,`send_result`,`send_date`)
@@ -278,7 +273,8 @@ class Model_creator
         }
 
 
-        return $result;
+       $result = json_encode($result_array, true);
+        die($result);
     }
 
 

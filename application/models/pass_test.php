@@ -145,7 +145,21 @@ WHERE route_control_step.id =". $_SESSION['step_id'];
 
             // тесты и доки прошли
             if (($form_id == "") && ($test_id == "") && ($doc_id == "")) {
-                //записали в хистори_степ
+
+                    $sql="SELECT *
+                        FROM history_docs
+                        WHERE history_docs.employee_id = ".  $_SESSION['employee_id'] ."
+                        AND history_docs.step_id =". $_SESSION['step_id'];
+                    $history_check = $db->row($sql);
+                    if(isset($history_check['id'])){
+                        // уже есть запись
+                    } else {
+                        // так и не было записи незабыли записать в хистори_степ
+                        $sql = "INSERT INTO `history_docs` (`employee_id`, `step_id`, `date_start`,`date_finish`) VALUES('" . $_SESSION['employee_id'] . "', '" . $_SESSION['step_id'] . "', NOW(), NOW());";
+                        $db->query($sql);
+                    }
+
+
                 $sql = "INSERT INTO `history_step` (`employee_id`, `step_id`,`data_finish`) VALUES('" . $_SESSION['employee_id'] . "', '" . $_SESSION['step_id'] . "', NOW());";
                 $db->query($sql);
                 $this->session_clear();

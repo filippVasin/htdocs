@@ -38,7 +38,7 @@
 </div>
 
 <div id="popup_update_select_position">
-    <div class="canvas" style="height: 200px; box-sizing: border-box;">
+    <div class="canvas" style="height: 100%; box-sizing: border-box;">
         <div class="popup_context_menu_title"> Вы правда хотите перевести узел:</div>
         <div id="subscript_select_position_employee"></div>
         <div class="popup_context_menu_title"> в: </div>

@@ -27,9 +27,8 @@ class Controller_creator extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $post_data;
         // Вызываем метод показа всего дерева
-        $result = $this->model->create_form();
-        // возврат в форму
-        $this->view = str_replace('%creator%', $result, $this->view);
+         $this->model->create_form();
+
     }
 
     public function button_plus($post_data){

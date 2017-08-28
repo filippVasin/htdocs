@@ -78,7 +78,8 @@ HERE;
 
         $sql="SELECT
 /* Вывод даннных */
-
+FORM_CHECK.form_id AS doc_all,
+FORM_NOW.doc_status_now,
   employees.id AS EMPLOY, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
    route_control_step.id AS STEP, route_control_step.`periodicity`, history_docs.`id` AS history_docs,history_docs.date_finish,
    /* условный вывод */
@@ -144,6 +145,8 @@ HERE;
 				form_step_action.id = temps_form_step.action_form) AS TempTest
 				/* приклееваем по совпадению пар сотрудников и шагов */
 		ON (TempTest.TempEmpliD=employees.id AND TempTest.ContentFormId = route_control_step.step_content_id)
+		LEFT JOIN step_content AS FORM_CHECK ON FORM_CHECK.id = route_control_step.step_content_id
+		LEFT JOIN form_status_now AS FORM_NOW ON FORM_NOW.author_employee_id = employees.id
   WHERE
       /* все роуты с треками */
     route_control_step.track_number_id = route_doc.id
@@ -171,19 +174,18 @@ HERE;
      AND
      organization_structure.right_key <= TreeOfParents.right_key)
      )
-
 	AND	organization_structure.company_id
    AND
    /* по фирме*/
 
     route_doc.company_id = ". $_SESSION['control_company'] ."
     		AND employees.id = employees_items_node.employe_id
-			AND ((history_docs.date_finish + INTERVAL route_control_step.`periodicity` MONTH) <= now() OR (history_docs.date_finish is NULL))
     		AND organization_structure.id = employees_items_node.org_str_id
     		AND organization_structure.company_id = ". $_SESSION['control_company'] ."
+    		AND org_parent.company_id = ". $_SESSION['control_company'] ."
 	     AND
     /* для всех сотрудников или только для конкретного */
-    (route_doc.employee_id IS NULL OR route_doc.employee_id = employees.id)
+    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
     GROUP BY EMPLOY, STEP
     ORDER BY EMPLOY";
 
@@ -194,6 +196,8 @@ HERE;
         $emp = 0;
         $count_emp = 0;// количество сотрудников
         $count_victory =0;// успешные сотрудники
+        $doc_count_all = 0;// количество документов всего
+        $doc_count_end = 0; // количество пройденных документов
         $flag = 0;
         foreach ($test_array as $test_item) {
 
@@ -212,11 +216,26 @@ HERE;
                 $flag = 0;
             }
             ++$test_target;
+            if($test_item['doc_all']!=""){
+                ++$doc_count_all;
+                if($test_item['doc_status_now']>=7){
+                    ++$doc_count_end;
+                }
+            }
+
         }
 //        if($flag>0){
 //            --$count_victory;
 //        }
 
+         $sql="SELECT *
+        FROM form_status_now
+        WHERE form_status_now.doc_status_now>=7";
+        $result= $db->all($sql);
+        $doc_count_end = 0;
+        foreach($result as $item){
+            ++$doc_count_end;
+        }
 
 
         $test_proc = round($test_fact/$test_target*100);
@@ -239,8 +258,8 @@ HERE;
         $html = str_replace('%emp_color%', $emp_color, $html);
 
 
-        $doc_target = 312;
-        $doc_fact = 312;
+        $doc_target = $doc_count_all;
+        $doc_fact = $doc_count_end;
         $doc_proc = round($doc_fact/$doc_target*100);
         $doc_color= $this->color($doc_proc);
 

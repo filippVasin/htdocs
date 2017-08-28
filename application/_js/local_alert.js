@@ -55,6 +55,8 @@ $(document).ready(function() {
         $("#dolg_report_name").html("");
         $("#dolg_report_dir").html("");
         $("#docs_report_name").html("");
+        $("#popup_update_tree").attr("left_key", "");
+        $("#popup_update_tree").attr("right_key", "");
         dol =  "";
         dir =  "";
         name = "";
@@ -253,6 +255,9 @@ $(document).ready(function() {
     $(document).on("click", ".new_parent", function () {
         left_key =  $(this).attr("left_key");
         right_key =  $(this).attr("right_key");
+        $("#popup_update_tree").attr("left_key", left_key);
+        $("#popup_update_tree").attr("right_key", right_key);
+
         time_from = $("#time_from").val();
         time_to = $("#time_to").val();
         select_item = $(".target").val();
@@ -373,8 +378,10 @@ $(document).ready(function() {
     });
 
 
-    $("#time_to").keyup(function(){
-        alert('Элемент foo потерял фокус.');
-    });
+
+
+    //$("#time_to").keyup(function(){
+    //    alert('Элемент foo потерял фокус.');
+    //});
 });
 

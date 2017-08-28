@@ -70,6 +70,7 @@
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+    padding-bottom: 10px;
 }
 #popup_context_menu_delete{
     display: none;
@@ -152,12 +153,10 @@
 }
 #popup_update_select_position{
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 99999999;
-    top: 20px;
-    left: 20px;
     width: 600px;
-    height: 260px;
+    min-height: 260px;
     background-color: #ccc;
     left: calc(50% - 300px);
     top: calc(50% - 130px);
