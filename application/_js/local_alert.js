@@ -91,7 +91,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "/forms/start",
+            url: "/distributor/main",
             data: {
                 la_real_form_id:la_real_form_id,
                 la_employee:la_employee,

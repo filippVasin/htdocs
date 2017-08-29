@@ -123,6 +123,8 @@ class Model_editor
         $result_array['birthday'] = $result['birthday'];
         $result_array['start_date'] = $result['start_date'];
         $result_array['em_status'] = $result['status'];
+        $result_array['personnel_number'] = $result['personnel_number'];
+
         $result_array['status'] = 'ok';
 
         $result = json_encode($result_array, true);
@@ -139,11 +141,17 @@ class Model_editor
         $start_date = $this->post_array['start_date'];
         $birthday = $this->post_array['birthday'];
         $em_status = $this->post_array['em_status'];
+        $personnel_number = $this->post_array['personnel_number'];
 
         // меняем данные сотрудника
-        $sql  ="UPDATE `employees` SET `surname`='" . $surname . "', `name`='" . $name . "', `second_name`='" . $second_name . "', `start_date`='" . $start_date . "',`birthday`='" . $birthday . "',`status`='" . $em_status . "'
+        if($personnel_number!="") {
+            $sql = "UPDATE `employees` SET `personnel_number`='" . $personnel_number . "', `surname`='" . $surname . "', `name`='" . $name . "', `second_name`='" . $second_name . "', `start_date`='" . $start_date . "',`birthday`='" . $birthday . "',`status`='" . $em_status . "'
                 WHERE  `id`=" . $item_id;
-        $result = $db->query($sql);
+        } else {
+            $sql = "UPDATE `employees` SET `surname`='" . $surname . "', `name`='" . $name . "', `second_name`='" . $second_name . "', `start_date`='" . $start_date . "',`birthday`='" . $birthday . "',`status`='" . $em_status . "'
+                WHERE  `id`=" . $item_id;
+        }
+        $db->query($sql);
 
         $result_array['surname'] = $surname;
         $result_array['name'] = $name;
@@ -180,19 +188,18 @@ class Model_editor
         $full_name = $this->post_array['full_name'];
         $employee_id = $this->post_array['employee_id'];
         $role_id = $this->post_array['role_id'];
-//        pass = $this->post_array['pass'];
 
         // получаем данные сотрудника
         $sql  ="UPDATE users SET `full_name`='" . $full_name . "', `role_id`='" . $role_id . "', `employee_id`='" . $employee_id ."'
                 WHERE  `id`=" . $item_id;
-        $result = $db->query($sql);
+        $db->query($sql);
 
         // меняем пароль если нужно
         if(isset($this->post_array['pass'])){
             $pass =md5($this->post_array['pass']);
             $sql  ="UPDATE users SET `password`='" . $pass . "'
                 WHERE  `id`=" . $item_id;
-            $result = $db->query($sql);
+        $db->query($sql);
         }
 
         $result_array['status'] = 'ok';

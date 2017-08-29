@@ -54,6 +54,10 @@
         <label>Статус</label>
         <input type="text" class="edit_popup_input"  id="edit_popup_input_status" placeholder="Статус">
     </div>
+        <div class="input_name_row">
+            <label>Табельный номер</label>
+            <input type="text" class="edit_popup_input"  id="edit_popup_input_personnel_number" placeholder="Табельный номер">
+        </div>
     <div class="button_row">
         <div class="button" id="save_popup_input_employees">Сохранить</div>
         <div class="button" id="cancel_popup_input_employees">Отмена</div>
@@ -80,8 +84,8 @@
     </div>
     <div>Если надо поменять пароль <br>введите новый пароль два раза</div>
     <div class="input_name_row">
-        <input type="password" class="edit_popup_input"  id="edit_popup_input_pass" placeholder="Пароль">
-        <input type="password" class="edit_popup_input"  id="edit_popup_input_next_pass" placeholder="Ещё раз пароль">
+        <input type="password" class="edit_popup_input pass"  id="edit_popup_input_pass" placeholder="Пароль">
+        <input type="password" class="edit_popup_input pass"  id="edit_popup_input_next_pass" placeholder="Ещё раз пароль">
     </div>
     <div class="button_row">
         <div class="button" id="save_popup_input_user">Сохранить</div>

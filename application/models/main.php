@@ -37,6 +37,12 @@ class Model_main{
                 <div class="fill"></div>
             </div>
         </div>
+        <div class="items link">По отделам</div>
+        <div class="all link none">По компании</div>
+        <div class="node_report none">
+
+            %node_report_test%
+        </div>
     </div>
 
     <div id="emp_report">
@@ -53,6 +59,12 @@ class Model_main{
                 <div class="fill"></div>
             </div>
         </div>
+         <div class="items link">По отделам</div>
+        <div class="all link none">По компании</div>
+        <div class="node_report none">
+
+            %node_report_emp%
+        </div>
     </div>
 
         <div id="doc_report">
@@ -68,6 +80,12 @@ class Model_main{
                 <div class="bar"></div>
                 <div class="fill"></div>
             </div>
+        </div>
+         <div class="items link">По отделам</div>
+        <div class="all link none">По компании</div>
+        <div class="node_report none">
+
+            %node_report_doc%
         </div>
     </div>
 </div>
@@ -95,6 +113,7 @@ FORM_NOW.doc_status_now,
    END  AS FinishStep,
   items_control.name,
   /* клеем фио */
+  org_parent.id AS dir_id,
    CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
   route_control_step.step_name AS manual, TempTest.SaveTempID
 
@@ -197,10 +216,9 @@ FORM_NOW.doc_status_now,
         $count_emp = 0;// количество сотрудников
         $count_victory =0;// успешные сотрудники
         $doc_count_all = 0;// количество документов всего
-        $doc_count_end = 0; // количество пройденных документов
+//        $doc_count_end = 0; // количество пройденных документов
         $flag = 0;
         foreach ($test_array as $test_item) {
-
             if($test_item['FinishStep']!='Не прошел'){
                 ++$test_fact;
             } else {
@@ -218,19 +236,18 @@ FORM_NOW.doc_status_now,
             ++$test_target;
             if($test_item['doc_all']!=""){
                 ++$doc_count_all;
-                if($test_item['doc_status_now']>=7){
-                    ++$doc_count_end;
-                }
             }
-
         }
 //        if($flag>0){
 //            --$count_victory;
 //        }
 
          $sql="SELECT *
-        FROM form_status_now
-        WHERE form_status_now.doc_status_now>=7";
+        FROM form_status_now,employees_items_node,organization_structure
+        WHERE form_status_now.doc_status_now>=7
+        AND form_status_now.author_employee_id = employees_items_node.employe_id
+        AND employees_items_node.org_str_id = organization_structure.id
+        AND organization_structure.company_id =". $_SESSION['control_company'];
         $result= $db->all($sql);
         $doc_count_end = 0;
         foreach($result as $item){
@@ -268,6 +285,104 @@ FORM_NOW.doc_status_now,
         $html = str_replace('%doc_proc%', $doc_proc, $html);
         $html = str_replace('%doc_color%', $doc_color, $html);
 
+
+        $dir_array = array();
+        foreach ($test_array as $test_item) {
+            $dir_array[] = $test_item['dir_id'];
+        }
+
+        $dir_array = array_unique($dir_array);
+
+        $node_report_test="";
+        $node_report_emp="";
+        $node_report_doc ="";
+        foreach ($dir_array as $dir_array_item) {
+            $test_target = 0;
+            $test_fact = 0;
+            $count_all_emp = 0;// количество сотрудников
+            $count_victory_emp =0;// успешные сотрудники
+            $name = "";
+            $emp = 0;
+            $flag = 0;
+            $doc_count_all = 0;// количество документов всего
+            foreach ($test_array as $test_item) {
+                if($test_item['dir_id'] == $dir_array_item){
+                    if($test_item['FinishStep']!='Не прошел'){
+                        ++$test_fact;
+                    } else {
+                        $flag += 1;
+                    }
+                    if($test_item['EMPLOY']!= $emp){
+                        ++$count_victory_emp;
+                        ++$count_all_emp;
+                        $emp = $test_item['EMPLOY'];
+                        if($flag>0){
+                            --$count_victory_emp;
+                        }
+                        $flag = 0;
+                    }
+                    if($test_item['doc_all']!=""){
+                        ++$doc_count_all;
+
+                    }
+
+                    ++$test_target;
+                    $name = $test_item['dir'];
+                }
+            }
+
+            // тесты
+            $test_proc = round($test_fact/$test_target*100);
+            $node_report_test .= '<div class="progress-group"> ';
+            $node_report_test .=     '<div class="progress-text-row"> ';
+            $node_report_test .=         '<span class="progress-text">'. $name .'</span>';
+            $node_report_test .=         '<span class="progress-number"><b>'. $test_fact .'</b>/'. $test_target .'</span>';
+            $node_report_test .=     '</div> ';
+            $node_report_test .=     '<div class="progress_line">';
+            $node_report_test .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$test_proc.'%"></div>';
+            $node_report_test .=     '</div>';
+            $node_report_test .= '</div>';
+            // сотрудники
+            $emp_proc = round($count_victory_emp/$count_all_emp*100);
+            $node_report_emp .= '<div class="progress-group"> ';
+            $node_report_emp .=     '<div class="progress-text-row"> ';
+            $node_report_emp .=         '<span class="progress-text">'. $name .'</span>';
+            $node_report_emp .=         '<span class="progress-number"><b>'. $count_victory_emp .'</b>/'. $count_all_emp .'</span>';
+            $node_report_emp .=     '</div> ';
+            $node_report_emp .=     '<div class="progress_line">';
+            $node_report_emp .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$emp_proc.'%"></div>';
+            $node_report_emp .=     '</div>';
+            $node_report_emp .= '</div>';
+            // документы
+
+            $sql="SELECT *
+                    FROM form_status_now,employees_items_node,organization_structure
+                    WHERE form_status_now.doc_status_now>=7
+                    AND form_status_now.author_employee_id = employees_items_node.employe_id
+                    AND employees_items_node.org_str_id = organization_structure.id
+                    AND organization_structure.parent = ". $dir_array_item ."
+                    AND organization_structure.company_id =". $_SESSION['control_company'];
+            $result= $db->all($sql);
+            $doc_count_end = 0;
+            foreach($result as $item){
+                ++$doc_count_end;
+            }
+
+            $emp_doc = round($doc_count_end/$doc_count_all*100);
+            $node_report_doc .= '<div class="progress-group"> ';
+            $node_report_doc .=     '<div class="progress-text-row"> ';
+            $node_report_doc .=         '<span class="progress-text">'. $name .'</span>';
+            $node_report_doc .=         '<span class="progress-number"><b>'. $doc_count_end .'</b>/'. $doc_count_all .'</span>';
+            $node_report_doc .=     '</div> ';
+            $node_report_doc .=     '<div class="progress_line">';
+            $node_report_doc .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$emp_doc.'%"></div>';
+            $node_report_doc .=     '</div>';
+            $node_report_doc .= '</div>';
+        }
+
+        $html = str_replace('%node_report_emp%', $node_report_emp, $html);
+        $html = str_replace('%node_report_test%', $node_report_test, $html);
+        $html = str_replace('%node_report_doc%', $node_report_doc, $html);
 
         return $html;
     }

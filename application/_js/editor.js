@@ -103,6 +103,7 @@ $(document).ready(function() {
                 var start_date = result.start_date;
                 var em_status = result.em_status;
                 var request_result = result.status;
+                var personnel_number = result.personnel_number;
                 var content = result.content;
                 // если 'ok' - рисуем тест
                 if(request_result == 'ok'){
@@ -117,6 +118,8 @@ $(document).ready(function() {
                         $("#edit_popup_input_birthday").val(birthday);
 
                         $("#edit_popup_input_status").val(em_status);
+                        $("#edit_popup_input_personnel_number").val(personnel_number);
+
                         $("#edit_popup_employees").css("display","block");
                 }
             },
@@ -140,6 +143,8 @@ $(document).ready(function() {
        var start_date  = $("#edit_popup_input_start_date").val();
        var birthday  = $("#edit_popup_input_birthday").val();
        var em_status   = $("#edit_popup_input_status").val();
+        var personnel_number   = $("#edit_popup_input_personnel_number").val();
+
         $.ajax({
             type: "POST",
             url: "/editor/save_employee_card",
@@ -150,7 +155,8 @@ $(document).ready(function() {
                 second_name:second_name,
                 start_date:start_date,
                 birthday:birthday,
-                em_status:em_status
+                em_status:em_status,
+                personnel_number:personnel_number
             },
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
@@ -224,31 +230,34 @@ $(document).ready(function() {
         var full_name = $("#edit_popup_input_full_name").val();
         var employee_id = $("#edit_popup_input_employee_id").val();
         var role_id = $("#edit_popup_input_role_id").val();
-        if(($("#edit_popup_input_pass").val()) == ($("#edit_popup_input_next_pass").val())){
+        if(($("#edit_popup_input_pass").val()) == ($("#edit_popup_input_next_pass").val())) {
             var pass = $("#edit_popup_input_pass").val();
-        }
-        $.ajax({
-            type: "POST",
-            url: "/editor/save_user_card",
-            data: {
-                item_id:item_id,
-                full_name:full_name,
-                employee_id:employee_id,
-                role_id:role_id,
-                pass:pass
-            },
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var request_result = result.status;
-                // если 'ok' - рисуем тест
-                if(request_result == 'ok'){
-                    $("#edit_popup_user").css("display","none");
+            $.ajax({
+                type: "POST",
+                url: "/editor/save_user_card",
+                data: {
+                    item_id: item_id,
+                    full_name: full_name,
+                    employee_id: employee_id,
+                    role_id: role_id,
+                    pass: pass
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    // если 'ok' - рисуем тест
+                    if (request_result == 'ok') {
+                        $("#edit_popup_user").css("display", "none");
+                    }
+                },
+                error: function () {
+                    console.log('error');
                 }
-            },
-            error: function () {
-                console.log('error');
-            }
-        });
+            });
+        } else {
+            $('.input_name_row>.pass').css("border-color","red");
+            setTimeout("$('.input_name_row>.pass').css('border-color','initial')", 3000);
+        }
     });
     $(function() {
         //задание заполнителя с помощью параметра placeholder

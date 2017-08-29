@@ -309,7 +309,9 @@ $(document).ready(function() {
         var work_start = $("#form_work_start").val();
         var birthday = $("#form_birthday").val();
         var email = "";
-        var id_item = $("#form_id_item").val(); ;
+        var id_item = $("#form_id_item").val();
+        var personnel_number = "";
+        personnel_number = $("#personnel_number").val();
 
         // получили сегодня
         var now = new Date()
@@ -318,6 +320,16 @@ $(document).ready(function() {
 
         var hex_today = new Date(today);
         var hex_today_sto = new Date(today);
+        if($("#form_birthday").val()==""){
+            $("#form_birthday").css("border-color","red");
+            setTimeout("$('#form_birthday').css('border-color','#ccc')", 3000);
+        }
+        if($("#form_work_start").val()==""){
+            $("#form_work_start").css("border-color","red");
+            setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
+        }
+
+
         // возраст не ниже 14ти лет
         hex_today.setFullYear(hex_today.getFullYear() - 14);
         // и не больше 100 лет
@@ -352,19 +364,19 @@ $(document).ready(function() {
         } else {
             patronymic = $("#form_patronymic").val();
         }
-        if($("#form_email").val()==""){
-            $("#form_email").css("border-color","red");
-            flag = 1;
+        // валидация почты
+        if($("#form_email").val() != '') {
+            var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+            if(pattern.test($("#form_email").val())){
+                $("#form_email").css({'border' : '1px solid #569b44'});
+                email = $("#form_email").val();
+            } else {
+                $("#form_email").css({'border' : '1px solid #ff0000'});
+                flag = 1;
+            }
         } else {
-            email = $("#form_email").val();
-            if(email.indexOf(".")== -1) {
-                $("#form_email").css("border-color","red");
-                flag = 1;
-            }
-            if(email.indexOf("@")== -1) {
-                $("#form_email").css("border-color","red");
-                flag = 1;
-            }
+            $("#form_email").css({'border' : '1px solid #ff0000'});
+            flag = 1;
         }
 
 
@@ -394,7 +406,8 @@ $(document).ready(function() {
                     work_start:work_start,
                     birthday:birthday,
                     email:email,
-                    id_item:id_item
+                    id_item:id_item,
+                    personnel_number:personnel_number
 
                 },
                 success: function (answer) {
@@ -408,18 +421,20 @@ $(document).ready(function() {
                 }
             });
         } else {
-            alert('Error: '+ flag);
             setTimeout("$('.input_form').css('border-color','#ccc')", 3000);
         }
 
     });
 
-    $(document).on('focusout','.input_form', function(){
-        if($(this).val()==""){
-            $(this).css("border-color","red");
-            setTimeout("$('.input_form').css('border-color','#ccc')", 3000);
-        }
-    });
+
+
+
+    //$(document).on('focusout','.input_form', function(){
+    //    if($(this).val()==""){
+    //        $(this).css("border-color","red");
+    //        setTimeout("$('.input_form').css('border-color','#ccc')", 3000);
+    //    }
+    //});
 
 });
 

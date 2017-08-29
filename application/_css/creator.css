@@ -1,3 +1,8 @@
+.select_box_item_row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #content_box{
 
     display: flex;
@@ -86,12 +91,18 @@ input[type="text"]:focus {
  margin-left : 45px;
 }
 
-.select_row>select {
-    width: 250px!important;
+.select_row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.select_row>select{
+    margin-left: 0px;
+    margin-bottom: 5px;
 }
 
 #news_num{
-    width: 250px!important;
+    /*width: 250px!important;*/
 }
 select{
     width: 348px;

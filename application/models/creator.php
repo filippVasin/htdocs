@@ -138,6 +138,7 @@ class Model_creator
                 $html.=        '<div title="Дата устройства" class="bef_input"><input type="date" id="form_work_start" name="work_start" placeholder="Дата устройства" class="contacts-inp form_work_start_cl input_form" required=""></div>';
                 $html.=        '<div title="Дата рождения" class="bef_input"><input type="date" id="form_birthday"  name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp input_form" required=""></div>';
                 $html.=        '<div title="Электронная почта" class="bef_input"><input type="text" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form" required=""></div>';
+                $html.=        '<div title="Табельный номер" class="bef_input"><input type="text" id="personnel_number" name="personnel_number" placeholder="Табельный номер(не обязательно)" class="contacts-inp input_form" required=""></div>';
                 $html.=        '<input type="hidden" id="form_id_item" name="id_item" value="'. $item_id .'" required="">';
                 $html.=        '<div id="landing_form_offer_one" style="margin-left: 100px;" class="button">Записать</div>';
                 $html.=  '</div>';
@@ -188,9 +189,19 @@ class Model_creator
         } else {
             // почта девственная - продолжаем
 
-            $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $name . "','" . $surname . "','" . $patronymic . "','1','" . $email . "',STR_TO_DATE('". $work_start ."', '%d.%m.%Y'),STR_TO_DATE('". $birthday ."', '%d.%m.%Y'));";
+
+
+            if(isset($this->post_array['personnel_number'])){
+                $personnel_number = $this->post_array['personnel_number'];
+                $sql = "INSERT INTO `employees` (`personnel_number`,`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $personnel_number . "','" . $name . "','" . $surname . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
 //        echo $sql;
-            $db->query($sql);
+                $db->query($sql);
+            } else {
+                $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $name . "','" . $surname . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
+//        echo $sql;
+                $db->query($sql);
+            }
+
 //        echo mysqli_insert_id($db->link_id); можно и так получать id инкримент
 
             $sql = "SELECT employees.id, employees.name
@@ -198,7 +209,7 @@ class Model_creator
                     WHERE employees.email ='" . $email . "'";
             $form_content_jj = $db->row($sql);
             // генерируем логин и пароль
-            $login = $labro->generate_password();
+            $login = $email;
             $pass = $labro->generate_password();
 
             $role_id = 3;
