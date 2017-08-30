@@ -19,13 +19,13 @@ class Model_period_control
     public function start(){
         global $db;
 
-<<<<<<< HEAD
+
         if(!(isset($_SESSION['control_company']))){
             header("Location:/company_control");
         }
 
-=======
->>>>>>> origin/master
+
+
         $sql="SELECT route_control_step.id,route_control_step.step_name,route_control_step.periodicity
                 FROM route_control_step, route_doc
                 WHERE route_doc.company_id = ". $_SESSION['control_company'] ."
@@ -34,18 +34,18 @@ class Model_period_control
         $period_data = $db->all($sql);
         $html = "";
         foreach ($period_data as $period_data) {
-<<<<<<< HEAD
+
             $html .= "<div class='period_row' attr_id='". $period_data['id']  ."'>";
                 $html .="<div class='period_id'>". $period_data['id'] ."</div>";
                 $html .="<div class='period_name'>". $period_data['step_name'] ."</div>";
                 $html .="<input type='text' class='period_count' value='" . $period_data['periodicity'] ."' period_count='". $period_data['id']  ."' placeholder='нет'>";
-=======
+
             $html .= "<div class='peroid_row' attr_id='". $period_data['id']  ."'>";
                 $html .="<div class='period_id'>". $period_data['id'] ."</div>";
                 $html .="<div class='period_name'>". $period_data['step_name'] ."</div>";
                 $html .="<input type='text' class='period_count' value='" . $period_data['periodicity'] ."' period_count='". $period_data['id']  ."' placeholder='нет'>";
                 $html .="<div class='save_period' id='". $period_data['id']  ."'>Сохранить</div>";
->>>>>>> origin/master
+
             $html .="</div>";
         };
         return $html;
