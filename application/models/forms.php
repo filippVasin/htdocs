@@ -17,19 +17,24 @@ class Model_forms{
 
 
 
-            $sql="SELECT save_temp_files.id AS real_form_id, MAX(history_forms.`step_end_time`), periodicity
-            FROM save_temp_files,history_forms,route_control_step
-            WHERE
-            (save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
-            AND save_temp_files.company_temps_id = " . $_SESSION['form_id'] . "
-            AND route_control_step.`id`= ". $_SESSION['step_id'] ." )
-     		OR
-     		(save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
-            AND save_temp_files.company_temps_id = " . $_SESSION['form_id'] . "
-            AND route_control_step.`id`= ". $_SESSION['step_id'] ."
-            AND route_control_step.periodicity is not NULL
-            AND now() <  (history_forms.`step_end_time` + INTERVAL route_control_step.periodicity MONTH))";
-
+        $sql = "SELECT  MAX(history_forms.`step_end_time`) AS date_create_old, periodicity,
+                (MAX(history_forms.`step_end_time`) + INTERVAL route_control_step.periodicity MONTH) AS date_create_new,
+					CASE
+                  WHEN (now() <= (MAX(history_forms.`step_end_time`) + INTERVAL route_control_step.periodicity MONTH))
+                  THEN save_temp_files.id
+                  ELSE NULL
+                  END AS real_form_id
+                FROM save_temp_files,history_forms,route_control_step
+                WHERE save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
+                    AND save_temp_files.company_temps_id = " . $_SESSION['form_id'] . "
+                    AND route_control_step.`id`= ". $_SESSION['step_id']."
+                    AND save_temp_files.id = history_forms.save_temps_id
+                    AND history_forms.step_end_time=(SELECT  MAX(step_end_time)
+												     FROM save_temp_files,history_forms,route_control_step
+												     WHERE save_temp_files.employee_id = " . $_SESSION['employee_id'] . "
+                                                            AND save_temp_files.company_temps_id = " . $_SESSION['form_id'] . "
+                                                            AND route_control_step.`id`= ". $_SESSION['step_id'] . "
+                                                            AND save_temp_files.id = history_forms.save_temps_id )";
 
 
             $condition_test = $db->row($sql);
@@ -166,7 +171,7 @@ class Model_forms{
                 $form_content_history = $db->row($sql);
                 $insert_history = $form_content_history['id'];
 
-                $sql = "INSERT INTO `form_status_now` (`save_temps_file_id`, `history_form_id`, `track_number_form_id`,`track_form_step_now`,`author_employee_id`,`doc_status_now`) VALUES( '". $insert_id ."','". $insert_history ."','". $_SESSION['temps_form_track'] ."','".  $_SESSION['temps_form_step_id'] ."','". $_SESSION['employee_id'] ."','". $doc_status ."');";
+                $sql = "INSERT INTO `form_status_now` (`step_id`,`save_temps_file_id`, `history_form_id`, `track_number_form_id`,`track_form_step_now`,`author_employee_id`,`doc_status_now`) VALUES('". $_SESSION['step_id']."','". $insert_id ."','". $insert_history ."','". $_SESSION['temps_form_track'] ."','".  $_SESSION['temps_form_step_id'] ."','". $_SESSION['employee_id'] ."','". $doc_status ."');";
                 $db->query($sql);
 
             } else {
@@ -332,7 +337,7 @@ class Model_forms{
     // запись о начале шага
     private function history_insert($doc_status){
         global $db;
-        $sql = "INSERT INTO `history_forms` (`save_temps_id`, `track_form_id`, `track_form_step`,`start_data`,`author_employee_id`,`doc_status_now`) VALUES( '". $_SESSION['real_form_id'] ."','". $_SESSION['temps_form_track'] ."','".  $_SESSION['temps_form_step_id'] ."',NOW(),'". $_SESSION['employee_id'] ."','". $doc_status ."');";
+        $sql = "INSERT INTO `history_forms` (`save_temps_id`, `track_form_id`, `track_form_step`,`start_data`,`author_employee_id`,`doc_status_now`) VALUES('". $_SESSION['real_form_id'] ."','". $_SESSION['temps_form_track'] ."','".  $_SESSION['temps_form_step_id'] ."',NOW(),'". $_SESSION['employee_id'] ."','". $doc_status ."');";
         $db->query($sql);
     }
 

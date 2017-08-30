@@ -19,7 +19,6 @@ class Model_step_editor
     public function start(){
         global $db;
 
-<<<<<<< HEAD
         if(!(isset($_SESSION['control_company']))){
             header("Location:/company_control");
         }
@@ -61,11 +60,13 @@ class Model_step_editor
             $html .="</div>";
         };
 
-        $html .='<div id="edit_popup">';
-        $html .='<div class="canvas">';
+
 
         $sql="SELECT * FROM control_tests";
         $test_data = $db->all($sql);
+
+        $html .='<div id="edit_popup">';
+        $html .='<div class="canvas">';
         $html .='<div id="control_tests">';
         $html .='<div class="row_tests" test_id="0"><div class="num">0</div><div class="name">Сбросить тест</div></div>';
         foreach ($test_data as $test_item) {
@@ -73,7 +74,6 @@ class Model_step_editor
                 $html .='<div class="num">'. $test_item['id'] .'</div><div class="name">'. $test_item['test_name'] .'</div>';
             $html .='</div>';
         }
-
         $html .='</div>';
 
 
@@ -83,28 +83,11 @@ class Model_step_editor
         $html .='</div>';
         $html .='</div>';
         $html .='</div>';
-=======
-        $sql="SELECT route_control_step.id,route_control_step.step_name,route_control_step.periodicity
-                FROM route_control_step, route_doc
-                WHERE route_doc.company_id = ". $_SESSION['control_company'] ."
-                AND route_doc.id = route_control_step.`track_number_id`";
 
-        $period_data = $db->all($sql);
-        $html = "";
-        foreach ($period_data as $period_data) {
-            $html .= "<div class='peroid_row' attr_id='". $period_data['id']  ."'>";
-            $html .="<div class='period_id'>". $period_data['id'] ."</div>";
-            $html .="<div class='period_name'>". $period_data['step_name'] ."</div>";
-            $html .="<input type='text' class='period_count' value='" . $period_data['periodicity'] ."' period_count='". $period_data['id']  ."' placeholder='нет'>";
-            $html .="<div class='save_period' id='". $period_data['id']  ."'>Сохранить</div>";
-            $html .="</div>";
-        };
->>>>>>> origin/master
         return $html;
     }
 
 
-<<<<<<< HEAD
     public function save_test(){
         global $db;
 
@@ -120,8 +103,8 @@ class Model_step_editor
                 SET test_id = ". $test_id ."
                 WHERE id =" .$content_id;
         }
-
         $db->query($sql);
+
         $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
         die($result);
@@ -143,9 +126,9 @@ class Model_step_editor
                 WHERE id =" .$content_id;
         }
         $db->query($sql);
+
         $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
-
         die($result);
     }
 
@@ -165,27 +148,35 @@ class Model_step_editor
                 WHERE id =" .$content_id;
         }
         $db->query($sql);
+
         $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
-
         die($result);
     }
 
-    public function save_manual(){
+    public function save_manual()
+    {
         global $db;
 
         $content_id = $this->post_array['content_id'];
         $manual_id = $this->post_array['manual_id'];
 
-        if($manual_id == 0){
+        if ($manual_id == 0) {
             $sql = "UPDATE step_content
                 SET manual_id = NULL
-                WHERE id =" .$content_id;
+                WHERE id =" . $content_id;
         } else {
             $sql = "UPDATE step_content
-                SET manual_id = ". $manual_id ."
-                WHERE id =" .$content_id;
-=======
+                SET manual_id = " . $manual_id . "
+                WHERE id =" . $content_id;
+        }
+        $db->query($sql);
+
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
     // Обработка результатов тестирования;
     public function save_period(){
         global $db;
@@ -201,20 +192,13 @@ class Model_step_editor
             $sql = "UPDATE route_control_step
                 SET periodicity = ". $period_id ."
                 WHERE id =" .$id;
->>>>>>> origin/master
         }
         $db->query($sql);
+
         $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
-
         die($result);
     }
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> origin/master
 }
 
 

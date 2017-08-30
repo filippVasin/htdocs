@@ -33,20 +33,17 @@ class Model_period_control
 
         $period_data = $db->all($sql);
         $html = "";
+        $html .= "<div class='inst_row_title'>
+                    <div class='inst_name'>Название инструктажа:</div>
+                    <div class='pre_intr'>Повторять через(месяцев)</div>
+                </div>";
         foreach ($period_data as $period_data) {
-
-            $html .= "<div class='period_row' attr_id='". $period_data['id']  ."'>";
-                $html .="<div class='period_id'>". $period_data['id'] ."</div>";
-                $html .="<div class='period_name'>". $period_data['step_name'] ."</div>";
-                $html .="<input type='text' class='period_count' value='" . $period_data['periodicity'] ."' period_count='". $period_data['id']  ."' placeholder='нет'>";
-
-            $html .= "<div class='peroid_row' attr_id='". $period_data['id']  ."'>";
-                $html .="<div class='period_id'>". $period_data['id'] ."</div>";
+                $html .= "<div class='period_row' attr_id='". $period_data['id']  ."'>";
+//                $html .="<div class='period_id'>". $period_data['id'] ."</div>";
                 $html .="<div class='period_name'>". $period_data['step_name'] ."</div>";
                 $html .="<input type='text' class='period_count' value='" . $period_data['periodicity'] ."' period_count='". $period_data['id']  ."' placeholder='нет'>";
                 $html .="<div class='save_period' id='". $period_data['id']  ."'>Сохранить</div>";
-
-            $html .="</div>";
+                $html .="</div>";
         };
         return $html;
     }

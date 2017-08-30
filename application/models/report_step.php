@@ -55,13 +55,23 @@ class Model_report_step{
   employees.id AS EMPLOY, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
    route_control_step.id AS STEP, route_control_step.`periodicity`, history_docs.`id` AS history_docs,history_docs.date_finish,
    /* условный вывод */
+ 	/* чтобы выводить все записи без учёта переодики, оставитьтолько
+	MIN(history_docs.date_start) в условии NULL в CASE*/
   CASE
-   WHEN MIN(history_docs.date_start) IS NULL
+   WHEN (MIN(history_docs.date_start) IS NULL)
+			OR
+			((route_control_step.periodicity is not NULL)
+			 	AND
+			( NOW() > (history_docs.date_start + INTERVAL route_control_step.periodicity MONTH)))
    THEN 'Не начинал'
    ELSE MIN(history_docs.date_start)
    END AS StartStep,
-   CASE
-   WHEN MAX(history_docs.date_finish) IS NULL
+  CASE
+   WHEN (MAX(history_docs.date_finish) IS NULL)
+			OR
+			((route_control_step.periodicity is not NULL)
+			 	AND
+			( NOW() > (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH)))
    THEN 'Не прошел'
    ELSE MAX(history_docs.date_finish)
    END  AS FinishStep,
@@ -76,7 +86,15 @@ class Model_report_step{
     /* история документов по шагам */
     ON (history_docs.step_id = route_control_step.id
        AND
-       history_docs.employee_id = employees.id)
+       history_docs.employee_id = employees.id
+       /* чтобы выводить все записи без учёта переодики, убрать этот AND*** */
+       AND
+		 		((route_control_step.periodicity is NULL)
+		 		OR
+				( NOW() < (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH))
+				OR
+				( NOW() < (history_docs.date_start + INTERVAL route_control_step.periodicity MONTH)))
+       )
        /* привязка сотрудника к должности */
        LEFT JOIN employees_items_node ON employees_items_node.employe_id = employees.id
        LEFT JOIN organization_structure ON employees_items_node.org_str_id = organization_structure.id

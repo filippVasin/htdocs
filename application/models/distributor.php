@@ -52,6 +52,8 @@ class Model_distributor{
         $son_step = $form_content['son_step'];// зашни на дочерний шаг
         $track = $form_content['track_number_form_id'];
 
+
+
         $sql = "INSERT INTO `history_forms` (`save_temps_id`, `track_form_id`, `track_form_step`, `step_end_time`,`start_data`,`author_employee_id`,`doc_status_now`) VALUES( '". $la_real_form_id ."','". $track ."','".  $son_step ."',NOW(),NOW(),'". $observer_em ."','". $doc_status ."');";
 
         $db->query($sql);

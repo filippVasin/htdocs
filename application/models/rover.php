@@ -140,7 +140,7 @@ class Model_rover{
 
                     $control_test_array = $db->all($sql);
                     $step_pointer = 0; // пункт начала пути
-//                echo $sql;
+
                     // Формируем ассоциативный массив из ответа
                     foreach ($control_test_array as $control_tests_item) {
                         $link[$control_tests_item['id']] =
@@ -157,12 +157,11 @@ class Model_rover{
                             $step_pointer = $control_tests_item['id'];
                         };
                     }
-//                    print_r($link);
 
                     $content = "";
                     do {
                         if (($link[$step_pointer]["HistoryStep"] == NULL) || (isset($link[$step_pointer]["periodicity"])
-                                && ($link[$step_pointer]["data_finish"] >= date('Y-m-d', strtotime(date("Y-m-d") . '-'. $link[$step_pointer]["periodicity"] .' month'))))) {
+                            && ($link[$step_pointer]["data_finish"] <= date('Y-m-d', strtotime(date("Y-m-d") . '-'. $link[$step_pointer]["periodicity"] .' month'))))) {
                             $content = "1";
                         } else {
                             if ($link[$step_pointer]["son_step"] != 0) {
@@ -177,11 +176,9 @@ class Model_rover{
 
                    $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
 
-
                     if(isset($_SESSION['step_id'])){
                         header("Location:/pass_test");// переходим на тест
 
-//                        print_r($_SESSION);
                     } else {
                         print_r($_SESSION) .  " <br><br><>br" ;
 
