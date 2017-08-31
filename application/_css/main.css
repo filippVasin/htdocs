@@ -42,12 +42,30 @@
     border-radius: 3px;
     background: #ffffff;
     border-top: 3px solid #d2d6de;
-    margin-bottom: 20px;
+    margin: 20px auto;
     width: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 .progress-group{
     margin: 10px;
+    border: 1px solid #ccc;
+    padding: 3px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.parent{
+    cursor: pointer;
+}
+.parent:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.last{
+    background-color: #ecf0f5;
+}
+.look_on {
+    border: 2px solid #ccc;
 }
 .progress-text-row{
     display: flex;
@@ -83,4 +101,14 @@
 }
 .link:hover{
     color:#c77437;
+}
+
+#control{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.control_button{
+
 }

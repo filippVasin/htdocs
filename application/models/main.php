@@ -22,7 +22,14 @@ class Model_main{
         }
 
         $html =<<< HERE
+<div id="control">
+        <div class="button" id="look_dep">По отделам</div>
+        <div class="button none" id="close_dep">Скрыть всё</div>
+        <div class="button" id="look_dep_all">Показать всё</div>
+</div>
 <div id="dashboard">
+
+
     <div id="test_report">
         <div class="test_report_title">Прохождение инструктажей</div>
         <div class="metric">
@@ -37,9 +44,7 @@ class Model_main{
                 <div class="fill"></div>
             </div>
         </div>
-        <div class="items link">По отделам</div>
-        <div class="all link none">По компании</div>
-        <div class="node_report none">
+        <div class="node_report none" id="test_node_report">
 
             %node_report_test%
         </div>
@@ -59,9 +64,7 @@ class Model_main{
                 <div class="fill"></div>
             </div>
         </div>
-         <div class="items link">По отделам</div>
-        <div class="all link none">По компании</div>
-        <div class="node_report none">
+        <div class="node_report none"  id="emp_node_report">
 
             %node_report_emp%
         </div>
@@ -81,9 +84,7 @@ class Model_main{
                 <div class="fill"></div>
             </div>
         </div>
-         <div class="items link">По отделам</div>
-        <div class="all link none">По компании</div>
-        <div class="node_report none">
+        <div class="node_report none" id="doc_node_report">
 
             %node_report_doc%
         </div>
@@ -113,7 +114,7 @@ FORM_NOW.doc_status_now,
    END  AS FinishStep,
   items_control.name,
   /* клеем фио */
-  org_parent.id AS dir_id,
+  org_parent.id AS dir_id, org_parent.left_key, org_parent.right_key, org_parent.level,
    CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
   route_control_step.step_name AS manual, TempTest.SaveTempID
 
@@ -302,6 +303,9 @@ FORM_NOW.doc_status_now,
             $count_all_emp = 0;// количество сотрудников
             $count_victory_emp =0;// успешные сотрудники
             $name = "";
+            $level = "";
+            $left_key = "";
+            $right_key = "";
             $emp = 0;
             $flag = 0;
             $doc_count_all = 0;// количество документов всего
@@ -328,12 +332,19 @@ FORM_NOW.doc_status_now,
 
                     ++$test_target;
                     $name = $test_item['dir'];
+                    $level = $test_item['level'];
+                    $left_key = $test_item['left_key'];
+                    $right_key = $test_item['right_key'];
                 }
             }
 
-            // тесты
+
+            // уровнять по длинне для сравниения на клиете
+            $left_key = str_pad($left_key, 3, "0", STR_PAD_LEFT);
+            $right_key = str_pad($right_key, 3, "0", STR_PAD_LEFT);
+
             $test_proc = round($test_fact/$test_target*100);
-            $node_report_test .= '<div class="progress-group"> ';
+            $node_report_test .= '<div class="progress-group" level="'. $level .'" left_key="'. $left_key .'" right_key="'. $right_key .'" fact="'. $test_fact .'" target="'. $test_target .'"> ';
             $node_report_test .=     '<div class="progress-text-row"> ';
             $node_report_test .=         '<span class="progress-text">'. $name .'</span>';
             $node_report_test .=         '<span class="progress-number"><b>'. $test_fact .'</b>/'. $test_target .'</span>';
@@ -344,7 +355,7 @@ FORM_NOW.doc_status_now,
             $node_report_test .= '</div>';
             // сотрудники
             $emp_proc = round($count_victory_emp/$count_all_emp*100);
-            $node_report_emp .= '<div class="progress-group"> ';
+            $node_report_emp .= '<div class="progress-group" level="'. $level .'" left_key="'. $left_key .'" right_key="'. $right_key .'" fact="'. $count_victory_emp .'" target="'. $count_all_emp .'"> ';
             $node_report_emp .=     '<div class="progress-text-row"> ';
             $node_report_emp .=         '<span class="progress-text">'. $name .'</span>';
             $node_report_emp .=         '<span class="progress-number"><b>'. $count_victory_emp .'</b>/'. $count_all_emp .'</span>';
@@ -369,7 +380,7 @@ FORM_NOW.doc_status_now,
             }
 
             $emp_doc = round($doc_count_end/$doc_count_all*100);
-            $node_report_doc .= '<div class="progress-group"> ';
+            $node_report_doc .= '<div class="progress-group" level="'. $level .'" left_key="'. $left_key .'" right_key="'. $right_key .'" fact="'. $doc_count_end .'" target="'. $doc_count_all .'"> ';
             $node_report_doc .=     '<div class="progress-text-row"> ';
             $node_report_doc .=         '<span class="progress-text">'. $name .'</span>';
             $node_report_doc .=         '<span class="progress-number"><b>'. $doc_count_end .'</b>/'. $doc_count_all .'</span>';
