@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 26.02.2017
- * Time: 15:07
- */
+
 class Model_editor
 {
     // Данные для обработки POST запросов;
@@ -23,6 +18,7 @@ class Model_editor
       $employees = $db->all($sql);
         $html = '<div>';
         $html .='<div class="type_title">Тип:</div>';
+        $html .='<div class="type_plus"></div>';
         foreach($employees as $employee){
             $html .= '<div class="table_row" type="type" item_id="' . $employee['id'] . '"  item_name="' . $employee['name'] . '">';
                 $html .= '<div class="type_id">'.  $employee['id'].'</div><div class="type_name">'.  $employee['name'].'</div>';
@@ -39,6 +35,7 @@ class Model_editor
         $employees = $db->all($sql);
         $html = '<div>';
         $html .='<div class="type_title">Справочник:</div>';
+        $html .='<div class="directory_plus"></div>';
         foreach($employees as $employee){
             $html .= '<div class="table_row" type="num" item_id="' . $employee['id'] . '"  item_name="' . $employee['name'] . '" >';
             $html .= '<div class="type_id">'.  $employee['id'].'</div><div class="type_name">'.  $employee['name'].'</div>';
@@ -48,41 +45,34 @@ class Model_editor
             return $html;
         }
 
-    public function table_employees(){
-                global $db;
+    public function mix_table(){
+        global $db;
+
+        if(!(isset($_SESSION['control_company']))){
+            header("Location:/company_control");
+        }
         // получаем и выводим сотрудников
-        $sql  ="SELECT `id`, CONCAT_WS(' ', `surname`, `name`, `second_name`) AS `fio` FROM employees";
+        $sql = "SELECT employees.id AS emp_id, CONCAT_WS(' ', employees.surname, employees.name, employees.second_name) AS `fio`,
+                users.id AS user_id, users.name AS login, organization_structure.company_id
+                FROM users,employees,employees_items_node, organization_structure
+                WHERE users.employee_id = employees.id
+                AND employees_items_node.employe_id = employees.id
+                AND organization_structure.id = employees_items_node.org_str_id
+                AND organization_structure.company_id =" . $_SESSION['control_company'];
         $employees = $db->all($sql);
+
         $html = '<div>';
         $html .='<div class="type_title">Сотрудники:</div>';
         foreach($employees as $employee){
-            $html .= '<div class="table_row_employee"  type="employee" item_id="' . $employee['id'] . '">';
-            $html .= '<div class="type_id">'.  $employee['id'].'</div><div class="type_name">'.  $employee['fio'].'</div>';
+            $html .= '<div class="table_mix_row" emp_id="' . $employee['emp_id'] . '" user_id="' . $employee['user_id'] . '">';
+            $html .= '<div class="emp_id">'.  $employee['emp_id'].'</div>';
+            $html .= '<div class="login">'.  $employee['login'].'</div><div class="fio">'.  $employee['fio'].'</div>';
             $html .= '</div>';
         }
         $html .= '</div>';
 
         return $html;
     }
-
-
-    public function table_users(){
-        global $db;
-        // получаем и выводим сотрудников
-        $sql  ="SELECT `id`, `name` FROM users";
-        $employees = $db->all($sql);
-        $html = '<div>';
-        $html .='<div class="type_title">Users:</div>';
-        foreach($employees as $employee){
-            $html .= '<div class="table_row_user"  type="user" item_id="' . $employee['id'] . '"">';
-            $html .= '<div class="type_id">'.  $employee['id'].'</div><div class="type_name">'.  $employee['name'].'</div>';
-            $html .= '</div>';
-        }
-        $html .= '</div>';
-
-        return $html;
-    }
-
 
     // выводим таблицу
     public function save_popup_input(){
@@ -185,24 +175,127 @@ class Model_editor
         global $db;
 
         $item_id = $this->post_array['item_id'];
-        $full_name = $this->post_array['full_name'];
-        $employee_id = $this->post_array['employee_id'];
-        $role_id = $this->post_array['role_id'];
 
-        // получаем данные сотрудника
-        $sql  ="UPDATE users SET `full_name`='" . $full_name . "', `role_id`='" . $role_id . "', `employee_id`='" . $employee_id ."'
-                WHERE  `id`=" . $item_id;
-        $db->query($sql);
+
 
         // меняем пароль если нужно
         if(isset($this->post_array['pass'])){
-            $pass =md5($this->post_array['pass']);
-            $sql  ="UPDATE users SET `password`='" . $pass . "'
+            $pass = md5($this->post_array['pass']);
+            $sql  = "UPDATE users SET `password`='" . $pass . "'
                 WHERE  `id`=" . $item_id;
         $db->query($sql);
         }
 
         $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+    public function plus_type(){
+        global $db;
+        $new_type = $this->post_array['new_type'];
+
+        $sql = "SELECT *
+        FROM items_control_types
+            WHERE name ='".$new_type."'";
+            $result = $db->row($sql);
+
+        if($result['id']=="") {
+            $sql = "INSERT INTO `items_control_types` (`name`) VALUES('" . $new_type . "');";
+            $db->query($sql);
+
+            $sql ="SELECT *
+            FROM  items_control_types
+            WHERE items_control_types.name = '".$new_type ."'";
+            $result = $db->row($sql);
+
+            $result_array['status'] = 'ok';
+            $html = '<div class="table_row" type="type" item_id="' . $result['id'] . '"  item_name="' . $new_type . '">';
+            $html .= '<div class="type_id">'.  $result['id'].'</div><div class="type_name">'.  $new_type .'</div>';
+            $html .= '</div>';
+            $result_array['content'] = $html;
+        } else {
+            $result_array['status'] = 'error';
+        }
+
+
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+    public function plus_directory(){
+        global $db;
+        $new_directory = $this->post_array['new_directory'];
+        $sql = "SELECT *
+        FROM items_control
+            WHERE name ='".$new_directory."'";
+        $result = $db->row($sql);
+
+        if($result['id']=="") {
+            $sql = "INSERT INTO `items_control` (`name`) VALUES('" . $new_directory . "');";
+            $db->query($sql);
+
+            $sql ="SELECT *
+            FROM  items_control
+            WHERE items_control.name = '".$new_directory ."'";
+            $result = $db->row($sql);
+
+
+            $result_array['status'] = 'ok';
+            $html = '<div class="table_row" type="num" item_id="' . $result['id'] . '"  item_name="' . $new_directory . '" >';
+            $html .= '<div class="type_id">'.  $result['id'].'</div><div class="type_name">'.  $new_directory.'</div>';
+            $html .= '</div>';
+            $result_array['content'] = $html;
+        } else {
+            $result_array['status'] = 'error';
+        }
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+
+    // выводим таблицу
+    public function delete_item(){
+        global $db;
+        $item_id = $this->post_array['item_id'];
+        $type = $this->post_array['type'];
+        // изменяем нужный элемент
+        if($type == "num" ) {
+            $sql ="SELECT items_control.id
+                    FROM items_control,organization_structure,route_doc
+                    WHERE items_control.id = ". $item_id ."
+                    AND
+                    (items_control.id = organization_structure.kladr_id
+                    OR items_control.id = route_doc.item_type_id)";
+            $result = $db->row($sql);
+
+            if($result['id']=="") {
+                $sql = "DELETE FROM `items_control` WHERE  `id`=".$item_id ;
+                $db->query($sql);
+                $result_array['status'] = 'ok';
+            } else {
+                $result_array['status'] = 'error';
+            }
+        }
+        if($type == "type" ) {
+            $sql ="SELECT items_control_types.id
+                    FROM items_control_types, organization_structure,items_control
+                    WHERE items_control_types.id = ". $item_id ."
+                    AND
+                    (items_control_types.id = organization_structure.items_control_id
+                    OR items_control_types.id = items_control.type_id)";
+            $result = $db->row($sql);
+
+            if($result['id']=="") {
+                $sql = "DELETE FROM `items_control_types` WHERE  `id`=".$item_id ;
+                $db->query($sql);
+                $result_array['status'] = 'ok';
+            } else {
+                $result_array['status'] = 'error';
+            }
+        }
+
+
         $result = json_encode($result_array, true);
         die($result);
     }

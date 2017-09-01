@@ -232,19 +232,23 @@ $result_file =
         </html>';
 $error = "";
 $folder_name = $_SERVER['DOCUMENT_ROOT'].'/application/real_forms/'.md5($result_file);
-if(!is_dir($folder_name)){
-    mkdir($folder_name);
+if($flag !="open") {
+    if (!is_dir($folder_name)) {
+        mkdir($folder_name);
 
-    file_put_contents($folder_name.'/real_form.doc', $result_file, FILE_APPEND);
-    $doc_download_url = 'application/real_forms/'.md5($result_file).'/real_form.doc';
-    $file_name = "real_form.doc";
-    // записали данные о файле
-    $sql = "INSERT INTO `save_temp_files` (`path`, `name`, `employee_id`, `company_temps_id`) VALUES( '". $doc_download_url ."','". $file_name ."','". $_SESSION['employee_id'] ."','". $_SESSION['form_id'] ."');";
-    $db->query($sql);
+        file_put_contents($folder_name . '/' . $doc_name . '.doc', $result_file, FILE_APPEND);
+        $doc_download_url = 'application/real_forms/' . md5($result_file) . '/' . $doc_name . '.doc';
+        $file_name = $doc_name;
+        // записали данные о файле
+        $sql = "INSERT INTO `save_temp_files` (`path`, `name`, `employee_id`, `company_temps_id`) VALUES( '" . $doc_download_url . "','" . $file_name . "','" . $_SESSION['employee_id'] . "','" . $_SESSION['form_id'] . "');";
+        $db->query($sql);
 //    echo $sql . " insert";
 
 
-} else{
-    $error = "такой файл уже есть";
-}
+    } else {
+        $error = "такой файл уже есть";
+    }
 
+} else {
+    $page = $result_file;
+}

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 26.02.2017
- * Time: 15:07
- */
+
 class Model_period_control
 {
     // Данные для обработки POST запросов;
@@ -41,10 +36,11 @@ class Model_period_control
                 $html .= "<div class='period_row' attr_id='". $period_data['id']  ."'>";
 //                $html .="<div class='period_id'>". $period_data['id'] ."</div>";
                 $html .="<div class='period_name'>". $period_data['step_name'] ."</div>";
-                $html .="<input type='text' class='period_count' value='" . $period_data['periodicity'] ."' period_count='". $period_data['id']  ."' placeholder='нет'>";
-                $html .="<div class='save_period' id='". $period_data['id']  ."'>Сохранить</div>";
+                $html .="<input type='text' class='period_count'  value='" . $period_data['periodicity'] ."' id='". $period_data['id']  ."' placeholder='нет' history='".$period_data['periodicity']."'>";
+//                $html .="<div class='save_period' id='". $period_data['id']  ."'>Сохранить</div>";
                 $html .="</div>";
         };
+        $html .="<div class='save_period' id='save'>Сохранить</div>";
         return $html;
     }
 
@@ -54,15 +50,15 @@ class Model_period_control
         global $db;
 
         $id = $this->post_array['id'];
-        $period_id = $this->post_array['period_id'];
+        $periodicity = $this->post_array['periodicity'];
 
-        if($period_id == 0){
+        if($periodicity == 0){
             $sql = "UPDATE route_control_step
                 SET periodicity = NULL
                 WHERE id =" .$id;
         } else {
             $sql = "UPDATE route_control_step
-                SET periodicity = ". $period_id ."
+                SET periodicity = ". $periodicity ."
                 WHERE id =" .$id;
         }
         $db->query($sql);

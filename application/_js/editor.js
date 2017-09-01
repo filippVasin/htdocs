@@ -1,7 +1,8 @@
 $(document).ready(function() {
-    var item_id ="";
-    var item_name ="";
-    var type ="";
+    var item_id = "";
+    var item_name = "";
+    var type = "";
+    var user_id = "";
 
     // выбираем элемент для редактированния
     $(document).on("click", ".table_row", function () {
@@ -18,9 +19,8 @@ $(document).ready(function() {
         $("#edit_popup_input").val("");
     });
 
-    // отмена действия
+    // редактированние элемента
     $(document).on("click", "#save_popup_input", function () {
-
         if(item_name == $("#edit_popup_input").val()){
             // если не было изменений - просто закрываем
             $("#edit_popup").css("display","none");
@@ -37,7 +37,6 @@ $(document).ready(function() {
                          type:type
                 },
                 success: function (answer) {
-
                     var result = jQuery.parseJSON(answer);
                     var request_result = result.status;
                     var request_message = result.message;
@@ -63,6 +62,47 @@ $(document).ready(function() {
         }
     });
 
+
+    // удаление элемента
+    $(document).on("click", "#delete_popup_input", function () {
+
+            item_name = $("#edit_popup_input").val();
+            $.ajax({
+                type: "POST",
+                url: "/editor/delete_item",
+                data: {
+                    item_id:item_id,
+                    type:type
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    var request_message = result.message;
+                    var content = result.content;
+                    // если 'ok' - рисуем тест
+                    if(request_result == 'ok'){
+                            $(".table_row").each(function() {
+                                if (!(($(this).attr("item_id") == item_id) && (type == $(this).attr("type")))) {
+                                } else {
+                                    $(this).remove()
+                                }
+                            });
+                            $("#edit_popup").css("display","none");
+                            $("#edit_popup_input").val("");
+                            message('Элемент успешно удалён', request_result);
+                        } else {
+                        message('Отказано - элемент используеться', request_result);
+                    }
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });
+
+    });
+
+
+
     // переход между вкладками
     $(document).on("click", "#table_type_title", function () {
         $(".table_box").css("display","none");
@@ -84,9 +124,10 @@ $(document).ready(function() {
 
 
     // выбираем элемент для редактированния
-    $(document).on("click", ".table_row_employee", function () {
-        item_id =  $(this).attr("item_id");
-
+    $(document).on("click", ".table_mix_row", function () {
+        item_id =  $(this).attr("emp_id");
+        user_id =  $(this).attr("user_id");
+        $("#edit_popup_user").attr("item_id",user_id);
         $.ajax({
             type: "POST",
             url: "/editor/employee_card",
@@ -118,6 +159,16 @@ $(document).ready(function() {
                         $("#edit_popup_input_birthday").val(birthday);
 
                         $("#edit_popup_input_status").val(em_status);
+
+                        if(em_status == 1 ){
+                            $("#add_emp_mix").addClass("none");
+                            $("#delete_emp_mix").removeClass("none");
+                        } else {
+                            $("#delete_emp_mix").addClass("none");
+                            $("#add_emp_mix").removeClass("none");
+                        }
+
+
                         $("#edit_popup_input_personnel_number").val(personnel_number);
 
                         $("#edit_popup_employees").css("display","block");
@@ -224,22 +275,22 @@ $(document).ready(function() {
         $("#edit_popup_user").css("display","none");
     });
 
+
+    $(document).on("click", "#repass_user_mix", function () {
+        $("#edit_popup_user").css("display","block");
+    });
+
 // выбираем элемент для редактированния
     $(document).on("click", "#save_popup_input_user", function () {
         item_id =  $("#edit_popup_user").attr("item_id");
-        var full_name = $("#edit_popup_input_full_name").val();
-        var employee_id = $("#edit_popup_input_employee_id").val();
-        var role_id = $("#edit_popup_input_role_id").val();
-        if(($("#edit_popup_input_pass").val()) == ($("#edit_popup_input_next_pass").val())) {
+        if((($("#edit_popup_input_pass").val()) == ($("#edit_popup_input_next_pass").val()))&&($("#edit_popup_input_next_pass").val() !="")) {
             var pass = $("#edit_popup_input_pass").val();
+            $("#edit_popup_user input").val("");
             $.ajax({
                 type: "POST",
                 url: "/editor/save_user_card",
                 data: {
                     item_id: item_id,
-                    full_name: full_name,
-                    employee_id: employee_id,
-                    role_id: role_id,
                     pass: pass
                 },
                 success: function (answer) {
@@ -247,7 +298,9 @@ $(document).ready(function() {
                     var request_result = result.status;
                     // если 'ok' - рисуем тест
                     if (request_result == 'ok') {
-                        $("#edit_popup_user").css("display", "none");
+                        $("#edit_popup_user").append('<span class="norm_pass">Пароль успешно изменён!</span>')
+                        setTimeout('$("#edit_popup_user").css("display", "none");' +
+                        '$(".norm_pass").remove();', 3000);
                     }
                 },
                 error: function () {
@@ -263,7 +316,88 @@ $(document).ready(function() {
         //задание заполнителя с помощью параметра placeholder
         $("#edit_popup_input_start_date").mask("9999.99.99", {placeholder: "гггг.мм.дд" });
         $("#edit_popup_input_birthday").mask("9999.99.99", {placeholder: "гггг.мм.дд" });
+    });
 
+    $(document).on("click", "#add_emp_mix", function () {
+        $("#add_emp_mix").html("Осталось сохранить");
+        $("#edit_popup_input_status").val('1');
+        setTimeout('$("#add_emp_mix").html("Восстановить в должности");', 3000);
+    });
+    $(document).on("click", "#delete_emp_mix", function () {
+        $("#delete_emp_mix").html("Осталось сохранить");
+        $("#edit_popup_input_status").val('0');
+        setTimeout('$("#delete_emp_mix").html("Уволить");', 3000);
+    });
+
+    // добавление типа
+    $(document).on("click", ".type_plus", function () {
+        $("#plus_type").removeClass("none");
+    });
+
+    $(document).on("click", "#plus_type_cancel", function () {
+        $("#plus_type").addClass("none");
+    });
+
+    $(document).on("click", "#plus_type_popup", function () {
+
+        var new_type = $('#plus_popup_input').val();
+        if(new_type!="") {
+            $("#plus_type").addClass("none");
+            $.ajax({
+                type: "POST",
+                url: "/editor/plus_type",
+                data: {
+                    new_type: new_type
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    var content = result.content;
+                    if (request_result == "ok") {
+                        message('Запись прошла успешна', request_result);
+                        $("#table_type").append(content);
+                    } else {
+                        message('Такой тип уже есть', request_result);
+                    }
+                }
+            });
+        }
+    });
+
+
+
+    // добавление нуменклатуру
+    $(document).on("click", ".directory_plus", function () {
+        $("#plus_directory").removeClass("none");
+    });
+
+    $(document).on("click", "#plus_directory_cancel", function () {
+        $("#plus_directory").addClass("none");
+    });
+
+    $(document).on("click", "#plus_directory_popup", function () {
+        var new_directory = $('#plus_directory_popup_input').val();
+        if(new_directory!="") {
+            $("#plus_directory").addClass("none");
+            $.ajax({
+                type: "POST",
+                url: "/editor/plus_directory",
+                data: {
+                    new_directory: new_directory
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    var content = result.content;
+                    if (request_result == "ok") {
+                        message('Запись прошла успешна', request_result);
+                        $("#table_num").append(content);
+                    } else {
+                        message('Такой тип уже есть', request_result);
+                    }
+                }
+            });
+        }
     });
 
 });

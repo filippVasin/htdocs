@@ -11,11 +11,8 @@ class Controller_editor extends Controller{
         $table_num = $this->model->table_num();
         $this->view = str_replace('%table_num%', $table_num, $this->view);
         // Сотрудники
-        $table_employees = $this->model->table_employees();
-        $this->view = str_replace('%table_employees%', $table_employees, $this->view);
-        // Users
-        $table_users = $this->model->table_users();
-        $this->view = str_replace('%table_type_user%', $table_users, $this->view);
+        $table_users = $this->model->mix_table();
+        $this->view = str_replace('%mix_table%', $table_users, $this->view);
     }
 
 
@@ -54,5 +51,26 @@ class Controller_editor extends Controller{
         $this->model->post_array = $post_data;
         // Вызываем метод показа всего дерева
         $this->model->save_user_card();
+    }
+
+    public function plus_type($post_data){
+        // Записываем массив с даннми в модель;
+        $this->model->post_array = $post_data;
+        // Вызываем метод показа всего дерева
+        $this->model->plus_type();
+    }
+
+    public function plus_directory($post_data){
+        // Записываем массив с даннми в модель;
+        $this->model->post_array = $post_data;
+        // Вызываем метод показа всего дерева
+        $this->model->plus_directory();
+    }
+
+    public function delete_item($post_data){
+        // Записываем массив с даннми в модель;
+        $this->model->post_array = $post_data;
+        // Вызываем метод показа всего дерева
+        $this->model->delete_item();
     }
 }

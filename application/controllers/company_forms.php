@@ -15,14 +15,10 @@ class Controller_company_forms extends Controller{
     }
 
 
-
-//
-//    // сброс данных для тестировщика
-//    public function reset_progress($post_data){
-//        // Записываем массив с даннми в домель;
-//        $this->model->post_array = $post_data;
-//        // функция сброса
-//        $this->model->reset_progress();
-//    }
+    public function look_file($post_data){
+        $this->model->post_array = $post_data;
+        // функция сброса
+        $this->model->look_file();
+    }
 
 }
