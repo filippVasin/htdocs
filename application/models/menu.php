@@ -62,7 +62,7 @@ class Model_menu{
                 $login_buttons .= '<a href="/node_update" class="attr" name="Перемещение узлов" ><img src="../../templates/simple_template/images/anchor-point.svg"><div class="display_none">Перемещение узлов</div></a>';
                 $login_buttons .= '<a href="/company_forms" class="attr"name="Документы компании"><img src="../../templates/simple_template/images/company_docs.svg"><div class="display_none">Документы компании</div></a>';
                 $login_buttons .= '<a href="/period_control" class="attr"name="Периодичность инструктажей"><img src="../../templates/simple_template/images/time-left.svg"><div class="display_none">Периодичность инструктажей</div></a>';
-//                $login_buttons .= '<a href="/step_editor" class="attr"name="Содержание инструктажа"><img src="../../templates/simple_template/images/share.svg"><div class="display_none">Содержание инструктажа</div></a>';
+                $login_buttons .= '<a href="/step_editor" class="attr"name="Содержание инструктажа"><img src="../../templates/simple_template/images/share.svg"><div class="display_none">Содержание инструктажа</div></a>';
 
             }
 

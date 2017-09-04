@@ -25,8 +25,8 @@ class Controller_step_editor extends Controller{
         $this->model->save_manual();
     }
 
-    public function save_period($post_data){
-        $this->model->post_array = $post_data;
-        $this->model->save_period();
-    }
+//    public function save_period($post_data){
+//        $this->model->post_array = $post_data;
+//        $this->model->save_period();
+//    }
 }

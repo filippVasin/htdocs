@@ -52,7 +52,6 @@ class Model_step_editor
                 $html .="<div class='content_id'>". $step_data['content_id'] ."</div>";
                 $html .="<div class='track_number_id'>". $step_data['track_number_id'] ."</div>";
                 $html .="<div class='step_name'>". $step_data['step_name'] ."</div>";
-
                 $html .="<div class='test_id item' content_id='". $step_data['content_id']  ."'>". $step_data['test_id'] ."</div>";
                 $html .="<div class='doc_id item'  content_id='". $step_data['content_id']  ."'>".$step_data['doc_id'] ."</div>";
                 $html .="<div class='form_id item'  content_id='". $step_data['content_id']  ."'>". $step_data['form_id'] ."</div>";
@@ -61,13 +60,13 @@ class Model_step_editor
         };
 
 
-
+        // тесты
         $sql="SELECT * FROM control_tests";
         $test_data = $db->all($sql);
 
-        $html .='<div id="edit_popup">';
+        $html .='<div id="edit_popup" class="popup none">';
         $html .='<div class="canvas">';
-        $html .='<div id="control_tests">';
+        $html .='<div class="control_tests">';
         $html .='<div class="row_tests" test_id="0"><div class="num">0</div><div class="name">Сбросить тест</div></div>';
         foreach ($test_data as $test_item) {
             $html .='<div class="row_tests" test_id="'. $test_item['id'] .'">';
@@ -75,11 +74,77 @@ class Model_step_editor
             $html .='</div>';
         }
         $html .='</div>';
-
-
         $html .='<div class="button_row">';
 //        $html .='<div class="button" id="drop_popup_input">Сбросить</div>';
-        $html .='<div class="button" id="cancel_popup">Отмена</div>';
+        $html .='<div class="button cancel_popup">Отмена</div>';
+        $html .='</div>';
+        $html .='</div>';
+        $html .='</div>';
+
+        // инструкции
+        $sql="SELECT * FROM control_doc";
+        $test_data = $db->all($sql);
+
+        $html .='<div id="inst_edit_popup" class="popup none">';
+        $html .='<div class="canvas">';
+        $html .='<div class="control_tests">';
+        $html .='<div class="row_inst" doc_id="0"><div class="num">0</div><div class="name">Сбросить инструкцию</div></div>';
+        foreach ($test_data as $test_item) {
+            $html .='<div class="row_inst" doc_id="'. $test_item['id'] .'">';
+            $html .='<div class="num">'. $test_item['id'] .'</div><div class="name">'. $test_item['doc_name'] .'</div>';
+            $html .='</div>';
+        }
+        $html .='</div>';
+        $html .='<div class="button_row">';
+//        $html .='<div class="button" id="drop_popup_input">Сбросить</div>';
+        $html .='<div class="button cancel_popup">Отмена</div>';
+        $html .='</div>';
+        $html .='</div>';
+        $html .='</div>';
+
+        // документ
+        $sql="SELECT company_temps.id, temp_doc_form.name
+                FROM company_temps, type_temp, type_form,temp_doc_form
+                WHERE company_temps.temp_type_id = type_temp.id
+                AND temp_doc_form.id = type_temp.temp_form_id
+                AND company_temps.company_id = ". $_SESSION['control_company'] ."
+                GROUP BY id";
+        $test_data = $db->all($sql);
+
+        $html .='<div id="doc_edit_popup" class="popup none">';
+        $html .='<div class="canvas">';
+        $html .='<div class="control_tests">';
+        $html .='<div class="row_doc" form_id="0"><div class="num">0</div><div class="name">Сбросить документ</div></div>';
+        foreach ($test_data as $test_item) {
+            $html .='<div class="row_doc" form_id="'. $test_item['id'] .'">';
+            $html .='<div class="num">'. $test_item['id'] .'</div><div class="name">'. $test_item['name'] .'</div>';
+            $html .='</div>';
+        }
+        $html .='</div>';
+        $html .='<div class="button_row">';
+//        $html .='<div class="button" id="drop_popup_input">Сбросить</div>';
+        $html .='<div class="button cancel_popup">Отмена</div>';
+        $html .='</div>';
+        $html .='</div>';
+        $html .='</div>';
+
+        // мануал
+        $sql="SELECT * FROM manual_doc";
+        $test_data = $db->all($sql);
+
+        $html .='<div id="manual_edit_popup" class="popup none">';
+        $html .='<div class="canvas">';
+        $html .='<div class="control_tests">';
+        $html .='<div class="row_manual" manual_id="0"><div class="num">0</div><div class="name">Сбросить мануал</div></div>';
+        foreach ($test_data as $test_item) {
+            $html .='<div class="row_manual" manual_id="'. $test_item['id'] .'">';
+            $html .='<div class="num">'. $test_item['id'] .'</div><div class="name">'. $test_item['name'] .'</div>';
+            $html .='</div>';
+        }
+        $html .='</div>';
+        $html .='<div class="button_row">';
+//        $html .='<div class="button" id="drop_popup_input">Сбросить</div>';
+        $html .='<div class="button cancel_popup">Отмена</div>';
         $html .='</div>';
         $html .='</div>';
         $html .='</div>';
@@ -178,27 +243,27 @@ class Model_step_editor
     }
 
     // Обработка результатов тестирования;
-    public function save_period(){
-        global $db;
-
-        $id = $this->post_array['id'];
-        $period_id = $this->post_array['period_id'];
-
-        if($period_id == 0){
-            $sql = "UPDATE route_control_step
-                SET periodicity = NULL
-                WHERE id =" .$id;
-        } else {
-            $sql = "UPDATE route_control_step
-                SET periodicity = ". $period_id ."
-                WHERE id =" .$id;
-        }
-        $db->query($sql);
-
-        $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
-    }
+//    public function save_period(){
+//        global $db;
+//
+//        $id = $this->post_array['id'];
+//        $period_id = $this->post_array['period_id'];
+//
+//        if($period_id == 0){
+//            $sql = "UPDATE route_control_step
+//                SET periodicity = NULL
+//                WHERE id =" .$id;
+//        } else {
+//            $sql = "UPDATE route_control_step
+//                SET periodicity = ". $period_id ."
+//                WHERE id =" .$id;
+//        }
+//        $db->query($sql);
+//
+//        $result_array['status'] = 'ok';
+//        $result = json_encode($result_array, true);
+//        die($result);
+//    }
 }
 
 

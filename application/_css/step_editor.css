@@ -57,7 +57,6 @@
 
 /* popup*/
 #edit_popup{
-    display: none;
     position: fixed;
     z-index: 999999;
     top: 20px;
@@ -110,27 +109,103 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
-#control_tests{
+.control_tests{
     margin: 10px auto;
 }
+
+
 .button_row{
     margin-bottom: 10px;
 }
-.row_tests{
+.control_tests>div{
     display: flex;
     flex-direction: row;
     height: 40px;
     text-align: start;
     cursor: pointer;
 }
-.row_tests:hover{
+.control_tests>div:hover{
     color: #954F72;
 }
-.row_tests .num {
+.control_tests .num {
     width: 30px;
     margin-left: 10px;
 }
-.row_tests .name {
+.control_tests .name {
     width: 400px;
 }
 
+/* popup*/
+#inst_edit_popup{
+    position: fixed;
+    z-index: 999999;
+    top: 20px;
+    left: 20px;
+    width: 500px;
+    background-color: #ccc;
+    left: calc(50% - 250px);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+#inst_edit_popup::before{
+    position: fixed;
+    z-index: 999998;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.75);
+}
+/* popup*/
+#doc_edit_popup{
+    position: fixed;
+    z-index: 999999;
+    top: 20px;
+    left: 20px;
+    width: 500px;
+    background-color: #ccc;
+    left: calc(50% - 250px);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+#doc_edit_popup::before{
+    position: fixed;
+    z-index: 999998;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+
+/* popup*/
+#manual_edit_popup{
+    position: fixed;
+    z-index: 999999;
+    top: 20px;
+    left: 20px;
+    width: 500px;
+    background-color: #ccc;
+    left: calc(50% - 250px);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+#doc_edit_popup::before{
+    position: fixed;
+    z-index: 999998;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.75);
+}

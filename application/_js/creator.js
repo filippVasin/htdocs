@@ -46,7 +46,7 @@ $(document).ready(function() {
         $('.select_box_item_row').remove();
         $('.target').each(function(){
             if(remoter <($(this).attr("level"))){
-                $(this).remove();
+                $(this).parent(".select_box_item").remove();
             }
             $('.dol').remove();
             if(remoter == ($(this).attr("level"))){
@@ -55,12 +55,12 @@ $(document).ready(function() {
         });
         $('.button_clear').each(function(){
             if(remoter <($(this).attr("level"))){
-                $(this).remove();
+                $(this).parent(".select_box_item").remove();
             }
         });
         $('.button_plus').each(function(){
             if(remoter <($(this).attr("level"))){
-                $(this).remove();
+                $(this).parent(".select_box_item").remove();
             }
         });
     });
@@ -75,7 +75,7 @@ $(document).ready(function() {
         $('.select_box_item_row').remove();
         $('.target').each(function(){
             if(remoter <($(this).attr("level"))){
-                $(this).remove();
+                $(this).parent(".select_box_item").remove();
             }
             $('.dol').remove();
             if(remoter == ($(this).attr("level"))){
@@ -84,12 +84,12 @@ $(document).ready(function() {
         });
         $('.button_clear').each(function(){
             if(remoter <($(this).attr("level"))){
-                $(this).remove();
+                $(this).parent(".select_box_item").remove();
             }
         });
         $('.button_plus').each(function(){
             if(remoter <($(this).attr("level"))){
-                $(this).remove();
+                $(this).parent(".select_box_item").remove();
             }
         });
 
@@ -247,8 +247,10 @@ $(document).ready(function() {
                     $(".control_test_item").css("display","none");
                     $("body").css("margin-top","0px");
                     $('#test_block').fadeIn(0);
-                    $('#news_num').append(content);
-                    $("html, body").animate({ scrollTop: 0 }, 0);
+                    $("#title_creator_popup").html(content);
+                    $("#creator_popup").removeClass("none");
+
+                    //$("html, body").animate({ scrollTop: 0 }, 0);
                 }
 
                 if(request_result == 'not ok'){
@@ -256,8 +258,8 @@ $(document).ready(function() {
                     $(".control_test_item").css("display","none");
                     $("body").css("margin-top","0px");
                     $('#test_block').fadeIn(0);
-                    $('.select_row').append(content);
-                    $("html, body").animate({ scrollTop: 0 }, 0);
+                    $("#title_creator_popup").html(content);
+                    $("#creator_popup").removeClass("none");
                 }
 
             },
@@ -266,6 +268,15 @@ $(document).ready(function() {
             }
         });
 
+    });
+
+
+
+    $(document).on("click", "#ok_creator_popup_input", function () {
+        $("#creator_popup").addClass("none");
+        $("#title_creator_popup").html("Здесь будет сообщение");
+        $('#button_clear').click();
+        $(".target").val("");
     });
 
     $(document).on("change", "#news_num", function () {

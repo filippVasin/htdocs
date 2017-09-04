@@ -17,8 +17,13 @@ class Model_main{
     public function start(){
         global $db;
 
+        $node_left_key = $this->post_array['node_left_key'];
+        $node_right_key = $this->post_array['node_right_key'];
+
         if(!(isset($_SESSION['control_company']))){
-            return " ";
+            $result_array['status'] = "not company";
+            $result = json_encode($result_array, true);
+            die($result);
         }
 
         $html =<<< HERE
@@ -26,6 +31,7 @@ class Model_main{
         <div class="button" id="look_dep">По отделам</div>
         <div class="button none" id="close_dep">Скрыть всё</div>
         <div class="button" id="look_dep_all">Показать всё</div>
+        <div class="button" id="select_node">Выбор подразделения</div>
 </div>
 <div id="dashboard">
 
@@ -206,8 +212,14 @@ FORM_NOW.doc_status_now,
 	     AND
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
-    GROUP BY EMPLOY, STEP
-    ORDER BY EMPLOY";
+  ";
+
+        if(($node_left_key!="")&&($node_right_key!="")){
+            $sql.=" AND org_parent.left_key >= ". $node_left_key ."
+                    AND org_parent.right_key <= ". $node_right_key ;
+        }
+        $sql.="  GROUP BY EMPLOY, STEP
+                 ORDER BY EMPLOY";
 
 //        echo $sql;
         $test_array = $db->all($sql);
@@ -395,7 +407,10 @@ FORM_NOW.doc_status_now,
         $html = str_replace('%node_report_test%', $node_report_test, $html);
         $html = str_replace('%node_report_doc%', $node_report_doc, $html);
 
-        return $html;
+        $result_array['content'] = $html;
+        $result_array['status'] = "ok";
+        $result = json_encode($result_array, true);
+        die($result);
     }
 
     private function color($proc){

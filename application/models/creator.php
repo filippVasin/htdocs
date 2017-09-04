@@ -374,7 +374,7 @@ class Model_creator
                     AND items_control.name LIKE '". $input_new_num ."'
                     AND items_control_types.name LIKE '". $input_new_type."'" ;
             $result = $db->row($sql);
-            print_r($result);
+
             if($result['num_id']!=''){
                 $html =  "Данный элемент существует";
             } else {
@@ -442,7 +442,7 @@ class Model_creator
                 // $data - массив контент, кроме обязательных
                 $html = "Запись прошла успешна";
                  //         id родителя, данные, условия
-
+                $item_control_id = $select_news_num_id;
                 $this->InsertNode($parent,$_SESSION['control_company'],$item_control_id,$select_new_type_id,1);
                // запись в папкин бэкапп
                 $sql = "SELECT organization_structure.id,items_control.id AS num_id, items_control_types.id AS type_id, items_control.name AS num, items_control_types.name AS type
@@ -469,14 +469,13 @@ class Model_creator
                     FROM organization_structure
                     LEFT JOIN items_control ON organization_structure.kladr_id = items_control.id
                     LEFT JOIN items_control_types ON organization_structure.items_control_id = items_control_types.id
-                    WHERE organization_structure.parent = '". $parent ."'
-                    AND items_control.name LIKE '". $input_new_num ."'
+                    WHERE items_control.name LIKE '". $input_new_num ."'
                     AND items_control_types.id = ". $select_new_type_id ;
 //            echo $sql;
             $result = $db->row($sql);
 
             if($result['num_id']!=''){
-                $html =  "Данный элемент существует";
+                $html =  "Данный элемент существует,<br> выберите из списка нуменклатуры";
             } else {
 
 
@@ -498,6 +497,8 @@ class Model_creator
 
 //                //         id родителя, данные, условия
                 $this->InsertNode($parent,$_SESSION['control_company'],$item_control_id,$select_new_type_id,1);
+
+
                 // запись в папкин бэкапп
                 $sql = "SELECT organization_structure.id,items_control.id AS num_id, items_control_types.id AS type_id, items_control.name AS num, items_control_types.name AS type
                     FROM organization_structure
@@ -521,6 +522,7 @@ class Model_creator
         } else {
             $status = "not ok";
         }
+
         $result_array['status'] = $status;
         $result_array['content'] = $html;
         $result = json_encode($result_array, true);
@@ -539,10 +541,15 @@ class Model_creator
         $right_key = $result['right_key'];
         $parent_level = $result['level'];
 
+
+//        $new_left_key = $right_key;
         // добавляем в конец списка
-        $sql="UPDATE `organization_structure` SET `left_key` = `left_key` + 2 WHERE `left_key` > {$right_key} AND `company_id` = {$company_id};
-                UPDATE `organization_structure` SET `right_key` = `right_key` + 2 WHERE `right_key` >= {$right_key} AND `company_id` = {$company_id};
-                INSERT INTO `organization_structure` SET `left_key` = {$right_key},
+
+        $sql="UPDATE `organization_structure` SET `left_key` = `left_key` + 2 WHERE `left_key` > {$right_key} AND `company_id` = {$company_id}";
+        $db->query($sql);
+        $sql="UPDATE `organization_structure` SET `right_key` = `right_key` + 2 WHERE `right_key` >= {$right_key} AND `company_id` = {$company_id}";
+        $db->query($sql);
+        $sql="INSERT INTO `organization_structure` SET `left_key` = {$right_key},
                                                         `right_key` = {$right_key} + 1,
                                                         `company_id` = {$company_id},
                                                         `kladr_id` = {$kladr_id},
@@ -550,8 +557,8 @@ class Model_creator
                                                         `boss_type` = {$boss_type},
                                                         `level` = {$parent_level } + 1,
                                                          `parent`={$new_parent_id} ;";
-        echo $sql;
-//        $db->query($sql);
+
+        $db->query($sql);
     }
 
 }

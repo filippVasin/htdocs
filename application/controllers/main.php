@@ -9,8 +9,15 @@ class Controller_main extends Controller{
     // model, view и pointer - объявлены в родительском классе;
 
     public function exec_default(){
-        $dashboard = $this->model->start();
-        $this->view = str_replace('%dashboard%', $dashboard, $this->view);
+
+    }
+
+
+    public function start($post_data){
+        // Записываем массив с даннми в модель;
+        $this->model->post_array = $post_data;
+        // Вызываем метод показа всего дерева
+        $this->model->start();
     }
 
     public function show_something(){

@@ -42,7 +42,7 @@
             <div id="emp_report_name"></div>
             <div id="dolg_report_name"></div>
             <div id="dolg_report_dir"></div>
-            <div class="popup_context_menu_title"> должне подписать документ: </div>
+            <div class="popup_context_menu_title"> должен подписать документ: </div>
             <div id="docs_report_name"></div>
             <div class="button_row">
                 <div class="button" id="yes_popup">Подписал</div>
