@@ -78,4 +78,34 @@ $(document).ready(function() {
 
     });
 
+
+    $(document).on("click", "#add_test_users_couple", function () {
+        $("#plus_test_users_couple").removeClass("none");
+    });
+    $(document).on("click", "#cancel_test_users_couple", function () {
+        $("#plus_test_users_couple").addClass("none");
+        $("#ok_test_users_couple").removeClass("none");
+        $("#cancel_test_users_couple").html("Отмена");
+    });
+
+    $(document).on("click", "#ok_test_users_couple", function () {
+        $("#ok_test_users_couple").addClass("none");
+        $("#cancel_test_users_couple").html("Запомните логины/пароли");
+        $.ajax({
+            type: "POST",
+            url: "/company_control/plus_test_users_couple",
+            data: {
+
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+                if (request_result == "ok") {
+                    $(".users").html(content);
+                }
+            }
+        });
+    });
+
 });

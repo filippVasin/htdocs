@@ -242,10 +242,17 @@ class Model_node_update
         $left_key = $result['left_key'];
         $right_key = $result['right_key'];
         // получаем ключи старого родителя
-        $sql="SELECT organization_structure.parent, parent_org.left_key, parent_org.right_key
-                FROM organization_structure
-                LEFT JOIN organization_structure AS parent_org ON parent_org.id = organization_structure.parent
-                WHERE organization_structure.id =".$move_item ;
+        $sql="SELECT
+                    real_org.id AS parent,
+                    real_org.left_key,
+                    real_org.right_key
+                FROM organization_structure,organization_structure AS real_org
+                WHERE organization_structure.left_key > real_org.left_key
+                    AND organization_structure.right_key <  real_org.right_key
+                    AND ( organization_structure.`level` - real_org.`level`) = 1
+                    AND organization_structure.company_id = ". $company_id ."
+                    AND real_org.company_id = ". $company_id ."
+                    AND organization_structure.id =".$move_item ;
         $result = $db->row($sql);
         $old_parent = $result['parent'];
         $old_parent_left_key = $result['left_key'];
@@ -272,25 +279,29 @@ class Model_node_update
             $level_delta = $result['level_delta'];
 
             // Внешняя дельта - для применения к неперемещаемым узлам = количество перемещаемых ключей)))
-            $external_delta = $right_key - $left_key + 1;
-
+            echo $external_delta = $right_key - $left_key + 1;
+            echo "<br>";
             // начинаем перемешение //
             // если идём вверх по ключам
+
             if ($old_parent_left_key < $new_parent_left_key) {
                 // получили дельту для применения к внутренним перемещаемого элементам узла
                 $new_right_key = $new_parent_right_key - 1;
-                $delta = $new_right_key - $right_key;
+               echo $delta = $new_right_key - $right_key;
                 $new_left_key = $left_key + $delta;
 
                 // поменяли ключи у неперемещаемых узлов по пути следования перемещаемого узла
-                $sql = "UPDATE `organization_structure` SET `left_key` = `left_key` - {$external_delta} WHERE `left_key` > {$right_key}  AND `left_key` < {$new_parent_right_key}  AND `company_id` = {$company_id}";
+                $sql = "UPDATE `organization_structure` SET `left_key` = `left_key` - {$external_delta} WHERE `left_key` > {$right_key}  AND `left_key` < {$new_parent_right_key}  AND `company_id` = {$company_id};";
                 $db->query($sql);
+                echo $sql;
                 $sql = "UPDATE `organization_structure` SET `right_key` = `right_key` - {$external_delta} WHERE `right_key` > {$right_key}  AND `right_key` < {$new_parent_right_key}  AND `company_id` = {$company_id};";
                 $db->query($sql);
+                echo $sql;
 
                 // меняем ключи у перемещаемого узла и его потомков
-                $sql = "UPDATE `organization_structure` SET `left_key` = {$left_key} + {$delta},`right_key` = {$right_key} + {$delta}  WHERE `left_key` >= {$left_key}  AND `right_key` <= {$right_key}  AND `company_id` = {$company_id};";
+                $sql = "UPDATE `organization_structure` SET `left_key` = `left_key` + {$delta},`right_key` = `right_key` + {$delta}  WHERE `left_key` >= {$left_key}  AND `right_key` <= {$right_key}  AND `company_id` = {$company_id};";
                 $db->query($sql);
+                echo $sql;
 
             } else { // если идём вниз по ключам
                 // получили дельту для применения к внутренним перемещаемого элементам узла
@@ -299,19 +310,20 @@ class Model_node_update
                 $new_left_key = $left_key - $delta;
 
                 // поменяли ключи у неперемещаемых узлов по пути следования перемещаемого узла
-                $sql = "UPDATE `organization_structure` SET `left_key` = `left_key` + {$external_delta} WHERE `left_key` >= {$new_parent_right_key}  AND `left_key` < {$left_key}  AND `company_id` = {$company_id}";
-//                 echo $sql;
+                $sql = "UPDATE `organization_structure` SET `left_key` = `left_key` + {$external_delta} WHERE `left_key` >= {$new_parent_right_key}  AND `left_key` < {$left_key}  AND `company_id` = {$company_id};";
+                 echo $sql;
                 $db->query($sql);
                 $sql = "UPDATE `organization_structure` SET `right_key` = `right_key` + {$external_delta} WHERE `right_key` >= {$new_parent_right_key}  AND `right_key` < {$left_key}  AND `company_id` = {$company_id};";
-//                echo $sql;
+                echo $sql;
                 $db->query($sql);
                 // меняем ключи у перемещаемого узла и его потомков
-                $sql = "UPDATE `organization_structure` SET `left_key` = {$left_key} - {$delta},`right_key` = {$right_key} - {$delta}  WHERE `left_key` >= {$left_key}  AND `right_key` <= {$right_key}  AND `company_id` = {$company_id};";
+                $sql = "UPDATE `organization_structure` SET `left_key` = `left_key` - {$delta},`right_key` = `right_key` - {$delta}  WHERE `left_key` >= {$left_key}  AND `right_key` <= {$right_key}  AND `company_id` = {$company_id};";
                 $db->query($sql);
+                echo $sql;
             }
 
             // присваеваю родителя перемещаемому узлу
-            $sql = "UPDATE `organization_structure` SET `parent` = {$new_parent} WHERE `id` = {$move_item}";
+            $sql = "UPDATE `organization_structure` SET `parent` = {$new_parent} WHERE `id` = {$move_item};";
             $db->query($sql);
 
             // расставляем правельные левелы
@@ -338,7 +350,7 @@ class Model_node_update
         $sql="DELETE FROM `organization_structure` WHERE `left_key` >= {$left_key} AND `right` <= {$right_key} AND `company_id` = {$company_id};
                   UPDATE `organization_structure` SET `left_key` = `left_key` - {$right_key} + {$left_key} - 1 WHERE `left_key` > {$right_key} AND `company_id` = {$company_id};
                   UPDATE `organization_structure` SET `right_key` = `right_key` - {$right_key} + {$left_key} - 1 WHERE `right_key` > {$right_key} AND `company_id` = {$company_id};";
-        echo $sql;
+//        echo $sql;
 //        $db->query($sql);
     }
 
@@ -364,7 +376,7 @@ class Model_node_update
                                                         `boss_type` = {$boss_type},
                                                         `level` = {$parent_level } + 1,
                                                          `parent`={$new_parent_id} ;";
-        echo $sql;
+//        echo $sql;
 //        $db->query($sql);
     }
 

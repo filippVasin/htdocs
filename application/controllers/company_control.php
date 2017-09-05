@@ -33,4 +33,8 @@ class Controller_company_control extends Controller{
         // Запускаем метод;
         $this->model->set_company_control();
     }
+
+    public  function plus_test_users_couple(){
+        $this->model->plus_test_users_couple();
+    }
 }

@@ -28,3 +28,16 @@
 <div id="company_list" align="center">
     %company_list%
 </div>
+
+<div id="add_test_users_couple" class="button">Получить тестировщика</div>
+
+<div id="plus_test_users_couple" class="none">
+    <div class="canvas">
+        <span>Добавить пару тестировщиков?</span>
+        <div class="users"></div>
+        <div class="button_row">
+            <div class="button" id="ok_test_users_couple">Создать</div>
+            <div class="button" id="cancel_test_users_couple">Отмена</div>
+        </div>
+    </div>
+</div>

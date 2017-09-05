@@ -157,6 +157,8 @@ $(document).ready(function() {
             });
             // выводим суммарную цыфру по отделам
             $('.progress-text-row>.progress-number:first',this).html("<b>"+ fact +"</b>/" + target);
+            var width_proc = (Math.round(fact/target*100)) + "%";
+            $('.progress-bar:first',this).css("width",width_proc);
 
             if(count_child>0){
                 $(this).addClass("parent");
@@ -197,6 +199,8 @@ $(document).ready(function() {
             });
             // выводим суммарную цыфру по отделам
             $('.progress-text-row>.progress-number:first',this).html("<b>"+ fact +"</b>/" + target);
+            var width_proc = (Math.round(fact/target*100)) + "%";
+            $('.progress-bar:first',this).css("width",width_proc);
 
             if(count_child>0){
                 $(this).addClass("parent");
@@ -237,6 +241,8 @@ $(document).ready(function() {
             });
             // выводим суммарную цыфру по отделам
             $('.progress-text-row>.progress-number:first',this).html("<b>"+ fact +"</b>/" + target);
+            var width_proc = (Math.round(fact/target*100)) + "%";
+            $('.progress-bar:first',this).css("width",width_proc);
 
             if(count_child>0){
                 $(this).addClass("parent");

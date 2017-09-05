@@ -63,3 +63,12 @@
     width: 100%;
     overflow: hidden;
 }
+
+#yes_i_read{
+    position: fixed;
+    left: calc(50% - 120px);
+    bottom: 5px;
+}
+.Section1{
+    margin-bottom: 40px;
+}

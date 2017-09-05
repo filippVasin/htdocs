@@ -68,7 +68,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
 			((route_control_step.periodicity is not NULL)
 			 	AND
 			( NOW() > (history_docs.date_start + INTERVAL route_control_step.periodicity MONTH)))
-   THEN 'Даже создан'
+   THEN 'Ещё не создан'
    ELSE document_status_now.name
    END AS DoC_Status,
 
@@ -230,7 +230,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
             $html = "";
             foreach ($docs_array as $docs_array_item) {
                 // проверяем по фильтрам
-                if (($docs_array_item['doc_status_id'] == $select_item_status) || ($select_item_status == "")) {
+                if (($docs_array_item['doc_status_id'] == $select_item_status) || ($select_item_status == "") || (($select_item_status == "0") && ($docs_array_item['DoC_Status'] == "Ещё не создан"))) {
                     if (($docs_array_item['action_triger'] == $select_item) || ($select_item == "")) {
                         $html .= '<div class="report_step_row"  file_id="' . $docs_array_item['ID_FILES'] . '" fio="' . $docs_array_item['fio'] . '" dol="' . $docs_array_item['DOL'] . '"  name="' . $docs_array_item['name_doc'] . '">
                         <div  class="number_doc">' . $docs_array_item['ID_FILES'] . '</div>
@@ -251,6 +251,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                   FROM document_status_now";
             $select_array = $db->all($sql);
             $status_select = "<option value='' >Все статусы</option>";
+            $status_select .= "<option value='0' >Ещё не создан</option>";
             foreach ($select_array as $select_array_item) {
                 $status_select .= "<option value=" . $select_array_item['id'] . "  >" . $select_array_item['name'] . "</option>";
             }

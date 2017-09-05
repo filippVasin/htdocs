@@ -230,7 +230,7 @@
   border-radius: 50%;
   float: left;
   margin: 0 0.1em 0.1em 0;
-  background-color: #cccccc;
+  background-color: #ff734c;
 }
 .c100 *,
 .c100 *:before,
@@ -1066,14 +1066,14 @@
 
 .c100.red .bar,
 .c100.red .fill {
-    border-color: #ff734c !important;
+    border-color: #5fd400 !important;
 }
 .c100.red:hover > span {
     color: #ff734c;
 }
 .c100.red.dark .bar,
 .c100.red.dark .fill {
-    border-color: #ff734c !important;
+    border-color: #5fd400 !important;
 }
 .c100.red.dark:hover > span {
     color: #ff734c;

@@ -15,7 +15,14 @@ class Model_company_control{
 
     // Поулчаем список компаний;
     public function load_company_table(){
+
+        if(!(isset($_SESSION['user_id']))){
+            header("Location:/login");
+        }
+
         global $db, $elements;
+
+
 
         $html = '';
 
@@ -69,6 +76,38 @@ class Model_company_control{
         $_SESSION['control_company_name'] = $company_data['short_name'];
 
         $result_array = array();
+        $result_array['status'] = 'ok';
+        $result_array['message'] = 'Включен контроль выбранной компании';
+
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+    // Устанавливаем компанию для упарвления;
+    public function plus_test_users_couple(){
+        global $db,$labro;
+        $html = "";
+
+        $login = $labro->generate_password();
+        $pass = $labro->generate_password();
+        $role_id = 3;
+        $employee_id = 2;
+        $surname = "Смидт";
+        $sql = "INSERT INTO `users` (`name`, `password`, `role_id`,`employee_id`,`full_name`) VALUES('" . $login . "','" . md5($pass) . "','" . $role_id . "','" . $employee_id . "','" . $surname . "');";
+        $db->query($sql);
+        $html .='<div class="test_row"><span class="title_test">Для тестов-</span><span class="login">Логин: '. $login .'</span><span class="pass">Пароль: '. $pass .'</span></div>';
+
+
+        $login = $labro->generate_password();
+        $pass = $labro->generate_password();
+        $role_id = 4;
+        $employee_id = 43;
+        $surname = "Смидт";
+        $sql = "INSERT INTO `users` (`name`, `password`, `role_id`,`employee_id`,`full_name`) VALUES('" . $login . "','" . md5($pass) . "','" . $role_id . "','" . $employee_id . "','" . $surname . "');";
+        $db->query($sql);
+        $html .='<div class="test_row"><span class="title_test">Для отчётов-</span><span class="login">Логин: '. $login .'</span><span class="pass">Пароль: '. $pass .'</span></div>';
+
+        $result_array['content'] = $html;
         $result_array['status'] = 'ok';
         $result_array['message'] = 'Включен контроль выбранной компании';
 
