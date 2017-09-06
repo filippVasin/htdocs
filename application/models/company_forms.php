@@ -39,7 +39,7 @@ class Model_company_forms{
 
         $html = "<div class='page_title'>". $_SESSION['control_company_name'] ."</div>";
         $html .="<div class='form_table'>";
-        $html .= "<div class='row'><div class='title_column_form'>Тип Документа</div><div class='title_column_form'>Название Документа</div></div>";
+        $html .= "<div class='row'><div class='title_column_form type'>Тип Документа</div><div class='title_column_form temp'>Название Документа</div></div>";
         foreach($employees as $employee){
 
             $html.= "<div class='row link' path='". $employee['path'] ."'><div class='type_form'>".$employee['type']."</div><div class='temp_form'>" .$employee['temp']."</div></div>";

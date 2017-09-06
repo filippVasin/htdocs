@@ -56,15 +56,15 @@ class Model_creator
 
 
         $html .= '<div class ="select_box_item" >';
-        $html .= '<select class="target" level="2" style="margin-left: 0px;">';
+        $html .= '<select class="target" level="1" style="margin-left: 0px;">';
         $html .= '<option value="" ></option>';
         foreach ($employees as $employee_box) {
-            if($employee_box['level'] == 2) {
+            if($employee_box['level'] == 1) {
 
                 $html .= '<option value="' . $employee_box['id'] . '" >' . $employee_box['erarh'] . '</option>';
             }
         }
-        $html .= '</select> <div class="button_clear" id="button_clear" level="2"></div><div class="button_plus" level="2" item="'. $item_id .'"></div>';
+        $html .= '</select> <div class="button_clear" id="button_clear" level="1"></div><div class="button_plus" level="1" item="'. $item_id .'"></div>';
         $html .= '<div>';
         return $html;
 
@@ -233,7 +233,7 @@ class Model_creator
             // данные для логов
             $template_mail_id = $email_temp['id'];
 
-            $path = ROOT_PATH.'/application/templates_mail/'. $email_temp['path'];
+            $path = ROOT_PATH.'/application/templates_mail/'.$email_temp['path'];
 //            echo $path;
             $message = file_get_contents($path);
 

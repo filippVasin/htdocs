@@ -4,13 +4,38 @@
 .update_employee_table{
     margin: 0 auto;
     width: 1000px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    min-height: 250px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .table_row{
     display: flex;
     flex-direction: row;
-    border: 1px solid;
 }
+.table_row div{
+    float: left;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 1px solid #e3e4e8;
+    color: #4a4b4b;
+    font-size: 11px;
+    line-height: 18px;
+    white-space: nowrap;
+    text-align: left!important;
+}
+
 .table_row>div{
     display: block;
     text-align: center;
@@ -23,6 +48,7 @@
 }
 .type_name {
     padding-top: 10px;
+    font-size: 18px!important;
 }
 .popup_context_menu_title{
     margin-top: 20px;

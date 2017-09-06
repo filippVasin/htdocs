@@ -35,6 +35,11 @@
     <div class="canvas">
         <span>Добавить пару тестировщиков?</span>
         <div class="users"></div>
+
+        <div class="mail_input">
+            <div>Отправить на почту</div>
+            <input type="text" id="plus_test_users_couple_input" placeholder="email">
+        </div>
         <div class="button_row">
             <div class="button" id="ok_test_users_couple">Создать</div>
             <div class="button" id="cancel_test_users_couple">Отмена</div>

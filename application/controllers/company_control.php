@@ -34,7 +34,10 @@ class Controller_company_control extends Controller{
         $this->model->set_company_control();
     }
 
-    public  function plus_test_users_couple(){
+    public  function plus_test_users_couple($post_data){
+
+        $this->model->post_array = $post_data;
+
         $this->model->plus_test_users_couple();
     }
 }

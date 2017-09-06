@@ -89,23 +89,32 @@ $(document).ready(function() {
     });
 
     $(document).on("click", "#ok_test_users_couple", function () {
-        $("#ok_test_users_couple").addClass("none");
-        $("#cancel_test_users_couple").html("Запомните логины/пароли");
-        $.ajax({
-            type: "POST",
-            url: "/company_control/plus_test_users_couple",
-            data: {
 
-            },
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var request_result = result.status;
-                var content = result.content;
-                if (request_result == "ok") {
-                    $(".users").html(content);
+        var email = $("#plus_test_users_couple_input").val();
+        var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+        if((email != '' && pattern.test(email)) || email =="") {
+            $("#ok_test_users_couple").addClass("none");
+            $("#cancel_test_users_couple").html("Запомните логины/пароли");
+            $.ajax({
+                type: "POST",
+                url: "/company_control/plus_test_users_couple",
+                data: {
+                    email:email
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    var content = result.content;
+                    if (request_result == "ok") {
+                        $(".users").html(content);
+                        $(".mail_input").remove();
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            $("#plus_test_users_couple_input").css("border-color","red");
+            setTimeout("$('#plus_test_users_couple_input').css('border-color','#ccc')", 3000);
+        }
     });
 
 });

@@ -7,24 +7,57 @@
 }
 
 .form_table {
-    width: 800px;
     margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    min-height: 250px;
+    margin-top: 15px;
+    padding: 10px;
 }
 .form_table .row{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid;
     margin-top: -1px;
 }
-.form_table .row div{
-    text-align: center;
-    width: 400px;
+.row div{
+    float: left;
+    height: 30px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #e3e4e8;
+    color: #4a4b4b;
+    font-size: 11px;
+    line-height: 22px;
+    white-space: nowrap;
+    text-align: left!important;
+}
+.form_table .link{
+    cursor: pointer;
+}
+.form_table .link:hover div{
+    background-color: #e7e7e7;
+}
+.row .type_form, .row .type{
+    width: 200px;
+}
+.row .temp_form, .row .temp{
+    width: 600px;
+    margin-left: -1px;
 }
 
-.form_table .row div:first-child{
-    border-right: 1px solid;
+
+
+.form_table .row div{
+    text-align: center;
 }
+
 .title_column_form{
     font-size: 16px;
     font-weight: 700;

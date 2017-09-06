@@ -217,57 +217,72 @@ $(document).ready(function() {
 
 
     $(document).on("click", "#save_new_type", function () {
-        var select_news_num_id = $("#news_num").val();
-        var select_new_type_id = $(".new_type").val();
+
+        if((($("#news_num").val()!="")&&($(".new_type").val()!="")&&($(".new_type").length)&&($("#news_num").length))
+            ||((($("#input_new_type").val()!="")&&($("#input_new_num").val()!="")&&($("#input_new_type").length)&&($("#input_new_num").length)))
+            ||(($("#input_new_num").val()!="")&&($("#input_new_num").length)&&($(".new_type").length))) {
+            var select_news_num_id = $("#news_num").val();
+            var select_new_type_id = $(".new_type").val();
 
 
-        var input_new_type = $("#input_new_type").val();
-        var input_new_num = $("#input_new_num").val();
-        var parent = $(this).attr('parent');
+            var input_new_type = $("#input_new_type").val();
+            var input_new_num = $("#input_new_num").val();
+            var parent = $(this).attr('parent');
 
-        $.ajax({
-            type: "POST",
-            url: "/creator/save_new_type_select",
-            data: {
-                select_news_num_id:select_news_num_id,
-                select_new_type_id:select_new_type_id,
-                input_new_type:input_new_type,
-                input_new_num:input_new_num,
-                parent:parent
-            },
-            success: function (answer) {
+            $.ajax({
+                type: "POST",
+                url: "/creator/save_new_type_select",
+                data: {
+                    select_news_num_id: select_news_num_id,
+                    select_new_type_id: select_new_type_id,
+                    input_new_type: input_new_type,
+                    input_new_num: input_new_num,
+                    parent: parent
+                },
+                success: function (answer) {
 
-                var result = jQuery.parseJSON(answer);
-                var request_result = result.status;
-                var request_message = result.message;
-                var content = result.content;
-                // если 'ok' - рисуем тест
-                if(request_result == 'ok'){
-                    $(".page_title").css("display","none");
-                    $(".control_test_item").css("display","none");
-                    $("body").css("margin-top","0px");
-                    $('#test_block').fadeIn(0);
-                    $("#title_creator_popup").html(content);
-                    $("#creator_popup").removeClass("none");
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    var request_message = result.message;
+                    var content = result.content;
+                    // если 'ok' - рисуем тест
+                    if (request_result == 'ok') {
+                        $(".page_title").css("display", "none");
+                        $(".control_test_item").css("display", "none");
+                        $("body").css("margin-top", "0px");
+                        $('#test_block').fadeIn(0);
+                        $("#title_creator_popup").html(content);
+                        $("#creator_popup").removeClass("none");
 
-                    //$("html, body").animate({ scrollTop: 0 }, 0);
+                        //$("html, body").animate({ scrollTop: 0 }, 0);
+                    }
+
+                    if (request_result == 'not ok') {
+                        $(".page_title").css("display", "none");
+                        $(".control_test_item").css("display", "none");
+                        $("body").css("margin-top", "0px");
+                        $('#test_block').fadeIn(0);
+                        $("#title_creator_popup").html(content);
+                        $("#creator_popup").removeClass("none");
+                    }
+
+                },
+                error: function () {
+                    console.log('error');
                 }
+            });
+        } else {
 
-                if(request_result == 'not ok'){
-                    $(".page_title").css("display","none");
-                    $(".control_test_item").css("display","none");
-                    $("body").css("margin-top","0px");
-                    $('#test_block').fadeIn(0);
-                    $("#title_creator_popup").html(content);
-                    $("#creator_popup").removeClass("none");
-                }
+            $("#input_new_type").css('border-color','#ff0000');
+            $("#input_new_num").css('border-color','#ff0000');
+            setTimeout("$('#input_new_type').css('border-color','#ccc')", 3000);
+            setTimeout("$('#input_new_num').css('border-color','#ccc')", 3000);
 
-            },
-            error: function () {
-                console.log('error');
-            }
-        });
-
+            $("#news_num").css('border-color','#ff0000');
+            $(".new_type").css('border-color','#ff0000');
+            setTimeout("$('#news_num').css('border-color','#ccc')", 3000);
+            setTimeout("$('.new_type').css('border-color','#ccc')", 3000);
+        }
     });
 
 

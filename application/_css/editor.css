@@ -1,16 +1,38 @@
 
 .table_box{
-    width: 800px;
-    margin: 0 auto;
+    box-sizing: border-box;
     position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    min-height: 250px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
 }
 .table_row{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    border: 1px solid;
-    margin-top: 5px;
-    cursor: pointer;
+}
+
+.table_row div{
+float: left;
+height: 30px;
+padding: 8px 10px;
+box-sizing: border-box;
+cursor: pointer;
+background-color: #ffffff;
+border: 1px solid #e3e4e8;
+color: #4a4b4b;
+font-size: 11px;
+line-height: 22px;
+white-space: nowrap;
+text-align: left!important;
+}
+.type_id{
+    width: 5%;
 }
 .table_row_employee{
     display: flex;
@@ -22,12 +44,13 @@
 }
 
 .type_name{
-    width: 600px;
-    border-left: 1px solid;
+    width: 90%;
+    border-left: 1px solid #e3e4e8
 }
 .type_title{
     margin-top: 20px;
     font-size: 20px;
+    color: #747474;
 }
 
 #edit_popup{
@@ -73,12 +96,22 @@
 }
 #table_titles>div{
     width: 150px;
-    border: 1px solid;
     height: 30px;
     padding-top: 5px;
     box-sizing: border-box;
     cursor: pointer;
+    background-color: #ffffff;
+    border: 1px solid #e3e4e8;
+    color: #4a4b4b;
+    font-size: 15px;
+    white-space: nowrap;
+    text-align: center!important;
 }
+#table_titles>div:hover{
+    color: #c77437;
+}
+
+
 #edit_popup_employees{
     display: none;
     position: fixed;
@@ -173,10 +206,20 @@
 .table_mix_row{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    border: 1px solid;
-    margin-top: 5px;
-    cursor: pointer;
+}
+.table_mix_row div{
+float: left;
+height: 30px;
+padding: 8px 10px;
+box-sizing: border-box;
+cursor: pointer;
+background-color: #ffffff;
+border: 1px solid #e3e4e8;
+color: #4a4b4b;
+font-size: 11px;
+line-height: 22px;
+white-space: nowrap;
+text-align: left!important;
 }
 .emp_id {
    width: 30px;
@@ -196,8 +239,8 @@
 }
 .type_plus{
     position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 15px;
+    top: 15px;
     background-image: url(../../templates/simple_template/images/plus.png);
     background-size: cover;
     height: 20px;
@@ -255,8 +298,8 @@
 
 .directory_plus{
     position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 15px;
+    top: 15px;
     background-image: url(../../templates/simple_template/images/plus.png);
     background-size: cover;
     height: 20px;

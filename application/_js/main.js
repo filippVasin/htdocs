@@ -2,6 +2,62 @@ $(document).ready(function() {
 
     start();
 
+    //$(document).on('click','.c100',function(){
+    //    if($(".c100").hasClass("open_dep")){
+    //        $("#close_dep").click();
+    //        $(".c100").removeClass("open_dep");
+    //    } else {
+    //        $("#look_dep").click();
+    //        $(".c100").addClass("open_dep");
+    //    }
+    //});
+
+    $(document).on('click','#test_circle',function(){
+        if($("#test_circle").hasClass("open_dep")){
+            $("#test_circle").removeClass("open_dep");
+
+            $("#test_report .node_report").addClass('none');
+            $('#test_report .node_report>.progress-group').addClass('none');
+        } else {
+            $("#test_circle").addClass("open_dep");
+
+            $("#test_report .node_report").removeClass('none');
+            $('#test_report .node_report>.progress-group').removeClass('none');
+        }
+    });
+
+    $(document).on('click','#emp_circle',function(){
+        if($("#emp_circle").hasClass("open_dep")){
+            $("#emp_circle").removeClass("open_dep");
+
+            $("#emp_report .node_report").addClass('none');
+            $('#emp_report .node_report>.progress-group').addClass('none');
+        } else {
+            $("#emp_circle").addClass("open_dep");
+
+            $("#emp_report .node_report").removeClass('none');
+            $('#emp_report .node_report>.progress-group').removeClass('none');
+        }
+    });
+
+
+    $(document).on('click','#doc_circle',function(){
+        if($("#test_circle").hasClass("open_dep")){
+            $("#doc_circle").removeClass("open_dep");
+
+            $("#doc_report .node_report").addClass('none');
+            $('#doc_report .node_report>.progress-group').addClass('none');
+        } else {
+            $("#doc_circle").addClass("open_dep");
+
+            $("#doc_report .node_report").removeClass('none');
+            $('#doc_report .node_report>.progress-group').removeClass('none');
+        }
+    });
+
+
+
+
     $(document).on('click','#look_dep',function(){
         $(".node_report").removeClass('none');
         $("#look_dep").addClass('none');
