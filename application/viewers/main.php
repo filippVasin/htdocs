@@ -12,3 +12,13 @@
         </div>
     </div>
 </div>
+
+<div id="popup_report_emp" class="none">
+    <div class="canvas">
+        <div id="popup_report_emp_title"> Отчёт по сотруднику </div>
+        <div id="popup_report_emp_content"></div>
+        <div class="button_row bottom">
+            <div class="button" id="ok_popup_report_emp" >OK</div>
+        </div>
+    </div>
+</div>

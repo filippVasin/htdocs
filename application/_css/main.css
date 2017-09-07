@@ -47,6 +47,7 @@
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 .progress-group{
+    position: relative;
     margin: 10px;
     border: 1px solid #ccc;
     padding: 3px;
@@ -65,7 +66,7 @@
     background-color: #ecf0f5;
 }
 .look_on {
-    border: 2px solid #ccc;
+    /*border: 2px solid #ccc;*/
 }
 .progress-text-row{
     display: flex;
@@ -189,4 +190,120 @@
 }
 .fio_box .dol_row{
     font-weight: 700;
+}
+
+.people{
+
+}
+.icon{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 5px;
+    right: 18px;
+}
+.icon:hover{
+    opacity: .5;
+}
+.icon img{
+    width: 100%;
+    height: 100%;
+}
+.progress-number{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.fio_box{
+    cursor: default;
+}
+.people_report{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 20px;
+    right: 5px;
+    cursor: pointer;
+}
+.people_report:hover{
+    opacity: .5;
+}
+.people_report img{
+    width: 100%;
+    height: 100%;
+}
+
+#popup_report_emp{
+    position: fixed;
+    z-index: 999999;
+    top: 20px;
+    left: 20px;
+    width: 800px;
+    height: 600px;
+    background-color: #ccc;
+    left: calc(50% - 400px);
+    top: calc(50% - 300px);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+#popup_report_emp::before {
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.bottom {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 113px);
+}
+#popup_report_emp_content{
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    min-height: 250px;
+    margin-top: 15px;
+    padding: 10px;
+}
+#popup_report_emp_content .row{
+    width: 778px;
+    height: 30px;
+    margin-top: -1px;
+    border: 1px solid #e3e4e8;
+}
+
+#popup_report_emp_content .row > div{
+    float: left;
+    height: 30px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-right: 1px solid #e3e4e8;
+    color: #4a4b4b;
+    font-size: 11px;
+    line-height: 22px;
+    white-space: nowrap;
+    text-align: left!important;
+}
+
+#popup_report_emp_content .row  .manual{
+    width: 518px;
+}
+#popup_report_emp_content .row  .start{
+    width: 130px;
+}
+#popup_report_emp_content .row  .end{
+    width: 130px;
 }

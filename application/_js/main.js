@@ -1,25 +1,14 @@
 $(document).ready(function() {
 
     start();
-
-    //$(document).on('click','.c100',function(){
-    //    if($(".c100").hasClass("open_dep")){
-    //        $("#close_dep").click();
-    //        $(".c100").removeClass("open_dep");
-    //    } else {
-    //        $("#look_dep").click();
-    //        $(".c100").addClass("open_dep");
-    //    }
-    //});
-
     $(document).on('click','#test_circle',function(){
-        if($("#test_circle").hasClass("open_dep")){
-            $("#test_circle").removeClass("open_dep");
+        if($("#test_circle").hasClass("open_dept")){
+            $("#test_circle").removeClass("open_dept");
 
             $("#test_report .node_report").addClass('none');
             $('#test_report .node_report>.progress-group').addClass('none');
         } else {
-            $("#test_circle").addClass("open_dep");
+            $("#test_circle").addClass("open_dept");
 
             $("#test_report .node_report").removeClass('none');
             $('#test_report .node_report>.progress-group').removeClass('none');
@@ -27,13 +16,13 @@ $(document).ready(function() {
     });
 
     $(document).on('click','#emp_circle',function(){
-        if($("#emp_circle").hasClass("open_dep")){
-            $("#emp_circle").removeClass("open_dep");
+        if($("#emp_circle").hasClass("open_depe")){
+            $("#emp_circle").removeClass("open_depe");
 
             $("#emp_report .node_report").addClass('none');
             $('#emp_report .node_report>.progress-group').addClass('none');
         } else {
-            $("#emp_circle").addClass("open_dep");
+            $("#emp_circle").addClass("open_depe");
 
             $("#emp_report .node_report").removeClass('none');
             $('#emp_report .node_report>.progress-group').removeClass('none');
@@ -42,13 +31,13 @@ $(document).ready(function() {
 
 
     $(document).on('click','#doc_circle',function(){
-        if($("#test_circle").hasClass("open_dep")){
-            $("#doc_circle").removeClass("open_dep");
+        if($("#doc_circle").hasClass("open_depd")){
+            $("#doc_circle").removeClass("open_depd");
 
             $("#doc_report .node_report").addClass('none');
             $('#doc_report .node_report>.progress-group').addClass('none');
         } else {
-            $("#doc_circle").addClass("open_dep");
+            $("#doc_circle").addClass("open_depd");
 
             $("#doc_report .node_report").removeClass('none');
             $('#doc_report .node_report>.progress-group').removeClass('none');
@@ -92,13 +81,17 @@ $(document).ready(function() {
     $(document).on('click','.look_off',function() {
         $(this).addClass("look_on");
         $(this).removeClass("look_off");
-        $(this).children('.progress-group').removeClass('none');
+        var parent = $(this).closest(".parent");
+
+        $(parent).children('.progress-group').removeClass('none');
     });
     // сворачеваем отдел
     $(document).on('click','.look_on',function() {
         $(this).addClass("look_off");
         $(this).removeClass("look_on");
-        $(this).children('.progress-group').addClass('none');
+
+        var parent = $(this).closest(".parent");
+        $(parent).children('.progress-group').addClass('none');
     });
 
 
@@ -218,7 +211,7 @@ $(document).ready(function() {
 
             if(count_child>0){
                 $(this).addClass("parent");
-                $(this).addClass("look_off");
+                $('.progress-text',this).addClass("look_off");
             } else {
                 $(this).addClass("last");
             }
@@ -260,7 +253,7 @@ $(document).ready(function() {
 
             if(count_child>0){
                 $(this).addClass("parent");
-                $(this).addClass("look_off");
+                $('.progress-text',this).addClass("look_off");
             } else {
                 $(this).addClass("last");
             }
@@ -302,12 +295,55 @@ $(document).ready(function() {
 
             if(count_child>0){
                 $(this).addClass("parent");
-                $(this).addClass("look_off");
+                $('.progress-text',this).addClass("look_off");
             } else {
                 $(this).addClass("last");
             }
         });
 
     }
+
+
+    // открываем и закрываем сотрудников
+    $(document).on('click','.icon',function(){
+        var parent = $(this).closest(".people");
+        if($(this).hasClass("open_people")){
+             $(".fio_box",parent).addClass("none");
+            $(this).removeClass("open_people");
+        } else {
+            $(".fio_box",parent).removeClass("none");
+            $(this).addClass("open_people");
+        }
+    });
+
+    // показать/скрываем отчёт по сотруднику
+    $(document).on('click','.people_report',function(){
+        var report_type = $(this).attr('report_type');
+        var emp_id = $(this).attr('emp_id');
+
+        $.ajax({
+            type: "POST",
+            url: "/master_report/main",
+            data: {
+                emp_id:emp_id,
+                report_type: report_type
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+                if (request_result == "ok") {
+                    $("#popup_report_emp_content").html(content);
+                    $("#popup_report_emp").removeClass("none");
+                }
+            }
+        });
+
+    });
+
+    $(document).on('click','#ok_popup_report_emp',function(){
+        $("#popup_report_emp").addClass("none");
+    });
+
 
 });

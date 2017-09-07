@@ -247,4 +247,45 @@ $(document).ready(function() {
 
     })
 
+    // обработка показа видео
+    $(document).on('click','#full_screen',function(){
+        if($(this).hasClass("open_screen")) {
+
+            $('iframe').css("width", "800px");
+            $('iframe').css("height", "470px");
+            $('iframe').css("position", "initial");
+            $('iframe').css("top", "initial");
+            $('iframe').css("left", "initial");
+            $('body').css("position", "initial");
+
+            $('#full_screen').css("z-index", "initial");
+            $('#full_screen').css("position", "initial");
+            $('#full_screen').css("top", "initial");
+            $('#full_screen').css("left", "initial");
+            $('#full_screen').css("background-color", "initial");
+            $("#full_screen").removeClass("open_screen");
+            $('iframe').removeClass("open_screen_if");
+        } else {
+            var screen_width = $(window).width() + 20;
+            var screen_height = $(window).height();
+             screen_width = screen_height*1.7;
+            $('iframe').css("width", screen_width);
+            $('iframe').css("height", screen_height);
+            $('iframe').css("position", "absolute");
+            $('iframe').css("top", 0);
+            $('iframe').css("left",$(window).width()*0.5 - screen_width*0.5);
+            $('body').css("position", "absolute");
+
+            $('#full_screen').css("z-index", "999");
+            $('#full_screen').css("position", "fixed");
+            $('#full_screen').css("bottom", "20px");
+            $('#full_screen').css("right", "20px");
+            $('#full_screen').css("background-color", "#ccc");
+            $("#full_screen").addClass("open_screen");
+            $('iframe').addClass("open_screen_if");
+
+        }
+    });
+
+
 });

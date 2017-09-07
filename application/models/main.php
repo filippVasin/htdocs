@@ -19,13 +19,13 @@ class Model_main{
 
         $node_left_key = $this->post_array['node_left_key'];
         $node_right_key = $this->post_array['node_right_key'];
-
+        // перенапровление если нет подключенной компании
         if(!(isset($_SESSION['control_company']))){
             $result_array['status'] = "not company";
             $result = json_encode($result_array, true);
             die($result);
         }
-
+        // шаблон дашборда
         $html =<<< HERE
 <div id="control">
         <div class="button" id="look_dep">По отделам</div>
@@ -213,7 +213,7 @@ FORM_NOW.doc_status_now,
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
   ";
-
+        // если сработал выбор по отделам
         if(($node_left_key!="")&&($node_right_key!="")){
             $sql.=" AND org_parent.left_key >= ". $node_left_key ."
                     AND org_parent.right_key <= ". $node_right_key ;
@@ -251,10 +251,8 @@ FORM_NOW.doc_status_now,
                 ++$doc_count_all;
             }
         }
-//        if($flag>0){
-//            --$count_victory;
-//        }
 
+        // считаем законьченные документы
          $sql="SELECT *
         FROM form_status_now,employees_items_node,organization_structure
         WHERE form_status_now.doc_status_now>=7
@@ -267,7 +265,7 @@ FORM_NOW.doc_status_now,
             ++$doc_count_end;
         }
 
-
+        // наполняем шаблон дашборда (круги)
         $test_proc = round($test_fact/$test_target*100);
         $test_color= $this->color($test_proc);
 
@@ -275,7 +273,6 @@ FORM_NOW.doc_status_now,
         $html = str_replace('%test_target%', $test_target, $html);
         $html = str_replace('%test_proc%', $test_proc, $html);
         $html = str_replace('%test_color%', $test_color, $html);
-
 
         $emp_target = $count_emp;
         $emp_fact = $count_victory;
@@ -298,14 +295,14 @@ FORM_NOW.doc_status_now,
         $html = str_replace('%doc_proc%', $doc_proc, $html);
         $html = str_replace('%doc_color%', $doc_color, $html);
 
-
+        // собираем и схлопываем массив отделов до уникальных
         $dir_array = array();
         foreach ($test_array as $test_item) {
             $dir_array[] = $test_item['dir_id'];
         }
-
         $dir_array = array_unique($dir_array);
 
+        // проход по всем отделам
         $node_report_test="";
         $node_report_emp="";
         $node_report_doc ="";
@@ -324,7 +321,7 @@ FORM_NOW.doc_status_now,
             $test_fio_html = '<div class="test_fio_table" dir="'. $dir_array_item .'">';
             $emp_fio_html = '<div class="emp_fio_table" dir="'. $dir_array_item .'">';
             $doc_fio_html = '<div class="doc_foi_table" dir="'. $dir_array_item .'">';
-            $emp_id = 0;
+
             foreach ($test_array as $test_item) {
                 if($test_item['dir_id'] == $dir_array_item){
                     if($test_item['FinishStep']!='Не прошел'){
@@ -333,45 +330,82 @@ FORM_NOW.doc_status_now,
                         $flag += 1;
                     }
                     if($test_item['EMPLOY']!= $emp){
+                        // алгоритм подсчёта успешных сотрудников
+                        $emp = $test_item['EMPLOY'];
                         ++$count_victory_emp;
                         ++$count_all_emp;
-                        $test_fio_html .= ' <div class="fio_box">
-                                            <div class="dol_row">'. $test_item['name'] .'</div>
-                                            <div class="fio_row">'. $test_item['fio'] .'</div>
-                                              <span class="progress-number"><b>%count_victory_emp%</b>/%count_all_emp%</span>
-
-                                                <div class="progress_line">
-                                               <div class="progress-bar progress-bar-aqua" style="width: %emp_proc%%"></div>
-                                            </div>
-                                            </div>';
-
-                        $emp_fio_html .= ' <div class="fio_box">
-                                            <div class="dol_row">'. $test_item['name'] .'</div>
-                                            <div class="fio_row">'. $test_item['fio'] .'</div>
-                                              <span class="progress-number"><b>%count_victory_emp%</b>/%count_all_emp%</span>
-
-                                                <div class="progress_line">
-                                               <div class="progress-bar progress-bar-aqua" style="width: %emp_proc%%"></div>
-                                            </div>
-                                            </div>';
-
-                        $doc_fio_html .= ' <div class="fio_box">
-                                            <div class="dol_row">'. $test_item['name'] .'</div>
-                                            <div class="fio_row">'. $test_item['fio'] .'</div>
-                                              <span class="progress-number"><b>%count_victory_emp%</b>/%count_all_emp%</span>
-
-                                                <div class="progress_line">
-                                               <div class="progress-bar progress-bar-aqua" style="width: %emp_proc%%"></div>
-                                            </div>
-                                            </div>';
-
-                        $emp = $test_item['EMPLOY'];
-
                         if($flag>0){
                             --$count_victory_emp;
                         }
                         $flag = 0;
+
+
+                        // обработка уровня fio
+                        $count_test_fio_target = 0;
+                        $count_test_fio_fact = 0;
+                        $count_emp_fio_target = 1;
+                        $count_emp_fio_fact = 1;
+                        $count_doc_fio_target = 0;
+                        $count_doc_fio_fact = 0;
+                        foreach($test_array as $fio_item){
+                            if($fio_item['EMPLOY'] == $emp){
+                                // тесты
+                                ++$count_test_fio_target;
+                                if($fio_item['FinishStep']!='Не прошел'){
+                                    ++$count_test_fio_fact;
+                                }
+                                // сотрудники
+                                if($fio_item['FinishStep']=='Не прошел'){
+                                    $count_emp_fio_fact = 0;
+                                }
+                                // документы
+                                if($fio_item['doc_all']){
+                                    ++$count_doc_fio_target;
+                                    if($fio_item['doc_status_now']){
+                                        ++$count_doc_fio_fact;
+                                    }
+                                }
+                            }
+                        }
+
+                        // собираем элементы - сотрудник
+                        $fio_test_proc = round($count_test_fio_fact/$count_test_fio_target*100);
+                        $test_fio_html .= ' <div class="fio_box none">
+                                            <div class="dol_row">'. $test_item['name'] .'</div>
+                                            <div class="fio_row">'. $test_item['fio'] .'</div>
+                                              <span class="progress-number"><b>'. $count_test_fio_fact .'</b>/'.$count_test_fio_target.'</span>
+
+                                                <div class="progress_line">
+                                               <div class="progress-bar progress-bar-aqua" style="width: '. $fio_test_proc .'%"></div>
+                                            </div>
+                                            <div class="people_report" report_type="test" emp_id="'. $emp .'" ><img src="../../templates/simple_template/images/list.svg"></div>
+                                            </div>';
+
+                        $fio_emp_proc = round($count_emp_fio_fact/$count_emp_fio_target*100);
+                        $emp_fio_html .= ' <div class="fio_box none">
+                                            <div class="dol_row">'. $test_item['name'] .'</div>
+                                            <div class="fio_row">'. $test_item['fio'] .'</div>
+                                              <span class="progress-number"><b>'. $count_emp_fio_fact .'</b>/'. $count_emp_fio_target .'</span>
+
+                                                <div class="progress_line">
+                                               <div class="progress-bar progress-bar-aqua" style="width: '. $fio_emp_proc .'%"></div>
+                                            </div>
+                                            <div class="people_report" report_type="emp" emp_id="'. $emp .'"><img src="../../templates/simple_template/images/list.svg"></div>
+                                            </div>';
+
+                        $fio_doc_proc = round($count_doc_fio_fact/$count_doc_fio_target*100);
+                        $doc_fio_html .= ' <div class="fio_box none">
+                                            <div class="dol_row">'. $test_item['name'] .'</div>
+                                            <div class="fio_row">'. $test_item['fio'] .'</div>
+                                              <span class="progress-number"><b>'. $count_doc_fio_fact .'</b>/'. $count_doc_fio_target .'</span>
+
+                                                <div class="progress_line">
+                                               <div class="progress-bar progress-bar-aqua" style="width: '. $fio_doc_proc .'%"></div>
+                                            </div>
+                                            <div class="people_report" report_type="doc" emp_id="'. $emp .'"><img src="../../templates/simple_template/images/list.svg"></div>
+                                            </div>';
                     }
+
                     if($test_item['doc_all']!=""){
                         ++$doc_count_all;
 
@@ -382,19 +416,6 @@ FORM_NOW.doc_status_now,
                     $level = $test_item['level'];
                     $left_key = $test_item['left_key'];
                     $right_key = $test_item['right_key'];
-
-                    $test_fio_html = str_replace('%count_victory_emp%', "15", $test_fio_html);
-                    $test_fio_html = str_replace('%count_all_emp%', "60", $test_fio_html);
-                    $test_fio_html = str_replace('%emp_proc%', "25", $test_fio_html);
-
-                    $doc_fio_html = str_replace('%count_victory_emp%', "15", $doc_fio_html);
-                    $doc_fio_html = str_replace('%count_all_emp%', "60", $doc_fio_html);
-                    $doc_fio_html = str_replace('%emp_proc%', "25", $doc_fio_html);
-
-                    $emp_fio_html = str_replace('%count_victory_emp%', "15", $emp_fio_html);
-                    $emp_fio_html = str_replace('%count_all_emp%', "60", $emp_fio_html);
-                    $emp_fio_html = str_replace('%emp_proc%', "25", $emp_fio_html);
-
                 }
             }
 
@@ -405,7 +426,7 @@ FORM_NOW.doc_status_now,
             $doc_fio_html .='</div>';
 
 
-            // уровнять по длинне для сравниения на клиете
+            // уровнять по длинне для сравниения для коректного суммирования на клиете
             $left_key = str_pad($left_key, 3, "0", STR_PAD_LEFT);
             $right_key = str_pad($right_key, 3, "0", STR_PAD_LEFT);
 
@@ -418,7 +439,7 @@ FORM_NOW.doc_status_now,
             $node_report_test .=     '<div class="progress_line">';
             $node_report_test .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$test_proc.'%"></div>';
             $node_report_test .=     '</div>';
-            $node_report_test .=     $test_fio_html;
+            $node_report_test .=     '<div class="people"><div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>'.$test_fio_html .'</div>';
             $node_report_test .= '</div>';
             // сотрудники
             $emp_proc = round($count_victory_emp/$count_all_emp*100);
@@ -430,7 +451,7 @@ FORM_NOW.doc_status_now,
             $node_report_emp .=     '<div class="progress_line">';
             $node_report_emp .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$emp_proc.'%"></div>';
             $node_report_emp .=     '</div>';
-            $node_report_emp .=     $emp_fio_html;
+            $node_report_emp .=     '<div class="people"><div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>'.$emp_fio_html .'</div>';
             $node_report_emp .= '</div>';
             // документы
 
@@ -456,7 +477,7 @@ FORM_NOW.doc_status_now,
             $node_report_doc .=     '<div class="progress_line">';
             $node_report_doc .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$emp_doc.'%"></div>';
             $node_report_doc .=     '</div>';
-            $node_report_doc .=     $doc_fio_html;
+            $node_report_doc .=     '<div class="people"><div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>'. $doc_fio_html .'</div>';
             $node_report_doc .= '</div>';
         }
 
@@ -469,7 +490,7 @@ FORM_NOW.doc_status_now,
         $result = json_encode($result_array, true);
         die($result);
     }
-
+    // возвращаем цвет в зависимости от процента
     private function color($proc){
 
         if($proc < 90){
