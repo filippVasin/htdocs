@@ -19,7 +19,9 @@ class Model_manual
     {
         global $db, $elements;
         $sql = "INSERT INTO `manual_history` (`employee_id`, `step_id`, `date_start`) VALUES('" . $_SESSION['employee_id'] . "', '" . $_SESSION['step_id'] . "', NOW());";
+//        echo $sql;
         $db->query($sql);
+//        print_r($_SESSION);
 //        manual_docs
         $sql="SELECT manual_doc.id, manual_doc.`file`,manual_doc.name
                 FROM route_control_step, step_content
@@ -59,6 +61,7 @@ class Model_manual
     public function yes(){
         global $db;
         $sql = "UPDATE `manual_history` SET `date_finish`= NOW() WHERE  `employee_id`='" .  $_SESSION['employee_id'] . "' AND `step_id`='".$_SESSION['step_id'] ."'";
+//        echo $sql;
         $db->query($sql);
         $result_array['status'] = 'yes';
         $result = json_encode($result_array, true);

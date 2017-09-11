@@ -302,3 +302,7 @@
 #topBar, #topBar .logo, #header>a{
     height: 70px;
 }
+
+.button{
+    min-width: 180px!important;
+}

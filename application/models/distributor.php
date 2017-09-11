@@ -75,4 +75,7 @@ class Model_distributor{
         $result_array['page'] = "local_alert";
         return $result_array;
     }
+
+
+
 }

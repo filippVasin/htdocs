@@ -301,7 +301,7 @@ class Model_structure
     // Вывод всего дерева;
     public function whole_branch(){
 
-        global $db, $systems, $elements;;
+        global $db, $systems, $elements;
         $item_id = $this->post_array['item_id'];
 
         $sql = "SELECT
@@ -380,5 +380,95 @@ class Model_structure
         die($result);
     }
 
+
+    public function whole_tree_new(){
+
+        global $db;
+//        $item_id = $this->post_array['item_id'];
+//        $node_left_key = $this->post_array['node_left_key'];
+//        $node_right_key = $this->post_array['node_right_key'];
+        $html = "";
+
+        $sql="SELECT
+                CONCAT_WS (':', items_control_types.name, items_control.name) AS erarh,
+                organization_structure.`level`,
+                organization_structure.id,
+                organization_structure.left_key,
+                organization_structure.right_key,
+                organization_structure.parent,
+                employees.`status`,
+                employees_items_node.org_str_id as 'employee',
+                CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio
+                FROM organization_structure
+                inner join items_control on organization_structure.kladr_id = items_control.id
+                inner join items_control_types on organization_structure.items_control_id = items_control_types.id
+                left join employees_items_node on employees_items_node.org_str_id = organization_structure.id
+                left join employees on employees_items_node.employe_id = employees.id
+                Where organization_structure.company_id = " . $_SESSION['control_company'] . "  ORDER BY left_key";
+
+
+        // если сработал выбор по отделам
+//        if(($node_left_key!="")&&($node_right_key!="")){
+//            $sql.=" AND org_parent.left_key >= ". $node_left_key ."
+//                    AND org_parent.right_key <= ". $node_right_key ;
+//        }
+        $tree = $db->all($sql);
+
+        $level_array = array();
+        foreach ($tree as $test_item) {
+            $level_array[] = $test_item['level'];
+        }
+        // оставляем все уникальные уровни и сортируем по возрастанию
+        $level_array = array_unique($level_array);
+        asort($level_array);
+        $html='<ul id="tree_main" class="tree">%parent_0%</ul>';
+        foreach ($level_array as $level_array_item) {
+                    foreach($tree as $tree_item) {
+                        if($tree_item['level']==$level_array_item) {
+                            $parent_id = $tree_item['parent'];
+                            $item_html = '<ul class="none">';
+                            foreach($tree as $tree_item) {
+                                if($tree_item['parent']==$parent_id){
+                                    $item_html .= '<li><div class="tree_item" level="' . $tree_item['level'] . '" parent="' . $tree_item['parent'] . '"id_item="' . $tree_item['id'] . '"left_key="' . $tree_item['left_key'] . '"right_key="' . $tree_item['right_key'] . '">' . $tree_item['erarh'] . '</div>';
+                                    if ($tree_item['fio'] != "") {
+                                        $item_html .= '<div class="tree_item_fio">' . $tree_item['fio'] . '</div>';
+                                    }
+                                    $item_html .= "%parent_".$tree_item['id']."%";;
+                                    $item_html .= '</li>';
+                                }
+                            }
+                            $item_html .= '</ul>';
+
+                            // вставляем по сгенерированному ключу
+                            $anchor = "%parent_".$parent_id."%";
+                            $flag   = '<li>';
+                            $pos = strpos($item_html, $flag);
+                            // если есть что вставить вставляем
+                            if ($pos === false) {
+                                $html = str_replace($anchor, "", $html);
+                            } else {
+                                $html = str_replace($anchor, $item_html, $html);
+                            }
+                        }
+                    }
+        }
+        // убираем оставшиеся якоря
+        foreach($tree as $tree_item) {
+            $anchor = "%parent_".$tree_item['id']."%";
+            $html = str_replace($anchor, "", $html);
+        }
+        // убираем "Должность:"
+        foreach($tree as $tree_item) {
+            $html = str_replace("Должность:", "", $html);
+        }
+
+
+
+        $result_array['content'] = $html;
+        $result_array['status'] = 'ok';
+
+        $result = json_encode($result_array, true);
+        die($result);
+    }
 
 }

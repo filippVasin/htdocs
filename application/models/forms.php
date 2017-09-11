@@ -15,12 +15,12 @@ class Model_forms{
     public function start(){
         global $db;
 
-
+//        print_r($_SESSION);
 
         $sql = "SELECT  MAX(history_forms.`step_end_time`) AS date_create_old, periodicity,
                 (MAX(history_forms.`step_end_time`) + INTERVAL route_control_step.periodicity MONTH) AS date_create_new,
 					CASE
-                  WHEN (now() <= (MAX(history_forms.`step_end_time`) + INTERVAL route_control_step.periodicity MONTH))
+                   WHEN (now() <= (MAX(history_forms.`step_end_time`) + INTERVAL route_control_step.periodicity MONTH)) OR (MAX(history_forms.`step_end_time`) AND (route_control_step.periodicity is NUll))
                   THEN save_temp_files.id
                   ELSE NULL
                   END AS real_form_id
@@ -36,7 +36,6 @@ class Model_forms{
                                                             AND route_control_step.`id`= ". $_SESSION['step_id'] . "
                                                             AND save_temp_files.id = history_forms.save_temps_id )";
 
-
             $condition_test = $db->row($sql);
             $_SESSION['real_form_id'] = $condition_test['real_form_id'];
             if ($_SESSION['real_form_id'] == "") {
@@ -49,7 +48,7 @@ class Model_forms{
                     AND temps_form_step.id = track_number_form.start_step_form
                     AND form_step_action.id = temps_form_step.action_form";
                 $condition_form = $db->row($sql);
-//            echo $sql . " нет документа<br>";
+
 
                 $_SESSION['temps_form_track'] = $condition_form['id'];
                 $_SESSION['temps_form_step_id'] = $condition_form['temps_form_step_id'];
@@ -69,7 +68,7 @@ class Model_forms{
                     AND form_status_now.track_form_step_now = temps_form_step.id
                     AND temps_form_step.son_step = steps.id
                     AND form_step_action.id =  steps.action_form";
-//            echo $sql . " есть документ <br>";
+
                 $action_forms = $db->row($sql);
                 // получили следующий шаг и экшон;
                 $action_name = $action_forms['action_name'];
@@ -79,6 +78,7 @@ class Model_forms{
 
             }
         // выбираем соответствующий экшон и вызываем его
+//        echo $action_name;
         switch ($action_name) {
             case "create":
                 $result_array = $this->create();
@@ -106,6 +106,9 @@ class Model_forms{
                 break;
             case "signature":
                 $result_array = $this->signature();
+                break;
+            case "secretary_accept_alert":
+                $result_array = $this->secretary_accept_alert();
                 break;
         }
 
@@ -152,20 +155,21 @@ class Model_forms{
 
             if (file_exists($doc_download_url)) {
 //                $result_array['form'] = "Файл $doc_download_url существует";
-                $sql = "SELECT save_temp_files.id, save_temp_files.name
+                $sql = "SELECT max(save_temp_files.id) AS id, save_temp_files.name
                     FROM save_temp_files
                     WHERE save_temp_files.employee_id = ".  $_SESSION['employee_id'] ."
                     AND save_temp_files.company_temps_id =". $_SESSION['form_id'];
                 $form_content_jj = $db->row($sql);
 //                echo $sql ."  -второй<br>";
-                $insert_id = $form_content_jj['id'];
+                $insert_id = $form_content_jj   ['id'];
                 // записали в историю файла
                 $doc_status = 1;
                 $sql = "INSERT INTO `history_forms` (`save_temps_id`, `track_form_id`, `track_form_step`, `step_end_time`,`start_data`,`author_employee_id`,`doc_status_now`) VALUES( '". $insert_id ."','". $_SESSION['temps_form_track'] ."','".  $_SESSION['temps_form_step_id'] ."',NOW(),NOW(),'". $_SESSION['employee_id'] ."','". $doc_status ."');";
                 $db->query($sql);
+//                echo $sql ."  - третий<br>";
 
                 //
-                $sql = "SELECT history_forms.id
+                $sql = "SELECT max(history_forms.id) as id
                     FROM history_forms
                     WHERE history_forms.save_temps_id =". $insert_id;
                 $form_content_history = $db->row($sql);
@@ -173,7 +177,7 @@ class Model_forms{
 
                 $sql = "INSERT INTO `form_status_now` (`step_id`,`save_temps_file_id`, `history_form_id`, `track_number_form_id`,`track_form_step_now`,`author_employee_id`,`doc_status_now`) VALUES('". $_SESSION['step_id']."','". $insert_id ."','". $insert_history ."','". $_SESSION['temps_form_track'] ."','".  $_SESSION['temps_form_step_id'] ."','". $_SESSION['employee_id'] ."','". $doc_status ."');";
                 $db->query($sql);
-
+//                echo $sql ."  - третий<br>";
             } else {
 //                 $result_array['form'] = "Файл $doc_download_url не существует";
                 $result_array['status'] = "no";
@@ -206,8 +210,8 @@ class Model_forms{
         $page .='<div id="popup_update_select_position">
                     <div class="canvas" style="height: 120px; box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
                         <div class="popup_context_menu_title"> Документ распечатан успешно?</div>
-                            <div class="button" id="popup_update_select_node_yes">Да</div>
-                            <div class="button" id="popup_update_select_position_cancel">Отмена</div>
+                            <div class="button" style="width: 180px;" id="popup_update_select_node_yes">Да</div>
+                            <div class="button" style="width: 180px;" id="popup_update_select_position_cancel">Отмена</div>
                         </div>
                     </div>
                 </div>';
@@ -265,8 +269,8 @@ class Model_forms{
         $page ='<div id="popup_update_select_position">
                     <div class="canvas" style="height: 120px; box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
                         <div class="popup_context_menu_title"> Документ скачался успешно?</div>
-                            <div class="button" id="popup_update_select_node_yes">Да</div>
-                            <div class="button" id="popup_update_select_position_cancel">Отмена</div>
+                            <div class="button" style="min-width: 180px;" id="popup_update_select_node_yes">Да</div>
+                            <div class="button" style="min-width: 180px;" id="popup_update_select_position_cancel">Отмена</div>
                         </div>
                     </div>
                 </div>';
@@ -361,8 +365,8 @@ class Model_forms{
                     <div class="canvas" style="height: 120px; box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
                         <div class="popup_context_menu_title"> Подпишите '. $doc_name .' в 417м кабинете</div>
                             <div class="row">
-                                <div class="button" id="popup_update_select_node_yes">Я подписал</div>
-                                <div class="button" id="popup_update_select_position_cancel">Я не подписал</div>
+                                <div class="button" style="width: 180px;" id="popup_update_select_node_yes">Я подписал</div>
+                                <div class="button" style="width: 180px;" id="popup_update_select_position_cancel">Я не подписал</div>
                             </div>
                         </div>
                     </div>
@@ -594,6 +598,46 @@ class Model_forms{
         $form_actoin = "local_alert";
         $result_array['form_actoin'] = $form_actoin;
         $result_array['page'] = "local_alert";
+        // дописываем историю
+        $this->logs_form_file();
+        $this->session_clear();
+        return $result_array;
+    }// local_alert();
+
+
+
+    private function secretary_accept_alert(){
+        global $db;
+
+        $sql = "SELECT *
+                FROM save_temp_files, form_status_now
+                WHERE save_temp_files.id = form_status_now.save_temps_file_id
+                AND save_temp_files.id =" . $_SESSION['real_form_id'];
+        $form_content = $db->row($sql);
+        $doc = $form_content['name'];
+
+        // Запись начала шага
+//        $doc_status = $this->doc_status($_SESSION['real_form_id']);
+        $doc_status = 12;// Секретарь получил документ
+        $this->history_insert($doc_status);
+
+        // запись
+        $cron_action_type_id = 3;
+        $observer_org_str_id = 27;
+        $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `cron_action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
+                                       VALUES( '" .  $_SESSION['employee_id'] .
+            "','" . $observer_org_str_id .
+            "','" . $cron_action_type_id .
+            "','" . $_SESSION['control_company'] .
+            "','" . $_SESSION['real_form_id'] .
+            "','" . $_SESSION['step_id'] .
+            "',NOW());";
+        $db->query($sql);
+
+
+        $form_actoin = "secretary_accept_alert";
+        $result_array['form_actoin'] = $form_actoin;
+        $result_array['page'] = "secretary_accept_alert";
         // дописываем историю
         $this->logs_form_file();
         $this->session_clear();

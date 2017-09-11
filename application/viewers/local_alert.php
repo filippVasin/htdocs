@@ -62,3 +62,19 @@
             </div>
         </div>
     </div>
+
+    <div id="alert_acception_docs_popup none">
+        <div class="canvas">
+
+            <div class="popup_context_menu_title"> Сотрудник: </div>
+            <div id="emp_report_name"></div>
+            <div id="dolg_report_name"></div>
+            <div id="dolg_report_dir"></div>
+            <div class="popup_context_menu_title"> должен сдать: </div>
+            <div id="docs_report_name"></div>
+            <div class="button_row">
+                <div class="button" id="yes_popup">Сдал</div>
+                <div class="button cancel_popup">Не сдал</div>
+            </div>
+        </div>
+    </div>

@@ -17,7 +17,7 @@ class Model_rover{
     public function start()
     {
 //        echo $_SESSION['form_id'];
-//        print_r($_SESSION);
+        print_r($_SESSION);
         global $db;
         if ((isset($_SESSION['form_id'])) && (isset($_SESSION['step_id']))) {
             header("Location:/forms");
@@ -157,26 +157,32 @@ class Model_rover{
                             $step_pointer = $control_tests_item['id'];
                         };
                     }
-
+//                     print_r($link);
                     $content = "";
+                    $flag_list = "";
                     do {
-                        if (($link[$step_pointer]["HistoryStep"] == NULL) || (isset($link[$step_pointer]["periodicity"])
+                        if (($link[$step_pointer]["HistoryStep"] == NULL) || (($link[$step_pointer]["periodicity"]>0)
                             && ($link[$step_pointer]["data_finish"] <= date('Y-m-d', strtotime(date("Y-m-d") . '-'. $link[$step_pointer]["periodicity"] .' month'))))) {
                             $content = "1";
+
                         } else {
                             if ($link[$step_pointer]["son_step"] != 0) {
                                 $step_pointer = $link[$step_pointer]["son_step"];
                             } else { // законьчились материалы для проходжения
                                 $content = "No";
                                 header("Location: /dead_end");// переходим в тупик
+
+                                $flag_list = "dead_end";
+
                             }
                         }
                     } while ($content == "");
 
+//                    print_r($_SESSION);
+                    $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
 
-                   $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
+                    if($_SESSION['step_id']>0 && ($flag_list=="")){
 
-                    if(isset($_SESSION['step_id'])){
                         header("Location:/pass_test");// переходим на тест
 
                     } else {

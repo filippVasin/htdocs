@@ -11,7 +11,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "/structure/whole_tree",
+            url: "/structure/whole_tree_new",
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
                 var request_result = result.status;
@@ -25,9 +25,15 @@ $(document).ready(function() {
                     $('#test_block').fadeIn(0);
                     $('#content_box').html(content);
                     $("html, body").animate({ scrollTop: 0 }, 0);
+                    $("#tree_main>ul").removeClass("none");
+                    // присваеваем классы дня непустых элементов
+                    $(".tree_item").each(function() {
+                        var parent = $(this).parent("li");
+                        if(parent.children('ul').length != 0){
+                            $(this).addClass("open_item");
+                        }
+                    });
                 }
-
-
             },
             error: function () {
                 console.log('error');
@@ -147,6 +153,22 @@ $(document).ready(function() {
             }
         });
     });
+
+
+    $(document).on('click','.open_item',function(){
+
+        if($(this).hasClass("open_ul")){
+            $(this).removeClass("open_ul");
+
+            $(this).siblings('ul').addClass('none');
+        } else {
+            $(this).addClass("open_ul");
+
+            $(this).siblings('ul').removeClass('none');
+        }
+    });
+
+
 
 
 });

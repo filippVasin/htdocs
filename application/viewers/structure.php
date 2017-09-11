@@ -12,3 +12,27 @@
    <br>
     <div id="test_block" style="display: none; text-align: left;"><div id="content_box"></div></div>
 </div>
+
+
+<!--<ul class="tree">-->
+<!--    <li><div class="tree_item">Отдел</div>-->
+<!--        <ul class="none">-->
+<!--            <li> <div class="tree_item">Отдел</div>-->
+<!--                <ul class="none">-->
+<!--                    <li> </li>-->
+<!--                    <li><div class="tree_item">Отдел</div></li>-->
+<!--                    <li><div class="tree_item">Отдел</div></li>-->
+<!--                    <li><div class="tree_item">Отдел</div>-->
+<!--                        <ul class="none">-->
+<!--                            <li><div class="tree_item">Отдел</div></li>-->
+<!--                            <li><div class="tree_item">Отдел</div></li>-->
+<!--                            <li><div class="tree_item">Отдел</div></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li><div class="tree_item">Отдел</div></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li><div class="tree_item">Отдел</div></li>-->
+<!--        </ul>-->
+<!--    </li>-->
+<!--</ul>-->
