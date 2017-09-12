@@ -23,7 +23,7 @@ class Model_local_alert{
 
         $select_item = $this->post_array['select_item'];
         $select_item_em = $this->post_array['select_item_em'];
-        $groupe = $this->post_array['groupe'];
+        $group = $this->post_array['group'];
         $left_key = $this->post_array['left_key'];
         $right_key = $this->post_array['right_key'];
         $time_from = $this->post_array['time_from'];
@@ -61,7 +61,7 @@ class Model_local_alert{
 
 
 // запрашиваем все алерты(документ на подпись)
-        $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,
+        $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.cron_action_type_id,
 CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
 local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
 items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
@@ -86,7 +86,7 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
 
 AND local_alerts.initiator_employee_id = init_em.id
 AND local_alerts.date_finish IS NULL
-AND local_alerts.cron_action_type_id = 3";
+AND local_alerts.cron_action_type_id = 3 OR local_alerts.cron_action_type_id = 4";
 
         // если указаны даты выборки
         if ($time_from != "") {
@@ -123,13 +123,14 @@ AND local_alerts.cron_action_type_id = 3";
         // без доступа
         if($left=='none') {
             // не показываем ничего
+            $html = "Нет доступа";
         } else {
             // упорядочить по сотрудникам
-            if ($groupe == "emp") {
+            if ($group == "emp") {
                 $sql .= " ORDER BY fio";
             }
             // упорядочить по должности
-            if ($groupe == "pos") {
+            if ($group == "pos") {
                 $sql .= " ORDER BY position";
             }
             $sql .= " GROUP BY local_alerts.id";
@@ -154,7 +155,8 @@ AND local_alerts.cron_action_type_id = 3";
                                                      doc="' . $alert_every_day['file'] . '"
                                                      name="' . $alert_every_day['fio'] . '"
                                                      local_id="' . $alert_every_day['id'] . '"
-                                                      file_id="' . $alert_every_day['save_temp_files_id'] . '">
+                                                      file_id="' . $alert_every_day['save_temp_files_id'] . '"
+                                                      action_type="' . $alert_every_day['cron_action_type_id'] . '">
                         <div  class="number_doc">' . $alert_every_day['id'] . '</div>
                         <div  class="fio">' . $alert_every_day['fio'] . '</div>
                         <div class="otdel">' . $alert_every_day['dir'] . '</div>
@@ -189,10 +191,11 @@ AND local_alerts.cron_action_type_id = 3";
 
             $result_array['select'] = $select;
             $result_array['select_em'] = $select_em;
-            $result_array['content'] = $html;
-            $result = json_encode($result_array, true);
-            die($result);
+
         }
+        $result_array['content'] = $html;
+        $result = json_encode($result_array, true);
+        die($result);
     }
 
 

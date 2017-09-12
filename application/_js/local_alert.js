@@ -7,12 +7,13 @@ $(document).ready(function() {
     var doc = "";
     var select_item = "";
     var observer_em = "";
-    var select_item_em="";
+    var select_item_em= "";
     var group = "";
     var time_from = "";
     var time_to = "";
     var file_id= "";
     var local_id = "";
+    var action_type = "";
 
     $.ajax({
         type: "POST",
@@ -49,7 +50,8 @@ $(document).ready(function() {
 
     // отмена действия
     $(document).on("click", ".cancel_popup", function () {
-        $("#alert_signature_docs_popup").css("display","none");
+        $("#alert_signature_docs_popup").addClass("none");
+        $("#alert_acception_docs_popup").addClass("none");
         $("#popup_context_menu_update").css("display","none");
         $("#emp_report_name").html("");
         $("#dolg_report_name").html("");
@@ -65,7 +67,6 @@ $(document).ready(function() {
 
 
     $(document).on("click", ".alert_row", function () {
-        $("#alert_signature_docs_popup").css("display","block");
         dol =  $(this).attr("dol");
         dir =  $(this).attr("dir");
         name =  $(this).attr("name");
@@ -73,7 +74,13 @@ $(document).ready(function() {
         file_id =  $(this).attr("file_id");
         observer_em =  $(this).attr("observer_em");
         local_id =  $(this).attr("local_id");
-
+        action_type =  $(this).attr("action_type");
+        if( action_type == 3 ){
+            $("#alert_signature_docs_popup").removeClass("none");
+        }
+        if( action_type == 4 ){
+            $("#alert_acception_docs_popup").removeClass("none");
+        }
         observer_em = $(this).attr("observer_em");
         $("#emp_report_name").html(name);
         $("#dolg_report_name").html(dol);

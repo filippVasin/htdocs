@@ -576,13 +576,15 @@ class Model_forms{
         $form_content = $db->row($sql);
         $doc = $form_content['name'];
 
-        // Запись начала шага
-//        $doc_status = $this->doc_status($_SESSION['real_form_id']);
-        $doc_status = 4;// Требуется подписать сотрудника
-        $this->history_insert($doc_status);
+        $sql="SELECT employees_items_node.org_str_id
+                    FROM employees_items_node
+                    WHERE employees_items_node.employe_id =". $_SESSION['employee_id'];
+
+        $form_content = $db->row($sql);
+        $observer_org_str_id = $form_content['id'];
 
         // запись
-        $cron_action_type_id = 3;
+        $cron_action_type_id = 3;//надо подписать у секретаря
         $observer_org_str_id = 27;
         $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `cron_action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
                                        VALUES( '" .  $_SESSION['employee_id'] .
@@ -616,14 +618,18 @@ class Model_forms{
         $form_content = $db->row($sql);
         $doc = $form_content['name'];
 
-        // Запись начала шага
-//        $doc_status = $this->doc_status($_SESSION['real_form_id']);
-        $doc_status = 12;// Секретарь получил документ
+        $sql="SELECT employees_items_node.org_str_id
+                    FROM employees_items_node
+                    WHERE employees_items_node.employe_id =". $_SESSION['employee_id'];
+
+        $form_content = $db->row($sql);
+        $observer_org_str_id = $form_content['id'];
+
+        $doc_status = 9;// Секретарь должен получить документ
         $this->history_insert($doc_status);
 
         // запись
-        $cron_action_type_id = 3;
-        $observer_org_str_id = 27;
+        $cron_action_type_id = 4;// надо сдать секретарю
         $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `cron_action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
                                        VALUES( '" .  $_SESSION['employee_id'] .
             "','" . $observer_org_str_id .

@@ -216,7 +216,23 @@ $(document).ready(function() {
                 $(this).addClass("last");
             }
         });
+        // cтавим администрацию на первое место
+        $("#test_node_report .progress-group").each(function() {
+            var level = $(this).attr('level');
+            var left = $(this).attr('left_key');
+            if ((level ==  1)&&(left>002)){
+                $(this).detach().appendTo("#test_node_report");
+            }
+        });
 
+        // у кого нет потомков идите в конце
+        $("#test_node_report .progress-group").each(function() {
+            var level = $(this).attr('level');
+            var left = $(this).attr('left_key');
+            if ((level ==  1)&&(!($(this).hasClass("parent")))){
+                $(this).detach().appendTo("#test_node_report");
+            }
+        });
 
         // сотрудники
         $("#emp_node_report .progress-group").each(function() {
@@ -259,6 +275,22 @@ $(document).ready(function() {
             }
         });
 
+        $("#emp_node_report .progress-group").each(function() {
+            var level = $(this).attr('level');
+            var left = $(this).attr('left_key');
+            if ((level ==  1)&&(left>002)){
+                $(this).detach().appendTo("#emp_node_report");
+            }
+        });
+        // у кого нет потомков идите в конце
+        $("#emp_node_report .progress-group").each(function() {
+            var level = $(this).attr('level');
+            var left = $(this).attr('left_key');
+            if ((level ==  1)&&(!($(this).hasClass("parent")))){
+                $(this).detach().appendTo("#emp_node_report");
+            }
+        });
+
 
         // сотрудники
         $("#doc_node_report .progress-group").each(function() {
@@ -298,6 +330,22 @@ $(document).ready(function() {
                 $('.progress-text',this).addClass("look_off");
             } else {
                 $(this).addClass("last");
+            }
+        });
+
+        $("#doc_node_report .progress-group").each(function() {
+            var level = $(this).attr('level');
+            var left = $(this).attr('left_key');
+            if ((level ==  1)&&(left>002)){
+                $(this).detach().appendTo("#doc_node_report");
+            }
+        });
+        // у кого нет потомков идите в конце
+        $("#doc_node_report .progress-group").each(function() {
+            var level = $(this).attr('level');
+            var left = $(this).attr('left_key');
+            if ((level ==  1)&&(!($(this).hasClass("parent")))){
+                $(this).detach().appendTo("#doc_node_report");
             }
         });
 

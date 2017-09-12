@@ -17,7 +17,7 @@ class Model_rover{
     public function start()
     {
 //        echo $_SESSION['form_id'];
-        print_r($_SESSION);
+//        print_r($_SESSION);
         global $db;
         if ((isset($_SESSION['form_id'])) && (isset($_SESSION['step_id']))) {
             header("Location:/forms");
@@ -137,7 +137,7 @@ class Model_rover{
     ON HISTORYRESULT.HistoryStep = route_control_step.id
 
   WHERE route_control_step.track_number_id = ". $track ." AND CompanyRoute.company_id =". $_SESSION['control_company'];
-
+//echo $sql;
                     $control_test_array = $db->all($sql);
                     $step_pointer = 0; // пункт начала пути
 
@@ -178,8 +178,17 @@ class Model_rover{
                         }
                     } while ($content == "");
 
+//                    print_r($link);
 //                    print_r($_SESSION);
-                    $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
+                     $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
+//                    echo '<br>';
+//                    echo $link[$step_pointer]['HistoryStep'];
+//                    echo '<br>';
+//                    echo $link[$step_pointer]['periodicity'];
+//                    echo '<br>';
+//                    echo $link[$step_pointer]['data_finish'];
+//                    echo '<br>';
+//                    echo  '<br>' . $step_pointer;
 
                     if($_SESSION['step_id']>0 && ($flag_list=="")){
 

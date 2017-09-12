@@ -29,7 +29,7 @@ class Model_dead_end{
         $login_data = $db->row($sql);
 
         if($login_data['id'] != '' && $_SESSION['role_id'] == 3 ) {
-            $html = '<div class="button" id="reset_progress" reset_id="' . $_SESSION['user_id'] . '">Сбросить результаты</div>';
+            $html = '<div class="button" id="reset_progress" reset_id="' . $_SESSION['employee_id'] . '">Сбросить результаты</div>';
         }
 
        if($_SESSION['employee_id'] == 2){

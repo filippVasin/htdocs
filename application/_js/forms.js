@@ -58,6 +58,10 @@ $(document).ready(function() {
                 if (form_actoin == "creater"){
                     location.reload();
                 }
+                if(form_actoin == "secretary_accept_alert"){
+                    window.location = "/rover";
+                }
+
 
             }
 

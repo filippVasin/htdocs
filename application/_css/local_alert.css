@@ -128,7 +128,6 @@
 
 
 #alert_signature_docs_popup{
-    display: none;
     position: fixed;
     z-index: 999999;
     top: 20px;

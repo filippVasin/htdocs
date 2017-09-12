@@ -35,7 +35,7 @@
 
 
 
-    <div id="alert_signature_docs_popup">
+    <div id="alert_signature_docs_popup" class="none">
         <div class="canvas">
 
             <div class="popup_context_menu_title"> Сотрудник: </div>
@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <div id="alert_acception_docs_popup none">
+    <div id="alert_acception_docs_popup" class="none">
         <div class="canvas">
 
             <div class="popup_context_menu_title"> Сотрудник: </div>
