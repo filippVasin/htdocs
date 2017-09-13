@@ -75,22 +75,28 @@ $(document).ready(function() {
         observer_em =  $(this).attr("observer_em");
         local_id =  $(this).attr("local_id");
         action_type =  $(this).attr("action_type");
+        observer_em = $(this).attr("observer_em");
         if( action_type == 3 ){
             $("#alert_signature_docs_popup").removeClass("none");
+            $("#emp_report_name").html(name);
+            $("#dolg_report_name").html(dol);
+            $("#dolg_report_dir").html(dir);
+            $("#docs_report_name").html(doc);
         }
         if( action_type == 4 ){
             $("#alert_acception_docs_popup").removeClass("none");
+            $("#emp_acception_name").html(name);
+            $("#dolg_acception_name").html(dol);
+            $("#dolg_acception_dir").html(dir);
+            $("#docs_acception_name").html(doc);
         }
-        observer_em = $(this).attr("observer_em");
-        $("#emp_report_name").html(name);
-        $("#dolg_report_name").html(dol);
-        $("#dolg_report_dir").html(dir);
-        $("#docs_report_name").html(doc);
+
+
     });
 
 
 // отправляем на исполнение в forms и передаём нужные параметры
-    $(document).on("click", "#yes_popup", function () {
+    $(document).on("click", "#yes_popup_3", function () {
         var la_real_form_id = file_id;
         var la_employee = observer_em;
 
@@ -119,7 +125,45 @@ $(document).ready(function() {
                         $(this).css("display","none");
                     }
                 });
-                $("#alert_signature_docs_popup").css("display","none");
+                $("#alert_signature_docs_popup").addClass("none");
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+    // отправляем на исполнение в forms и передаём нужные параметры
+    $(document).on("click", "#yes_popup_4", function () {
+        var la_real_form_id = file_id;
+        var la_employee = observer_em;
+
+        var action_name = "secretary_accept_alert";
+
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                la_real_form_id:la_real_form_id,
+                la_employee:la_employee,
+                action_name:action_name,
+                observer_em:observer_em,
+                local_id:local_id
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var form_actoin_set = result.form_actoin;
+                var la_employee_set = result.la_employee;
+                var la_real_form_id_set = result.la_real_form_id;
+                var observer_em_set = result.observer_em;
+
+                $(".alert_row").each(function() {
+                    if(la_real_form_id_set == $(this).attr("file_id")){
+                        $(this).css("display","none");
+                    }
+                });
+                $("#alert_acception_docs_popup").addClass("none");
             },
             error: function () {
                 console.log('error');
@@ -128,68 +172,25 @@ $(document).ready(function() {
     });
 
 
+
 // выбор статуса
     $(document).on("change", "#node_docs_select", function () {
         select_item = $(this).val();
-        $.ajax({
-            type: "POST",
-            url: "/local_alert/start",
-            data: {
-                left_key:left_key,
-                right_key:right_key,
-                select_item:select_item,
-                select_item_em:select_item_em,
-                group:group,
-                time_from:time_from,
-                time_to:time_to
-            },
-            success: function (answer) {
-
-                var result = jQuery.parseJSON(answer);
-                var content = result.content;
-
-                if(content !="") {
-                    $('#strings').html(content);
-                } else {
-                    $('#strings').html("По запросу ничего нет");
-                }
-            },
-            error: function () {
-                console.log('error');
+        $(".alert_row").addClass("none");
+        $(".alert_row").each(function() {
+            if ((($(this).attr('doc_trigger') == select_item)||(select_item == ""))&&((select_item_em == "")||($(this).attr('emp') == select_item_em))){
+                $(this).removeClass("none");
             }
         });
-
     });
 
     // выбор сотрудника
     $(document).on("change", "#node_docs_select_em", function () {
         select_item_em = $(this).val();
-
-        $.ajax({
-            type: "POST",
-            url: "/local_alert/start",
-            data: {
-                left_key:left_key,
-                right_key:right_key,
-                select_item:select_item,
-                select_item_em:select_item_em,
-                group:group,
-                time_from:time_from,
-                time_to:time_to
-            },
-            success: function (answer) {
-
-                var result = jQuery.parseJSON(answer);
-                var content = result.content;
-
-                if(content !="") {
-                    $('#strings').html(content);
-                } else {
-                    $('#strings').html("По запросу ничего нет");
-                }
-            },
-            error: function () {
-                console.log('error');
+        $(".alert_row").addClass("none");
+        $(".alert_row").each(function() {
+            if ((($(this).attr('doc_trigger') == select_item)||(select_item == ""))&&((select_item_em == "")||($(this).attr('emp') == select_item_em))){
+                $(this).removeClass("none");
             }
         });
     });
@@ -237,29 +238,50 @@ $(document).ready(function() {
     // Выбрать узел
     $(document).on("click", "#node_docs", function () {
         $("#popup_context_menu_update").css("display","block");
+        var emp_id = "";
+        var report_type = "org_str_tree";
         $.ajax({
             type: "POST",
-            url: "/report_step/load_node_docs_tree",
+            url: "/master_report/main",
             data: {
+                emp_id:emp_id,
+                report_type: report_type
             },
             success: function (answer) {
-
                 var result = jQuery.parseJSON(answer);
                 var request_result = result.status;
+                var request_message = result.message;
                 var content = result.content;
                 // если 'ok' - рисуем тест
                 if(request_result == 'ok'){
-                    $("#popup_update_tree").html(content);
-                }// if
+
+                    $("body").css("margin-top","0px");
+                    $('#test_block').fadeIn(0);
+                    $('#popup_update_tree').html(content);
+                    $(".tree_item").addClass("none");
+                    $(".tree_item_fio").addClass("none");
+                    $("html, body").animate({ scrollTop: 0 }, 0);
+                    $("#tree_main>ul").removeClass("none");
+                    // присваеваем классы дня непустых элементов
+                    $(".tree_item").each(function() {
+                        var parent = $(this).parent("li");
+                        if(parent.children('ul').length != 0){
+                            $(this).addClass("open_item");
+                        }
+                    });
+                    $(".open_item").closest("ul").removeClass("none");
+                    $(".open_item").removeClass("none");
+
+                }
             },
             error: function () {
                 console.log('error');
             }
-        });// ajax
+        });
     });
 
     // выбираем узел
-    $(document).on("click", ".new_parent", function () {
+    $(document).on("click", ".tree_item", function () {
         left_key =  $(this).attr("left_key");
         right_key =  $(this).attr("right_key");
         $("#popup_update_tree").attr("left_key", left_key);
@@ -317,37 +339,7 @@ $(document).ready(function() {
         $("#time_from").val("");
         $("#time_to").val("");
 
-        $.ajax({
-            type: "POST",
-            url: "/local_alert/start",
-            data: {
-                left_key:left_key,
-                right_key:right_key,
-                select_item:select_item,
-                select_item_em:select_item_em,
-                group:group,
-                time_from:time_from,
-                time_to:time_to
-
-            },
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var content = result.content;
-                var select = result.select;
-                var select_em = result.select_em;
-                if (content != "") {
-                    $('#node_docs_select').html(select);
-                }
-                if (content != "") {
-                    $('#node_docs_select_em').html(select_em);
-                }
-                if (content != "") {
-                    $('#strings').html(content);
-                }
-            },
-            error: function () {
-            }
-        });
+        $(".alert_row").removeClass("none");
     });
 
 
@@ -355,40 +347,35 @@ $(document).ready(function() {
 
 
     // фильтр по прогрессу прохождения
-    $(document).on("change", ".target", function () {
-        time_from = $("#time_from").val();
-        time_to = $("#time_to").val();
-
-        $.ajax({
-            type: "POST",
-            url: "/local_alert/start",
-            data: {
-                left_key:left_key,
-                right_key:right_key,
-                select_item:select_item,
-                select_item_em:select_item_em,
-                group:group,
-                time_from:time_from,
-                time_to:time_to
-            },
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var content = result.content;
-
-                if(content !="") {
-                    $('#strings').html(content);
-                }
-            },
-            error: function () {
-            }
-        });//ajax
-    });
-
-
-
-
-    //$("#time_to").keyup(function(){
-    //    alert('Элемент foo потерял фокус.');
+    //$(document).on("change", ".target", function () {
+    //    time_from = $("#time_from").val();
+    //    time_to = $("#time_to").val();
+    //
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/local_alert/start",
+    //        data: {
+    //            left_key:left_key,
+    //            right_key:right_key,
+    //            select_item:select_item,
+    //            select_item_em:select_item_em,
+    //            group:group,
+    //            time_from:time_from,
+    //            time_to:time_to
+    //        },
+    //        success: function (answer) {
+    //            var result = jQuery.parseJSON(answer);
+    //            var content = result.content;
+    //
+    //            if(content !="") {
+    //                $('#strings').html(content);
+    //            }
+    //        },
+    //        error: function () {
+    //        }
+    //    });//ajax
     //});
+
+
 });
 

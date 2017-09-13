@@ -13,7 +13,7 @@
     <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.maskedinput.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/templates/<?echo $current_template;?>/css/tcal.css" />
     <script type="text/javascript" src="/templates/<?echo $current_template;?>/js/tcal.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
     <?
     // Здесь мы будем выводить блок в js переданные нам viewer;
     if(isset($viewer_js) && $viewer_js != ''){
@@ -34,6 +34,11 @@
     </div>
     <? if(isset($_SESSION['user_id'])){
        echo '<a href="/exit" class="dors_button"><div>Выход</div><img src="../../templates/simple_template/images/exit_icon.svg"></a>';
+//        <a href="/exit" class="dors_button"><div>Выход</div><img style="position: absolute;
+//    width: 110px;
+//    height: 50px;
+//    top: -10px;
+//    right: -10px;" src="../../templates/simple_template/images/IS-0005m.png"></a>
      } else {
         echo '<a href="/login" class="dors_button"><div>Войти</div><img src="../../templates/simple_template/images/reset_icon.svg"></a>';
     }?>

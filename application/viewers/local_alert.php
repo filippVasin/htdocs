@@ -45,7 +45,7 @@
             <div class="popup_context_menu_title"> должен подписать документ: </div>
             <div id="docs_report_name"></div>
             <div class="button_row">
-                <div class="button" id="yes_popup">Подписал</div>
+                <div class="button" id="yes_popup_3">Подписал</div>
                 <div class="button cancel_popup">Не подписал</div>
             </div>
         </div>
@@ -55,7 +55,7 @@
 
     <div id="popup_context_menu_update">
         <div class="canvas">
-            <div class="popup_context_menu_title"> Выберите интересуемый узел: </div>
+            <div class="popup_context_menu_title">Выберите интересуемое подразделение: </div>
             <div id="popup_update_tree"></div>
             <div class="button_row">
                 <div class="button cancel_popup">Отмена</div>
@@ -67,13 +67,13 @@
         <div class="canvas">
 
             <div class="popup_context_menu_title"> Сотрудник: </div>
-            <div id="emp_report_name"></div>
-            <div id="dolg_report_name"></div>
-            <div id="dolg_report_dir"></div>
+            <div id="emp_acception_name"></div>
+            <div id="dolg_acception_name"></div>
+            <div id="dolg_acception_dir"></div>
             <div class="popup_context_menu_title"> должен сдать: </div>
-            <div id="docs_report_name"></div>
+            <div id="docs_acception_name"></div>
             <div class="button_row">
-                <div class="button" id="yes_popup">Сдал</div>
+                <div class="button" id="yes_popup_4">Сдал</div>
                 <div class="button cancel_popup">Не сдал</div>
             </div>
         </div>

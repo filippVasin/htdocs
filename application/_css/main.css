@@ -307,3 +307,37 @@
 #popup_report_emp_content .row  .end{
     width: 130px;
 }
+
+
+
+li {
+    list-style-type: none;
+}
+ul {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.tree_item{
+    height: 30px;
+    width: 560px;
+
+    color:#614d4d;
+    line-height: 30px;
+    font-weight: 700;
+}
+.open_item{
+    color: #e08833;
+    cursor: pointer;
+}
+.open_item:hover{
+    color: rgba(224, 136, 51, .7);
+}
+
+#tree_main {
+
+}
+.tree_item_fio{
+    font-weight: 400;
+    color: #614d4d
+}

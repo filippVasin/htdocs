@@ -5,10 +5,10 @@
     %select%
     <br>
 
-    <div class="button" id="tree_down">Вниз</div>
-    <div class="button" id="tree_up">Вверх</div>
-    <div class="button" id="whole_branch">Всю ветку</div>
-    <div class="button" id="whole_tree">Всё дерево</div>
+    <div class="button" id="tree_down">Отобразить подразделение</div>
+    <div class="button" id="tree_up">Главное подразделение</div>
+    <div class="button" id="whole_branch">Все подразделения</div>
+    <div class="button" id="whole_tree">Вся организация</div>
    <br>
     <div id="test_block" style="display: none; text-align: left;"><div id="content_box"></div></div>
 </div>

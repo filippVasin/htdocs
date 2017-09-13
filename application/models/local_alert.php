@@ -86,7 +86,7 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
 
 AND local_alerts.initiator_employee_id = init_em.id
 AND local_alerts.date_finish IS NULL
-AND local_alerts.cron_action_type_id = 3 OR local_alerts.cron_action_type_id = 4";
+AND (local_alerts.cron_action_type_id = 3 OR local_alerts.cron_action_type_id = 4)";
 
         // если указаны даты выборки
         if ($time_from != "") {
@@ -140,17 +140,10 @@ AND local_alerts.cron_action_type_id = 3 OR local_alerts.cron_action_type_id = 4
             $html = "";
             $employees = array();
             foreach ($alert_every_days as $key => $alert_every_day) {
-                // собираем массивы значений для селекта
-                $employees[$key] =
-                    ["fio" => $alert_every_day['fio'],
-                        "em_id" => $alert_every_day['em_id']
-                    ];
-
-                // показываем только то что удовлетваряет фильтрам
-                if (($alert_every_day['em_id'] == $select_item_em) || ($select_item_em == "")) {
-                    if (($alert_every_day['doc_trigger'] == $select_item) || ($select_item == "")) {
                         $html .= '<div class="alert_row" observer_em=' . $_SESSION['employee_id'] . '
                                                     dol="' . $alert_every_day['position'] . '"
+                                                    emp="' . $alert_every_day['em_id'] . '"
+                                                    doc_trigger="' . $alert_every_day['doc_trigger'] . '"
                                                      dir="' . $alert_every_day['dir'] . '"
                                                      doc="' . $alert_every_day['file'] . '"
                                                      name="' . $alert_every_day['fio'] . '"
@@ -165,18 +158,16 @@ AND local_alerts.cron_action_type_id = 3 OR local_alerts.cron_action_type_id = 4
                         <div  class="doc_type">' . $alert_every_day['doc_status'] . '</div>
                         <div class="status">' . $alert_every_day['manual'] . '</div>
                         <div class="status_date">' . $alert_every_day['date_create'] . '</div>
-
                     </div>';
-                    }
-                }
             }
 
-            // убираем дубли и собираем селект
-//        print_r($employees);
-            $result = array_unique($employees);
             $select_em = "<option value='' >Все сотрудники</option>";
-            foreach ($result as $key => $value) {
-                $select_em .= "<option value='" . $result[$key]['em_id'] . "'>" . $result[$key]['fio'] . "</option>";
+            $emp = 0;
+            foreach ($alert_every_days as $alert_every_day) {
+                if($alert_every_day['em_id'] != $emp) {
+                    $select_em .= "<option value='" . $alert_every_day['em_id'] . "'>" . $alert_every_day['fio'] . "</option>";
+                    $emp =  $alert_every_day['em_id'];
+                }
             }
 
 

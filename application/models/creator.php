@@ -493,7 +493,18 @@ class Model_creator
 
                 $item_control_id = $result['id'];
 
-                $html = "Запись прошла успешна";
+
+                $sql = "SELECT organization_structure.id, items_control_types.name AS type, items_control.name AS dit
+                        FROM organization_structure,items_control,items_control_types
+                        WHERE organization_structure.id = ". $parent ."
+                        AND organization_structure.items_control_id = items_control_types.id
+                        AND organization_structure.kladr_id = items_control.id";
+                $result = $db->row($sql);
+
+                $parent_dir = $result['type']. " " . $result['dit'] ;
+
+
+                $html = "Запись ". $input_new_num  ." в ". $parent_dir ." прошла успешна";
 
 //                //         id родителя, данные, условия
                 $this->InsertNode($parent,$_SESSION['control_company'],$item_control_id,$select_new_type_id,1);

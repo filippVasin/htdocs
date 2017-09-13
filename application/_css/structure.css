@@ -2,15 +2,15 @@ li {
     list-style-type: none;
 }
 ul {
-    margin-left: 10px;
+    margin-left: 20px;
     padding-left: 0;
 }
 
 .tree_item{
     height: 30px;
     width: 560px;
-    background-color: #222d32;
-    color: #fff;
+    background-color: #ecf0f5;
+    color:#614d4d;
     line-height: 30px;
     font-weight: 700;
 }
@@ -23,9 +23,9 @@ ul {
 }
 
 #tree_main {
-    background-color: #222d32;
+    background-color: #ecf0f5;
 }
 .tree_item_fio{
     font-weight: 400;
-    color: #ccc;
+    color: #614d4d
 }

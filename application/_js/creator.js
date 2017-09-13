@@ -292,6 +292,7 @@ $(document).ready(function() {
         $("#title_creator_popup").html("Здесь будет сообщение");
         $('#button_clear').click();
         $(".target").val("");
+        location.reload();
     });
 
     $(document).on("change", "#news_num", function () {

@@ -117,4 +117,44 @@ $(document).ready(function() {
         }
     });
 
+
+
+
+
+
 });
+
+
+function copy(str){
+    var tmp   = document.createElement('INPUT'), // Создаём новый текстовой input
+        focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
+
+    tmp.value = str; // Временному input вставляем текст для копирования
+
+    document.body.appendChild(tmp); // Вставляем input в DOM
+    tmp.select(); // Выделяем весь текст в input
+    document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
+    document.body.removeChild(tmp); // Удаляем временный input
+    focus.focus(); // Возвращаем фокус туда, где был
+}
+
+document.addEventListener('DOMContentLoaded', e => {
+    var input = document.querySelector('#input'),
+    bCopy = document.querySelector('#bCopy'),
+    log   = document.querySelector('#log');
+
+bCopy.addEventListener('click', e => {
+    if(input.value){
+    try{
+        copy(input.value);
+        log.style.color = 'green';
+        log.innerHTML = 'Скопировано!';
+    }catch(e){
+        log.style.color = 'red';
+        log.innerHTML = 'Ошибка!';
+    }
+}
+});
+});
+
+

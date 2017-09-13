@@ -110,6 +110,9 @@ class Model_forms{
             case "secretary_accept_alert":
                 $result_array = $this->secretary_accept_alert();
                 break;
+            case "signature_accept":
+                $result_array = $this->signature_accept();
+                break;
         }
 
         $result = json_encode($result_array, true);
@@ -649,5 +652,41 @@ class Model_forms{
         $this->session_clear();
         return $result_array;
     }// local_alert();
+
+
+    private function signature_accept(){
+        global $db;
+        $sql = "SELECT *
+                FROM save_temp_files, form_status_now
+                WHERE save_temp_files.id = form_status_now.save_temps_file_id
+                AND save_temp_files.id =" . $_SESSION['real_form_id'];
+
+        $form_content = $db->row($sql);
+
+        // Запись начала шага
+        $doc_status = 3;// Подписан сотрудником
+        $this->history_insert($doc_status);
+
+        $doc_item = $form_content['path'];
+        $doc_name = $form_content['name'];
+        //     $page = file_get_contents($doc_item);
+        $page ='<div id="popup_update_select_position">
+                    <div class="canvas" style="height: 120px; box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
+                        <div class="popup_context_menu_title"> Подпишите '. $doc_name .' в 417м кабинете</div>
+                            <div class="row">
+                                <div class="button" style="width: 180px;" id="popup_update_select_node_yes">Я подписал</div>
+                                <div class="button" style="width: 180px;" id="popup_update_select_position_cancel">Я не подписал</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+        $form_actoin = "signature";
+        $result_array['form_actoin'] = $form_actoin;
+        $result_array['form_link'] = $doc_item;
+        $result_array['page'] = $page;
+        return $result_array;
+    }// signature();
+
+
 
 }

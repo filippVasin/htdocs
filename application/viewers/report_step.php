@@ -23,7 +23,7 @@
 
     <div id="popup_context_menu_update">
         <div class="canvas">
-            <div class="popup_context_menu_title"> Выберите интересуемый узел: </div>
+            <div class="popup_context_menu_title"> Выберите интересуемое подразделение: </div>
             <div id="popup_update_tree"></div>
             <div class="button_row">
                 <div class="button cancel_popup">Отмена</div>

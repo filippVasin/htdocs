@@ -59,25 +59,46 @@ $(document).ready(function() {
     // Выбрать узел
     $(document).on("click", "#node_docs", function () {
         $("#popup_context_menu_update").css("display","block");
+        var emp_id = "";
+        var report_type = "org_str_tree";
         $.ajax({
             type: "POST",
-            url: "/docs_report/load_node_docs_tree",
+            url: "/master_report/main",
             data: {
+                emp_id:emp_id,
+                report_type: report_type
             },
             success: function (answer) {
-
                 var result = jQuery.parseJSON(answer);
                 var request_result = result.status;
+                var request_message = result.message;
                 var content = result.content;
                 // если 'ok' - рисуем тест
                 if(request_result == 'ok'){
-                    $("#popup_update_tree").html(content);
-                }// if
+
+                    $("body").css("margin-top","0px");
+                    $('#test_block').fadeIn(0);
+                    $('#popup_update_tree').html(content);
+                    $(".tree_item").addClass("none");
+                    $(".tree_item_fio").addClass("none");
+                    $("html, body").animate({ scrollTop: 0 }, 0);
+                    $("#tree_main>ul").removeClass("none");
+                    // присваеваем классы дня непустых элементов
+                    $(".tree_item").each(function() {
+                        var parent = $(this).parent("li");
+                        if(parent.children('ul').length != 0){
+                            $(this).addClass("open_item");
+                        }
+                    });
+                    $(".open_item").closest("ul").removeClass("none");
+                    $(".open_item").removeClass("none");
+
+                }
             },
             error: function () {
                 console.log('error');
             }
-        });// ajax
+        });
     });
 
 
@@ -113,7 +134,7 @@ $(document).ready(function() {
     });
 
     // выбираем сотрудника
-    $(document).on("click", ".new_parent", function () {
+    $(document).on("click", ".tree_item", function () {
         left_key =  $(this).attr("left_key");
         right_key =  $(this).attr("right_key");
         $(".cancel_popup").click();

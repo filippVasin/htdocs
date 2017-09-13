@@ -46,3 +46,8 @@
         </div>
     </div>
 </div>
+
+
+<!---->
+<!--Введите текст: <input type='text' id='input' /> <input type='button' id='bCopy' value='Copy!' /><br />-->
+<!--<span id='log'></span>-->
