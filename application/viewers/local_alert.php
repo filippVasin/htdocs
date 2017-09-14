@@ -78,3 +78,21 @@
             </div>
         </div>
     </div>
+
+
+
+    <div id="alert_bailee_push_popup" class="none">
+        <div class="canvas">
+
+            <div class="popup_context_menu_title"> Ответственный: </div>
+            <div id="emp_bailee_push_name"></div>
+            <div id="dolg_bailee_push_name"></div>
+            <div id="dolg_bailee_push_dir"></div>
+            <div class="popup_context_menu_title"> должен подписать документ: </div>
+            <div id="docs_bailee_push_name"></div>
+            <div class="button_row">
+                <div class="button" id="yes_popup_14">Подписал</div>
+                <div class="button cancel_popup">Не подписал</div>
+            </div>
+        </div>
+    </div>

@@ -86,6 +86,8 @@ $(document).ready(function() {
         $("#plus_test_users_couple").addClass("none");
         $("#ok_test_users_couple").removeClass("none");
         $("#cancel_test_users_couple").html("Отмена");
+        $(".users").html("");
+        $(".mail_input").removeClass("none");
     });
 
     $(document).on("click", "#ok_test_users_couple", function () {
@@ -107,7 +109,7 @@ $(document).ready(function() {
                     var content = result.content;
                     if (request_result == "ok") {
                         $(".users").html(content);
-                        $(".mail_input").remove();
+                        $(".mail_input").addClass("none");
                     }
                 }
             });
@@ -138,23 +140,23 @@ function copy(str){
     focus.focus(); // Возвращаем фокус туда, где был
 }
 
-document.addEventListener('DOMContentLoaded', e => {
-    var input = document.querySelector('#input'),
-    bCopy = document.querySelector('#bCopy'),
-    log   = document.querySelector('#log');
-
-bCopy.addEventListener('click', e => {
-    if(input.value){
-    try{
-        copy(input.value);
-        log.style.color = 'green';
-        log.innerHTML = 'Скопировано!';
-    }catch(e){
-        log.style.color = 'red';
-        log.innerHTML = 'Ошибка!';
-    }
-}
-});
-});
+//document.addEventListener('DOMContentLoaded', e => {
+//    var input = document.querySelector('#input'),
+//    bCopy = document.querySelector('#bCopy'),
+//    log   = document.querySelector('#log');
+//
+//bCopy.addEventListener('click', e => {
+//    if(input.value){
+//    try{
+//        copy(input.value);
+//        log.style.color = 'green';
+//        log.innerHTML = 'Скопировано!';
+//    }catch(e){
+//        log.style.color = 'red';
+//        log.innerHTML = 'Ошибка!';
+//    }
+//}
+//});
+//});
 
 

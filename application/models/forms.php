@@ -98,20 +98,23 @@ class Model_forms{
             case "print":
                 $result_array = $this->print_file();
                 break;
-            case "local_alert":
-                $result_array = $this->local_alert();
+            case "secretary_signature_alert":
+                $result_array = $this->secretary_signature_alert();
                 break;
-            case "email_alert":
-                $result_array = $this->email_alert();
+            case "push_email":
+                $result_array = $this->push_email();
                 break;
             case "signature":
                 $result_array = $this->signature();
                 break;
-            case "secretary_accept_alert":
-                $result_array = $this->secretary_accept_alert();
+            case "secretary_get_doc_alert":
+                $result_array = $this->secretary_get_doc_alert();
                 break;
             case "signature_accept":
                 $result_array = $this->signature_accept();
+                break;
+            case "bailee_alert":
+                $result_array = $this->bailee_alert();
                 break;
         }
 
@@ -461,7 +464,7 @@ class Model_forms{
         }// user_pass_form_end();
 
 
-    private function email_alert(){
+    private function push_email(){
         global $db, $mailer;
 
 
@@ -569,30 +572,19 @@ class Model_forms{
     }// email_alert();
 
 
-    private function local_alert(){
-        global $db;
+    private function secretary_signature_alert(){
+        global $db, $labro;
+        $observer = $labro->bailee($_SESSION['employee_id']);
+        $observer_org_str_id = $observer['ORG_chief_id'];
 
-        $sql = "SELECT *
-                FROM save_temp_files, form_status_now
-                WHERE save_temp_files.id = form_status_now.save_temps_file_id
-                AND save_temp_files.id =" . $_SESSION['real_form_id'];
-        $form_content = $db->row($sql);
-        $doc = $form_content['name'];
 
-        $sql="SELECT employees_items_node.org_str_id
-                    FROM employees_items_node
-                    WHERE employees_items_node.employe_id =". $_SESSION['employee_id'];
+        $action_type_id = 10;// Подписать у секреторя
+        $this->history_insert($action_type_id);
 
-        $form_content = $db->row($sql);
-        $observer_org_str_id = $form_content['id'];
-
-        // запись
-        $cron_action_type_id = 3;//надо подписать у секретаря
-        $observer_org_str_id = 27;
-        $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `cron_action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
+        $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
                                        VALUES( '" .  $_SESSION['employee_id'] .
                                             "','" . $observer_org_str_id .
-                                            "','" . $cron_action_type_id .
+                                            "','" . $action_type_id .
                                             "','" . $_SESSION['control_company'] .
                                             "','" . $_SESSION['real_form_id'] .
                                             "','" . $_SESSION['step_id'] .
@@ -611,32 +603,18 @@ class Model_forms{
 
 
 
-    private function secretary_accept_alert(){
-        global $db;
+    private function secretary_get_doc_alert(){
+        global $db, $labro;
+        $observer = $labro->bailee($_SESSION['employee_id']);
+        $observer_org_str_id = $observer['ORG_chief_id'];
 
-        $sql = "SELECT *
-                FROM save_temp_files, form_status_now
-                WHERE save_temp_files.id = form_status_now.save_temps_file_id
-                AND save_temp_files.id =" . $_SESSION['real_form_id'];
-        $form_content = $db->row($sql);
-        $doc = $form_content['name'];
+        $action_type_id = 12;// Секретарь должен получить документ
+        $this->history_insert($action_type_id);
 
-        $sql="SELECT employees_items_node.org_str_id
-                    FROM employees_items_node
-                    WHERE employees_items_node.employe_id =". $_SESSION['employee_id'];
-
-        $form_content = $db->row($sql);
-        $observer_org_str_id = $form_content['id'];
-
-        $doc_status = 9;// Секретарь должен получить документ
-        $this->history_insert($doc_status);
-
-        // запись
-        $cron_action_type_id = 4;// надо сдать секретарю
-        $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `cron_action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
+        $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
                                        VALUES( '" .  $_SESSION['employee_id'] .
             "','" . $observer_org_str_id .
-            "','" . $cron_action_type_id .
+            "','" . $action_type_id .
             "','" . $_SESSION['control_company'] .
             "','" . $_SESSION['real_form_id'] .
             "','" . $_SESSION['step_id'] .
@@ -688,5 +666,33 @@ class Model_forms{
     }// signature();
 
 
+
+    private function bailee_alert(){
+        global $db, $labro;
+        $observer = $labro->bailee($_SESSION['employee_id']);
+        $observer_org_str_id = $observer['ORG_chief_id'];
+
+        $action_type_id = 14;// Подписать ответственному
+        $this->history_insert($action_type_id);
+
+        $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
+                                       VALUES( '" .  $_SESSION['employee_id'] .
+            "','" . $observer_org_str_id .
+            "','" . $action_type_id .
+            "','" . $_SESSION['control_company'] .
+            "','" . $_SESSION['real_form_id'] .
+            "','" . $_SESSION['step_id'] .
+            "',NOW());";
+        $db->query($sql);
+
+
+        $form_actoin = "local_alert";
+        $result_array['form_actoin'] = $form_actoin;
+        $result_array['page'] = "local_alert";
+        // дописываем историю
+        $this->logs_form_file();
+        $this->session_clear();
+        return $result_array;
+    }// local_alert();
 
 }

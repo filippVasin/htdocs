@@ -61,19 +61,20 @@ class Model_local_alert{
 
 
 // запрашиваем все алерты(документ на подпись)
-        $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.cron_action_type_id,
+        $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
+form_step_action.action_name,form_step_action.user_action_name,
 CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
 local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
 items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
 document_status_now.id AS doc_trigger
 FROM (local_alerts,employees_items_node, employees AS init_em,
-cron_action_type)
+cron_action_type, form_step_action)
 LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
 LEFT JOIN organization_structure ON organization_structure.id = NODE.org_str_id
 LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
 LEFT JOIN organization_structure AS org_parent
 ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
-                     AND org_parent.level =(organization_structure.level - 1) )
+    AND org_parent.level =(organization_structure.level - 1) )
 LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
 LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
 
@@ -84,9 +85,9 @@ LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
 
 WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
 
-AND local_alerts.initiator_employee_id = init_em.id
-AND local_alerts.date_finish IS NULL
-AND (local_alerts.cron_action_type_id = 3 OR local_alerts.cron_action_type_id = 4)";
+    AND local_alerts.initiator_employee_id = init_em.id
+    AND form_step_action.id = local_alerts.action_type_id
+    AND local_alerts.date_finish IS NULL";
 
         // если указаны даты выборки
         if ($time_from != "") {
@@ -149,7 +150,7 @@ AND (local_alerts.cron_action_type_id = 3 OR local_alerts.cron_action_type_id = 
                                                      name="' . $alert_every_day['fio'] . '"
                                                      local_id="' . $alert_every_day['id'] . '"
                                                       file_id="' . $alert_every_day['save_temp_files_id'] . '"
-                                                      action_type="' . $alert_every_day['cron_action_type_id'] . '">
+                                                      action_type="' . $alert_every_day['action_type_id'] . '">
                         <div  class="number_doc">' . $alert_every_day['id'] . '</div>
                         <div  class="fio">' . $alert_every_day['fio'] . '</div>
                         <div class="otdel">' . $alert_every_day['dir'] . '</div>

@@ -153,7 +153,7 @@ class Model_dead_end{
         foreach ($alert_array as $key => $alert_item) {
             $sql = "INSERT INTO `alert_history` (`initiator_employee_id`,
                                                   `observer_org_str_id`,
-                                                  `cron_action_type_id`,
+                                                  `action_type_id`,
                                                   `company_id`,
                                                   `save_temp_files_id`,
                                                   `step_id`,
@@ -161,7 +161,7 @@ class Model_dead_end{
                                                   `date_finish`) VALUES (
                                                    '" . $alert_item['initiator_employee_id'] . "',
                                                    '" . $alert_item['observer_org_str_id'] . "',
-                                                   '" . $alert_item['cron_action_type_id'] . "',
+                                                   '" . $alert_item['action_type_id'] . "',
                                                    '" . $alert_item['company_id'] . "',
                                                    '" . $alert_item['save_temp_files_id'] . "',
                                                    '" . $alert_item['step_id'] . "',
@@ -201,14 +201,14 @@ class Model_dead_end{
         foreach ($alert_array as $key=>$alert_item) {
             $sql = "INSERT INTO `cron_every_day` (`initiator_employee_id`,
                                                   `observer_org_str_id`,
-                                                  `cron_action_type_id`,
+                                                  `action_type_id`,
                                                   `company_id`,
                                                   `save_temp_files_id`,
                                                   `step_id`,
                                                   `date_create`) VALUES (
                                                    '". $alert_item['initiator_employee_id'] ."',
                                                    '". $alert_item['observer_org_str_id']  ."',
-                                                   '". $alert_item['cron_action_type_id']  ."',
+                                                   '". $alert_item['action_type_id']  ."',
                                                    '". $alert_item['company_id']  ."',
                                                    '". $alert_item['save_temp_files_id']  ."',
                                                    '". $alert_item['step_id']  ."',
@@ -543,7 +543,7 @@ class Model_dead_end{
             $docs = array();
             foreach ($local_alerts as $key => $local_alert) {
                 // собираем список все записи для письма инициатору
-                if($local_alert['cron_action_type_id']==2) {
+                if($local_alert['action_type_id']==2) {
                     $docs[] = $local_alert['save_temp_files_id'];
                 }
             }
