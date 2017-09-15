@@ -331,6 +331,7 @@ WHERE local_alerts.company_id = ". $control_company ."
         $secretar_html = "";
         $emp_id = 0;
         foreach ($alert_array as $alert_item) {
+            $date = date_create($alert_item['date_create']);
             if ($alert_item['em_id'] != $emp_id) {
                 $emp_id = $alert_item['em_id'];
                 $secretar_html .= "<br><b> Сотрудник -" . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - </b><br>";
@@ -338,11 +339,11 @@ WHERE local_alerts.company_id = ". $control_company ."
 
             // если надо расписаться у секреторя
             if ($alert_item['action_type_id'] == 10) {
-                $secretar_html .= " дожен расписаться в документе - <b>'" . $alert_item['manual'] . "'</b>(". $alert_item['date_create'] .") <br>";
+                $secretar_html .= " дожен расписаться в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd-m-Y') .") <br>";
             }
             // если надо сдать документ
             if ($alert_item['action_type_id'] == 12) {
-                $secretar_html .= " дожен сдать документ - <b>'" . $alert_item['manual'] . "'</b>(". $alert_item['date_create'] .") <br>";
+                $secretar_html .= " дожен сдать документ - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd-m-Y') .") <br>";
             }
             // если нужна подпись ответственного лица
             if ($alert_item['action_type_id'] == 14) {
@@ -350,7 +351,7 @@ WHERE local_alerts.company_id = ". $control_company ."
                 $chief = $boss['chief_surname'] . " " . $boss['chief_name'] . " " . $boss['chief_second_name'];
                 $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
                 $chief_dol = $boss['chief_dol'];
-                $secretar_html .= " нужна подпись ответственного - <b>" . $chiefFIO . "</b>(" . $chief_dol . "), в документе - <b>'" . $alert_item['manual'] . "'</b>(". $alert_item['date_create'] .") <br>";
+                $secretar_html .= " нужна подпись ответственного - <b>" . $chiefFIO . "</b>(" . $chief_dol . "), в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd-m-Y') .") <br>";
             }
 
         }
@@ -413,7 +414,8 @@ WHERE local_alerts.company_id = ". $control_company ."
                         $bailee_html .= "<b> Сотрудник -" . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - </b><br>";
                     }
                     // сам документ
-                    $bailee_html .= "документе - <b>'" . $alert_item['manual'] . "'</b> (". $alert_item['date_create'] .") <br>";
+                    $date = date_create($alert_item['date_create']);
+                    $bailee_html .= "документе - <b>'" . $alert_item['manual'] . "'</b> (". date_format($date, 'd-m-Y') .") <br>";
                 }
 
             }
