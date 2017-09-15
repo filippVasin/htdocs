@@ -27,10 +27,10 @@ if (session_id() == '') {
     Подключаем классы;
  */
 
-require_once(ROOT_PATH . '/core/systems/classes/class_control_tests.php');
+
 require_once(ROOT_PATH . '/core/systems/classes/class_controller.php');
 require_once(ROOT_PATH . '/core/systems/classes/class_elements.php');
-require_once(ROOT_PATH . '/core/systems/classes/class_Labro.php');
+require_once(ROOT_PATH . '/core/systems/classes/class_labro.php');
 require_once(ROOT_PATH . '/core/systems/classes/class_mysql.php');
 require_once(ROOT_PATH . '/core/systems/classes/class_node.php');
 require_once(ROOT_PATH . '/core/systems/classes/class_phpexcel.php');

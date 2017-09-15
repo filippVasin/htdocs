@@ -93,29 +93,33 @@ class Model_dead_end{
     public function cron()
     {
         global $db;
-        // логи
 
+        // логи
         $result_status = "Start";
         $cron_task = "cron_start";
         $comment = "Начали работать";
         $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
         $db->query($sql);
 
-//        $this->drop_every_day();
-//        $this->transfer_alert();
-//        $this->transfer_to_history_alert();
-
-        // формируем список инициаторов и проходим по списку
+        $this->drop_every_day();
+        $this->transfer_alert();
+        $this->transfer_to_history_alert();
+//        формируем список инициаторов и проходим по списку
         $sql="SELECT * FROM cron_every_day GROUP BY cron_every_day.initiator_employee_id";
         $initiators = $db->all($sql);
-        // проходим по сообщениям инициатору
-//        $this->send_mail_to_initiator($initiators);
-        // отчёт по не пройденным тестам
-        $observer_emplyoee_id = 69;
+//        проходим по сообщениям инициатору
+        $this->send_mail_to_initiator($initiators);
+//        отчёт по не пройденным тестам
+        $observer_emplyoee_id = 2;
         $this->send_report_to_test($observer_emplyoee_id);
         sleep(3);
-        // отчёт по сотрудникам
-//        $this->send_report($observer_emplyoee_id);
+//        отчёт по сотрудникам
+        $this->send_report($observer_emplyoee_id);
+
+        // ежедневные отчёты по уведомлениям local_alert
+        $this->alert_reports();
+
+
 
         // логи
         $result_status = "Stop";
@@ -989,4 +993,104 @@ class Model_dead_end{
 
         }
     }
+
+    private  function alert_reports(){
+        global $db, $labro;
+
+
+        $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
+form_step_action.action_name,form_step_action.user_action_name,
+CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
+local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
+items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
+document_status_now.id AS doc_trigger
+FROM (local_alerts,employees_items_node, employees AS init_em,
+cron_action_type, form_step_action)
+LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
+LEFT JOIN organization_structure ON organization_structure.id = NODE.org_str_id
+LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
+LEFT JOIN organization_structure AS org_parent
+ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
+    AND org_parent.level =(organization_structure.level - 1) )
+LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+
+LEFT JOIN form_status_now ON form_status_now.save_temps_file_id = local_alerts.save_temp_files_id
+LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
+LEFT JOIN save_temp_files ON save_temp_files.id = local_alerts.save_temp_files_id
+LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
+
+WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
+
+        AND local_alerts.initiator_employee_id = init_em.id
+        AND form_step_action.id = local_alerts.action_type_id
+        AND local_alerts.date_finish IS NULL
+         GROUP BY local_alerts.id
+         ORDER BY em_id";
+
+
+        $alert_every_days = $db->all($sql);
+
+        // подписать документы у секретаря
+        $emplyoee_id = "";
+        $html = "";
+        $count = 0;
+        $emp_arr = array();
+        foreach ($alert_every_days as $alert_every_day) {
+            if($alert_every_day['action_type_id'] == 10) {
+                if ($emplyoee_id == $alert_every_day['em_id']) {
+                    $html = $emp_arr[$count]['html'];
+                    $emp_arr[$count]['html'] = $html . $alert_every_day['save_temp_files_id'] ." ". $alert_every_day['file']."<br>";
+                } else {
+                    if($html!=""){
+                        ++$count;
+                        $html = "";
+                    }
+                    $emp_arr[$count]['html'] = $alert_every_day['fio'] . "<br>".  $alert_every_day['save_temp_files_id'] ." ". $alert_every_day['file']."<br>";
+                    $emplyoee_id = $alert_every_day['em_id'];
+                    $emp_arr[$count]['em_id'] =  $alert_every_day['em_id'];
+                }
+            }
+        }
+        foreach ($emp_arr as $html) {
+            if($html!="") {
+                $email = $labro->employees_email($emp_arr[$count]['em_id']);
+                $this->mail_send($email, "Невыполненые дела", $html['html'], "");
+            }
+        }
+
+
+        // подписать документы ответственному
+        $observer_emplyoee_id = "";
+        $html = "";
+        $count = 0;
+        $emp_arr = array();
+        foreach ($alert_every_days as $alert_every_day) {
+            if($alert_every_day['action_type_id'] == 14) {
+                $observer = $labro->bailee($alert_every_day['em_id']);
+                if ($emplyoee_id == $observer['chief_employees_id']) {
+                    $html = $emp_arr[$count]['html'];
+                    $emp_arr[$count]['html'] = $html . $alert_every_day['save_temp_files_id'] ." ". $alert_every_day['file']."<br>";
+                } else {
+                    if($html!=""){
+                        ++$count;
+                        $html = "";
+                    }
+                    $emp_arr[$count]['html'] = $alert_every_day['fio'] . "<br>".  $alert_every_day['save_temp_files_id'] ." ". $alert_every_day['file']."<br>";
+                    $emplyoee_id =  $observer['chief_employees_id'];
+                    $emp_arr[$count]['em_id'] =  $emplyoee_id;
+                }
+            }
+        }
+        foreach ($emp_arr as $html) {
+            if($html!="") {
+                $email = $labro->employees_email($emp_arr[$count]['em_id']);
+                $this->mail_send($email, "Распишитесь в документах подчинённых", $html['html'], "");
+            }
+        }
+
+
+
+    }
+
 }
