@@ -15,6 +15,26 @@ class Model_test
         //echo 'Это конструкционный метод вызванный подключение модели '.__CLASS__.'<br>';
     }
 
+//    public function return_pass(){
+//        global $db, $labro;
+//
+//        $sql = "SELECT * FROM users";
+//        $pass_sql = $db->all($sql);
+//
+//        foreach ($pass_sql as $item) {
+//            $pass = $labro->generate_password();
+//            $sql = "INSERT INTO `temporary_links` (`id_user`, `pass`,`date_create`)
+//                               VALUES('". $item['id'] ."', '". $pass ."',NOW());";
+//            $db->query($sql);
+//
+//            $sql = "UPDATE `users` SET `password`= '". md5($pass) ."'  WHERE  `id`='".$item['id'] ."'";
+//            $db->query($sql);
+//        }
+//    }
+
+
+
+
     // тестим здесь
     public function start(){
 

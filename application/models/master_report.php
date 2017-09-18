@@ -25,6 +25,15 @@ class Model_master_report{
             case "doc":
                 $result_array = $this->doc_emp_report($emp_id);
                 break;
+            case "test_doc":
+                $result_array = $this->test_emp_report($emp_id);
+                $content = "<br> Отчёт по тестам <br>";
+                $content .= $result_array['content'];
+                $result_array = $this->doc_emp_report($emp_id);
+                $content .="<br> Отчёт по документам <br>";
+                $content .= $result_array['content'];
+                $result_array['content'] =  $content;
+                break;
             case "org_str_tree":
                 $result_array = $this->org_str_tree();
                 break;

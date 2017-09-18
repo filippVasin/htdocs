@@ -28,16 +28,16 @@ class Model_main{
         // шаблон дашборда
         $html =<<< HERE
 <div id="control">
-        <div class="button" id="look_dep">По отделам</div>
-        <div class="button none" id="close_dep">Скрыть всё</div>
-        <div class="button" id="look_dep_all">Показать всё</div>
-        <div class="button" id="select_node">Выбор подразделения</div>
+        <div class="button_dash" id="look_dep"><img src="../../templates/simple_template/images/menu.svg"></div>
+        <div class="button_dash none" id="close_dep"><img src="../../templates/simple_template/images/close.svg"></div>
+        <div class="button_dash" id="look_dep_all"><img src="../../templates/simple_template/images/add.svg"></div>
+        <div class="button_dash" id="select_node"><img src="../../templates/simple_template/images/check.svg"></div>
 </div>
 <div id="dashboard">
 
 
     <div id="test_report">
-        <div class="test_report_title">Прохождение инструктажей</div>
+        <div class="test_report_title">Состояние</div>
         <div class="metric">
             <div class="test_target"><span id="test_target">%test_target%</span> всего</div>
             <span>/</span>
@@ -56,45 +56,8 @@ class Model_main{
         </div>
     </div>
 
-    <div id="emp_report">
-        <div class="emp_report_title">Сотрудники</div>
-        <div class="metric">
-            <div class="emp_target"><span id="emp_target">%emp_target%</span> всего</div>
-            <span>/</span>
-            <div class="emp_fact"><span id="emp_fact">%emp_fact%</span> прошли инструктажи</div>
-        </div>
-        <div id="emp_circle" class="c100 p%emp_proc% %emp_color% big">
-            <span id="emp_proc">%emp_proc%%</span>
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
-            </div>
-        </div>
-        <div class="node_report none"  id="emp_node_report">
 
-            %node_report_emp%
-        </div>
-    </div>
 
-        <div id="doc_report">
-        <div class="doc_report_title">Документы</div>
-        <div class="metric">
-            <div class="doc_target"><span id="doc_target">%doc_target%</span> должно быть</div>
-            <span>/</span>
-            <div class="doc_fact"><span id="doc_fact">%doc_fact%</span> сдано</div>
-        </div>
-        <div id="doc_circle" class="c100 p%doc_proc% %doc_color% big">
-            <span id="doc_proc">%doc_proc%%</span>
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
-            </div>
-        </div>
-        <div class="node_report none" id="doc_node_report">
-
-            %node_report_doc%
-        </div>
-    </div>
 </div>
 HERE;
 
@@ -225,11 +188,8 @@ FORM_NOW.doc_status_now,
         $test_array = $db->all($sql);
         $test_target = 0;
         $test_fact = 0;
-        $emp = 0;
-        $count_emp = 0;// количество сотрудников
-        $count_victory =0;// успешные сотрудники
         $doc_count_all = 0;// количество документов всего
-//        $doc_count_end = 0; // количество пройденных документов
+
         $flag = 0;
         foreach ($test_array as $test_item) {
             if($test_item['FinishStep']!='Не прошел'){
@@ -237,15 +197,7 @@ FORM_NOW.doc_status_now,
             } else {
                 $flag += 1;
             }
-            if($test_item['EMPLOY']!= $emp){
-                ++$count_victory;
-                ++$count_emp;
-                $emp = $test_item['EMPLOY'];
-                if($flag>0){
-                  --$count_victory;
-                }
-                $flag = 0;
-            }
+
             ++$test_target;
             if($test_item['doc_all']!=""){
                 ++$doc_count_all;
@@ -266,6 +218,9 @@ FORM_NOW.doc_status_now,
         }
 
         // наполняем шаблон дашборда (круги)
+
+        $test_target = $test_target + $doc_count_all;
+        $test_fact = $test_fact + $doc_count_end;
         $test_proc = round($test_fact/$test_target*100);
         $test_color= $this->color($test_proc);
 
@@ -274,26 +229,6 @@ FORM_NOW.doc_status_now,
         $html = str_replace('%test_proc%', $test_proc, $html);
         $html = str_replace('%test_color%', $test_color, $html);
 
-        $emp_target = $count_emp;
-        $emp_fact = $count_victory;
-        $emp_proc = round($emp_fact/$emp_target*100);
-        $emp_color= $this->color($emp_proc);
-
-        $html = str_replace('%emp_fact%', $emp_fact, $html);
-        $html = str_replace('%emp_target%', $emp_target, $html);
-        $html = str_replace('%emp_proc%', $emp_proc, $html);
-        $html = str_replace('%emp_color%', $emp_color, $html);
-
-
-        $doc_target = $doc_count_all;
-        $doc_fact = $doc_count_end;
-        $doc_proc = round($doc_fact/$doc_target*100);
-        $doc_color= $this->color($doc_proc);
-
-        $html = str_replace('%doc_fact%', $doc_fact, $html);
-        $html = str_replace('%doc_target%', $doc_target, $html);
-        $html = str_replace('%doc_proc%', $doc_proc, $html);
-        $html = str_replace('%doc_color%', $doc_color, $html);
 
         // собираем и схлопываем массив отделов до уникальных
         $dir_array = array();
@@ -304,7 +239,7 @@ FORM_NOW.doc_status_now,
 
         // проход по всем отделам
         $node_report_test="";
-        $node_report_emp="";
+
         $node_report_doc ="";
         foreach ($dir_array as $dir_array_item) {
             $test_target = 0;
@@ -319,8 +254,7 @@ FORM_NOW.doc_status_now,
             $flag = 0;
             $doc_count_all = 0;// количество документов всего
             $test_fio_html = '<div class="test_fio_table" dir="'. $dir_array_item .'">';
-            $emp_fio_html = '<div class="emp_fio_table" dir="'. $dir_array_item .'">';
-            $doc_fio_html = '<div class="doc_foi_table" dir="'. $dir_array_item .'">';
+
 
             foreach ($test_array as $test_item) {
                 if($test_item['dir_id'] == $dir_array_item){
@@ -343,8 +277,6 @@ FORM_NOW.doc_status_now,
                         // обработка уровня fio
                         $count_test_fio_target = 0;
                         $count_test_fio_fact = 0;
-                        $count_emp_fio_target = 1;
-                        $count_emp_fio_fact = 1;
                         $count_doc_fio_target = 0;
                         $count_doc_fio_fact = 0;
                         foreach($test_array as $fio_item){
@@ -354,10 +286,7 @@ FORM_NOW.doc_status_now,
                                 if($fio_item['FinishStep']!='Не прошел'){
                                     ++$count_test_fio_fact;
                                 }
-                                // сотрудники
-                                if($fio_item['FinishStep']=='Не прошел'){
-                                    $count_emp_fio_fact = 0;
-                                }
+
                                 // документы
                                 if($fio_item['doc_all']){
                                     ++$count_doc_fio_target;
@@ -369,6 +298,8 @@ FORM_NOW.doc_status_now,
                         }
 
                         // собираем элементы - сотрудник
+                        $count_test_fio_fact = $count_test_fio_fact + $count_doc_fio_fact;
+                        $count_test_fio_target = $count_test_fio_target + $count_doc_fio_target;
                         $fio_test_proc = round($count_test_fio_fact/$count_test_fio_target*100);
                         $test_fio_html .= ' <div class="fio_box none">
                                             <div class="dol_row">'. $test_item['name'] .'</div>
@@ -381,29 +312,8 @@ FORM_NOW.doc_status_now,
                                             <div class="people_report" report_type="test" emp_id="'. $emp .'" ><img src="../../templates/simple_template/images/list.svg"></div>
                                             </div>';
 
-                        $fio_emp_proc = round($count_emp_fio_fact/$count_emp_fio_target*100);
-                        $emp_fio_html .= ' <div class="fio_box none">
-                                            <div class="dol_row">'. $test_item['name'] .'</div>
-                                            <div class="fio_row">'. $test_item['fio'] .'</div>
-                                              <span class="progress-number"><b>'. $count_emp_fio_fact .'</b>/'. $count_emp_fio_target .'</span>
 
-                                                <div class="progress_line">
-                                               <div class="progress-bar progress-bar-aqua" style="width: '. $fio_emp_proc .'%"></div>
-                                            </div>
-                                            <div class="people_report" report_type="emp" emp_id="'. $emp .'"><img src="../../templates/simple_template/images/list.svg"></div>
-                                            </div>';
 
-                        $fio_doc_proc = round($count_doc_fio_fact/$count_doc_fio_target*100);
-                        $doc_fio_html .= ' <div class="fio_box none">
-                                            <div class="dol_row">'. $test_item['name'] .'</div>
-                                            <div class="fio_row">'. $test_item['fio'] .'</div>
-                                              <span class="progress-number"><b>'. $count_doc_fio_fact .'</b>/'. $count_doc_fio_target .'</span>
-
-                                                <div class="progress_line">
-                                               <div class="progress-bar progress-bar-aqua" style="width: '. $fio_doc_proc .'%"></div>
-                                            </div>
-                                            <div class="people_report" report_type="doc" emp_id="'. $emp .'"><img src="../../templates/simple_template/images/list.svg"></div>
-                                            </div>';
                     }
 
                     if($test_item['doc_all']!=""){
@@ -422,14 +332,31 @@ FORM_NOW.doc_status_now,
 
 
             $test_fio_html .='</div>';
-            $emp_fio_html .='</div>';
-            $doc_fio_html .='</div>';
+
+
+            // документы
+
+            $sql="SELECT *
+                    FROM form_status_now,employees_items_node,organization_structure
+                    LEFT JOIN organization_structure AS parent_org ON parent_org.id = ". $dir_array_item ."
+                    WHERE form_status_now.author_employee_id = employees_items_node.employe_id
+                    AND employees_items_node.org_str_id = organization_structure.id
+                    AND organization_structure.left_key >=parent_org.left_key
+                    AND organization_structure.right_key <= parent_org.right_key
+                    AND organization_structure.company_id = ". $_SESSION['control_company'];
+            $result= $db->all($sql);
+            $doc_count_end = 0;
+            foreach($result as $item){
+                ++$doc_count_end;
+            }
 
 
             // уровнять по длинне для сравниения для коректного суммирования на клиете
             $left_key = str_pad($left_key, 3, "0", STR_PAD_LEFT);
             $right_key = str_pad($right_key, 3, "0", STR_PAD_LEFT);
 
+            $test_fact = $test_fact + $doc_count_end;
+            $test_target = $test_target + $doc_count_all;
             $test_proc = round($test_fact/$test_target*100);
             $node_report_test .= '<div class="progress-group" level="'. $level .'" left_key="'. $left_key .'" right_key="'. $right_key .'" fact="'. $test_fact .'" target="'. $test_target .'"> ';
             $node_report_test .=     '<div class="progress-text-row"> ';
@@ -441,49 +368,13 @@ FORM_NOW.doc_status_now,
             $node_report_test .=     '</div>';
             $node_report_test .=     '<div class="people"><div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>'.$test_fio_html .'</div>';
             $node_report_test .= '</div>';
-            // сотрудники
-            $emp_proc = round($count_victory_emp/$count_all_emp*100);
-            $node_report_emp .= '<div class="progress-group" level="'. $level .'" left_key="'. $left_key .'" right_key="'. $right_key .'" fact="'. $count_victory_emp .'" target="'. $count_all_emp .'"> ';
-            $node_report_emp .=     '<div class="progress-text-row"> ';
-            $node_report_emp .=         '<span class="progress-text">'. $name .'</span>';
-            $node_report_emp .=         '<span class="progress-number"><b>'. $count_victory_emp .'</b>/'. $count_all_emp .'</span>';
-            $node_report_emp .=     '</div> ';
-            $node_report_emp .=     '<div class="progress_line">';
-            $node_report_emp .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$emp_proc.'%"></div>';
-            $node_report_emp .=     '</div>';
-            $node_report_emp .=     '<div class="people"><div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>'.$emp_fio_html .'</div>';
-            $node_report_emp .= '</div>';
-            // документы
 
-            $sql="SELECT *
-                    FROM form_status_now,employees_items_node,organization_structure
-                    WHERE form_status_now.doc_status_now>=7
-                    AND form_status_now.author_employee_id = employees_items_node.employe_id
-                    AND employees_items_node.org_str_id = organization_structure.id
-                    AND organization_structure.parent = ". $dir_array_item ."
-                    AND organization_structure.company_id =". $_SESSION['control_company'];
-            $result= $db->all($sql);
-            $doc_count_end = 0;
-            foreach($result as $item){
-                ++$doc_count_end;
-            }
 
-            $emp_doc = round($doc_count_end/$doc_count_all*100);
-            $node_report_doc .= '<div class="progress-group" level="'. $level .'" left_key="'. $left_key .'" right_key="'. $right_key .'" fact="'. $doc_count_end .'" target="'. $doc_count_all .'"> ';
-            $node_report_doc .=     '<div class="progress-text-row"> ';
-            $node_report_doc .=         '<span class="progress-text">'. $name .'</span>';
-            $node_report_doc .=         '<span class="progress-number"><b>'. $doc_count_end .'</b>/'. $doc_count_all .'</span>';
-            $node_report_doc .=     '</div> ';
-            $node_report_doc .=     '<div class="progress_line">';
-            $node_report_doc .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$emp_doc.'%"></div>';
-            $node_report_doc .=     '</div>';
-            $node_report_doc .=     '<div class="people"><div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>'. $doc_fio_html .'</div>';
-            $node_report_doc .= '</div>';
         }
 
-        $html = str_replace('%node_report_emp%', $node_report_emp, $html);
+
         $html = str_replace('%node_report_test%', $node_report_test, $html);
-        $html = str_replace('%node_report_doc%', $node_report_doc, $html);
+//        $html = str_replace('%node_report_doc%', $node_report_doc, $html);
 
         $result_array['content'] = $html;
         $result_array['status'] = "ok";

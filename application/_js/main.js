@@ -15,19 +15,7 @@ $(document).ready(function() {
         }
     });
 
-    $(document).on('click','#emp_circle',function(){
-        if($("#emp_circle").hasClass("open_depe")){
-            $("#emp_circle").removeClass("open_depe");
 
-            $("#emp_report .node_report").addClass('none');
-            $('#emp_report .node_report>.progress-group').addClass('none');
-        } else {
-            $("#emp_circle").addClass("open_depe");
-
-            $("#emp_report .node_report").removeClass('none');
-            $('#emp_report .node_report>.progress-group').removeClass('none');
-        }
-    });
 
 
     $(document).on('click','#doc_circle',function(){
@@ -255,62 +243,6 @@ $(document).ready(function() {
             }
         });
 
-        // сотрудники
-        $("#emp_node_report .progress-group").each(function() {
-            var parent_level = 0;
-            var parent_left = 0;
-            var parent_right = 0;
-            var count_child = 0;
-            var parent = $(this);
-            var fact = 0;
-            var  target = 0;
-            fact = Number(parent.attr('fact'));
-            target = Number(parent.attr('target'));
-            parent_level = $(this).attr('level');
-            parent_left = $(this).attr('left_key');
-            parent_right = $(this).attr('right_key');
-            $('#emp_node_report .progress-group').each(function() {
-                child_left = 0;
-                child_right = 0;
-                child_left = $(this).attr('left_key');
-                child_right = $(this).attr('right_key');
-                if ((parent_left < child_left)&&(parent_right > child_right)){
-                    $(this).addClass('none');
-                    $(this).detach().appendTo(parent);
-                    fact += Number($(this).attr('fact'));
-                    target += Number($(this).attr('target'));
-                    ++count_child;
-                }
-                //$(this).append("<br> " + parent_left + "<"+ child_left+" : " + parent_right + ">" + child_right);
-            });
-            // выводим суммарную цыфру по отделам
-            $('.progress-text-row>.progress-number:first',this).html("<b>"+ fact +"</b>/" + target);
-            var width_proc = (Math.round(fact/target*100)) + "%";
-            $('.progress-bar:first',this).css("width",width_proc);
-
-            if(count_child>0){
-                $(this).addClass("parent");
-                $('.progress-text',this).addClass("look_off");
-            } else {
-                $(this).addClass("last");
-            }
-        });
-
-        $("#emp_node_report .progress-group").each(function() {
-            var level = $(this).attr('level');
-            var left = $(this).attr('left_key');
-            if ((level ==  1)&&(left>002)){
-                $(this).detach().appendTo("#emp_node_report");
-            }
-        });
-        // у кого нет потомков идите в конце
-        $("#emp_node_report .progress-group").each(function() {
-            var level = $(this).attr('level');
-            var left = $(this).attr('left_key');
-            if ((level ==  1)&&(!($(this).hasClass("parent")))){
-                $(this).detach().appendTo("#emp_node_report");
-            }
-        });
 
 
         // сотрудники
@@ -387,9 +319,9 @@ $(document).ready(function() {
 
     // показать/скрываем отчёт по сотруднику
     $(document).on('click','.people_report',function(){
-        var report_type = $(this).attr('report_type');
         var emp_id = $(this).attr('emp_id');
-
+        var all_content = "";
+        var report_type = "test_doc";
         $.ajax({
             type: "POST",
             url: "/master_report/main",
