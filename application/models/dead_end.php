@@ -684,7 +684,7 @@ class Model_dead_end{
 
                        AND
                        /* по фирме*/
-                        route_doc.company_id = 14
+                        route_doc.company_id = 15
                         AND
                         /* для всех сотрудников или только для конкретного */
                         (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
@@ -990,8 +990,6 @@ class Model_dead_end{
                 $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
                 $db->query($sql);
             }
-
-
         }
     }
 

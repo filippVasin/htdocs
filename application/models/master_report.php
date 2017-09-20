@@ -37,9 +37,12 @@ class Model_master_report{
             case "org_str_tree":
                 $result_array = $this->org_str_tree();
                 break;
+            case "local_alert_journal":
+                $result_array = $this->local_alert_journal();
+                break;
         }
 
-        $result_array['status'] = 'ok';
+        $result_array['status'] = "ok";
         //
         $result = json_encode($result_array, true);
         die($result);
@@ -314,6 +317,7 @@ FORM_NOW.doc_status_now,
         $result_array['content'] = $html;
         return $result_array;
     }
+
     private function doc_emp_report($emp_id){
         global $db;
 
@@ -548,11 +552,82 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
 
 
         $result_array['content'] = $html;
-        $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        return $result_array;
     }
 
+
+    private function local_alert_journal(){
+        global $db;
+        $search_string = $this->post_array['search_string'];
+
+        $html = "";
+
+        $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
+                    form_step_action.action_name,form_step_action.user_action_name,
+                    CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
+                    local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
+                    items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
+                    document_status_now.id AS doc_trigger
+                    FROM (local_alerts,employees_items_node, employees AS init_em,
+                    cron_action_type, form_step_action)
+                    LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
+                    LEFT JOIN organization_structure ON organization_structure.id = NODE.org_str_id
+                    LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
+                    LEFT JOIN organization_structure AS org_parent
+                    ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
+                        AND org_parent.level =(organization_structure.level - 1) )
+                    LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+                    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+
+                    LEFT JOIN form_status_now ON form_status_now.save_temps_file_id = local_alerts.save_temp_files_id
+                    LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
+                    LEFT JOIN save_temp_files ON save_temp_files.id = local_alerts.save_temp_files_id
+                    LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
+
+                    WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
+
+                        AND local_alerts.initiator_employee_id = init_em.id
+                        AND form_step_action.id = local_alerts.action_type_id
+                        AND local_alerts.date_finish IS NULL
+                         GROUP BY local_alerts.id";
+        $alert_every_days = $db->all($sql);
+        $count = 0;
+        foreach ($alert_every_days as $alert_every_day) {
+
+            if((stristr($alert_every_day['fio'], $search_string)) || ((stristr($alert_every_day['file'], $search_string)))) {
+
+                // лимит
+                if ($count < 7) {
+                    $html .= '<li>
+                <!-- todo text -->
+                <span class="text alert_row" action_type="' . $alert_every_day['action_type_id'] . '"
+                                                    observer_em=' . $_SESSION['employee_id'] . '
+                                                    dol="' . $alert_every_day['position'] . '"
+                                                    emp="' . $alert_every_day['em_id'] . '"
+                                                    doc_trigger="' . $alert_every_day['doc_trigger'] . '"
+                                                     dir="' . $alert_every_day['dir'] . '"
+                                                     doc="' . $alert_every_day['file'] . '"
+                                                     name="' . $alert_every_day['fio'] . '"
+                                                     local_id="' . $alert_every_day['id'] . '"
+                                                      file_id="' . $alert_every_day['save_temp_files_id'] . '"
+                  style=" font-size: 13px;width: 75%;cursor: pointer;">' . $alert_every_day['fio'] . " / " . $alert_every_day['file'] . '</span>
+                <!-- Emphasis label -->
+                    <small class="label label-danger" style="line-height: 31px;" ><i class="fa fa-clock-o"></i> ' . date_create($alert_every_day['date_create'])->Format('d-m-Y') . '</small>
+                <!-- General tools such as edit or delete-->
+                <div class="tools" style="display: none">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                </div>
+            </li>';
+                }
+                ++$count;
+            }
+        }
+
+
+        $result_array['content'] = $html;
+        return $result_array;
+    }
 
 }

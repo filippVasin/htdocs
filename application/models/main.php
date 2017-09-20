@@ -27,36 +27,79 @@ class Model_main{
         }
         // шаблон дашборда
         $html =<<< HERE
-<div id="control">
-        <div class="button_dash" id="look_dep"><img src="../../templates/simple_template/images/menu.svg"></div>
-        <div class="button_dash none" id="close_dep"><img src="../../templates/simple_template/images/close.svg"></div>
-        <div class="button_dash" id="look_dep_all"><img src="../../templates/simple_template/images/add.svg"></div>
-        <div class="button_dash" id="select_node"><img src="../../templates/simple_template/images/check.svg"></div>
-</div>
+
+  <div class="col-lg-3 col-xs-12" style="margin-top: 15px;">
+
+          <div class="info-box open_list_report">
+            <span class="info-box-icon  %bg_info_box%"><i class="fa fa-flag-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Запланированно</span>
+              <span class="info-box-number">%test_target%</span>
+              <span class="info-box-text">событий</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+
+
+          <div class="info-box open_list_report %bg_info_box%">
+            <span class="info-box-icon "><i class="fa fa-thumbs-o-up"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Пройдено</span>
+              <span class="info-box-number">%test_fact%</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: %test_proc%%"></div>
+              </div>
+                  <span class="progress-description">
+                   инструктажей и тестов
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+
+          <!-- small box -->
+          <div class="small-box open_list_report  %bg_info_box%">
+            <div class="inner">
+              <h3>%test_proc%<sup style="font-size: 20px">%</sup></h3>
+
+
+              <span class="info-box-text">по компании</span>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#"  class="small-box-footer"  >
+              Подробней <i class="fa fa-arrow-circle-right" ></i>
+            </a>
+          </div>
 <div id="dashboard">
 
 
-    <div id="test_report">
-        <div class="test_report_title">Состояние</div>
-        <div class="metric">
-            <div class="test_target"><span id="test_target">%test_target%</span> всего</div>
+    <div id="test_report"  style="padding-right: 0px; padding-left: 0px;width: 100%;">
+        <div class="test_report_title none">Состояние</div>
+        <div class="metric none">
+            <div class="test_target "><span id="test_target">%test_target%</span> всего</div>
             <span>/</span>
             <div class="test_fact"><span id="test_fact">%test_fact%</span> пройдено</div>
         </div>
-        <div id="test_circle" class="c100 p%test_proc% big %test_color%">
+        <div id="test_circle" class="c100 p%test_proc% big %test_color% none">
             <span id="test_proc">%test_proc%%</span>
             <div class="slice">
                 <div class="bar"></div>
                 <div class="fill"></div>
             </div>
         </div>
-        <div class="node_report none" id="test_node_report">
+        <div class="node_report none " id="test_node_report">
 
             %node_report_test%
+
         </div>
     </div>
-
-
+</div>
 
 </div>
 HERE;
@@ -229,7 +272,17 @@ FORM_NOW.doc_status_now,
         $html = str_replace('%test_proc%', $test_proc, $html);
         $html = str_replace('%test_color%', $test_color, $html);
 
+        if($test_proc < 90){
+            $html = str_replace('%bg_info_box%', "bg-red", $html);
+        }
+        if($test_proc >= 90 && $test_proc != 100 ){
+            $html = str_replace('%bg_info_box%', "bg-yellow", $html);
+        }
+        if($test_proc == 100){
+            $html = str_replace('%bg_info_box%', "bg-green", $html);
+        }
 
+//        bg-green, bg-aqua,bg-red,bg-yellow
         // собираем и схлопываем массив отделов до уникальных
         $dir_array = array();
         foreach ($test_array as $test_item) {
@@ -394,5 +447,78 @@ FORM_NOW.doc_status_now,
             $color ='green';
         }
         return $color;
+    }
+
+
+
+    public function journal(){
+        global $db;
+
+        if(!(isset($_SESSION['control_company']))){
+            header("Location:/login");
+        }
+
+
+        $html = "";
+
+        $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
+                    form_step_action.action_name,form_step_action.user_action_name,
+                    CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
+                    local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
+                    items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
+                    document_status_now.id AS doc_trigger
+                    FROM (local_alerts,employees_items_node, employees AS init_em,
+                    cron_action_type, form_step_action)
+                    LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
+                    LEFT JOIN organization_structure ON organization_structure.id = NODE.org_str_id
+                    LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
+                    LEFT JOIN organization_structure AS org_parent
+                    ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
+                        AND org_parent.level =(organization_structure.level - 1) )
+                    LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+                    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+
+                    LEFT JOIN form_status_now ON form_status_now.save_temps_file_id = local_alerts.save_temp_files_id
+                    LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
+                    LEFT JOIN save_temp_files ON save_temp_files.id = local_alerts.save_temp_files_id
+                    LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
+
+                    WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
+
+                        AND local_alerts.initiator_employee_id = init_em.id
+                        AND form_step_action.id = local_alerts.action_type_id
+                        AND local_alerts.date_finish IS NULL
+                         GROUP BY local_alerts.id";
+          $alert_every_days = $db->all($sql);
+          $count = 0;
+         foreach ($alert_every_days as $alert_every_day) {
+             // лимит
+             if($count < 7){
+                 $html .='<li>
+                <!-- todo text -->
+                <span class="text alert_row" action_type="' . $alert_every_day['action_type_id'] . '"
+                                                    observer_em=' . $_SESSION['employee_id'] . '
+                                                    dol="' . $alert_every_day['position'] . '"
+                                                    emp="' . $alert_every_day['em_id'] . '"
+                                                    doc_trigger="' . $alert_every_day['doc_trigger'] . '"
+                                                     dir="' . $alert_every_day['dir'] . '"
+                                                     doc="' . $alert_every_day['file'] . '"
+                                                     name="' . $alert_every_day['fio'] . '"
+                                                     local_id="' . $alert_every_day['id'] . '"
+                                                      file_id="' . $alert_every_day['save_temp_files_id'] . '"
+                  style=" font-size: 13px;width: 75%;cursor: pointer;">'. $alert_every_day['fio'] ." / ". $alert_every_day['file'] .'</span>
+                <!-- Emphasis label -->
+                    <small class="label label-danger" style="line-height: 31px;" ><i class="fa fa-clock-o"></i> '. date_create( $alert_every_day['date_create'])->Format('d-m-Y') .'</small>
+                <!-- General tools such as edit or delete-->
+                <div class="tools" style="display: none">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                </div>
+            </li>';
+             }
+             ++$count;
+         }
+
+        return $html;
     }
 }

@@ -10,12 +10,12 @@ body{
     font-family: sans-serif;
     margin: 0px;
     overflow-x: hidden;
-    background-color: #ecf0f5;
+    background-color: #ecf0f5!important;
 }
 
 #topBar{
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     height: 50px;
     background-color: #3c8dbc;
     width: 100%;
@@ -80,17 +80,17 @@ body{
 
 #header{
     position: fixed;
-    z-index: 10;
+    z-index: 12;
     display: flex;
     float: left;
     flex-direction: column;
-    background-color: #f0f8ff;
+    /*background-color: #f0f8ff;*/
     text-align: end;
     top: 50px;
     left: 0px;
     /*background-color: rgba(156, 133, 255, 0.46);*/
     margin-right: 1px;
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
 }
 
 #header>a{
@@ -652,7 +652,7 @@ select{
     top: 10px;
     left: 270px;
     color: #fff;
-    z-index: 3;
+    z-index: 10;
 }
 #topBar .logo, #header>a{
 width: 50px;

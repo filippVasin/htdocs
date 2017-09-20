@@ -854,18 +854,18 @@ function send_excel_report($observer_emplyoee_id){
                   AND employees.id = save_temp_files.employee_id";
 
     // частичный доступ у сотрудика котрый запрашивает отчёт
-    if(($left!='none')&&($left!="all")) {
-        $sql .= " AND organization_structure.left_key >= " . $left . "
-                AND organization_structure.right_key<= " . $right . "
-                GROUP BY save_temp_files.id
-                                            ORDER BY  emp";
-    }
+//    if(($left!='none') && ($left!="all")) {
+//        $sql .= " AND organization_structure.left_key >= " . $left . "
+//                AND organization_structure.right_key<= " . $right . "
+//                GROUP BY save_temp_files.id
+//                                            ORDER BY  emp";
+//    }
 
     // полный доступ на данные у сотрудника которые запрашивает отчёт
-    if($left=='all') {
+//    if($left=='all') {
         $sql .= " GROUP BY save_temp_files.id
                                             ORDER BY  emp";
-    }
+//    }
 
     // без доступа, отчёт не показываеи
     if($left=='none') {
@@ -955,11 +955,11 @@ function send_excel_report($observer_emplyoee_id){
         $url_hahs = md5($observer_emplyoee_id . "&" . $today);
         $file_url = 'C:\MAMP\htdocs\application\real_forms\report_two.xls';
 //        $objWriter_two = new PHPExcel_Writer_Excel5($xls_two);
-        $objWriter_two = PHPExcel_IOFactory::createWriter($xls_two, 'Excel2007');
+//        $objWriter_two = PHPExcel_IOFactory::createWriter($xls_two, 'Excel2007');
+        $objWriter_two = new PHPExcel_Writer_Excel5($xls_two);
 //        $objWriter_two->save('php://output');
         $objWriter_two->save($file_url);
     }
-
     return $file_url;
 }
 

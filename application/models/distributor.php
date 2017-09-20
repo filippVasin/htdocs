@@ -11,11 +11,11 @@ class Model_distributor{
 
     // Начинаем прохождение тестирования;
     public function main(){
-        global $db;
+
         $action_name = $this->post_array['action_name'];
 
         switch ($action_name) {
-            case "secretary_signature_alert":
+            case "secretary_signature_action":
                 $result_array = $this->secretary_signature_action();
                 break;
             case "secretary_get_doc_action":

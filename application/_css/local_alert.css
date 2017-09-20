@@ -1,6 +1,8 @@
 .container {
     width: 1170px;
     margin: 0px auto;
+    padding-right: 0px!important;
+    padding-left: 0px!important;
 }
 
 .header > div {
