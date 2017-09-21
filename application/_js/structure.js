@@ -146,4 +146,6 @@ $(document).ready(function() {
         });
     }
 
+
+    $("#whole_tree").click();
 });

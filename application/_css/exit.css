@@ -1,0 +1,9 @@
+.main-header{
+    display: none!important;
+}
+.content-wrapper, #body{
+    background-color: #d2d6de;
+}
+body{
+    background-color: #ecf0f5;
+}

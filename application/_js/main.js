@@ -15,8 +15,12 @@ $(document).ready(function() {
     var local_id = "";
     var action_type = "";
     start();
+    //
+    //var ua = navigator.userAgent,
+    //pickclick = (ua.match(/iPad/i) || ua.match(/iPhone/)) ? "touchstart" : "click";
 
-    $(document).on('click','.open_list_report',function(){
+
+    $(document).on("click",'.open_list_report',function(){
         if($(".open_list_report").hasClass("open_dept")){
             $(".open_list_report").removeClass("open_dept");
 
@@ -27,6 +31,12 @@ $(document).ready(function() {
 
             $("#test_report .node_report").removeClass('none');
             $('#test_report .node_report>.progress-group').removeClass('none');
+
+            // плавные переход к открывшемуся блоку
+            var destination = $("#test_report").offset().top;
+            jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 800);
+            return false;
+
         }
     });
 
@@ -561,6 +571,11 @@ $(document).ready(function() {
         });// ajax
 
     });
+
+    //$("#menu_open_closer").click();
+
+
+$(".fc-day-grid-container").css("height","100%");
 
 
 });

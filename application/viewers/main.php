@@ -1,4 +1,4 @@
-<div class="page_title">Главная страница</div>
+<div
 <div id="nods_key" left="" right=""></div>
 <div id="load_dashboard"></div>
 
@@ -28,7 +28,7 @@
     <div class="box-header ui-sortable-handle" style="cursor: move;    text-align: left;">
         <i class="ion ion-clipboard" ></i>
 
-        <h3 class="box-title">Уведомления</h3>
+        <h3 class="box-title">Задачи</h3>
 
 <!--        <div class="box-tools pull-right">-->
 <!--            <ul class="pagination pagination-sm inline">-->

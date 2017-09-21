@@ -4,6 +4,7 @@
 $(document).ready(function() {
     var  new_type_id = 0;
     var  news_num_id = 0;
+    var dol_id = 0;
 
 
     $(document).on("change", ".target", function () {
@@ -340,6 +341,7 @@ $(document).ready(function() {
         var personnel_number = "";
         personnel_number = $("#personnel_number").val();
 
+
         // получили сегодня
         var now = new Date()
         var today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).valueOf();
@@ -434,7 +436,8 @@ $(document).ready(function() {
                     birthday:birthday,
                     email:email,
                     id_item:id_item,
-                    personnel_number:personnel_number
+                    personnel_number:personnel_number,
+                    dol_id:dol_id
 
                 },
                 success: function (answer) {
@@ -454,7 +457,93 @@ $(document).ready(function() {
     });
 
 
+    // Выбрать узел
+    $(document).on("click", "#node_docs", function () {
+        $("#popup_context_menu_update").css("display","block")
+        var emp_id = "";
+        var report_type = "org_str_tree";
+        $.ajax({
+            type: "POST",
+            url: "/master_report/main",
+            data: {
+                emp_id:emp_id,
+                report_type: report_type
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var request_message = result.message;
+                var content = result.content;
+                // если 'ok' - рисуем тест
+                if(request_result == 'ok'){
+                    $(".page_title").css("display","none");
+                    $(".control_test_item").css("display","none");
+                    $("body").css("margin-top","0px");
+                    $('#test_block').fadeIn(0);
+                    $('#popup_update_tree').html(content);
+                    $("html, body").animate({ scrollTop: 0 }, 0);
+                    $("#tree_main>ul").removeClass("none");
+                    $(".tree_item_fio").addClass("none");
+                    // присваеваем классы дня непустых элементов
+                    $(".tree_item").each(function() {
+                        var parent = $(this).parent("li");
+                        if(parent.children('ul').length != 0){
+                            $(this).addClass("open_item");
+                        }
+                    });
+                    sort_stucture();
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    });
 
+
+
+
+
+
+    $(document).on('click','.open_item',function(){
+
+        if($(this).hasClass("open_ul")){
+            $(this).removeClass("open_ul");
+
+            $(this).siblings('ul').addClass('none');
+        } else {
+            $(this).addClass("open_ul");
+
+            $(this).siblings('ul').removeClass('none');
+        }
+    });
+
+    //  если есть отомки тогда в конец списка
+    function sort_stucture(){
+        $("li").each(function() {
+            var item =  $(this).children(".tree_item");
+            var parent = $(this).closest("ul");
+            var left = $(item).attr('left_key');
+            var right = $(item).attr('right_key');
+            if ((right - left)>1){
+                $(this).detach().appendTo(parent);
+            }
+        });
+    }
+
+
+    //  если есть отомки тогда в конец списка
+    function sort_stucture(){
+        $("li").each(function() {
+            var item =  $(this).children(".tree_item");
+            var parent = $(this).closest("ul");
+            var left = $(item).attr('left_key');
+            var right = $(item).attr('right_key');
+            if ((right - left)>1){
+                $(this).detach().appendTo(parent);
+            }
+        });
+    }
 
     //$(document).on('focusout','.input_form', function(){
     //    if($(this).val()==""){
@@ -462,6 +551,29 @@ $(document).ready(function() {
     //        setTimeout("$('.input_form').css('border-color','#ccc')", 3000);
     //    }
     //});
+    // отмена действия
+    $(document).on("click", ".cancel_popup", function () {
+        $("#popup_context_menu_update").css("display","none");
+        $("#popup_update_tree").html("");
+        $("#action_history_docs_popup").css("display","none");
+        $("#emp_report_name").html("");
+        $("#docs_report_name").html("");
+        emp = "";
+        step = "";
+        manual = "";
+        dir = "";
+        name =  "";
+        fio = "";
+        dol =  "";
+    });
 
+    $(document).on('click','.tree_item',function() {
+        if(!($(this).hasClass("open_item"))){
+             dol_id = $(this).attr("id_item");
+            var name_dol = $(this).html();
+            $("#node_docs").html(name_dol);
+            $(".cancel_popup").click();
+        }
+    });
 });
 

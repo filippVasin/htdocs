@@ -172,6 +172,7 @@ class Model_creator
                 $birthday = $this->post_array['birthday'];
                 $email = $this->post_array['email'];
                 $id_item = $this->post_array['id_item'];
+        $dol_id = $this->post_array['dol_id'];
         $fio = $surname." ".$name." ".$patronymic;
         $result_array = array();
 
@@ -187,7 +188,7 @@ class Model_creator
             // уже есть такая почта
             $result_array['content'] = 'Ошибка, Почта занята';
         } else {
-            // почта девственная - продолжаем
+            // почта девственна - продолжаем
 
 
 
@@ -218,7 +219,7 @@ class Model_creator
 //        echo $sql;
             $db->query($sql);
 
-            $sql = 'INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES("' . $employee_id . '","' . $id_item . '")';
+            $sql = 'INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES("' . $employee_id . '","' . $dol_id . '")';
             $db->query($sql);
 
             $subject = "Уведомление";

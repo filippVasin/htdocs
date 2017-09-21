@@ -409,7 +409,7 @@ ul {
     width: 100%;
     height: 100%;
     top: 0;
-    left: calc(50% - 40px);
+    left: 90px;
 }
 
 
@@ -527,13 +527,28 @@ ul {
         width: 100%;
         left: 0;
     }
+
+    .box-title{
+        font-size: 12px;
+    }
+
+    .fc-button{
+        padding-left: 3px!important;
+        padding-right: 3px!important;
+    }
 }
 
-
+.fc-day-grid-container{
+    height:100%!important;
+}
 
 
 
 @media screen and (max-device-width: 480px) {
     @viewport {width: 480px; }
+}
+
+.open_list_report{
+    cursor: pointer;
 }
 

@@ -1,10 +1,17 @@
 <? header('Content-Type: text/html; charset=utf-8');?>
-<div class="page_title">Выберите родителья</div>
+
 
 <div id="login_form">
-    %creator%
+<!--    %creator %-->
 
-    <div id="test_block" style="display: none; text-align: left;">
+    <div class="create_form_box" >
+        <div class="button" id="node_docs">Выбор должности</div>
+        <span id="name_dol"></span>
+    <div class="create_box">
+
+        <div title="Фамилия" class="bef_input"><input type="text" id="form_surname" name="surname" placeholder="Фамилия" class="contacts-inp input_form" required=""></div><div title="Имя" class="bef_input"><input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp input_form" required=""></div><div title="Отчество" class="bef_input"><input type="text" id="form_patronymic" name="patronymic" placeholder="Отчество" class="contacts-inp input_form" required=""></div><div title="Дата устройства" class="bef_input"><input type="date" id="form_work_start" name="work_start" placeholder="Дата устройства" class="contacts-inp form_work_start_cl input_form" required=""></div><div title="Дата рождения" class="bef_input"><input type="date" id="form_birthday" name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp input_form" required=""></div><div title="Электронная почта" class="bef_input"><input type="text" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form" required=""></div><div title="Табельный номер" class="bef_input"><input type="text" id="personnel_number" name="personnel_number" placeholder="Табельный номер(не обязательно)" class="contacts-inp input_form" required=""></div><input type="hidden" id="form_id_item" name="id_item" value="36" required=""><div id="landing_form_offer_one" class="button">Записать</div></div>
+    </div>
+        <div id="test_block" style="display: none; text-align: left;">
         <div id="content_box"></div>
         <div id="create_new_content_box"></div>
             <div id="input_content_box"></div>
@@ -19,3 +26,13 @@
         </div>
     </div>
 </div>
+
+    <div id="popup_context_menu_update">
+        <div class="canvas">
+            <div class="popup_context_menu_title"> Выберите подразделение и должность: </div>
+            <div id="popup_update_tree"></div>
+            <div class="button_row">
+                <div class="button cancel_popup">Отмена</div>
+            </div>
+        </div>
+    </div>

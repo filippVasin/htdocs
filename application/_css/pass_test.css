@@ -59,8 +59,7 @@ body{
 #content_box{
     margin: 0 auto;
     width: 800px;
-    padding-left: 80px;
-    padding-right: 80px;
+
     background-color: #fff;
     top: 30px;
 }
@@ -84,6 +83,7 @@ body{
     background-color: #3c8dbc;
     left: calc(50% - 500px);
     z-index: 5;
+    display: none;
 }
 #body {
       margin-top: 0px;
@@ -96,3 +96,28 @@ body{
 }
 @media print{@page {size: landscape}  body{display: block}}
 .content_box
+
+
+.main-sidebar{
+    display: none!important;
+}
+.content-wrapper{
+    margin-left: 0px!important;
+}
+.logo-lg, .sidebar-toggle{
+    display: none!important;
+
+}
+.logo{
+    background-color: #3c8dbc!important;
+}
+#info_box, .progress_bar_line{
+    z-index: 99999!important;
+}
+.navbar, .logo{
+    height: 70px!important;
+}
+
+.main-sidebar {
+    background-color: #ecf0f5!important;
+}

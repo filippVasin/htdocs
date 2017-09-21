@@ -306,3 +306,29 @@
 .button{
     min-width: 180px!important;
 }
+
+
+
+.main-sidebar{
+    display: none!important;
+}
+.content-wrapper{
+    margin-left: 0px!important;
+}
+.logo-lg, .sidebar-toggle{
+    display: none!important;
+
+}
+.logo{
+    background-color: #3c8dbc!important;
+}
+#info_box, .progress_bar_line{
+    z-index: 99999!important;
+}
+.navbar, .logo{
+    height: 70px!important;
+}
+
+.main-sidebar {
+    background-color: #ecf0f5!important;
+}

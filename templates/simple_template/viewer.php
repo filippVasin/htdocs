@@ -16,7 +16,13 @@
 <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
 
     <!--адиптив-->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <?
+        if(($_SERVER['REQUEST_URI']!= "/local_alert") && ($_SERVER['REQUEST_URI']!= "/report_step") && ($_SERVER['REQUEST_URI']!= "/docs_report")){
+            echo '<meta id="meta" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">';
+        }
+    ?>
+
+
 
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/font-awesome/css/font-awesome.min.css">
@@ -25,7 +31,6 @@
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/dist/css/skins/_all-skins.min.css">
-
 
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/morris.js/morris.css">
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/jvectormap/jquery-jvectormap.css">
@@ -44,28 +49,6 @@
     }
     ?>
 </head>
-<body style="height: auto; min-height: 100%;">
-<div id="topBar">
-    <div class="left transform">
-        <div class="logo">LP</div>
-        <? if($_SESSION['role_id'] == 3){
-
-        } else {
-           echo  '<div id="menu_open" class="mune_icon transform"><img src="../../templates/simple_template/images/menu_icon.svg"></div>';
-        } ?>
-
-    </div>
-    <? if(isset($_SESSION['user_id'])){
-       echo '<a href="/exit" class="dors_button"><div>Выход</div><img src="../../templates/simple_template/images/exit_icon.svg"></a>';
-//        <a href="/exit" class="dors_button"><div>Выход</div><img style="position: absolute;
-//    width: 110px;
-//    height: 50px;
-//    top: -10px;
-//    right: -10px;" src="../../templates/simple_template/images/IS-0005m.png"></a>
-     } else {
-        echo '<a href="/login" class="dors_button"><div>Войти</div><img src="../../templates/simple_template/images/reset_icon.svg"></a>';
-    }?>
-</div>
 
 <div id="header" class="sidebar">
     <?
@@ -73,6 +56,11 @@
     if(isset($menu_viewer) && $menu_viewer != ''){
         echo $menu_viewer;
     }
+
+
+
+
+
     ?>
 </div>
 
@@ -82,7 +70,7 @@ if(isset($_SESSION['control_company_name'])){
 }
 ?>
 
-<div id="body" class="gray wrapper" style="height: auto; min-height: 100%;" style="min-height: 906px;">
+<div id="body" class="gray wrapper" style="height: auto; min-height: 100%;min-height: 906px;">
     <?
         // Здесь мы будем выводит отображение которое передал нам маршрутизатор;
         if(isset($inside_viewer) && $inside_viewer != ''){
@@ -91,6 +79,31 @@ if(isset($_SESSION['control_company_name'])){
     ?>
 </div>
 
+<!--            Начало второй части-->
+</div>
+</section>
+</section>
+
+<!-- Main content -->
+
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+<!-- Control Sidebar -->
+
+<!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+     immediately after the control sidebar -->
+
+<!-- ./wrapper -->
+
+<script>
+//    $.widget.bridge('uibutton', $.ui.button);
+</script>
+
+<div class="daterangepicker dropdown-menu ltr opensleft"><div class="calendar left"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_start" value=""><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="calendar right"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_end" value=""><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="ranges"><ul><li data-range-key="Today">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="This Month">This Month</li><li data-range-key="Last Month">Last Month</li><li data-range-key="Custom Range">Custom Range</li></ul><div class="range_inputs"><button class="applyBtn btn btn-sm btn-success" disabled="disabled" type="button">Apply</button> <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button></div></div></div><div class="jvectormap-label"></div></body>
 
 
 <!--    <div style="margin: 10px;"><img src="/templates/--><?//echo $current_template;?><!--/images/icon_core.png" alt="logo"></div>-->
@@ -208,8 +221,8 @@ if(isset($_SESSION['control_company_name'])){
                 },
                 buttonText: {
                     today: 'Сегодня',
-                    month: 'месяц',
-                    week : 'неделя',
+                    month: 'мес',
+                    week : 'нед',
                     day  : 'день'
                 },
                 //Random default events
@@ -221,7 +234,7 @@ if(isset($_SESSION['control_company_name'])){
                         borderColor    : '#f56954' //red
                     },
                     {
-                        title          : 'Инструктажы',
+                        title          : 'Инструктажи',
                         start          : new Date(y, m, d - 5),
                         end            : new Date(y, m, d - 2),
                         backgroundColor: '#f39c12', //yellow
@@ -234,14 +247,7 @@ if(isset($_SESSION['control_company_name'])){
                         backgroundColor: '#0073b7', //Blue
                         borderColor    : '#0073b7' //Blue
                     },
-                    {
-                        title          : 'Инстркутаж',
-                        start          : new Date(y, m, d, 12, 0),
-                        end            : new Date(y, m, d, 14, 0),
-                        allDay         : false,
-                        backgroundColor: '#00c0ef', //Info (aqua)
-                        borderColor    : '#00c0ef' //Info (aqua)
-                    },
+
                     {
                         title          : 'Тренинги',
                         start          : new Date(y, m, d + 1, 19, 0),

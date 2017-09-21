@@ -47,14 +47,14 @@ class Model_main{
             <span class="info-box-icon "><i class="fa fa-thumbs-o-up"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Пройдено</span>
+              <span class="info-box-text">Завершино</span>
               <span class="info-box-number">%test_fact%</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: %test_proc%%"></div>
               </div>
                   <span class="progress-description">
-                   инструктажей и тестов
+
                   </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -64,10 +64,11 @@ class Model_main{
           <!-- small box -->
           <div class="small-box open_list_report  %bg_info_box%">
             <div class="inner">
-              <h3>%test_proc%<sup style="font-size: 20px">%</sup></h3>
+              <h3 style="text-align: center;">
+              %test_proc%<sup style="font-size: 20px">%</sup></h3>
 
 
-              <span class="info-box-text">по компании</span>
+              <span class="info-box-text" style="text-align: center;">по компании</span>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>

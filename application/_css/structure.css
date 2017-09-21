@@ -29,3 +29,8 @@ ul {
     font-weight: 400;
     color: #614d4d
 }
+
+
+#tree,#tree_down,#tree_up,#whole_branch,#whole_tree{
+    display: none!important;
+}
