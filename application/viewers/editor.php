@@ -1,4 +1,4 @@
-<div class="page_title">Редактор</div>
+
 
 <div id="table_titles">
     <div id="table_type_title">Тип</div>

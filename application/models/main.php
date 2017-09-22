@@ -455,8 +455,15 @@ FORM_NOW.doc_status_now,
     public function journal(){
         global $db;
 
+
         if(!(isset($_SESSION['control_company']))){
-            header("Location:/login");
+            if($_SESSION['role_id'] == 1){
+                header("Location:/company_control");
+            } else {
+                header("Location:/login");
+            }
+
+
         }
 
 

@@ -170,7 +170,7 @@
     display: flex;
     justify-content: space-between;
     width: 500px;
-    border-bottom: 1px solid #323232;
+    /*border-bottom: 1px solid #323232;*/
     height: 25px;
     align-items: center;
 }

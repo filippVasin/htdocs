@@ -109,25 +109,35 @@ if(isset($_SESSION['control_company_name'])){
 <!--    <div style="margin: 10px;"><img src="/templates/--><?//echo $current_template;?><!--/images/icon_core.png" alt="logo"></div>-->
 </div>
 
-<div id="bottom">
-    <div id="message"></div>
 
-    <div id="preloader">
-        <div class="cssload-container">
-            <div class="cssload-bouncywrap">
-                <div class="cssload-cssload-dotcon cssload-dc1">
-                    <div class="cssload-dot"></div>
-                </div>
-                <div class="cssload-cssload-dotcon dc2">
-                    <div class="cssload-dot"></div>
-                </div>
-                <div class="cssload-cssload-dotcon dc3">
-                    <div class="cssload-dot"></div>
-                </div>
-            </div>
-        </div>
-        <div id="preloader_text"></div>
-    </div>
+
+<div id="message_default" class="alert alert-info alert-dismissible none message">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-info"></i> Привет!</h4>
+    <span class="message_text"></span>
+</div>
+
+
+<div id="message_error" class="alert alert-danger alert-dismissible none message">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-ban"></i> Ошибка!</h4>
+    <span class="message_text"></span>
+</div>
+
+
+<div id="message_info" class="alert alert-warning alert-dismissible none message">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-warning"></i> Внимание!</h4>
+    <span class="message_text"></span>
+</div>
+
+
+<div id="message_ok" class="alert alert-success alert-dismissible none message">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-check"></i> Ок!</h4>
+    <span class="message_text"></span>
+</div>
+
 <script>
     $(document).ready(function() {
 
@@ -354,6 +364,12 @@ if(isset($_SESSION['control_company_name'])){
 
     <script>
 
+
+//        $(document).ready(function() {
+//            if($(window).width() <= 770){
+//                $(".page_title").addClass("none");
+//            }
+//        });
 
 
     </script>

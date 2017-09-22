@@ -1,4 +1,4 @@
-<div class="page_title" >Перемещение узлов</div>
+
 <div class="update_node_box">%update_node_table_box%</div>
 
 

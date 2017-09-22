@@ -1,4 +1,4 @@
-<div class="page_title">Управление должностями</div>
+
 
 <div class="button" id="show_add_appointment_form">Добавить новую должность</div>
 
@@ -13,7 +13,6 @@
 <br>
 <br>
 
-<div class="page_title">Список ранее добавленных должностей</div>
 <div id="appointments_list" align="center">
     %appointments_list%
 </div>

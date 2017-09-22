@@ -1,5 +1,4 @@
 <? header('Content-Type: text/html; charset=utf-8');?>
-<div class="page_title">Какой модуль показать?</div>
 
 <div id="login_form">
     %select%

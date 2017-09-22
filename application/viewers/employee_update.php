@@ -1,4 +1,4 @@
-<div class="page_title">Перемещение сотрудников</div>
+
 <div class="update_employees_box">%update_employees_table_box%</div>
 
 

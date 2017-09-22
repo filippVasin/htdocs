@@ -21,5 +21,8 @@ class Controller_menu extends Controller{
 
         $exit_login = $this->model->exit_login();
         $this->view = str_replace('%exit_login%', $exit_login, $this->view);
+
+        $page_title = $this->model->page_title();
+        $this->view = str_replace('%page_title%', $page_title, $this->view);
     }
 }

@@ -18,7 +18,7 @@
             <a href="#" class="sidebar-toggle" id="menu_open_closer" data-toggle="push-menu" role="button">
                 <span class="sr-only">Навигация</span>
             </a>
-
+            <div class="page_title"> %page_title% </div>
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
@@ -38,6 +38,7 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu tree" data-widget="tree">
                 %company_buttons%
+                %users_buttons%
 <!--                <li><a href="https://adminlte.io/docs"><i class="fa fa-book text-yellow "></i> <span>Documentation</span></a></li>-->
 <!--                <li class="header">LABELS</li>-->
 <!--                <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>-->

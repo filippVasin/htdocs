@@ -1,4 +1,4 @@
-<div class="page_title">Управление сотрудниками</div>
+
 
 %items_selects%
 
@@ -35,6 +35,5 @@
 <br>
 
 
-<div class="page_title">Список сотрудников</div>
 <div id="employees_list" align="center">
 </div>

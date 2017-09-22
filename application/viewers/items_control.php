@@ -1,6 +1,6 @@
-<div class="page_title">Управление элементами</div>
 
-<div class="page_title">Выберите тип элемента</div>
+
+
 %item_type_select%
 
 <br>

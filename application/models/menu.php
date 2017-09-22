@@ -14,6 +14,53 @@ class Model_menu{
         //echo 'Это результат выполнения метода модели вызванного из контроллера<br>';
     }
 
+        public function page_title(){
+
+        $page_title = "";
+        $domain = $_SERVER['REQUEST_URI'];
+        switch ($domain) {
+            case "/main":
+                $page_title = "Главная страница";
+                break;
+            case "/structure":
+                $page_title = "Cтруктура";
+                break;
+            case "/creator":
+                $page_title = "Добавить сотрудника";
+                break;
+            case "/docs_report":
+                $page_title = "Отчёт по документам";
+                break;
+            case "/report_step":
+                $page_title = "Отчёт по сотрудникам";
+                break;
+            case "/action_list":
+                $page_title = "Действия с документами";
+                break;
+            case "/local_alert":
+                $page_title = "Уведомления";
+                break;
+            case "/company_control":
+                $page_title = "Компании";
+                break;
+            case "/editor":
+                $page_title = "Редактор элементов";
+                break;
+            case "/employee_update":
+                $page_title = "Перемещение сотрудников";
+                break;
+            case "/company_forms":
+                $page_title = "Документы компании";
+                break;
+            case "/period_control":
+                $page_title = "Периодичность инструктажей";
+                break;
+            case "/step_editor":
+                $page_title = "Содержание инструктажа";
+                break;
+        }
+        return $page_title;
+    }
 
 
     public function company_buttons(){
@@ -45,6 +92,8 @@ class Model_menu{
             $company_buttons = '';
         }
 
+
+
         return $company_buttons;
     }
 
@@ -57,7 +106,7 @@ class Model_menu{
             if($_SESSION['role_id'] == 1){
 
                 $login_buttons = '<li><a href="/main"> <span>Главная страница</span><i class="fa fa-bank "></i></a></li>';
-                $login_buttons = '<li><a href="/company_control"></i> <span>Компании</span><i class="fa fa-leanpub"></a></li>';
+                $login_buttons .= '<li><a href="/company_control"> <span>Компании</span><i class="fa fa-leanpub"></i></a></li>';
                 $login_buttons .= '<li><a href="/structure"> <span>Cтруктура</span><i class="fa fa-sitemap"></i></a></li>';
                 $login_buttons .= '<li><a href="/creator"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i></a></li>';
                 $login_buttons .= '<li><a href="/editor"> <span>Редактор элементов</span><i class="fa fa-edit"></i></a></li>';
@@ -66,16 +115,6 @@ class Model_menu{
                 $login_buttons .= '<li><a href="/period_control"> <span>Периодичность инструктажей</span><i class="fa fa-calendar"></i></a></li>';
                 $login_buttons .= '<li><a href="/step_editor"><span>Содержание инструктажа</span><i class="fa fa-calendar-check-o"></i> </a></li>';
 //                $login_buttons .= '<li><a href="/node_update"><i class="fa fa-book"></i> <span>Компании</span></a></li>';
-
-//                $login_buttons .= '<a href="/company_control" class="attr" name="Компании"><img src="../../templates/simple_template/images/factory.svg"><div class="display_none">Компании</div></a>';
-//                $login_buttons .= '<a href="/structure" class="attr" name="Организационная структура"><img src="../../templates/simple_template/images/org_str_icon.svg"><div class="display_none">Организационная структура</div></a>';
-//                $login_buttons .= '<a href="/creator" class="attr" name="Добавить элемент"><img src="../../templates/simple_template/images/create_node.svg"><div class="display_none">Добавить элемент</div></a>';
-//                $login_buttons .= '<a href="/editor" class="attr" name="Редактор элементов"><img src="../../templates/simple_template/images/font-selection-editor.svg"><div class="display_none">Редактор элементов</div></a>';
-//                $login_buttons .= '<a href="/employee_update" class="attr" name="Перемещение сотрудников"><img src="../../templates/simple_template/images/user-profile-edition.svg"><div class="display_none">Перемещение сотрудников</div></a>';
-////              $login_buttons .= '<a href="/node_update" class="attr" name="Перемещение узлов" ><img src="../../templates/simple_template/images/anchor-point.svg"><div class="display_none">Перемещение узлов</div></a>';
-//                $login_buttons .= '<a href="/company_forms" class="attr"name="Документы компании"><img src="../../templates/simple_template/images/company_docs.svg"><div class="display_none">Документы компании</div></a>';
-//                $login_buttons .= '<a href="/period_control" class="attr"name="Периодичность инструктажей"><img src="../../templates/simple_template/images/time-left.svg"><div class="display_none">Периодичность инструктажей</div></a>';
-//                $login_buttons .= '<a href="/step_editor" class="attr"name="Содержание инструктажа"><img src="../../templates/simple_template/images/share.svg"><div class="display_none">Содержание инструктажа</div></a>';
 
             }
 
@@ -106,5 +145,4 @@ class Model_menu{
             }
         return $exet_login;
     }
-
 }

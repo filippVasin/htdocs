@@ -1,4 +1,4 @@
-<div class="page_title">Выгрузка документов</div>
+
 
 <div class="button" id="show_documents_download_form" style="min-width: 280px;">Выбрать документы для выгрузки</div>
 

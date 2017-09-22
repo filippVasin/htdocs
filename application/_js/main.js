@@ -578,4 +578,12 @@ $(document).ready(function() {
 $(".fc-day-grid-container").css("height","100%");
 
 
+
+    $(document).on("click", "#popup_report_emp_content", function () {
+        if( screen.width <= 760){
+            $("#popup_report_emp").addClass("none");
+        }
+    });
+
+
 });

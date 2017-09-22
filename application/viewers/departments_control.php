@@ -1,4 +1,4 @@
-<div class="page_title">Управление отделами</div>
+
 
 <div class="button" id="show_add_department_form">Добавить новый отдел</div>
 
@@ -13,7 +13,7 @@
 <br>
 <br>
 
-<div class="page_title">Список ранее добавленных отделов</div>
+
 <div id="company_list" align="center">
     %departments_list%
 </div>

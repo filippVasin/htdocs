@@ -1,4 +1,4 @@
-<div class="page_title">Управление департаментами</div>
+
 
 <div class="button" id="show_add_board_form">Добавить новый департамент</div>
 
@@ -13,7 +13,7 @@
 <br>
 <br>
 
-<div class="page_title">Список ранее добавленных департаментов</div>
+
 <div id="company_list" align="center">
     %boards_list%
 </div>

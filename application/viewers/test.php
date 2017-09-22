@@ -1,4 +1,4 @@
-<div class="container gray"><div class="page_title">Выберите родителья</div></div>
+<div class="container gray"></div>
 <div class="container box">
 
     <div class="button_blue" style="float: right" id="rebut_node_docs">Сброс</div>

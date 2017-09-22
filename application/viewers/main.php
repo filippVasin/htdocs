@@ -25,7 +25,7 @@
 
 <div class="col-lg-4 col-xs-12">
 <div class="box box-primary">
-    <div class="box-header ui-sortable-handle" style="cursor: move;    text-align: left;">
+    <div class="box-header ui-sortable-handle" style="text-align: left;">
         <i class="ion ion-clipboard" ></i>
 
         <h3 class="box-title">Задачи</h3>

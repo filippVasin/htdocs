@@ -1,4 +1,4 @@
-<div class="page_title">Управление компаниями</div>
+
 
 <div class="button" id="show_add_company_form" style="width: 250px;">Добавить новую компанию</div>
 

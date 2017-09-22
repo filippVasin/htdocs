@@ -163,11 +163,11 @@ body{
 #bottom{
     position: fixed;
     bottom: 0px;
-    padding: 10px;
+    /*padding: 10px;*/
     text-align: center;
     width: 100%;
     background-color: #d2d6de;
-
+    z-index: 9999999999;
 }
 
 .page_title{
@@ -248,11 +248,12 @@ body{
 }
 
 
-#message{
-    /*background-color: rgba(156, 133, 255, 0.46);*/
-    padding: 8px;
-    font-size: 16px;
-    display: none;
+.message{
+    position: fixed;
+    width: 600px;
+    bottom: 0;
+    left: calc(50% - 300px);
+    z-index: 9999;
 }
 
 #preloader{
@@ -655,11 +656,13 @@ select{
 }
 
 .page_title {
-    position: fixed;
-    top: 10px;
-    left: 270px;
+    display: block;
+    height: 50px;
     color: #fff;
-    z-index: 10;
+    z-index: 999999;
+    float: left;
+    line-height: 50px;
+    margin-left: 5px;
 }
 #topBar .logo, #header>a{
 width: 50px;
@@ -900,4 +903,21 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 .content, .content-header{
     padding: 0!important;
+}
+
+
+@media screen and (max-width: 480px) {
+
+    #topBar .logo, #header>a {
+        width: 0px;
+    }
+    #body {
+        margin-left: 0px;
+    }
+
+
+    .page_title {
+        left: 60px;
+        font-size: 15px;
+    }
 }

@@ -1,4 +1,4 @@
-<div class="page_title">Отчёт по сотрудникам</div>
+
 <div class="container box">
     <div class="button" style="float: right" id="rebut_node_docs">Сброс</div>
     <div class="button" style="float: right" id="node_docs">Выбор подразделения</div>

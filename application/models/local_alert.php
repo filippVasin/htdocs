@@ -21,6 +21,8 @@ class Model_local_alert{
     {
         global $db;
 
+
+
         $select_item = $this->post_array['select_item'];
         $select_item_em = $this->post_array['select_item_em'];
         $group = $this->post_array['group'];
