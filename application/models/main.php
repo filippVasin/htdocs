@@ -74,7 +74,7 @@ class Model_main{
               <i class="ion ion-stats-bars"></i>
             </div>
             <a href="#"  class="small-box-footer"  >
-              Подробней <i class="fa fa-arrow-circle-right" ></i>
+              Подробнее <i class="fa fa-arrow-circle-right" ></i>
             </a>
           </div>
 <div id="dashboard">

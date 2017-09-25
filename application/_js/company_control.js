@@ -36,6 +36,7 @@ $(document).ready(function() {
                     $('#new_company_director_surname').val('');
                     $('#new_company_director_name').val('');
                     $('#new_company_director_second_name').val('');
+                    $('#show_add_company_form').click();
                 }
 
                 message(request_message, request_result);

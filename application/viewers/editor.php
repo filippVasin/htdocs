@@ -22,7 +22,7 @@
 </div>
 
 <div id="edit_popup_employees" item_id="">
-    <div class="canvas" style="padding-top: 30px; box-sizing: border-box;">
+    <div class="canvas" style="padding-top: 20px; box-sizing: border-box;">
     <div style="position: absolute; top: 20px; left: 48px">ID: <span id="title_employees_item_id"></span></div>
     <div class="input_name_row">
         <label>Фамилия</label>

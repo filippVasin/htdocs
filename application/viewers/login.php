@@ -18,7 +18,7 @@
     <div class="login-logo">
         Labor<b>Pro</b>
         <br>
-        <span>Охрана Туда</span>
+        <span>Охрана Труда</span>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

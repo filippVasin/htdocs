@@ -1,9 +1,37 @@
-.main-header{
+body{
+    background-color: #ecf0f5;
+}
+#body{
+    position: absolute;
+    margin: 0;
+    /*left: calc(50% - 125px);*/
+    margin-top: 50px;
+}
+#header{
+    /*display: none;*/
+}
+#menu_open{
+    display: none;
+}
+
+.page_title {
+    width: 280px;
+    margin: 0 auto;
+    left: calc(50% - 150px);
+}
+.wrapper{
+    width: 100%!important;
+}
+.main-header, .main-sidebar{
     display: none!important;
 }
 .content-wrapper, #body{
     background-color: #d2d6de;
 }
-body{
-    background-color: #ecf0f5;
+.content-wrapper{
+    margin-left: 0!important;
+}
+.login-logo span{
+    font-size: 20px;
+    font-weight: 700;
 }

@@ -18,6 +18,9 @@ class Controller{
     // Включаем общий указатель;
     public $pointer;
 
+    // Наличие строки с GET параметрами;
+    public $get_params;
+
     public function __construct($viewer_path, $model){
         // Подключаем viewer;
         $viewer_full_path = ROOT_PATH.'/application/viewers/'.$viewer_path.'.php';

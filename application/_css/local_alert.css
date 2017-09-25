@@ -240,7 +240,8 @@
 }
 
 #body{
-margin-top: 60px;
+/*margin-top: 60px;*/
+    padding-top: 20px;
 }
 
 #alert_acception_docs_popup{

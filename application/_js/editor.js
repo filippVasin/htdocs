@@ -53,6 +53,7 @@ $(document).ready(function() {
                         });
                         $("#edit_popup").css("display","none");
                         $("#edit_popup_input").val("");
+                        message('Успешно - элемент № ' + item_id + ' изменён', request_result);
                     }
                 },
                 error: function () {

@@ -20,6 +20,14 @@ require_once(__DIR__ . '/config.php');
 //                  WHERE employees.id = 2";
 
 
+
+// совместимость с локалхостом
+if(__DIR__ == "C:\MAMP\htdocs"){
+    $host = "http://localhost";
+} else {
+    $host = __DIR__;
+}
+
 // Подключаем базу
     $db = new MySQL;
     // ПОдключаемся к базе;
@@ -145,10 +153,13 @@ test_fun();       // кусаем арбуз
 
 
 function plus_link(){
-    global $dispatch,$employees;
+    global $db,$dispatch,$employees,$labro;
     foreach ($employees as $employee) {
-        $dispatch[$employee]["mail_body"] .= "<b><br>Перейдите на сайт <a href='https://laborpro.ru/login'>laborpro.ru</a></b>";
-
+        $sql = "SELECT `id` FROM users WHERE users.employee_id =". $employee;
+        $user_row = $db->row($sql);
+        $user_id = $user_row['id'];
+        $link = url_hash($user_id);
+        $dispatch[$employee]["mail_body"] .= "<b><br>Перейдите на сайт <a href='". $link ."'>laborpro.ru</a></b>";
     }
 }
 
@@ -1046,11 +1057,33 @@ function test_fun(){
             $send_mailer->send();
 }
 
+function url_hash($user){
+    global $db, $host;
+    $today = date("Y-m-d H:i:s");
+    $count = 0;
+    $hash = "";
+    do {
+        $hash = substr(md5($user . $today . $count), 0, 9);
+        $sql = "SELECT `user_id` FROM `url_hash` WHERE `hash` = '" . $hash . "';";
+        $login_data = $db->row($sql);
+        // есди такой хеш уже есть - идём на новый круг
+        if ($login_data['user_id'] != '') {
+            $hash = "";
+        }
+        ++$count;
+    } while ($hash == "");
 
+    $sql = "INSERT INTO `url_hash` (`user_id`, `hash`,`create_date`) VALUES('" . $user . "','" . $hash . "',NOW());";
+    $db->query($sql);
+    $url_hash = $host . '/url_auth?hash='.$hash;
+    return $url_hash;
+}
 
+function delete_url_hash(){
+    global $db;
+    // удаляем те которые лежат больше недели
 
-
-
-
-
+    $sql = "DELETE FROM `url_hash` WHERE  now() >  (`create_date` + INTERVAL 7 DAY)";
+    $db->query($sql);
+}
 ?>

@@ -1,7 +1,7 @@
 <script>
-    setTimeout(function(){
-        window.location = "/main";
-    }, 500);
+
+        window.location = "/login";
+
 </script>
 
 

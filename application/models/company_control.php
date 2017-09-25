@@ -71,7 +71,7 @@ class Model_company_control{
 
         $result_array = array();
         $result_array['status'] = 'ok';
-        $result_array['message'] = 'Новая компания успешно добавлена';
+        $result_array['message'] = 'Компания '. $name .' успешно добавлена';
         $result_array['new_item'] = $elements->company_item($name.' ('.$short_name.') / '.$new_company_director_surname.' '.$new_company_director_name.' '.$new_company_director_second_name, 'company_'.$company_id, 'off_company', '', 'company_id='.$company_id);
 
         $result = json_encode($result_array, true);

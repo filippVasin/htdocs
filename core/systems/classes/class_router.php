@@ -16,17 +16,29 @@ class router{
     public $menu_viewer;
 
     function __construct(){
+        global $controller_position_in_route;
+
         // Читаем маршрут;
-        $current_route = explode('/', ROUTE);
+        // Получаем наличие GET параметра в пути;
+        $get_request_in_line = explode('?', ROUTE);
+
+        // Маршурт на прямую не может содержать GET параметр;
+        $current_route = explode('/', $get_request_in_line[0]);
+
+
+        // Обработка указателя - если таковой у нас есть;
+        if($controller_position_in_route - 1 != 0){
+            // Если сдвиг от контроллера не равен 0 - значит
+            $pointer = $current_route[1];
+        }
 
         // Определяем контроллер;
-        $path = isset($current_route[1]) && $current_route[1] != '' ? $current_route[1] : 'main';
+        $path = isset($current_route[$controller_position_in_route]) && $current_route[$controller_position_in_route] != '' ? $current_route[$controller_position_in_route] : 'main';
 
         // Определяем метод - если такой есть;
-        $method = isset($current_route[2]) && $current_route[2] != '' ? $current_route[2] : 'exec_default';
+        $method = isset($current_route[$controller_position_in_route+1]) && $current_route[$controller_position_in_route+1] != '' ? $current_route[$controller_position_in_route+1] : 'exec_default';
 
         // Если нам передали контроллер - подключаем его;
-        // ajax_controller - мы не обрабатываем;
         if($path != ''){
             // Проверяем существование модели и контроллера;
             if(file_exists(ROOT_PATH.'/application/controllers/'.$path.'.php') && file_exists(ROOT_PATH.'/application/models/'.$path.'.php')){
@@ -48,6 +60,11 @@ class router{
                     $include_controller->pointer = $pointer;
                 }
 
+                // Если есть параметры GET;
+                if(isset($get_request_in_line[1]) && $get_request_in_line[1] != ''){
+                    $include_controller->get_params = $get_request_in_line[1];
+                }
+
                 // Если есть метод - проверяем наличие метода;
                 if($method != ''){
                     if(method_exists($include_controller, $method)){
@@ -67,16 +84,15 @@ class router{
 
             }   else{
                 // Выводим сообщение от ошибке;
-                $this->error_message('ОШИБКА! Модель или Контроллер - "'.$path.'" - не найдены! Обратитесь в системному администратору');
+                $this->error_message('ОШИБКА! Модель или Контроллер - "'.$path.'" - не найдены! Обратитесь в системному администратору', (isset($pointer) ? $pointer : 'error_404'));
             }
-
-            // Включаем меню;
-            $this->load_menu();
-
-            // Грузим шаблон с представлением;
-            $this->show_template();
-
         }
+
+        // Включаем меню;
+        $this->load_menu();
+
+        // Грузим шаблон с представлением;
+        $this->show_template();
     }
 
     private function load_menu(){
