@@ -85,7 +85,7 @@ class Model_menu{
             <li><a href="/creator"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i> </a></li>
             <li><a href="/docs_report"> <span>Отчёт по документам</span><i class="fa fa-book"></i> </a></li>
             <li><a href="/report_step"> <span>Отчёт по сотрудникам</span><i class="fa fa-users"></i> </a></li>
-            <li><a href="/action_list"> <span>Действия с документами</span><i class="fa  fa-newspaper-o"></i> </a></li>
+            <li><a href="/company_forms"> <span>Документы компании</span><i class="fa  fa-files-o"></i></a></li>
             <li><a href="/local_alert"> <span>Уведомления</span><i class="fa fa-paper-plane"></i></a> </li>
             ';
         }   else{
@@ -112,6 +112,7 @@ class Model_menu{
                 $login_buttons .= '<li><a href="/editor"> <span>Редактор элементов</span><i class="fa fa-edit"></i></a></li>';
                 $login_buttons .= '<li><a href="/employee_update"> <span>Перемещение сотрудников</span><i class="fa fa-arrows"></i></a></li>';
                 $login_buttons .= '<li><a href="/company_forms"> <span>Документы компании</span><i class="fa  fa-files-o"></i></a></li>';
+                $login_buttons .= '<li><a href="/action_list"> <span>Действия с документами</span><i class="fa  fa-newspaper-o"></i> </a></li>';
                 $login_buttons .= '<li><a href="/period_control"> <span>Периодичность инструктажей</span><i class="fa fa-calendar"></i></a></li>';
                 $login_buttons .= '<li><a href="/step_editor"><span>Содержание инструктажа</span><i class="fa fa-calendar-check-o"></i> </a></li>';
 //                $login_buttons .= '<li><a href="/node_update"><i class="fa fa-book"></i> <span>Компании</span></a></li>';

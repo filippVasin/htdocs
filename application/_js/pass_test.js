@@ -52,6 +52,10 @@ $(document).ready(function() {
 
 
                 }
+                var str = $(".info_box_doc").html();
+                if(str.length > 73){
+                    $(".info_box_doc").css("font-size", "11px");
+                }
 
                 message(request_message, request_result);
             },

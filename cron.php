@@ -12,6 +12,8 @@ require_once(__DIR__ . '/core/systems/classes/class_router.php');
 require_once(__DIR__ . '/core/systems/classes/class_smtp.php');
 require_once(__DIR__ . '/core/systems/classes/class_systems.php');
 require_once(__DIR__ . '/config.php');
+require_once(__DIR__ . '/templates/simple_template/template_mails/temp_mail.php');
+
 //include('core/systems/core.php');
 //include('core/systems/classes/class_systems.php');
 //global $systems;
@@ -129,8 +131,9 @@ $arrays = "";
 foreach ($employees as $item) {
     $dispatch[$item]["email"] = $labro->employees_email($item);
     $dispatch[$item]["emp_id"] = $item;
-    $dispatch[$item]["mail_body"] = "";
+    $dispatch[$item]["mail_body"] = $report_temp_mail;
     $dispatch[$item]["excel_url"] = "";
+    $dispatch[$item]["flag"] = 0;
 }
 
 $boss = array();
@@ -143,31 +146,27 @@ boss_data(); // собираем массив босов
 boss_alert(); // проходим по боссам
 send_get_excel(); // Excel отчёт
 pass_send(); // ложим пароли
-plus_link(); // прикрепили ссылку нашего сайты
+clear(); // отчишаем от якорей склейки
 mails_send(); // отсылаем составленные письма
-test_fun();       // кусаем арбуз
+test_fun();       // кусаем арбу
 
 
 
-
-
-
-function plus_link(){
-    global $db,$dispatch,$employees,$labro;
-    foreach ($employees as $employee) {
-        $sql = "SELECT `id` FROM users WHERE users.employee_id =". $employee;
-        $user_row = $db->row($sql);
-        $user_id = $user_row['id'];
-        $link = url_hash($user_id);
-        $dispatch[$employee]["mail_body"] .= "<b><br>Перейдите на сайт <a href='". $link ."'>laborpro.ru</a></b>";
+function clear(){
+    global $dispatch,$employees;
+    foreach ($employees as $item){
+        $dispatch[$item]["mail_body"]= str_replace('%login%', "",    $dispatch[$item]["mail_body"]);
+        $dispatch[$item]["mail_body"] = str_replace('%report_dir%', "",   $dispatch[$item]["mail_body"]);
+        $dispatch[$item]["mail_body"] = str_replace('%local_alert%', "",   $dispatch[$item]["mail_body"]);
+        $dispatch[$item]["mail_body"] = str_replace('%report_bailees%', "",   $dispatch[$item]["mail_body"]);
+        $dispatch[$item]["mail_body"] = str_replace('%inst_report_mail%', "",   $dispatch[$item]["mail_body"]);
+        $dispatch[$item]["mail_body"] = str_replace('%dir%', "",   $dispatch[$item]["mail_body"]);
+        $dispatch[$item]["mail_body"] = str_replace('%fio%', "",   $dispatch[$item]["mail_body"]);
     }
 }
 
-
-
-
 function pass_send(){
-    global $db, $dispatch;
+    global $db, $dispatch, $login_mail;
     $sql = "SELECT users.employee_id, temporary_links.pass AS pass, users.name AS login
             FROM temporary_links,users,employees_items_node,organization_structure
             WHERE temporary_links.id_user = users.id
@@ -177,7 +176,12 @@ function pass_send(){
 
     $pass_sql = $db->all($sql);
     foreach ($pass_sql as $item) {
-        $dispatch[$item['employee_id']]["mail_body"] .= "<b><br>Для входа используйте <br> Логин - ". $item['login'] . " и пароль - " .  $item['pass']. "</b>";
+        $html = "<b>Логин - ". $item['login'] . " <br> Пароль - " .  $item['pass']. "</b>";
+        $login_mail = str_replace('%text%', $html, $login_mail);
+        $dispatch[$item['employee_id']]["mail_body"] = str_replace('%login%', $login_mail, $dispatch[$item['employee_id']]["mail_body"]);
+        $dispatch[$item['employee_id']]["flag"] = 1;
+
+
     }
 
 }
@@ -226,7 +230,7 @@ function boss_data(){
 }
 
 function boss_alert(){
-    global $db, $boss, $dispatch;
+    global $db, $boss, $dispatch, $report_dir_mail;
     $sql = "SELECT
 /* Вывод даннных */
 FORM_CHECK.form_id AS doc_all,
@@ -403,9 +407,10 @@ FORM_NOW.doc_status_now,
         $html .= "Сотрудников сдало - ". $count_victory ."/ всего - ". $count_emp ."<br>";
         $html .= "Документов сдано - ". $doc_count_end ."/ всего - ". $doc_count_all ."<br>";
 
-            $dispatch[$boss_item['emp_id']]["mail_body"] .= "<br><b>Отчёт по ". $boss_item['boss_dir_type'] ." ". $boss_item['boss_dir'] ." :</b><br>";
-            $dispatch[$boss_item['emp_id']]["mail_body"] .= $html;
-
+            $report_dir_mail = str_replace('%text%', $html, $report_dir_mail);
+            $report_dir_mail = str_replace('%dir%', $boss_item['boss_dir_type'] ." ". $boss_item['boss_dir'] , $report_dir_mail);
+            $dispatch[$boss_item['emp_id']]["mail_body"] = str_replace('%report_dir%', $report_dir_mail, $dispatch[$boss_item['emp_id']]["mail_body"]);
+            $dispatch[$boss_item['emp_id']]["flag"] = 1;
     }
 }
 
@@ -413,7 +418,17 @@ function mails_send(){
     global $systems, $today, $dispatch;
 
     foreach ($dispatch as $item) {
-        if( $item["mail_body"] != "") {
+
+        $item["mail_body"] = str_replace('%login%', "",  $item["mail_body"]);
+        $item["mail_body"] = str_replace('%report_dir%', "",  $item["mail_body"]);
+        $item["mail_body"] = str_replace('%local_alert%', "",  $item["mail_body"]);
+        $item["mail_body"] = str_replace('%report_bailees%', "",  $item["mail_body"]);
+        $item["mail_body"] = str_replace('%inst_report_mail%', "",  $item["mail_body"]);
+
+        if( $item["flag"] != 1) {
+
+
+
             // валидация почты
             if ( is_email($item["email"])) {
 
@@ -440,13 +455,13 @@ function is_email($email) {
 }
 
 function employee_alerts(){
-    global $db, $control_company, $employees, $dispatch;
+    global $db, $control_company, $employees, $dispatch, $inst_report_mail;
 
     $sql="SELECT
 /* Вывод даннных */
 FORM_CHECK.form_id AS doc_all,
 FORM_NOW.doc_status_now,
-  employees.id AS EMPLOY, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+  employees.id AS EMPLOY, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,employees.name AS emp_name,
    route_control_step.id AS STEP, route_control_step.`periodicity`, history_docs.`id` AS history_docs,history_docs.date_finish,
    /* условный вывод */
   CASE
@@ -559,24 +574,28 @@ FORM_NOW.doc_status_now,
     $test_array = $db->all($sql);
     foreach ($employees as $employee) {
         $employee_html = "";
+        $fio = "";
         foreach ($test_array as $test_item) {
             if ($test_item['EMPLOY'] == $employee){
                 if($test_item['FinishStep']=="Не прошел") {
                     $employee_html .= $test_item["manual"]. "<br>";
                 }
+                $fio = $test_item['emp_name'];
             }
         }
         // запись в масси в для рассылки для соответствующего сотрудника
         if ($employee_html!=""){
-            $dispatch[$employee]["mail_body"] .= "<b>Вы не прошли следующие инструктажи:</b><br>";
-            $dispatch[$employee]["mail_body"] .= $employee_html;
-        }
+            $inst_report_mail = str_replace('%text%', $employee_html, $inst_report_mail);
 
+            $dispatch[$employee]["mail_body"] = str_replace('%inst_report_mail%', $inst_report_mail, $dispatch[$employee]["mail_body"]);
+            $dispatch[$employee]["flag"] = 1;
+        }
+        $dispatch[$employee]["mail_body"] = str_replace('%fio%', $fio, $dispatch[$employee]["mail_body"]);
     }
 }
 
 function secretars_alerts(){
-    global $db, $control_company,$labro, $secretars, $dispatch;
+    global $db, $control_company,$labro, $secretars, $dispatch, $local_alert_mail;
 
     $sql="SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
 form_step_action.action_name,form_step_action.user_action_name,
@@ -621,11 +640,11 @@ WHERE local_alerts.company_id = ". $control_company ."
 
             // если надо расписаться у секреторя
             if ($alert_item['action_type_id'] == 10) {
-                $secretar_html .= " дожен расписаться в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd-m-Y') .") <br>";
+                $secretar_html .= " дожен расписаться в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd.m.Y') .") <br>";
             }
             // если надо сдать документ
             if ($alert_item['action_type_id'] == 12) {
-                $secretar_html .= " дожен сдать документ - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd-m-Y') .") <br>";
+                $secretar_html .= " дожен сдать документ - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd.m.Y') .") <br>";
             }
             // если нужна подпись ответственного лица
             if ($alert_item['action_type_id'] == 14) {
@@ -633,21 +652,23 @@ WHERE local_alerts.company_id = ". $control_company ."
                 $chief = $boss['chief_surname'] . " " . $boss['chief_name'] . " " . $boss['chief_second_name'];
                 $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
                 $chief_dol = $boss['chief_dol'];
-                $secretar_html .= " нужна подпись ответственного - <b>" . $chiefFIO . "</b>(" . $chief_dol . "), в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd-m-Y') .") <br>";
+                $secretar_html .= " нужна подпись ответственного - <b>" . $chiefFIO . "</b>(" . $chief_dol . "), в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd.m.Y') .") <br>";
             }
 
         }
         // запись в масси в для рассылки для соответствующего сотрудника
         if ($secretar_html != "") {
-            $dispatch[$secretar]["mail_body"] .= "<br><b>Сегодня надо обработать следующие уведомления:</b><br>";
-            $dispatch[$secretar]["mail_body"] .= $secretar_html;
+            $local_alert_mail = str_replace('%text%', $secretar_html, $local_alert_mail);
+            $dispatch[$secretar]["mail_body"] = str_replace('%local_alert%', $local_alert_mail, $dispatch[$secretar]["mail_body"]);
+            $dispatch[$secretar]["flag"] = 1;
         }
+
     }
 
 }
 
 function bailees_alerts(){
-    global $db, $control_company,$labro, $bailees, $dispatch;
+    global $db, $control_company,$labro, $bailees, $dispatch,$report_bailees;
 
     $sql="SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
 form_step_action.action_name,form_step_action.user_action_name,
@@ -697,16 +718,16 @@ WHERE local_alerts.company_id = ". $control_company ."
                     }
                     // сам документ
                     $date = date_create($alert_item['date_create']);
-                    $bailee_html .= "документе - <b>'" . $alert_item['manual'] . "'</b> (". date_format($date, 'd-m-Y') .") <br>";
+                    $bailee_html .= "документе - <b>'" . $alert_item['manual'] . "'</b> (". date_format($date, 'd.m.Y') .") <br>";
                 }
 
             }
         }
         // запись в масси в для рассылки для соответствующего сотрудника
         if ($bailee_html != "") {
-            $dispatch[$bailee]["mail_body"] .= "<br><b>Вам надо рассписаться в документах следующих сотрудников:</b><br>";
-            $dispatch[$bailee]["mail_body"] .= $bailee_html;
-            $dispatch[$bailee]["mail_body"] .= "<i>Документы должны находиться у секретаря</i><br>";
+            $report_bailees = str_replace('%text%', $bailee_html, $report_bailees);
+            $dispatch[$bailee]["mail_body"] = str_replace('%report_bailees%', $report_bailees, $dispatch[$bailee]["mail_body"]);
+            $dispatch[$bailee]["flag"] = 1;
         }
     }
 
@@ -976,7 +997,7 @@ function send_excel_report($observer_emplyoee_id){
 
 
 function test_fun(){
-    global $systems, $today, $dispatch;
+    global $systems, $today, $dispatch, $report_temp;
 
             $send_mailer = $systems->create_mailer_object();
             $email = "gamanov.d@gmail.com";

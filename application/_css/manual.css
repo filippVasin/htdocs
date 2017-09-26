@@ -45,3 +45,14 @@ margin: 0 auto;
 .navbar, .logo{
     height: 70px!important;
 }
+
+#info_box:before{
+    content: " ";
+    background-color: #3c8dbc;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    z-index: -1;
+}

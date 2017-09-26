@@ -38,6 +38,7 @@ require_once(ROOT_PATH . '/core/systems/classes/class_phpmailer.php');
 require_once(ROOT_PATH . '/core/systems/classes/class_router.php');
 require_once(ROOT_PATH . '/core/systems/classes/class_smtp.php');
 require_once(ROOT_PATH . '/core/systems/classes/class_systems.php');
+require_once(ROOT_PATH . '/templates/simple_template/template_mails/temp_mail.php');
 
 
 

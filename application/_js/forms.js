@@ -69,7 +69,7 @@ $(document).ready(function() {
 
 
 
-            message(request_message, request_result);
+            //message(request_message, request_result);
         },
         error: function () {
         }

@@ -61,7 +61,7 @@ body{
     width: 800px;
 
     background-color: #fff;
-    top: 30px;
+
 }
 
 #test{
@@ -121,3 +121,14 @@ body{
 .main-sidebar {
     background-color: #ecf0f5!important;
 }
+
+#info_box:before{
+    content: " ";
+    background-color: #3c8dbc;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    z-index: -1;
+ }

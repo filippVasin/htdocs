@@ -162,7 +162,7 @@ class Model_creator
     public function create_form()
     {
         // подключение БД
-        global $db, $systems, $labro;
+        global $db, $systems, $labro, $regisrt_temp_mail;
 
         // получаем данные из POST запроса
                 $name = $this->post_array['name'];
@@ -236,8 +236,8 @@ class Model_creator
 
             $path = ROOT_PATH.'/application/templates_mail/'.$email_temp['path'];
 //            echo $path;
-            $message = file_get_contents($path);
-
+//            $message = file_get_contents($path);
+            $message = $regisrt_temp_mail;
             $message = str_replace('%fio%', $fio, $message);
             $message = str_replace('%login%', $login, $message);
             $message = str_replace('%pass%', $pass, $message);

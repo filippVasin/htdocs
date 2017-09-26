@@ -47,7 +47,7 @@ class Model_main{
             <span class="info-box-icon "><i class="fa fa-thumbs-o-up"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Завершино</span>
+              <span class="info-box-text">Завершено</span>
               <span class="info-box-number">%test_fact%</span>
 
               <div class="progress">
