@@ -344,7 +344,7 @@ FORM_NOW.doc_status_now,
                                 // документы
                                 if($fio_item['doc_all']){
                                     ++$count_doc_fio_target;
-                                    if($fio_item['doc_status_now']){
+                                    if($fio_item['FinishStep']!='Не прошел'){
                                         ++$count_doc_fio_fact;
                                     }
                                 }
@@ -397,6 +397,7 @@ FORM_NOW.doc_status_now,
                     AND employees_items_node.org_str_id = organization_structure.id
                     AND organization_structure.left_key >=parent_org.left_key
                     AND organization_structure.right_key <= parent_org.right_key
+                    AND form_status_now.step_id is not NULL
                     AND organization_structure.company_id = ". $_SESSION['control_company'];
             $result= $db->all($sql);
             $doc_count_end = 0;

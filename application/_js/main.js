@@ -14,11 +14,9 @@ $(document).ready(function() {
     var file_id= "";
     var local_id = "";
     var action_type = "";
-    start();
-    //
-    //var ua = navigator.userAgent,
-    //pickclick = (ua.match(/iPad/i) || ua.match(/iPhone/)) ? "touchstart" : "click";
 
+
+    start();
 
     $(document).on("click",'.open_list_report',function(){
         if($(".open_list_report").hasClass("open_dept")){
@@ -108,53 +106,6 @@ $(document).ready(function() {
     });
 
 
-    // выбор подразделения
-
-    $(document).on("click", "#select_node", function () {
-        $("#popup_context_menu_update").removeClass("none");
-        var emp_id = "";
-        var report_type = "org_str_tree";
-        $.ajax({
-            type: "POST",
-            url: "/master_report/main",
-            data: {
-                emp_id:emp_id,
-                report_type: report_type
-            },
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var request_result = result.status;
-                var request_message = result.message;
-                var content = result.content;
-                // если 'ok' - рисуем тест
-                if(request_result == 'ok'){
-
-                    $("body").css("margin-top","0px");
-                    $('#test_block').fadeIn(0);
-                    $('#popup_update_tree').html(content);
-                    $(".tree_item").addClass("none");
-                    $(".tree_item_fio").addClass("none");
-                    $("html, body").animate({ scrollTop: 0 }, 0);
-                    $("#tree_main>ul").removeClass("none");
-                    // присваеваем классы дня непустых элементов
-                    $(".tree_item").each(function() {
-                        var parent = $(this).parent("li");
-                        if(parent.children('ul').length != 0){
-                            $(this).addClass("open_item");
-                        }
-                    });
-                    $(".open_item").closest("ul").removeClass("none");
-                    $(".open_item").removeClass("none");
-
-                }
-            },
-            error: function () {
-                console.log('error');
-            }
-        });
-    });
-
-
 
     $(document).on("click", "#cancel_popup", function () {
         $("#popup_context_menu_update").addClass("none");
@@ -210,7 +161,7 @@ $(document).ready(function() {
 
     function create_node_structure(){
         // создание дашборда по отделам
-        // тестированние
+        // сборный
         $("#test_node_report .progress-group").each(function() {
             var parent_level = 0;
             var parent_left = 0;
@@ -270,62 +221,6 @@ $(document).ready(function() {
 
 
 
-        // сотрудники
-        $("#doc_node_report .progress-group").each(function() {
-            var parent_level = 0;
-            var parent_left = 0;
-            var parent_right = 0;
-            var count_child = 0;
-            var parent = $(this);
-            var fact = 0;
-            var  target = 0;
-            fact = Number(parent.attr('fact'));
-            target = Number(parent.attr('target'));
-            parent_level = $(this).attr('level');
-            parent_left = $(this).attr('left_key');
-            parent_right = $(this).attr('right_key');
-            $('#doc_node_report .progress-group').each(function() {
-                child_left = 0;
-                child_right = 0;
-                child_left = $(this).attr('left_key');
-                child_right = $(this).attr('right_key');
-                if ((parent_left < child_left)&&(parent_right > child_right)){
-                    $(this).addClass('none');
-                    $(this).detach().appendTo(parent);
-                    fact += Number($(this).attr('fact'));
-                    target += Number($(this).attr('target'));
-                    ++count_child;
-                }
-                //$(this).append("<br> " + parent_left + "<"+ child_left+" : " + parent_right + ">" + child_right);
-            });
-            // выводим суммарную цыфру по отделам
-            $('.progress-text-row>.progress-number:first',this).html("<b>"+ fact +"</b>/" + target);
-            var width_proc = (Math.round(fact/target*100)) + "%";
-            $('.progress-bar:first',this).css("width",width_proc);
-
-            if(count_child>0){
-                $(this).addClass("parent");
-                $('.progress-text',this).addClass("look_off");
-            } else {
-                $(this).addClass("last");
-            }
-        });
-
-        $("#doc_node_report .progress-group").each(function() {
-            var level = $(this).attr('level');
-            var left = $(this).attr('left_key');
-            if ((level ==  1)&&(left>002)){
-                $(this).detach().appendTo("#doc_node_report");
-            }
-        });
-        // у кого нет потомков идите в конце
-        $("#doc_node_report .progress-group").each(function() {
-            var level = $(this).attr('level');
-            var left = $(this).attr('left_key');
-            if ((level ==  1)&&(!($(this).hasClass("parent")))){
-                $(this).detach().appendTo("#doc_node_report");
-            }
-        });
 
     }
 
