@@ -194,7 +194,7 @@ $login_mail = '<tr>
                           <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777  ;">
 
                                     %text%
-                                    <br>Перейдите на сайт <a href="https://laborpro.ru/login" style="font-family:Merriweather,Charter,Georgia,serif;color:#007dcc;text-decoration:underline;" target="_blank" data-vdir-href="https://laborpro.ru/login" class="daria-goto-anchor" rel="noopener noreferrer">laborpro.ru</a>
+                                    <br>Перейдите на сайт <a href="%link%" style="font-family:Merriweather,Charter,Georgia,serif;color:#007dcc;text-decoration:underline;" target="_blank" data-vdir-href="https://laborpro.ru/login" class="daria-goto-anchor" rel="noopener noreferrer">laborpro.ru</a>
                               </div>
                           </div>
                         </td>
@@ -323,7 +323,7 @@ $regisrt_temp_mail =<<< HERE
                           <table width="100%" cellpadding="0" cellspacing="0" align="right" valign="middle" style="border-collapse:collapse;font-size:14px;text-align:right;">
                             <tbody><tr>
                               <td style="font-family:Merriweather,Charter,Georgia,serif;text-align:right;">
-                                <span>Заходите к нам </span><a href="https://laborpro.ru" style="font-family:Merriweather,Charter,Georgia,serif;text-decoration:underline;color:#333333; text-decoration: none;" target="_blank" data-vdir-href="https://laborpro.ru" data-orig-href="https://laborpro.ru" class="daria-goto-anchor" rel="noopener noreferrer">LaborPro.ru</a>
+                                <span>Заходите к нам </span><a href="https://laborpro.ru%link%" style="font-family:Merriweather,Charter,Georgia,serif;text-decoration:underline;color:#333333; text-decoration: none;" target="_blank" data-vdir-href="https://laborpro.ru" data-orig-href="https://laborpro.ru" class="daria-goto-anchor" rel="noopener noreferrer">LaborPro.ru</a>
                               </td>
                             </tr>
                           </tbody></table>

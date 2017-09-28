@@ -72,7 +72,7 @@ class labro
     }
 
 
-    // олучаем почту сотрудника
+    // получаем почту сотрудника
     public function employees_email($emp)
     {
         global $db;
@@ -80,6 +80,16 @@ class labro
         $boss = $db->row($sql);
         $email = $boss['email'];
         return $email;
+    }
+
+    // получаем юзера по сотруднику
+    public function employees_to_user($emp)
+    {
+        global $db;
+        $sql = "SELECT id FROM users WHERE employee_id =" . $emp;
+        $boss = $db->row($sql);
+        $user_id = $boss['id'];
+        return $user_id;
     }
 
     // создаём url ссылку с хешем и пишим её в таблицу
@@ -101,7 +111,7 @@ class labro
 
         $sql = "INSERT INTO `url_hash` (`user_id`, `hash`,`create_date`) VALUES('" . $hash . "','" . $user . "',NOW());";
         $db->query($sql);
-        $url_hash = ROOT_PATH . '/url_auth?hash=' . $hash;
+        $url_hash = ROOT_PATH . '/url_auth?' . $hash;
         return $url_hash;
     }
 
@@ -109,7 +119,6 @@ class labro
         global $db;
         $status = 1;
         $result_array = array();
-
         $sql = "SELECT `id`, `role_id`, `employee_id` FROM `users` WHERE `id` = '" . $user . "';";
         $login_data = $db->row($sql);
 

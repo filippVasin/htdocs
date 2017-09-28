@@ -13,9 +13,9 @@ class Controller_login extends Controller{
     }
 
     // Попытка авторизаци;
-    public function try_login($post_data){
+    public function try_login(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
         $this->model->try_login();

@@ -17,18 +17,18 @@ class Controller_items_control extends Controller{
     }
 
     // Добавление отдела;
-    public function add($post_data){
+    public function add(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
         $this->model->add();
     }
 
     // Получаемс содержимое для выбранного элемента;
-    public function get_exist_elements($post_data){
+    public function get_exist_elements(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
         $this->model->get_exist_elements();

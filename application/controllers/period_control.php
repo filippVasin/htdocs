@@ -15,9 +15,9 @@ class Controller_period_control extends Controller{
 
 
     // Обработка результатов тестирования;
-    public function save_period($post_data){
+    public function save_period(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Обрабатываем результат;
         $this->model->save_period();
     }

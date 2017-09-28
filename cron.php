@@ -134,6 +134,7 @@ foreach ($employees as $item) {
     $dispatch[$item]["mail_body"] = $report_temp_mail;
     $dispatch[$item]["excel_url"] = "";
     $dispatch[$item]["flag"] = 0;
+    $dispatch[$item]["user_id"] = $labro->employees_to_user($item);
 }
 
 $boss = array();
@@ -146,10 +147,19 @@ boss_data(); // собираем массив босов
 boss_alert(); // проходим по боссам
 send_get_excel(); // Excel отчёт
 pass_send(); // ложим пароли
+add_hash(); // добавили хеш авторизации к ссылке
 clear(); // отчишаем от якорей склейки
 mails_send(); // отсылаем составленные письма
 test_fun();       // кусаем арбу
 
+function add_hash(){
+    global $dispatch,$employees;
+    foreach ($employees as $item){
+        $id = $dispatch[$item]['user_id'];
+        $hash = url_hash($id);
+        $dispatch[$item]["mail_body"]= str_replace('%link%', $hash, $dispatch[$item]["mail_body"]);
+    }
+}
 
 
 function clear(){
@@ -162,6 +172,7 @@ function clear(){
         $dispatch[$item]["mail_body"] = str_replace('%inst_report_mail%', "",   $dispatch[$item]["mail_body"]);
         $dispatch[$item]["mail_body"] = str_replace('%dir%', "",   $dispatch[$item]["mail_body"]);
         $dispatch[$item]["mail_body"] = str_replace('%fio%', "",   $dispatch[$item]["mail_body"]);
+        $dispatch[$item]["mail_body"]= str_replace('%link%', "",    $dispatch[$item]["mail_body"]);
     }
 }
 
@@ -443,7 +454,15 @@ function mails_send(){
                 $send_mailer->isHTML(true);
                 $send_mailer->Subject = "Охрана Труда";
                 $send_mailer->Body = $today . "<br>" . $item["mail_body"];
-                $send_mailer->send();
+				
+				if (!$send_mailer->send()) {
+					$error = $send_mailer->ErrorInfo;
+					echo 'Mailer Error: ' . $error;
+				} else {
+					echo 'Message sent!';
+				}
+				
+                
             }
         }
     }
@@ -1010,7 +1029,12 @@ function test_fun(){
             if($dispatch[73]['excel_url']!=""){
                 $send_mailer->addAttachment($dispatch[73]['excel_url']);
             }
-            $send_mailer->send();
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			};
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1023,7 +1047,12 @@ function test_fun(){
             if($dispatch[73]['excel_url']!=""){
                 $send_mailer->addAttachment($dispatch[73]['excel_url']);
             }
-            $send_mailer->send();
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "gamanov.d@gmail.com";
@@ -1036,7 +1065,12 @@ function test_fun(){
             if($dispatch[43]['excel_url']!=""){
                 $send_mailer->addAttachment($dispatch[43]['excel_url']);
             }
-            $send_mailer->send();
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1049,7 +1083,12 @@ function test_fun(){
             if($dispatch[43]['excel_url']!=""){
                 $send_mailer->addAttachment($dispatch[43]['excel_url']);
             }
-            $send_mailer->send();
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "gamanov.d@gmail.com";
@@ -1062,7 +1101,12 @@ function test_fun(){
             if($dispatch[2]['excel_url']!=""){
                 $send_mailer->addAttachment($dispatch[2]['excel_url']);
             }
-            $send_mailer->send();
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1075,7 +1119,12 @@ function test_fun(){
             if($dispatch[2]['excel_url']!=""){
                 $send_mailer->addAttachment($dispatch[2]['excel_url']);
             }
-            $send_mailer->send();
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			}
 }
 
 function url_hash($user){
@@ -1096,7 +1145,7 @@ function url_hash($user){
 
     $sql = "INSERT INTO `url_hash` (`user_id`, `hash`,`create_date`) VALUES('" . $user . "','" . $hash . "',NOW());";
     $db->query($sql);
-    $url_hash = $host . '/url_auth?hash='.$hash;
+    $url_hash = $host . '/url_auth?'.$hash;
     return $url_hash;
 }
 

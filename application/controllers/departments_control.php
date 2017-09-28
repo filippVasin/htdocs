@@ -17,9 +17,9 @@ class Controller_departments_control extends Controller{
     }
 
     // Добавление отдела;
-    public function add($post_data){
+    public function add(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
         $this->model->add();

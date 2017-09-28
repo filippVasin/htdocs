@@ -16,37 +16,37 @@ class Controller_creator extends Controller{
 
 
 
-    public function select_event($post_data){
+    public function select_event(){
         // Записываем массив с даннми в модель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->select_event();
     }
 
-    public function create_form($post_data){
+    public function create_form(){
         // Записываем массив с даннми в модель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
          $this->model->create_form();
 
     }
 
-    public function button_plus($post_data){
+    public function button_plus(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->button_plus();
     }
 
-    public function new_type_select($post_data){
+    public function new_type_select(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->new_type_select();
     }
-    public function save_new_type_select($post_data){
+    public function save_new_type_select(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->save_new_type_select();
     }

@@ -18,9 +18,9 @@ class Controller_main extends Controller{
     }
 
 
-    public function start($post_data){
+    public function start(){
         // Записываем массив с даннми в модель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->start();
     }

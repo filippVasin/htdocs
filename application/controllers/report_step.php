@@ -13,8 +13,8 @@ class Controller_report_step extends Controller{
 //        $this->view = str_replace('%forms%', $result, $this->view);
     }
 
-    public function start($post_data){
-        $this->model->post_array = $post_data;
+    public function start(){
+        $this->model->post_array = $this->post_params;
         $this->model->start();
     }
 
@@ -24,8 +24,8 @@ class Controller_report_step extends Controller{
         $this->model->load_node_docs_tree();
     }
 
-    public function action_history_docs($post_data){
-        $this->model->post_array = $post_data;
+    public function action_history_docs(){
+        $this->model->post_array = $this->post_params;
         $this->model->action_history_docs();
     }
 }

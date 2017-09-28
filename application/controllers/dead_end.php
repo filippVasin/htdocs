@@ -14,9 +14,9 @@ class Controller_dead_end extends Controller{
 
     }
     // сброс данных для тестировщика
-    public function reset_progress($post_data){
+    public function reset_progress(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // функция сброса
         $this->model->reset_progress();
     }

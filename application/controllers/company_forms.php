@@ -15,8 +15,8 @@ class Controller_company_forms extends Controller{
     }
 
 
-    public function look_file($post_data){
-        $this->model->post_array = $post_data;
+    public function look_file(){
+        $this->model->post_array = $this->post_params;
         // функция сброса
         $this->model->look_file();
     }

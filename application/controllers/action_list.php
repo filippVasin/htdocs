@@ -13,8 +13,8 @@ class Controller_action_list extends Controller{
         $this->view = str_replace('%list%', $list, $this->view);
     }
 
-    public function new_action_name($post_data){
-        $this->model->post_array = $post_data;
+    public function new_action_name(){
+        $this->model->post_array = $this->post_params;
         $this->model->new_action_name();
     }
 //

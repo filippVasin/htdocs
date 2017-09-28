@@ -14,35 +14,35 @@ class Controller_node_update extends Controller{
     }
 
     // получаем дерево должностей
-    public function load_positions_tree($post_data){
+    public function load_positions_tree(){
         // Записываем массив с даннми в модель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->load_positions_tree();
     }
 
     // меняем положение узла
-    public function update_node_yes($post_data){
+    public function update_node_yes(){
         // Записываем массив с даннми в модель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->update_node_yes();
     }
 
 
     // удаление узла
-    public function delete_node_yes($post_data){
+    public function delete_node_yes(){
         // Записываем массив с даннми в модель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->delete_node_yes();
     }
 
 
     // меняем положение узла
-    public function load_old_erarch($post_data){
+    public function load_old_erarch(){
         // Записываем массив с даннми в модель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->load_old_erarch();
     }

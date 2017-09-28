@@ -9,13 +9,8 @@ class Controller_test extends Controller{
 
     public function exec_default(){
         // запускаем тестовый метод
-        $this->model->return_pass();
+        $this->model->info();
     }
 
-
-//    public function start($post_data){
-//        $this->model->post_array = $post_data;
-//        $this->model->start();
-//    }
 
 }

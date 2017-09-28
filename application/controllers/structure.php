@@ -13,36 +13,4 @@ class Controller_structure extends Controller{
         $this->view = str_replace('%select%', $selector, $this->view);
     }
 
-
-
-//
-//    public function whole_tree(){
-//        // Вызываем метод показа всего дерева
-//        $this->model->whole_tree();
-//    }
-//
-//    public function whole_tree_new(){
-//        // Вызываем метод показа всего дерева
-//        $this->model->whole_tree_new();
-//    }
-//
-//    public function tree_down($post_data){
-//        // Записываем массив с даннми в домель;
-//        $this->model->post_array = $post_data;
-//        // Вызываем метод показа всего дерева
-//        $this->model->tree_down();
-//    }
-//    public function tree_up($post_data){
-//        // Записываем массив с даннми в домель;
-//        $this->model->post_array = $post_data;
-//        // Вызываем метод показа всего дерева
-//        $this->model->tree_up();
-//    }
-//    public function whole_branch($post_data){
-//        // Записываем массив с даннми в домель;
-//        $this->model->post_array = $post_data;
-//        // Вызываем метод показа всего дерева
-//        $this->model->whole_branch();
-//    }
-
 }

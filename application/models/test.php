@@ -31,7 +31,9 @@ class Model_test
 //            $db->query($sql);
 //        }
 //    }
-
+    public function info(){
+        phpinfo();
+    }
 
 
 

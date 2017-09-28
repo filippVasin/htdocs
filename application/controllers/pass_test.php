@@ -13,18 +13,18 @@ class Controller_pass_test extends Controller{
     }
 
     // Начало выполнения теста;
-    public function start($post_data){
+    public function start(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         // Запршиваем у модели начало тестирования;
         $this->model->start();
     }
 
     // Обработка результатов тестирования;
-    public function processing_results($post_data){
+    public function processing_results(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         // Обрабатываем результат;
         $this->model->processing_results();

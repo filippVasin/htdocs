@@ -21,6 +21,9 @@ class Controller{
     // Наличие строки с GET параметрами;
     public $get_params;
 
+    // наличие строки с POST параметром;
+    public $post_params;
+
     public function __construct($viewer_path, $model){
         // Подключаем viewer;
         $viewer_full_path = ROOT_PATH.'/application/viewers/'.$viewer_path.'.php';

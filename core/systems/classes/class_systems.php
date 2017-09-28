@@ -45,6 +45,8 @@ class systems{
             $send_mailer->Port = '465';
             //указываем кодировку для письма
             $send_mailer->CharSet = 'UTF-8';
+
+            $send_mailer->SMTPDebug = 3;
         }   else{
             // Если же нам передали массив параметров - наполняем им объвленный обект;
             foreach($options_array as $option => $value){

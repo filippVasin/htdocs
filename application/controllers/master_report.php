@@ -7,8 +7,8 @@ class Controller_master_report extends Controller{
         // по умолчанию
     }
 
-    public function main($post_data){
-        $this->model->post_array = $post_data;
+    public function main(){
+        $this->model->post_array = $this->post_params;
         $this->model->main();
     }
 

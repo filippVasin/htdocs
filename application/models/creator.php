@@ -241,6 +241,8 @@ class Model_creator
             $message = str_replace('%fio%', $fio, $message);
             $message = str_replace('%login%', $login, $message);
             $message = str_replace('%pass%', $pass, $message);
+            $hash = $labro->url_hash($labro->employees_to_user($employee_id));
+            $message = str_replace('%link%', $hash, $message);
 //            echo $message;
             $send_mailer = $systems->create_mailer_object();
 

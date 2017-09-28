@@ -17,26 +17,26 @@ class Controller_company_control extends Controller{
     }
 
     // Добавление компании;
-    public function add($post_data){
+    public function add(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
         $this->model->add();
     }
 
     // Включение управление компании;
-    public  function set_company_control($post_data){
+    public  function set_company_control(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
         $this->model->set_company_control();
     }
 
-    public  function plus_test_users_couple($post_data){
+    public  function plus_test_users_couple(){
 
-        $this->model->post_array = $post_data;
+        $this->model->post_array = $this->post_params;
 
         $this->model->plus_test_users_couple();
     }

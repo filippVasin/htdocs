@@ -13,8 +13,8 @@ class Controller_forms extends Controller{
 //        $this->view = str_replace('%forms%', $result, $this->view);
     }
 
-    public function start($post_data){
-        $this->model->post_array = $post_data;
+    public function start(){
+        $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->start();
     }
