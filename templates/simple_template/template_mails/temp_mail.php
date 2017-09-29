@@ -85,7 +85,7 @@ $report_temp_mail = <<< HERE
 
                     <!-- Footer -->
                     <tr>
-                        <td style="font-family:Merriweather,Charter,Georgia,serif;padding-top:25px;padding-bottom:25px;padding-right:50px;padding-left:50px;background-color:#ffde00;">
+                        <td style="font-family:Merriweather,Charter,Georgia,serif;padding-top:25px;padding-bottom:25px;padding-right:50px;padding-left:50px;background-color:#353942;">
                           <table width="150" cellpadding="0" cellspacing="0" align="left" valign="middle" style="border-collapse:collapse;">
                             <tbody><tr>
                               <td style="font-family:Merriweather,Charter,Georgia,serif;text-align:left;">
@@ -96,7 +96,7 @@ $report_temp_mail = <<< HERE
                           <table width="100%" cellpadding="0" cellspacing="0" align="right" valign="middle" style="border-collapse:collapse;font-size:14px;text-align:right;">
                             <tbody><tr>
                               <td style="font-family:Merriweather,Charter,Georgia,serif;text-align:right;">
-                                <span>Заходите к нам </span><a href="https://laborpro.ru" style="font-family:Merriweather,Charter,Georgia,serif;text-decoration:underline;color:#333333; text-decoration: none;" target="_blank" data-vdir-href="https://laborpro.ru" data-orig-href="https://laborpro.ru" class="daria-goto-anchor" rel="noopener noreferrer">LaborPro.ru</a>
+                                <span style="color:#ffffff;">Заходите к нам </span><a href="https://laborpro.ru" style="font-family:Merriweather,Charter,Georgia,serif;text-decoration:underline;color:#ffffff; text-decoration: none;" target="_blank" data-vdir-href="https://laborpro.ru" data-orig-href="https://laborpro.ru" class="daria-goto-anchor" rel="noopener noreferrer">LaborPro.ru</a>
                               </td>
                             </tr>
                           </tbody></table>
@@ -169,7 +169,7 @@ $report_bailees = '<tr>
                         </tr>
 
                       <tr>
-                        <td style=" font-family:Merriweather,Charter,Georgia,serif;padding-top:20px;padding-bottom:20px;padding-right:10%;padding-left:10%;background-color:#ffffff;">
+                        <td style=" font-family:Merriweather,Charter,Georgia,serif;padding-top:20px;padding-bottom:20px;padding-left: calc(50% - 160px);background-color:#ffffff;">
                           <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;font-size:16px;line-height:25px;text-align:left;color:#777777  ;">
                                     %text%
                               </div>
@@ -194,11 +194,30 @@ $login_mail = '<tr>
                           <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777  ;">
 
                                     %text%
-                                    <br>Перейдите на сайт <a href="%link%" style="font-family:Merriweather,Charter,Georgia,serif;color:#007dcc;text-decoration:underline;" target="_blank" data-vdir-href="https://laborpro.ru/login" class="daria-goto-anchor" rel="noopener noreferrer">laborpro.ru</a>
+                                    <br>
+                                    <span>Перейдите на сайт</span>
+                                    <br>
+                                    <a href="%link%"><span style="color:#000000;font-weight:700;">Laborpro.ru</span></span></a>
+
+
+                              </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td style=" font-family:Merriweather,Charter,Georgia,serif;padding-top:20px;padding-bottom:20px; text-align: center;background-color:#ffffff;">
+                          <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777; text-align: center;">
+
+
+                                    <a href="%link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding:20px 40px;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейти в систему</span></span></a>
+
                               </div>
                           </div>
                         </td>
                       </tr>';
+
+
 $inst_report_mail ='<tr>
                           <td style="font-family:Merriweather,Charter,Georgia,serif;padding-top:30px;padding-bottom:30px;padding-right:0;padding-left:0;text-align:center;background-color:#665b7a;">
                           <h2 style=" font-family: Merriweather,Charter,Georgia,serif;
@@ -301,7 +320,18 @@ $regisrt_temp_mail =<<< HERE
                           <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777  ;">
 
 
-                                              Логин - %login% <br> пароль - %pass%</b><br>Перейдите на сайт <a href="https://laborpro.ru/login" style="font-family:Merriweather,Charter,Georgia,serif;color:#007dcc;text-decoration:underline;" target="_blank" data-vdir-href="https://laborpro.ru/login" class="daria-goto-anchor" rel="noopener noreferrer">laborpro.ru</a>
+                                              Логин - %login% <br> пароль - %pass%</b><br>
+                              </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=" font-family:Merriweather,Charter,Georgia,serif;padding-top:20px;padding-bottom:20px;padding-right:10%;padding-left:10%;background-color:#ffffff;">
+                          <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777  ;">
+
+
+                                    <a href="%link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding:20px 40px;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейдите на сайт</span></span></a>
+
                               </div>
                           </div>
                         </td>

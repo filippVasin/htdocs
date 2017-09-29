@@ -54,34 +54,7 @@
     margin-top: 20px;
 }
 
-#popup_context_menu{
-    display: none;
-    position: fixed;
-    z-index: 999999;
-    top: 20px;
-    left: 20px;
-    width: 500px;
-    height: 180px;
-    background-color: #ccc;
-    left: calc(50% - 250px);
-    top: calc(50% - 90px);
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
 
-
-#popup_context_menu::before {
-    position: fixed;
-    z-index: -1;
-    top: 0px;
-    left: 0px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-color: rgba(0, 0, 0, 0.75);
-}
 #subscript_context_menu_popup{
     height: 60px;
     font-size: 20px;
@@ -99,34 +72,7 @@
     -moz-border-radius: 8px;
     border-radius: 8px;
 }
-#popup_context_menu_delete{
-    display: none;
-    position: fixed;
-    z-index: 999999;
-    top: 20px;
-    left: 20px;
-    width: 500px;
-    height: 180px;
-    background-color: #ccc;
-    left: calc(50% - 250px);
-    top: calc(50% - 90px);
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
 
-
-#popup_context_menu_delete::before {
-    position: fixed;
-    z-index: -1;
-    top: 0px;
-    left: 0px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-color: rgba(0, 0, 0, 0.75);
-}
 #subscript_context_menu_popup_delete{
     height: 60px;
     font-size: 20px;

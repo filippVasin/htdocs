@@ -2,26 +2,16 @@
 <div id="nods_key" left="" right=""></div>
 <div id="load_dashboard"></div>
 
-<div id="popup_context_menu_update" class="none">
-    <div class="canvas">
-        <div class="popup_context_menu_title"> Выберите интересуемое подразделение: </div>
-        <div id="popup_update_tree"></div>
-        <div class="button_row">
-            <div class="button" id="cancel_popup" >Отмена</div>
-            <div class="button" id="all_node_popup" >Все отделы</div>
-        </div>
-    </div>
-</div>
-
-<div id="popup_report_emp" class="none">
-    <div class="canvas">
-        <div id="popup_report_emp_title"> Отчёт по сотруднику </div>
-        <div id="popup_report_emp_content"></div>
-        <div class="button_row bottom">
-            <div class="button" id="ok_popup_report_emp" >OK</div>
-        </div>
-    </div>
-</div>
+<!--<div id="popup_context_menu_update" class="none">-->
+<!--    <div class="canvas">-->
+<!--        <div class="popup_context_menu_title"> Выберите интересуемое подразделение: </div>-->
+<!--        <div id="popup_update_tree"></div>-->
+<!--        <div class="button_row">-->
+<!--            <div class="button" id="cancel_popup" >Отмена</div>-->
+<!--            <div class="button" id="all_node_popup" >Все отделы</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div class="col-lg-4 col-xs-12">
 <div class="box box-primary">
@@ -65,7 +55,7 @@
 </div>
 </div>
 
-<div class="col-lg-5  col-xs-12">
+<div class="col-lg-4  col-xs-12">
     <div class="box box-primary">
         <div class="box-body no-padding">
             <!-- THE CALENDAR -->
@@ -78,54 +68,105 @@
 </div>
 
 
-<div id="alert_signature_docs_popup" class="none">
-    <div class="canvas">
 
-        <div class="popup_context_menu_title"> Сотрудник: </div>
-        <div id="emp_report_name"></div>
-        <div id="dolg_report_name"></div>
-        <div id="dolg_report_dir"></div>
-        <div class="popup_context_menu_title"> должен подписать документ: </div>
-        <div id="docs_report_name"></div>
-        <div class="button_row">
-            <div class="button" id="yes_popup_3">Подписал</div>
-            <div class="button cancel_popup">Не подписал</div>
+
+<div class="modal fade" tabindex="-1" id="alert_signature_docs_popup" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"> Сотрудник:</h4>
+            </div>
+            <div class="modal-body">
+                <div id="emp_report_name"></div>
+                <div id="dolg_report_name"></div>
+                <div id="dolg_report_dir"></div>
+                <div class="popup_context_menu_title"> должен подписать документ: </div>
+                <div id="docs_report_name"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="yes_popup_3" class="btn btn-primary">Подписал</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Не подписал</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" tabindex="-1" id="alert_acception_docs_popup" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"> Сотрудник:</h4>
+            </div>
+            <div class="modal-body">
+                <div id="emp_acception_name"></div>
+                <div id="dolg_acception_name"></div>
+                <div id="dolg_acception_dir"></div>
+                <div class="popup_context_menu_title"> должен сдать: </div>
+                <div id="docs_acception_name"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="yes_popup_4" class="btn btn-primary">Сдал</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Не сдал</button>
+            </div>
         </div>
     </div>
 </div>
 
 
 
-<div id="alert_acception_docs_popup" class="none">
-    <div class="canvas">
-
-        <div class="popup_context_menu_title"> Сотрудник: </div>
-        <div id="emp_acception_name"></div>
-        <div id="dolg_acception_name"></div>
-        <div id="dolg_acception_dir"></div>
-        <div class="popup_context_menu_title"> должен сдать: </div>
-        <div id="docs_acception_name"></div>
-        <div class="button_row">
-            <div class="button" id="yes_popup_4">Сдал</div>
-            <div class="button cancel_popup">Не сдал</div>
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" id="alert_bailee_push_popup" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Ответственный:</h4>
+            </div>
+            <div class="modal-body">
+                <div id="emp_bailee_push_name"></div>
+                <div id="dolg_bailee_push_name"></div>
+                <div id="dolg_bailee_push_dir"></div>
+                <div class="popup_context_menu_title"> должен подписать документ: </div>
+                <div id="docs_bailee_push_name"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="yes_popup_14" class="btn btn-primary">Подписал</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Не подписал</button>
+            </div>
         </div>
     </div>
 </div>
 
 
+<!-- Button trigger modal -->
+<button id="alert_bailee_push_popup_button" class="none" data-toggle="modal" data-target="#alert_bailee_push_popup">
+</button>
+<button id="alert_acception_docs_popup_button" class="none" data-toggle="modal" data-target="#alert_acception_docs_popup">
+</button>
+<button id="alert_signature_docs_popup_button" class="none" data-toggle="modal" data-target="#alert_signature_docs_popup">
+</button>
+<button id="popup_report_emp_button" class="none" data-toggle="modal" data-target="#popup_report_emp">
+</button>
+<!--// отчёт по сотрудникам-->
 
-<div id="alert_bailee_push_popup" class="none">
-    <div class="canvas">
 
-        <div class="popup_context_menu_title"> Ответственный: </div>
-        <div id="emp_bailee_push_name"></div>
-        <div id="dolg_bailee_push_name"></div>
-        <div id="dolg_bailee_push_dir"></div>
-        <div class="popup_context_menu_title"> должен подписать документ: </div>
-        <div id="docs_bailee_push_name"></div>
-        <div class="button_row">
-            <div class="button" id="yes_popup_14">Подписал</div>
-            <div class="button cancel_popup">Не подписал</div>
-        </div>
-    </div>
-</div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="popup_report_emp" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">Отчёт по сотруднику</h4>
+            </div>
+            <div class="modal-body" id="popup_report_emp_content">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"  data-dismiss="modal">Закрыть</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

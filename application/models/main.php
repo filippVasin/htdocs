@@ -28,7 +28,7 @@ class Model_main{
         // шаблон дашборда
         $html =<<< HERE
 
-  <div class="col-lg-3 col-xs-12" style="margin-top: 15px;">
+  <div class="col-lg-4 col-xs-12" style="margin-top: 15px;">
 
           <div class="info-box open_list_report">
             <span class="info-box-icon  %bg_info_box%"><i class="fa fa-flag-o"></i></span>

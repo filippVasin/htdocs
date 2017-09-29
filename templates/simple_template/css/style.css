@@ -921,3 +921,48 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
         font-size: 15px;
     }
 }
+
+.modal-backdrop{
+    opacity: .5;
+    z-index: 9!important;
+}
+.example-modal .modal {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    left: auto;
+    display: block;
+    z-index: 1;
+}
+
+.example-modal .modal {
+    background: transparent !important;
+}
+
+
+.modal-header {
+    background-color: #3c8dbc;
+    color: #fff;
+}
+
+.tree_item {
+    width: auto!important;
+    background-color: #ffffff!important;
+}
+#tree_main {
+    background-color: #ffffff!important;
+}
+/*.content-wrapper{*/
+    /*min-height: 0px!important;*/
+/*}*/
+.modal {
+    padding-left: 17px!important;
+}
+
+.modal-backdrop{
+    background-color: #ecf0f5!important;
+}
+.tree_item {
+    text-align: left;
+}

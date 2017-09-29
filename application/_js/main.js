@@ -255,7 +255,7 @@ $(document).ready(function() {
                 var content = result.content;
                 if (request_result == "ok") {
                     $("#popup_report_emp_content").html(content);
-                    $("#popup_report_emp").removeClass("none");
+                    $("#popup_report_emp_button").click();
                 }
             }
         });
@@ -281,25 +281,26 @@ $(document).ready(function() {
         action_type =  $(this).attr("action_type");
         observer_em = $(this).attr("observer_em");
         if( action_type == 10 ){
-            $("#alert_signature_docs_popup").removeClass("none");
             $("#emp_report_name").html(name);
             $("#dolg_report_name").html(dol);
             $("#dolg_report_dir").html(dir);
             $("#docs_report_name").html(doc);
+            $("#alert_signature_docs_popup_button").click();
+
         }
         if( action_type == 12 ){
-            $("#alert_acception_docs_popup").removeClass("none");
             $("#emp_acception_name").html(name);
             $("#dolg_acception_name").html(dol);
             $("#dolg_acception_dir").html(dir);
             $("#docs_acception_name").html(doc);
+            $("#alert_acception_docs_popup_button").click();
         }
         if( action_type == 14 ){
-            $("#alert_bailee_push_popup").removeClass("none");
             $("#emp_bailee_push_name").html(name);
             $("#dolg_bailee_push_name").html(dol);
             $("#dolg_bailee_push_dir").html(dir);
             $("#docs_bailee_push_name").html(doc);
+            $("#alert_bailee_push_popup_button").click();
         }
 
     });
@@ -476,7 +477,7 @@ $(".fc-day-grid-container").css("height","100%");
 
     $(document).on("click", "#popup_report_emp_content", function () {
         if( screen.width <= 760){
-            $("#popup_report_emp").addClass("none");
+            $(".btn-default").addClass("none");
         }
     });
 

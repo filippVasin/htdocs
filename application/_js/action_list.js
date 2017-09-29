@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     // запрос по истории документа
     $(document).on("click", ".row_data", function () {
-        $("#popup_action_list").addClass("block");
+        $("#popup_action_list_button").click();
         action_name =  $(this).attr("action_name");
         trigger =  $(this).attr("trigger");
         $("#actoin_name").val(action_name);

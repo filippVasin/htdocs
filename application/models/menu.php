@@ -58,6 +58,10 @@ class Model_menu{
             case "/step_editor":
                 $page_title = "Содержание инструктажа";
                 break;
+            case "/error_404":
+                $page_title = "ОШИБКА! Указанная страница не найдена.";
+                break;
+
         }
         return $page_title;
     }

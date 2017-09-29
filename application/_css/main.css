@@ -234,81 +234,12 @@
     height: 100%;
 }
 
-#popup_report_emp{
-    position: fixed;
-    z-index: 9999999999;
-    top: 20px;
-    left: 20px;
-    width: 800px;
-    height: 600px;
-    background-color: #ccc;
-    left: calc(50% - 400px);
-    top: calc(50% - 300px);
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
 
-#popup_report_emp::before {
-    position: fixed;
-    z-index: -1;
-    top: 0px;
-    left: 0px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-color: rgba(0, 0, 0, 0.75);
-}
 .bottom {
     position: absolute;
     bottom: 10px;
     left: calc(50% - 113px);
 }
-#popup_report_emp_content{
-    box-sizing: border-box;
-    position: relative;
-    border-radius: 3px;
-    background: #ffffff;
-    border-top: 3px solid #d2d6de;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    min-height: 250px;
-    margin-top: 15px;
-    padding: 10px;
-}
-#popup_report_emp_content .row{
-    width: 778px;
-    height: 30px;
-    margin-top: -1px;
-    border: 1px solid #e3e4e8;
-}
-
-#popup_report_emp_content .row > div{
-    float: left;
-    height: 30px;
-    padding: 8px 10px;
-    box-sizing: border-box;
-    cursor: pointer;
-    background-color: #ffffff;
-    border-right: 1px solid #e3e4e8;
-    color: #4a4b4b;
-    font-size: 11px;
-    line-height: 22px;
-    white-space: nowrap;
-    text-align: left!important;
-}
-
-#popup_report_emp_content .row  .manual{
-    width: 516px;
-}
-#popup_report_emp_content .row  .start{
-    width: 130px;
-}
-#popup_report_emp_content .row  .end{
-    width: 130px;
-}
-
 
 
 li {
@@ -413,87 +344,8 @@ ul {
 }
 
 
-#alert_signature_docs_popup{
-    position: fixed;
-    z-index: 999999;
-    top: 20px;
-    left: 20px;
-    width: 500px;
-    height: 250px;
-    background-color: #ccc;
-    left: calc(50% - 250px);
-    top: calc(50% - 125px);
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
-
-#alert_signature_docs_popup::before {
-    position: fixed;
-    z-index: -1;
-    top: 0px;
-    left: 0px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-color: rgba(0, 0, 0, 0.75);
-}
-
-#alert_acception_docs_popup{
-    position: fixed;
-    z-index: 999999;
-    top: 20px;
-    left: 20px;
-    width: 500px;
-    height: 250px;
-    background-color: #ccc;
-    left: calc(50% - 250px);
-    top: calc(50% - 125px);
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
-
-#alert_acception_docs_popup::before {
-    position: fixed;
-    z-index: -1;
-    top: 0px;
-    left: 0px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-color: rgba(0, 0, 0, 0.75);
-}
 
 
-#alert_bailee_push_popup{
-    position: fixed;
-    z-index: 999999;
-    top: 20px;
-    left: 20px;
-    width: 500px;
-    height: 250px;
-    background-color: #ccc;
-    left: calc(50% - 250px);
-    top: calc(50% - 125px);
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
-
-#alert_bailee_push_popup::before {
-    position: fixed;
-    z-index: -1;
-    top: 0px;
-    left: 0px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-color: rgba(0, 0, 0, 0.75);
-}
 
 .popup_context_menu_title{
     margin-top: 10px;
@@ -518,11 +370,7 @@ ul {
 
 @media screen and (max-width: 480px) {
 
-    #popup_report_emp {
-        width: 100%;
-        left: 0;
-        top: 0;
-    }
+
     #alert_signature_docs_popup {
         width: 100%;
         left: 0;

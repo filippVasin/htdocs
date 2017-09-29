@@ -27,10 +27,10 @@ class Model_master_report{
                 break;
             case "test_doc":
                 $result_array = $this->test_emp_report($emp_id);
-                $content = "<br> Отчёт по тестам <br>";
+                $content = '<br><label for="recipient-name" class="control-label">Отчёт по тестам:</label>';
                 $content .= $result_array['content'];
                 $result_array = $this->doc_emp_report($emp_id);
-                $content .="<br> Отчёт по документам <br>";
+                $content .='<br><br><label for="recipient-name" class="control-label">Отчёт по документам:</label>';
                 $content .= $result_array['content'];
                 $result_array['content'] =  $content;
                 break;
@@ -173,10 +173,10 @@ FORM_NOW.doc_status_now,
         $html = "";
         foreach ($docs_array as $docs_array_item) {
             // проверяем по фильтрам
-                    $html .= '<div class="row">
-                        <div  class="manual">' . $docs_array_item['manual'] . '</div>
-                        <div class="start">' . $docs_array_item['StartStep'] . '</div>
-                        <div  class="end">' . $docs_array_item['FinishStep'] . '</div>
+                    $html .= '<hr><div class="row">
+                        <div  class="col-md-6">' . $docs_array_item['manual'] . '</div>
+                        <div class="col-md-3">' . $docs_array_item['StartStep'] . '</div>
+                        <div  class="col-md-3">' . $docs_array_item['FinishStep'] . '</div>
                     </div>';
 
         }
@@ -306,10 +306,10 @@ FORM_NOW.doc_status_now,
         $html = "";
         foreach ($docs_array as $docs_array_item) {
             // проверяем по фильтрам
-            $html .= '<div class="row">
-                        <div  class="manual">' . $docs_array_item['manual'] . '</div>
-                        <div class="start">' . $docs_array_item['StartStep'] . '</div>
-                        <div  class="end">' . $docs_array_item['FinishStep'] . '</div>
+            $html .= '<hr><div class="row">
+                        <div  class="col-md-4">' . $docs_array_item['manual'] . '</div>
+                        <div class="col-md-4">' . $docs_array_item['StartStep'] . '</div>
+                        <div  class="col-md-4">' . $docs_array_item['FinishStep'] . '</div>
                     </div>';
 
         }
@@ -461,10 +461,10 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         $html = "";
         foreach ($docs_array as $docs_array_item) {
             // проверяем по фильтрам
-            $html .= '<div class="row">
-                        <div  class="manual">' . $docs_array_item['name_doc'] . '</div>
-                        <div class="start">' . $docs_array_item['action'] . '</div>
-                        <div  class="end">' . $docs_array_item['DoC_Status'] . '</div>
+            $html .= '<hr><div class="row">
+                        <div  class="col-md-6">' . $docs_array_item['name_doc'] . '</div>
+                        <div class="col-md-3">' . $docs_array_item['action'] . '</div>
+                        <div  class="col-md-3">' . $docs_array_item['DoC_Status'] . '</div>
                     </div>';
 
         }

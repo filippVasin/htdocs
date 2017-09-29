@@ -12,6 +12,13 @@ class Model_url_auth{
 
         if ($hash!="") {
         echo $hash;// тестим
+            // экранируем строку для пердачи в базу
+            $input_text = strip_tags($hash);
+            $hash = htmlspecialchars($input_text);
+            // надо - сравнить входящее и после обработки по длинне
+            // надо - проверить на шеснатеричность
+            // если есть изменения бить тревовгу
+            // пишим http://www.whoishostingthis.com/tools/user-agent/
 
             $sql = "SELECT `user_id` FROM `url_hash` WHERE `hash` = '" . $hash . "';";
             $login_data = $db->row($sql);

@@ -78,25 +78,25 @@ $(document).ready(function() {
         action_type =  $(this).attr("action_type");
         observer_em = $(this).attr("observer_em");
         if( action_type == 10 ){
-            $("#alert_signature_docs_popup").removeClass("none");
             $("#emp_report_name").html(name);
             $("#dolg_report_name").html(dol);
             $("#dolg_report_dir").html(dir);
             $("#docs_report_name").html(doc);
+            $("#alert_signature_docs_popup_button").click();
         }
         if( action_type == 12 ){
-            $("#alert_acception_docs_popup").removeClass("none");
             $("#emp_acception_name").html(name);
             $("#dolg_acception_name").html(dol);
             $("#dolg_acception_dir").html(dir);
             $("#docs_acception_name").html(doc);
+            $("#alert_acception_docs_popup_button").click();
         }
         if( action_type == 14 ){
-            $("#alert_bailee_push_popup").removeClass("none");
             $("#emp_bailee_push_name").html(name);
             $("#dolg_bailee_push_name").html(dol);
             $("#dolg_bailee_push_dir").html(dir);
             $("#docs_bailee_push_name").html(doc);
+            $("#alert_bailee_push_popup_button").click();
         }
 
     });
@@ -339,7 +339,7 @@ $(document).ready(function() {
         select_item = $(".target").val();
         select_item_em = $(".target_em").val();
 
-        $(".cancel_popup").click();
+        $(".btn-default").click();
         $.ajax({
             type: "POST",
             url: "/local_alert/start",

@@ -5,7 +5,7 @@
 <!--    %creator %-->
 
     <div class="create_form_box" >
-        <div class="button" id="node_docs">Выбор должности</div>
+        <div class="button" id="node_docs" data-toggle="modal" data-target="#popup_context_menu_update">Выбор должности</div>
         <span id="name_dol"></span>
     <div class="create_box">
 
@@ -27,12 +27,20 @@
     </div>
 </div>
 
-    <div id="popup_context_menu_update">
-        <div class="canvas">
-            <div class="popup_context_menu_title"> Выберите подразделение и должность: </div>
-            <div id="popup_update_tree"></div>
-            <div class="button_row">
-                <div class="button cancel_popup">Отмена</div>
-            </div>
-        </div>
-    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="popup_context_menu_update" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Выберите подразделение и должность:</h4>
+                </div>
+                <div class="modal-body" id="popup_update_tree">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->

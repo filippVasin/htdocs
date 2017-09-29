@@ -572,7 +572,7 @@ $(document).ready(function() {
              dol_id = $(this).attr("id_item");
             var name_dol = $(this).html();
             $("#node_docs").html(name_dol);
-            $(".cancel_popup").click();
+            $(".btn-default").click();
         }
     });
 });

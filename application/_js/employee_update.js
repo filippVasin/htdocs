@@ -47,15 +47,17 @@ $(document).ready(function() {
         item_name =  $(this).attr("item_name");
         em_id =  $(this).attr("em_id");
         old_position =  $(this).attr("position");
-        $("#popup_context_menu").css("display","block");
+        $("#popup_context_menu_button").click();
         $("#subscript_context_menu_popup").html(item_name);
     });
 
     // команда - уволить
     $(document).on("click", "#delete_popup_context_menu", function () {
-        $("#popup_context_menu_delete").css("display","block");
+        $(".btn-default").click();
+        $("#popup_context_menu_delete_button").click();
         $("#popup_context_menu").css("display", "none");
         $("#subscript_context_menu_popup_delete").html(item_name);
+
     });
 
     // команда - поменять должность
