@@ -62,7 +62,7 @@ $(document).ready(function() {
 
     // команда - поменять должность
     $(document).on("click", "#update_popup_context_menu", function () {
-        $("#popup_context_menu_update").css("display","block");
+        $("#popup_context_menu_update_button").click();
         $("#popup_context_menu").css("display", "none");
         $("#subscript_context_menu_popup_update").html(item_name);
         $.ajax({
@@ -118,7 +118,8 @@ $(document).ready(function() {
                 console.log('error');
             }
         });// ajax
-        $("#popup_update_select_position").css("display","block");
+        $(".btn-default").click();
+        $("#popup_update_select_position_button").click();
         $("#subscript_select_position_employee").html(item_name);
         $("#subscript_old_position_position").html(old_position);
     });

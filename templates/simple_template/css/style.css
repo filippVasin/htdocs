@@ -899,7 +899,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     }
 }
 .skin-blue .sidebar a {
-    color: #fff!important;
+    /*color: #fff!important;*/
 }
 .content, .content-header{
     padding: 0!important;

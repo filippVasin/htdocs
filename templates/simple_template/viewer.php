@@ -23,7 +23,7 @@
     ?>
 
 
-
+    <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/Ionicons/css/ionicons.min.css">
@@ -342,13 +342,22 @@ if(isset($_SESSION['control_company_name'])){
             $('#calendar').fullCalendar('option', 'locale', "ru");
         })
     </script>
-    <script src="/templates/<?echo $current_template;?>/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/templates/<?echo $current_template;?>/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/templates/<?echo $current_template;?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/templates/<?echo $current_template;?>/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+
+
+<script src="/templates/<?echo $current_template;?>/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="/templates/<?echo $current_template;?>/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/templates/<?echo $current_template;?>/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="/templates/<?echo $current_template;?>/dist/js/adminlte.min.js"></script>
+<script src="/templates/<?echo $current_template;?>/dist/js/demo.js"></script>
+
+
+
+
     <script src="/templates/<?echo $current_template;?>/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script src="/templates/<?echo $current_template;?>/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="/templates/<?echo $current_template;?>/dist/js/adminlte.min.js"></script>
-    <script src="/templates/<?echo $current_template;?>/bower_components/fastclick/lib/fastclick.js"></script>
-    <script src="/templates/<?echo $current_template;?>/dist/js/demo.js"></script>
+
     <script src="/templates/<?echo $current_template;?>/bower_components/moment/moment.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 
@@ -356,22 +365,21 @@ if(isset($_SESSION['control_company_name'])){
     <script src="/templates/<?echo $current_template;?>/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
     <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/dist/js/pages/dashboard.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/moment/locale/locale-all.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/moment/locale/ru.js"></script>
 
-    <script>
 
 
-//        $(document).ready(function() {
-//            if($(window).width() <= 770){
-//                $(".page_title").addClass("none");
-//            }
-//        });
+
+<script src="/templates/<?echo $current_template;?>/bower_components/filter/dataTables.tableTools.js"></script>
+<!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/TableTools.ShowSelectedOnly.js"></script>-->
+<!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/range_dates.js"></script>-->
+<!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/range_numbers.js"></script>-->
 
 
-    </script>
 </body>
 </html>

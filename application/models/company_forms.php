@@ -42,29 +42,12 @@ class Model_company_forms{
         $html .= "<div class='row'><div class='title_column_form type'>Тип Документа</div><div class='title_column_form temp'>Название Документа</div></div>";
         foreach($employees as $employee){
 
-            $html.= "<div class='row link' path='". $employee['path'] ."'><div class='type_form'>".$employee['type']."</div><div class='temp_form'>" .$employee['temp']."</div></div>";
+            $html.= "<a href='/doc_views?". $employee['path'] ."' target='_blank'> <div class='row link'><div class='type_form'>".$employee['type']."</div><div class='temp_form'>" .$employee['temp']."</div></div></a>";
         };
         $html .="</div>";
         return $html;
     }
 
-    public function look_file(){
-        global $db;
-        $doc_name = $this->post_array['path'];
 
-        // получает значение в подключаемом файле
-        $flag = "open";
-        $page = "";
-        $_SESSION['employee_id'] = 2;
-        include(ROOT_PATH.'/application/templates_form/'.$doc_name.'.php');
-
-        $page .='<div class="button" id="yes_i_read">Закрыть</div>';
-        $result_array['form_actoin'] = "open";
-        $result_array['page'] = $page;
-
-        $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
-    }
 
 }

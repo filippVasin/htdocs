@@ -20,6 +20,14 @@ class Model_report_step{
         $left_key = $this->post_array['left_key'];
         $right_key = $this->post_array['right_key'];
         $select_item = $this->post_array['select_item'];
+
+        if(!isset($_SESSION['select_item'])){
+            $_SESSION['select_item'] = "";
+        }
+        if($_SESSION['select_item'] == "Все"){
+            $_SESSION['select_item'] = "";
+        }
+
         // какие права имеет получатель
         $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
                     organization_structure.boss_type,
@@ -48,6 +56,16 @@ class Model_report_step{
         $observer_data = $db->row($sql);
         $left = $observer_data['left'];
         $right = $observer_data['right'];
+
+        if(!isset($_SESSION['left_key'])){
+            $_SESSION['left_key'] = 0;
+        }
+        if(!isset($_SESSION['right_key'])){
+            $_SESSION['right_key'] = 0;
+        }
+
+        $left_key = $_SESSION['left_key'];
+        $right_key = $_SESSION['right_key'];
 
         $sql="SELECT
 /* Вывод даннных */
@@ -173,7 +191,15 @@ class Model_report_step{
     		AND org_parent.company_id = ". $_SESSION['control_company'] ."
 	     AND
     /* для всех сотрудников или только для конкретного */
-    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)";
+    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
+    AND ((('". $_SESSION['select_item'] ."' = 'Не начатые' ) AND (history_docs.date_start is Null))
+	  			OR
+	  			(('". $_SESSION['select_item'] ."' = 'Не законченные' ) AND (history_docs.date_start is not Null) AND (history_docs.date_finish is Null))
+	  			OR
+	  			(('". $_SESSION['select_item'] ."' = 'Законченные' ) AND (history_docs.date_finish is not Null))
+	  			OR
+	  			('". $_SESSION['select_item'] ."' = ' ' )
+			) ";
 
         // частичный доступ у сотрудика котрый запрашивает отчёт
         if(($left!='none')&&($left!="all")) {
@@ -217,35 +243,35 @@ class Model_report_step{
             foreach ($docs_array as $docs_array_item) {
                 if (($docs_array_item['action_name'] == $select_item) || ($select_item == "")) {
                     if ($docs_array_item['SaveTempID'] != "") {
-                        $html .= '<div class="report_step_row docs_report_step_row" file_id="' . $docs_array_item['SaveTempID'] . '"  emp="' . $docs_array_item['EMPLOY'] . '" step="' . $docs_array_item['STEP'] . '" manual="' . $docs_array_item['manual'] . '" dir="' . $docs_array_item['dir'] . '" name="' . $docs_array_item['name'] . '" fio="' . $docs_array_item['fio'] . '">';
+                        $html .= '<tr class="report_step_row docs_report_step_row" file_id="' . $docs_array_item['SaveTempID'] . '"  emp="' . $docs_array_item['EMPLOY'] . '" step="' . $docs_array_item['STEP'] . '" manual="' . $docs_array_item['manual'] . '" dir="' . $docs_array_item['dir'] . '" name="' . $docs_array_item['name'] . '" fio="' . $docs_array_item['fio'] . '">';
                     } else {
-                        $html .= '<div class="report_step_row"  emp="' . $docs_array_item['EMPLOY'] . '" step="' . $docs_array_item['STEP'] . '" manual="' . $docs_array_item['manual'] . '" dir="' . $docs_array_item['dir'] . '" name="' . $docs_array_item['name'] . '" fio="' . $docs_array_item['fio'] . '">';
+                        $html .= '<tr class="report_step_row"  emp="' . $docs_array_item['EMPLOY'] . '" step="' . $docs_array_item['STEP'] . '" manual="' . $docs_array_item['manual'] . '" dir="' . $docs_array_item['dir'] . '" name="' . $docs_array_item['name'] . '" fio="' . $docs_array_item['fio'] . '">';
                     }
 
-                    $html .= ' <div  class="number">' . $docs_array_item['EMPLOY'] . '</div>
-                        <div  class="otdel">' . $docs_array_item['dir'] . '</div>
-                        <div class="position">' . $docs_array_item['name'] . '</div>
-                        <div class="fio">' . $docs_array_item['fio'] . '</div>
-                        <div  class="manual_name">' . $docs_array_item['manual'] . '</div>
-                        <div  class="start_date">' . $docs_array_item['StartStep'] . '</div>
-                        <div class="end_date">' . $docs_array_item['FinishStep'] . '</div>
-                    </div>';
+                    $html .= ' <td  >' . $docs_array_item['EMPLOY'] . '</td>
+                        <td>' . $docs_array_item['dir'] . '</td>
+                        <td>' . $docs_array_item['name'] . '</td>
+                        <td>' . $docs_array_item['fio'] . '</td>
+                        <td>' . $docs_array_item['manual'] . '</td>
+                        <td>' . $docs_array_item['StartStep'] . '</td>
+                        <td>' . $docs_array_item['FinishStep'] . '</td>
+                    </tr>';
                 }
             }
+            if($_SESSION['select_item'] == ""){
+                $_SESSION['select_item'] = "Все";
+            }
 
-
-            $select = '  <select class="target " id="node_docs_select" style="float:left;width:200px;margin-top:15px;">
-                        <option value=""></option>
+            $html.= '  <select class="target " id="node_docs_select" style="float:left;width:200px;margin-top:0px;">
+                        <option value=""> '. $_SESSION['select_item'] .'</option>
                         <option value="">Все</option>
                         <option value="Не начатые">Не начатые</option>
                         <option value="Не законченные">Не законченные</option>
                         <option value="Законченные">Законченные</option>
                     </select>';
         }
-        $result_array['select'] = $select;
-        $result_array['content'] = $html;
-        $result = json_encode($result_array, true);
-        die($result);
+
+        return $html;
     }
 
 
@@ -343,5 +369,18 @@ class Model_report_step{
         die($result);
     }
 
+
+    public function select(){
+        $select_item = $this->post_array['select_item'];
+        $left_key = $this->post_array['left_key'];
+        $right_key = $this->post_array['right_key'];
+
+        $_SESSION['select_item'] = $select_item;
+        $_SESSION['left_key'] = $left_key;
+        $_SESSION['right_key'] = $right_key;
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
 
 }

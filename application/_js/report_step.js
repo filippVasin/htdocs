@@ -10,29 +10,11 @@ $(document).ready(function() {
     var fio = "";
     var dol =  "";
 
-    $.ajax({
-        type: "POST",
-        url: "/report_step/start",
-        data: {
-            left_key:left_key,
-            right_key:right_key,
-            select_item:select_item
-        },
-        success: function (answer) {
-            var result = jQuery.parseJSON(answer);
-            var content = result.content;
-            var select = result.select;
-            if(content !="") {
-                $('#node_docs_select').html(select);
-            }
-            if(content !="") {
-                $('#strings').html(content);
-            }
-        },
-        error: function () {
-        }
-    });
 
+    $(document).on("click", "#reset", function () {
+        $(".cancel_popup").click();
+        select();
+    });
 
     // отмена действия
     $(document).on("click", ".cancel_popup", function () {
@@ -47,7 +29,10 @@ $(document).ready(function() {
         dir = "";
         name =  "";
         fio = "";
-        dol =  "";
+        dol = "";
+        select_item = "";
+        left_key = "";
+        right_key = "";
     });
 
     // Выбрать узел
@@ -96,6 +81,32 @@ $(document).ready(function() {
     });
 
 
+    function select(){
+        $.ajax({
+            type: "POST",
+            url: "/report_step/select",
+            data: {
+                select_item:select_item,
+                left_key:left_key,
+                right_key:right_key
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+
+                if(status =="ok") {
+                    location.reload();
+                    //window.location = "/report_step";
+                }
+                if(status == "") {
+
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+
     // Сброс
     $(document).on("click", "#rebut_node_docs", function () {
         left_key=0;
@@ -125,70 +136,17 @@ $(document).ready(function() {
         });
     });
 
-    // выбираем сотрудника
+    // выбираем  по отделу
     $(document).on("click", ".tree_item", function () {
         left_key =  $(this).attr("left_key");
         right_key =  $(this).attr("right_key");
-        $(".cancel_popup").click();
-        $.ajax({
-            type: "POST",
-            url: "/report_step/start",
-            data: {
-                left_key:left_key,
-                right_key:right_key,
-                select_item:select_item
-            },
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var content = result.content;
-
-                if(content !="") {
-                    $('#strings').html(content);
-                }
-            },
-            error: function () {
-            }
-        });
-
+        select();
     });
 
     // фильтр по прогрессу прохождения
     $(document).on("change", ".target", function () {
         select_item = $(this).val();
-        if(select_item ==""){
-            $(".report_step_row").css("display","block");
-        }
-        // не начинал
-        if(select_item=="Не начатые"){
-            $(".report_step_row").css("display","none");
-            $(".report_step_row").each(function() {
-                var start_date = $(this).find(".start_date").html();
-                if(start_date == "Не начинал"){
-                    $(this).css("display","block");
-                }
-            });
-        }
-
-        if(select_item=="Не законченные"){
-            $(".report_step_row").css("display","none");
-            $(".report_step_row").each(function() {
-                var start_date = $(this).find(".start_date").html();
-                var end_date = $(this).find(".end_date").html();
-                if((start_date != "Не начинал")&&(end_date=="Не прошел")){
-                    $(this).css("display","block");
-                }
-            });
-        }
-
-        if(select_item=="Законченные"){
-            $(".report_step_row").css("display","none");
-            $(".report_step_row").each(function() {
-                var end_date = $(this).find(".end_date").html();
-                if(end_date!="Не прошел"){
-                    $(this).css("display","block");
-                }
-            });
-        }
+        select();
     });
 
 
@@ -226,19 +184,52 @@ $(document).ready(function() {
 
 
 
+    $(function () {
+        $('#table1').DataTable({
+            'paging'      : true,
+            'lengthChange': true,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : true,
+            'select':true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
+            }
+        })
+    })
 
-    //$(document).on('click','.open_item',function(){
-    //
-    //    if($(this).hasClass("open_ul")){
-    //        $(this).removeClass("open_ul");
-    //
-    //        $(this).siblings('ul').addClass('none');
-    //    } else {
-    //        $(this).addClass("open_ul");
-    //
-    //        $(this).siblings('ul').removeClass('none');
-    //    }
-    //});
 
+
+
+
+    //var table = $('#table1').DataTable();
+    //
+    //table.columns().flatten().each( function ( colIdx ) {
+    //    // Create the select list and search operation
+    //    var select = $('<select />')
+    //        .appendTo(
+    //        table.column(colIdx).footer()
+    //    )
+    //        .on( 'change', function () {
+    //            table
+    //                .column( colIdx )
+    //                .search( $(this).val() )
+    //                .draw();
+    //        } );
+    //
+    //    table
+    //        .column( colIdx )
+    //        .cache( 'search' )
+    //        .sort()
+    //        .unique()
+    //        .each( function ( d ) {
+    //            select.append( $('<option value="'+d+'">'+d+'</option>') );
+    //        } );
+    //} );
+
+    //$('#table1').DataTable( {
+    //    "scrollX": true
+    //} );
 });
 

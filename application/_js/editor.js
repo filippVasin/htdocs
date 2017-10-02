@@ -9,21 +9,17 @@ $(document).ready(function() {
         item_id =  $(this).attr("item_id");
         item_name =  $(this).attr("item_name");
         type =  $(this).attr("type");
-        $("#edit_popup").css("display","block");
+        $("#edit_popup_button").click();
         $("#edit_popup_input").val(item_name);
     });
 
-    // отмена действия
-    $(document).on("click", "#cancel_popup_input", function () {
-        $("#edit_popup").css("display","none");
-        $("#edit_popup_input").val("");
-    });
+
 
     // редактированние элемента
     $(document).on("click", "#save_popup_input", function () {
         if(item_name == $("#edit_popup_input").val()){
             // если не было изменений - просто закрываем
-            $("#edit_popup").css("display","none");
+            $(".btn-default").click();
             $("#edit_popup_input").val("");
         } else {
             // если были изменения - отправляем изменения
@@ -51,7 +47,8 @@ $(document).ready(function() {
                                 $(this).attr("item_name", item_name);
                             }
                         });
-                        $("#edit_popup").css("display","none");
+
+                        $(".btn-default").click();
                         $("#edit_popup_input").val("");
                         message('Успешно - элемент № ' + item_id + ' изменён', request_result);
                     }
@@ -88,7 +85,7 @@ $(document).ready(function() {
                                     $(this).remove()
                                 }
                             });
-                            $("#edit_popup").css("display","none");
+                            $(".btn-default").click();
                             $("#edit_popup_input").val("");
                             message('Элемент успешно удалён', request_result);
                         } else {
@@ -172,7 +169,7 @@ $(document).ready(function() {
 
                         $("#edit_popup_input_personnel_number").val(personnel_number);
 
-                        $("#edit_popup_employees").css("display","block");
+                        $("#edit_popup_employees_button").click();
                 }
             },
             error: function () {
@@ -181,9 +178,6 @@ $(document).ready(function() {
         });
     });
 
-    $(document).on("click", "#cancel_popup_input_employees", function () {
-        $("#edit_popup_employees").css("display","none");
-    });
 
 
     // выбираем элемент для редактированния
@@ -224,7 +218,7 @@ $(document).ready(function() {
                             $(this).children(".type_name").html(content);
                         }
                     });
-                    $("#edit_popup_employees").css("display","none");
+                    $(".btn-default").click();
                 }
             },
             error: function () {
@@ -309,8 +303,8 @@ $(document).ready(function() {
                 }
             });
         } else {
-            $('.input_name_row>.pass').css("border-color","red");
-            setTimeout("$('.input_name_row>.pass').css('border-color','initial')", 3000);
+            $('.check_pass>input').css("border-color","red");
+            setTimeout("$('.check_pass>input').css('border-color','initial')", 3000);
         }
     });
     $(function() {
@@ -332,11 +326,11 @@ $(document).ready(function() {
 
     // добавление типа
     $(document).on("click", ".type_plus", function () {
-        $("#plus_type").removeClass("none");
+        $("#plus_type_button").click();
     });
 
     $(document).on("click", "#plus_type_cancel", function () {
-        $("#plus_type").addClass("none");
+        $(".btn-default").click();
     });
 
     $(document).on("click", "#plus_type_popup", function () {
@@ -369,11 +363,11 @@ $(document).ready(function() {
 
     // добавление нуменклатуру
     $(document).on("click", ".directory_plus", function () {
-        $("#plus_directory").removeClass("none");
+        $("#plus_directory_button").click();
     });
 
     $(document).on("click", "#plus_directory_cancel", function () {
-        $("#plus_directory").addClass("none");
+        $(".btn-default").click();
     });
 
     $(document).on("click", "#plus_directory_popup", function () {
