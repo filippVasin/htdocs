@@ -16,8 +16,9 @@
 <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
 
     <!--адиптив-->
+<!--    $_SERVER['REQUEST_URI']!= "/local_alert"-->
     <?
-        if(($_SERVER['REQUEST_URI']!= "/local_alert") && ($_SERVER['REQUEST_URI']!= "/report_step") && ($_SERVER['REQUEST_URI']!= "/docs_report")){
+        if(($_SERVER['REQUEST_URI']!= "/local_alert")  && ($_SERVER['REQUEST_URI']!= "/docs_report")){
             echo '<meta id="meta" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">';
         }
     ?>

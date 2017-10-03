@@ -16,6 +16,11 @@ $(document).ready(function() {
         select();
     });
 
+    $('#table1_wrapper>.row:first-child').append($("#node_docs_select"));
+    $('#table1_wrapper>.row>div').addClass("col-sm-4");
+    $('#table1_wrapper .col-sm-4').removeClass("col-sm-6");
+
+    //$('#table1_wrapper .col-sm-6').addClass("col-sm-4");
     // отмена действия
     $(document).on("click", ".cancel_popup", function () {
         $("#popup_context_menu_update").css("display","none");
@@ -182,54 +187,96 @@ $(document).ready(function() {
         });
     });
 
+    //var table = $('#table1');
 
 
-    $(function () {
-        $('#table1').DataTable({
-            'paging'      : true,
-            'lengthChange': true,
-            'searching'   : true,
-            'ordering'    : true,
-            'info'        : true,
-            'autoWidth'   : true,
-            'select':true,
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
-            }
-        })
-    })
+        //table.DataTable({
+        //    'paging'      : true,
+        //    'lengthChange': true,
+        //    'searching'   : true,
+        //    'ordering'    : true,
+        //    'info'        : true,
+        //    'autoWidth'   : true,
+        //    "scrollX": true,
+        //    'select': true,
+        //    "language": {
+        //        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
+        //    }
+        //})
 
-
-
-
-
-    //var table = $('#table1').DataTable();
-    //
-    //table.columns().flatten().each( function ( colIdx ) {
-    //    // Create the select list and search operation
-    //    var select = $('<select />')
-    //        .appendTo(
-    //        table.column(colIdx).footer()
-    //    )
-    //        .on( 'change', function () {
-    //            table
-    //                .column( colIdx )
-    //                .search( $(this).val() )
-    //                .draw();
-    //        } );
-    //
-    //    table
-    //        .column( colIdx )
-    //        .cache( 'search' )
-    //        .sort()
-    //        .unique()
-    //        .each( function ( d ) {
-    //            select.append( $('<option value="'+d+'">'+d+'</option>') );
-    //        } );
+    //$.extend( $.fn.dataTable.defaults, {
+        //'paging'      : true,
+        //'lengthChange': true,
+        //'searching'   : true,
+        //'ordering'    : true,
+        //'info'        : true,
+        //'autoWidth'   : true,
+        //"scrollX" : true
+        //"language": {
+        //            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
+        //}
     //} );
 
-    //$('#table1').DataTable( {
-    //    "scrollX": true
-    //} );
+    //var table = $('#table1').DataTable({"scrollX" : true});
+
+    var table = $('#table1').DataTable({
+        //"language": {
+        //    "url": "Russian.json"
+        //}
+    });
+    table.columns().flatten().each( function ( colIdx ) {
+        // Create the select list and search operation
+        var select = $('<button type="button" class="btn btn-primary btn-sm pull-right select_button" data-toggle="tooltip" title="" data-original-title="Date range" aria-describedby=""> <i class="fa fa-check-square-o"></i></button>')
+            .appendTo(
+            table.column(colIdx).footer()
+        )
+            .on( 'click','.li_select', function () {
+                table
+                    .column( colIdx )
+                    .search( $(this).attr('data_select'))
+                    .draw();
+            } );
+        var html ='<li class = "li_select" data_select = "">ВСЁ</li>';
+        table
+            .column( colIdx )
+            .cache( 'search' )
+            .sort()
+            .unique()
+            .each( function ( d ) {
+                html = html + '<li class = "li_select" data_select = "'+d+'">'+d+'</li>';
+            } );
+
+        select.append('<div class="dropdownmenu none"><div class="ranges"><ul>' +html +'</ul> <div class="range_inputs"> </div> </div> </div>');
+
+    } );
+
+
+    //table.destroy();
+
+
+    //var table = $('#example').DataTable();
+    //
+    //// Add event listeners to the two range filtering inputs
+    //$('#minimum').keyup( function() {
+    //    table.draw(); } );
+    //$('#maximum').keyup( function() {
+    //    table.draw(); } );
+
+
+    $(document).on("click",'.select_button',function(){
+        if($(this).hasClass("open_select")){
+            $(this).removeClass("open_select");
+
+            $(".dropdownmenu").addClass("none");
+
+        } else {
+            $(this).addClass("open_select");
+
+            $(".dropdownmenu").addClass("none");
+            var chil = $(this).children(".dropdownmenu");
+            chil.removeClass("none");
+        }
+    });
+
 });
 

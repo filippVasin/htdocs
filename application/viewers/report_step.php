@@ -1,5 +1,9 @@
 
 <div class="container">
+
+<!--    <input type="date" id="minimum">-->
+<!--    <input type="date" id="maximum">-->
+
     <div class="button" id="reset"  style="float: right" id="rebut_node_docs">Сброс</div>
     <div class="button" style="float: right" id="node_docs" data-toggle="modal" data-target="#popup_context_menu_update">Выбор подразделения</div>
     <div id="select">

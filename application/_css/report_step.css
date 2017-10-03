@@ -66,3 +66,82 @@ ul {
     color: #614d4d
 }
 
+
+
+
+@media screen and (max-width: 480px) {
+
+    .box {
+        margin-top: 10px;
+    }
+
+    #table1_wrapper>.row:first-child{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: start;
+    }
+
+    #node_docs_select{
+        margin-top: -50px;
+        float: none!important;
+    }
+    .button{
+        float: none!important;
+    }
+}
+
+.dropdownmenu{
+    position: absolute;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 278px;
+    padding: 4px;
+    margin-top: 1px;
+    top: -405px;
+    left: -115px;
+    overflow: scroll;
+    height: 400px;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);
+    z-index: 9999;
+}
+
+.dropdownmenu:first-child{
+    left: -25px!important;
+}
+.select_button{
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    left: calc(50% - 10px);
+}
+
+tfoot th{
+    height: 60px;
+    padding-top: 30px!important;
+    position: relative;
+    text-align: center;
+}
+
+.dataTables_scrollFoot{
+    overflow: auto!important;
+}
+
+.box-body{
+    overflow-x: auto!important;
+}
+/*#table1>tfoot{*/
+    /*display: none!important;*/
+/*}*/
+
+#table1 {
+     min-height: 430px!important;
+}
+.li_select{
+    text-align: center;
+}
