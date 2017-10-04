@@ -13,25 +13,6 @@
 .box {
  margin-top: 55px;
 }
-/*tfoot tr{*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*position: absolute;*/
-    /*background-color: #fff;*/
-    /*z-index: 99;*/
-    /*top: -70px;*/
-    /*left: -5px;*/
-    /*border: 1px solid #ddd;*/
-    /*-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);*/
-    /*-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);*/
-    /*box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);*/
-/*}*/
-
-/*tfoot tr th{*/
-    /*height: 60px;*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-/*}*/
 
 
 li {
@@ -144,4 +125,10 @@ tfoot th{
 }
 .li_select{
     text-align: center;
+}
+
+.input-group{
+    float: left;
+    width: 200px;
+    margin: 10px 0px;
 }

@@ -1,8 +1,21 @@
 
 <div class="container">
 
-<!--    <input type="date" id="minimum">-->
-<!--    <input type="date" id="maximum">-->
+
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input type="text" class="form-control pull-right" id="datepicker_from" placeholder="От" value="%date_from%">
+        </div>
+
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input type="text" class="form-control pull-right" id="datepicker_to" placeholder="До" value="%date_to%">
+        </div>
+
 
     <div class="button" id="reset"  style="float: right" id="rebut_node_docs">Сброс</div>
     <div class="button" style="float: right" id="node_docs" data-toggle="modal" data-target="#popup_context_menu_update">Выбор подразделения</div>
@@ -21,7 +34,7 @@
                             <th>Должность</th>
                             <th>ФИО</th>
                             <th>Наименование Инструкции</th>
-                            <th name ="date">Начало прохождения</th>
+                            <th>Начало прохождения</th>
                             <th>Окончание прохождения</th>
                         </tr>
                         </thead>
@@ -46,23 +59,7 @@
             </tfoot>
             </table>
         </div>
-        <!-- /.box-body -->
     </div>
-
-
-
-<!--    <div id="action_history_docs_popup">-->
-<!--        <div class="canvas">-->
-<!--            <div id="emp_report_name"></div>-->
-<!--            <div id="dolg_report_name"></div>-->
-<!--            <div class="popup_context_menu_title"> Шаги по документу: </div>-->
-<!--            <div id="docs_report_name"></div>-->
-<!--            <div id="popup_action_list"></div>-->
-<!--            <div class="button_row">-->
-<!--                <div class="button cancel_popup">Ок</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 
 
     <div class="modal fade" tabindex="-1" role="dialog" id="popup_context_menu_update" aria-labelledby="gridSystemModalLabel">

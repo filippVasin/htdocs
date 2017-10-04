@@ -2,49 +2,35 @@ $(document).ready(function() {
     var left_key=0;
     var right_key =0;
     var select_item = "";
-    var select_item_status ="";
-    var dol =  "";
-    var fio =  "";
+    var select_item_status = "";
     var emp = "";
     var step = "";
     var manual = "";
     var dir = "";
     var name =  "";
+    var fio = "";
+    var dol =  "";
+    var date_from = "";
+    var date_to = "";
 
 
-    $.ajax({
-        type: "POST",
-        url: "/docs_report/start",
-        data: {
-            left_key:left_key,
-            right_key:right_key,
-            select_item:select_item,
-            select_item_status:select_item_status
-        },
-        success: function (answer) {
-            var result = jQuery.parseJSON(answer);
-            var content = result.content;
-            var select = result.select;
-            var status_select = result.status_select;
-            if(content !="") {
-                $('#strings').html(content);
-            } else {
-                $('#strings').html("По запросу ничего нет");
-            }
-
-            $('#node_docs_select').html(select);
-            $('#node_docs_status_select').html(status_select);
-        },
-        error: function () {
-        }
+    $(document).on("click", "#reset", function () {
+        $(".cancel_popup").click();
+        $('#datepicker_from').val("");
+        $('#datepicker_to').val("");
+        select();
     });
 
+    $('#table1_wrapper>.row:first-child').append($("#node_docs_select"));
+    $('#table1_wrapper>.row>div').addClass("col-sm-4");
+    $('#table1_wrapper .col-sm-4').removeClass("col-sm-6");
 
+    //$('#table1_wrapper .col-sm-6').addClass("col-sm-4");
     // отмена действия
     $(document).on("click", ".cancel_popup", function () {
         $("#popup_context_menu_update").css("display","none");
-        $("#popup_update_tree").html("");
         $("#action_history_docs_popup").css("display","none");
+        $("#popup_update_tree").html("");
         $("#emp_report_name").html("");
         $("#docs_report_name").html("");
         emp = "";
@@ -53,7 +39,13 @@ $(document).ready(function() {
         dir = "";
         name =  "";
         fio = "";
-        dol =  "";
+        dol = "";
+        select_item = "";
+        select_item_status = "";
+        left_key = "";
+        right_key = "";
+        date_from = "";
+        date_to = "";
     });
 
     // Выбрать узел
@@ -102,20 +94,47 @@ $(document).ready(function() {
     });
 
 
+    function select(){
+        $.ajax({
+            type: "POST",
+            url: "/docs_report/select",
+            data: {
+                select_item_status:select_item_status,
+                select_item:select_item,
+                left_key:left_key,
+                right_key:right_key,
+                date_from:date_from,
+                date_to:date_to
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+
+                if(status =="ok") {
+                    location.reload();
+                    //window.location = "/report_step";
+                }
+                if(status == "") {
+
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+
     // Сброс
     $(document).on("click", "#rebut_node_docs", function () {
         left_key=0;
         right_key =0;
         select_item = "";
-        select_item_status="";
         $.ajax({
             type: "POST",
             url: "/docs_report/start",
             data: {
                 left_key:left_key,
                 right_key:right_key,
-                select_item:select_item,
-                select_item_status:select_item_status
+                select_item:select_item
             },
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
@@ -123,9 +142,9 @@ $(document).ready(function() {
                 var select = result.select;
                 if(content !="") {
                     $('#node_docs_select').html(select);
+                }
+                if(content !="") {
                     $('#strings').html(content);
-                }  else {
-                    $('#strings').html("По запросу ничего нет");
                 }
             },
             error: function () {
@@ -133,96 +152,28 @@ $(document).ready(function() {
         });
     });
 
-    // выбираем сотрудника
+    // выбираем  по отделу
     $(document).on("click", ".tree_item", function () {
         left_key =  $(this).attr("left_key");
         right_key =  $(this).attr("right_key");
-        $(".cancel_popup").click();
-        $.ajax({
-            type: "POST",
-            url: "/docs_report/start",
-            data: {
-                left_key:left_key,
-                right_key:right_key,
-                select_item:select_item,
-                select_item_status:select_item_status
-            },
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var content = result.content;
-
-                if(content !="") {
-                    $('#strings').html(content);
-                } else {
-                    $('#strings').html("По запросу ничего нет");
-                }
-            },
-            error: function () {
-            }
-        });
-
-    });
-// выбор экшена
-    $(document).on("change", "#node_docs_select", function () {
-        select_item = $(this).val();
-        $.ajax({
-            type: "POST",
-            url: "/docs_report/start",
-            data: {
-                left_key:left_key,
-                right_key:right_key,
-                select_item:select_item,
-                select_item_status:select_item_status
-            },
-            success: function (answer) {
-
-                var result = jQuery.parseJSON(answer);
-                var content = result.content;
-
-                if(content !="") {
-                    $('#strings').html(content);
-                }  else {
-                    $('#strings').html("По запросу ничего нет");
-                }
-            },
-            error: function () {
-                console.log('error');
-            }
-        });
+        select();
     });
 
-    // выбор статуса
-    $(document).on("change", "#node_docs_status_select", function () {
+    // фильтр по прогрессу прохождения
+    $(document).on("change", "#select_item_status", function () {
         select_item_status = $(this).val();
-        $.ajax({
-            type: "POST",
-            url: "/docs_report/start",
-            data: {
-                left_key:left_key,
-                right_key:right_key,
-                select_item:select_item,
-                select_item_status:select_item_status
-            },
-            success: function (answer) {
+        select();
+    });
 
-                var result = jQuery.parseJSON(answer);
-                var content = result.content;
-
-                if(content !="") {
-                    $('#strings').html(content);
-                }  else {
-                    $('#strings').html("По запросу ничего нет");
-                }
-            },
-            error: function () {
-                console.log('error');
-            }
-        });
+    // фильтр по прогрессу прохождения
+    $(document).on("change", "#select_item", function () {
+        select_item = $(this).val();
+        select();
     });
 
 
     // запрос по истории документа
-    $(document).on("click", ".report_step_row", function () {
+    $(document).on("click", ".docs_report_step_row", function () {
         $("#action_history_docs_popup").css("display","block");
         var file_id =  $(this).attr("file_id");
         dol =  $(this).attr("dol");
@@ -251,6 +202,72 @@ $(document).ready(function() {
             error: function () {
             }
         });
+    });
+
+
+
+    var table = $('#table1').DataTable({
+        //"language": {
+        //    "url": "Russian.json"
+        //}
+    });
+    table.columns().flatten().each( function ( colIdx ) {
+        // Create the select list and search operation
+        var select = $('<button type="button" class="btn btn-primary btn-sm pull-right select_button" data-toggle="tooltip" title="" data-original-title="Date range" aria-describedby=""> <i class="fa fa-check-square-o"></i></button>')
+            .appendTo(
+            table.column(colIdx).footer()
+        )
+            .on( 'click','.li_select', function () {
+                table
+                    .column( colIdx )
+                    .search( $(this).attr('data_select'))
+                    .draw();
+            } );
+        var html ='<li class = "li_select" data_select = "">ВСЁ</li>';
+        table
+            .column( colIdx )
+            .cache( 'search' )
+            .sort()
+            .unique()
+            .each( function ( d ) {
+                html = html + '<li class = "li_select" data_select = "'+d+'">'+d+'</li>';
+            } );
+
+        select.append('<div class="dropdownmenu none"><div class="ranges"><ul>' +html +'</ul> <div class="range_inputs"> </div> </div> </div>');
+
+    } );
+
+
+    $(document).on("click",'.select_button',function(){
+        if($(this).hasClass("open_select")){
+            $(this).removeClass("open_select");
+
+            $(".dropdownmenu").addClass("none");
+
+        } else {
+            $(this).addClass("open_select");
+
+            $(".dropdownmenu").addClass("none");
+            var chil = $(this).children(".dropdownmenu");
+            chil.removeClass("none");
+        }
+    });
+
+    // datapickers
+    $('#datepicker_to').datepicker({
+        language: "ru"
+    }).on('hide', function(e) {
+        date_from = $('#datepicker_from').val();
+        date_to = $('#datepicker_to').val();
+        select();
+    });
+
+    $('#datepicker_from').datepicker({
+        language: "ru"
+    }).on('hide', function(e) {
+        date_to = $('#datepicker_to').val();
+        date_from = $('#datepicker_from').val();
+        select();
     });
 
 });

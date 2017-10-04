@@ -18,9 +18,9 @@
     <!--адиптив-->
 <!--    $_SERVER['REQUEST_URI']!= "/local_alert"-->
     <?
-        if(($_SERVER['REQUEST_URI']!= "/local_alert")  && ($_SERVER['REQUEST_URI']!= "/docs_report")){
+//        if(($_SERVER['REQUEST_URI']!= "/local_alert")  && ($_SERVER['REQUEST_URI']!= "/docs_report")){
             echo '<meta id="meta" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">';
-        }
+//        }
     ?>
 
 
@@ -367,12 +367,13 @@ if(isset($_SESSION['control_company_name'])){
     <script src="/templates/<?echo $current_template;?>/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
+
     <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/dist/js/pages/dashboard.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/moment/locale/locale-all.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/moment/locale/ru.js"></script>
-
+<script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-daterangepicker/bootstrap-datepicker.ru.js" charset="UTF-8"></script>
 
 
 
@@ -380,7 +381,9 @@ if(isset($_SESSION['control_company_name'])){
 <!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/TableTools.ShowSelectedOnly.js"></script>-->
 <!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/range_dates.js"></script>-->
 <!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/range_numbers.js"></script>-->
+<script>
 
+</script>
 
 </body>
 </html>

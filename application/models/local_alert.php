@@ -143,7 +143,7 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
             $html = "";
             $employees = array();
             foreach ($alert_every_days as $key => $alert_every_day) {
-                        $html .= '<div class="alert_row" observer_em=' . $_SESSION['employee_id'] . '
+                        $html .= '<tr class="alert_row" observer_em=' . $_SESSION['employee_id'] . '
                                                     dol="' . $alert_every_day['position'] . '"
                                                     emp="' . $alert_every_day['em_id'] . '"
                                                     doc_trigger="' . $alert_every_day['doc_trigger'] . '"
@@ -153,15 +153,15 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
                                                      local_id="' . $alert_every_day['id'] . '"
                                                       file_id="' . $alert_every_day['save_temp_files_id'] . '"
                                                       action_type="' . $alert_every_day['action_type_id'] . '">
-                        <div  class="number_doc">' . $alert_every_day['id'] . '</div>
-                        <div  class="fio">' . $alert_every_day['fio'] . '</div>
-                        <div class="otdel">' . $alert_every_day['dir'] . '</div>
-                        <div class="position">' . $alert_every_day['position'] . '</div>
-                        <div  class="doc_name">' . $alert_every_day['file'] . '</div>
-                        <div  class="doc_type">' . $alert_every_day['doc_status'] . '</div>
-                        <div class="status">' . $alert_every_day['manual'] . '</div>
-                        <div class="status_date">' . $alert_every_day['date_create'] . '</div>
-                    </div>';
+                        <td >' . $alert_every_day['id'] . '</td>
+                        <td >' . $alert_every_day['fio'] . '</td>
+                        <td >' . $alert_every_day['dir'] . '</td>
+                        <td >' . $alert_every_day['position'] . '</td>
+                        <td >' . $alert_every_day['file'] . '</td>
+                        <td >' . $alert_every_day['doc_status'] . '</td>
+                        <td >' . $alert_every_day['manual'] . '</td>
+                        <td >' . $alert_every_day['date_create'] . '</td>
+                    </tr>';
             }
 
             $select_em = "<option value='' >Все сотрудники</option>";
@@ -183,13 +183,10 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
             }
 
 
-            $result_array['select'] = $select;
-            $result_array['select_em'] = $select_em;
-
         }
-        $result_array['content'] = $html;
-        $result = json_encode($result_array, true);
-        die($result);
+
+//        return  '<div id="selects">' . $status_select . $select . '</div>'. $html;
+        return $html;
     }
 
 
@@ -211,6 +208,34 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
         $result = json_encode($result_array, true);
         die($result);
     }
+
+
+    public function select(){
+        $select_item = $this->post_array['select_item'];
+        $left_key = $this->post_array['left_key'];
+        $right_key = $this->post_array['right_key'];
+        $date_from = $this->post_array['date_from'];
+        $date_to = $this->post_array['date_to'];
+        $select_item_status = $this->post_array['select_item_status'];
+
+        $_SESSION['select_item_status'] = $select_item_status;
+        $_SESSION['select_item'] = $select_item;
+        $_SESSION['left_key'] = $left_key;
+        $_SESSION['right_key'] = $right_key;
+        $_SESSION['date_from'] = $date_from;
+        $_SESSION['date_to'] = $date_to;
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+    public function date_from(){
+        return $_SESSION['date_from'];
+    }
+    public function date_to(){
+        return $_SESSION['date_to'];
+    }
+
 
 
 }

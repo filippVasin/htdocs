@@ -1,90 +1,65 @@
 
 <div class="container">
-    <div class="button" style="float: right" id="rebut_node_docs">Сброс</div>
+
+    <div class="input-group date">
+        <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </div>
+        <input type="text" class="form-control pull-right" id="datepicker_from" placeholder="От" value="%date_from%">
+    </div>
+
+    <div class="input-group date">
+        <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </div>
+        <input type="text" class="form-control pull-right" id="datepicker_to" placeholder="До" value="%date_to%">
+    </div>
+
+
+    <div class="button" id="reset"  style="float: right" id="rebut_node_docs">Сброс</div>
     <div class="button" style="float: right" id="node_docs" data-toggle="modal" data-target="#popup_context_menu_update">Выбор подразделения</div>
-    <select class="target  select_styte" id="node_docs_select" style="float:left;width:200px;margin-top:15px;">
-
-    </select>
-
-    <select class="target_em select_styte" id="node_docs_select_em" style="float:left;width:200px;margin-top:15px;">
-
-    </select>
-    <div class="date_time">
-        <div> С какого числа: </div>
-        <input type="text" name="date" class="tcal" id="time_from" value="" />
-        <div> По какое  число: </div>
-        <input type="text" name="date" class="tcal" id="time_to" value="" />
-    </div>
-    <div class="list" style="clear: both">
-        <div class="header">
-            <div class="number_doc">№</div>
-            <div class="fio order_by" groupe="emp">ФИО</div>
-            <div class="otdel">Отдел</div>
-            <div class="position order_by" groupe="pos">Должность</div>
-            <div class="doc_name">Имя документа</div>
-            <div class="doc_type">Действие</div>
-            <div class="status">Шаг</div>
-            <div class="status_date">Зафиксирован</div>
-
-        </div>
-        <div class="value" id="strings">
-
-
-        </div>
+    <div id="select">
     </div>
 
 
+    <div class="box">
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table id="table1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>№</th>
+                    <th>ФИО</th>
+                    <th>Отдел</th>
+                    <th>Должность</th>
+                    <th>Имя документа</th>
+                    <th>Действие</th>
+                    <th>Шаг</th>
+                    <th>Зафиксирован</th>
 
-<!--    <div id="alert_signature_docs_popup" class="none">-->
-<!--        <div class="canvas">-->
-<!---->
-<!--            <div class="popup_context_menu_title"> Сотрудник: </div>-->
-<!--            <div id="emp_report_name"></div>-->
-<!--            <div id="dolg_report_name"></div>-->
-<!--            <div id="dolg_report_dir"></div>-->
-<!--            <div class="popup_context_menu_title"> должен подписать документ: </div>-->
-<!--            <div id="docs_report_name"></div>-->
-<!--            <div class="button_row">-->
-<!--                <div class="button" id="yes_popup_3">Подписал</div>-->
-<!--                <div class="button cancel_popup">Не подписал</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!---->
-<!---->
-<!--    <div id="alert_acception_docs_popup" class="none">-->
-<!--        <div class="canvas">-->
-<!---->
-<!--            <div class="popup_context_menu_title"> Сотрудник: </div>-->
-<!--            <div id="emp_acception_name"></div>-->
-<!--            <div id="dolg_acception_name"></div>-->
-<!--            <div id="dolg_acception_dir"></div>-->
-<!--            <div class="popup_context_menu_title"> должен сдать: </div>-->
-<!--            <div id="docs_acception_name"></div>-->
-<!--            <div class="button_row">-->
-<!--                <div class="button" id="yes_popup_4">Сдал</div>-->
-<!--                <div class="button cancel_popup">Не сдал</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!---->
-<!---->
-<!---->
-<!--    <div id="alert_bailee_push_popup" class="none">-->
-<!--        <div class="canvas">-->
-<!---->
-<!--            <div class="popup_context_menu_title"> Ответственный: </div>-->
-<!--            <div id="emp_bailee_push_name"></div>-->
-<!--            <div id="dolg_bailee_push_name"></div>-->
-<!--            <div id="dolg_bailee_push_dir"></div>-->
-<!--            <div class="popup_context_menu_title"> должен подписать документ: </div>-->
-<!--            <div id="docs_bailee_push_name"></div>-->
-<!--            <div class="button_row">-->
-<!--                <div class="button" id="yes_popup_14">Подписал</div>-->
-<!--                <div class="button cancel_popup">Не подписал</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+                </tr>
+                </thead>
+                <tbody id="strings">
+
+                %forms%
+
+                </tbody>
+<!--                <tfoot>-->
+<!--                <tr>-->
+<!--                    <th>№</th>-->
+<!--                    <th>ФИО</th>-->
+<!--                    <th>Отдел</th>-->
+<!--                    <th>Должность</th>-->
+<!--                    <th>Имя документа</th>-->
+<!--                    <th>Действие</th>-->
+<!--                    <th>Шаг</th>-->
+<!--                    <th>Зафиксирован</th>-->
+<!--                </tr>-->
+<!--                </tfoot>-->
+            </table>
+        </div>
+    </div>
+
 
 
     <div class="modal fade" tabindex="-1" role="dialog" id="popup_context_menu_update" aria-labelledby="gridSystemModalLabel">
@@ -128,8 +103,9 @@
                     <div id="docs_report_name"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Не подписал</button>
                     <button type="button" id="yes_popup_3" class="btn btn-primary">Подписал</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Не подписал</button>
+
                 </div>
             </div>
         </div>
@@ -151,8 +127,9 @@
                     <div id="docs_acception_name"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Не сдал</button>
                     <button type="button" id="yes_popup_4" class="btn btn-primary">Сдал</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Не сдал</button>
+
                 </div>
             </div>
         </div>
@@ -176,8 +153,9 @@
                     <div id="docs_bailee_push_name"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Не подписал</button>
                     <button type="button" id="yes_popup_14" class="btn btn-primary">Подписал</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Не подписал</button>
+
                 </div>
             </div>
         </div>

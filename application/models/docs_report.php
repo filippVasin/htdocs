@@ -17,10 +17,18 @@ class Model_docs_report{
     public function start()
     {
         global $db;
-        $left_key = $this->post_array['left_key'];
-        $right_key = $this->post_array['right_key'];
-        $select_item = $this->post_array['select_item'];
-        $select_item_status = $this->post_array['select_item_status'];
+
+        $select_item_status = $_SESSION['select_item_status'];
+        $select_item = $_SESSION['select_item'];
+        $date_from = $_SESSION['date_from'];
+        $date_to = $_SESSION['date_to'];
+
+        if(!isset($_SESSION['select_item'])){
+            $_SESSION['select_item'] = "";
+        }
+        if($_SESSION['select_item'] == "Все"){
+            $_SESSION['select_item'] = "";
+        }
 
         // какие права имеет получатель
         $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
@@ -52,6 +60,15 @@ class Model_docs_report{
         $left = $observer_data['left'];
         $right = $observer_data['right'];
 
+        if(!isset($_SESSION['left_key'])){
+            $_SESSION['left_key'] = 0;
+        }
+        if(!isset($_SESSION['right_key'])){
+            $_SESSION['right_key'] = 0;
+        }
+
+        $left_key = $_SESSION['left_key'];
+        $right_key = $_SESSION['right_key'];
 
         $sql="SELECT
 /* Вывод даннных */
@@ -182,8 +199,20 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
     		AND organization_structure.company_id = ". $_SESSION['control_company'] ."
     		AND org_parent.company_id = ". $_SESSION['control_company'] ."
     		/* только те шаги где надо создать документы */
-	     AND step_content.form_id is not NULL
-   		AND (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
+	        AND step_content.form_id is not NULL
+   		    AND (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
+            AND ( (('". $date_from ."' = ' ' ) AND ('". $date_to ."' = ''))
+					OR
+					((('". $date_from ."' != ' ' ) AND ('". $date_to ."' = '') AND (DATE(history_docs.date_finish) >= STR_TO_DATE('". $date_from ."', '%d.%m.%Y'))))
+
+					OR
+						((('". $date_from ."' = ' ' ) AND ('". $date_to ."' != '') AND (DATE(history_docs.date_finish) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y'))))
+
+					OR
+						((('". $date_from ."' != ' ' ) AND ('". $date_to ."' != '') AND (DATE(history_docs.date_finish) >= STR_TO_DATE('". $date_from ."', '%d.%m.%Y'))
+																		AND
+																		(DATE(history_docs.date_finish) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y'))))
+				)
     ";
 
 
@@ -232,17 +261,17 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                 // проверяем по фильтрам
                 if (($docs_array_item['doc_status_id'] == $select_item_status) || ($select_item_status == "") || (($select_item_status == "0") && ($docs_array_item['DoC_Status'] == "Ещё не создан"))) {
                     if (($docs_array_item['action_triger'] == $select_item) || ($select_item == "")) {
-                        $html .= '<div class="report_step_row"  file_id="' . $docs_array_item['ID_FILES'] . '" fio="' . $docs_array_item['fio'] . '" dol="' . $docs_array_item['DOL'] . '"  name="' . $docs_array_item['name_doc'] . '">
-                        <div  class="number_doc">' . $docs_array_item['ID_FILES'] . '</div>
-                        <div  class="fio">' . $docs_array_item['fio'] . '</div>
-                        <div class="otdel">' . $docs_array_item['dir'] . '</div>
-                        <div class="position">' . $docs_array_item['DOL'] . '</div>
-                        <div  class="doc_name">' . $docs_array_item['name_doc'] . '</div>
-                        <div  class="doc_type">' . $docs_array_item['type_doc'] . '</div>
-                        <div class="action">' . $docs_array_item['action'] . '</div>
-                        <div class="status">' . $docs_array_item['DoC_Status'] . '</div>
-                        <div  class="status_date">' . $docs_array_item['date_finish'] . '</div>
-                    </div>';
+                        $html .= '<tr class="report_step_row"  file_id="' . $docs_array_item['ID_FILES'] . '" fio="' . $docs_array_item['fio'] . '" dol="' . $docs_array_item['DOL'] . '"  name="' . $docs_array_item['name_doc'] . '">
+                        <td>' . $docs_array_item['ID_FILES'] . '</td>
+                        <td>' . $docs_array_item['fio'] . '</td>
+                        <td>' . $docs_array_item['dir'] . '</td>
+                        <td>' . $docs_array_item['DOL'] . '</td>
+                        <td>' . $docs_array_item['name_doc'] . '</td>
+                        <td>' . $docs_array_item['type_doc'] . '</td>
+                        <td>' . $docs_array_item['action'] . '</td>
+                        <td>' . $docs_array_item['DoC_Status'] . '</td>
+                        <td>' . $docs_array_item['date_finish'] . '</td>
+                    </tr>';
                     }
                 }
             }
@@ -250,25 +279,26 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
             $sql = "SELECT document_status_now.name, document_status_now.id
                   FROM document_status_now";
             $select_array = $db->all($sql);
-            $status_select = "<option value='' >Все статусы</option>";
+            $status_select = "<select id='select_item_status'>";
+            $status_select .= "<option value='' >Все статусы</option>";
             $status_select .= "<option value='0' >Ещё не создан</option>";
             foreach ($select_array as $select_array_item) {
                 $status_select .= "<option value=" . $select_array_item['id'] . "  >" . $select_array_item['name'] . "</option>";
             }
+            $status_select .= "</select>";
 
             $sql = "Select form_step_action.user_action_name, form_step_action.action_triger
                   FROM form_step_action";
             $select_array = $db->all($sql);
-            $select = "<option value='' >Все действия</option>";
+            $select = "<select id='select_item'>";
+            $select .= "<option value='' >Все действия</option>";
             foreach ($select_array as $select_array_item) {
                 $select .= "<option value=" . $select_array_item['action_triger'] . "  >" . $select_array_item['user_action_name'] . "</option>";
             }
+            $select .= "</select>";
 //        }
-        $result_array['status_select'] = $status_select;
-        $result_array['select'] = $select;
-        $result_array['content'] = $html;
-        $result = json_encode($result_array, true);
-        die($result);
+
+        return  '<div id="selects">' . $status_select . $select . '</div>'. $html;
     }
 
 
@@ -363,5 +393,32 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         $result = json_encode($result_array, true);
         die($result);
     }
+
+    public function select(){
+        $select_item = $this->post_array['select_item'];
+        $left_key = $this->post_array['left_key'];
+        $right_key = $this->post_array['right_key'];
+        $date_from = $this->post_array['date_from'];
+        $date_to = $this->post_array['date_to'];
+        $select_item_status = $this->post_array['select_item_status'];
+
+        $_SESSION['select_item_status'] = $select_item_status;
+        $_SESSION['select_item'] = $select_item;
+        $_SESSION['left_key'] = $left_key;
+        $_SESSION['right_key'] = $right_key;
+        $_SESSION['date_from'] = $date_from;
+        $_SESSION['date_to'] = $date_to;
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+    public function date_from(){
+        return $_SESSION['date_from'];
+    }
+    public function date_to(){
+        return $_SESSION['date_to'];
+    }
+
 
 }

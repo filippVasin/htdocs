@@ -9,10 +9,14 @@ $(document).ready(function() {
     var name =  "";
     var fio = "";
     var dol =  "";
+    var date_from = "";
+    var date_to = "";
 
 
     $(document).on("click", "#reset", function () {
         $(".cancel_popup").click();
+        $('#datepicker_from').val("");
+        $('#datepicker_to').val("");
         select();
     });
 
@@ -38,6 +42,8 @@ $(document).ready(function() {
         select_item = "";
         left_key = "";
         right_key = "";
+        date_from = "";
+        date_to = "";
     });
 
     // Выбрать узел
@@ -93,7 +99,9 @@ $(document).ready(function() {
             data: {
                 select_item:select_item,
                 left_key:left_key,
-                right_key:right_key
+                right_key:right_key,
+                date_from:date_from,
+                date_to:date_to
             },
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
@@ -251,18 +259,6 @@ $(document).ready(function() {
     } );
 
 
-    //table.destroy();
-
-
-    //var table = $('#example').DataTable();
-    //
-    //// Add event listeners to the two range filtering inputs
-    //$('#minimum').keyup( function() {
-    //    table.draw(); } );
-    //$('#maximum').keyup( function() {
-    //    table.draw(); } );
-
-
     $(document).on("click",'.select_button',function(){
         if($(this).hasClass("open_select")){
             $(this).removeClass("open_select");
@@ -277,6 +273,26 @@ $(document).ready(function() {
             chil.removeClass("none");
         }
     });
+
+    // datapickers
+    $('#datepicker_to').datepicker({
+        language: "ru"
+    }).on('hide', function(e) {
+        date_from = $('#datepicker_from').val();
+        date_to = $('#datepicker_to').val();
+        select();
+    });
+
+    $('#datepicker_from').datepicker({
+        language: "ru"
+    }).on('hide', function(e) {
+        date_to = $('#datepicker_to').val();
+        date_from = $('#datepicker_from').val();
+        select();
+        });
+
+
+
 
 });
 

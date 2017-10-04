@@ -9,14 +9,20 @@ class Controller_docs_report extends Controller{
     // model, view и pointer - объявлены в родительском классе;
 
     public function exec_default(){
-//        $result=$this->model->start();
-//        $this->view = str_replace('%forms%', $result, $this->view);
+        $result = $this->model->start();
+        $this->view = str_replace('%forms%', $result, $this->view);
+
+        $date_from = $this->model->date_from();
+        $this->view = str_replace('%date_from%', $date_from, $this->view);
+
+        $date_to = $this->model->date_to();
+        $this->view = str_replace('%date_to%', $date_to, $this->view);
     }
 
-    public function start(){
-        $this->model->post_array = $this->post_params;
-        $this->model->start();
-    }
+//    public function start(){
+//        $this->model->post_array = $this->post_params;
+//        $this->model->start();
+//    }
 
 
     // получаем дерево должностей
@@ -29,4 +35,9 @@ class Controller_docs_report extends Controller{
         $this->model->action_history_docs();
     }
 
+    public function select()
+    {
+        $this->model->post_array = $this->post_params;
+        $this->model->select();
+    }
 }

@@ -1,71 +1,83 @@
 $(document).ready(function() {
-    var left_key=0;
-    var right_key =0;
-    var dol =  "";
-    var dir =  "";
-    var name = "";
-    var doc = "";
+    var left_key = 0;
+    var right_key = 0;
     var select_item = "";
-    var observer_em = "";
-    var select_item_em= "";
-    var group = "";
-    var time_from = "";
-    var time_to = "";
-    var file_id= "";
-    var local_id = "";
-    var action_type = "";
-
-    $.ajax({
-        type: "POST",
-        url: "/local_alert/start",
-        data: {
-            left_key:left_key,
-            right_key:right_key,
-            select_item:select_item,
-            select_item_em:select_item_em,
-            group:group,
-            time_from:time_from,
-            time_to:time_to
-
-        },
-        success: function (answer) {
-            var result = jQuery.parseJSON(answer);
-            var content = result.content;
-            var select = result.select;
-            var select_em = result.select_em;
-
-                $('#node_docs_select').html(select);
+    var select_item_status = "";
+    var emp = "";
+    var step = "";
+    var manual = "";
+    var dir = "";
+    var name =  "";
+    var fio = "";
+    var dol =  "";
+    var date_from = "";
+    var date_to = "";
 
 
-                $('#node_docs_select_em').html(select_em);
-
-            if(content !="") {
-                $('#strings').html(content);
-            }
-        },
-        error: function () {
-        }
+    $(document).on("click", "#reset", function () {
+        $(".cancel_popup").click();
+        $('#datepicker_from').val("");
+        $('#datepicker_to').val("");
+        select();
     });
 
 
+    function select(){
+        $.ajax({
+            type: "POST",
+            url: "/local_alert/select",
+            data: {
+                select_item_status:select_item_status,
+                select_item:select_item,
+                left_key:left_key,
+                right_key:right_key,
+                date_from:date_from,
+                date_to:date_to
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+
+                if(status =="ok") {
+                    location.reload();
+                    //window.location = "/report_step";
+                }
+                if(status == "") {
+
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+
+
+    $('#table1_wrapper>.row:first-child').append($("#node_docs_select"));
+    $('#table1_wrapper>.row>div').addClass("col-sm-4");
+    $('#table1_wrapper .col-sm-4').removeClass("col-sm-6");
+
+    //$('#table1_wrapper .col-sm-6').addClass("col-sm-4");
     // отмена действия
     $(document).on("click", ".cancel_popup", function () {
-        $("#alert_signature_docs_popup").addClass("none");
-        $("#alert_acception_docs_popup").addClass("none");
-        $("#alert_bailee_push_popup").addClass("none");
         $("#popup_context_menu_update").css("display","none");
+        $("#action_history_docs_popup").css("display","none");
+        $("#popup_update_tree").html("");
         $("#emp_report_name").html("");
-        $("#dolg_report_name").html("");
-        $("#dolg_report_dir").html("");
         $("#docs_report_name").html("");
-        $("#popup_update_tree").attr("left_key", "");
-        $("#popup_update_tree").attr("right_key", "");
-        dol =  "";
-        dir =  "";
-        name = "";
-        doc = "";
+        emp = "";
+        step = "";
+        manual = "";
+        dir = "";
+        name =  "";
+        fio = "";
+        dol = "";
+        select_item = "";
+        select_item_status = "";
+        left_key = "";
+        right_key = "";
+        date_from = "";
+        date_to = "";
     });
-
 
     $(document).on("click", ".alert_row", function () {
         dol =  $(this).attr("dol");
@@ -98,7 +110,6 @@ $(document).ready(function() {
             $("#docs_bailee_push_name").html(doc);
             $("#alert_bailee_push_popup_button").click();
         }
-
     });
 
 
@@ -356,7 +367,6 @@ $(document).ready(function() {
                 var result = jQuery.parseJSON(answer);
                 var content = result.content;
 
-
                     $('#strings').html(content);
             },
             error: function () {
@@ -390,39 +400,69 @@ $(document).ready(function() {
     });
 
 
-
-
-
-    // фильтр по прогрессу прохождения
-    //$(document).on("change", ".target", function () {
-    //    time_from = $("#time_from").val();
-    //    time_to = $("#time_to").val();
+    var table = $('#table1').DataTable({
+        "language": {
+            "url": "Russian.json"
+        }
+    });
+    //table.columns().flatten().each( function ( colIdx ) {
+    //    // Create the select list and search operation
+    //    var select = $('<button type="button" class="btn btn-primary btn-sm pull-right select_button" data-toggle="tooltip" title="" data-original-title="Date range" aria-describedby=""> <i class="fa fa-check-square-o"></i></button>')
+    //        .appendTo(
+    //        table.column(colIdx).footer()
+    //    )
+    //        .on( 'click','.li_select', function () {
+    //            table
+    //                .column( colIdx )
+    //                .search( $(this).attr('data_select'))
+    //                .draw();
+    //        } );
+    //    var html ='<li class = "li_select" data_select = "">ВСЁ</li>';
+    //    table
+    //        .column( colIdx )
+    //        .cache( 'search' )
+    //        .sort()
+    //        .unique()
+    //        .each( function ( d ) {
+    //            html = html + '<li class = "li_select" data_select = "'+d+'">'+d+'</li>';
+    //        } );
     //
-    //    $.ajax({
-    //        type: "POST",
-    //        url: "/local_alert/start",
-    //        data: {
-    //            left_key:left_key,
-    //            right_key:right_key,
-    //            select_item:select_item,
-    //            select_item_em:select_item_em,
-    //            group:group,
-    //            time_from:time_from,
-    //            time_to:time_to
-    //        },
-    //        success: function (answer) {
-    //            var result = jQuery.parseJSON(answer);
-    //            var content = result.content;
+    //    select.append('<div class="dropdownmenu none"><div class="ranges"><ul>' +html +'</ul> <div class="range_inputs"> </div> </div> </div>');
     //
-    //            if(content !="") {
-    //                $('#strings').html(content);
-    //            }
-    //        },
-    //        error: function () {
-    //        }
-    //    });//ajax
-    //});
+    //} );
 
+
+    $(document).on("click",'.select_button',function(){
+        if($(this).hasClass("open_select")){
+            $(this).removeClass("open_select");
+
+            $(".dropdownmenu").addClass("none");
+
+        } else {
+            $(this).addClass("open_select");
+
+            $(".dropdownmenu").addClass("none");
+            var chil = $(this).children(".dropdownmenu");
+            chil.removeClass("none");
+        }
+    });
+
+    // datapickers
+    $('#datepicker_to').datepicker({
+        language: "ru"
+    }).on('hide', function(e) {
+        date_from = $('#datepicker_from').val();
+        date_to = $('#datepicker_to').val();
+        select();
+    });
+
+    $('#datepicker_from').datepicker({
+        language: "ru"
+    }).on('hide', function(e) {
+        date_to = $('#datepicker_to').val();
+        date_from = $('#datepicker_from').val();
+        select();
+    });
 
 });
 

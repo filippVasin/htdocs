@@ -210,7 +210,7 @@ $login_mail = '<tr>
                           <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777; text-align: center;">
 
 
-                                    <a href="%link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding:20px 40px;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейти в систему</span></span></a>
+                                    <a href="%link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейти в систему</span></span></a>
 
                               </div>
                           </div>
@@ -330,7 +330,7 @@ $regisrt_temp_mail =<<< HERE
                           <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777  ;">
 
 
-                                    <a href="%link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding:20px 40px;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейдите на сайт</span></span></a>
+                                    <a href="%link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейдите на сайт</span></span></a>
 
                               </div>
                           </div>

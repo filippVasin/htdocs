@@ -13,6 +13,12 @@ class Controller_report_step extends Controller
     {
         $result = $this->model->start();
         $this->view = str_replace('%forms%', $result, $this->view);
+
+        $date_from = $this->model->date_from();
+        $this->view = str_replace('%date_from%', $date_from, $this->view);
+
+        $date_to = $this->model->date_to();
+        $this->view = str_replace('%date_to%', $date_to, $this->view);
     }
 
 

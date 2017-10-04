@@ -17,9 +17,9 @@ class Model_report_step{
     public function start(){
 
         global $db;
-        $left_key = $this->post_array['left_key'];
-        $right_key = $this->post_array['right_key'];
         $select_item = $this->post_array['select_item'];
+        $date_from = $_SESSION['date_from'];
+        $date_to = $_SESSION['date_to'];
 
         if(!isset($_SESSION['select_item'])){
             $_SESSION['select_item'] = "";
@@ -199,7 +199,31 @@ class Model_report_step{
 	  			(('". $_SESSION['select_item'] ."' = 'Законченные' ) AND (history_docs.date_finish is not Null))
 	  			OR
 	  			('". $_SESSION['select_item'] ."' = ' ' )
-			) ";
+			)
+
+	AND( (('". $date_from ."' = ' ' ) AND ('". $date_to ."' = ''))
+					OR
+					((('". $date_from ."' != ' ' ) AND ('". $date_to ."' = '')) AND ((DATE(history_docs.date_start) >= STR_TO_DATE('". $date_from ."', '%d.%m.%Y'))
+																		OR
+																		(DATE(history_docs.date_finish) >= STR_TO_DATE('". $date_from ."', '%d.%m.%Y'))))
+					OR
+						((('". $date_from ."' = ' ' ) AND ('". $date_to ."' != '')) AND ((DATE(history_docs.date_start) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y'))
+																		OR
+																		(DATE(history_docs.date_finish) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y'))))
+					OR
+						((('". $date_from ."' != ' ' ) AND ('". $date_to ."' != '')) AND ((DATE(history_docs.date_start) >= STR_TO_DATE('". $date_from ."', '%d.%m.%Y'))
+																		OR
+																		(DATE(history_docs.date_finish) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y'))))
+				) 	 ";
+
+
+//        if ($date_from != "") {
+//            $sql .= " AND DATE(history_docs.date_start) <= STR_TO_DATE('". $date_from ."', '%d.%m.%Y')";
+//        }
+//        if ($date_to != "") {
+//
+//            $sql .= " AND DATE(history_docs.date_start) >= STR_TO_DATE('". $date_to ."', '%d.%m.%Y')";
+//        }
 
         // частичный доступ у сотрудика котрый запрашивает отчёт
         if(($left!='none')&&($left!="all")) {
@@ -235,7 +259,6 @@ class Model_report_step{
                 $sql .= " GROUP BY save_temp_files.id
                                             GROUP BY EMPLOY, STEP";
             }
-
 
             $docs_array = $db->all($sql);
             $html = "";
@@ -374,13 +397,25 @@ class Model_report_step{
         $select_item = $this->post_array['select_item'];
         $left_key = $this->post_array['left_key'];
         $right_key = $this->post_array['right_key'];
+        $date_from = $this->post_array['date_from'];
+        $date_to = $this->post_array['date_to'];
+
 
         $_SESSION['select_item'] = $select_item;
         $_SESSION['left_key'] = $left_key;
         $_SESSION['right_key'] = $right_key;
+        $_SESSION['date_from'] = $date_from;
+        $_SESSION['date_to'] = $date_to;
         $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
         die($result);
+    }
+
+    public function date_from(){
+        return $_SESSION['date_from'];
+    }
+    public function date_to(){
+        return $_SESSION['date_to'];
     }
 
 }
