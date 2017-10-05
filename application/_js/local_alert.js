@@ -449,7 +449,8 @@ $(document).ready(function() {
 
     // datapickers
     $('#datepicker_to').datepicker({
-        language: "ru"
+        language: "ru",
+        autoclose: true
     }).on('hide', function(e) {
         date_from = $('#datepicker_from').val();
         date_to = $('#datepicker_to').val();
@@ -457,7 +458,8 @@ $(document).ready(function() {
     });
 
     $('#datepicker_from').datepicker({
-        language: "ru"
+        language: "ru",
+        autoclose: true
     }).on('hide', function(e) {
         date_to = $('#datepicker_to').val();
         date_from = $('#datepicker_from').val();

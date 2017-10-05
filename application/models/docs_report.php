@@ -261,7 +261,11 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                 // проверяем по фильтрам
                 if (($docs_array_item['doc_status_id'] == $select_item_status) || ($select_item_status == "") || (($select_item_status == "0") && ($docs_array_item['DoC_Status'] == "Ещё не создан"))) {
                     if (($docs_array_item['action_triger'] == $select_item) || ($select_item == "")) {
-                        $html .= '<tr class="report_step_row"  file_id="' . $docs_array_item['ID_FILES'] . '" fio="' . $docs_array_item['fio'] . '" dol="' . $docs_array_item['DOL'] . '"  name="' . $docs_array_item['name_doc'] . '">
+                        $class = "";
+                        if($docs_array_item['ID_FILES'] !=""){
+                            $class = 'docs_report_step_row';
+                        }
+                        $html .= '<tr class="report_step_row '. $class .'"  file_id="' . $docs_array_item['ID_FILES'] . '" fio="' . $docs_array_item['fio'] . '" dol="' . $docs_array_item['DOL'] . '"  name="' . $docs_array_item['name_doc'] . '">
                         <td>' . $docs_array_item['ID_FILES'] . '</td>
                         <td>' . $docs_array_item['fio'] . '</td>
                         <td>' . $docs_array_item['dir'] . '</td>
@@ -272,6 +276,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                         <td>' . $docs_array_item['DoC_Status'] . '</td>
                         <td>' . $docs_array_item['date_finish'] . '</td>
                     </tr>';
+
                     }
                 }
             }
@@ -371,22 +376,22 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                 GROUP BY id";
         $action_docs = $db->all($sql);
 
-        $html = "";
-        $html.="<div class='row'>
-                        <div class='action_popup'>Действие:</div>
-                        <div class='status_popup'>Статус:</div>
-                        <div class='date_popup'>Дата начала:</div>
-                        <div class='date_popup'>Дата завершения:</div>
-                        </div>";
+        $html = "<table id='table_popup' class='table table-bordered table-striped dataTable'>";
+        $html.=" <thead><tr class='row'>
+                        <td class='action_popup'>Действие:</td>
+                        <td class='status_popup'>Статус:</td>
+                        <td class='date_popup'>Дата начала:</td>
+                        <td class='date_popup'>Дата завершения:</td>
+                </tr> </thead>";
         foreach($action_docs as $action_doc){
-            $html.="<div class='row'>
-                        <div class='action_popup'>".$action_doc['user_action_name'] ."</div>
-                        <div class='status_popup'>".$action_doc['doc_status'] ."</div>
-                        <div class='date_popup'>".$action_doc['start_data'] ."</div>
-                        <div class='date_popup'>".$action_doc['step_end_time'] ."</div>
-                        </div>";
+            $html.="<tr class='row'>
+                        <td class='action_popup'>".$action_doc['user_action_name'] ."</td>
+                        <td class='status_popup'>".$action_doc['doc_status'] ."</td>
+                        <td class='date_popup'>".$action_doc['start_data'] ."</td>
+                        <td class='date_popup'>".$action_doc['step_end_time'] ."</td>
+                    </tr>";
         }
-
+        $html. '</table>';
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';

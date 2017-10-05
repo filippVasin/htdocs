@@ -355,7 +355,7 @@ FORM_NOW.doc_status_now,
                         $count_test_fio_fact = $count_test_fio_fact + $count_doc_fio_fact;
                         $count_test_fio_target = $count_test_fio_target + $count_doc_fio_target;
                         $fio_test_proc = round($count_test_fio_fact/$count_test_fio_target*100);
-                        $test_fio_html .= ' <div class="fio_box none">
+                        $test_fio_html .= ' <div class="fio_box none" >
                                             <div class="dol_row">'. $test_item['name'] .'</div>
                                             <div class="fio_row">'. $test_item['fio'] .'</div>
                                               <span class="progress-number"><b>'. $count_test_fio_fact .'</b>/'.$count_test_fio_target.'</span>
@@ -420,8 +420,8 @@ FORM_NOW.doc_status_now,
             $node_report_test .=     '</div> ';
             $node_report_test .=     '<div class="progress_line">';
             $node_report_test .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$test_proc.'%"></div>';
-            $node_report_test .=     '</div>';
-            $node_report_test .=     '<div class="people"><div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>'.$test_fio_html .'</div>';
+            $node_report_test .=     '</div> <div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>';
+            $node_report_test .=     '<div class="people none progress-group"><div class="people_title">Сотрудники</div>'.$test_fio_html .'</div>';
             $node_report_test .= '</div>';
 
 

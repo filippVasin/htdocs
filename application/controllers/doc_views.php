@@ -7,4 +7,5 @@ class Controller_doc_views extends Controller{
         $doc = $this->model->start($doc_link);
         $this->view = str_replace('%doc%', $doc, $this->view);
     }
+
 }

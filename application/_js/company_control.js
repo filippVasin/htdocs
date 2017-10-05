@@ -84,20 +84,23 @@ $(document).ready(function() {
         $("#plus_test_users_couple").removeClass("none");
     });
     $(document).on("click", "#cancel_test_users_couple", function () {
-        $("#plus_test_users_couple").addClass("none");
-        $("#ok_test_users_couple").removeClass("none");
+        $("#create_test_users_couple").removeClass("none");
         $("#cancel_test_users_couple").html("Отмена");
+        $("#plus_test_users_couple_input").removeClass("none");
         $(".users").html("");
-        $(".mail_input").removeClass("none");
+        $("#plus_test_users_couple_input").val("");
+        $("#plus_test_users_couple_input").removeClass("none");
     });
 
-    $(document).on("click", "#ok_test_users_couple", function () {
-
+    $(document).on("click", "#create_test_users_couple", function () {
         var email = $("#plus_test_users_couple_input").val();
         var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
         if((email != '' && pattern.test(email)) || email =="") {
-            $("#ok_test_users_couple").addClass("none");
+            $("#plus_test_users_couple_input").addClass("none");
+            $("#plus_test_users_couple_input").val("");
+            $("#create_test_users_couple").addClass("none");
             $("#cancel_test_users_couple").html("Запомните логины/пароли");
+            $("#plus_test_users_couple_input").addClass("none");
             $.ajax({
                 type: "POST",
                 url: "/company_control/plus_test_users_couple",
@@ -108,10 +111,9 @@ $(document).ready(function() {
                     var result = jQuery.parseJSON(answer);
                     var request_result = result.status;
                     var content = result.content;
-                    if (request_result == "ok") {
+
                         $(".users").html(content);
-                        $(".mail_input").addClass("none");
-                    }
+
                 }
             });
         } else {
@@ -128,18 +130,18 @@ $(document).ready(function() {
 });
 
 
-function copy(str){
-    var tmp   = document.createElement('INPUT'), // Создаём новый текстовой input
-        focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
-
-    tmp.value = str; // Временному input вставляем текст для копирования
-
-    document.body.appendChild(tmp); // Вставляем input в DOM
-    tmp.select(); // Выделяем весь текст в input
-    document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
-    document.body.removeChild(tmp); // Удаляем временный input
-    focus.focus(); // Возвращаем фокус туда, где был
-}
+//function copy(str){
+//    var tmp   = document.createElement('INPUT'), // Создаём новый текстовой input
+//        focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
+//
+//    tmp.value = str; // Временному input вставляем текст для копирования
+//
+//    document.body.appendChild(tmp); // Вставляем input в DOM
+//    tmp.select(); // Выделяем весь текст в input
+//    document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
+//    document.body.removeChild(tmp); // Удаляем временный input
+//    focus.focus(); // Возвращаем фокус туда, где был
+//}
 
 //document.addEventListener('DOMContentLoaded', e => {
 //    var input = document.querySelector('#input'),

@@ -83,3 +83,28 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+
+
+
+    <button id="action_history_docs_popup_button" class="none" data-toggle="modal" data-target="#action_history_docs_popup">
+    </button>
+    <!--// отчёт по сотрудникам-->
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="action_history_docs_popup" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Отчёт по документу</h4>
+                </div>
+                <div class="modal-body" id="popup_action_list">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="open_doc_popup" class="btn btn-primary">Открыть документ</button>
+                    <button type="button" class="btn btn-default"  data-dismiss="modal">Закрыть карточку</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->

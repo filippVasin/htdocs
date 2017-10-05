@@ -16,6 +16,8 @@ class Model_doc_views{
 
         return $page;
     }
+
+
 }
 
 

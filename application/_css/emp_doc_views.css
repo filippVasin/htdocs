@@ -1,0 +1,11 @@
+.navbar, .main-sidebar,.main-header {
+    display: none;
+}
+.content-wrapper{
+    margin-left: 0px;
+}
+#body{
+    background-color: #fff;
+    width: 1200px;
+    margin: 0 auto;
+}

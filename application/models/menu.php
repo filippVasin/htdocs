@@ -84,13 +84,13 @@ class Model_menu{
         // Есть ли управляемая компания;
         if( $_SESSION['role_id'] == 4){
             $company_buttons = '
-            <li><a href="/main"><span>Главная страница</span><i class="fa fa-bank"></i> </a></li>
-            <li><a href="/structure"> <span>Cтруктура</span><i class="fa  fa-sitemap"></i> </a></li>
-            <li><a href="/creator"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i> </a></li>
-            <li><a href="/docs_report"> <span>Отчёт по документам</span><i class="fa fa-book"></i> </a></li>
-            <li><a href="/report_step"> <span>Отчёт по сотрудникам</span><i class="fa fa-users"></i> </a></li>
-            <li><a href="/company_forms"> <span>Документы компании</span><i class="fa  fa-files-o"></i></a></li>
-            <li><a href="/local_alert"> <span>Уведомления</span><i class="fa fa-paper-plane"></i></a> </li>
+            <li><a href="/main" class="pril_start"><span>Главная страница</span><i class="fa fa-bank"></i> </a></li>
+            <li><a href="/structure" class="pril_start"> <span>Cтруктура</span><i class="fa  fa-sitemap"></i> </a></li>
+            <li><a href="/creator" class="pril_start"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i> </a></li>
+            <li><a href="/docs_report" class="pril_start"> <span>Отчёт по документам</span><i class="fa fa-book"></i> </a></li>
+            <li><a href="/report_step" class="pril_start"> <span>Отчёт по сотрудникам</span><i class="fa fa-users"></i> </a></li>
+            <li><a href="/company_forms" class="pril_start"> <span>Документы компании</span><i class="fa  fa-files-o"></i></a></li>
+            <li><a href="/local_alert" class="pril_start"> <span>Уведомления</span><i class="fa fa-paper-plane"></i></a> </li>
             ';
         }   else{
             $company_buttons = '';
@@ -109,16 +109,16 @@ class Model_menu{
 
             if($_SESSION['role_id'] == 1){
 
-                $login_buttons = '<li><a href="/main"> <span>Главная страница</span><i class="fa fa-bank "></i></a></li>';
-                $login_buttons .= '<li><a href="/company_control"> <span>Компании</span><i class="fa fa-leanpub"></i></a></li>';
-                $login_buttons .= '<li><a href="/structure"> <span>Cтруктура</span><i class="fa fa-sitemap"></i></a></li>';
-                $login_buttons .= '<li><a href="/creator"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i></a></li>';
-                $login_buttons .= '<li><a href="/editor"> <span>Редактор элементов</span><i class="fa fa-edit"></i></a></li>';
-                $login_buttons .= '<li><a href="/employee_update"> <span>Перемещение сотрудников</span><i class="fa fa-arrows"></i></a></li>';
-                $login_buttons .= '<li><a href="/company_forms"> <span>Документы компании</span><i class="fa  fa-files-o"></i></a></li>';
-                $login_buttons .= '<li><a href="/action_list"> <span>Действия с документами</span><i class="fa  fa-newspaper-o"></i> </a></li>';
-                $login_buttons .= '<li><a href="/period_control"> <span>Периодичность инструктажей</span><i class="fa fa-calendar"></i></a></li>';
-                $login_buttons .= '<li><a href="/step_editor"><span>Содержание инструктажа</span><i class="fa fa-calendar-check-o"></i> </a></li>';
+                $login_buttons = '<li><a href="/main" class="pril_start"> <span>Главная страница</span><i class="fa fa-bank "></i></a></li>';
+                $login_buttons .= '<li><a href="/company_control" class="pril_start"> <span>Компании</span><i class="fa fa-leanpub"></i></a></li>';
+                $login_buttons .= '<li><a href="/structure" class="pril_start"> <span>Cтруктура</span><i class="fa fa-sitemap"></i></a></li>';
+                $login_buttons .= '<li><a href="/creator" class="pril_start"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i></a></li>';
+                $login_buttons .= '<li><a href="/editor" class="pril_start"> <span>Редактор элементов</span><i class="fa fa-edit"></i></a></li>';
+                $login_buttons .= '<li><a href="/employee_update" class="pril_start"> <span>Перемещение сотрудников</span><i class="fa fa-arrows"></i></a></li>';
+                $login_buttons .= '<li><a href="/company_forms" class="pril_start"> <span>Документы компании</span><i class="fa  fa-files-o"></i></a></li>';
+                $login_buttons .= '<li><a href="/action_list" class="pril_start"> <span>Действия с документами</span><i class="fa  fa-newspaper-o"></i> </a></li>';
+                $login_buttons .= '<li><a href="/period_control" class="pril_start"> <span>Периодичность инструктажей</span><i class="fa fa-calendar"></i></a></li>';
+                $login_buttons .= '<li><a href="/step_editor" class="pril_start"><span>Содержание инструктажа</span><i class="fa fa-calendar-check-o"></i> </a></li>';
 //                $login_buttons .= '<li><a href="/node_update"><i class="fa fa-book"></i> <span>Компании</span></a></li>';
 
             }
@@ -134,7 +134,7 @@ class Model_menu{
     public function role_three(){
 
         if ($_SESSION['role_id'] != 3) {
-            $role_three = '<li><a href="/main"> <span>Главная страница</span><i class="fa fa-bank"></i></a></li>';
+            $role_three = '<li><a href="/main" class="pril_start"> <span>Главная страница</span><i class="fa fa-bank"></i></a></li>';
         } else {
             $role_three = '';
         }

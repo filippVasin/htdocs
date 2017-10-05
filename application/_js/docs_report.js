@@ -174,12 +174,11 @@ $(document).ready(function() {
 
     // запрос по истории документа
     $(document).on("click", ".docs_report_step_row", function () {
-        $("#action_history_docs_popup").css("display","block");
+        $("#action_history_docs_popup_button").click();
         var file_id =  $(this).attr("file_id");
         dol =  $(this).attr("dol");
         fio =  $(this).attr("fio");
         var name =  $(this).attr("name");
-
 
         $("#emp_report_name").html(fio);
         $("#dolg_report_name").html(dol);
@@ -197,6 +196,7 @@ $(document).ready(function() {
 
                 if(content !="") {
                     $('#popup_action_list').html(content);
+                    $("#open_doc_popup").attr("file_id",file_id);
                 }
             },
             error: function () {
@@ -255,7 +255,8 @@ $(document).ready(function() {
 
     // datapickers
     $('#datepicker_to').datepicker({
-        language: "ru"
+        language: "ru",
+        autoclose: true
     }).on('hide', function(e) {
         date_from = $('#datepicker_from').val();
         date_to = $('#datepicker_to').val();
@@ -263,12 +264,21 @@ $(document).ready(function() {
     });
 
     $('#datepicker_from').datepicker({
-        language: "ru"
+        language: "ru",
+        autoclose: true
     }).on('hide', function(e) {
         date_to = $('#datepicker_to').val();
         date_from = $('#datepicker_from').val();
         select();
     });
+
+
+
+    $(document).on("click",'#open_doc_popup',function(){
+       var file = $(this).attr("file_id");
+        window.open("/emp_doc_views?" + file);
+    });
+
 
 });
 

@@ -23,13 +23,17 @@ class Model_local_alert{
 
 
 
-        $select_item = $this->post_array['select_item'];
-        $select_item_em = $this->post_array['select_item_em'];
-        $group = $this->post_array['group'];
-        $left_key = $this->post_array['left_key'];
-        $right_key = $this->post_array['right_key'];
-        $time_from = $this->post_array['time_from'];
-        $time_to = $this->post_array['time_to'];
+        $select_item_status = $_SESSION['select_item_status'];
+        $select_item = $_SESSION['select_item'];
+        $date_from = $_SESSION['date_from'];
+        $date_to = $_SESSION['date_to'];
+
+        if(!isset($_SESSION['select_item'])){
+            $_SESSION['select_item'] = "";
+        }
+        if($_SESSION['select_item'] == "Все"){
+            $_SESSION['select_item'] = "";
+        }
 
         // какие права имеет получатель
         $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
@@ -61,7 +65,15 @@ class Model_local_alert{
         $right = $observer_data['right'];
 
 
+        if(!isset($_SESSION['left_key'])){
+            $_SESSION['left_key'] = 0;
+        }
+        if(!isset($_SESSION['right_key'])){
+            $_SESSION['right_key'] = 0;
+        }
 
+        $left_key = $_SESSION['left_key'];
+        $right_key = $_SESSION['right_key'];
 // запрашиваем все алерты(документ на подпись)
         $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
 form_step_action.action_name,form_step_action.user_action_name,
@@ -92,11 +104,12 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
     AND local_alerts.date_finish IS NULL";
 
         // если указаны даты выборки
-        if ($time_from != "") {
-            $sql .= " AND DATE(local_alerts.date_create) >= STR_TO_DATE('". $time_from ."', '%m/%d/%Y %h%i')";
+        if ($date_from != "") {
+            $sql .= " AND DATE(local_alerts.date_create) >= STR_TO_DATE('". $date_from ."', '%d.%m.%Y')";
         }
-        if ($time_to != "") {
-            $sql .= " AND DATE(local_alerts.date_create) <= STR_TO_DATE('". $time_to ."', '%m/%d/%Y %h%i')";
+        if ($date_to != "") {
+
+            $sql .= " AND DATE(local_alerts.date_create) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y')";
         }
 
 

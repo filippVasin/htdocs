@@ -226,7 +226,7 @@ $(document).ready(function() {
 
 
     // открываем и закрываем сотрудников
-    $(document).on('click','.icon',function(){
+    $(document).on('click','.people_title',function(){
         var parent = $(this).closest(".people");
         if($(this).hasClass("open_people")){
              $(".fio_box",parent).addClass("none");

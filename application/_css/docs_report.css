@@ -140,3 +140,13 @@ tfoot th{
     margin: 10px auto;
     flex-wrap: wrap;
 }
+
+.docs_report_step_row{
+    cursor: pointer;
+}
+#table_popup thead td {
+    font-weight: 700;
+}
+#popup_action_list{
+    overflow-x: auto;
+}

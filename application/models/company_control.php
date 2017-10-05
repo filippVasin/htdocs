@@ -202,6 +202,8 @@ HERH;
         $html .='<div class="test_row"><span class="title_test">Для отчётов-</span><span class="login">Логин: '. $login .'</span><span class="pass">Пароль: '. $pass .'</span></div>';
 
 
+
+
         // если была почта
         if($email!=""){
             $send_mailer = $systems->create_mailer_object();
@@ -215,12 +217,10 @@ HERH;
             $send_mailer->send();
         }
 
-
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result_array['message'] = 'Включен контроль выбранной компании';
-
         $result = json_encode($result_array, true);
         die($result);
+
     }
 }

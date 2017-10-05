@@ -1,18 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" style="height: auto; min-height: 100%;">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Labor Protection</title>
     <link rel="icon" type="/image/png" href="/templates/<?echo $current_template;?>/images/icon_core.png" />
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="/templates/<?echo $current_template;?>/css/circle.css" type="text/css" />
-    <link rel="stylesheet" href="/templates/<?echo $current_template;?>/css/preloader.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/templates/<?echo $current_template;?>/css/tcal.css" />
+
+
+
     <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.js"></script>
-    <script type="text/javascript" src="/templates/<?echo $current_template;?>/js/ajax_preloader.js"></script>
-    <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/functions.js"></script>
-    <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.maskedinput.min.js"></script>
-    <script type="text/javascript" src="/templates/<?echo $current_template;?>/js/tcal.js"></script>
+
+
 <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
 
     <!--адиптив-->
@@ -40,8 +39,223 @@
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+
+    <style type="text/css">
+        #p_prldr{
+            position: fixed;
+            left: 0;
+            top: 0;
+            right:0;
+            bottom:0;
+            background: #3c8dbc;
+            z-index: 30;}
+
+        .contpre small{font-size:25px;}
+
+        .contpre{
+            width: 250px;
+            height: 100px;
+            position: absolute;
+            left: 50%;top: 48%;
+            margin-left:-125px;
+            margin-top:-75px;
+            color:#fff;
+            font-size:40px;
+            letter-spacing:-2px;
+            text-align:center;
+            line-height:35px;}
+        #p_prldr .svg_anm {
+            position: absolute;
+            width: 41px;
+            height: 41px;
+            /*background: url('./templates/simple_template/images/loading_apple-Small2.gif') center center no-repeat;*/
+            background-size:41px;
+            margin: -16px 0 0 -16px;}
+
+
+        .cssload-thecube {
+            width: 73px;
+            height: 73px;
+            margin: 0 auto;
+            margin-top: 49px;
+            position: relative;
+            transform: rotateZ(45deg);
+            -o-transform: rotateZ(45deg);
+            -ms-transform: rotateZ(45deg);
+            -webkit-transform: rotateZ(45deg);
+            -moz-transform: rotateZ(45deg);
+        }
+        .cssload-thecube .cssload-cube {
+            position: relative;
+            transform: rotateZ(45deg);
+            -o-transform: rotateZ(45deg);
+            -ms-transform: rotateZ(45deg);
+            -webkit-transform: rotateZ(45deg);
+            -moz-transform: rotateZ(45deg);
+        }
+        .cssload-thecube .cssload-cube {
+            float: left;
+            width: 50%;
+            height: 50%;
+            position: relative;
+            transform: scale(1.1);
+            -o-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+        }
+        .cssload-thecube .cssload-cube:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(194,192,214);
+            animation: cssload-fold-thecube 2.76s infinite linear both;
+            -o-animation: cssload-fold-thecube 2.76s infinite linear both;
+            -ms-animation: cssload-fold-thecube 2.76s infinite linear both;
+            -webkit-animation: cssload-fold-thecube 2.76s infinite linear both;
+            -moz-animation: cssload-fold-thecube 2.76s infinite linear both;
+            transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+        }
+        .cssload-thecube .cssload-c2 {
+            transform: scale(1.1) rotateZ(90deg);
+            -o-transform: scale(1.1) rotateZ(90deg);
+            -ms-transform: scale(1.1) rotateZ(90deg);
+            -webkit-transform: scale(1.1) rotateZ(90deg);
+            -moz-transform: scale(1.1) rotateZ(90deg);
+        }
+        .cssload-thecube .cssload-c3 {
+            transform: scale(1.1) rotateZ(180deg);
+            -o-transform: scale(1.1) rotateZ(180deg);
+            -ms-transform: scale(1.1) rotateZ(180deg);
+            -webkit-transform: scale(1.1) rotateZ(180deg);
+            -moz-transform: scale(1.1) rotateZ(180deg);
+        }
+        .cssload-thecube .cssload-c4 {
+            transform: scale(1.1) rotateZ(270deg);
+            -o-transform: scale(1.1) rotateZ(270deg);
+            -ms-transform: scale(1.1) rotateZ(270deg);
+            -webkit-transform: scale(1.1) rotateZ(270deg);
+            -moz-transform: scale(1.1) rotateZ(270deg);
+        }
+        .cssload-thecube .cssload-c2:before {
+            animation-delay: 0.35s;
+            -o-animation-delay: 0.35s;
+            -ms-animation-delay: 0.35s;
+            -webkit-animation-delay: 0.35s;
+            -moz-animation-delay: 0.35s;
+        }
+        .cssload-thecube .cssload-c3:before {
+            animation-delay: 0.69s;
+            -o-animation-delay: 0.69s;
+            -ms-animation-delay: 0.69s;
+            -webkit-animation-delay: 0.69s;
+            -moz-animation-delay: 0.69s;
+        }
+        .cssload-thecube .cssload-c4:before {
+            animation-delay: 1.04s;
+            -o-animation-delay: 1.04s;
+            -ms-animation-delay: 1.04s;
+            -webkit-animation-delay: 1.04s;
+            -moz-animation-delay: 1.04s;
+        }
+
+
+
+        @keyframes cssload-fold-thecube {
+            0%, 10% {
+                transform: perspective(136px) rotateX(-180deg);
+                opacity: 0;
+            }
+            25%,
+            75% {
+                transform: perspective(136px) rotateX(0deg);
+                opacity: 1;
+            }
+            90%,
+            100% {
+                transform: perspective(136px) rotateY(180deg);
+                opacity: 0;
+            }
+        }
+
+        @-o-keyframes cssload-fold-thecube {
+            0%, 10% {
+                -o-transform: perspective(136px) rotateX(-180deg);
+                opacity: 0;
+            }
+            25%,
+            75% {
+                -o-transform: perspective(136px) rotateX(0deg);
+                opacity: 1;
+            }
+            90%,
+            100% {
+                -o-transform: perspective(136px) rotateY(180deg);
+                opacity: 0;
+            }
+        }
+
+        @-ms-keyframes cssload-fold-thecube {
+            0%, 10% {
+                -ms-transform: perspective(136px) rotateX(-180deg);
+                opacity: 0;
+            }
+            25%,
+            75% {
+                -ms-transform: perspective(136px) rotateX(0deg);
+                opacity: 1;
+            }
+            90%,
+            100% {
+                -ms-transform: perspective(136px) rotateY(180deg);
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes cssload-fold-thecube {
+            0%, 10% {
+                -webkit-transform: perspective(136px) rotateX(-180deg);
+                opacity: 0;
+            }
+            25%,
+            75% {
+                -webkit-transform: perspective(136px) rotateX(0deg);
+                opacity: 1;
+            }
+            90%,
+            100% {
+                -webkit-transform: perspective(136px) rotateY(180deg);
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes cssload-fold-thecube {
+            0%, 10% {
+                -moz-transform: perspective(136px) rotateX(-180deg);
+                opacity: 0;
+            }
+            25%,
+            75% {
+                -moz-transform: perspective(136px) rotateX(0deg);
+                opacity: 1;
+            }
+            90%,
+            100% {
+                -moz-transform: perspective(136px) rotateY(180deg);
+                opacity: 0;
+            }
+        }
+    </style>
 
     <?
     // Здесь мы будем выводить блок в js переданные нам viewer;
@@ -51,17 +265,21 @@
     ?>
 </head>
 
+<body>
+<!-- прилоадер:-->
+<div id="p_prldr"><div class="contpre"><div class="cssload-thecube">
+            <div class="cssload-cube cssload-c1"></div>
+            <div class="cssload-cube cssload-c2"></div>
+            <div class="cssload-cube cssload-c4"></div>
+            <div class="cssload-cube cssload-c3"></div>
+        </div><span class="logo-lg"><br><b>Labor</b>Pro</span><br><small>идет загрузка данных ...</small></div></div>
+
 <div id="header" class="sidebar">
     <?
     // Здесь мы будем выводит меню которое передал нам маршрутизатор;
     if(isset($menu_viewer) && $menu_viewer != ''){
         echo $menu_viewer;
     }
-
-
-
-
-
     ?>
 </div>
 
@@ -343,6 +561,12 @@ if(isset($_SESSION['control_company_name'])){
             $('#calendar').fullCalendar('option', 'locale', "ru");
         })
     </script>
+
+
+<script type="application/javascript" src="/templates/<?echo $current_template;?>/js/functions.js"></script>
+<script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="/templates/<?echo $current_template;?>/js/tcal.js"></script>
+
 <script src="/templates/<?echo $current_template;?>/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/templates/<?echo $current_template;?>/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -381,9 +605,24 @@ if(isset($_SESSION['control_company_name'])){
 <!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/TableTools.ShowSelectedOnly.js"></script>-->
 <!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/range_dates.js"></script>-->
 <!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/range_numbers.js"></script>-->
-<script>
+
+
+<script type="text/javascript">
+    $(document).on('click','.pril_start',function() {
+        $("#p_prldr").css("display","block");
+    });
+
+
+    $(window).on('load', function () {
+        var $preloader = $('#p_prldr'),
+            $svg_anm   = $preloader.find('.svg_anm');
+        $svg_anm.fadeOut();
+        $preloader.delay(1500).fadeOut('slow');
+    });
+
 
 </script>
+
 
 </body>
 </html>

@@ -9,7 +9,15 @@
         <span id="name_dol"></span>
     <div class="create_box">
 
-        <div title="Фамилия" class="bef_input"><input type="text" id="form_surname" name="surname" placeholder="Фамилия" class="contacts-inp input_form" required=""></div><div title="Имя" class="bef_input"><input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp input_form" required=""></div><div title="Отчество" class="bef_input"><input type="text" id="form_patronymic" name="patronymic" placeholder="Отчество" class="contacts-inp input_form" required=""></div><div title="Дата устройства" class="bef_input"><input type="date" id="form_work_start" name="work_start" placeholder="Дата устройства" class="contacts-inp form_work_start_cl input_form" required=""></div><div title="Дата рождения" class="bef_input"><input type="date" id="form_birthday" name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp input_form" required=""></div><div title="Электронная почта" class="bef_input"><input type="text" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form" required=""></div><div title="Табельный номер" class="bef_input"><input type="text" id="personnel_number" name="personnel_number" placeholder="Табельный номер(не обязательно)" class="contacts-inp input_form" required=""></div><input type="hidden" id="form_id_item" name="id_item" value="36" required=""><div id="landing_form_offer_one" class="button">Записать</div></div>
+        <div title="Фамилия" class="bef_input"><input type="text" id="form_surname" name="surname" placeholder="Фамилия" class="contacts-inp input_form" required=""></div>
+        <div title="Имя" class="bef_input"><input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp input_form" required=""></div>
+        <div title="Отчество" class="bef_input"><input type="text" id="form_patronymic" name="patronymic" placeholder="Отчество" class="contacts-inp input_form" required=""></div>
+        <div title="Дата устройства" class="bef_input"><input type="text" id="form_work_start" name="work_start" placeholder="Дата устройства" class="contacts-inp form_work_start_cl input_form" required=""></div>
+        <div title="Дата рождения" class="bef_input"><input type="text" id="form_birthday" name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp input_form" required=""></div>
+        <div title="Электронная почта" class="bef_input"><input type="text" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form" required=""></div>
+        <div title="Табельный номер" class="bef_input"><input type="text" id="personnel_number" name="personnel_number" placeholder="Табельный номер(не обязательно)" class="contacts-inp input_form" required=""></div>
+        <input type="hidden" id="form_id_item" name="id_item" value="36" required="">
+        <div id="landing_form_offer_one" class="button">Записать</div></div>
     </div>
         <div id="test_block" style="display: none; text-align: left;">
         <div id="content_box"></div>

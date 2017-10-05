@@ -304,10 +304,10 @@ $(document).ready(function() {
         }
     });
     //  валидация вводимых данных, чтобы база норм записать в базу(DATETIME)
-    $(function() {
-        $("#form_work_start").mask("99.99.9999", {placeholder: "дд-мм-гггг" });
-        $("#form_birthday").mask("99.99.9999", {placeholder: "дд-мм-гггг" });
-    });
+    //$(function() {
+    //    $("#form_work_start").mask("99.99.9999", {placeholder: "дд-мм-гггг" });
+    //    $("#form_birthday").mask("99.99.9999", {placeholder: "дд-мм-гггг" });
+    //});
 
     // проверяем отправку POST
 
@@ -575,5 +575,19 @@ $(document).ready(function() {
             $(".btn-default").click();
         }
     });
+
+
+
+    // datapickers
+    $('#form_birthday').datepicker({
+        language: "ru",
+        autoclose: true
+    });
+
+    $('#form_work_start').datepicker({
+        language: "ru",
+        autoclose: true
+    });
+
 });
 
