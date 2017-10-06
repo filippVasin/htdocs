@@ -30,7 +30,7 @@ class Model_master_report{
                 $content = '<br><label for="recipient-name" class="control-label">Отчёт по тестам:</label>';
                 $content .= $result_array['content'];
                 $result_array = $this->doc_emp_report($emp_id);
-                $content .='<br><br><label for="recipient-name" class="control-label">Отчёт по документам:</label>';
+                $content .='<br><label for="recipient-name" class="control-label">Отчёт по документам:</label>';
                 $content .= $result_array['content'];
                 $result_array['content'] =  $content;
                 break;
@@ -170,16 +170,38 @@ FORM_NOW.doc_status_now,
 
 
         $docs_array = $db->all($sql);
-        $html = "";
+        $html = "<table id='table_test_emp_report_popup' class='table table-bordered table-striped'>
+                <thead>
+                <tr>
+                    <th>Документ</th>
+                    <th>Начало</th>
+                    <th>Окончание</th>
+                </tr>
+                </thead>
+                <tbody>";
         foreach ($docs_array as $docs_array_item) {
+
+            if($docs_array_item['StartStep'] == "Не начинал"){
+                $class_one = "br_color";
+            } else {
+                $class_one = "";
+            }
+            if($docs_array_item['FinishStep'] == "Не прошел"){
+                $class_two = "br_color";
+            } else {
+                $class_two = "";
+            }
             // проверяем по фильтрам
-                    $html .= '<hr><div class="row">
-                        <div  class="col-md-6">' . $docs_array_item['manual'] . '</div>
-                        <div class="col-md-3">' . $docs_array_item['StartStep'] . '</div>
-                        <div  class="col-md-3">' . $docs_array_item['FinishStep'] . '</div>
-                    </div>';
+                    $html .= '<tr>
+                        <td>' . $docs_array_item['manual'] . '</td>
+                        <td class = "'. $class_one .'" >' . $docs_array_item['StartStep'] . '</td>
+                        <td class = "'. $class_two .'" >' . $docs_array_item['FinishStep'] . '</td>
+                    </tr>';
 
         }
+        $html .='</tbody> </table>';
+
+
 
         $result_array['content'] = $html;
         return $result_array;
@@ -458,16 +480,31 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
 
 
         $docs_array = $db->all($sql);
-        $html = "";
+        $html = "<table id='table_doc_emp_report_popup' class='table table-bordered table-striped'>
+                <thead>
+                <tr>
+                    <td>Документ</td>
+                    <td>Начало</td>
+                    <td>Окончание</td>
+                </tr>
+                </thead>
+                <tbody>";
+
         foreach ($docs_array as $docs_array_item) {
+            if($docs_array_item['DoC_Status']=="Ещё не создан"){
+                $class_one = "br_color";
+            } else {
+                $class_one = "";
+            }
             // проверяем по фильтрам
-            $html .= '<hr><div class="row">
-                        <div  class="col-md-6">' . $docs_array_item['name_doc'] . '</div>
-                        <div class="col-md-3">' . $docs_array_item['action'] . '</div>
-                        <div  class="col-md-3">' . $docs_array_item['DoC_Status'] . '</div>
-                    </div>';
+            $html .= '<tr>
+                        <td>' . $docs_array_item['name_doc'] . '</td>
+                        <td>' . $docs_array_item['action'] . '</td>
+                        <td class = "'. $class_one .'" >' . $docs_array_item['DoC_Status'] . '</td>
+                    </tr>';
 
         }
+        $html .= '</tbody> </table>';
 
         $result_array['content'] = $html;
         return $result_array;

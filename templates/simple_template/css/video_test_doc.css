@@ -1,8 +1,11 @@
 iframe{
-    width: 800px;
-    z-index: 9999;
-    height: 530px;
+    position: absolute;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
 
+    top: 0;
+    left: 0;
 }
 #progress_bar_line,#up,#down{
     display: none;
@@ -29,4 +32,31 @@ iframe{
     height: 100%;
     content: '';
     background-color: rgba(0, 0, 0, 0.75);
+}
+#video_box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #ccc;
+    z-index: 99;
+     padding-bottom: 56.25%;
+}
+
+#vdox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+#header{
+    display: none;
+}
+#go_to_testing {
+    z-index: 99999999;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

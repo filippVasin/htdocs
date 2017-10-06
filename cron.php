@@ -461,8 +461,7 @@ function mails_send(){
 				} else {
 					echo 'Message sent!';
 				}
-				
-                
+                $send_mailer->ClearAddresses();
             }
         }
     }

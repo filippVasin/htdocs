@@ -355,7 +355,7 @@ FORM_NOW.doc_status_now,
                         $count_test_fio_fact = $count_test_fio_fact + $count_doc_fio_fact;
                         $count_test_fio_target = $count_test_fio_target + $count_doc_fio_target;
                         $fio_test_proc = round($count_test_fio_fact/$count_test_fio_target*100);
-                        $test_fio_html .= ' <div class="fio_box none" >
+                        $test_fio_html .= ' <div class="fio_box none" emp_id="'. $emp .'" dol="'. $test_item['name'] .'"  fio="'. $test_item['fio'] .'" >
                                             <div class="dol_row">'. $test_item['name'] .'</div>
                                             <div class="fio_row">'. $test_item['fio'] .'</div>
                                               <span class="progress-number"><b>'. $count_test_fio_fact .'</b>/'.$count_test_fio_target.'</span>
@@ -363,7 +363,7 @@ FORM_NOW.doc_status_now,
                                                 <div class="progress_line">
                                                <div class="progress-bar progress-bar-aqua" style="width: '. $fio_test_proc .'%"></div>
                                             </div>
-                                            <div class="people_report" report_type="test" emp_id="'. $emp .'" ><img src="../../templates/simple_template/images/list.svg"></div>
+                                            <div class="people_report" report_type="test"><img src="../../templates/simple_template/images/list.svg"></div>
                                             </div>';
 
 
@@ -414,13 +414,13 @@ FORM_NOW.doc_status_now,
             $test_target = $test_target + $doc_count_all;
             $test_proc = round($test_fact/$test_target*100);
             $node_report_test .= '<div class="progress-group" level="'. $level .'" left_key="'. $left_key .'" right_key="'. $right_key .'" fact="'. $test_fact .'" target="'. $test_target .'"> ';
-            $node_report_test .=     '<div class="progress-text-row"> ';
+            $node_report_test .=     '<div class="progress-text-row click_area"> ';
             $node_report_test .=         '<span class="progress-text">'. $name .'</span>';
             $node_report_test .=         '<span class="progress-number"><b>'. $test_fact .'</b>/'. $test_target .'</span>';
             $node_report_test .=     '</div> ';
             $node_report_test .=     '<div class="progress_line">';
             $node_report_test .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$test_proc.'%"></div>';
-            $node_report_test .=     '</div> <div class="icon"><img src="../../templates/simple_template/images/people.svg"></div>';
+            $node_report_test .=     '</div> <div class="icon"><img src="../../templates/simple_template/images/tasks.svg"></div>';
             $node_report_test .=     '<div class="people none progress-group"><div class="people_title">Сотрудники</div>'.$test_fio_html .'</div>';
             $node_report_test .= '</div>';
 

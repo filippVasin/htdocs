@@ -89,21 +89,33 @@ $(document).ready(function() {
 
     // логика дашборда по отделам
     // расскрываем отдел
-    $(document).on('click','.look_off',function() {
-        $(this).addClass("look_on");
-        $(this).removeClass("look_off");
-        var parent = $(this).closest(".parent");
+    //$(document).on('click','.look_off',function() {
+    //    $(this).addClass("look_on");
+    //    $(this).removeClass("look_off");
+    //    var parent = $(this).closest(".parent");
+    //
+    //    $(parent).children('.progress-group').removeClass('none');
+    //});
+    //// сворачеваем отдел
+    //$(document).on('click','.look_on',function() {
+    //    $(this).addClass("look_off");
+    //    $(this).removeClass("look_on");
+    //
+    //    var parent = $(this).closest(".parent");
+    //    $(parent).children('.progress-group').addClass('none');
+    //});
 
-        $(parent).children('.progress-group').removeClass('none');
+    $(document).on('click','.click_area',function() {
+        var parent = $(this).closest(".progress-group");
+        if($(this).hasClass("look")){
+            $(this).removeClass("look");
+            $(parent).children('.progress-group').addClass('none');
+        } else {
+            $(this).addClass("look");
+            $(parent).children('.progress-group').removeClass('none');
+        }
     });
-    // сворачеваем отдел
-    $(document).on('click','.look_on',function() {
-        $(this).addClass("look_off");
-        $(this).removeClass("look_on");
 
-        var parent = $(this).closest(".parent");
-        $(parent).children('.progress-group').addClass('none');
-    });
 
 
 
@@ -219,9 +231,6 @@ $(document).ready(function() {
             }
         });
 
-
-
-
     }
 
 
@@ -238,8 +247,10 @@ $(document).ready(function() {
     });
 
     // показать/скрываем отчёт по сотруднику
-    $(document).on('click','.people_report',function(){
+    $(document).on('click','.fio_box',function(){
         var emp_id = $(this).attr('emp_id');
+        var dol = $(this).attr('dol');
+        var fio = $(this).attr('fio');
         var all_content = "";
         var report_type = "test_doc";
         $.ajax({
@@ -256,6 +267,8 @@ $(document).ready(function() {
                 if (request_result == "ok") {
                     $("#popup_report_emp_content").html(content);
                     $("#popup_report_emp_button").click();
+                    $("#popup_emp_fio").html(fio);
+                    $("#popup_emp_dol").html(dol);
                 }
             }
         });

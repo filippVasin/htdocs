@@ -27,24 +27,21 @@ $(document).ready(function() {
                 if(login_result == 'company'){
                     setTimeout(function(){
                         window.location = "/main";
-                    }, 10);
+                    }, 0);
                 }
 
                 // Если сотрудник не прошол материалы, идём их смотреть
                 if(login_result == 'employee'){
                     setTimeout(function(){
                         window.location = "/rover";
-                    }, 10);
+                    }, 0);
                 }
 
-                ////// Если сотрудник прошол материалы, идём в тупик
-                //if(login_result == 'dead_end'){
-                //    setTimeout(function(){
-                //        window.location = "/dead_end";
-                //    }, 2000);
-                //}
+                if(login_result == 'error'){
+                    message(login_message, login_result);
+                }
 
-                message(login_message, login_result);
+
             },
             error: function () {
                 console.log('error');
