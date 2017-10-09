@@ -3,6 +3,7 @@
  */
 $(document).ready(function() {
 
+
     // флаги док/тест
     var write_doc = 0;
     var go_to_testing = 0;
@@ -49,6 +50,8 @@ $(document).ready(function() {
                     $('#test_block').fadeIn(0);
                     $('#content_box').html(content);
                     $(".logo").css("line-height","70px");
+                    $("table").addClass("table");
+
 
 
                 }
@@ -56,6 +59,8 @@ $(document).ready(function() {
                 if(str.length > 73){
                     $(".info_box_doc").css("font-size", "11px");
                 }
+
+
 
                 message(request_message, request_result);
             },
@@ -85,7 +90,9 @@ $(document).ready(function() {
         $('.progress_fact').html(answer_count);
         $(".progress_bar_item").each(function(index) {
             if(index<answer_count) {
-                $(this).css("background-color", "#00BCD4");
+                $(this).css("color", "#00a65a");
+                $('i', this).removeClass('fa-circle-o');
+                $('i', this).addClass('fa-check-circle-o');
             }
         });
         // шапокляк end
@@ -189,6 +196,13 @@ $(document).ready(function() {
                     $('#test_block').fadeIn(0);
                     $('#content_box').html(content);
                     $("html, body").animate({ scrollTop: 0 }, 0);
+
+                    if($(window).width()<=1200) {
+                        var height = $("#progress_box").height();
+                        $(".up").css("top", height);
+                        $(".down").css("top", height);
+                        $(".navbar").css("margin-top", height - 80);
+                    }
                 }
 
                 var form = result.form;
@@ -243,7 +257,7 @@ $(document).ready(function() {
 
     // скрипт для progress_bar_line
     $(window).on("scroll resize", function() {
-        var proc = $(window).scrollTop() / ($(document).height() - $(window).height());
+        proc = $(window).scrollTop() / ($(document).height() - $(window).height());
         $(".progress_bar_line_back").css({
             "width": (100 * proc | 0) + "%"
         });

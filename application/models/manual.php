@@ -42,12 +42,43 @@ class Model_manual
             // Создали кнопку
             $result .= $elements->button('Ок', 'go_to_testing', '', '', '', '');
             // информационный блок
-            $result .= $elements->info_box("Вы читаете:", $name, $_SESSION['employee_id'], $_SESSION['$employee_full_name']);
+//            $result .= $elements->info_box("Вы читаете:", $name, $_SESSION['employee_id'], $_SESSION['$employee_full_name']);
             // прогресс бар с количеством вопросов($need_count);
-            $result .= $elements->progress_bar_line();
+            $result .= '<div id="progress_box">
+                            <div id="progress_box_cell">
+                            <table class="table table-condensed" >
+                            <tbody>
+                            <tr>
+                              <td>Вы читаете:</td>
+                              <td>'. $name .'</td>
+                              <td>'. $_SESSION['employee_id'] .'</td>
+                              <td> '.  $_SESSION['$employee_full_name'] .' </td>
+                            </tr>
+                            <tr>
+                              <td colspan="3">
+                                <div class="progress progress-xs progress-striped active">
+                                  <div class="progress-bar progress-bar-primary progress_bar_line_back" style="width: 0%"></div>
+                                </div>
+                              </td>
+                              <td>
+                                <span class="badge bg-light-blue progress_line_proc">0%</span>
+                              </td>
+
+                            </tr>
+                          </tbody></table>
+
+                          <a class="btn btn-app up" id="up">
+                                Вверх <i class="fa fa-sort-up"></i>
+                              </a>
+
+                               <a class="btn btn-app down" id="down">
+                                <i class="fa fa-sort-desc"></i> Вниз
+                              </a>
+                                </div>
+                              </div>';
             // навигация
-            $result .= $elements->nav_button('Вверх', 'up');
-            $result .= $elements->nav_button('Вниз', 'down');
+//            $result .= $elements->nav_button('Вверх', 'up');
+//            $result .= $elements->nav_button('Вниз', 'down');
 
     } else {
         print_r($_SESSION);

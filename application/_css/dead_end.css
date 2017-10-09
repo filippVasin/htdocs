@@ -1,4 +1,6 @@
-
+#body {
+    margin-top: 80px!important;
+}
 
 .main-sidebar{
     display: none!important;
@@ -25,4 +27,23 @@
 }
 .page_title{
     color: #333333;
+}
+
+@media screen and (max-width: 767px) {
+    #body {
+        margin-top: 80px!important;
+    }
+    .page_title{
+        width: 100%;
+        font-size: 13px;
+        text-align: center;
+    }
+    .pril_start{
+        display: none!important;
+    }
+    .navbar-custom-menu{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }

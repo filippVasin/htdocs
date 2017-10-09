@@ -120,12 +120,15 @@ class elements{
     public function progress_bar( $items= ' '){
         $html = '';
         if ($items != ''){
-            $html = '<div class="progress_bar" id="progress_bar"><div class="progress_bar_items">';
-            $html .= '<div class="progress_count"><span class="progress_fact">0</span>/<span class="progress_plan">0</span></div>';
-            for ($i = 1; $i <= $items; $i++) {
-                $html.= '<div class="progress_bar_item"></div>';
+            $html = '<tr> <td colspan="3"> <div class="progress-striped active" style="padding-left: 16%">';
+             for ($i = 1; $i <= $items; $i++) {
+                $html.= '<span class="pull-right-container">
+                          <small class="progress_bar_item"><i class="fa fa-circle-o"></i></small>
+                        </span>';
             }
-            $html .= '</div></div>';
+            $html .= '</div></td>';
+            $html .= '<td><div><span class="progress_fact">0</span>/<span class="progress_plan">0</span></div></td>';
+            $html .= '</tr> </tbody></table>';
         }
         return $html;
     }

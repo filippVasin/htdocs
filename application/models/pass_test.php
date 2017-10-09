@@ -220,12 +220,39 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
                         // Создали кнопку
                         $result .= $elements->button('Ознакомлен', 'go_to_testing', '', '', '', 'test_id ="' . $test_id . '"');
                         // информационный блок
-                        $result .= $elements->info_box("Информированние", $doc_name, $_SESSION['employee_id'], $_SESSION['$employee_full_name']);
                         // прогресс бар с количеством вопросов($need_count);
-                        $result .= $elements->progress_bar_line();
-                        // навигация
-                        $result .= $elements->nav_button('Вверх', 'up');
-                        $result .= $elements->nav_button('Вниз', 'down');
+                        $result .= '<div id="progress_box">
+                                    <div id="progress_box_cell">
+                                    <table class="table table-condensed" >
+                                    <tbody>
+                                    <tr>
+                                      <td>Вы читаете:</td>
+                                      <td>'. $doc_name .'</td>
+                                      <td>'. $_SESSION['employee_id'] .'</td>
+                                      <td> '.  $_SESSION['$employee_full_name'] .' </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="3">
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar progress-bar-primary progress_bar_line_back" style="width: 0%"></div>
+                                        </div>
+                                      </td>
+                                      <td>
+                                        <span class="badge bg-light-blue progress_line_proc">0%</span>
+                                      </td>
+
+                                    </tr>
+                                  </tbody></table>
+
+                                  <a class="btn btn-app up" id="up">
+                            Вверх <i class="fa fa-sort-up"></i>
+                                      </a>
+
+                                       <a class="btn btn-app down" id="down">
+                                        <i class="fa fa-sort-desc"></i> Вниз
+                                      </a>
+                                        </div>
+                                      </div>';
 //           $result = mb_convert_encoding($result, 'utf-8', 'cp1251');
 
                         $result_array['message'] = 'Сначала ознакомитесь с содержанием представленного документа, а затем начнется тестирование.';
@@ -333,12 +360,28 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
         }
         global $test_name_box;
         // информационный блок
-        $result .= $elements->info_box("Тестированние",$_SESSION['test_name'],$_SESSION['employee_id'],$_SESSION['$employee_full_name']);
+        $result .= '<div id="progress_box">
+                            <div id="progress_box_cell">
+                            <table class="table table-condensed" >
+                            <tbody>
+                            <tr>
+                              <td>Тестированние:</td>
+                              <td>'. $_SESSION['test_name'] .'</td>
+                              <td>'. $_SESSION['employee_id'] .'</td>
+                              <td> '.  $_SESSION['$employee_full_name'] .' </td>
+                            </tr>';
         // прогресс бар с количеством вопросов($need_count)
         $result .= $elements->progress_bar($need_count);
         // навигация
-        $result .= $elements->nav_button('Вверх', 'up');
-        $result .= $elements->nav_button('Вниз', 'down');
+        $result .= '<a class="btn btn-app up" id="up">
+                                Вверх <i class="fa fa-sort-up"></i>
+                              </a>
+
+                               <a class="btn btn-app down" id="down">
+                                <i class="fa fa-sort-desc"></i> Вниз
+                              </a>
+                                </div>
+                              </div>';
         // Снопка для завершения тестированияж
         $result .= $elements->button('Проверить ответы', 'finish_test');
 //        $result .= $elements->button('Вернуться к инструкции', 'close_test');

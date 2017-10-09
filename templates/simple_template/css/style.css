@@ -152,7 +152,7 @@ body{
 }
 
 #body{
-    /*margin-top: 50px;*/
+    margin-top: 50px;
     /*padding: 10px 0px 25px 0px;*/
     /*text-align: center;*/
     /*float: left;*/
@@ -321,70 +321,35 @@ select{
 }
 
 .down{
+    color: #3c8dbc!important;
     border: 2px solid #91dc5a;
-    position: fixed;
+    position: absolute!important;
     height: 75px;
     width: 70px;
-    top: 150px;
-    left: calc(100% - 270px);
+    top: 140px;
+    right: 0;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    padding: 6px 12px!important;
 }
-.down>div {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
-.down>img{
-    height: 40px;
-    width: 40px;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
-
 
 
 .up{
+    color: #3c8dbc!important;
     border: 2px solid #91dc5a;
-    position: fixed;
+    position: absolute!important;
     height: 75px;
     width: 70px;
-    top: 70px;
-    left: calc(100% - 270px);
+    top: 75px;
+    right: 0;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
-.up>div {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
-.up>img{
-    margin-top: 5px;
-    height: 40px;
-    width: 40px;
-    -moz-transform: rotate(180deg); /* Для Firefox */
-    -ms-transform: rotate(180deg); /* Для IE */
-    -webkit-transform: rotate(180deg); /* Для Safari, Chrome, iOS */
-    -o-transform: rotate(180deg); /* Для Opera */
-    transform: rotate(180deg);
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
-.up:hover, .down:hover{
-    background-color: rgba(145, 220, 90, 0.2);
+#progress_box_cell {
+  position: relative;
+  min-height: 69px;
 }
 #progress_bar{
     position: fixed;
@@ -409,7 +374,6 @@ select{
     justify-content: center;
 }
 .progress_bar_item{
-    border: 1px solid #91dc5a;
     margin: 5px;
     margin-top: 0px;
     height: 10px;
@@ -417,30 +381,28 @@ select{
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
+    color: #f39c12;
+    font-size: 26px;
 }
 .progress_bar_title{
     font-size: 20px;
     color: #91dc5a;
 }
 
-#progress_bar_line{
-    width: 960px;
+#progress_box{
+    margin-left: 10%;
+    width: 80%;
     position: fixed;
-    left: calc(50% - 480px);
-    top: 41px;
-    height: 24px;
-    padding-top: 4px;
-    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    /*height: 70px;*/
     background-color: #fff;
-    display: flex;
     flex-direction: row;
-    border: 2px solid #91dc5a;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    z-index: 10;
+    z-index: 99999;
 }
-
+#progress_box .table{
+    margin-bottom: 0;
+}
 .progress_bar_title_line{
     font-size: 20px;
     color: #91dc5a;
@@ -503,13 +465,9 @@ select{
     left: 20px;
     top: 2px;
 }
-.progress_line_proc{
-    left: 20px;
-    position: absolute;
-    top: 2px;
-}
+
 #finish_test, #close_test, #go_to_testing {
-    margin-bottom: 100px!important;
+    margin-bottom: 20px!important;
 }
 
 .page_title{
@@ -972,4 +930,64 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     background-color: #1e282c!important;
 }
 
+
+
+
+/* меню */
+.navbar {
+    position: fixed;
+}
+.container>p {
+    margin-top: 130px!important;
+}
+.main-header {
+    position: fixed!important;
+    width: 100%!important;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .up{
+        left: calc(50% - 90px);
+    }
+    .down {
+        top: 75px;
+        left: calc(50% + 5px);
+    }
+    #body{
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    #progress_box {
+        min-height: 80px;
+    }
+    .up{
+        top: 80px;
+    }
+    .down {
+        top: 80px;
+    }
+    #progress_box{
+        margin-left: 0%;
+        width: 100%;
+    }
+    .main-header {
+        top: 0px!important;
+    }
+    body{
+        margin-top: 80px!important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .message {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+    }
+}
 

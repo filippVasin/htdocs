@@ -58,9 +58,10 @@ $(document).ready(function() {
         //window.location = "/pass_test";
     }
 
+
     // скрипт для progress_bar_line
     $(window).on("scroll resize", function() {
-        var proc = $(window).scrollTop() / ($(document).height() - $(window).height());
+        proc = $(window).scrollTop() / ($(document).height() - $(window).height());
         $(".progress_bar_line_back").css({
             "width": (100 * proc | 0) + "%"
         });

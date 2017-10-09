@@ -274,11 +274,11 @@
             <div class="cssload-cube cssload-c4"></div>
             <div class="cssload-cube cssload-c3"></div>
         </div><span class="logo-lg"><br><b>Labor</b>Pro</span><br><small>идет загрузка данных ...</small></div></div>
-<div class="vdox">
-<div id="video_box">
-
-</div>
-    </div>
+<!--<div class="vdox">-->
+<!--<div id="video_box">-->
+<!---->
+<!--</div>-->
+<!--    </div>-->
 
 <div id="header" class="sidebar">
     <?
@@ -627,12 +627,8 @@ if(isset($_SESSION['control_company_name'])){
     });
 
     $(document).ready(function() {
-
         $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
         $(".content-wrapper").css("min-height",($(window).height() - 60));
-
-        $("#vidoe_iframe").detach().appendTo("#video_box");
-        $("#go_to_testing").detach().appendTo("#video_box");
 
 
     });
