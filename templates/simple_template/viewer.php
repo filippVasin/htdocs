@@ -263,6 +263,31 @@
         echo $viewer_js;
     }
     ?>
+
+
+<!--    проверка - какое устройство-->
+    <script>
+        var isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function() {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+            }
+        };
+    </script>
 </head>
 
 <body>
@@ -628,7 +653,9 @@ if(isset($_SESSION['control_company_name'])){
 
     $(document).ready(function() {
         $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
-        $(".content-wrapper").css("min-height",($(window).height() - 60));
+        $(".content-wrapper").css("min-height",($(window).height()));
+
+        // если браузер мобильный:
 
 
     });

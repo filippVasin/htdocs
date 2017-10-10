@@ -211,11 +211,11 @@ FORM_NOW.doc_status_now,
    AND
    /* по фирме*/
 
-    route_doc.company_id = ". $_SESSION['control_company'] ."
+    route_doc.company_id = " . $_SESSION['control_company'] . "
     		AND employees.id = employees_items_node.employe_id
     		AND organization_structure.id = employees_items_node.org_str_id
-    		AND organization_structure.company_id = ". $_SESSION['control_company'] ."
-    		AND org_parent.company_id = ". $_SESSION['control_company'] ."
+    		AND organization_structure.company_id = " . $_SESSION['control_company'] . "
+    		AND org_parent.company_id = " . $_SESSION['control_company'] . "
 	     AND
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
@@ -229,7 +229,16 @@ FORM_NOW.doc_status_now,
                  ORDER BY EMPLOY";
 
 //        echo $sql;
+
+        $timeSQL = 0;
+        $timePHP = 0;
+
+        $startSQL = microtime(true);
         $test_array = $db->all($sql);
+        $endSQL = microtime(true) - $startSQL;
+        $timeSQL += $endSQL;
+
+        $startPHP = microtime(true);
         $test_target = 0;
         $test_fact = 0;
         $doc_count_all = 0;// количество документов всего
@@ -248,6 +257,10 @@ FORM_NOW.doc_status_now,
             }
         }
 
+        $endPHP = microtime(true) - $startPHP;
+        $timePHP += $endPHP;
+
+
         // считаем законьченные документы
          $sql="SELECT *
         FROM form_status_now,employees_items_node,organization_structure
@@ -255,7 +268,12 @@ FORM_NOW.doc_status_now,
         AND form_status_now.author_employee_id = employees_items_node.employe_id
         AND employees_items_node.org_str_id = organization_structure.id
         AND organization_structure.company_id =". $_SESSION['control_company'];
+        $startSQL = microtime(true);
         $result= $db->all($sql);
+        $endSQL = microtime(true) - $startSQL;
+        $timeSQL += $endSQL;
+
+        $startPHP = microtime(true);
         $doc_count_end = 0;
         foreach($result as $item){
             ++$doc_count_end;
@@ -387,9 +405,10 @@ FORM_NOW.doc_status_now,
 
             $test_fio_html .='</div>';
 
+            $endPHP = microtime(true) - $startPHP;
+            $timePHP += $endPHP;
 
             // документы
-
             $sql="SELECT *
                     FROM form_status_now,employees_items_node,organization_structure
                     LEFT JOIN organization_structure AS parent_org ON parent_org.id = ". $dir_array_item ."
@@ -399,7 +418,14 @@ FORM_NOW.doc_status_now,
                     AND organization_structure.right_key <= parent_org.right_key
                     AND form_status_now.step_id is not NULL
                     AND organization_structure.company_id = ". $_SESSION['control_company'];
+
+            $startSQL = microtime(true);
             $result= $db->all($sql);
+            $endSQL = microtime(true) - $startSQL;
+            $timeSQL += $endSQL;
+
+
+            $startPHP = microtime(true);
             $doc_count_end = 0;
             foreach($result as $item){
                 ++$doc_count_end;
@@ -424,13 +450,17 @@ FORM_NOW.doc_status_now,
             $node_report_test .=     '<div class="people none progress-group"><div class="people_title">Сотрудники</div>'.$test_fio_html .'</div>';
             $node_report_test .= '</div>';
 
-
+            $endPHP = microtime(true) - $startPHP;
+            $timePHP += $endPHP;
         }
 
 
         $html = str_replace('%node_report_test%', $node_report_test, $html);
 //        $html = str_replace('%node_report_doc%', $node_report_doc, $html);
 
+
+        $result_array['timePHP'] = $timePHP;
+        $result_array['timeSQL'] = $timeSQL;
         $result_array['content'] = $html;
         $result_array['status'] = "ok";
         $result = json_encode($result_array, true);

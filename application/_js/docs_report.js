@@ -217,23 +217,27 @@ $(document).ready(function() {
             .appendTo(
             table.column(colIdx).footer()
         )
-            .on( 'click','.li_select', function () {
+        select.closest("th")
+            .on( 'change',".dropdownmenu", function () {
                 table
                     .column( colIdx )
-                    .search( $(this).attr('data_select'))
+                    .search( $(this).val())
                     .draw();
             } );
-        var html ='<li class = "li_select" data_select = "">ВСЁ</li>';
+
+        var html ='<option class = "li_select" value= "" data_select = "">ВСЁ</option>';
+
         table
             .column( colIdx )
             .cache( 'search' )
             .sort()
             .unique()
             .each( function ( d ) {
-                html = html + '<li class = "li_select" data_select = "'+d+'">'+d+'</li>';
-            } );
+                html = html + '<option class = "li_select" value= "'+d+'" data_select = "'+d+'">'+d+'</option>';
 
-        select.append('<div class="dropdownmenu none"><div class="ranges"><ul>' +html +'</ul> <div class="range_inputs"> </div> </div> </div>');
+            } );
+        var parent= $(select).closest("th");
+        parent.append('<select class="dropdownmenu none">' +html +'</select> ');
 
     } );
 
@@ -242,35 +246,46 @@ $(document).ready(function() {
         if($(this).hasClass("open_select")){
             $(this).removeClass("open_select");
 
-            $(".dropdownmenu").addClass("none");
-
+            var parent= $(this).closest("th");
+            var chil = $(parent).children(".dropdownmenu");
+            chil.addClass("none");
         } else {
             $(this).addClass("open_select");
 
             $(".dropdownmenu").addClass("none");
-            var chil = $(this).children(".dropdownmenu");
+            var parent= $(this).closest("th");
+            var chil = $(parent).children(".dropdownmenu");
             chil.removeClass("none");
         }
     });
 
-    // datapickers
-    $('#datepicker_to').datepicker({
-        language: "ru",
-        autoclose: true
-    }).on('hide', function(e) {
-        date_from = $('#datepicker_from').val();
-        date_to = $('#datepicker_to').val();
-        select();
-    });
 
-    $('#datepicker_from').datepicker({
-        language: "ru",
-        autoclose: true
-    }).on('hide', function(e) {
-        date_to = $('#datepicker_to').val();
-        date_from = $('#datepicker_from').val();
-        select();
-    });
+
+    // проверка с какого устройтства вошли
+    if(isMobile.any()){
+        $("#datepicker_to").attr("type","date");
+        $("#datepicker_from").attr("type","date");
+    } else {
+        // datapickers
+        $('#datepicker_to').datepicker({
+            language: "ru",
+            autoclose: true
+        }).on('hide', function(e) {
+            date_from = $('#datepicker_from').val();
+            date_to = $('#datepicker_to').val();
+            select();
+        });
+
+        $('#datepicker_from').datepicker({
+            language: "ru",
+            autoclose: true
+        }).on('hide', function(e) {
+            date_to = $('#datepicker_to').val();
+            date_from = $('#datepicker_from').val();
+            select();
+        });
+    }
+
 
 
 

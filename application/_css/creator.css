@@ -61,7 +61,7 @@ background-image: url('../../templates/simple_template/images/select_remove.png'
     right: -5px;
 }
 
-input[type="text"],input[type="date"] {
+input[type="text"],input[type="date"],input[type="email"] {
     outline: none;
     padding-left: 13px;
     padding-right: 13px;
@@ -247,4 +247,49 @@ ul {
     position: fixed;
     bottom: 40px;
     left: calc(50% - 100px);
+}
+.buttom_input{
+    position: relative;
+    padding-left: 13px;
+    padding-right: 13px;
+    margin-left: 4px;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-color: #d2d6de;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    display: block;
+    width: 348px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border: 1px solid #ccc;
+    background-color: #fff!important;
+    text-align: left;
+    margin: 5px auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.buttom_input:before {
+    content: attr(title);
+    top: -1px;
+    left: -114px;
+    width: 115px;
+    height: 34px;
+    position: absolute;
+    background-color: #ffffff;
+    font-size: 12px;
+    text-align: right;
+    border: 1px solid #ccc;
+    padding-right: 3px;
+    box-sizing: border-box;
+    line-height: 34px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }

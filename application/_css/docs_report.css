@@ -75,16 +75,16 @@ ul {
 
 .dropdownmenu{
     position: absolute;
-    color: inherit;
+    color: #666;
     background-color: #fff;
     border-radius: 4px;
-    width: 278px;
+    /* width: 278px; */
     padding: 4px;
     margin-top: 1px;
-    top: -405px;
-    left: -115px;
+    top: -10px;
+    left: -15px;
     overflow: scroll;
-    height: 400px;
+    /* height: 400px; */
     -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);
     box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);

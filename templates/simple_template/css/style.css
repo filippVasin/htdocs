@@ -944,7 +944,9 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     position: fixed!important;
     width: 100%!important;
 }
-
+#header{
+    padding-bottom: 0px!important;
+}
 
 @media screen and (max-width: 1000px) {
     .up{

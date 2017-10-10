@@ -454,14 +454,16 @@ function mails_send(){
                 $send_mailer->isHTML(true);
                 $send_mailer->Subject = "Охрана Труда";
                 $send_mailer->Body = $today . "<br>" . $item["mail_body"];
-				
-				if (!$send_mailer->send()) {
-					$error = $send_mailer->ErrorInfo;
-					echo 'Mailer Error: ' . $error;
-				} else {
-					echo 'Message sent!';
-				}
-                $send_mailer->ClearAddresses();
+                if($email != "mkocherova@nskas.ru") {
+                    if (!$send_mailer->send()) {
+                        $error = $send_mailer->ErrorInfo;
+                        echo 'Mailer Error: ' . $error;
+                    } else {
+                        echo 'Message sent!';
+                    }
+                }
+                    $send_mailer->ClearAddresses();
+
             }
         }
     }

@@ -576,18 +576,21 @@ $(document).ready(function() {
         }
     });
 
-
-
+    // проверка с какого устройтства вошли
+    if(isMobile.any()){
+        $("#form_work_start").attr("type","date");
+        $("#form_birthday").attr("type","date");
+    } else {
+        $('#form_birthday').datepicker({
+            language: "ru",
+            autoclose: true
+        });
+        $('#form_work_start').datepicker({
+            language: "ru",
+            autoclose: true
+        });
+    }
     // datapickers
-    $('#form_birthday').datepicker({
-        language: "ru",
-        autoclose: true
-    });
-
-    $('#form_work_start').datepicker({
-        language: "ru",
-        autoclose: true
-    });
 
 });
 

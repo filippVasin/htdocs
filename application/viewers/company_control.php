@@ -62,7 +62,7 @@
             </div>
             <div class="modal-body" id="popup_report_emp_content" style="min-height: 90px">
                 <div class="users"></div>
-                <input type="text" class="form-control" id="plus_test_users_couple_input" placeholder="email">
+                <input type="email" class="form-control" id="plus_test_users_couple_input" placeholder="email">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary"  id="create_test_users_couple">Создать</button>

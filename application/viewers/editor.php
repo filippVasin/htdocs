@@ -34,48 +34,6 @@
 </div>
 
 
-<!--<div id="edit_popup_employees" item_id="">-->
-<!--    <div class="canvas" style="padding-top: 20px; box-sizing: border-box;">-->
-<!--    <div style="position: absolute; top: 20px; left: 48px">ID: <span id="title_employees_item_id"></span></div>-->
-<!--    <div class="input_name_row">-->
-<!--        <label>Фамилия</label>-->
-<!--        <input type="text" class="edit_popup_input" id="edit_popup_input_surname" placeholder="Фамилия">-->
-<!--    </div>-->
-<!--    <div class="input_name_row">-->
-<!--        <label>Имя</label>-->
-<!--        <input type="text" class="edit_popup_input" id="edit_popup_input_name" placeholder="Имя">-->
-<!--    </div>-->
-<!--    <div class="input_name_row">-->
-<!--        <label>Отчество</label>-->
-<!--        <input type="text" class="edit_popup_input"  id="edit_popup_input_second_name" placeholder="Отчество">-->
-<!--    </div>-->
-<!--    <div class="input_name_row">-->
-<!--        <label>Дата трудоустройства</label>-->
-<!--        <input type="text" class="edit_popup_input"  id="edit_popup_input_start_date" placeholder="Дата трудоустройства">-->
-<!--    </div>-->
-<!--    <div class="input_name_row">-->
-<!--        <label>Дата рождения</label>-->
-<!--        <input type="text" class="edit_popup_input"  id="edit_popup_input_birthday" placeholder="Дата рождения">-->
-<!--    </div>-->
-<!--    <div class="input_name_row">-->
-<!--        <label>Статус</label>-->
-<!--        <input type="text" class="edit_popup_input"  id="edit_popup_input_status" placeholder="Статус">-->
-<!--    </div>-->
-<!--        <div class="input_name_row">-->
-<!--            <label>Табельный номер</label>-->
-<!--            <input type="text" class="edit_popup_input"  id="edit_popup_input_personnel_number" placeholder="Табельный номер">-->
-<!--        </div>-->
-<!--    <div class="button_row">-->
-<!--        <div class="button" id="repass_user_mix">Сменить пароль</div>-->
-<!--        <div class="button" id="delete_emp_mix">Уволить</div>-->
-<!--        <div class="button none" id="add_emp_mix">Восстановить в должности</div>-->
-<!--    </div>-->
-<!--    <div class="button_row">-->
-<!--        <div class="button" id="save_popup_input_employees">Сохранить</div>-->
-<!--        <div class="button" id="cancel_popup_input_employees">Отмена</div>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--</div>-->
 
 
 <button id="edit_popup_employees_button" class="none" data-toggle="modal" data-target="#edit_popup_employees">
@@ -99,10 +57,10 @@
                     <input  class="form-control"  id="edit_popup_input_second_name" placeholder="Отчество">
 
                     <label>Дата трудоустройства</label>
-                    <input  class="form-control"  id="edit_popup_input_start_date" placeholder="Дата трудоустройства">
+                    <input type="text" class="form-control"  id="edit_popup_input_start_date" placeholder="Дата трудоустройства">
 
                     <label>Дата рождения</label>
-                    <input  class="form-control"  id="edit_popup_input_birthday" placeholder="Дата рождения">
+                    <input type="text" class="form-control"  id="edit_popup_input_birthday" placeholder="Дата рождения">
 
                     <label>Статус</label>
                     <input  class="form-control"  id="edit_popup_input_status" placeholder="Статус">
