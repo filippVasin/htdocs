@@ -37,7 +37,7 @@ class Model_company_control{
 
     // Добалвяем новую компанию;
     public function add(){
-        global $db, $elements;
+        global $db, $elements, $labro;
 
         $post_data = $this->post_array;
 
@@ -46,33 +46,203 @@ class Model_company_control{
         $new_company_director_surname = $post_data['new_company_director_surname'];
         $new_company_director_name = $post_data['new_company_director_name'];
         $new_company_director_second_name = $post_data['new_company_director_second_name'];
+        $new_company_director_email = $post_data['new_company_director_email'];
+        $new_group_company_name = $post_data['new_group_company_name'];
+        $org_id_group = $post_data['org_id_group'];
+        $type = $post_data['type'];
 
-        $sql = "INSERT INTO `company` (`name`, `short_name`, `author_user_id`, `director_surname`, `director_name`, `director_second_name`)
-            VALUES('".$name."', '".$short_name."', '".$_SESSION['user_id']."', '".$new_company_director_surname."', '".$new_company_director_name."', '".$new_company_director_second_name."');";
-        $db->query($sql);
-        $company_id = mysqli_insert_id($db->link_id);
+        // Группа компаний
+        if($type == 1){
+            $sql = "INSERT INTO `company` (`name`, `short_name`, `author_user_id`)
+            VALUES('".$new_group_company_name."', '".$new_group_company_name."', '".$_SESSION['user_id']."');";
+            $db->query($sql);
+            $company_id = mysqli_insert_id($db->link_id);
 
-        $status = 1;
-        $type_id = 10;
-        $sql = "INSERT INTO `items_control` (`type_id`, `company_id`, `name`, `status`)
-            VALUES('". $type_id ."', '". $company_id ."', '". $name ."', '". $status ."');";
-        $db->query($sql);
-        $kladr_id = mysqli_insert_id($db->link_id);
+            $status = 1;
+            $type_id = 11;
+            $sql = "INSERT INTO `items_control` (`type_id`, `company_id`, `name`, `status`)
+            VALUES('". $type_id ."', '". $company_id ."', '". $new_group_company_name ."', '". $status ."');";
+            $db->query($sql);
+            $kladr_id = mysqli_insert_id($db->link_id);
 
-        $level = 0;
-        $left_key = 1;
-        $right_key = 2;
-        $parent = 0;
-        $items_control_id = 10;
-        $boss_type = 1;
-        $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`)
+            $level = 0;
+            $left_key = 1;
+            $right_key = 2;
+            $parent = 0;
+            $items_control_id = 11;
+            $boss_type = 1;
+            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`)
             VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
-        $db->query($sql);
+            $db->query($sql);
 
-        $result_array = array();
-        $result_array['status'] = 'ok';
-        $result_array['message'] = 'Компания '. $name .' успешно добавлена';
-        $result_array['new_item'] = $elements->company_item($name.' ('.$short_name.') / '.$new_company_director_surname.' '.$new_company_director_name.' '.$new_company_director_second_name, 'company_'.$company_id, 'off_company', '', 'company_id='.$company_id);
+            $result_array = array();
+            $result_array['status'] = 'ok';
+            $result_array['message'] = 'Группа компаний '. $new_group_company_name .' успешно добавлена';
+            $result_array['new_item'] = $elements->company_item($new_group_company_name.' ('.$new_group_company_name.') / ', 'company_'.$company_id, 'off_company', '', 'company_id='.$company_id);
+
+        }
+
+        // Компания сама по себе
+        if($type == 2){
+
+            // занета ли почта
+            $sql = "SELECT `id` FROM `employees` WHERE `email` = '".$new_company_director_email."';";
+            $login_data = $db->row($sql);
+            if($login_data['id'] != ''){
+                $result_array = array();
+                $result_array['status'] = 'error';
+                $result_array['message'] = 'Такая почта уже занята';
+                $result = json_encode($result_array, true);
+            die($result);
+            }
+
+
+                $sql = "INSERT INTO `company` (`name`, `short_name`, `author_user_id`)
+                         VALUES('".$name."', '".$short_name."', '".$_SESSION['user_id']."');";
+            $db->query($sql);
+            $company_id = mysqli_insert_id($db->link_id);
+
+
+
+            $status = 1;
+            $type_id = 10;
+            $sql = "INSERT INTO `items_control` (`type_id`, `company_id`, `name`, `status`)
+            VALUES('". $type_id ."', '". $company_id ."', '". $name ."', '". $status ."');";
+            $db->query($sql);
+            $kladr_id = mysqli_insert_id($db->link_id);
+
+            $level = 0;
+            $left_key = 1;
+            $right_key = 4;
+            $parent = 0;
+            $items_control_id = 10;
+            $boss_type = 1;
+            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`)
+            VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
+            $db->query($sql);
+            $boss_parent_id = mysqli_insert_id($db->link_id);
+
+
+
+
+            // создали сотрудника
+            $status = 1;
+            $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`, `start_date`,`email`,`status`)
+            VALUES ('".$new_company_director_surname."', '".$new_company_director_name."', '".$new_company_director_second_name."', NOW(), '". $new_company_director_email ."', '". $status ."')";
+            $db->query($sql);
+            $employee_id = mysqli_insert_id($db->link_id);
+
+            // создали пользователя
+            $pass = $labro->generate_password();
+            $sql = "INSERT INTO `users` (`name`, `password`, `role_id`, `employee_id`, `full_name`)
+            VALUES ('".$new_company_director_email."', '".md5($pass)."', '4', '".$employee_id."', '".$new_company_director_surname."')";
+            $db->query($sql);
+
+            // создали должность - директор
+            $level = 1;
+            $left_key = 2;
+            $right_key = 3;
+            $items_control_id = 3;
+            $boss_type = 3;
+            $kladr_id = 69; // директор
+            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`)
+                VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$boss_parent_id."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
+            $db->query($sql);
+            $boss_org_id = mysqli_insert_id($db->link_id);
+
+            // наняли сотрудника на долность директора
+            $sql = "INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES ('". $employee_id ."', '". $boss_org_id ."');";
+            $db->query($sql);
+
+
+            $result_array = array();
+            $result_array['status'] = 'ok';
+            $result_array['message'] = 'Компания '. $name .' успешно добавлена';
+            $result_array['new_item'] = $elements->company_item($name.' ('.$short_name.') / '.$new_company_director_surname.' '.$new_company_director_name.' '.$new_company_director_second_name, 'company_'.$company_id, 'off_company', '', 'company_id='.$company_id);
+        }
+
+        // Компания в составе Группы
+        if($type == 3){
+
+            // занета ли почта
+            $sql = "SELECT `id` FROM `employees` WHERE `email` = '".$new_company_director_email."';";
+            $login_data = $db->row($sql);
+            if($login_data['id'] != ''){
+                $result_array = array();
+                $result_array['status'] = 'error';
+                $result_array['message'] = 'Такая почта уже занята';
+                $result = json_encode($result_array, true);
+                die($result);
+            }
+
+            $sql="SELECT organization_structure.right_key, organization_structure.company_id
+                    FROM  organization_structure
+                    WHERE organization_structure.id =".$org_id_group;
+            $group_data = $db->row($sql);
+            $company_id = $group_data['company_id'];
+            $group_right_key = $group_data['right_key'];
+
+
+            $sql = "UPDATE `organization_structure` SET `right_key` = (right_key + 4) WHERE `id` = {$org_id_group}";
+            $db->query($sql);
+
+            $status = 1;
+            $type_id = 10;
+            $sql = "INSERT INTO `items_control` (`type_id`, `company_id`, `name`, `status`)
+            VALUES('". $type_id ."', '". $company_id ."', '". $name ."', '". $status ."');";
+            $db->query($sql);
+            $kladr_id = mysqli_insert_id($db->link_id);
+
+            $level = 1;
+            $left_key = $group_right_key;
+            $right_key = $group_right_key + 3;
+            $parent = $org_id_group;
+            $items_control_id = 10;
+            $boss_type = 1;
+            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`)
+            VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
+            $db->query($sql);
+            $boss_parent_id = mysqli_insert_id($db->link_id);
+
+
+            // создали сотрудника
+            $status = 1;
+            $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`, `start_date`,`email`,`status`)
+            VALUES ('".$new_company_director_surname."', '".$new_company_director_name."', '".$new_company_director_second_name."', NOW(), '". $new_company_director_email ."', '". $status ."')";
+            $db->query($sql);
+            $employee_id = mysqli_insert_id($db->link_id);
+
+            // создали пользователя
+            $pass = $labro->generate_password();
+            $sql = "INSERT INTO `users` (`name`, `password`, `role_id`, `employee_id`, `full_name`)
+            VALUES ('".$new_company_director_email."', '".md5($pass)."', '4', '".$employee_id."', '".$new_company_director_surname."')";
+            $db->query($sql);
+
+            // создали должность - директор
+            $level = 2;
+            $left_key = $group_right_key + 1;
+            $right_key = $group_right_key + 2;
+            $items_control_id = 3;
+            $boss_type = 3;
+            $kladr_id = 69; // директор
+            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`)
+                VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$boss_parent_id."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
+            $db->query($sql);
+            $boss_org_id = mysqli_insert_id($db->link_id);
+
+            // наняли сотрудника на долность директора
+            $sql = "INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES ('". $employee_id ."', '". $boss_org_id ."');";
+            $db->query($sql);
+
+
+
+            $result_array = array();
+            $result_array['status'] = 'ok';
+            $result_array['message'] = 'Компания '. $name .' успешно добавлена';
+            $result_array['new_item'] = $elements->company_item($name.' ('.$short_name.') / '.$new_company_director_surname.' '.$new_company_director_name.' '.$new_company_director_second_name, 'company_'.$company_id, 'off_company', '', 'company_id='.$company_id);
+        }
+
+
 
         $result = json_encode($result_array, true);
         die($result);
@@ -223,4 +393,24 @@ HERH;
         die($result);
 
     }
+
+    public function select_group_companys_item(){
+        global $db;
+
+        $sql="SELECT items_control.name, items_control.id, organization_structure.id AS org_id
+                FROM items_control, organization_structure
+                WHERE organization_structure.items_control_id = 11
+                AND organization_structure.kladr_id = items_control.id";
+        $group_companys = $db->all($sql);
+        $html = "<option value=0></option>";
+        foreach ($group_companys as $group_companys_item) {
+            $html .="<option value='". $group_companys_item['org_id'] ."' >". $group_companys_item['name'] ."</option>";
+        }
+
+        $result_array['content'] = $html;
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
 }

@@ -8,42 +8,92 @@ $(document).ready(function() {
     });
 
     $(document).on("click", "#add_new_company", function () {
-        var company_name = $('#new_company_name').val();
-        var company_short_name = $('#new_company_short_name').val();
-        var new_company_director_surname = $('#new_company_director_surname').val();
-        var new_company_director_name = $('#new_company_director_name').val();
-        var new_company_director_second_name = $('#new_company_director_second_name').val();
+        var flag = 0;
+        var type = 0;
+        var org_id_group = 0;
 
-        if(company_name == '' || company_short_name == '' || new_company_director_surname == '' || new_company_director_name == '' || new_company_director_second_name == ''){
-            message('Вы не заполнили все необходимые данные', 'error');
-            return;
+        // группа компаний
+        if($('#select_type_company').val() == "Группа Компаний"){
+
+            var new_group_company_name = $('#new_group_company_name').val();
+
+            if(new_group_company_name != ""){
+                flag = 1;
+                type = 1;// Группа Компаний
+            }
         }
 
-        $.ajax({
-            type: "POST",
-            url: "/company_control/add",
-            data: "company_name=" + company_name + "&company_short_name=" + company_short_name + "&new_company_director_surname=" + new_company_director_surname + "&new_company_director_name=" + new_company_director_name + "&new_company_director_second_name=" + new_company_director_second_name,
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var request_result = result.status;
-                var request_message = result.message;
-                var new_item = result.new_item;
+        // Компания
+        if($('#select_type_company').val() == "Организация"){
 
-                if(request_result == 'ok'){
-                    $('#company_list').prepend(new_item);
-                    $('#new_company_name').val('');
-                    $('#new_company_short_name').val('');
-                    $('#new_company_director_surname').val('');
-                    $('#new_company_director_name').val('');
-                    $('#new_company_director_second_name').val('');
-                    $('#show_add_company_form').click();
+            var company_name = $('#new_company_name').val();
+            var company_short_name = $('#new_company_short_name').val();
+            var new_company_director_surname = $('#new_company_director_surname').val();
+            var new_company_director_name = $('#new_company_director_name').val();
+            var new_company_director_second_name = $('#new_company_director_second_name').val();
+            var new_company_director_email = $('#new_company_director_email').val();
+
+
+            if(company_name != "" && company_short_name != "" && new_company_director_surname != "" && new_company_director_name != "" && new_company_director_second_name != "" ){
+
+                if($('#select_group_company').val() == "Компания сама по себе"){
+                    flag = 1;
+                    type = 2;// Компания сама по себе
                 }
+                if($('#select_group_company').val() == "Компания в составе Группы"){
 
-                message(request_message, request_result);
-            },
-            error: function () {
+                    org_id_group = $('#select_group_companys_item').val();
+                    if(org_id_group != 0){
+                        flag = 1;
+                        type = 3;// Компания в составе Группы
+                    }
+                }
             }
-        });
+        }
+
+
+
+        if(flag == 0){
+            message('Вы не заполнили все необходимые данные', 'error');
+        } else {
+
+            $.ajax({
+                type: "POST",
+                url: "/company_control/add",
+                data:{
+                    new_group_company_name:new_group_company_name,
+                    company_name:company_name,
+                    company_short_name:company_short_name,
+                    new_company_director_surname:new_company_director_surname,
+                    new_company_director_name:new_company_director_name,
+                    new_company_director_second_name:new_company_director_second_name,
+                    new_company_director_email:new_company_director_email,
+                    org_id_group:org_id_group,
+                    type:type
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    var request_message = result.message;
+                    var new_item = result.new_item;
+
+                    if (request_result == 'ok') {
+                        $('#company_list').prepend(new_item);
+                        $('#new_company_name').val('');
+                        $('#new_company_short_name').val('');
+                        $('#new_company_director_surname').val('');
+                        $('#new_company_director_name').val('');
+                        $('#new_company_director_second_name').val('');
+                        $('#show_add_company_form').click();
+                        $("#cancel_add_new_company").click();
+                    }
+
+                    message(request_message, request_result);
+                },
+                error: function () {
+                }
+            });
+        }
     });
 
     $(document).on("click", ".company_turn_control", function () {
@@ -122,44 +172,58 @@ $(document).ready(function() {
         }
     });
 
+    $(document).on( 'change',"#select_type_company", function () {
+       var type = $(this).val();
+        if(type == "Организация"){
+            $("#item_company").removeClass("none");
+            $("#group_companys").addClass("none");
+        } else {
+            $("#group_companys").removeClass("none");
+            $("#item_company").addClass("none");
+        }
+    });
+
+    $(document).on( 'click',"#cancel_add_new_company", function () {
+        $("#select_type_company").val(0);
+        $("#select_group_company").val(0);
+        $("#item_company").addClass("none");
+        $("#group_companys").addClass("none");
+        $("#add_department_form input").val("");
+    })
+    $(document).on( 'change',"#select_group_company", function () {
+        var group = $(this).val();
+        if(group == "Компания в составе Группы"){
+            $("#select_group_companys_item_box").removeClass("none");
+            group_companys_item_content();
+        } else {
+            $("#select_group_companys_item").html("");
+            $("#select_group_companys_item_box").addClass("none");
+        }
+    });
 
 
 
 
+    function group_companys_item_content() {
+
+        $.ajax({
+            type: "POST",
+            url: "/company_control/select_group_companys_item",
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+
+                if(request_result == 'ok'){
+                    $("#select_group_companys_item").html(content);
+                }
+
+            },
+            error: function () {
+            }
+        });
+    }
 
 });
-
-
-//function copy(str){
-//    var tmp   = document.createElement('INPUT'), // Создаём новый текстовой input
-//        focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
-//
-//    tmp.value = str; // Временному input вставляем текст для копирования
-//
-//    document.body.appendChild(tmp); // Вставляем input в DOM
-//    tmp.select(); // Выделяем весь текст в input
-//    document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
-//    document.body.removeChild(tmp); // Удаляем временный input
-//    focus.focus(); // Возвращаем фокус туда, где был
-//}
-
-//document.addEventListener('DOMContentLoaded', e => {
-//    var input = document.querySelector('#input'),
-//    bCopy = document.querySelector('#bCopy'),
-//    log   = document.querySelector('#log');
-//
-//bCopy.addEventListener('click', e => {
-//    if(input.value){
-//    try{
-//        copy(input.value);
-//        log.style.color = 'green';
-//        log.innerHTML = 'Скопировано!';
-//    }catch(e){
-//        log.style.color = 'red';
-//        log.innerHTML = 'Ошибка!';
-//    }
-//}
-//});
-//});
 
 

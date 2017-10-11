@@ -218,8 +218,7 @@ FORM_NOW.doc_status_now,
     		AND org_parent.company_id = " . $_SESSION['control_company'] . "
 	     AND
     /* для всех сотрудников или только для конкретного */
-    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
-  ";
+    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)";
         // если сработал выбор по отделам
         if(($node_left_key!="")&&($node_right_key!="")){
             $sql.=" AND org_parent.left_key >= ". $node_left_key ."
@@ -456,7 +455,6 @@ FORM_NOW.doc_status_now,
 
 
         $html = str_replace('%node_report_test%', $node_report_test, $html);
-//        $html = str_replace('%node_report_doc%', $node_report_doc, $html);
 
 
         $result_array['timePHP'] = $timePHP;
@@ -483,12 +481,13 @@ FORM_NOW.doc_status_now,
 
 
 
-    public function journal(){
+    public function journal()
+    {
         global $db;
 
 
-        if(!(isset($_SESSION['control_company']))){
-            if($_SESSION['role_id'] == 1){
+        if (!(isset($_SESSION['control_company']))) {
+            if ($_SESSION['role_id'] == 1) {
                 header("Location:/company_control");
             } else {
                 header("Location:/login");
@@ -522,18 +521,18 @@ FORM_NOW.doc_status_now,
                     LEFT JOIN save_temp_files ON save_temp_files.id = local_alerts.save_temp_files_id
                     LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
 
-                    WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
+                    WHERE local_alerts.company_id = " . $_SESSION['control_company'] . "
 
                         AND local_alerts.initiator_employee_id = init_em.id
                         AND form_step_action.id = local_alerts.action_type_id
                         AND local_alerts.date_finish IS NULL
                          GROUP BY local_alerts.id";
-          $alert_every_days = $db->all($sql);
-          $count = 0;
-         foreach ($alert_every_days as $alert_every_day) {
-             // лимит
-             if($count < 7){
-                 $html .='<li>
+        $alert_every_days = $db->all($sql);
+        $count = 0;
+        foreach ($alert_every_days as $alert_every_day) {
+            // лимит
+            if ($count < 7) {
+                $html .= '<li>
                 <!-- todo text -->
                 <span class="text alert_row" action_type="' . $alert_every_day['action_type_id'] . '"
                                                     observer_em=' . $_SESSION['employee_id'] . '
@@ -545,19 +544,22 @@ FORM_NOW.doc_status_now,
                                                      name="' . $alert_every_day['fio'] . '"
                                                      local_id="' . $alert_every_day['id'] . '"
                                                       file_id="' . $alert_every_day['save_temp_files_id'] . '"
-                  style=" font-size: 13px;width: 75%;cursor: pointer;">'. $alert_every_day['fio'] ." / ". $alert_every_day['file'] .'</span>
+                  style=" font-size: 13px;width: 75%;cursor: pointer;">' . $alert_every_day['fio'] . " / " . $alert_every_day['file'] . '</span>
                 <!-- Emphasis label -->
-                    <small class="label label-danger" style="line-height: 31px;" ><i class="fa fa-clock-o"></i> '. date_create( $alert_every_day['date_create'])->Format('d-m-Y') .'</small>
+                    <small class="label label-danger" style="line-height: 31px;" ><i class="fa fa-clock-o"></i> ' . date_create($alert_every_day['date_create'])->Format('d-m-Y') . '</small>
                 <!-- General tools such as edit or delete-->
                 <div class="tools" style="display: none">
                     <i class="fa fa-edit"></i>
                     <i class="fa fa-trash-o"></i>
                 </div>
             </li>';
-             }
-             ++$count;
-         }
+            }
+            ++$count;
+        }
 
         return $html;
+
+
+
     }
 }

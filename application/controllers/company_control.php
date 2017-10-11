@@ -40,4 +40,12 @@ class Controller_company_control extends Controller{
 
         $this->model->plus_test_users_couple();
     }
+
+    public  function select_group_companys_item(){
+
+        $this->model->select_group_companys_item();
+
+    }
+
+
 }

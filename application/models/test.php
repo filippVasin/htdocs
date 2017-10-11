@@ -257,60 +257,6 @@ class Model_test
 
 
 
-
-        // заблокировали строки компании для парралельной модернизации
-//        $this->lock_company($_SESSION['control_company']);
-//
-//
-//        $sql = "SELECT * FROM lock_org_str WHERE id_lock_company =". $_SESSION['control_company'];
-//        $result = $db->row($sql);
-//        $status = $result['status'];
-//        if($status==0){
-//            // работаем
-//        } else {
-//            // ждём
-//        }
-        // нуменклатура узлов
-//        $kladr_id = 0;
-//        // тип узла
-//        $items_control_id = 3;
-//        // права доступа
-//        $boss_type = 1;
-//        //  в какую компанию добавляем узел
-//        $company_id = 14;
-//        // подитель нового узла
-//        $new_parent_id = 2;
-//        // добавляем узел
-////        $this->InsertNode($new_parent_id,$company_id,$kladr_id,$items_control_id,$boss_type);
-//
-//
-//        // Удаляемый узел узла
-//        $delete_item = 5;
-//        // Компания
-//        $company_id = 14;
-//        // Удаление узла
-////        $this->DeleteNode($delete_item, $company_id);
-//
-//        // новый родетель
-//        $new_parent = 125;
-//        // Компания
-//        $company_id = 14;
-//        // перемешаемый узел
-//        $move_item = 124;
-
-        // Перемешение узла
-//        $this->MoveNode($move_item,$new_parent,$company_id);
-        // Проверка дерева
-//        $this->TreeCheck($company_id);
-
-
-
-        // присвоить пароли и логины сотрудникам
-//        $this->creator_user_and_pass();
-
-        // разблокировали строки компании для модернизации
-//        $this->unlock_company($_SESSION['control_company']);
-
     }
 
     private  function MoveNode($move_item,$new_parent,$company_id){
@@ -520,4 +466,48 @@ class Model_test
         $sql = "UPDATE `lock_org_str` SET `status` = 0 WHERE `id_lock_company` = {$id_company}";
         $db->query($sql);
     }
+//заполнение фатхербэкапп
+    public function parent_org(){
+        global $db;
+    $sql="SELECT organization_structure.id AS child_id,  organization_structure.`level` AS child_level,
+            organization_structure.left_key AS child_left, organization_structure.right_key AS child_right,
+            Parent.id AS Parent_id,  Parent.`level` AS Parent_level,
+            Parent.left_key AS Parent_left, Parent.right_key AS Parent_right
+            FROM organization_structure
+            LEFT JOIN organization_structure AS Parent ON (organization_structure.left_key > Parent.left_key
+                                                                            AND
+                                                                            organization_structure.right_key < Parent.right_key
+                                                                            AND
+                                                                            organization_structure.`level` = (Parent.`level` +1)
+                                                                            AND
+                                                                            organization_structure.company_id = Parent.company_id
+                                                                            )
+            WHERE organization_structure.company_id = 15
+																";
+
+        $parent_array = $db->all($sql);
+        foreach ($parent_array as $parent_item) {
+            if($parent_item['Parent_id']== NULL){
+                $parent = 0;
+            } else {
+                $parent = $parent_item['Parent_id'];
+            }
+            $sql = "UPDATE `organization_structure` SET `parent` = {$parent} WHERE `id` = {$parent_item['child_id']}";
+            $db->query($sql);
+        }
+
+    }
+
+
+    public function test($doc_link){
+        if ((isset($doc_link)) && (!empty($doc_link)) && (is_numeric($doc_link))) {
+            echo "число";
+            $id_category = $doc_link;
+        } else {
+            echo "Не число!";
+            $id_category = 43;
+        }
+        return $id_category;
+    }
+
 }

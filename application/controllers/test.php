@@ -1,16 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 26.02.2017
- * Time: 15:07
- */
+
 class Controller_test extends Controller{
 
     public function exec_default(){
-        // запускаем тестовый метод
-        $this->model->info();
-    }
+        // выводим info
+//        $this->model->info();
 
+        // заполняем колонку родители
+//        $this->model->parent_org();
+
+
+
+//        $doc_link = $this->get_params;
+//        $this->model->test($doc_link);
+
+    }
 
 }

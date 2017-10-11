@@ -31,7 +31,7 @@ $(document).ready(function() {
             $('#test_report .node_report>.progress-group').removeClass('none');
 
             // плавные переход к открывшемуся блоку
-            var destination = $("#test_report").offset().top;
+            var destination = $("#test_report").offset().top-80;
             jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 800);
             return false;
 
@@ -87,23 +87,6 @@ $(document).ready(function() {
     });
 
 
-    // логика дашборда по отделам
-    // расскрываем отдел
-    //$(document).on('click','.look_off',function() {
-    //    $(this).addClass("look_on");
-    //    $(this).removeClass("look_off");
-    //    var parent = $(this).closest(".parent");
-    //
-    //    $(parent).children('.progress-group').removeClass('none');
-    //});
-    //// сворачеваем отдел
-    //$(document).on('click','.look_on',function() {
-    //    $(this).addClass("look_off");
-    //    $(this).removeClass("look_on");
-    //
-    //    var parent = $(this).closest(".parent");
-    //    $(parent).children('.progress-group').addClass('none');
-    //});
 
     $(document).on('click','.click_area',function() {
         var parent = $(this).closest(".progress-group");
