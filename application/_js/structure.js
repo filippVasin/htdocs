@@ -2,6 +2,8 @@
  * Created by root on 13.02.2017.
  */
 $(document).ready(function() {
+    var id_node_plus = 0;
+
 
     // всё дерево
     $(document).on("click", "#whole_tree", function () {
@@ -38,6 +40,7 @@ $(document).ready(function() {
                         }
                     });
                     sort_stucture();
+                    add_node_button();
                 }
             },
             error: function () {
@@ -120,16 +123,16 @@ $(document).ready(function() {
     });
 
 
-    $(document).on('click','.open_item',function(){
+    $(document).on('click','.title_item',function(){
+        var parent  = $(this).closest(".open_item");
+        if($(parent).hasClass("open_ul")){
+            $(parent).removeClass("open_ul");
 
-        if($(this).hasClass("open_ul")){
-            $(this).removeClass("open_ul");
-
-            $(this).siblings('ul').addClass('none');
+            $(parent).siblings('ul').addClass('none');
         } else {
-            $(this).addClass("open_ul");
+            $(parent).addClass("open_ul");
 
-            $(this).siblings('ul').removeClass('none');
+            $(parent).siblings('ul').removeClass('none');
         }
     });
 
@@ -145,7 +148,181 @@ $(document).ready(function() {
             }
         });
     }
-
-
     $("#whole_tree").click();
+
+
+    function add_node_button() {
+        $(".tree_item").each(function () {
+            var plus_button = '<i class="plus_item_button fa fa-plus"></i>';
+            if ($(this).hasClass("pluses")) {
+                var title_item = '<div class="title_item"> ' + $(this).html() + ' </div>' + plus_button;
+                $(this).html(title_item);
+            }
+        });
+    }
+
+
+
+    $(document).on('click','.plus_item_button',function(){
+        $("#plus_dol").addClass("none");
+        $("#plus_node").addClass("none");
+        $("#plus_node_kladr").addClass("none");
+        $('#select_dol_item').val(0);
+        $('#select_node_item').val(0);
+        $('#select_type_pluse').val(0);
+        $("#select_kladr_item").val(0);
+        var parent  = $(this).closest(".tree_item ");
+        id_node_plus = parent.attr("id_item");
+        $("#add_department_form_button").click();
+    });
+
+
+
+    $(document).on( 'change',"#select_type_pluse", function () {
+        var type = $(this).val();
+        if(type == 1){
+            $("#plus_dol").removeClass("none");
+            $("#plus_node_kladr").addClass("none");
+            $("#plus_node").addClass("none");
+            select_dol_list();
+        }
+        if(type == 2) {
+            $("#plus_node").removeClass("none");
+            $("#plus_dol").addClass("none");
+            select_node_list();
+        }
+    });
+
+    $(document).on( 'change',"#select_node_item", function () {
+            $("#plus_node_kladr").removeClass("none");
+            select_kladr_list()
+
+    });
+
+
+
+
+    function select_dol_list() {
+        $.ajax({
+            type: "POST",
+            url: "/structure/select_dol_list",
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+
+                if(request_result == 'ok'){
+                    $("#select_dol_item").html(content);
+                }
+
+            },
+            error: function () {
+            }
+        });
+    }
+    function select_node_list() {
+        $.ajax({
+            type: "POST",
+            url: "/structure/select_node_list",
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+
+                if(request_result == 'ok'){
+                    $("#select_node_item").html(content);
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+
+    function select_kladr_list(){
+        var kladr_type_id = $("#select_node_item").val();
+        $.ajax({
+            type: "POST",
+            url: "/structure/select_kladr_list",
+            data: {
+                    kladr_type_id:kladr_type_id
+             },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+
+                if(request_result == 'ok'){
+                    $("#select_kladr_item").html(content);
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+
+
+
+    $(document).on('click','#add_new_item',function(){
+        var flag = 1;
+        var type_plus = 0;
+        var select_dol = 0;
+        var select_node = 0;
+        var kladr_id = 0;
+
+        var parent_id = id_node_plus;
+        type_plus = $('#select_type_pluse').val();
+        select_dol = $('#select_dol_item').val();
+        select_node = $('#select_node_item').val();
+        kladr_id = $('#select_kladr_item').val();
+
+        if(type_plus == 0){
+            $("#select_type_pluse").css("border-color","red");
+            setTimeout("$('#select_type_pluse').css('border-color','#ccc')", 3000);
+            flag = 0;
+        }
+        if((type_plus == 1) && (select_dol == 0)){
+            $("#select_dol_item").css("border-color","red");
+            setTimeout("$('#select_dol_item').css('border-color','#ccc')", 3000);
+            flag = 0;
+        }
+        if((type_plus == 2) && (select_node == 0)){
+            $("#select_node_item").css("border-color","red");
+            setTimeout("$('#select_node_item').css('border-color','#ccc')", 3000);
+            flag = 0;
+        }
+        if((type_plus == 2) && (kladr_id == 0)){
+            $("#select_node_item").css("border-color","red");
+            setTimeout("$('#select_node_item').css('border-color','#ccc')", 3000);
+            flag = 0;
+        }
+
+        if(flag == 1){
+            $.ajax({
+                type: "POST",
+                url: "/structure/add_item",
+                data: {
+                    type_plus:type_plus,
+                    select_dol:select_dol,
+                    select_node:select_node,
+                    kladr_id:kladr_id,
+                    parent_id:parent_id
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    var content = result.content;
+                    if(request_result == "ok") {
+                        $("#cancel_add_new_item").click();
+                    }
+                    message(content, request_result);
+                },
+                error: function () {
+                }
+            });
+        } else {
+            message("Введите нужные данные", "error");
+        }
+    });
+
+
 });

@@ -54,6 +54,7 @@ class elements{
         $html = '<div class="list_item" id="'.$id.'" style="'.$style.'" '.$option.'>';
         $html .= '<div style="vertical-align: middle;">';
         $html .= $this->button('Включить управление', '', 'company_turn_control '.$class, 'margin-right: 10px;margin-top: 5px;');
+        $html .= $this->button('Удалить компанию', '', 'company_delete ', 'margin-right: 10px;margin-top: 5px;');
         $html .= '</div>';
         $html .= '<div style="vertical-align: middle;">';
         $html .= $caption;

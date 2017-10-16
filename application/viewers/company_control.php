@@ -38,11 +38,13 @@
             <div class="modal-body" id="popup_report_emp_content" style="min-height: 90px">
                 <div class="form-group">
                     <label>Тип</label>
-                    <select class="form-control" id="select_type_company">
-                        <option value=0></option>
-                        <option value="Организация">Организация</option>
-                        <option value="Группа Компаний">Группа Компаний</option>
-                    </select>
+                    <div class="select_triangle">
+                        <select class="form-control " id="select_type_company">
+                            <option value=0></option>
+                            <option value="Организация">Организация</option>
+                            <option value="Группа Компаний">Группа Компаний</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group none" id="group_companys">
                     <label>Наименование Группы Компаний</label>
@@ -52,17 +54,21 @@
                 <div class="form-group none" id="item_company">
 
                     <label>Связи:</label>
-                    <select class="form-control" id="select_group_company">
-                        <option value=0></option>
-                        <option value="Компания сама по себе">Компания сама по себе</option>
-                        <option value="Компания в составе Группы">Компания в составе Группы</option>
-                    </select>
+                    <div class="select_triangle">
+                        <select class="form-control" id="select_group_company">
+                            <option value=0></option>
+                            <option value="Компания сама по себе">Компания сама по себе</option>
+                            <option value="Компания в составе Группы">Компания в составе Группы</option>
+                        </select>
+                    </div>
 
                     <div class="form-group none" id="select_group_companys_item_box">
                         <label>Группа Компаний:</label>
-                        <select class="form-control" id="select_group_companys_item">
+                        <div class="select_triangle">
+                            <select class="form-control" id="select_group_companys_item">
 
-                        </select>
+                            </select>
+                        </div>
                     </div>
 
                     <label>Наименование новой компании</label>

@@ -173,4 +173,44 @@ class labro
             }
         return $result_array;
     }
+
+    public function get_company($org_str) {
+        global $db;
+        $company = array();
+        $sql="Select organization_structure.company_id, org_company.id AS company_org_id,
+                items_control.name AS company_name,
+                org_boss.id AS boss_org_id,
+                boss_kladr.name AS boss_dol,
+                employees.surname, employees.name,employees.second_name, employees.email
+                FROM organization_structure
+                    LEFT JOIN organization_structure AS org_company ON (org_company.left_key < organization_structure.left_key
+                                                                                        AND
+                                                                                        org_company.right_key > organization_structure.right_key
+                                                                                        AND
+                                                                                        org_company.items_control_id = 10
+                                                                                        AND
+                                                                                        org_company.company_id = organization_structure.company_id)
+                    LEFT JOIN items_control ON items_control.id = org_company.kladr_id
+                    LEFT JOIN organization_structure AS org_boss ON (org_boss.left_key = (org_company.left_key + 1)
+                                                                                    AND
+                                                                                    org_company.company_id = org_boss.company_id)
+                    LEFT JOIN items_control AS boss_kladr ON boss_kladr.id = org_boss.kladr_id
+                    LEFT JOIN employees_items_node ON employees_items_node.org_str_id = org_boss.id
+                    LEFT JOIN employees ON employees_items_node.employe_id = employees.id
+                WHERE  organization_structure.id =".$org_str;
+        $result = $db->row($sql);
+
+        $company['company_id'] = $result["company_id"];
+        $company['company_org_id'] = $result['company_org_id'];
+        $company['company_name'] = $result['company_name'];
+        $company['boss_org_id'] = $result['boss_org_id'];
+        $company['boss_dol'] = $result['boss_dol'];
+        $company['surname'] = $result['surname'];
+        $company['name'] = $result['name'];
+        $company['second_name'] = $result['second_name'];
+        $company['email'] = $result['email'];
+
+        return $company;
+    }
+
 }

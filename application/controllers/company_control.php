@@ -47,5 +47,11 @@ class Controller_company_control extends Controller{
 
     }
 
+    public  function delete_company(){
+
+        $this->model->post_array = $this->post_params;
+
+        $this->model->delete_company();
+    }
 
 }

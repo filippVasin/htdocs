@@ -522,6 +522,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                 organization_structure.left_key,
                 organization_structure.right_key,
                 organization_structure.parent,
+                organization_structure.items_control_id,
                 employees.`status`,
                 employees_items_node.org_str_id as 'employee',
                 CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio
@@ -550,10 +551,15 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                     $item_html = '<ul class="none">';
                     foreach($tree as $tree_item) {
                         if($tree_item['parent']==$parent_id){
+
                             $left_key = str_pad($tree_item['left_key'] , 3, "0", STR_PAD_LEFT);
                             $right_key = str_pad($tree_item['right_key'] , 3, "0", STR_PAD_LEFT);
+                            $plus_class = "";
+                            if($tree_item['items_control_id'] != 3){
+                                $plus_class = "pluses";
+                            }
 
-                            $item_html .= '<li><div class="tree_item" level="' . $tree_item['level'] . '" parent="' . $tree_item['parent'] . '"id_item="' . $tree_item['id'] . '"left_key="' . $left_key . '"right_key="' . $right_key . '">' . $tree_item['erarh'] . '</div>';
+                            $item_html .= '<li><div class="tree_item ' .$plus_class .'" level="' . $tree_item['level'] .'" parent="' . $tree_item['parent'] . '"id_item="' . $tree_item['id'] . '"left_key="' . $left_key . '"right_key="' . $right_key . '">' . $tree_item['erarh'] . '</div>';
                             if ($tree_item['fio'] != "") {
                                 $item_html .= '<div class="tree_item_fio">' . $tree_item['fio'] . '</div>';
                             }

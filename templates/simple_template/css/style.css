@@ -948,6 +948,39 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     padding-bottom: 0px!important;
 }
 
+/*.select_triangle{*/
+    /*position: relative;*/
+
+/*}*/
+/*.select_triangle:before{*/
+    /*content: 'fa fa-chevron-down';*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 30px;*/
+    /*height: 30px;*/
+    /*color: red;*/
+/*}*/
+
+
+.select_triangle {
+    position: relative;
+    /*display: inline-block;*/
+}
+.select_triangle:after {
+    content: "▼";
+    font-size: 12px;
+    position: absolute;
+    color: #666;
+    right: 10px;
+    top: 9px;
+    z-index: 1;
+    text-align: center;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+
+
 @media screen and (max-width: 1000px) {
     .up{
         left: calc(50% - 90px);
@@ -992,4 +1025,3 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
         z-index: 9999;
     }
 }
-

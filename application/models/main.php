@@ -17,6 +17,8 @@ class Model_main{
     public function start(){
         global $db;
 
+//        print_r($_SESSION);
+
         $node_left_key = $this->post_array['node_left_key'];
         $node_right_key = $this->post_array['node_right_key'];
         // перенапровление если нет подключенной компании
@@ -108,7 +110,7 @@ HERE;
 
 
 
-        $sql="SELECT
+        $sql="(SELECT
 /* Вывод даннных */
 FORM_CHECK.form_id AS doc_all,
 FORM_NOW.doc_status_now,
@@ -224,8 +226,9 @@ FORM_NOW.doc_status_now,
             $sql.=" AND org_parent.left_key >= ". $node_left_key ."
                     AND org_parent.right_key <= ". $node_right_key ;
         }
+
         $sql.="  GROUP BY EMPLOY, STEP
-                 ORDER BY EMPLOY";
+                 ORDER BY EMPLOY)";
 
 //        echo $sql;
 
@@ -233,6 +236,39 @@ FORM_NOW.doc_status_now,
         $timePHP = 0;
 
         $startSQL = microtime(true);
+        $sqlTwo=" UNION
+        (SELECT
+                employees_items_node.id AS doc_all,
+                employees_items_node.id AS doc_status_now,
+                employees_items_node.id AS EMPLOY,
+                employees_items_node.id AS fio,
+                employees_items_node.id AS STEP,
+                employees_items_node.id AS periodicity,
+                employees_items_node.id AS history_docs,
+                employees_items_node.id AS date_finish,
+                employees_items_node.id AS StartStep,
+                employees_items_node.id AS FinishStep,
+                employees_items_node.id AS name,
+                organization_structure.id AS dir_id,
+                organization_structure.left_key,
+                organization_structure.right_key,
+                organization_structure.`level`,
+                 CONCAT_WS (' - ',items_control_types.name, items_control.name) AS dir,
+                employees_items_node.id  AS manual,
+                employees_items_node.id  AS SaveTempID
+                    FROM (organization_structure, items_control_types, items_control)
+                 LEFT JOIN employees_items_node ON employees_items_node.employe_id = 0
+                WHERE items_control.id = organization_structure.kladr_id
+                AND organization_structure.items_control_id = items_control_types.id
+                AND organization_structure.company_id = " . $_SESSION['control_company'] . "
+                AND organization_structure.`level` = 1
+                AND organization_structure.items_control_id = 10)
+        ";
+
+
+
+//        $sql .= $sqlTwo;
+
         $test_array = $db->all($sql);
         $endSQL = microtime(true) - $startSQL;
         $timeSQL += $endSQL;
@@ -300,7 +336,7 @@ FORM_NOW.doc_status_now,
             $html = str_replace('%bg_info_box%', "bg-green", $html);
         }
 
-//        bg-green, bg-aqua,bg-red,bg-yellow
+        // bg-green, bg-aqua,bg-red,bg-yellow
         // собираем и схлопываем массив отделов до уникальных
         $dir_array = array();
         foreach ($test_array as $test_item) {

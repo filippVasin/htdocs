@@ -454,7 +454,7 @@ function mails_send(){
                 $send_mailer->isHTML(true);
                 $send_mailer->Subject = "Охрана Труда";
                 $send_mailer->Body = $today . "<br>" . $item["mail_body"];
-                if($email != "mkocherova@nskas.ru") {
+                if($email != "mkocherova@nskas.ru" && $email!="plot@gsv4.nsK.su") {
                     if (!$send_mailer->send()) {
                         $error = $send_mailer->ErrorInfo;
                         echo 'Mailer Error: ' . $error;

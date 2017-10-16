@@ -11,8 +11,17 @@ class Model_doc_views{
         global $db;
         $flag = "open";
         $page = "";
+        $lorem = 0;
+        if($_SESSION['employee_id'] == "" ){
+            $_SESSION['employee_id'] = 2; // рыба
+            $lorem = 1;
+        }
 
         include(ROOT_PATH.'/application/templates_form/'.$doc_link.'.php');
+
+        if($lorem = 1){
+            $_SESSION['employee_id'] = "";
+        }
 
         return $page;
     }

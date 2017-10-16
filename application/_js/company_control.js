@@ -86,9 +86,15 @@ $(document).ready(function() {
                         $('#new_company_director_second_name').val('');
                         $('#show_add_company_form').click();
                         $("#cancel_add_new_company").click();
+                        message(request_message, request_result);
                     }
 
-                    message(request_message, request_result);
+                    if (request_result == 'mail_is_busy') {
+                        $("#new_company_director_email").css("border-color","red");
+                        setTimeout("$('#new_company_director_email').css('border-color','#ccc')", 3000);
+                        message(request_message, "error");
+                    }
+
                 },
                 error: function () {
                 }
@@ -223,6 +229,39 @@ $(document).ready(function() {
             }
         });
     }
+
+
+
+    $(document).on("click",".company_delete", function(){
+        var company = $(this).closest(".list_item");
+        var company_id = company.attr("company_id");
+        $.ajax({
+            type: "POST",
+            url: "/company_control/delete_company",
+            data: {
+                company_id:company_id
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+                if(request_result == "ok"){
+                    $(".list_item").each(function() {
+                        if($(this).attr('company_id') == company_id){
+                            $(this).remove();
+                        }
+                    });
+                }
+
+                message(content, request_result);
+
+            },
+            error: function () {
+            }
+        });
+    });
+
+
 
 });
 

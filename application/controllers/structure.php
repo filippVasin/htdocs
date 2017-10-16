@@ -13,4 +13,22 @@ class Controller_structure extends Controller{
         $this->view = str_replace('%select%', $selector, $this->view);
     }
 
+    public  function select_dol_list(){
+        $this->model->select_dol_list();
+    }
+
+    public  function select_node_list(){
+        $this->model->select_node_list();
+    }
+
+    public  function select_kladr_list(){
+        $this->model->post_array = $this->post_params;
+        $this->model->select_kladr_list();
+    }
+
+    public  function add_item(){
+        $this->model->post_array = $this->post_params;
+        $this->model->add_item();
+    }
+
 }

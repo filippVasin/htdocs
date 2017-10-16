@@ -29,7 +29,32 @@ class Model_company_control{
         $sql = "SELECT * FROM `company` WHERE `status` != 0 AND `author_user_id` = '".$_SESSION['user_id']."';";
         $company_array = $db->all($sql);
         foreach($company_array as $company_item){
-            $html .= $elements->company_item($company_item['name'].' ('.$company_item['short_name'].') / '.$company_item['director_surname'].' '.$company_item['director_name'].' '.$company_item['director_second_name'], 'company_'.$company_item['id'], ($company_item['id'] == $_SESSION['control_company'] ? 'on_company' : 'off_company'), '', 'company_id='.$company_item['id']);
+//            $html .= $elements->company_item($company_item['name'].' ('.$company_item['short_name'].') / '.$company_item['director_surname'].' '.$company_item['director_name'].' '.$company_item['director_second_name'], 'company_'.$company_item['id'], ($company_item['id'] == $_SESSION['control_company'] ? 'on_company' : 'off_company'), '', 'company_id='.$company_item['id']);
+
+            $sql = "SELECT company.name AS company_name,  company.name AS company_short_name
+                    FROM organization_structure,company
+                    WHERE organization_structure.items_control_id = 10
+                    AND organization_structure.left_key != 1
+                    AND organization_structure.company_id = ". $company_item['id'] ."
+                    AND organization_structure.company_id = company.id";
+            $company_items = $db->all($sql);
+            $html_tems = "<br><div>Состав группы компаний:</div><br>";
+            $count = 0;
+            foreach($company_items as $key=>$company_it){
+                $html_tems .= '<div class="company_name">'. $company_it['company_name'] .' ('.$company_it['company_short_name'].')</div>';
+                ++$count;
+            }
+            if($count == 0){
+                $html_tems = "";
+            }
+
+            $html .= '<div class="list_item" id="company_'.$company_item['id'].' " style="" company_id="'.$company_item['id'].' "><div style="vertical-align: middle;">
+                    <div class="button company_turn_control '. ($company_item['id'] == $_SESSION['control_company'] ? 'on_company' : 'off_company') .'" id="" style="margin-right: 10px;margin-top: 5px;">Включить управление</div>
+                    <div class="button company_delete " id="" style="margin-right: 10px;margin-top: 5px;">Удалить компанию</div></div>
+                    <div style="vertical-align: middle;">'. $company_item['name'] .' ('.$company_item['short_name'].') / '.$company_item['director_surname'].' '.$company_item['director_name'].' '.$company_item['director_second_name'].' </div>
+                    '. $html_tems .'</div>';
+
+
         }
 
         return $html;
@@ -90,7 +115,7 @@ class Model_company_control{
             $login_data = $db->row($sql);
             if($login_data['id'] != ''){
                 $result_array = array();
-                $result_array['status'] = 'error';
+                $result_array['status'] = 'mail_is_busy';
                 $result_array['message'] = 'Такая почта уже занята';
                 $result = json_encode($result_array, true);
             die($result);
@@ -154,6 +179,8 @@ class Model_company_control{
             $sql = "INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES ('". $employee_id ."', '". $boss_org_id ."');";
             $db->query($sql);
 
+            // отправили доступы директору
+            $this->send_pass_new_company($new_company_director_email,$pass);
 
             $result_array = array();
             $result_array['status'] = 'ok';
@@ -169,7 +196,7 @@ class Model_company_control{
             $login_data = $db->row($sql);
             if($login_data['id'] != ''){
                 $result_array = array();
-                $result_array['status'] = 'error';
+                $result_array['status'] = 'mail_is_busy';
                 $result_array['message'] = 'Такая почта уже занята';
                 $result = json_encode($result_array, true);
                 die($result);
@@ -234,7 +261,8 @@ class Model_company_control{
             $sql = "INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES ('". $employee_id ."', '". $boss_org_id ."');";
             $db->query($sql);
 
-
+            // отправили доступы директору
+//            $this->send_pass_new_company($new_company_director_email,$pass);
 
             $result_array = array();
             $result_array['status'] = 'ok';
@@ -413,4 +441,74 @@ HERH;
         die($result);
     }
 
+
+    public function send_pass_new_company($email,$pass){
+        global $systems;
+
+        $message =<<<HERH
+<html>
+            <head>
+                            <title>Уведомление о создании аккаунта</title>
+                        </head>
+                        <body>
+		<p>
+		Вас приветсвует электронная система проведения инструктажа LaborPRO. <br>
+		 Ваш пароль и логин для входа в систему.
+		</p>
+ 		                    <br>
+                            <p>Логин: %login%</p>
+                            <br>
+                            <p>Пароль: %pass% </p>
+
+                    </html>
+HERH;
+        $login = $email;
+        $message = str_replace('%login%', $login, $message);
+        $message = str_replace('%pass%', $pass , $message);
+
+        // если была почта
+        if($email!=""){
+            $send_mailer = $systems->create_mailer_object();
+            $send_mailer->From = 'noreply@laborpro.ru';
+            $send_mailer->FromName = 'Охрана Труда';
+            $send_mailer->addAddress($email);
+            $send_mailer->isHTML(true);
+            $subject = "Доступ в систему";
+            $send_mailer->Subject = $subject;
+            $send_mailer->Body = $message;
+            $send_mailer->send();
+            $send_mailer->ClearAddresses();
+        }
+    }
+
+
+    public function delete_company(){
+        global $db;
+
+        $post_data = $this->post_array;
+        $company_id = $post_data['company_id'];
+        $sql="SELECT *
+                FROM organization_structure
+                WHERE organization_structure.company_id = ". $company_id ."
+                AND organization_structure.left_key = 1
+                AND organization_structure.right_key <= 6";
+
+        $company_check = $db->row($sql);
+
+        if($company_check['id'] != '') {
+            $sql = "DELETE FROM `organization_structure` WHERE  `company_id`=".$company_id;
+            $db->query($sql);
+            $sql = "DELETE FROM `company` WHERE  `id`=".$company_id;
+            $db->query($sql);
+
+            $result_array['status'] = 'ok';
+            $result_array['content'] = "Компания удалена";
+        } else {
+            $result_array['status'] = 'error';
+            $result_array['content'] = "Ошибка, компания не являеться пустой";
+        }
+
+        $result = json_encode($result_array, true);
+        die($result);
+    }
 }
