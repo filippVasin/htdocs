@@ -14,6 +14,7 @@ class Controller_structure extends Controller{
     }
 
     public  function select_dol_list(){
+        $this->model->post_array = $this->post_params;
         $this->model->select_dol_list();
     }
 

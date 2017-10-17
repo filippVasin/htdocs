@@ -8,25 +8,58 @@ class Model_doc_views{
     }
 
     public function start($doc_link){
+
+        $get_data = explode('&', $doc_link);
+        $doc = $get_data[0];
+
+        switch ($get_data[1]) {
+            case "company_forms":
+                $page = $this->company_forms_views($doc);
+                break;
+            case "start_blank":
+                $page = $this->creator_views($doc);
+                break;
+        }
+        return $page;
+    }
+
+    private function company_forms_views($doc){
         global $db;
         $flag = "open";
         $page = "";
         $lorem = 0;
-        if($_SESSION['employee_id'] == "" ){
+        if ($_SESSION['employee_id'] == "") {
             $_SESSION['employee_id'] = 2; // рыба
             $lorem = 1;
         }
 
-        include(ROOT_PATH.'/application/templates_form/'.$doc_link.'.php');
+        include(ROOT_PATH . '/application/templates_form/' . $doc . '.php');
 
-        if($lorem = 1){
+        if ($lorem = 1) {
             $_SESSION['employee_id'] = "";
         }
-
+        $page .='<div id="print" class="button">Печать</div>';
         return $page;
     }
 
+    private function creator_views($doc){
+        global $db;
+        $flag = "open";
+        $page = "";
+        $lorem = 0;
+        if ($_SESSION['employee_id'] == "") {
+            $_SESSION['employee_id'] = 2; // рыба
+            $lorem = 1;
+        }
 
+        include(ROOT_PATH . '/application/templates_form/' . $doc . '.php');
+
+        if ($lorem = 1) {
+            $_SESSION['employee_id'] = "";
+        }
+        $page .='<div id="print" class="button">Печать</div>';
+        return $page;
+    }
 }
 
 

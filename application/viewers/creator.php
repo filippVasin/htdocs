@@ -8,6 +8,7 @@
 
         <span id="name_dol"></span>
     <div class="create_box">
+        <div id="speed_button" dol="Водитель"><i class="plus_item_button fa fa-mail-reply"></i></div>
         <div title="Должность" class="buttom_input" id="node_docs" data-toggle="modal" data-target="#popup_context_menu_update"></div>
         <div title="Фамилия" class="bef_input"><input type="text" id="form_surname" name="surname" placeholder="Фамилия" class="contacts-inp input_form" required=""></div>
         <div title="Имя" class="bef_input"><input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp input_form" required=""></div>

@@ -443,8 +443,10 @@ $(document).ready(function() {
                 success: function (answer) {
                     var result = jQuery.parseJSON(answer);
                     var content = result.content;
+                    var link = result.link;
                     $("#test_block").after("<div class='result_creater'>"+content+"</div>");
                     $('#button_clear').trigger('click');
+                    window.location = link;
                 },
                 error: function () {
                     console.log('error');
@@ -591,6 +593,15 @@ $(document).ready(function() {
         });
     }
     // datapickers
+
+
+
+    $(document).on('click','#speed_button',function(){
+                dol_id = 183;
+                $("#node_docs").html("Водитель автобуса на регулярные городск...");
+                $("#speed_button").addClass("none");
+                setTimeout("$('#speed_button').removeClass('none')", 5000);
+    });
 
 });
 

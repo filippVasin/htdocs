@@ -3,9 +3,16 @@
 }
 .content-wrapper{
     margin-left: 0px;
+    z-index: 9999999999999!important;
 }
 #body{
     background-color: #fff;
     width: 1200px;
     margin: 0 auto;
+}
+@media print{@page {size: landscape}  body{display: block}
+    .content-wrapper{
+        margin-left: 0px;
+        z-index: 9999999999999!important;
+    }
 }

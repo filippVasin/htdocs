@@ -159,9 +159,7 @@ class Model_creator
 
 
     // добавляем сотрудника;
-    public function create_form()
-    {
-        // подключение БД
+    public function create_form() {
         global $db, $systems, $labro, $regisrt_temp_mail;
 
         // получаем данные из POST запроса
@@ -286,7 +284,8 @@ class Model_creator
             $html = '<div> Данные добавлены </div>';
         }
 
-
+       $blank = "journal_fire_fighting_briefing";
+       $result_array['link'] = "/doc_views?". $blank ."&start_blank";
        $result = json_encode($result_array, true);
         die($result);
     }

@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 class Model_emp_doc_views{
     // Данные для обработки POST запросов;

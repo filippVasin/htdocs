@@ -42,7 +42,7 @@ class Model_company_forms{
         $html .= "<div class='row'><div class='title_column_form type'>Тип Документа</div><div class='title_column_form temp'>Название Документа</div></div>";
         foreach($employees as $employee){
 
-            $html.= "<a href='/doc_views?". $employee['path'] ."' target='_blank'> <div class='row link'><div class='type_form'>".$employee['type']."</div><div class='temp_form'>" .$employee['temp']."</div></div></a>";
+            $html.= "<a href='/doc_views?". $employee['path'] ."&company_forms' target='_blank'> <div class='row link'><div class='type_form'>".$employee['type']."</div><div class='temp_form'>" .$employee['temp']."</div></div></a>";
         };
         $html .="</div>";
         return $html;

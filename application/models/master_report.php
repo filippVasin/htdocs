@@ -552,8 +552,8 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                     foreach($tree as $tree_item) {
                         if($tree_item['parent']==$parent_id){
 
-                            $left_key = str_pad($tree_item['left_key'] , 3, "0", STR_PAD_LEFT);
-                            $right_key = str_pad($tree_item['right_key'] , 3, "0", STR_PAD_LEFT);
+                            $left_key = str_pad($tree_item['left_key'] , 5, "0", STR_PAD_LEFT);
+                            $right_key = str_pad($tree_item['right_key'] , 5, "0", STR_PAD_LEFT);
                             $plus_class = "";
                             if($tree_item['items_control_id'] != 3){
                                 $plus_class = "pluses";
@@ -593,7 +593,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         }
 
 
-
+        $result_array['role'] = $_SESSION['role_id'];
         $result_array['content'] = $html;
 
         return $result_array;

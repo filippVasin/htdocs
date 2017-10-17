@@ -54,11 +54,15 @@ class Model_structure
 
     public function select_dol_list(){
         global $db;
-
-        $sql="SELECT *
-                FROM items_control
+        $post_data = $this->post_array;
+        $parent_id = $post_data['parent_id'];
+        $sql="SELECT items_control.id, items_control.name
+                FROM items_control, organization_structure
                 WHERE items_control.company_id = " . $_SESSION['control_company'] . "
-                AND items_control.type_id = 3";
+                AND items_control.type_id = 3
+                AND items_control.id = organization_structure.kladr_id
+                AND organization_structure.parent !=".$parent_id ." GROUP BY id";
+
         $group_companys = $db->all($sql);
         $html = "<option value=0></option>";
         foreach ($group_companys as $group_companys_item) {
@@ -94,10 +98,13 @@ class Model_structure
         global $db;
         $post_data = $this->post_array;
         $kladr_type_id = $post_data['kladr_type_id'];
-        $sql="SELECT	*
-                FROM items_control
-                WHERE items_control.type_id != 3
-                AND items_control.company_id =". $_SESSION['control_company'] ;
+        $parent_id = $post_data['parent_id'];
+        $sql="SELECT items_control.id, items_control.name
+                FROM items_control,organization_structure
+                WHERE items_control.type_id = " . $kladr_type_id . "
+                AND items_control.company_id = " . $_SESSION['control_company'] . "
+                AND items_control.id = organization_structure.kladr_id
+                AND organization_structure.parent !=" .$parent_id . " GROUP BY id";
         $group_companys = $db->all($sql);
         $html = "<option value=0></option>";
         foreach ($group_companys as $group_companys_item) {
@@ -113,6 +120,13 @@ class Model_structure
 
     public function add_item(){
         global $db;
+
+        if($_SESSION['role_id'] != 1 ) {
+            $result_array['status'] = 'error';
+            $result_array['content'] = 'У вас нет прав на изменение структуры';
+            $result = json_encode($result_array, true);
+            die($result);
+        }
 
         $post_data = $this->post_array;
         $type_plus = $post_data['type_plus'];
@@ -146,6 +160,18 @@ class Model_structure
             $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`)
             VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
             $db->query($sql);
+            $id_item = mysqli_insert_id($db->link_id);
+
+            $sql = "SELECT * FROM items_control WHERE items_control.id ='".$kladr_id."';";
+            $item_data = $db->row($sql);
+
+            $result_array['item_name'] = $item_data['name'];
+            $result_array['type_plus'] = $type_plus;
+            $result_array['level'] = $level;
+            $result_array['parent'] = $parent;
+            $result_array['id_item'] = $id_item;
+            $result_array['left_key'] = str_pad($left_key , 5, "0", STR_PAD_LEFT);
+            $result_array['right_key'] = str_pad($right_key , 5, "0", STR_PAD_LEFT);
 
         }
 
@@ -171,8 +197,25 @@ class Model_structure
             $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`,`kladr_id`,  `boss_type`)
             VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
             $db->query($sql);
+            $id_item = mysqli_insert_id($db->link_id);
 
+            $sql = "SELECT * FROM items_control WHERE items_control.id =".$kladr_id ;
+            $item_data = $db->row($sql);
+
+            $sql = "SELECT * FROM items_control_types WHERE items_control_types.id =". $items_control_id;
+            $type_data = $db->row($sql);
+
+            $result_array['item_name'] = $type_data['name'] .":". $item_data['name'];
+            $result_array['type_plus'] = $type_plus;
+            $result_array['level'] = $level;
+            $result_array['parent'] = $parent;
+            $result_array['id_item'] = $id_item;
+            $result_array['left_key'] = str_pad($left_key , 5, "0", STR_PAD_LEFT);
+            $result_array['right_key'] = str_pad($right_key , 5, "0", STR_PAD_LEFT);
         }
+
+
+
 
         $result_array['status'] = 'ok';
         $result_array['content'] = 'Элемент успешно добавлен';

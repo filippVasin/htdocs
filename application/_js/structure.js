@@ -23,6 +23,7 @@ $(document).ready(function() {
                 var request_result = result.status;
                 var request_message = result.message;
                 var content = result.content;
+                var role = result.role;
                 // если 'ok' - рисуем тест
                 if(request_result == 'ok'){
                     $(".page_title").css("display","none");
@@ -40,7 +41,7 @@ $(document).ready(function() {
                         }
                     });
                     sort_stucture();
-                    add_node_button();
+                    add_node_button(role);
                 }
             },
             error: function () {
@@ -136,6 +137,9 @@ $(document).ready(function() {
         }
     });
 
+
+
+
     //  если есть отомки тогда в конец списка
     function sort_stucture(){
         $("li").each(function() {
@@ -151,16 +155,22 @@ $(document).ready(function() {
     $("#whole_tree").click();
 
 
-    function add_node_button() {
+    function add_node_button(role) {
         $(".tree_item").each(function () {
-            var plus_button = '<i class="plus_item_button fa fa-plus"></i>';
+            var plus_button = '';
+            if(role == 1){
+                plus_button = '<i class="plus_item_button fa fa-plus"></i>';
+            } else {
+                plus_button = '<i class="plus_item_button none fa fa-plus"></i>';
+            }
+
             if ($(this).hasClass("pluses")) {
                 var title_item = '<div class="title_item"> ' + $(this).html() + ' </div>' + plus_button;
                 $(this).html(title_item);
             }
         });
-    }
 
+    }
 
 
     $(document).on('click','.plus_item_button',function(){
@@ -206,6 +216,9 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: "/structure/select_dol_list",
+            data: {
+                parent_id:id_node_plus
+            },
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
                 var request_result = result.status;
@@ -244,7 +257,8 @@ $(document).ready(function() {
             type: "POST",
             url: "/structure/select_kladr_list",
             data: {
-                    kladr_type_id:kladr_type_id
+                parent_id:id_node_plus,
+                kladr_type_id:kladr_type_id
              },
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
@@ -311,8 +325,36 @@ $(document).ready(function() {
                     var result = jQuery.parseJSON(answer);
                     var request_result = result.status;
                     var content = result.content;
+                    var type_plus = result.type_plus;
+                    var level = result.level;
+                    var parent = result.parent;
+                    var id_item = result.id_item;
+                    var left_key = result.left_key;
+                    var right_key = result.right_key;
+                    var item_name = result.item_name;
+
                     if(request_result == "ok") {
                         $("#cancel_add_new_item").click();
+                        var html = "";
+                        if(type_plus == 1){
+                            html = '<li> <div class="tree_item " level="'+ level +'" parent="'+ parent +'" id_item="'+ id_item +'" left_key="'+ left_key +'" right_key="'+ right_key +'">'+ item_name+'</div> </li>';
+                        }
+                        if(type_plus == 2){
+                            html =      '<li>'
+                                     +       '<div class="tree_item pluses open_item" level="'+ level +'" parent="'+ parent +'" id_item="'+ id_item +'" left_key="'+ left_key +'" right_key="'+ right_key +'">'
+                                     +           '<div class="title_item">'+ item_name+'</div>'
+                                     +           '<i class="plus_item_button fa fa-plus"></i>'
+                                     +           '</div>'
+                                     +       '<ul class="none"></ul>';
+                                     +  '</li>';
+                        }
+
+                        $(".tree_item").each(function() {
+                            if($(this).attr("id_item") == parent){
+                                $(this).siblings('ul').append(html);
+                            }
+                        });
+
                     }
                     message(content, request_result);
                 },
