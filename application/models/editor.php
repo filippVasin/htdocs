@@ -61,15 +61,15 @@ class Model_editor
                 AND organization_structure.company_id =" . $_SESSION['control_company'];
         $employees = $db->all($sql);
 
-        $html = '<div>';
-        $html .='<div class="type_title">Сотрудники:</div>';
+        $html = '';
         foreach($employees as $employee){
-            $html .= '<div class="table_mix_row" emp_id="' . $employee['emp_id'] . '" user_id="' . $employee['user_id'] . '">';
-            $html .= '<div class="emp_id">'.  $employee['emp_id'].'</div>';
-            $html .= '<div class="login">'.  $employee['login'].'</div><div class="fio">'.  $employee['fio'].'</div>';
-            $html .= '</div>';
+            $html .= '<tr class="table_mix_row" emp_id="' . $employee['emp_id'] . '" user_id="' . $employee['user_id'] . '">';
+            $html .=    '<td class="emp_id" rowspan="1" colspan="1">'.  $employee['emp_id'].'</td>';
+            $html .=    '<td class="login" rowspan="1" colspan="1">'.  $employee['login'].'</td>';
+            $html .=    '<td class="fio" rowspan="1" colspan="1">'.  $employee['fio'].'</td>';
+            $html .= '</tr>';
         }
-        $html .= '</div>';
+
 
         return $html;
     }
@@ -115,6 +115,24 @@ class Model_editor
         $result_array['em_status'] = $result['status'];
         $result_array['personnel_number'] = $result['personnel_number'];
 
+        $sql  ="SELECT * FROM registration_address WHERE registration_address.emp_id =" . $item_id ;
+        $result = $db->row($sql);
+        if($result['id'] != ""){
+            $result_array['address'] = $result['address'];
+        }
+
+        $sql  ="SELECT * FROM drivers_license WHERE drivers_license.emp_id =" . $item_id ;
+        $result = $db->row($sql);
+        if($result['id'] != 0){
+            $result_array['category'] = $result['category'];
+            $result_array['license_number'] = $result['license_number'];
+            $result_array['start_date_driver'] = date_create($result['start_date'])->Format('d-m-Y');
+            $result_array['end_date_driver'] = date_create($result['end_date'])->Format('d-m-Y');
+//            $result_array['start_date_driver'] = $result['start_date'];
+//            $result_array['end_date_driver'] = $result['end_date'];
+        }
+
+
         $result_array['status'] = 'ok';
 
         $result = json_encode($result_array, true);
@@ -133,6 +151,16 @@ class Model_editor
         $em_status = $this->post_array['em_status'];
         $personnel_number = $this->post_array['personnel_number'];
 
+        $address = $this->post_array['address'];
+        $category = $this->post_array['category'];
+        $license_number = $this->post_array['license_number'];
+        $start_date_driver = $this->post_array['start_date_driver'];
+        $end_date_driver = $this->post_array['end_date_driver'];
+
+        // подготовка дат к записи в базу
+        $start_date_driver = date_create($start_date_driver)->Format('Y-m-d');
+        $end_date_driver = date_create($end_date_driver)->Format('Y-m-d');
+
         // меняем данные сотрудника
         if($personnel_number!="") {
             $sql = "UPDATE `employees` SET `personnel_number`='" . $personnel_number . "', `surname`='" . $surname . "', `name`='" . $name . "', `second_name`='" . $second_name . "', `start_date`='" . $start_date . "',`birthday`='" . $birthday . "',`status`='" . $em_status . "'
@@ -142,6 +170,28 @@ class Model_editor
                 WHERE  `id`=" . $item_id;
         }
         $db->query($sql);
+
+        $sql  ="SELECT * FROM registration_address WHERE `emp_id` =" . $item_id ;
+        $result = $db->row($sql);
+        if($result['id'] != ""){
+            $sql = "UPDATE `registration_address` SET `address`='" . $address . "' WHERE  `emp_id`=" . $item_id;
+             $db->query($sql);
+        } else {
+            $sql = "INSERT INTO `registration_address` (`emp_id`, `address`) VALUES ('" . $item_id . "', '" . $address . "')";
+            $db->query($sql);
+        }
+
+
+        $sql  ="SELECT * FROM drivers_license WHERE `emp_id` =" . $item_id ;
+        $result = $db->row($sql);
+        if($result['id'] != ""){
+            $sql = "UPDATE `drivers_license` SET `category`='" . $category . "',`license_number`='" . $license_number . "',`start_date`='" . $start_date_driver . "',`end_date`='" . $end_date_driver . "' WHERE  `emp_id`=" . $item_id;
+            $db->query($sql);
+        } else {
+            $sql = "INSERT INTO `drivers_license` (`emp_id`, `company_id`,`category`,`license_number`,`start_date`,`end_date`) VALUES (" . $item_id . ",'" . $_SESSION['control_company'] . "','" . $category. "','" . $license_number. "','" . $start_date_driver. "','" . $end_date_driver. "')";
+            $db->query($sql);
+        }
+
 
         $result_array['surname'] = $surname;
         $result_array['name'] = $name;

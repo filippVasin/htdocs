@@ -8,7 +8,31 @@
 
 <div id="table_type" class="table_box">%table_type%</div>
 <div id="table_num" class="table_box"  style="display: none">%table_num%</div>
-<div id="table_employees" class="table_box"  style="display: none">%mix_table%</div>
+<div id="table_employees" class="table_box"  style="display: none">
+
+    <div class="box">
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table id="tableThree" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>e-mail</th>
+                        <th>Сотрудник</th>
+                    </tr>
+                    </thead>
+                <tbody>
+
+                %mix_table%
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>
 
 
 <button id="edit_popup_button" class="none" data-toggle="modal" data-target="#edit_popup">
@@ -47,27 +71,69 @@
             </div>
             <div class="modal-body">
 
-                    <label>Фамилия</label>
-                    <input type="text" class="form-control" id="edit_popup_input_surname" placeholder="Фамилия">
 
-                    <label>Имя</label>
-                    <input  class="form-control" id="edit_popup_input_name" placeholder="Имя">
 
-                    <label>Отчество</label>
-                    <input  class="form-control"  id="edit_popup_input_second_name" placeholder="Отчество">
+                <!-- Custom Tabs -->
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_1" id="start_position" data-toggle="tab" aria-expanded="true">Основные данные</a></li>
+                        <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Документы</a></li>
 
-                    <label>Дата трудоустройства</label>
-                    <input type="text" class="form-control"  id="edit_popup_input_start_date" placeholder="Дата трудоустройства">
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1">
 
-                    <label>Дата рождения</label>
-                    <input type="text" class="form-control"  id="edit_popup_input_birthday" placeholder="Дата рождения">
+                            <label>Фамилия</label>
+                            <input type="text" class="form-control" id="edit_popup_input_surname" placeholder="Фамилия">
 
-                    <label>Статус</label>
-                    <input  class="form-control"  id="edit_popup_input_status" placeholder="Статус">
+                            <label>Имя</label>
+                            <input  class="form-control" id="edit_popup_input_name" placeholder="Имя">
 
-                    <label>Табельный номер</label>
-                    <input class="form-control"  id="edit_popup_input_personnel_number" placeholder="Табельный номер">
+                            <label>Отчество</label>
+                            <input  class="form-control"  id="edit_popup_input_second_name" placeholder="Отчество">
 
+                            <label>Дата трудоустройства</label>
+                            <input type="text" class="form-control"  id="edit_popup_input_start_date" placeholder="Дата трудоустройства">
+
+                            <label>Дата рождения</label>
+                            <input type="text" class="form-control"  id="edit_popup_input_birthday" placeholder="Дата рождения">
+
+                            <label>Статус</label>
+                            <div class="select_triangle" >
+                                <select class="form-control "  id="edit_popup_input_status">
+                                    <option value="0">Уволен</option>
+                                    <option value="1">Работает</option>
+                                </select>
+                            </div>
+                            <label>Табельный номер</label>
+                            <input class="form-control"  id="edit_popup_input_personnel_number" placeholder="Табельный номер">
+
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_2">
+
+                            <label>Адрес регистрации</label>
+                            <input type="text" class="form-control" id="popup_reg_address" placeholder="Адрес регистрации">
+
+                            <label>Категории</label>
+                            <input  class="form-control" id="popup_driver_categories" placeholder="Категории">
+
+                            <label>№ удостоверения</label>
+                            <input  class="form-control"  id="popup_driver_number" placeholder="№ удостоверения">
+
+                            <label>Начало действия</label>
+                            <input type="text" class="form-control"  id="popup_driver_start" placeholder="Начало действия">
+
+                            <label>Срок действия</label>
+                            <input type="text" class="form-control"  id="popup_driver_end" placeholder="Срок действия">
+
+                        </div>
+
+                        <!-- /.tab-pane -->
+                    </div>
+                    <!-- /.tab-content -->
+                </div>
+                <!-- nav-tabs-custom -->
             </div>
             <div class="modal-footer">
                 <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#edit_popup_user">Сменить пароль</button>
@@ -76,6 +142,8 @@
                 <button type="button"  id="save_popup_input_employees" class="btn btn-primary">Сохранить</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
             </div>
+
+
         </div>
     </div>
 </div>

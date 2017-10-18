@@ -50,5 +50,11 @@ class Controller_creator extends Controller{
         // Вызываем метод показа всего дерева
         $this->model->save_new_type_select();
     }
+    public function get_input(){
+        // Записываем массив с даннми в домель;
+        $this->model->post_array = $this->post_params;
+        // Вызываем метод показа всего дерева
+        $this->model->get_input();
+    }
 
 }

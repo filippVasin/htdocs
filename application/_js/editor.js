@@ -125,6 +125,7 @@ $(document).ready(function() {
     $(document).on("click", ".table_mix_row", function () {
         item_id =  $(this).attr("emp_id");
         user_id =  $(this).attr("user_id");
+        $("#start_position").click();
         $("#edit_popup_user").attr("item_id",user_id);
         $.ajax({
             type: "POST",
@@ -144,6 +145,12 @@ $(document).ready(function() {
                 var request_result = result.status;
                 var personnel_number = result.personnel_number;
                 var content = result.content;
+                var address = result.address;
+                var category = result.category;
+                var license_number = result.license_number;
+                var start_date_driver = result.start_date_driver;
+                var end_date_driver = result.end_date_driver;
+
                 // если 'ok' - рисуем тест
                 if(request_result == 'ok'){
 
@@ -158,6 +165,7 @@ $(document).ready(function() {
 
                         $("#edit_popup_input_status").val(em_status);
 
+
                         if(em_status == 1 ){
                             $("#add_emp_mix").addClass("none");
                             $("#delete_emp_mix").removeClass("none");
@@ -165,7 +173,15 @@ $(document).ready(function() {
                             $("#delete_emp_mix").addClass("none");
                             $("#add_emp_mix").removeClass("none");
                         }
-
+                        if(address!=""){
+                            $("#popup_reg_address").val(address);
+                        }
+                        if(category!=""){
+                            $("#popup_driver_categories").val(category);
+                            $("#popup_driver_number").val(license_number);
+                            $("#popup_driver_start").val(start_date_driver);
+                            $("#popup_driver_end").val(end_date_driver);
+                        }
 
                         $("#edit_popup_input_personnel_number").val(personnel_number);
 
@@ -190,6 +206,13 @@ $(document).ready(function() {
        var birthday  = $("#edit_popup_input_birthday").val();
        var em_status   = $("#edit_popup_input_status").val();
         var personnel_number   = $("#edit_popup_input_personnel_number").val();
+        var address   = $("#popup_reg_address").val();
+        var category   = $("#popup_driver_categories").val();
+        var license_number   = $("#popup_driver_number").val();
+        var start_date_driver   = $("#popup_driver_start").val();
+        var end_date_driver   = $("#popup_driver_end").val();
+
+
 
         $.ajax({
             type: "POST",
@@ -202,7 +225,12 @@ $(document).ready(function() {
                 start_date:start_date,
                 birthday:birthday,
                 em_status:em_status,
-                personnel_number:personnel_number
+                personnel_number:personnel_number,
+                address:address,
+                category:category,
+                license_number:license_number,
+                start_date_driver:start_date_driver,
+                end_date_driver:end_date_driver
             },
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
@@ -394,5 +422,34 @@ $(document).ready(function() {
             });
         }
     });
+
+
+    // проверка с какого устройтства вошли
+    if(isMobile.any()){
+        $("#popup_driver_start").attr("type","date");
+        $("#popup_driver_end").attr("type","date");
+    } else {
+        $('#popup_driver_start').datepicker({
+            language: "ru",
+            autoclose: true
+        });
+        $('#popup_driver_end').datepicker({
+            language: "ru",
+            autoclose: true
+        });
+    }
+
+
+
+    $(function () {
+        $('#tableThree').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : true,
+            'ordering'    : false,
+            'info'        : false,
+            'autoWidth'   : false
+        })
+    })
 
 });

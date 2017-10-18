@@ -108,10 +108,7 @@ text-align: left!important;
     cursor: pointer;
 }
 
-.table_mix_row{
-    display: flex;
-    flex-direction: row;
-}
+
 .table_mix_row div{
 float: left;
 height: 30px;
@@ -181,3 +178,13 @@ text-align: left!important;
     color: #4db53c;
 }
 
+.modal-body{
+    text-align: left!important;
+}
+input{
+    margin-bottom: 10px;
+}
+
+#edit_popup_input_status{
+    margin-bottom: 10px;
+}

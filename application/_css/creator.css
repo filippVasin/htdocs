@@ -319,3 +319,14 @@ ul {
 #speed_button:hover:before{
     opacity: .8;
 }
+
+#landing_form_offer_one{
+    background-color: darkgray;
+    cursor: default;
+}
+.landing_form_offer_one{
+    background-color: #3c8dbc!important;
+}
+#click_link{
+    color: #fff!important;;
+}

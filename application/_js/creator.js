@@ -125,53 +125,6 @@ $(document).ready(function() {
     });
 
 
-// отправляем форму
-//    $(document).on("click", "#send_form", function () {
-//        var name = $('#form_name').val();
-//        var surname = $('#form_surname').val();
-//        var patronymic = $('#form_patronymic').val();
-//        var work_start = $('#form_work_start').val();
-//        var birthday = $('#form_birthday').val();
-//        var email = $('#form_email').val();
-//        var id_item = $('#form_id_item').val();
-//
-//
-//
-//
-//        $.ajax({
-//            type: "POST",
-//            url: "/creator/create_form",
-//            data: {
-//                name:name,
-//                surname:surname,
-//                patronymic:patronymic,
-//                work_start:work_start,
-//                birthday:birthday,
-//                email:email,
-//                id_item:id_item
-//            },
-//            success: function (answer) {
-//                var result = jQuery.parseJSON(answer);
-//                var request_result = result.status;
-//                var request_message = result.message;
-//                var content = result.content;
-//
-//                if(request_result == 'ok'){
-//                    $(".page_title").css("display","none");
-//                    $(".control_test_item").css("display","none");
-//                    $("body").css("margin-top","0px");
-//                    $('#test_block').fadeIn(0);
-//                    $('#content_box').append(content);
-//                    $("html, body").animate({ scrollTop: 0 }, 0);
-//                }
-//
-//
-//            },
-//            error: function () {
-//                console.log('error');
-//            }
-//        });
-//    });
 
     $(document).on("change", ".new_type", function () {
         new_type_id = $(this).val();
@@ -303,33 +256,16 @@ $(document).ready(function() {
             $('.select_row').append('<input type="text" id="input_new_num" placeholder="Наменклатура">');
         }
     });
-    //  валидация вводимых данных, чтобы база норм записать в базу(DATETIME)
-    //$(function() {
-    //    $("#form_work_start").mask("99.99.9999", {placeholder: "дд-мм-гггг" });
-    //    $("#form_birthday").mask("99.99.9999", {placeholder: "дд-мм-гггг" });
-    //});
 
-    // проверяем отправку POST
 
     function check_time(){
 
         return false; // и этим false отменяем отправку формы
-        //// проверяем пару полей
-        //var ok = ( $('#form_work_start').val()> 0 && $('#form_birthday').val()< 0 ); // пусть ok хранит результат какой-то проверки
-        //
-        ////var val_r = val.split("-");
-        ////var curDate = new Date(val_r[2], val_r[1], val_r[0]);
-        //if (!ok) { // если поля не прошли проверку
-        //
-        //    // каким-то образом оповещаем об ошибках пользователя
-        //    alert('Чето не то!'+$('#form_work_start').val() + $('#form_birthday').val() );
-        //
-        //    return false; // и этим false отменяем отправку формы
-        //}
+
 
     }
 
-    $(document).on('click',"#landing_form_offer_one", function () {
+    $(document).on('click',".landing_form_offer_one", function () {
         var flag = 0;
         var surname = "";
         var name = "";
@@ -341,11 +277,22 @@ $(document).ready(function() {
         var personnel_number = "";
         personnel_number = $("#personnel_number").val();
 
+       var  reg_address = $("#reg_address").val();
+       var  driver_categories = $("#driver_categories").val();
+       var  driver_number = $("#driver_number").val();
+       var  driver_start = $("#driver_start").val();
+       var  driver_end = $("#driver_end").val();
+
 
         // получили сегодня
         var now = new Date()
         var today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).valueOf();
 
+        if(dol_id == 0){
+            $("#node_docs").css("border-color","red");
+            setTimeout("$('#node_docs').css('border-color','#ccc')", 3000);
+            flag = 1;
+        }
 
         var hex_today = new Date(today);
         var hex_today_sto = new Date(today);
@@ -357,6 +304,15 @@ $(document).ready(function() {
             $("#form_work_start").css("border-color","red");
             setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
         }
+
+            $('.new_input').each(function() {
+                var child = $(this).children("input");
+                    if(child.val()=="") {
+                        child.css("border-color", "red");
+                        flag = 1;
+                    }
+                setTimeout("$('.new_input input').css('border-color','#ccc');", 3000);
+            });
 
 
         // возраст не ниже 14ти лет
@@ -424,6 +380,7 @@ $(document).ready(function() {
             $("#form_work_start").css("border-color","yellow");
             setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
         }
+        $("#landing_form_offer_one").removeClass("landing_form_offer_one");
         if(flag == 0) {// всё норм
             $.ajax({
                 type: "POST",
@@ -437,7 +394,12 @@ $(document).ready(function() {
                     email:email,
                     id_item:id_item,
                     personnel_number:personnel_number,
-                    dol_id:dol_id
+                    dol_id:dol_id,
+                    reg_address:reg_address,
+                    driver_categories:driver_categories,
+                    driver_number:driver_number,
+                    driver_start:driver_start,
+                    driver_end:driver_end
 
                 },
                 success: function (answer) {
@@ -445,8 +407,15 @@ $(document).ready(function() {
                     var content = result.content;
                     var link = result.link;
                     $("#test_block").after("<div class='result_creater'>"+content+"</div>");
+                    var click_link = $('<a id="click_link" style="color: #fff" class="button" href="'+ link +'" target="_blank">Стартовый бланк</a>');
+                    $("#test_block").append(click_link);
+                    setTimeout(document.getElementById("click_link").click(), 3000);
+
                     $('#button_clear').trigger('click');
-                    window.location = link;
+                    // открываем бланк во внешней ссылке
+
+                    $("#landing_form_offer_one").addClass("landing_form_offer_one");
+
                 },
                 error: function () {
                     console.log('error');
@@ -571,10 +540,45 @@ $(document).ready(function() {
 
     $(document).on('click','.tree_item',function() {
         if(!($(this).hasClass("open_item"))){
+            $(".new_input").remove();
              dol_id = $(this).attr("id_item");
             var name_dol = $(this).html();
             $("#node_docs").html(name_dol);
             $(".btn-default").click();
+            $.ajax({
+                type: "POST",
+                url: "/creator/get_input",
+                data: {
+                    dol_id:dol_id
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var request_result = result.status;
+                    var content = result.content;
+                    if(request_result == 'ok'){
+                        $('#form_id_item').before(content);
+
+                        // проверка с какого устройтства вошли
+                        if(isMobile.any()){
+                            $("#driver_start").attr("type","date");
+                            $("#driver_end").attr("type","date");
+                        } else {
+                            $('#driver_start').datepicker({
+                                language: "ru",
+                                autoclose: true
+                            });
+                            $('#driver_end').datepicker({
+                                language: "ru",
+                                autoclose: true
+                            });
+                        }
+                        // datapickers
+                    }
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });
         }
     });
 
@@ -599,6 +603,42 @@ $(document).ready(function() {
     $(document).on('click','#speed_button',function(){
                 dol_id = 183;
                 $("#node_docs").html("Водитель автобуса на регулярные городск...");
+                $(".new_input").remove();
+                $(".btn-default").click();
+                $.ajax({
+                    type: "POST",
+                    url: "/creator/get_input",
+                    data: {
+                        dol_id:dol_id
+                    },
+                    success: function (answer) {
+                        var result = jQuery.parseJSON(answer);
+                        var request_result = result.status;
+                        var content = result.content;
+                        if(request_result == 'ok'){
+                            $('#form_id_item').before(content);
+
+                            // проверка с какого устройтства вошли
+                            if(isMobile.any()){
+                                $("#driver_start").attr("type","date");
+                                $("#driver_end").attr("type","date");
+                            } else {
+                                $('#driver_start').datepicker({
+                                    language: "ru",
+                                    autoclose: true
+                                });
+                                $('#driver_end').datepicker({
+                                    language: "ru",
+                                    autoclose: true
+                                });
+                            }
+                            // datapickers
+                        }
+                    },
+                    error: function () {
+                        console.log('error');
+                    }
+                })
                 $("#speed_button").addClass("none");
                 setTimeout("$('#speed_button').removeClass('none')", 5000);
     });

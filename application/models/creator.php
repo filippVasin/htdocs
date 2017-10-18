@@ -163,16 +163,29 @@ class Model_creator
         global $db, $systems, $labro, $regisrt_temp_mail;
 
         // получаем данные из POST запроса
-                $name = $this->post_array['name'];
-                $surname = $this->post_array['surname'];
-                $patronymic = $this->post_array['patronymic'];
-                $work_start = $this->post_array['work_start'];
-                $birthday = $this->post_array['birthday'];
-                $email = $this->post_array['email'];
-                $id_item = $this->post_array['id_item'];
+        $name = $this->post_array['name'];
+        $surname = $this->post_array['surname'];
+        $patronymic = $this->post_array['patronymic'];
+        $work_start = $this->post_array['work_start'];
+        $birthday = $this->post_array['birthday'];
+        $email = $this->post_array['email'];
+        $id_item = $this->post_array['id_item'];
         $dol_id = $this->post_array['dol_id'];
         $fio = $surname." ".$name." ".$patronymic;
         $result_array = array();
+
+        $reg_address = $this->post_array['reg_address'];
+        $driver_categories = $this->post_array['driver_categories'];
+        $driver_number = $this->post_array['driver_number'];
+        $driver_start = $this->post_array['driver_start'];
+        $driver_end = $this->post_array['driver_end'];
+
+        // подготовка дат к записи в базу
+        $work_start = date_create($work_start)->Format('Y-m-d');
+        $birthday = date_create($birthday)->Format('Y-m-d');
+        $driver_start = date_create($driver_start)->Format('Y-m-d');
+        $driver_end = date_create($driver_end)->Format('Y-m-d');
+
 
         // проверяем есть ли такая почта уже
         $sql="Select *
@@ -201,6 +214,7 @@ class Model_creator
                 $db->query($sql);
             }
 
+
 //        echo mysqli_insert_id($db->link_id); можно и так получать id инкримент
 
             $sql = "SELECT employees.id, employees.name
@@ -214,12 +228,18 @@ class Model_creator
             $role_id = 3;
             $employee_id = $form_content_jj['id'];
             $sql = "INSERT INTO `users` (`name`, `password`, `role_id`,`employee_id`,`full_name`) VALUES('" . $login . "','" . md5($pass) . "','" . $role_id . "','" . $employee_id . "','" . $surname . "');";
-//        echo $sql;
             $db->query($sql);
 
             $sql = 'INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES("' . $employee_id . '","' . $dol_id . '")';
             $db->query($sql);
-
+            if($reg_address !="") {
+                // регистрация
+                $sql = 'INSERT INTO `registration_address` (`emp_id`, `address`) VALUES("' . $employee_id . '","' . $reg_address . '")';
+                $db->query($sql);
+                // водительские права
+                $sql = 'INSERT INTO `drivers_license` (`emp_id`, `company_id`, `category`, `license_number`, `start_date`, `end_date`) VALUES("' . $employee_id . '","' . $_SESSION['control_company'] . '","' . $driver_categories . '","' . $driver_number . '","' . $driver_start . '","' . $driver_end . '")';
+                $db->query($sql);
+            }
             $subject = "Уведомление";
             $mail_type = "reg";
             // запрашиваем шаблон письма
@@ -267,7 +287,7 @@ class Model_creator
 
             } else {
                 $send_result = 'Ошибка при отправки письма: ' . $send_mailer->ErrorInfo;
-                $result = $send_result;
+                $result_array['content'] = $send_result;
                 // пишим логи
                 $sql = 'INSERT INTO `mails_log` (`employee_id`, `email`,`mail_type`,`template_mail_id`,`send_result`,`send_date`)
                                           VALUES("' . $employee_id .
@@ -543,6 +563,34 @@ class Model_creator
     }
 
 
+    public function get_input(){
+        global $db, $systems, $elements;
+        $dol_id = $this->post_array['dol_id'];
+        $sql = "SELECT organization_structure.kladr_id
+                FROM organization_structure
+                WHERE organization_structure.id =" . $dol_id;
+        $result = $db->row($sql);
+        $position_id = $result['kladr_id'];
+
+        $sql = "SELECT additional_inputs.input_group
+                FROM additional_inputs
+                WHERE additional_inputs.position_id =" . $position_id;
+        $result = $db->row($sql);
+        $input_group = $result['input_group'];
+        $html = "";
+        switch ($input_group) {
+            case 1:
+                $html = $this->driver_inputs();
+                break;
+        }
+
+
+        $result_array['status'] = "ok";
+        $result_array['content'] = $html;
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
     // функция добавление элемента в дерево компании
     private  function InsertNode($new_parent_id,$company_id,$kladr_id,$items_control_id,$boss_type){
         global $db;
@@ -574,4 +622,15 @@ class Model_creator
         $db->query($sql);
     }
 
+
+    private  function driver_inputs(){
+        $html = "";
+        $html .= '<div title="Адрес регистрации" class="bef_input new_input"><input type="text" id="reg_address" name="reg_address" placeholder="Адрес регистрации" class="contacts-inp input_form" required=""></div>
+                 <div title="Категории" class="bef_input new_input"><input type="text" id="driver_categories" name="driver_categories" placeholder="Категории водительского удостоверения" class="contacts-inp input_form" required=""></div>
+                 <div title="№ удостоверения" class="bef_input new_input"><input type="text" id="driver_number" name="driver_number" placeholder="№ водительского удостоверения" class="contacts-inp input_form" required=""></div>
+                 <div title="Начало действия" class="bef_input new_input"><input type="text" id="driver_start" name="driver_start" placeholder="Начало действия удостоверения" class="contacts-inp input_form" required=""></div>
+                 <div title="Срок действия" class="bef_input new_input"><input type="text" id="driver_end" name="driver_end" placeholder="Срок действия удостоверения" class="contacts-inp input_form" required=""></div>';
+
+        return $html;
+    }
 }

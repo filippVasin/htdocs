@@ -18,9 +18,9 @@
         <div title="Электронная почта" class="bef_input"><input type="email" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form" required=""></div>
         <div title="Табельный номер" class="bef_input"><input type="text" id="personnel_number" name="personnel_number" placeholder="Табельный номер(не обязательно)" class="contacts-inp input_form" required=""></div>
         <input type="hidden" id="form_id_item" name="id_item" value="36" required="">
-        <div id="landing_form_offer_one" class="button">Записать</div></div>
+        <div id="landing_form_offer_one" class="button landing_form_offer_one">Записать</div></div>
     </div>
-        <div id="test_block" style="display: none; text-align: left;">
+        <div id="test_block" style="display: none; color: #fff;">
         <div id="content_box"></div>
         <div id="create_new_content_box"></div>
             <div id="input_content_box"></div>
