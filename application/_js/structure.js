@@ -1,6 +1,4 @@
-/**
- * Created by root on 13.02.2017.
- */
+
 $(document).ready(function() {
     var id_node_plus = 0;
 
@@ -120,7 +118,6 @@ $(document).ready(function() {
             }
         });
 
-
     });
 
 
@@ -132,7 +129,6 @@ $(document).ready(function() {
             $(parent).siblings('ul').addClass('none');
         } else {
             $(parent).addClass("open_ul");
-
             $(parent).siblings('ul').removeClass('none');
         }
     });

@@ -1,0 +1,14 @@
+.box {
+    min-height: 0px;
+}
+.content {
+    padding: 15px!important;
+    margin-right: auto!important;
+    margin-left: auto!important;
+    padding-left: 15px!important;
+    padding-right: 15px!important;
+}
+
+.delete_company_item:hover i{
+    color: red!important;
+}

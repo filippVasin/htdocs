@@ -83,15 +83,21 @@ class Model_menu{
 
         // Есть ли управляемая компания;
         if( $_SESSION['role_id'] == 4){
-            $company_buttons = '
-            <li><a href="/main" class="pril_start"><span>Главная страница</span><i class="fa fa-bank"></i> </a></li>
-            <li><a href="/structure" class="pril_start"> <span>Cтруктура</span><i class="fa  fa-sitemap"></i> </a></li>
+            $company_buttons = ' <li><a href="/main" class="pril_start"><span>Главная страница</span><i class="fa fa-bank"></i> </a></li>';
+
+
+//            if(1==1){
+//                $company_buttons .= '<li><a href="/select_company_control" class="pril_start"> <span>Компании</span><i class="fa fa-leanpub"></i></a></li>';
+//            }
+            $company_buttons  .= '<li><a href="/structure" class="pril_start"> <span>Cтруктура</span><i class="fa  fa-sitemap"></i> </a></li>
             <li><a href="/creator" class="pril_start"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i> </a></li>
             <li><a href="/docs_report" class="pril_start"> <span>Отчёт по документам</span><i class="fa fa-book"></i> </a></li>
             <li><a href="/report_step" class="pril_start"> <span>Отчёт по сотрудникам</span><i class="fa fa-users"></i> </a></li>
             <li><a href="/company_forms" class="pril_start"> <span>Документы компании</span><i class="fa  fa-files-o"></i></a></li>
             <li><a href="/local_alert" class="pril_start"> <span>Уведомления</span><i class="fa fa-paper-plane"></i></a> </li>
             ';
+
+//
         }   else{
             $company_buttons = '';
         }
@@ -110,6 +116,11 @@ class Model_menu{
             if($_SESSION['role_id'] == 1){
 
                 $login_buttons = '<li><a href="/main" class="pril_start"> <span>Главная страница</span><i class="fa fa-bank "></i></a></li>';
+
+                if( $_SESSION['user_id'] == 1){
+                    $login_buttons .= '<li><a href="/supervisor" class="pril_start"> <span>Супервайзер</span><i class="fa   fa-unlock-alt"></i></a></li>';
+                }
+
                 $login_buttons .= '<li><a href="/company_control" class="pril_start"> <span>Компании</span><i class="fa fa-leanpub"></i></a></li>';
                 $login_buttons .= '<li><a href="/structure" class="pril_start"> <span>Cтруктура</span><i class="fa fa-sitemap"></i></a></li>';
                 $login_buttons .= '<li><a href="/creator" class="pril_start"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i></a></li>';

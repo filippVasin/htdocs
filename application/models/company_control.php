@@ -19,17 +19,13 @@ class Model_company_control{
         if(!(isset($_SESSION['user_id']))){
             header("Location:/login");
         }
-
-        global $db, $elements;
-
-
+        global $db;
 
         $html = '';
 
         $sql = "SELECT * FROM `company` WHERE `status` != 0 AND `author_user_id` = '".$_SESSION['user_id']."';";
         $company_array = $db->all($sql);
         foreach($company_array as $company_item){
-//            $html .= $elements->company_item($company_item['name'].' ('.$company_item['short_name'].') / '.$company_item['director_surname'].' '.$company_item['director_name'].' '.$company_item['director_second_name'], 'company_'.$company_item['id'], ($company_item['id'] == $_SESSION['control_company'] ? 'on_company' : 'off_company'), '', 'company_id='.$company_item['id']);
 
             $sql = "SELECT company.name AS company_name,  company.name AS company_short_name
                     FROM organization_structure,company
