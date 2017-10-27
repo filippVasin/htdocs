@@ -18,16 +18,16 @@ class Model_docs_report{
     {
         global $db;
 
-        $select_item_status = $_SESSION['select_item_status'];
-        $select_item = $_SESSION['select_item'];
-        $date_from = $_SESSION['date_from'];
-        $date_to = $_SESSION['date_to'];
+        $select_item_status = $_SESSION['select_item_status_docs_report'];
+        $select_item = $_SESSION['select_item_docs_report'];
+        $date_from = $_SESSION['date_from_docs_report'];
+        $date_to = $_SESSION['date_to_docs_report'];
 
-        if(!isset($_SESSION['select_item'])){
-            $_SESSION['select_item'] = "";
+        if(!isset($_SESSION['select_item_docs_report'])){
+            $_SESSION['select_item_docs_report'] = "";
         }
-        if($_SESSION['select_item'] == "Все"){
-            $_SESSION['select_item'] = "";
+        if($_SESSION['select_item_docs_report'] == "Все"){
+            $_SESSION['select_item_docs_report'] = "";
         }
 
         // какие права имеет получатель
@@ -60,15 +60,15 @@ class Model_docs_report{
         $left = $observer_data['left'];
         $right = $observer_data['right'];
 
-        if(!isset($_SESSION['left_key'])){
-            $_SESSION['left_key'] = 0;
+        if(!isset($_SESSION['left_key_docs_report'])){
+            $_SESSION['left_key_docs_report'] = 0;
         }
-        if(!isset($_SESSION['right_key'])){
-            $_SESSION['right_key'] = 0;
+        if(!isset($_SESSION['right_key_docs_report'])){
+            $_SESSION['right_key_docs_report'] = 0;
         }
 
-        $left_key = $_SESSION['left_key'];
-        $right_key = $_SESSION['right_key'];
+        $left_key = $_SESSION['left_key_docs_report'];
+        $right_key = $_SESSION['right_key_docs_report'];
 
         $sql="SELECT
 /* Вывод даннных */
@@ -217,24 +217,6 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
 
 
 
-
-//        // частичный доступ у сотрудника которые запрашивает отчёт
-//        if(($left!='none')&&($left!="all")) {
-//            $sql .= " AND organization_structure.left_key >= " . $left . "
-//                AND organization_structure.right_key <= " . $right ;
-//        }
-
-//        // полный доступ у сотрудника которые запрашивает отчёт
-//        if($left=='all') {
-//            $sql.=" GROUP BY EMPLOY, STEP, name_doc";
-//            // не добавляем фильтры
-//        }
-
-//        // без доступа, отчёт не показываем
-//        if($left=='none') {
-//            // не показываем ничего
-//        } else {
-//
             // если надо показать документы по всем узлам
             if (($left_key == 0) && ($right_key == 0)) {
                 $sql .= " AND organization_structure.left_key >= 1
@@ -407,22 +389,22 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         $date_to = $this->post_array['date_to'];
         $select_item_status = $this->post_array['select_item_status'];
 
-        $_SESSION['select_item_status'] = $select_item_status;
-        $_SESSION['select_item'] = $select_item;
-        $_SESSION['left_key'] = $left_key;
-        $_SESSION['right_key'] = $right_key;
-        $_SESSION['date_from'] = $date_from;
-        $_SESSION['date_to'] = $date_to;
+        $_SESSION['select_item_status_docs_report'] = $select_item_status;
+        $_SESSION['select_item_docs_report'] = $select_item;
+        $_SESSION['left_key_docs_report'] = $left_key;
+        $_SESSION['right_key_docs_report'] = $right_key;
+        $_SESSION['date_from_docs_report'] = $date_from;
+        $_SESSION['date_to_docs_report'] = $date_to;
         $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
         die($result);
     }
 
     public function date_from(){
-        return $_SESSION['date_from'];
+        return $_SESSION['date_from_docs_report'];
     }
     public function date_to(){
-        return $_SESSION['date_to'];
+        return $_SESSION['date_to_docs_report'];
     }
 
 

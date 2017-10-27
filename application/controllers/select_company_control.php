@@ -8,5 +8,9 @@ class Controller_select_company_control extends Controller{
         $this->view = str_replace('%company%', $html, $this->view);
     }
 
+    public  function start_company_control(){
+        $this->model->post_array = $this->post_params;
+        $this->model->start_company_control();
+    }
 
 }

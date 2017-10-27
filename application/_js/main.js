@@ -125,6 +125,9 @@ $(document).ready(function() {
 
 
     function start() {
+
+
+
         var node_left_key = $("#nods_key").attr('left');
         var node_right_key = $("#nods_key").attr('right');
         $.ajax({
@@ -152,7 +155,143 @@ $(document).ready(function() {
                 console.log('error');
             }
         });// ajax
+
+
+
+        //$.ajax({
+        //    type: "POST",
+        //    url: "/main/events",
+        //    success:function (answer) {
+
+                //var events = jQuery.parseJSON(answer);
+                //$(doc).find('event').each(function() {
+                //    events.push({
+                //        title: $(this).attr('title'),
+                //        start: $(this).attr('start') // will be parsed
+                //    });
+                //});
+
+        //        var events = array();
+        //        events[
+        //        {
+        //            title          : 'Инструктажи',
+        //                start          : new Date(y, m, d - 5),
+        //            end            : new Date(y, m, d - 2),
+        //            backgroundColor: '#f39c12', //yellow
+        //            borderColor    : '#f39c12' //yellow
+        //        },
+        //        {
+        //            title          : 'Собрание',
+        //                start          : new Date(y, m, d, 10, 30),
+        //            allDay         : false,
+        //            backgroundColor: '#0073b7', //Blue
+        //            borderColor    : '#0073b7' //Blue
+        //        }]
+        //        $('#calendar').fullCalendar(fullCalendar({ events: events}));
+        //    }
+        //});
+
+
+
+        $('#calendar').fullCalendar({
+            events: '/main/calendar',
+            eventClick: function(calEvent) {
+
+               var str_data = new Date(calEvent.start);
+
+                //$(this).css('border-color', 'red');
+                // преобразуем дату в норм формат
+                //alert( str_data.toLocaleDateString());
+                //var date = new Date();
+                //
+                //var options = {
+                //    timezone: 'UTC',
+                //    year: 'numeric',
+                //    month: 'numeric',
+                //    day: 'numeric'
+                //
+                //};
+                //
+                //alert( date.toLocaleString("ru", options) ); // среда, 31 декабря 2014 г. н.э. 12:30:00
+                //alert( date.toLocaleString("en-US", options) ); // Wednesday, December 31, 2014 Anno Domini 12:30:00 PM
+
+               if(calEvent.type == '2'){
+                   get_calendary_all_event(calEvent.data_str);
+               }
+                //if(calEvent.type == '2'){
+                //    get_calendary_type_emp(calEvent.emp,calEvent.data_str);
+                //}
+
+
+            }
+        });
     }
+
+    function get_calendary_item(str_date){
+        var report_type = "calendary_item";
+        $.ajax({
+            type: "POST",
+            url: "/master_report/main",
+            data: {
+                str_date:str_date,
+                report_type:report_type
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+                if (request_result == "ok") {
+                    $("#calendar_event_popup_data").html(content);
+                    $("#calendar_event_popup_button").click();
+                }
+            }
+        });
+    }
+
+    function get_calendary_type_emp(str_emp,str_date){
+        var report_type = "calendary_item_type_emp";
+        $.ajax({
+            type: "POST",
+            url: "/master_report/main",
+            data: {
+                str_emp:str_emp,
+                str_date:str_date,
+                report_type:report_type
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+                if (request_result == "ok") {
+                    $("#calendar_event_popup_data").html(content);
+                    $("#calendar_event_popup_button").click();
+                }
+            }
+        });
+    }
+
+    function get_calendary_all_event(str_date){
+        var report_type = "get_calendary_all_event";
+        $.ajax({
+            type: "POST",
+            url: "/master_report/main",
+            data: {
+                str_date:str_date,
+                report_type:report_type
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+                if (request_result == "ok") {
+                    $("#calendar_event_popup_data").html(content);
+                    $("#calendar_event_popup_button").click();
+                }
+            }
+        });
+    }
+
+
 
     function create_node_structure(){
         // создание дашборда по отделам
@@ -328,10 +467,12 @@ $(document).ready(function() {
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
-                        $(this).closest("li").css("display","none");
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).closest("li").css("display", "none");
+                        }
                     }
                 });
-                $("#alert_signature_docs_popup").addClass("none");
+                $(".alert_cancel").click();
             },
             error: function () {
                 console.log('error');
@@ -366,10 +507,12 @@ $(document).ready(function() {
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
-                        $(this).closest("li").css("display","none");
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).closest("li").css("display", "none");
+                        }
                     }
                 });
-                $("#alert_acception_docs_popup").addClass("none");
+                $(".alert_cancel").click();
             },
             error: function () {
                 console.log('error');
@@ -404,10 +547,12 @@ $(document).ready(function() {
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
-                        $(this).closest("li").css("display","none");
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).closest("li").css("display", "none");
+                        }
                     }
                 });
-                $("#alert_bailee_push_popup").addClass("none");
+                $(".alert_cancel").click();
             },
             error: function () {
                 console.log('error');
@@ -476,6 +621,24 @@ $(".fc-day-grid-container").css("height","100%");
             $(".btn-default").addClass("none");
         }
     });
+
+
+
+
+
+    //// рубрика - эксперементы
+    //$(".progress-group").each(function() {
+    //    if($(this).children('.progress-group').length == 1){
+    //        $(this).addClass("colorGreen");
+    //    };
+    //});
+    //$(".progress-group").each(function() {
+    //    if($(this).attr('left_key') == 223){
+    //        var fact = $(this).children('.num_fact');
+    //        var int = Number(fact.html());
+    //        fact.html(int - 4);
+    //    }
+    //});
 
 
 });

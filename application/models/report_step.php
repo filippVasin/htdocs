@@ -18,16 +18,19 @@ class Model_report_step{
 
         global $db;
         $select_item = $this->post_array['select_item'];
-        $date_from = $_SESSION['date_from'];
-        $date_to = $_SESSION['date_to'];
+        $date_from = $_SESSION['date_from_report_step'];
+        $date_to = $_SESSION['date_to_report_step'];
 
-        if(!isset($_SESSION['select_item'])){
-            $_SESSION['select_item'] = "";
+        if(!isset($_SESSION['select_item_report_step'])){
+            $_SESSION['select_item_report_step'] = "";
         }
-        if($_SESSION['select_item'] == "Все"){
-            $_SESSION['select_item'] = "";
+        if($_SESSION['select_item_report_step'] == "Все"){
+            $_SESSION['select_item_report_step'] = "";
         }
 
+        if($_SESSION['employee_id'] == ""){
+            $_SESSION['employee_id'] = 2;
+        }
         // какие права имеет получатель
         $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
                     organization_structure.boss_type,
@@ -57,15 +60,15 @@ class Model_report_step{
         $left = $observer_data['left'];
         $right = $observer_data['right'];
 
-        if(!isset($_SESSION['left_key'])){
-            $_SESSION['left_key'] = 0;
+        if(!isset($_SESSION['left_key_report_step'])){
+            $_SESSION['left_key_report_step'] = 0;
         }
-        if(!isset($_SESSION['right_key'])){
-            $_SESSION['right_key'] = 0;
+        if(!isset($_SESSION['right_key_report_step'])){
+            $_SESSION['right_key_report_step'] = 0;
         }
 
-        $left_key = $_SESSION['left_key'];
-        $right_key = $_SESSION['right_key'];
+        $left_key = $_SESSION['left_key_report_step'];
+        $right_key = $_SESSION['right_key_report_step'];
 
         $sql="SELECT
 /* Вывод даннных */
@@ -192,13 +195,13 @@ class Model_report_step{
 	     AND
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
-    AND ((('". $_SESSION['select_item'] ."' = 'Не начатые' ) AND (history_docs.date_start is Null))
+    AND ((('". $_SESSION['select_item_report_step'] ."' = 'Не начатые' ) AND (history_docs.date_start is Null))
 	  			OR
-	  			(('". $_SESSION['select_item'] ."' = 'Не законченные' ) AND (history_docs.date_start is not Null) AND (history_docs.date_finish is Null))
+	  			(('". $_SESSION['select_item_report_step'] ."' = 'Не законченные' ) AND (history_docs.date_start is not Null) AND (history_docs.date_finish is Null))
 	  			OR
-	  			(('". $_SESSION['select_item'] ."' = 'Законченные' ) AND (history_docs.date_finish is not Null))
+	  			(('". $_SESSION['select_item_report_step'] ."' = 'Законченные' ) AND (history_docs.date_finish is not Null))
 	  			OR
-	  			('". $_SESSION['select_item'] ."' = ' ' )
+	  			('". $_SESSION['select_item_report_step'] ."' = ' ' )
 			)
 
 	AND( (('". $date_from ."' = ' ' ) AND ('". $date_to ."' = ''))
@@ -216,14 +219,6 @@ class Model_report_step{
 																		(DATE(history_docs.date_finish) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y'))))
 				) 	 ";
 
-
-//        if ($date_from != "") {
-//            $sql .= " AND DATE(history_docs.date_start) <= STR_TO_DATE('". $date_from ."', '%d.%m.%Y')";
-//        }
-//        if ($date_to != "") {
-//
-//            $sql .= " AND DATE(history_docs.date_start) >= STR_TO_DATE('". $date_to ."', '%d.%m.%Y')";
-//        }
 
         // частичный доступ у сотрудика котрый запрашивает отчёт
         if(($left!='none')&&($left!="all")) {
@@ -281,12 +276,12 @@ class Model_report_step{
                     </tr>';
                 }
             }
-            if($_SESSION['select_item'] == ""){
-                $_SESSION['select_item'] = "Все";
+            if($_SESSION['select_item_report_step'] == ""){
+                $_SESSION['select_item_report_step'] = "Все";
             }
 
             $html.= '  <select class="target " id="node_docs_select" style="float:left;width:200px;margin-top:0px;">
-                        <option value=""> '. $_SESSION['select_item'] .'</option>
+                        <option value=""> '. $_SESSION['select_item_report_step'] .'</option>
                         <option value="">Все</option>
                         <option value="Не начатые">Не начатые</option>
                         <option value="Не законченные">Не законченные</option>
@@ -401,21 +396,21 @@ class Model_report_step{
         $date_to = $this->post_array['date_to'];
 
 
-        $_SESSION['select_item'] = $select_item;
-        $_SESSION['left_key'] = $left_key;
-        $_SESSION['right_key'] = $right_key;
-        $_SESSION['date_from'] = $date_from;
-        $_SESSION['date_to'] = $date_to;
+        $_SESSION['select_item_report_step'] = $select_item;
+        $_SESSION['left_key_report_step'] = $left_key;
+        $_SESSION['right_key_report_step'] = $right_key;
+        $_SESSION['date_from_report_step'] = $date_from;
+        $_SESSION['date_to_report_step'] = $date_to;
         $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
         die($result);
     }
 
     public function date_from(){
-        return $_SESSION['date_from'];
+        return $_SESSION['date_from_report_step'];
     }
     public function date_to(){
-        return $_SESSION['date_to'];
+        return $_SESSION['date_to_report_step'];
     }
 
 }

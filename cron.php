@@ -42,27 +42,34 @@ if(__DIR__ == "C:\MAMP\htdocs"){
 
 // Подключаем лабор
     $labro = new labro;
+// обновляем календарь
+//calendar_refresh();
 
-// Назначаем компанию
-    $control_company = 15;
+// глобольный цикл по компаниям
+$sql = "SELECT id FROM company";
+$companys = $db->all($sql);
+foreach ($companys as $company) {
+
+    $control_company = $company['id'];
+
 // Время
-$today = date("Y-m-d H:i:s");
+    $today = date("Y-m-d H:i:s");
 // тест
-$arrays = "";
+    $arrays = "";
 // Получаем массив всех сатрудников
-$sql="SELECT employees_items_node.employe_id
+    $sql = "SELECT employees_items_node.employe_id
 FROM employees_items_node, organization_structure
 WHERE employees_items_node.org_str_id = organization_structure.id
 AND organization_structure.company_id =" . $control_company;
-$employees_sql = $db->all($sql);
-$employees = array();
-$arrays .= "сотрудники  <br>";
-foreach ($employees_sql as $item) {
+    $employees_sql = $db->all($sql);
+    $employees = array();
+    $arrays .= "сотрудники  <br>";
+    foreach ($employees_sql as $item) {
         $employees[] = $item['employe_id'];
-    $arrays .= $item['employe_id'] . "<br>";;
-}
+        $arrays .= $item['employe_id'] . "<br>";;
+    }
 
-$sql="SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.boss_type, ORG_boss.`level` as level,
+    $sql = "SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.boss_type, ORG_boss.`level` as level,
                 chief_employees.id AS chief_employees_id,
                 chief_employees.surname AS chief_surname, chief_employees.name AS chief_name, chief_employees.second_name AS chief_second_name,
                     chief_items_control.name AS chief_dol
@@ -71,8 +78,8 @@ $sql="SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.boss_type, ORG_boss.`level` a
                                                                                     AND
                                                                                   ORG_chief.right_key > organization_structure.right_key
                                                                                   AND
-                                                                                  ORG_chief.company_id = 15 )
-                        LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = 15
+                                                                                  ORG_chief.company_id = " . $control_company . " )
+                        LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = " . $control_company . "
                                                                                         AND ORG_boss.left_key > ORG_chief.left_key
                                                                                         AND ORG_boss.right_key < ORG_chief.right_key
                                                                                         AND 	ORG_boss.`level` = (ORG_chief.`level` +1)
@@ -83,74 +90,76 @@ $sql="SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.boss_type, ORG_boss.`level` a
                         LEFT JOIN items_control AS  chief_items_control ON chief_items_control.id = ORG_boss.kladr_id
 
                 WHERE organization_structure.id = employees_items_node.org_str_id
-                AND organization_structure.company_id = 15
+                AND organization_structure.company_id = " . $control_company . "
                 AND chief_employees.id is not NULL
                 GROUP BY ORG_chief_id
                 ORDER BY level DESC, boss_type DESC";
-$bailees_sql = $db->all($sql);
+    $bailees_sql = $db->all($sql);
 // Получаем массив ответственных
-$bailees = array();
-$arrays .= "ответственные  <br>";
-foreach ($bailees_sql as $item) {
-    $bailees[] = $item['chief_employees_id'];
-    $arrays .= $item['chief_employees_id'] . "<br>";
-}
+    $bailees = array();
+    $arrays .= "ответственные  <br>";
+    foreach ($bailees_sql as $item) {
+        $bailees[] = $item['chief_employees_id'];
+        $arrays .= $item['chief_employees_id'] . "<br>";
+    }
 
 // Получаем массив руководителей
-$sql="SELECT employees_items_node.employe_id
+    $sql = "SELECT employees_items_node.employe_id
 FROM employees_items_node, organization_structure
 WHERE employees_items_node.org_str_id = organization_structure.id
-AND organization_structure.company_id = ". $control_company ."
+AND organization_structure.company_id = " . $control_company . "
 AND organization_structure.boss_type > 1";
-$leaders_sql = $db->all($sql);
-$leaders = array();
-$arrays .= "руководители <br>";
-foreach ($leaders_sql as $item) {
-    $leaders[] = $item['employe_id'];
-    $arrays .= $item['employe_id'] . "<br>";
-}
+    $leaders_sql = $db->all($sql);
+    $leaders = array();
+    $arrays .= "руководители <br>";
+    foreach ($leaders_sql as $item) {
+        $leaders[] = $item['employe_id'];
+        $arrays .= $item['employe_id'] . "<br>";
+    }
 
 // Получаем массив секретарей
-$sql="SELECT employees_items_node.employe_id
+    $sql = "SELECT employees_items_node.employe_id
 FROM employees_items_node, organization_structure,users
 WHERE employees_items_node.org_str_id = organization_structure.id
-AND organization_structure.company_id = ". $control_company ."
+AND organization_structure.company_id = " . $control_company . "
 AND employees_items_node.employe_id = users.employee_id
 AND users.role_id = 4";
-$secretars_sql = $db->all($sql);
-$secretars = array();
-$arrays .= "секретари <br>";
-foreach ($secretars_sql as $item) {
-    $secretars[] = $item['employe_id'];
-    $arrays .= $item['employe_id'] . "<br>";
-}
+    $secretars_sql = $db->all($sql);
+    $secretars = array();
+    $arrays .= "секретари <br>";
+    foreach ($secretars_sql as $item) {
+        $secretars[] = $item['employe_id'];
+        $arrays .= $item['employe_id'] . "<br>";
+    }
 
 // глобальный массив для рассылки
-$dispatch = array();
-$arrays = "";
-foreach ($employees as $item) {
-    $dispatch[$item]["email"] = $labro->employees_email($item);
-    $dispatch[$item]["emp_id"] = $item;
-    $dispatch[$item]["mail_body"] = $report_temp_mail;
-    $dispatch[$item]["excel_url"] = "";
-    $dispatch[$item]["flag"] = 0;
-    $dispatch[$item]["user_id"] = $labro->employees_to_user($item);
+    $dispatch = array();
+    $arrays = "";
+    foreach ($employees as $item) {
+        $dispatch[$item]["email"] = $labro->employees_email($item);
+        $dispatch[$item]["emp_id"] = $item;
+        $dispatch[$item]["mail_body"] = $report_temp_mail;
+        $dispatch[$item]["excel_url"] = "";
+        $dispatch[$item]["flag"] = 0;
+        $dispatch[$item]["user_id"] = $labro->employees_to_user($item);
+    }
+
+    $boss = array();
+
+
+    employee_alerts($control_company); // проходим по сотрудникам
+    secretars_alerts($control_company); // проходим по секретарям
+    bailees_alerts($control_company); // проходим по наставникам
+    boss_data($control_company); // собираем массив босов
+    boss_alert($control_company); // проходим по боссам
+    send_get_excel($control_company); // Excel отчёт
+    pass_send($control_company); // ложим пароли
+    add_hash(); // добавили хеш авторизации к ссылке
+    clear(); // отчишаем от якорей склейки
+    mails_send(); // отсылаем составленные письма
+    test_fun();       // кусаем арбу
+
 }
-
-$boss = array();
-
-
-employee_alerts(); // проходим по сотрудникам
-secretars_alerts(); // проходим по секретарям
-bailees_alerts(); // проходим по наставникам
-boss_data(); // собираем массив босов
-boss_alert(); // проходим по боссам
-send_get_excel(); // Excel отчёт
-pass_send(); // ложим пароли
-add_hash(); // добавили хеш авторизации к ссылке
-clear(); // отчишаем от якорей склейки
-mails_send(); // отсылаем составленные письма
-test_fun();       // кусаем арбу
 
 function add_hash(){
     global $dispatch,$employees;
@@ -176,14 +185,14 @@ function clear(){
     }
 }
 
-function pass_send(){
+function pass_send($control_company){
     global $db, $dispatch, $login_mail;
     $sql = "SELECT users.employee_id, temporary_links.pass AS pass, users.name AS login
             FROM temporary_links,users,employees_items_node,organization_structure
             WHERE temporary_links.id_user = users.id
             AND employees_items_node.employe_id = users.employee_id
             AND organization_structure.id = employees_items_node.org_str_id
-            AND organization_structure.company_id = 15";
+            AND organization_structure.company_id = ". $control_company;
 
     $pass_sql = $db->all($sql);
     foreach ($pass_sql as $item) {
@@ -197,7 +206,7 @@ function pass_send(){
 
 }
 
-function boss_data(){
+function boss_data($control_company){
     global $db, $boss, $labro;
     $sql="SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.id as ORG_boss_id, ORG_boss.boss_type, ORG_boss.`level` as level, ORG_chief.`level` as dir_level, ORG_chief.left_key, ORG_chief.right_key ,
                 chief_employees.id AS chief_employees_id, boss_items_control_types.name AS boss_dir_type, boss_items_control.name AS boss_dir,
@@ -208,8 +217,8 @@ function boss_data(){
                                                                                     AND
                                                                                   ORG_chief.right_key > organization_structure.right_key
                                                                                   AND
-                                                                                  ORG_chief.company_id = 15 )
-                        LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = 15
+                                                                                  ORG_chief.company_id = ". $control_company ." )
+                        LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $control_company ."
                                                                                         AND ORG_boss.left_key > ORG_chief.left_key
                                                                                         AND ORG_boss.right_key < ORG_chief.right_key
                                                                                         AND 	ORG_boss.`level` = (ORG_chief.`level` +1)
@@ -222,7 +231,7 @@ function boss_data(){
                         LEFT JOIN items_control_types AS boss_items_control_types ON boss_items_control_types.id = ORG_chief.items_control_id
 
                 WHERE organization_structure.id = employees_items_node.org_str_id
-                AND organization_structure.company_id = 15
+                AND organization_structure.company_id = ". $control_company ."
                 AND chief_employees.id is not NULL
                 GROUP BY ORG_chief_id
                 ORDER BY level DESC, boss_type DESC";
@@ -240,7 +249,7 @@ function boss_data(){
 
 }
 
-function boss_alert(){
+function boss_alert($control_company){
     global $db, $boss, $dispatch, $report_dir_mail;
     $sql = "SELECT
 /* Вывод даннных */
@@ -345,11 +354,11 @@ FORM_NOW.doc_status_now,
    AND
    /* по фирме*/
 
-    route_doc.company_id = 15
+    route_doc.company_id = ". $control_company ."
     		AND employees.id = employees_items_node.employe_id
     		AND organization_structure.id = employees_items_node.org_str_id
-    		AND organization_structure.company_id = 15
-    		AND org_parent.company_id = 15
+    		AND organization_structure.company_id = ". $control_company ."
+    		AND org_parent.company_id = ". $control_company ."
 	     AND
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
@@ -366,7 +375,7 @@ FORM_NOW.doc_status_now,
         WHERE form_status_now.doc_status_now>=7
         AND form_status_now.author_employee_id = employees_items_node.employe_id
         AND employees_items_node.org_str_id = organization_structure.id
-        AND organization_structure.company_id = 15";
+        AND organization_structure.company_id = ". $control_company ;
     $result_doc = $db->all($sql);
 
 
@@ -474,8 +483,8 @@ function is_email($email) {
     return preg_match("/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)*\.([a-zA-Z]{2,6})$/", $email);
 }
 
-function employee_alerts(){
-    global $db, $control_company, $employees, $dispatch, $inst_report_mail;
+function employee_alerts($control_company){
+    global $db, $employees, $dispatch, $inst_report_mail;
 
     $sql="SELECT
 /* Вывод даннных */
@@ -614,8 +623,8 @@ FORM_NOW.doc_status_now,
     }
 }
 
-function secretars_alerts(){
-    global $db, $control_company,$labro, $secretars, $dispatch, $local_alert_mail;
+function secretars_alerts($control_company){
+    global $db, $labro, $secretars, $dispatch, $local_alert_mail;
 
     $sql="SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
 form_step_action.action_name,form_step_action.user_action_name,
@@ -687,8 +696,8 @@ WHERE local_alerts.company_id = ". $control_company ."
 
 }
 
-function bailees_alerts(){
-    global $db, $control_company,$labro, $bailees, $dispatch,$report_bailees;
+function bailees_alerts($control_company){
+    global $db,$labro, $bailees, $dispatch,$report_bailees;
 
     $sql="SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
 form_step_action.action_name,form_step_action.user_action_name,
@@ -754,11 +763,11 @@ WHERE local_alerts.company_id = ". $control_company ."
 }
 
 
-function send_get_excel(){
+function send_get_excel($control_company){
     global $boss,$dispatch;
     foreach ($boss as $boss_item) {
         $boss_excel_url = "";
-        $boss_excel_url .= send_excel_report($boss_item['emp_id']);
+        $boss_excel_url .= send_excel_report($boss_item['emp_id'],$control_company);
         if ($boss_excel_url != "") {
 //            $dispatch[$boss_item['emp_id']]["mail_body"] .= "<br><b>Excel отчёт по ". $boss_item['boss_dir_type'] ." ". $boss_item['boss_dir'] ." :</b><br>";
             $dispatch[$boss_item['emp_id']]["excel_url"] = $boss_excel_url;
@@ -768,7 +777,7 @@ function send_get_excel(){
 }
 
 
-function send_excel_report($observer_emplyoee_id){
+function send_excel_report($observer_emplyoee_id,$control_company){
     global $db, $today;
 
     $file_url = "";
@@ -902,22 +911,11 @@ function send_excel_report($observer_emplyoee_id){
                   AND type_temp.type_form_id = type_form.id
 
                   AND company_temps.temp_type_id = type_temp.id
-                  AND company_temps.company_id =  15
-                  AND employees.id = save_temp_files.employee_id";
-
-    // частичный доступ у сотрудика котрый запрашивает отчёт
-//    if(($left!='none') && ($left!="all")) {
-//        $sql .= " AND organization_structure.left_key >= " . $left . "
-//                AND organization_structure.right_key<= " . $right . "
-//                GROUP BY save_temp_files.id
-//                                            ORDER BY  emp";
-//    }
-
-    // полный доступ на данные у сотрудника которые запрашивает отчёт
-//    if($left=='all') {
-        $sql .= " GROUP BY save_temp_files.id
+                  AND company_temps.company_id =  ". $control_company ."
+                  AND employees.id = save_temp_files.employee_id
+                  GROUP BY save_temp_files.id
                                             ORDER BY  emp";
-//    }
+
 
     // без доступа, отчёт не показываеи
     if($left=='none') {
@@ -1164,4 +1162,189 @@ function delete_url_hash(){
     $sql = "DELETE FROM `url_hash` WHERE  now() >  (`create_date` + INTERVAL 7 DAY)";
     $db->query($sql);
 }
+
+function calendar_refresh(){
+    global $db;
+
+    // чистим таблицу
+    $sql = "TRUNCATE TABLE calendar";
+    $db->query($sql);
+
+    // проходим по всем компаниям
+    $sql = "SELECT id FROM company";
+    $companys = $db->all($sql);
+    foreach ($companys as $company) {
+
+        $comp = $company['id'];
+
+
+        $sql = "SELECT
+/* Вывод даннных */
+route_control_step.track_number_id AS id,
+  employees.id AS employee_id,
+  route_control_step.id AS ID_STEP,
+   employees.start_date as employees_start,
+   history_docs.date_finish,
+     route_control_step.`periodicity`,
+   CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+  route_control_step.step_name,
+  CASE
+	WHEN route_control_step.periodicity IS NULL AND history_docs.date_finish IS NULL
+	THEN employees.start_date
+	WHEN route_control_step.periodicity IS NOT NULL AND history_docs.date_finish IS NULL
+	THEN employees.start_date
+	WHEN route_control_step.periodicity IS NULL AND history_docs.date_finish IS NOT NULL
+	THEN CAST(history_docs.date_finish AS DATE)
+	WHEN route_control_step.periodicity IS NOT NULL AND history_docs.date_finish IS NOT NULL
+			AND ((NOW() + INTERVAL 1 MONTH) >  (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH))
+	THEN CAST((history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH) AS DATE)
+	WHEN route_control_step.periodicity IS NOT NULL AND history_docs.date_finish IS NOT NULL
+			AND ((NOW() + INTERVAL 1 MONTH) <= (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH))
+	THEN CAST(history_docs.date_finish AS DATE)
+	END AS START_DATE,
+
+  CASE
+	WHEN route_control_step.periodicity IS NOT NULL AND history_docs.date_finish IS NOT NULL
+	THEN 1
+	WHEN route_control_step.periodicity IS NULL AND history_docs.date_finish IS NOT NULL
+			AND NOW() < (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH)
+	THEN 1
+	ELSE 0
+  	END AS progress
+  FROM (route_control_step,route_doc,employees)
+  LEFT JOIN
+    history_docs
+    /* история документов по шагам */
+    ON (history_docs.step_id = route_control_step.id
+       AND
+       history_docs.employee_id = employees.id
+       /* чтобы выводить все записи без учёта переодики, убрать этот AND*** */
+       AND
+		 		((route_control_step.periodicity is NULL)
+		 		OR
+				( NOW() < (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH))
+				OR
+				( NOW() < (history_docs.date_start + INTERVAL route_control_step.periodicity MONTH)))
+       )
+       /* привязка сотрудника к должности */
+       LEFT JOIN employees_items_node ON employees_items_node.employe_id = employees.id
+       LEFT JOIN organization_structure ON employees_items_node.org_str_id = organization_structure.id
+       LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
+       /* находим родительскузел, должность и тип должности */
+     LEFT JOIN organization_structure AS org_parent
+     ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
+     AND org_parent.level =(organization_structure.level - 1) )
+     LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+     /* узлы с индивидуальными треками */
+    LEFT JOIN organization_structure AS TreeOfParents
+     ON TreeOfParents.id = route_doc.organization_structure_id
+    LEFT JOIN
+    /*  получаем id сохранённого файла если он сеть*/
+    	(SELECT
+			save_temp_files.id AS SaveTempID, history_forms.step_end_time AS TempIdDateStatus, type_form.name AS TempName,
+			save_temp_files.employee_id AS TempEmpliD, company_temps.id AS TempCompanyId, step_content.id AS ContentFormId,
+			form_step_action.action_name AS ActionName
+			FROM
+				(save_temp_files, form_status_now, history_forms, type_temp, company_temps, type_form, form_step_action, temps_form_step)
+				/* нужны те шаги где есть form_id */
+				LEFT JOIN step_content
+					ON step_content.form_id = company_temps.id
+			WHERE
+				save_temp_files.id = form_status_now.save_temps_file_id
+				AND
+				form_status_now.history_form_id = history_forms.id
+				AND
+				type_temp.id = company_temps.temp_type_id
+				AND
+				save_temp_files.company_temps_id = company_temps.id
+				AND
+				type_form.id = type_temp.temp_form_id
+				AND
+				temps_form_step.id = form_status_now.track_form_step_now
+				AND
+				form_step_action.id = temps_form_step.action_form) AS TempTest
+				/* приклееваем по совпадению пар сотрудников и шагов */
+		ON (TempTest.TempEmpliD=employees.id AND TempTest.ContentFormId = route_control_step.step_content_id)
+  WHERE
+      /* все роуты с треками */
+    route_control_step.track_number_id = route_doc.id
+    AND
+  /* для всех должностей ... */
+   (route_doc.item_type_id IS NULL
+          OR
+          /* ... или по паре должность  - конкретный сотрудник*/
+        route_doc.item_type_id IN
+          /* Start Ищем ID Должности из таблици employees_item_node для заданного сотрудника employe.id */
+          (SELECT EmplOrg.kladr_id
+            FROM
+              employees AS Empl, employees_items_node AS EmplItem, organization_structure AS EmplOrg
+            WHERE
+              Empl.id = EmplItem.employe_id
+              AND
+              EmplItem.org_str_id=EmplOrg.id
+              )
+    )
+    AND
+    /* для всех узлов или конкретных узлов по конкретным сотрудникам */
+    (route_doc.organization_structure_id IS NULL
+   OR
+     (organization_structure.left_key >= TreeOfParents.left_key
+     AND
+     organization_structure.right_key <= TreeOfParents.right_key)
+     )
+	AND	organization_structure.company_id
+   AND
+   /* по фирме*/
+
+    route_doc.company_id = organization_structure.company_id
+    		AND employees.id = employees_items_node.employe_id
+    		AND organization_structure.id = employees_items_node.org_str_id
+    		AND organization_structure.company_id = org_parent.company_id
+    		AND org_parent.company_id = " . $comp . "
+	     AND
+    /* для всех сотрудников или только для конкретного */
+    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
+      GROUP BY employee_id, ID_STEP";
+
+        $briefings = $db->all($sql);
+        $result_array = array();
+        foreach ($briefings as $key => $briefing) {
+            $result_array [$key]['id'] = $briefing['id'];
+            $result_array [$key]['employee_id'] = $briefing['employee_id'];
+            $result_array [$key]['ID_STEP'] = $briefing['ID_STEP'];
+            $result_array [$key]['employees_start'] = $briefing['employees_start'];
+            $result_array [$key]['date_finish'] = $briefing['date_finish'];
+            $result_array [$key]['periodicity'] = $briefing['periodicity'];
+            $result_array [$key]['fio'] = $briefing['fio'];
+            $result_array [$key]['step_name'] = $briefing['step_name'];
+            $result_array [$key]['start'] = $briefing['START_DATE'];
+            $result_array [$key]['progress'] = $briefing['progress'];
+        }// конец цикла
+
+        foreach ($result_array as $item) {
+            $type = 2;
+            $progress = $item['progress'];
+            $title = $item['step_name'];
+            $dataset = $item['fio'];
+            $start = $item['start'];
+            $company_id = $comp;
+            $emp_id = $item['employee_id'];
+            $step_id = $item['ID_STEP'];
+
+            $sql = "INSERT INTO `calendar` (`event_type`, `dataset`, `title`, `progress`, `start`, `company_id`, `emp_id`, `step_id`)
+                        VALUES('" . $type . "',
+                                '" . $dataset . "',
+                                 '" . $title . "',
+                                 '" . $progress . "',
+                                  '" . $start . "',
+                                   '" . $company_id . "',
+                                    '" . $emp_id . "',
+                                     '" . $step_id . "');";
+            $db->query($sql);
+        }
+    }
+
+}
+
 ?>

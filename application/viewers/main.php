@@ -2,16 +2,6 @@
 <div id="nods_key" left="" right=""></div>
 <div id="load_dashboard"></div>
 
-<!--<div id="popup_context_menu_update" class="none">-->
-<!--    <div class="canvas">-->
-<!--        <div class="popup_context_menu_title"> Выберите интересуемое подразделение: </div>-->
-<!--        <div id="popup_update_tree"></div>-->
-<!--        <div class="button_row">-->
-<!--            <div class="button" id="cancel_popup" >Отмена</div>-->
-<!--            <div class="button" id="all_node_popup" >Все отделы</div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 
 <div class="col-lg-4 col-xs-12">
 <div class="box box-primary">
@@ -20,15 +10,6 @@
 
         <h3 class="box-title">Задачи</h3>
 
-<!--        <div class="box-tools pull-right">-->
-<!--            <ul class="pagination pagination-sm inline">-->
-<!--                <li><a href="#">«</a></li>-->
-<!--                <li><a href="#">1</a></li>-->
-<!--                <li><a href="#">2</a></li>-->
-<!--                <li><a href="#">3</a></li>-->
-<!--                <li><a href="#">»</a></li>-->
-<!--            </ul>-->
-<!--        </div>-->
 
         <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -86,7 +67,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="yes_popup_3" class="btn btn-primary">Подписал</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Не подписал</button>
+                <button type="button" class="btn alert_cancel btn-default" data-dismiss="modal">Не подписал</button>
             </div>
         </div>
     </div>
@@ -109,7 +90,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="yes_popup_4" class="btn btn-primary">Сдал</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Не сдал</button>
+                <button type="button" class="btn alert_cancel btn-default" data-dismiss="modal">Не сдал</button>
             </div>
         </div>
     </div>
@@ -134,7 +115,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="yes_popup_14" class="btn btn-primary">Подписал</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Не подписал</button>
+                <button type="button" class="btn alert_cancel btn-default" data-dismiss="modal">Не подписал</button>
             </div>
         </div>
     </div>
@@ -150,6 +131,8 @@
 </button>
 <button id="popup_report_emp_button" class="none" data-toggle="modal" data-target="#popup_report_emp">
 </button>
+<button id="calendar_event_popup_button" class="none" data-toggle="modal" data-target="#calendar_event_popup">
+</button>
 <!--// отчёт по сотрудникам-->
 
 
@@ -161,10 +144,10 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <br>
                 <h4 class="modal-title" >Отчёт по сотруднику</h4>
-                <h4 class="modal-title" id = "popup_emp_fio">Отчёт по сотруднику</h4>
-                <h4 class="modal-title" id = "popup_emp_dol">Отчёт по сотруднику</h4>
+                <h4 class="modal-title" id = "popup_emp_fio"></h4>
+                <h4 class="modal-title" id = "popup_emp_dol"></h4>
             </div>
-            <div class="modal-body" id="popup_report_emp_content">
+            <div class="modal-body" id="popup_report_emp_content" style="overflow-x: scroll;">
 
             </div>
             <div class="modal-footer">
@@ -173,3 +156,22 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+<div class="modal fade" tabindex="-1" id="calendar_event_popup" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"> Событие</h4>
+            </div>
+            <div class="modal-body" id="calendar_event_popup_data">
+
+            </div>
+            <div class="modal-footer">
+<!--                <button type="button" id="yes_popup_3" class="btn btn-primary">Подписал</button>-->
+                <button type="button" class="btn alert_cancel btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>

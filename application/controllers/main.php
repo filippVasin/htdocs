@@ -35,6 +35,13 @@ class Controller_main extends Controller{
         $this->view = str_replace('%some_var%', (isset($this->pointer) && $this->pointer != '' ? $this->pointer : 'CHANGED'), $this->view);
     }
 
+    public function events(){
+        $get_date = $this->get_params;
+        $this->model->events($get_date);
+    }
 
-
+    public function calendar(){
+        $get_date = $this->get_params;
+        $this->model->calendar($get_date);
+    }
 }

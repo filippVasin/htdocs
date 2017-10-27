@@ -360,6 +360,8 @@ FORM_NOW.doc_status_now,
             $emp = 0;
             $flag = 0;
             $doc_count_all = 0;// количество документов всего
+            $people_proc_target = 0;
+            $people_proc_fact = 0;
             $test_fio_html = '<div class="test_fio_table" dir="'. $dir_array_item .'">';
 
 
@@ -403,6 +405,7 @@ FORM_NOW.doc_status_now,
                                 }
                             }
                         }
+                        //
 
                         // собираем элементы - сотрудник
                         $count_test_fio_fact = $count_test_fio_fact + $count_doc_fio_fact;
@@ -419,8 +422,8 @@ FORM_NOW.doc_status_now,
                                             <div class="people_report" report_type="test"><img src="../../templates/simple_template/images/list.svg"></div>
                                             </div>';
 
-
-
+                        $people_proc_target += $count_test_fio_target;
+                        $people_proc_fact += $count_test_fio_fact;
                     }
 
                     if($test_item['doc_all']!=""){
@@ -471,18 +474,27 @@ FORM_NOW.doc_status_now,
             $left_key = str_pad($left_key, 3, "0", STR_PAD_LEFT);
             $right_key = str_pad($right_key, 3, "0", STR_PAD_LEFT);
 
+            $people_proc = round($people_proc_fact/$people_proc_target*100);
+
             $test_fact = $test_fact + $doc_count_end;
+
             $test_target = $test_target + $doc_count_all;
             $test_proc = round($test_fact/$test_target*100);
             $node_report_test .= '<div class="progress-group" level="'. $level .'" left_key="'. $left_key .'" right_key="'. $right_key .'" fact="'. $test_fact .'" target="'. $test_target .'"> ';
             $node_report_test .=     '<div class="progress-text-row click_area"> ';
             $node_report_test .=         '<span class="progress-text">'. $name .'</span>';
-            $node_report_test .=         '<span class="progress-number"><b>'. $test_fact .'</b>/'. $test_target .'</span>';
+            $node_report_test .=         '<span class="progress-number"><b class="num_fact">'. $test_fact .'</b>/'. $test_target .'</span>';
             $node_report_test .=     '</div> ';
             $node_report_test .=     '<div class="progress_line">';
             $node_report_test .=         '<div class="progress-bar progress-bar-aqua" style="width: '.$test_proc.'%"></div>';
             $node_report_test .=     '</div> <div class="icon"><img src="../../templates/simple_template/images/tasks.svg"></div>';
-            $node_report_test .=     '<div class="people none progress-group"><div class="people_title">Сотрудники</div>'.$test_fio_html .'</div>';
+            $node_report_test .=     '<div class="people none progress-group"><div class="people_title">Сотрудники
+                                        <span class="progress-number  progress_number_people"><b >'. $people_proc_fact .'</b>/'. $people_proc_target .'</span>
+                                        <div class="progress_line progress_line_people">
+                                            <div class="progress-bar progress-bar-aqua" style="width: '.$people_proc.'%">
+                                        </div>
+                                        </div>
+                                      </div>'.$test_fio_html .'</div>';
             $node_report_test .= '</div>';
 
             $endPHP = microtime(true) - $startPHP;
@@ -597,5 +609,320 @@ FORM_NOW.doc_status_now,
 
 
 
+    }
+    public function events($get_date){
+        global $db;
+
+        $green = '#00a65a';
+        $yellow = '#f39c12';
+        $gray =  '#a6a6a6';
+        $red = '#f44336';
+        $blue = "#4285f4";
+
+        $today = date("Y-m-d");
+
+
+        $sql="SELECT
+/* Вывод даннных */
+route_control_step.track_number_id AS id,
+  employees.id AS employee_id,
+  employees.surname,
+  route_control_step.id AS ID_STEP,
+   employees.start_date as employees_start,
+   history_docs.date_finish,
+     route_control_step.`periodicity`,
+   CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+  route_control_step.step_name
+  FROM (route_control_step,route_doc,employees)
+  LEFT JOIN
+    history_docs
+    /* история документов по шагам */
+    ON (history_docs.step_id = route_control_step.id
+       AND
+       history_docs.employee_id = employees.id
+       /* чтобы выводить все записи без учёта переодики, убрать этот AND*** */
+       AND
+		 		((route_control_step.periodicity is NULL)
+		 		OR
+				( NOW() < (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH))
+				OR
+				( NOW() < (history_docs.date_start + INTERVAL route_control_step.periodicity MONTH)))
+       )
+       /* привязка сотрудника к должности */
+       LEFT JOIN employees_items_node ON employees_items_node.employe_id = employees.id
+       LEFT JOIN organization_structure ON employees_items_node.org_str_id = organization_structure.id
+       LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
+       /* находим родительскузел, должность и тип должности */
+     LEFT JOIN organization_structure AS org_parent
+     ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
+     AND org_parent.level =(organization_structure.level - 1) )
+     LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+     /* узлы с индивидуальными треками */
+    LEFT JOIN organization_structure AS TreeOfParents
+     ON TreeOfParents.id = route_doc.organization_structure_id
+    LEFT JOIN
+    /*  получаем id сохранённого файла если он сеть*/
+    	(SELECT
+			save_temp_files.id AS SaveTempID, history_forms.step_end_time AS TempIdDateStatus, type_form.name AS TempName,
+			save_temp_files.employee_id AS TempEmpliD, company_temps.id AS TempCompanyId, step_content.id AS ContentFormId,
+			form_step_action.action_name AS ActionName
+			FROM
+				(save_temp_files, form_status_now, history_forms, type_temp, company_temps, type_form, form_step_action, temps_form_step)
+				/* нужны те шаги где есть form_id */
+				LEFT JOIN step_content
+					ON step_content.form_id = company_temps.id
+			WHERE
+				save_temp_files.id = form_status_now.save_temps_file_id
+				AND
+				form_status_now.history_form_id = history_forms.id
+				AND
+				type_temp.id = company_temps.temp_type_id
+				AND
+				save_temp_files.company_temps_id = company_temps.id
+				AND
+				type_form.id = type_temp.temp_form_id
+				AND
+				temps_form_step.id = form_status_now.track_form_step_now
+				AND
+				form_step_action.id = temps_form_step.action_form) AS TempTest
+				/* приклееваем по совпадению пар сотрудников и шагов */
+		ON (TempTest.TempEmpliD=employees.id AND TempTest.ContentFormId = route_control_step.step_content_id)
+  WHERE
+      /* все роуты с треками */
+    route_control_step.track_number_id = route_doc.id
+    AND
+  /* для всех должностей ... */
+   (route_doc.item_type_id IS NULL
+          OR
+          /* ... или по паре должность  - конкретный сотрудник*/
+        route_doc.item_type_id IN
+          /* Start Ищем ID Должности из таблици employees_item_node для заданного сотрудника employe.id */
+          (SELECT EmplOrg.kladr_id
+            FROM
+              employees AS Empl, employees_items_node AS EmplItem, organization_structure AS EmplOrg
+            WHERE
+              Empl.id = EmplItem.employe_id
+              AND
+              EmplItem.org_str_id=EmplOrg.id
+              )
+    )
+    AND
+    /* для всех узлов или конкретных узлов по конкретным сотрудникам */
+    (route_doc.organization_structure_id IS NULL
+   OR
+     (organization_structure.left_key >= TreeOfParents.left_key
+     AND
+     organization_structure.right_key <= TreeOfParents.right_key)
+     )
+	AND	organization_structure.company_id
+   AND
+   /* по фирме*/
+
+    route_doc.company_id = organization_structure.company_id
+    		AND employees.id = employees_items_node.employe_id
+    		AND organization_structure.id = employees_items_node.org_str_id
+    		AND organization_structure.company_id = org_parent.company_id
+    		AND org_parent.company_id = " . $_SESSION['control_company'] . "
+	     AND
+    /* для всех сотрудников или только для конкретного */
+    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
+      GROUP BY employee_id, ID_STEP";
+
+        $briefings = $db->all($sql);
+        $result_array = array();
+//        foreach ($briefings as $key=>$briefing) {
+//
+//        }
+
+
+        foreach ($briefings as $key=>$briefing) {
+//            $result_array [$key]['title']= $briefing['step_name'];
+            $result_array [$key]['id']= $briefing['id'];
+            $result_array [$key]['surname']= $briefing['surname'];
+            $result_array [$key]['emp']= $briefing['employee_id'];
+            $result_array [$key]['start']= $briefing['employees_start'];
+            $result_array [$key]['end']= $briefing['employees_start'];
+            $result_array [$key]['periodicity']= $briefing['periodicity'];
+            $result_array [$key]['data_finish'] = $briefing['date_finish'];
+            $result_array [$key]['textColor']= '#fff';
+
+            $periodicity = $briefing['periodicity'];
+
+
+            // выставляем дату и приводим к одному виду
+            $result_array [$key]['start'] = $briefing['employees_start'];
+            if($periodicity > 0 ){
+                if($briefing['date_finish']){
+                    // как много времени прошло с момента прохождения
+                    if((strtotime("+".$periodicity." month", strtotime($briefing['date_finish']))) >= (strtotime("-7 day", strtotime($today)))){
+                        // если период ещё не закончился
+                        $result_array [$key]['start'] = date_create($briefing['date_finish'])->Format('Y-m-d');
+                    } else {
+                        // если период закончился - назначаем новый срок прохождения
+                        $next_data =  (strtotime("+".$periodicity." month", strtotime($briefing['data_finish'])));
+                        $result_array [$key]['start'] =  date_create($next_data)->Format('Y-m-d');
+                    }
+                } else {
+                    // сотрудник не проходил с момента трудоустройства
+                }
+            } else {
+                //  если нет периодики и инструктаж пройден
+                if($briefing['date_finish']){
+                    $result_array [$key]['start'] = date_create($briefing['date_finish'])->Format('Y-m-d');
+                }
+            }
+
+// НЕ ТРОГАТЬ - ПОЙДЁТ В МОДУЛЬ ВОССТАНОВЛЕНИЕ ДОКУМЕНТАЦИИ
+//            if(!empty($briefing['periodicity'])){
+//                $periodicity = $briefing['periodicity'];
+//            } else {
+//                $periodicity = 0;
+//            }
+//            if ((strtotime("+".$periodicity." month", strtotime($date))) < (strtotime("-7 day", strtotime($today)))){
+//                do {
+//                    $date = (strtotime("+".$periodicity." month", strtotime($date)));
+//                } while ((strtotime($date)) <  (strtotime("-7 day", strtotime($today))));
+//                $result_array[$key]['start'] = strtotime("+".$periodicity." month", strtotime($date));
+//            } else {
+//                $result_array[$key]['start'] = $date;
+//            }
+        }// конец цикла
+
+// принимаем гет запрос по датам
+        $get_dates = explode('&', $get_date);
+        $get_dates_start = str_replace('start=', '', $get_dates[0]);
+        $get_dates_end = str_replace('end=', '', $get_dates[1]);
+
+
+        // массив уникальных дат
+        $dir_array = array();
+        foreach ($result_array as $item) {
+            $dir_array[] = $item['start'];
+        }
+        $dir_array = array_unique($dir_array);
+        // перебираем для схлопывания по дате
+        $result_array_two = array();
+        $count_two = 0;
+        foreach ($dir_array as $date) {
+            $count = 0;
+            if(($get_dates_start <= $date)&&(($get_dates_end >= $date))) {
+                foreach ($result_array as $item) {
+                    // создаём для дня один элемент
+                    if ($date == $item['start']) {
+                        if ($count < 4) {
+                            $result_array_two[$count_two + $count]['id'] = $item['id'];
+                            $result_array_two[$count_two + $count]['title'] = $item['surname'];
+                            $result_array_two[$count_two + $count]['emp'] = $item['emp'];
+                            $result_array_two[$count_two + $count]['start'] = $item['start'];
+                            $result_array_two[$count_two + $count]['periodicity'] = $item['id'];
+                            $result_array_two[$count_two + $count]['textColor'] = '#fff';
+                            $result_array_two[$count_two + $count]['type'] = "item";
+                            $result_array_two[$count_two + $count]['data_str'] = $item['start'];
+                            if ((strtotime("-7 day", strtotime($today))) < (strtotime($date))) {
+                                $result_array_two[$count_two + $count]['backgroundColor'] = $blue;
+                            }
+                            if ((strtotime("-7 day", strtotime($today))) > (strtotime($date))) {
+                                $result_array_two[$count_two + $count]['backgroundColor'] = $yellow;
+                            }
+                            if ((strtotime("-0 day", strtotime($today))) > (strtotime($date))) {
+                                $result_array_two[$count_two + $count]['backgroundColor'] = $red;
+                            }
+                        }
+                        if($count >= 4){
+                            $result_array_two[$count_two + 3]['backgroundColor'] = $gray;
+                            $result_array_two[$count_two + 3]['id'] = $item['id'];
+                            $result_array_two[$count_two + 3]['title'] = $count - 3;
+                            $result_array_two[$count_two + 3]['emp'] = $item['emp'];
+                            $result_array_two[$count_two + 3]['start'] = $item['start'];
+                            $result_array_two[$count_two + 3]['periodicity'] = $item['id'];
+                            $result_array_two[$count_two + 3]['textColor'] = '#fff';
+                            $result_array_two[$count_two + 3]['type'] ="all";
+                            $result_array_two[$count_two + 3]['data_str'] = $item['start'];
+                        }
+                        ++$count;
+                    }
+                }
+                // количество событий в один день
+//                $result_array_two[$count_two + $count]['title'] = $count;
+                ++$count_two;
+            }
+        }
+
+
+//        print_r($dir_array);
+//        print_r($result_array_two);
+//        print_r($result_array);
+        $result = json_encode($result_array_two, true);
+        die($result);
+    }
+
+    public function calendar($get_date) {
+        global $db;
+
+        $get_dates = explode('&', $get_date);
+        $get_dates_start = str_replace('start=', '', $get_dates[0]);
+        $get_dates_end = str_replace('end=', '', $get_dates[1]);
+
+        $green = '#00a65a';
+        $yellow = '#f39c12';
+        $gray = '#a6a6a6';
+        $red = '#f44336';
+        $blue = "#4285f4";
+        $today = date("Y-m-d");
+        $result_array = array();
+
+        $sql = "SELECT *
+                    FROM calendar
+                    WHERE calendar.company_id =". $_SESSION['control_company'];
+        $calendar = $db->all($sql);
+
+        $dir_array = array();
+        foreach ($calendar as $item) {
+            $dir_array[] = $item['start'];
+        }
+        $dir_array = array_unique($dir_array);
+
+        // перебираем для схлопывания по дате
+        $result_array = array();
+        $key = 0;
+        foreach ($dir_array as $date) {
+            if(($get_dates_start <= $date)&&(($get_dates_end >= $date))) {
+                $count = 0;
+                foreach ($calendar as $event) {
+                    // создаём для дня один элемент
+                    if ($date == $event['start']) {
+                        if($count == 0) {
+                            $result_array[$key]['id'] = $key;
+                            $result_array[$key]['emp_id'] = $event['emp_id'];
+                            $result_array[$key]['start'] = $event['start'];
+                            $result_array[$key]['textColor'] = '#fff';
+                            $result_array[$key]['allDay'] = 'true';
+                            $result_array[$key]['type'] = $event['event_type'];
+                            $result_array[$key]['data_str'] = $event['start'];
+                            if ((strtotime("-7 day", strtotime($today))) < (strtotime($event['start']))) {
+                                $result_array[$key]['backgroundColor'] = $blue;
+                            }
+                            if ((strtotime("-7 day", strtotime($today))) > (strtotime($event['start']))) {
+                                $result_array[$key]['backgroundColor'] = $yellow;
+                            }
+                            if ((strtotime("-0 day", strtotime($today))) > (strtotime($event['start']))) {
+                                $result_array[$key]['backgroundColor'] = $red;
+                            }
+                        }
+                        ++$count;
+
+                    }
+
+                }
+                $result_array[$key]['title'] = $count . " ";
+                ++$key;
+            }
+
+        }
+
+
+        $result = json_encode($result_array, true);
+        die($result);
     }
 }

@@ -475,9 +475,9 @@ if(isset($_SESSION['control_company_name'])){
                 y    = date.getFullYear()
             $('#calendar').fullCalendar({
                 header    : {
-                    left  : 'prev,next today',
+                    left  : 'prev,next',
                     center: 'title',
-                    right : 'month,agendaWeek,agendaDay'
+                    right : 'today'
                 },
                 buttonText: {
                     today: 'Сегодня',
@@ -512,7 +512,7 @@ if(isset($_SESSION['control_company_name'])){
                         title          : 'Тренинги',
                         start          : new Date(y, m, d + 1, 19, 0),
                         end            : new Date(y, m, d + 1, 22, 30),
-                        allDay         : false,
+                        allDay         : true,
                         backgroundColor: '#00a65a', //Success (green)
                         borderColor    : '#00a65a' //Success (green)
                     },
@@ -525,8 +525,18 @@ if(isset($_SESSION['control_company_name'])){
                         borderColor    : '#3c8dbc' //Primary (light-blue)
                     }
                 ],
-                editable  : true,
-                droppable : true, // this allows things to be dropped onto the calendar !!!
+                eventClick: function(calEvent, jsEvent, view) {
+
+                    alert('Event: ' + calEvent.title);
+                    alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                    alert('View: ' + view.name);
+
+                    // change the border color just for fun
+                    $(this).css('border-color', 'red');
+
+                },
+                editable  : false,  // апретили перетаскивать
+                droppable : false, // this allows things to be dropped onto the calendar !!!
                 drop      : function (date, allDay) { // this function is called when something is dropped
 
                     // retrieve the dropped element's stored Event Object
@@ -591,6 +601,8 @@ if(isset($_SESSION['control_company_name'])){
             })
             $('#calendar').fullCalendar('option', 'locale', "ru");
         })
+
+
     </script>
 
 
@@ -644,23 +656,25 @@ if(isset($_SESSION['control_company_name'])){
     });
 
 
-    $(window).on('load', function () {
-        var $preloader = $('#p_prldr'),
-            $svg_anm   = $preloader.find('.svg_anm');
-        $svg_anm.fadeOut();
-        $preloader.delay(1500).fadeOut('slow');
-    });
+    stop_preloader();
 
     $(document).ready(function() {
         $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
-        $(".content-wrapper").css("min-height",($(window).height()));
 
-        // если браузер мобильный:
-
+        if($(document).width() > 414){
+            $(".content-wrapper").css("min-height",($(window).height()));
+        }
 
     });
 
-
+ function stop_preloader(){
+        $(window).on('load', function () {
+            var $preloader = $('#p_prldr'),
+                $svg_anm   = $preloader.find('.svg_anm');
+            $svg_anm.fadeOut();
+            $preloader.delay(2500).fadeOut('slow');
+        });
+    }
 
 </script>
 

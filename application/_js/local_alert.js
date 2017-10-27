@@ -12,6 +12,12 @@ $(document).ready(function() {
     var dol =  "";
     var date_from = "";
     var date_to = "";
+    var doc = 0;
+    var file_id = 0;
+    var observer_em =  0;
+    var local_id =  0;
+    var action_type =  0;
+    var observer_em = 0;
 
 
     $(document).on("click", "#reset", function () {
@@ -140,10 +146,12 @@ $(document).ready(function() {
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
-                        $(this).css("display","none");
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
                     }
                 });
-                $("#alert_signature_docs_popup").addClass("none");
+                $(".btn-default").click();
             },
             error: function () {
                 console.log('error');
@@ -178,10 +186,12 @@ $(document).ready(function() {
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
-                        $(this).css("display","none");
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
                     }
                 });
-                $("#alert_acception_docs_popup").addClass("none");
+                $(".btn-default").click();
             },
             error: function () {
                 console.log('error');
@@ -216,10 +226,12 @@ $(document).ready(function() {
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
-                        $(this).css("display","none");
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
                     }
                 });
-                $("#alert_bailee_push_popup").addClass("none");
+                $(".btn-default").click();
             },
             error: function () {
                 console.log('error');

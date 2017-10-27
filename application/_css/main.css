@@ -434,3 +434,13 @@ ul {
     background-color: #cc0000;
     color: #fff;
 }
+.progress_line_people{
+    margin-top: -10px;
+}
+.progress_number_people{
+    font-size: 15px;
+    top: 7px;
+}
+.colorGreen{
+    background-color: #008000;
+}

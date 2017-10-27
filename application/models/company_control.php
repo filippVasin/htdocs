@@ -23,7 +23,11 @@ class Model_company_control{
 
         $html = '';
 
-        $sql = "SELECT * FROM `company` WHERE `status` != 0 AND `author_user_id` = '".$_SESSION['user_id']."';";
+        $sql = "SELECT company.id, company.name, company.short_name, company.director_surname, company.director_name, company.director_second_name
+                    FROM observer_company,company
+                    WHERE observer_company.company_id != 0
+                    AND company.id = observer_company.company_id
+                    AND observer_company.observer_user_id = ".$_SESSION['user_id'].";";
         $company_array = $db->all($sql);
         foreach($company_array as $company_item){
 

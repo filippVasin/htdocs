@@ -23,16 +23,16 @@ class Model_local_alert{
 
 
 
-        $select_item_status = $_SESSION['select_item_status'];
-        $select_item = $_SESSION['select_item'];
-        $date_from = $_SESSION['date_from'];
-        $date_to = $_SESSION['date_to'];
+        $select_item_status = $_SESSION['select_item_status_local_alert'];
+        $select_item = $_SESSION['select_item_local_alert'];
+        $date_from = $_SESSION['date_from_local_alert'];
+        $date_to = $_SESSION['date_to_local_alert'];
 
-        if(!isset($_SESSION['select_item'])){
-            $_SESSION['select_item'] = "";
+        if(!isset($_SESSION['select_item_local_alert'])){
+            $_SESSION['select_item_local_alert'] = "";
         }
-        if($_SESSION['select_item'] == "Все"){
-            $_SESSION['select_item'] = "";
+        if($_SESSION['select_item_local_alert'] == "Все"){
+            $_SESSION['select_item_local_alert'] = "";
         }
 
         // какие права имеет получатель
@@ -65,15 +65,15 @@ class Model_local_alert{
         $right = $observer_data['right'];
 
 
-        if(!isset($_SESSION['left_key'])){
-            $_SESSION['left_key'] = 0;
+        if(!isset($_SESSION['left_key_local_alert'])){
+            $_SESSION['left_key_local_alert'] = 0;
         }
-        if(!isset($_SESSION['right_key'])){
-            $_SESSION['right_key'] = 0;
+        if(!isset($_SESSION['right_key_local_alert'])){
+            $_SESSION['right_key_local_alert'] = 0;
         }
 
-        $left_key = $_SESSION['left_key'];
-        $right_key = $_SESSION['right_key'];
+        $left_key = $_SESSION['left_key_local_alert'];
+        $right_key = $_SESSION['right_key_local_alert'];
 // запрашиваем все алерты(документ на подпись)
         $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
 form_step_action.action_name,form_step_action.user_action_name,
@@ -141,14 +141,7 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
             // не показываем ничего
             $html = "Нет доступа";
         } else {
-            // упорядочить по сотрудникам
-            if ($group == "emp") {
-                $sql .= " ORDER BY fio";
-            }
-            // упорядочить по должности
-            if ($group == "pos") {
-                $sql .= " ORDER BY position";
-            }
+
             $sql .= " GROUP BY local_alerts.id";
 //        echo $sql;
             $alert_every_days = $db->all($sql);
@@ -231,22 +224,22 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
         $date_to = $this->post_array['date_to'];
         $select_item_status = $this->post_array['select_item_status'];
 
-        $_SESSION['select_item_status'] = $select_item_status;
-        $_SESSION['select_item'] = $select_item;
-        $_SESSION['left_key'] = $left_key;
-        $_SESSION['right_key'] = $right_key;
-        $_SESSION['date_from'] = $date_from;
-        $_SESSION['date_to'] = $date_to;
+        $_SESSION['select_item_status_local_alert'] = $select_item_status;
+        $_SESSION['select_item_local_alert'] = $select_item;
+        $_SESSION['left_key_local_alert'] = $left_key;
+        $_SESSION['right_key_local_alert'] = $right_key;
+        $_SESSION['date_from_local_alert'] = $date_from;
+        $_SESSION['date_to_local_alert'] = $date_to;
         $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
         die($result);
     }
 
     public function date_from(){
-        return $_SESSION['date_from'];
+        return $_SESSION['date_from_local_alert'];
     }
     public function date_to(){
-        return $_SESSION['date_to'];
+        return $_SESSION['date_to_local_alert'];
     }
 
 

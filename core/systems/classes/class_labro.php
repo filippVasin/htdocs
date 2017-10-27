@@ -140,7 +140,7 @@ class labro
 
                 $result_array['status'] = 'company';
                 $result_array['message'] = 'Вы успешно прошли авторизацию';
-//                $result_array['role'] = $login_data['role_id'];
+
 
                 $_SESSION['user_id'] = $login_data['id'];
                 $_SESSION['role_id'] = $login_data['role_id'];

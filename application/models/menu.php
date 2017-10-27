@@ -69,6 +69,7 @@ class Model_menu{
 
     public function company_buttons(){
 
+        global $db;
 
         // Есть ли управляемая компания;
         if(isset($_SESSION['control_company']) && $_SESSION['role_id'] == 1){
@@ -85,10 +86,14 @@ class Model_menu{
         if( $_SESSION['role_id'] == 4){
             $company_buttons = ' <li><a href="/main" class="pril_start"><span>Главная страница</span><i class="fa fa-bank"></i> </a></li>';
 
+            $sql = "SELECT id FROM observer_company WHERE observer_company.company_id != 0 AND observer_company.observer_user_id =". $_SESSION['user_id'] . " limit 1";
+            $login_data = $db->row($sql);
 
-//            if(1==1){
-//                $company_buttons .= '<li><a href="/select_company_control" class="pril_start"> <span>Компании</span><i class="fa fa-leanpub"></i></a></li>';
-//            }
+            if($login_data['id'] != '') {
+
+                $company_buttons .= '<li><a href="/select_company_control" class="pril_start"> <span>Компании</span><i class="fa fa-leanpub"></i></a></li>';
+            }
+
             $company_buttons  .= '<li><a href="/structure" class="pril_start"> <span>Cтруктура</span><i class="fa  fa-sitemap"></i> </a></li>
             <li><a href="/creator" class="pril_start"> <span>Добавить сотрудника</span><i class="fa fa-indent"></i> </a></li>
             <li><a href="/docs_report" class="pril_start"> <span>Отчёт по документам</span><i class="fa fa-book"></i> </a></li>
