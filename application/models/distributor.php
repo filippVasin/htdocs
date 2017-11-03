@@ -27,6 +27,9 @@ class Model_distributor{
             case "create_driver":
                 $result_array = $this->create_driver();
                 break;
+            case "probation_actoin":
+                $result_array = $this->probation_actoin();
+                break;
         }
 
 
@@ -234,20 +237,7 @@ class Model_distributor{
         }
         $subject = "Уведомление";
         $mail_type = "reg";
-        // запрашиваем шаблон письма
-//        $sql="Select *
-//                  FROM mail_template
-//                  WHERE mail_template.company_id =". $company_id ."
-//                  AND mail_template.mail_type = '".$mail_type ."'";
-//        $email_temp = $db->row($sql);
-//
-//        // данные для логов
-//        $template_mail_id = $email_temp['id'];
-//
-//        $path = ROOT_PATH.'/application/templates_mail/'.$email_temp['path'];
 
-//            echo $path;
-//            $message = file_get_contents($path);
         $template_mail_id = 1;
         $message = $regisrt_temp_mail;
 
@@ -305,4 +295,15 @@ class Model_distributor{
         return $result_array;
     }
 
+    private function probation_actoin(){
+        global $db, $labro, $regisrt_temp_mail, $systems;
+        $emp = $this->post_array['emp'];
+
+        $sql = "UPDATE `laborpro`.`local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 19";
+        $db->query($sql);
+
+        $blank = "PATP1_Probationer";
+        $result_array['link'] = "/doc_views?". $blank ."&probation&". $emp;
+        return $result_array;
+    }
 }

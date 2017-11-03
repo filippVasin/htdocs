@@ -14,6 +14,7 @@ $(document).ready(function() {
     var file_id= "";
     var local_id = "";
     var action_type = "";
+    var employee_id = 0;
 
 
     start();
@@ -156,72 +157,15 @@ $(document).ready(function() {
             }
         });// ajax
 
-
-
-        //$.ajax({
-        //    type: "POST",
-        //    url: "/main/events",
-        //    success:function (answer) {
-
-                //var events = jQuery.parseJSON(answer);
-                //$(doc).find('event').each(function() {
-                //    events.push({
-                //        title: $(this).attr('title'),
-                //        start: $(this).attr('start') // will be parsed
-                //    });
-                //});
-
-        //        var events = array();
-        //        events[
-        //        {
-        //            title          : 'Инструктажи',
-        //                start          : new Date(y, m, d - 5),
-        //            end            : new Date(y, m, d - 2),
-        //            backgroundColor: '#f39c12', //yellow
-        //            borderColor    : '#f39c12' //yellow
-        //        },
-        //        {
-        //            title          : 'Собрание',
-        //                start          : new Date(y, m, d, 10, 30),
-        //            allDay         : false,
-        //            backgroundColor: '#0073b7', //Blue
-        //            borderColor    : '#0073b7' //Blue
-        //        }]
-        //        $('#calendar').fullCalendar(fullCalendar({ events: events}));
-        //    }
-        //});
-
-
-
         $('#calendar').fullCalendar({
             events: '/main/calendar',
             eventClick: function(calEvent) {
 
                var str_data = new Date(calEvent.start);
 
-                //$(this).css('border-color', 'red');
-                // преобразуем дату в норм формат
-                //alert( str_data.toLocaleDateString());
-                //var date = new Date();
-                //
-                //var options = {
-                //    timezone: 'UTC',
-                //    year: 'numeric',
-                //    month: 'numeric',
-                //    day: 'numeric'
-                //
-                //};
-                //
-                //alert( date.toLocaleString("ru", options) ); // среда, 31 декабря 2014 г. н.э. 12:30:00
-                //alert( date.toLocaleString("en-US", options) ); // Wednesday, December 31, 2014 Anno Domini 12:30:00 PM
-
                if(calEvent.type == '2'){
                    get_calendary_all_event(calEvent.data_str);
                }
-                //if(calEvent.type == '2'){
-                //    get_calendary_type_emp(calEvent.emp,calEvent.data_str);
-                //}
-
 
             }
         });
@@ -441,6 +385,7 @@ $(document).ready(function() {
             $("#driver_name_popup").html(name);
             $("#alert_create_driver_popup_button").click();
         }
+
     });
 
 // отправляем на исполнение в forms и передаём нужные параметры
@@ -576,7 +521,7 @@ $(document).ready(function() {
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
                 var la_real_form_id_set = result.la_real_form_id;
-
+                employee_id = result.employee_id;
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
@@ -586,6 +531,7 @@ $(document).ready(function() {
                     }
                 });
                 $(".btn-default").click();
+                edit_driver();
             },
             error: function () {
                 console.log('error');
@@ -593,6 +539,137 @@ $(document).ready(function() {
         });// ajax
     });
 
+    // показываем карточку редактированния для забивания данных о документах водителя после мед осмотра
+    function edit_driver(){
+        var item_id = employee_id;
+
+        $("#edit_popup_user").attr("item_id",employee_id);
+        $.ajax({
+            type: "POST",
+            url: "/editor/employee_card",
+            data: {
+                item_id:item_id
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+
+                var surname = result.surname;
+                var name = result.name;
+                var second_name = result.second_name;
+                var birthday = result.birthday;
+                var start_date = result.start_date;
+                var em_status = result.em_status;
+                var request_result = result.status;
+                var personnel_number = result.personnel_number;
+                var content = result.content;
+                var address = result.address;
+                var category = result.category;
+                var license_number = result.license_number;
+                var start_date_driver = result.start_date_driver;
+                var end_date_driver = result.end_date_driver;
+
+                // если 'ok' - рисуем тест
+                if(request_result == 'ok'){
+
+                    $("#edit_popup_employees").attr("item_id",item_id);
+                    $("#title_employees_item_id").html(item_id);
+                    $("#edit_popup_input_surname").val(surname);
+                    $("#edit_popup_input_name").val(name);
+                    $("#edit_popup_input_second_name").val(second_name);
+
+                    $("#edit_popup_input_start_date").val(start_date);
+                    $("#edit_popup_input_birthday").val(birthday);
+
+                    $("#edit_popup_input_status").val(em_status);
+
+
+                    if(em_status == 1 ){
+                        $("#add_emp_mix").addClass("none");
+                        $("#delete_emp_mix").removeClass("none");
+                    } else {
+                        $("#delete_emp_mix").addClass("none");
+                        $("#add_emp_mix").removeClass("none");
+                    }
+                    if(address!=""){
+                        $("#popup_reg_address").val(address);
+                    }
+                    if(category!=""){
+                        $("#popup_driver_categories").val(category);
+                        $("#popup_driver_number").val(license_number);
+                        $("#popup_driver_start").val(start_date_driver);
+                        $("#popup_driver_end").val(end_date_driver);
+                    }
+
+                    $("#edit_popup_input_personnel_number").val(personnel_number);
+
+                    $("#edit_popup_employees_button").click();
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    }
+
+
+    // выбираем элемент для редактированния
+    $(document).on("click", "#save_popup_input_employees", function () {
+        item_id =  $("#edit_popup_employees").attr("item_id");
+        var surname  = $("#edit_popup_input_surname").val();
+        var name = $("#edit_popup_input_name").val();
+        var second_name  = $("#edit_popup_input_second_name").val();
+        var start_date  = $("#edit_popup_input_start_date").val();
+        var birthday  = $("#edit_popup_input_birthday").val();
+        var em_status   = $("#edit_popup_input_status").val();
+        var personnel_number   = $("#edit_popup_input_personnel_number").val();
+        var address   = $("#popup_reg_address").val();
+        var category   = $("#popup_driver_categories").val();
+        var license_number   = $("#popup_driver_number").val();
+        var start_date_driver   = $("#popup_driver_start").val();
+        var end_date_driver   = $("#popup_driver_end").val();
+
+
+
+        $.ajax({
+            type: "POST",
+            url: "/editor/save_employee_card",
+            data: {
+                item_id:item_id,
+                surname:surname,
+                name:name,
+                second_name:second_name,
+                start_date:start_date,
+                birthday:birthday,
+                em_status:em_status,
+                personnel_number:personnel_number,
+                address:address,
+                category:category,
+                license_number:license_number,
+                start_date_driver:start_date_driver,
+                end_date_driver:end_date_driver
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var surname = result.surname;
+                var name = result.name;
+                var second_name = result.second_name;
+                var request_result = result.status;
+                // если 'ok' - рисуем тест
+                if(request_result == 'ok'){
+                    $(".table_row_employee").each(function() {
+                        if($(this).attr("item_id")==item_id) {
+                            var content = surname + " " + name + " " + second_name;
+                            $(this).children(".type_name").html(content);
+                        }
+                    });
+                    $(".btn-default").click();
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    });
 
 
     // отмена действия

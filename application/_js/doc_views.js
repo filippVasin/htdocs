@@ -10,8 +10,6 @@ $(document).ready(function() {
 
     doc.getElementsByTagName('body')[0].innerHTML=html_to_print;
 
-
-
     $(document).on("click", "#print", function () {
         win.print();
     });

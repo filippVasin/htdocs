@@ -2,19 +2,19 @@
 
 $today = date("Y-m-d H:i:s");
 
-$sql="SELECT * FROM company WHERE company.id=". $_SESSION['control_company'];
+$sql="SELECT * FROM company WHERE company.id=". $company_id;
 $comp = $db->row($sql);
 $company = $comp['name'];
 
 $sql = "SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio, items_control.name AS dol,
         employees.birthday, drivers_license.category,drivers_license.license_number
         FROM employees,employees_items_node,organization_structure,items_control, drivers_license
-        WHERE employees.id = ". $_SESSION['employee_id'] ."
+        WHERE employees.id = ". $employee_id ."
         AND employees.id = employees_items_node.employe_id
         AND organization_structure.id = employees_items_node.org_str_id
         AND organization_structure.kladr_id = items_control.id
         AND employees.id = drivers_license.emp_id
-        AND organization_structure.company_id =". $_SESSION['control_company'];
+        AND organization_structure.company_id =". $company_id;
 
 
 $employees = $db->row($sql);
@@ -34,8 +34,8 @@ LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organizat
 																	AND
 																  ORG_chief.right_key > organization_structure.right_key
 																  AND
-																  ORG_chief.company_id = ". $_SESSION['control_company'] ." )
-		LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $_SESSION['control_company'] ."
+																  ORG_chief.company_id = ". $company_id ." )
+		LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $company_id ."
 																		AND ORG_boss.left_key > ORG_chief.left_key
 																		AND ORG_boss.right_key < ORG_chief.right_key
 																		AND 	ORG_boss.`level` = (ORG_chief.`level` +1)
@@ -45,9 +45,9 @@ LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organizat
 		LEFT JOIN employees AS chief_employees ON chief_employees.id = chief_node.employe_id
 		LEFT JOIN items_control AS  chief_items_control ON chief_items_control.id = ORG_boss.kladr_id
 
-WHERE employees_items_node.employe_id = ". $_SESSION['employee_id'] ."
+WHERE employees_items_node.employe_id = ". $employee_id ."
 AND organization_structure.id = employees_items_node.org_str_id
-AND organization_structure.company_id = ". $_SESSION['control_company'] ."
+AND organization_structure.company_id = ". $company_id."
 AND chief_employees.id is not NULL
 ORDER BY level DESC, boss_type DESC
 LIMIT 1";
@@ -57,6 +57,8 @@ $chief = $boss['chief_surname']." ". $boss['chief_name'] ." ". $boss['chief_seco
 $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
 $chief_dol = $boss['chief_dol'];
 $fioFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $fio);
+
+
 $result_file =
     '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
@@ -79,6 +81,7 @@ $result_file =
 	</STYLE>
 </HEAD>
 <BODY LANG="en-US" TEXT="#000000" DIR="LTR">
+<div class="Section1">
 <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
 <FONT SIZE=4><B>ЛИСТОК</B></FONT></P>
 <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
@@ -89,7 +92,7 @@ $result_file =
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=4>Водитель
 </FONT><I><U><B>'. $fio .'</B></U></I></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водительское
-удостоверение <I><U><B>'. $license_number .', категории:</B></U></I><FONT COLOR="#ff0000"><I><U><B>
+удостоверение <I><U><B>'. $license_number .', категории:</B></U></I><FONT ><I><U><B>
 '.$category .'</P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Приказом
 по <I><B>ООО «Новосибирскпрофстрой-ПАТП-1»</B></I>
@@ -371,6 +374,7 @@ _______________________________</P>
 «Новосибирскпрофстрой-ПАТП-1»__________________________Е.В.Мухамечин</B></I></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in" attr="'. $today .'"><I><B>«_____»__________________20
      г.</B></I></P>
+     </div>
 </BODY>
 </HTML>';
 $error = "";
@@ -383,7 +387,7 @@ if($flag !="open") {
         $doc_download_url = 'application/real_forms/'.md5($result_file).'/'.$doc_name.'.doc';
         $file_name = $doc_name;
         // записали данные о файле
-        $sql = "INSERT INTO `save_temp_files` (`path`, `name`, `employee_id`, `company_temps_id`) VALUES( '" . $doc_download_url . "','" . $file_name . "','" . $_SESSION['employee_id'] . "','" . $_SESSION['form_id'] . "');";
+        $sql = "INSERT INTO `save_temp_files` (`path`, `name`, `employee_id`) VALUES( '" . $doc_download_url . "','" . $file_name . "','" . $employee_id . "');";
         $db->query($sql);
 //    echo $sql . " insert";
 

@@ -153,6 +153,33 @@
 
 
     <!-- Modal -->
+    <button id="alert_probation_actoin_popup_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup">
+    </button>
+    <div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Водитель:</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="driver_probation_actoin_popup"></div>
+                    <div class="popup_context_menu_title">Прошел стражировку?</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="yes_popup_19" class="btn btn-primary">Прошел</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Не прошел</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Modal -->
     <div class="modal fade" tabindex="-1" id="alert_create_driver_popup" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -172,6 +199,7 @@
             </div>
         </div>
     </div>
+
 
 
 
@@ -253,9 +281,6 @@
                     <!-- nav-tabs-custom -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#edit_popup_user">Сменить пароль</button>
-                    <button type="button"  id="delete_emp_mix" class="btn btn-primary">Уволить</button>
-                    <button type="button"  id="add_emp_mix" class="btn btn-primary">Восстановить в должности</button>
                     <button type="button"  id="save_popup_input_employees" class="btn btn-primary">Сохранить</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
                 </div>

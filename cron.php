@@ -42,8 +42,16 @@ if(__DIR__ == "C:\MAMP\htdocs"){
 
 // Подключаем лабор
     $labro = new labro;
+
+
+
+
+// конец стажировки
+end_probation();
 // обновляем календарь
 calendar_refresh();
+
+
 exit();
 $result_status = "ok";
 $cron_task = "";
@@ -156,7 +164,7 @@ AND users.role_id = 4";
     employee_alerts($control_company); // проходим по сотрудникам
     secretars_alerts($control_company); // проходим по секретарям
     bailees_alerts($control_company); // проходим по наставникам
-    boss_data($control_company); // собираем массив босов
+    boss_data($control_company); // собираем массив босcов
     boss_alert($control_company); // проходим по боссам
     send_get_excel($control_company); // Excel отчёт
     pass_send($control_company); // ложим пароли
@@ -1357,6 +1365,61 @@ route_control_step.track_number_id AS id,
         }
     }
 
+}
+
+
+
+function end_probation(){
+    global $db;
+
+    // проходим по всем компаниям
+    $sql = "SELECT id FROM company";
+    $companys = $db->all($sql);
+    foreach ($companys as $company) {
+
+        $comp = $company['id'];
+        // проходим по всем сотрудникам компании
+        $sql="SELECT employees_items_node.employe_id
+                FROM employees_items_node,organization_structure
+                WHERE  organization_structure.id = employees_items_node.org_str_id
+                AND organization_structure.company_id =". $comp;
+        $employees = $db->all($sql);
+        foreach ($employees as $employee){
+            $emp = $employee['id'];
+            $sql = "SELECT *
+                    FROM history_step
+                    WHERE history_step.employee_id = ". $emp ."
+                    AND history_step.step_id = 122
+                    AND  ( NOW() >= (history_step.data_finish + INTERVAL 14 DAY))";
+            $history = $db->row($sql);
+
+            if($history['id'] != '') {
+                $sql = "SELECT *
+                    FROM route_doc,route_control_step
+                    WHERE route_doc.employee_id = " . $emp . "
+                    AND route_control_step.track_number_id = route_doc.id
+                    AND route_control_step.step_content_id = 65";
+                $route = $db->row($sql);
+                if($route['id'] == '') {
+                    $sql = "INSERT INTO `route_doc` (`company_id`, `employee_id`) VALUES ('". $comp ."', '". $emp ."')";
+                    $db->query($sql);
+                    $track_number_id = mysqli_insert_id($db->link_id);
+
+                    $sql = "INSERT INTO `route_control_step` (`track_number_id`,`step_content_id`, `son_step`, `step_name`) VALUES ('". $track_number_id ."','65', '0', 'Стажировка')";
+                    $db->query($sql);
+                    $route_start_step = mysqli_insert_id($db->link_id);
+
+                    $sql = "UPDATE `route_doc` SET `route_start_step`= '".$route_start_step."' WHERE  `id`=" . $track_number_id;
+                    $db->query($sql);
+
+                    $sql = "INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`,  `action_type_id`, `company_id`,  `step_id`, `date_create`)
+                    VALUES ('". $emp ."',  '19', '". $comp ."', '". $route_start_step ."', NOW())";
+                    $db->query($sql);
+                }
+            }
+        }
+
+    }
 }
 
 ?>

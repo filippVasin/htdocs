@@ -18,6 +18,7 @@ $(document).ready(function() {
     var local_id =  0;
     var action_type =  0;
     var observer_em = 0;
+    var employee_id = 0;
 
 
     $(document).on("click", "#reset", function () {
@@ -91,7 +92,7 @@ $(document).ready(function() {
         name =  $(this).attr("name");
         doc =  $(this).attr("doc");
         file_id =  $(this).attr("file_id");
-        observer_em =  $(this).attr("observer_em");
+        emp =  $(this).attr("emp");
         local_id =  $(this).attr("local_id");
         action_type =  $(this).attr("action_type");
         observer_em = $(this).attr("observer_em");
@@ -119,6 +120,10 @@ $(document).ready(function() {
         if( action_type == 17 ){
             $("#driver_name_popup").html(name);
             $("#alert_create_driver_popup_button").click();
+        }
+        if( action_type == 19 ){
+            $("#driver_probation_actoin_popup").html(name);
+            $("#alert_probation_actoin_popup_button").click();
         }
     });
 
@@ -257,7 +262,7 @@ $(document).ready(function() {
             },
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
-                var employee_id = result.employee_id;
+                employee_id = result.employee_id;
                 var la_real_form_id_set = result.la_real_form_id;
 
                 $(".alert_row").each(function() {
@@ -268,7 +273,7 @@ $(document).ready(function() {
                     }
                 });
                 $(".btn-default").click();
-                edit_driver(employee_id);
+                edit_driver();
             },
             error: function () {
                 console.log('error');
@@ -276,12 +281,51 @@ $(document).ready(function() {
         });// ajax
     });
 
+    $(document).on("click", "#yes_popup_19", function () {
+        var la_real_form_id = emp;
+        var action_name = "probation_actoin";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                employee_id = result.employee_id;
+                var la_real_form_id_set = result.la_real_form_id;
+                var status = result.status;
+                var link = result.link;
+
+                $(".alert_row").each(function() {
+                    if(emp == $(this).attr("emp")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $(".btn-default").click();
+                if(status == "ok"){
+                        var click_link = $('<a id="click_link" style="color: #fff; display: none" class="button" href="' + link + '" target="_blank">Стартовый бланк</a>');
+                        $("body").append(click_link);
+                        document.getElementById("click_link").click();
+                        $("#click_link").remove();
+                }
+
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
 
     // показываем карточку редактированния для забивания данных о документах водителя после мед осмотра
-    function edit_driver(emp_driver_id){
-        var item_id =  emp_driver_id;
-        $("#start_position").click();
-        $("#edit_popup_user").attr("item_id",user_id);
+    function edit_driver(){
+        var item_id = employee_id;
+
+        //$("#edit_popup_employees_button").click();
+        $("#edit_popup_user").attr("item_id",employee_id);
         $.ajax({
             type: "POST",
             url: "/editor/employee_card",
@@ -348,6 +392,66 @@ $(document).ready(function() {
             }
         });
     }
+
+
+    // выбираем элемент для редактированния
+    $(document).on("click", "#save_popup_input_employees", function () {
+        item_id =  $("#edit_popup_employees").attr("item_id");
+        var surname  = $("#edit_popup_input_surname").val();
+        var name = $("#edit_popup_input_name").val();
+        var second_name  = $("#edit_popup_input_second_name").val();
+        var start_date  = $("#edit_popup_input_start_date").val();
+        var birthday  = $("#edit_popup_input_birthday").val();
+        var em_status   = $("#edit_popup_input_status").val();
+        var personnel_number   = $("#edit_popup_input_personnel_number").val();
+        var address   = $("#popup_reg_address").val();
+        var category   = $("#popup_driver_categories").val();
+        var license_number   = $("#popup_driver_number").val();
+        var start_date_driver   = $("#popup_driver_start").val();
+        var end_date_driver   = $("#popup_driver_end").val();
+
+
+
+        $.ajax({
+            type: "POST",
+            url: "/editor/save_employee_card",
+            data: {
+                item_id:item_id,
+                surname:surname,
+                name:name,
+                second_name:second_name,
+                start_date:start_date,
+                birthday:birthday,
+                em_status:em_status,
+                personnel_number:personnel_number,
+                address:address,
+                category:category,
+                license_number:license_number,
+                start_date_driver:start_date_driver,
+                end_date_driver:end_date_driver
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var surname = result.surname;
+                var name = result.name;
+                var second_name = result.second_name;
+                var request_result = result.status;
+                // если 'ok' - рисуем тест
+                if(request_result == 'ok'){
+                    $(".table_row_employee").each(function() {
+                        if($(this).attr("item_id")==item_id) {
+                            var content = surname + " " + name + " " + second_name;
+                            $(this).children(".type_name").html(content);
+                        }
+                    });
+                    $(".btn-default").click();
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    });
 
 
 

@@ -19,6 +19,9 @@ class Model_doc_views{
             case "start_blank":
                 $page = $this->creator_views($doc,$emp);
                 break;
+            case "probation":
+                $page = $this->probation($doc,$emp);
+                break;
         }
         return $page;
     }
@@ -61,6 +64,21 @@ class Model_doc_views{
         $page .='<div id="print" class="button">Печать</div>';
         return $page;
     }
+
+    private function probation($doc,$emp){
+        global $db;
+        $flag = "open";
+        $page = "";
+        $lorem = 0;
+        $employee_id = $emp;
+        $company_id = 29;
+        include(ROOT_PATH . '/application/templates_form/' . $doc . '.php');
+
+        $page .='<div id="print" class="button">Печать</div>';
+        return $page;
+    }
+
+
 }
 
 

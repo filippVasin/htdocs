@@ -306,14 +306,14 @@ $(document).ready(function() {
             setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
         }
 
-            $('.new_input').each(function() {
-                var child = $(this).children("input");
-                    if(child.val()=="") {
-                        child.css("border-color", "red");
-                        flag = 1;
-                    }
-                setTimeout("$('.new_input input').css('border-color','#ccc');", 3000);
-            });
+            //$('.new_input').each(function() {
+            //    var child = $(this).children("input");
+            //        if(child.val()=="") {
+            //            child.css("border-color", "red");
+            //            flag = 1;
+            //        }
+            //    setTimeout("$('.new_input input').css('border-color','#ccc');", 3000);
+            //});
 
 
         // возраст не ниже 14ти лет
@@ -418,13 +418,13 @@ $(document).ready(function() {
 
                     $("#landing_form_offer_one").addClass("landing_form_offer_one");
                     if(status == "ok"){
-                        var click_link = $('<a id="click_link" style="color: #fff" class="button" href="'+ link +'" target="_blank">Стартовый бланк</a>');
-                        $("#test_block").append(click_link);
-                        setTimeout(document.getElementById("click_link").click(), 3000);
+                        if(dol_id == 183) {
+                            var click_link = $('<a id="click_link" style="color: #fff" class="button" href="' + link + '" target="_blank">Стартовый бланк</a>');
+                            $("#test_block").append(click_link);
+                            document.getElementById("click_link").click();
+                            $("#click_link").remove();
 
-                        $('#button_clear').trigger('click');
-                        // открываем бланк во внешней ссылке
-
+                        }
                         $(".create_box input").val("");
                         $("#node_docs").html("");
                         dol_id = 0;
@@ -618,40 +618,40 @@ $(document).ready(function() {
                 $("#node_docs").html("Водитель автобуса на регулярные городск...");
                 $(".new_input").remove();
                 $(".btn-default").click();
-                $.ajax({
-                    type: "POST",
-                    url: "/creator/get_input",
-                    data: {
-                        dol_id:dol_id
-                    },
-                    success: function (answer) {
-                        var result = jQuery.parseJSON(answer);
-                        var request_result = result.status;
-                        var content = result.content;
-                        if(request_result == 'ok'){
-                            $('#form_id_item').before(content);
-
-                            // проверка с какого устройтства вошли
-                            if(isMobile.any()){
-                                $("#driver_start").attr("type","date");
-                                $("#driver_end").attr("type","date");
-                            } else {
-                                $('#driver_start').datepicker({
-                                    language: "ru",
-                                    autoclose: true
-                                });
-                                $('#driver_end').datepicker({
-                                    language: "ru",
-                                    autoclose: true
-                                });
-                            }
-                            // datapickers
-                        }
-                    },
-                    error: function () {
-                        console.log('error');
-                    }
-                })
+                //$.ajax({
+                //    type: "POST",
+                //    url: "/creator/get_input",
+                //    data: {
+                //        dol_id:dol_id
+                //    },
+                //    success: function (answer) {
+                //        var result = jQuery.parseJSON(answer);
+                //        var request_result = result.status;
+                //        var content = result.content;
+                //        if(request_result == 'ok'){
+                //            $('#form_id_item').before(content);
+                //
+                //            // проверка с какого устройтства вошли
+                //            if(isMobile.any()){
+                //                $("#driver_start").attr("type","date");
+                //                $("#driver_end").attr("type","date");
+                //            } else {
+                //                $('#driver_start').datepicker({
+                //                    language: "ru",
+                //                    autoclose: true
+                //                });
+                //                $('#driver_end').datepicker({
+                //                    language: "ru",
+                //                    autoclose: true
+                //                });
+                //            }
+                //            // datapickers
+                //        }
+                //    },
+                //    error: function () {
+                //        console.log('error');
+                //    }
+                //})
                 $("#speed_button").addClass("none");
                 setTimeout("$('#speed_button').removeClass('none')", 5000);
     });
