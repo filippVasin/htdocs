@@ -266,6 +266,7 @@ $(document).ready(function() {
     }
 
     $(document).on('click',".landing_form_offer_one", function () {
+
         var flag = 0;
         var surname = "";
         var name = "";
@@ -359,9 +360,6 @@ $(document).ready(function() {
                 $("#form_email").css({'border' : '1px solid #ff0000'});
                 flag = 1;
             }
-        } else {
-            $("#form_email").css({'border' : '1px solid #ff0000'});
-            flag = 1;
         }
 
 
@@ -380,11 +378,18 @@ $(document).ready(function() {
             $("#form_work_start").css("border-color","yellow");
             setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
         }
+
         $("#landing_form_offer_one").removeClass("landing_form_offer_one");
+        setTimeout("$('#landing_form_offer_one').addClass('landing_form_offer_one')", 3000);
+
+        var  ajax_url = "/creator/create_form";
+        if(dol_id == 183){
+            ajax_url = "/creator/create_drivers";
+        }
         if(flag == 0) {// всё норм
             $.ajax({
                 type: "POST",
-                url: "/creator/create_form",
+                url: ajax_url,
                 data: {
                     name: name,
                     surname:surname,
@@ -405,17 +410,25 @@ $(document).ready(function() {
                 success: function (answer) {
                     var result = jQuery.parseJSON(answer);
                     var content = result.content;
+                    var status = result.status;
                     var link = result.link;
-                    $("#test_block").after("<div class='result_creater'>"+content+"</div>");
-                    var click_link = $('<a id="click_link" style="color: #fff" class="button" href="'+ link +'" target="_blank">Стартовый бланк</a>');
-                    $("#test_block").append(click_link);
-                    setTimeout(document.getElementById("click_link").click(), 3000);
 
-                    $('#button_clear').trigger('click');
-                    // открываем бланк во внешней ссылке
+                    $("#test_block").after("<div class='result_creater'>"+content+"</div>");
+
 
                     $("#landing_form_offer_one").addClass("landing_form_offer_one");
+                    if(status == "ok"){
+                        var click_link = $('<a id="click_link" style="color: #fff" class="button" href="'+ link +'" target="_blank">Стартовый бланк</a>');
+                        $("#test_block").append(click_link);
+                        setTimeout(document.getElementById("click_link").click(), 3000);
 
+                        $('#button_clear').trigger('click');
+                        // открываем бланк во внешней ссылке
+
+                        $(".create_box input").val("");
+                        $("#node_docs").html("");
+                        dol_id = 0;
+                    }
                 },
                 error: function () {
                     console.log('error');
@@ -643,5 +656,16 @@ $(document).ready(function() {
                 setTimeout("$('#speed_button').removeClass('none')", 5000);
     });
 
+
+    $(document).on('click','#today_button',function(){
+        var date = new Date();
+        var options = {
+
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+        };
+        $("#form_work_start").val(date.toLocaleString("ru", options));
+    });
 });
 

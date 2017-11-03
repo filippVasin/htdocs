@@ -289,7 +289,7 @@ class Model_test
     }
 
 
-    public function test($doc_link){
+    public function tffest($doc_link){
         global $db;
 
         $green = '#00a65a';
@@ -474,5 +474,7 @@ route_control_step.track_number_id AS id,
 
         return "Всё";
     }
-
+    public function test($doc_link){
+        echo $_SERVER['SERVER_NAME'];
+    }
 }

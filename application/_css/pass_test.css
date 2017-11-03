@@ -61,7 +61,8 @@ body{
     width: 800px;
     padding-top: 110px!important;
     background-color: #fff;
-
+    border-left: 15px solid #FFF;
+    border-right: 15px solid #fff;
 }
 
 #test{

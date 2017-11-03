@@ -320,12 +320,16 @@ class Model_company_control{
                             <p>Логин: %Tes_login%</p>
                             <br>
                             <p>Пароль: %Tes_pass% </p>
+                            <br>
+                            <a href="%Tes_link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейдите на сайт</span></span></a>
 <br>
                             <p>Отчётность:</p>
  		                    <br>
                             <p>Логин: %Sel_login%</p>
                             <br>
                             <p>Пароль: %Sel_pass% </p>
+                            <br>
+                            <a href="%Sel_link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейдите на сайт</span></span></a>
                         </body>
                     </html>
 HERH;
@@ -360,7 +364,9 @@ HERH;
         $login = 'Test'.$test_id;
         $sql = "UPDATE `users` SET `name`= '". $login ."'  WHERE  `id`='".$user_id ."'";
         $db->query($sql);
+        $url = $labro->url_hash($labro->employees_to_user($emp_id));
 
+        $message = str_replace('%Tes_link%', $url, $message);
         $message = str_replace('%Tes_login%', $login, $message);
         $message = str_replace('%Tes_pass%', $pass , $message);
         // создали строку для вывода
@@ -394,7 +400,8 @@ HERH;
         $sql = "UPDATE `users` SET `name`= '". $login ."'  WHERE  `id`='".$user_id ."'";
         $db->query($sql);
 
-
+        $url = $labro->url_hash($labro->employees_to_user($emp_id));
+        $message = str_replace('%Sel_link%', $url, $message);
         $message = str_replace('%Sel_login%', $login, $message);
         $message = str_replace('%Sel_pass%', $pass , $message);
         $html .='<div class="test_row"><span class="title_test">Для отчётов-</span><span class="login">Логин: '. $login .'</span><span class="pass">Пароль: '. $pass .'</span></div>';

@@ -437,7 +437,10 @@ $(document).ready(function() {
             $("#docs_bailee_push_name").html(doc);
             $("#alert_bailee_push_popup_button").click();
         }
-
+        if( action_type == 17 ){
+            $("#driver_name_popup").html(name);
+            $("#alert_create_driver_popup_button").click();
+        }
     });
 
 // отправляем на исполнение в forms и передаём нужные параметры
@@ -560,6 +563,38 @@ $(document).ready(function() {
         });// ajax
     });
 
+    $(document).on("click", "#yes_popup_17", function () {
+        var la_real_form_id = file_id;
+        var action_name = "create_driver";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                la_real_form_id:la_real_form_id,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var la_real_form_id_set = result.la_real_form_id;
+
+
+                $(".alert_row").each(function() {
+                    if(la_real_form_id_set == $(this).attr("file_id")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $(".btn-default").click();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+
+
     // отмена действия
     $(document).on("click", ".cancel_popup", function () {
         $("#alert_signature_docs_popup").addClass("none");
@@ -640,5 +675,12 @@ $(".fc-day-grid-container").css("height","100%");
     //    }
     //});
 
+    // отработка нажетия Enter
+    $("#search_local_alert_input").keypress(function(e){
+        if(e.keyCode==13){
+            //alert("ds");
+            $("#search_local_alert").click();
+        }
+    });
 
 });

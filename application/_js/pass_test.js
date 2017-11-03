@@ -236,7 +236,7 @@ $(document).ready(function() {
                 if(request_result == 'not test'){
                     window.location = "/pass_test";
                 }
-                message(request_message, request_result);
+                //message(request_message, request_result);
             },
             error: function () {
             }

@@ -47,6 +47,7 @@ class Model_forms{
                     AND track_number_form.id = temps_to_route.track_numder_form_id
                     AND temps_form_step.id = track_number_form.start_step_form
                     AND form_step_action.id = temps_form_step.action_form";
+//                echo $sql;
                 $condition_form = $db->row($sql);
 
 
@@ -74,7 +75,6 @@ class Model_forms{
                 $action_name = $action_forms['action_name'];
                 $_SESSION['temps_form_step_id'] = $action_forms['next_step'];
                 $_SESSION['temps_form_track'] = $action_forms['temps_form_track'];
-
 
             }
         // выбираем соответствующий экшон и вызываем его
@@ -369,7 +369,7 @@ class Model_forms{
    //     $page = file_get_contents($doc_item);
         $page ='<div id="popup_update_select_position">
                     <div class="canvas" style="height: 120px; box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
-                        <div class="popup_context_menu_title"> Подпишите '. $doc_name .' в 417м кабинете</div>
+                        <div class="popup_context_menu_title"> Подпишите '. $doc_name .'</div>
                             <div class="row">
                                 <div class="button" style="width: 180px;" id="popup_update_select_node_yes">Я подписал</div>
                                 <div class="button" style="width: 180px;" id="popup_update_select_position_cancel">Я не подписал</div>

@@ -547,7 +547,7 @@ FORM_NOW.doc_status_now,
 
         $html = "";
 
-        $sql = "SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
+        $sql = "(SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
                     form_step_action.action_name,form_step_action.user_action_name,
                     CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
                     local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
@@ -574,7 +574,13 @@ FORM_NOW.doc_status_now,
                         AND local_alerts.initiator_employee_id = init_em.id
                         AND form_step_action.id = local_alerts.action_type_id
                         AND local_alerts.date_finish IS NULL
-                         GROUP BY local_alerts.id";
+                         GROUP BY local_alerts.id   )
+     UNION
+     (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+		FROM local_alerts, sump_for_employees
+		WHERE local_alerts.action_type_id = 17
+		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
+		AND sump_for_employees.id = local_alerts.save_temp_files_id )";
         $alert_every_days = $db->all($sql);
         $count = 0;
         foreach ($alert_every_days as $alert_every_day) {

@@ -11,13 +11,13 @@ class Model_doc_views{
 
         $get_data = explode('&', $doc_link);
         $doc = $get_data[0];
-
+        $emp = $get_data[2];
         switch ($get_data[1]) {
             case "company_forms":
                 $page = $this->company_forms_views($doc);
                 break;
             case "start_blank":
-                $page = $this->creator_views($doc);
+                $page = $this->creator_views($doc,$emp);
                 break;
         }
         return $page;
@@ -42,11 +42,12 @@ class Model_doc_views{
         return $page;
     }
 
-    private function creator_views($doc){
+    private function creator_views($doc,$emp){
         global $db;
         $flag = "open";
         $page = "";
         $lorem = 0;
+        $employee_id = $emp;
         if ($_SESSION['employee_id'] == "") {
             $_SESSION['employee_id'] = 2; // рыба
             $lorem = 1;
@@ -54,7 +55,7 @@ class Model_doc_views{
 
         include(ROOT_PATH . '/application/templates_form/' . $doc . '.php');
 
-        if ($lorem = 1) {
+        if ($lorem == 1) {
             $_SESSION['employee_id'] = "";
         }
         $page .='<div id="print" class="button">Печать</div>';

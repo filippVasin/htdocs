@@ -19,7 +19,7 @@ class Model_creator
     // тестим здесь
     public function select_one()
     {
-        global $db, $systems, $elements, $employees;;
+        global $db, $employees;;
 
         if(!(isset($_SESSION['control_company']))){
             header("Location:/company_control");
@@ -75,7 +75,7 @@ class Model_creator
     // Вывод всего дерева;
     public function select_event(){
 
-        global $db, $systems, $elements;
+        global $db;
         $item_id = $this->post_array['select_item_id'];
         $html = '';
         $level = "";
@@ -206,16 +206,14 @@ class Model_creator
             if(isset($this->post_array['personnel_number'])){
                 $personnel_number = $this->post_array['personnel_number'];
                 $sql = "INSERT INTO `employees` (`personnel_number`,`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $personnel_number . "','" . $name . "','" . $surname . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
-//        echo $sql;
+
                 $db->query($sql);
             } else {
                 $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $name . "','" . $surname . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
-//        echo $sql;
+
                 $db->query($sql);
             }
 
-
-//        echo mysqli_insert_id($db->link_id); можно и так получать id инкримент
 
             $sql = "SELECT employees.id, employees.name
                     FROM employees
@@ -301,15 +299,86 @@ class Model_creator
 
             }
 
-            $html = '<div> Данные добавлены </div>';
         }
 
-       $blank = "journal_fire_fighting_briefing";
-       $result_array['link'] = "/doc_views?". $blank ."&start_blank";
+       $blank = "driver_start";
+       $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$employee_id;
+       $result_array['status'] = "ok";
        $result = json_encode($result_array, true);
         die($result);
     }
 
+
+    public function create_drivers(){
+        global $db;
+
+        // получаем данные из POST запроса
+        $name = $this->post_array['name'];
+        $surname = $this->post_array['surname'];
+        $patronymic = $this->post_array['patronymic'];
+        $work_start = $this->post_array['work_start'];
+        $birthday = $this->post_array['birthday'];
+        $email = $this->post_array['email'];
+        $id_item = $this->post_array['id_item'];
+        $dol_id = $this->post_array['dol_id'];
+
+        if(isset($this->post_array['personnel_number'])){
+            $personnel_number = $this->post_array['personnel_number'];
+        } else {
+            $personnel_number = "";
+        }
+
+        $reg_address = $this->post_array['reg_address'];
+        $categories = $this->post_array['driver_categories'];
+        $number = $this->post_array['driver_number'];
+        $driver_start = $this->post_array['driver_start'];
+        $driver_end = $this->post_array['driver_end'];
+
+        // подготовка дат к записи в базу
+        $work_start = date_create($work_start)->Format('Y-m-d');
+        $birthday = date_create($birthday)->Format('Y-m-d');
+        $driver_start = date_create($driver_start)->Format('Y-m-d');
+        $driver_end = date_create($driver_end)->Format('Y-m-d');
+
+        $sql = "SELECT `id` FROM `sump_for_employees` WHERE `name` = '".$name."' AND `surname` = '".$surname."'AND `patronymic` = '".$patronymic."'AND `birthday` = '".$birthday."';";
+
+        $sump_data = $db->row($sql);
+
+        if($sump_data['id'] != '') {
+            $result_array['content'] = "Такой человек уже есть в системе";
+            $result_array['status'] = "error";
+            $result = json_encode($result_array, true);
+            die($result);
+        }
+
+
+
+        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
+        $sql="INSERT INTO `sump_for_employees` (`reg_address`,`personnel_number`,`name`,`surname`,`patronymic`,`work_start`,`birthday`,`email`,`id_item`,`company_id`,`category`,`license_number`,`start_date`,`end_date`,`dol_id`,`author_id`,`creator_time`)
+              VALUES ('". $reg_address ."','". $personnel_number ."','". $name ."','". $surname ."','". $patronymic ."','". $work_start ."','". $birthday ."','". $email ."','". $id_item ."','". $_SESSION['control_company'] ."','". $categories ."','". $number ."','". $driver_start ."','". $driver_end ."','". $dol_id ."','". $_SESSION['employee_id'] ."', NOW());";
+
+        $db->query($sql);
+
+        $sump_employees_id = mysqli_insert_id($db->link_id);
+        $action_type_id = 17;// Секретарь должен получить документ
+//        $this->history_insert($action_type_id);
+
+        $sql = "INSERT INTO `local_alerts` (`observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`date_create`)
+                                       VALUES( '" .  $_SESSION['employee_id'] .
+            "','" . $action_type_id .
+            "','" . $_SESSION['control_company'] .
+            "','" . $sump_employees_id .
+            "',NOW());";
+        $db->query($sql);
+
+        $blank = "driver_start";
+        $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$sump_employees_id;
+        $result_array['content'] = "Данные добавлены, ожидаем прохождения медосмотра";
+        $result_array['status'] = "ok";
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+//  /doc_views?driver_start&start_blank&9
 
     // добавляем тип
     public function button_plus()
@@ -344,6 +413,16 @@ class Model_creator
         $result = json_encode($result_array, true);
         die($result);
     }
+
+
+
+
+
+
+
+
+
+
     // добавляем наменклатуру;
     public function new_type_select()
     {

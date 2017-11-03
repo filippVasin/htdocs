@@ -330,3 +330,30 @@ ul {
 #click_link{
     color: #fff!important;;
 }
+
+
+#today_button{
+    width: 30px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    color: #e08833;
+    cursor: pointer;
+}
+#today_button:hover{
+    opacity: 1;
+}
+#today_button:before{
+    opacity: 0;
+    position: absolute;
+    right: 30px;
+    content: attr(dol);
+}
+#today_button:hover:before{
+    opacity: .8;
+}

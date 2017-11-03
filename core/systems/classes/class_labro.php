@@ -95,11 +95,23 @@ class labro
     // создаём url ссылку с хешем и пишим её в таблицу
     public function url_hash($user){
         global $db;
+        if($_SERVER['SERVER_NAME'] == "localhost"){
+            $host = "http://localhost";
+        } else {
+            $host = "https://laborpro.ru";
+        }
         $today = date("Y-m-d H:i:s");
         $count = 0;
-        $hash = "";
+        $hash = "13";
         do {
-            $hash = substr(md5($user . $today . $count), 0, 9);
+
+            $salt = $hash;// посолили
+            $hash = md5($user . $today . $count . $salt);// всё закинули
+            $hash_one = substr($hash, 0, 14); // разде..
+            $hash_two = substr($hash, 17, 15);//..лили
+            $hash = $hash_two.$hash_one;// перевернули
+
+            // подаём к столу
             $sql = "SELECT `user_id` FROM `url_hash` WHERE `hash` = '" . $hash . "';";
             $login_data = $db->row($sql);
             // есди такой хеш уже есть - идём на новый круг
@@ -109,9 +121,9 @@ class labro
             ++$count;
         } while ($hash == "");
 
-        $sql = "INSERT INTO `url_hash` (`user_id`, `hash`,`create_date`) VALUES('" . $hash . "','" . $user . "',NOW());";
+        $sql = "INSERT INTO `url_hash` (`user_id`, `hash`,`create_date`) VALUES('" . $user . "','" . $hash . "',NOW());";
         $db->query($sql);
-        $url_hash = ROOT_PATH . '/url_auth?' . $hash;
+        $url_hash = $host . '/url_auth?'.$hash;
         return $url_hash;
     }
 

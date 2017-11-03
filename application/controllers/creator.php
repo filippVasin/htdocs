@@ -28,8 +28,15 @@ class Controller_creator extends Controller{
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
          $this->model->create_form();
-
     }
+
+    public function create_drivers(){
+        // Записываем массив с даннми в модель;
+        $this->model->post_array = $this->post_params;
+        // Вызываем метод показа всего дерева
+        $this->model->create_drivers();
+    }
+
 
     public function button_plus(){
         // Записываем массив с даннми в домель;

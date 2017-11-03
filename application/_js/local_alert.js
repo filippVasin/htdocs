@@ -116,6 +116,10 @@ $(document).ready(function() {
             $("#docs_bailee_push_name").html(doc);
             $("#alert_bailee_push_popup_button").click();
         }
+        if( action_type == 17 ){
+            $("#driver_name_popup").html(name);
+            $("#alert_create_driver_popup_button").click();
+        }
     });
 
 
@@ -240,6 +244,110 @@ $(document).ready(function() {
     });
 
 
+
+    $(document).on("click", "#yes_popup_17", function () {
+        var la_real_form_id = file_id;
+        var action_name = "create_driver";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                la_real_form_id:la_real_form_id,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var employee_id = result.employee_id;
+                var la_real_form_id_set = result.la_real_form_id;
+
+                $(".alert_row").each(function() {
+                    if(la_real_form_id_set == $(this).attr("file_id")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $(".btn-default").click();
+                edit_driver(employee_id);
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+
+    // показываем карточку редактированния для забивания данных о документах водителя после мед осмотра
+    function edit_driver(emp_driver_id){
+        var item_id =  emp_driver_id;
+        $("#start_position").click();
+        $("#edit_popup_user").attr("item_id",user_id);
+        $.ajax({
+            type: "POST",
+            url: "/editor/employee_card",
+            data: {
+                item_id:item_id
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+
+                var surname = result.surname;
+                var name = result.name;
+                var second_name = result.second_name;
+                var birthday = result.birthday;
+                var start_date = result.start_date;
+                var em_status = result.em_status;
+                var request_result = result.status;
+                var personnel_number = result.personnel_number;
+                var content = result.content;
+                var address = result.address;
+                var category = result.category;
+                var license_number = result.license_number;
+                var start_date_driver = result.start_date_driver;
+                var end_date_driver = result.end_date_driver;
+
+                // если 'ok' - рисуем тест
+                if(request_result == 'ok'){
+
+                    $("#edit_popup_employees").attr("item_id",item_id);
+                    $("#title_employees_item_id").html(item_id);
+                    $("#edit_popup_input_surname").val(surname);
+                    $("#edit_popup_input_name").val(name);
+                    $("#edit_popup_input_second_name").val(second_name);
+
+                    $("#edit_popup_input_start_date").val(start_date);
+                    $("#edit_popup_input_birthday").val(birthday);
+
+                    $("#edit_popup_input_status").val(em_status);
+
+
+                    if(em_status == 1 ){
+                        $("#add_emp_mix").addClass("none");
+                        $("#delete_emp_mix").removeClass("none");
+                    } else {
+                        $("#delete_emp_mix").addClass("none");
+                        $("#add_emp_mix").removeClass("none");
+                    }
+                    if(address!=""){
+                        $("#popup_reg_address").val(address);
+                    }
+                    if(category!=""){
+                        $("#popup_driver_categories").val(category);
+                        $("#popup_driver_number").val(license_number);
+                        $("#popup_driver_start").val(start_date_driver);
+                        $("#popup_driver_end").val(end_date_driver);
+                    }
+
+                    $("#edit_popup_input_personnel_number").val(personnel_number);
+
+                    $("#edit_popup_employees_button").click();
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    }
 
 
 
