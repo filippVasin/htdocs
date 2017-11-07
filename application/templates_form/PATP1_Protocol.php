@@ -5,14 +5,15 @@ $today = date("Y-m-d H:i:s");
 $sql="SELECT * FROM company WHERE company.id=". $_SESSION['control_company'];
 $comp = $db->row($sql);
 $company = $comp['name'];
+$company_id = $_SESSION['control_company'];
 
 $sql="SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio, items_control.name AS dol
         FROM employees,employees_items_node,organization_structure,items_control
-        WHERE employees.id = ". $_SESSION['employee_id'] ."
+        WHERE employees.id = ". $employee_id ."
         AND employees.id = employees_items_node.employe_id
         AND organization_structure.id = employees_items_node.org_str_id
         AND organization_structure.kladr_id = items_control.id
-        AND organization_structure.company_id =". $_SESSION['control_company'];
+        AND organization_structure.company_id =". $company_id;
 
 $employees = $db->row($sql);
 $fio = $employees['fio'];
@@ -28,8 +29,8 @@ LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organizat
 																	AND
 																  ORG_chief.right_key > organization_structure.right_key
 																  AND
-																  ORG_chief.company_id = ". $_SESSION['control_company'] ." )
-		LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $_SESSION['control_company'] ."
+																  ORG_chief.company_id = ".$company_id ." )
+		LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $company_id ."
 																		AND ORG_boss.left_key > ORG_chief.left_key
 																		AND ORG_boss.right_key < ORG_chief.right_key
 																		AND 	ORG_boss.`level` = (ORG_chief.`level` +1)
@@ -39,9 +40,9 @@ LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organizat
 		LEFT JOIN employees AS chief_employees ON chief_employees.id = chief_node.employe_id
 		LEFT JOIN items_control AS  chief_items_control ON chief_items_control.id = ORG_boss.kladr_id
 
-WHERE employees_items_node.employe_id = ". $_SESSION['employee_id'] ."
+WHERE employees_items_node.employe_id = ". $employee_id ."
 AND organization_structure.id = employees_items_node.org_str_id
-AND organization_structure.company_id = ". $_SESSION['control_company'] ."
+AND organization_structure.company_id = ". $company_id ."
 AND chief_employees.id is not NULL
 ORDER BY level DESC, boss_type DESC
 LIMIT 1";
@@ -50,6 +51,18 @@ $boss = $db->row($sql);
 $chief = $boss['chief_surname']." ". $boss['chief_name'] ." ". $boss['chief_second_name'];
 $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
 $chief_dol = $boss['chief_dol'];
+
+
+$sql = "SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS boss_fio
+        FROM organization_structure,employees_items_node,employees
+        WHERE organization_structure.kladr_id = 69
+        AND organization_structure.company_id = ". $company_id ."
+        AND employees_items_node.org_str_id = organization_structure.id
+        AND employees_items_node.employe_id = employees.id";
+$bosses = $db->row($sql);
+$boss = $bosses['boss_fio'];
+$bossFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $boss);
+
 
 $result_file =
     '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
@@ -81,6 +94,7 @@ $result_file =
 	</STYLE>
 </HEAD>
 <BODY LANG="ru-RU" LINK="#0000ff" DIR="LTR">
+<div class="Section1">
 <TABLE WIDTH=678 CELLPADDING=7 CELLSPACING=0 STYLE="page-break-before: always">
 	<COLGROUP>
 		<COL WIDTH=2>
@@ -139,7 +153,7 @@ $result_file =
 		</TR>
 		<TR>
 			<TD COLSPAN=26 WIDTH=664 HEIGHT=24 VALIGN=BOTTOM STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-				<P CLASS="western" ALIGN=CENTER><FONT COLOR="#ff0000"><FONT SIZE=3><I>'. $company .'</I></FONT></FONT></P>
+				<P CLASS="western" ALIGN=CENTER><FONT ><FONT SIZE=3><I>'. $company .'</I></FONT></FONT></P>
 			</TD>
 		</TR>
 	</TBODY>
@@ -156,7 +170,7 @@ $result_file =
 			<TD COLSPAN=2 WIDTH=5 STYLE="border: none; padding: 0in">
 				<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 				</P>
-				<P CLASS="western"><FONT COLOR="#ff0000"><FONT SIZE=3>«</FONT></FONT></P>
+				<P CLASS="western"><FONT ><FONT SIZE=3>«</FONT></FONT></P>
 			</TD>
 			<TD COLSPAN=4 WIDTH=24 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
 			'. $day .'
@@ -223,8 +237,7 @@ $result_file =
 				<P CLASS="western" ALIGN=JUSTIFY>председателя</P>
 			</TD>
 			<TD COLSPAN=15 WIDTH=554 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-				<P CLASS="western"><FONT COLOR="#ff0000"><FONT SIZE=3><I>Земерова
-				Галина Николаевна, директор</I></FONT></FONT></P>
+				<P CLASS="western"><FONT><FONT SIZE=3><I>'. $boss .', директор</I></FONT></FONT></P>
 			</TD>
 		</TR>
 		<TR>
@@ -242,7 +255,7 @@ $result_file =
 				<P CLASS="western" ALIGN=JUSTIFY>членов:</P>
 			</TD>
 			<TD COLSPAN=15 WIDTH=554 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-				<P CLASS="western"><FONT COLOR="#ff0000"><FONT SIZE=3><I>'. $chief .', '. $chief_dol .'</I></FONT></FONT>
+				<P CLASS="western"><FONT ><FONT SIZE=3><I>'. $chief .', '. $chief_dol .'</I></FONT></FONT>
 				</P>
 			</TD>
 		</TR>
@@ -262,7 +275,7 @@ $result_file =
 				</P>
 			</TD>
 			<TD COLSPAN=15 WIDTH=554 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-				<P CLASS="western"><FONT COLOR="#ff0000"><FONT SIZE=3><I>Самарин
+				<P CLASS="western"><FONT ><FONT SIZE=3><I>Самарин
 				Дмитрий Олегович, специалист по охране
 				труда</I></FONT></FONT></P>
 			</TD>
@@ -289,7 +302,7 @@ $result_file =
 		<TR>
 			<TD COLSPAN=26 WIDTH=664 HEIGHT=9 VALIGN=BOTTOM STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
 				<P CLASS="western"><FONT COLOR="#000000"><FONT SIZE=3><I>Программе
-				обучения по охране труда для должности </I></FONT></FONT><FONT COLOR="#ff0000"><FONT SIZE=3><I>
+				обучения по охране труда для должности </I></FONT></FONT><FONT ><FONT SIZE=3><I>
 				'. $dol .'</I></FONT></FONT></P>
 			</TD>
 		</TR>
@@ -368,10 +381,10 @@ $result_file =
 				</OL>
 			</TD>
 			<TD COLSPAN=8 WIDTH=137 STYLE="border: 1px solid #00000a; padding: 0in 0.08in">
-				<P CLASS="western"><FONT COLOR="#ff0000"><FONT SIZE=2><I>'. $fio .'</I></FONT></FONT></P>
+				<P CLASS="western"><FONT<FONT SIZE=2><I>'. $fio .'</I></FONT></FONT></P>
 			</TD>
 			<TD COLSPAN=8 WIDTH=80 STYLE="border: 1px solid #00000a; padding: 0in 0.08in">
-				<P CLASS="western" ALIGN=CENTER><FONT COLOR="#ff0000"><FONT SIZE=2><I>'. $dol .'
+				<P CLASS="western" ALIGN=CENTER><FONT><FONT SIZE=2><I>'. $dol .'
 				</I></FONT></FONT>
 				</P>
 			</TD>
@@ -406,8 +419,7 @@ $result_file =
 			<P CLASS="western" ALIGN=JUSTIFY>Председатель комиссии</P>
 		</TD>
 		<TD WIDTH=487 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-			<P CLASS="western" ALIGN=CENTER><FONT COLOR="#ff0000"><FONT SIZE=3><I>Земерова
-			Г.Н.</I></FONT></FONT></P>
+			<P CLASS="western" ALIGN=CENTER><FONT><FONT SIZE=3><I>'. $bossFIO .'</I></FONT></FONT></P>
 		</TD>
 	</TR>
 	<TR>
@@ -425,7 +437,7 @@ $result_file =
 			<P CLASS="western" ALIGN=JUSTIFY>Члены комиссии:</P>
 		</TD>
 		<TD WIDTH=487 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-			<P CLASS="western" ALIGN=CENTER><FONT COLOR="#ff0000"><FONT SIZE=3><I>'. $chiefFIO .'</I></FONT></FONT></P>
+			<P CLASS="western" ALIGN=CENTER><FONT ><FONT SIZE=3><I>'. $chiefFIO .'</I></FONT></FONT></P>
 		</TD>
 	</TR>
 	<TR>
@@ -444,7 +456,7 @@ $result_file =
 			</P>
 		</TD>
 		<TD WIDTH=487 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-			<P CLASS="western" ALIGN=CENTER><A NAME="_GoBack"></A><FONT COLOR="#ff0000"><FONT SIZE=3><I>Самарин
+			<P CLASS="western" ALIGN=CENTER><A NAME="_GoBack"></A><FONT ><FONT SIZE=3><I>Самарин
 			Д.О.</I></FONT></FONT></P>
 		</TD>
 	</TR>
@@ -461,6 +473,7 @@ $result_file =
 </TABLE>
 <P CLASS="western" STYLE="margin-bottom: 0.14in" attr="'. $today .'"><BR><BR>
 </P>
+</div>
 </BODY>
 </HTML>';
 $error = "";

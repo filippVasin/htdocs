@@ -267,8 +267,9 @@
                                 <input  class="form-control"  id="popup_driver_number" placeholder="№ удостоверения">
 
                                 <label>Начало действия</label>
-                                <input type="text" class="form-control"  id="popup_driver_start" placeholder="Начало действия">
-
+                                <div title="Дата устройства" class="bef_input">
+                                    <input type="text" class="form-control"  id="popup_driver_start" placeholder="Начало действия">
+                                </div>
                                 <label>Срок действия</label>
                                 <input type="text" class="form-control"  id="popup_driver_end" placeholder="Срок действия">
 

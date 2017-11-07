@@ -174,70 +174,72 @@ class Model_creator
         $fio = $surname." ".$name." ".$patronymic;
         $result_array = array();
 
-        $reg_address = $this->post_array['reg_address'];
-        $driver_categories = $this->post_array['driver_categories'];
-        $driver_number = $this->post_array['driver_number'];
-        $driver_start = $this->post_array['driver_start'];
-        $driver_end = $this->post_array['driver_end'];
+//        $reg_address = $this->post_array['reg_address'];
+//        $driver_categories = $this->post_array['driver_categories'];
+//        $driver_number = $this->post_array['driver_number'];
+//        $driver_start = $this->post_array['driver_start'];
+//        $driver_end = $this->post_array['driver_end'];
 
         // подготовка дат к записи в базу
         $work_start = date_create($work_start)->Format('Y-m-d');
         $birthday = date_create($birthday)->Format('Y-m-d');
-        $driver_start = date_create($driver_start)->Format('Y-m-d');
-        $driver_end = date_create($driver_end)->Format('Y-m-d');
+//        $driver_start = date_create($driver_start)->Format('Y-m-d');
+//        $driver_end = date_create($driver_end)->Format('Y-m-d');
 
+//        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
+        $email = "vasin.filipp@yandex.ru";// Пока Филипп
 
         // проверяем есть ли такая почта уже
-        $sql="Select *
-              FROM employees
-              WHERE employees.email ='".$email."'";
+//        $sql="Select *
+//              FROM employees
+//              WHERE employees.email ='".$email."'";
+//
+//        $email_data = $db->row($sql);
 
-        $email_data = $db->row($sql);
 
-
-        if($email_data['id'] != '') {
-            // уже есть такая почта
-            $result_array['content'] = 'Ошибка, Почта занята';
-        } else {
+//        if($email_data['id'] != '') {
+//            // уже есть такая почта
+//            $result_array['content'] = 'Ошибка, Почта занята';
+//        } else {
             // почта девственна - продолжаем
 
 
 
             if(isset($this->post_array['personnel_number'])){
                 $personnel_number = $this->post_array['personnel_number'];
-                $sql = "INSERT INTO `employees` (`personnel_number`,`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $personnel_number . "','" . $name . "','" . $surname . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
+                $sql = "INSERT INTO `employees` (`personnel_number`,`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $personnel_number . "','" . $surname . "','" . $name . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
 
                 $db->query($sql);
             } else {
-                $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $name . "','" . $surname . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
+                $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $surname . "','" . $name . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
 
                 $db->query($sql);
             }
+            $employee_id = mysqli_insert_id($db->link_id);
 
-
-            $sql = "SELECT employees.id, employees.name
-                    FROM employees
-                    WHERE employees.email ='" . $email . "'";
-            $form_content_jj = $db->row($sql);
+//            $sql = "SELECT employees.id, employees.name
+//                    FROM employees
+//                    WHERE employees.email ='" . $email . "'";
+//            $form_content_jj = $db->row($sql);
             // генерируем логин и пароль
-            $login = $email;
+            $login = $labro->generate_password();
             $pass = $labro->generate_password();
 
             $role_id = 3;
-            $employee_id = $form_content_jj['id'];
+
             $sql = "INSERT INTO `users` (`name`, `password`, `role_id`,`employee_id`,`full_name`) VALUES('" . $login . "','" . md5($pass) . "','" . $role_id . "','" . $employee_id . "','" . $surname . "');";
             $db->query($sql);
 
             $sql = 'INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES("' . $employee_id . '","' . $dol_id . '")';
             $db->query($sql);
-            if($reg_address !="") {
-                // регистрация
-                $sql = 'INSERT INTO `registration_address` (`emp_id`, `address`) VALUES("' . $employee_id . '","' . $reg_address . '")';
-                $db->query($sql);
-                // водительские права
-                $sql = 'INSERT INTO `drivers_license` (`emp_id`, `company_id`, `category`, `license_number`, `start_date`, `end_date`) VALUES("' . $employee_id . '","' . $_SESSION['control_company'] . '","' . $driver_categories . '","' . $driver_number . '","' . $driver_start . '","' . $driver_end . '")';
-                $db->query($sql);
-            }
+//            if($reg_address !="") {
+//                // регистрация
+//                $sql = 'INSERT INTO `registration_address` (`emp_id`, `address`) VALUES("' . $employee_id . '","' . $reg_address . '")';
+//                $db->query($sql);
+//                // водительские права
+//                $sql = 'INSERT INTO `drivers_license` (`emp_id`, `company_id`, `category`, `license_number`, `start_date`, `end_date`) VALUES("' . $employee_id . '","' . $_SESSION['control_company'] . '","' . $driver_categories . '","' . $driver_number . '","' . $driver_start . '","' . $driver_end . '")';
+//                $db->query($sql);
+//            }
             $subject = "Уведомление";
             $mail_type = "reg";
             // запрашиваем шаблон письма
@@ -299,7 +301,7 @@ class Model_creator
 
             }
 
-        }
+//        }
 
        $blank = "driver_start";
        $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$employee_id;
@@ -353,7 +355,8 @@ class Model_creator
 
 
 
-        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
+//        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
+        $email = "vasin.filipp@yandex.ru";// Пока Филипп
         $sql="INSERT INTO `sump_for_employees` (`reg_address`,`personnel_number`,`name`,`surname`,`patronymic`,`work_start`,`birthday`,`email`,`id_item`,`company_id`,`category`,`license_number`,`start_date`,`end_date`,`dol_id`,`author_id`,`creator_time`)
               VALUES ('". $reg_address ."','". $personnel_number ."','". $name ."','". $surname ."','". $patronymic ."','". $work_start ."','". $birthday ."','". $email ."','". $id_item ."','". $_SESSION['control_company'] ."','". $categories ."','". $number ."','". $driver_start ."','". $driver_end ."','". $dol_id ."','". $_SESSION['employee_id'] ."', NOW());";
 
@@ -643,7 +646,7 @@ class Model_creator
 
 
     public function get_input(){
-        global $db, $systems, $elements;
+        global $db;
         $dol_id = $this->post_array['dol_id'];
         $sql = "SELECT organization_structure.kladr_id
                 FROM organization_structure

@@ -3,7 +3,7 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Labor Protection</title>
+    <title>Охрана Труда</title>
     <link rel="icon" type="/image/png" href="/templates/<?echo $current_template;?>/images/icon_core.png" />
     <link rel="stylesheet" href="/templates/<?echo $current_template;?>/css/style.css" type="text/css" />
 

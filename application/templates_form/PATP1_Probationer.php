@@ -73,47 +73,42 @@ $result_file =
 	<STYLE TYPE="text/css">
 	<!--
 		@page { margin-right: 0.59in; margin-top: 0.35in; margin-bottom: 0.39in }
-		P { margin-bottom: 0.08in; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		P { margin-bottom: 0.08in; color: #000000; widows: 2; orphans:  2}
 		P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ru-RU }
 		P.cjk { font-family: "Times New Roman", serif; font-size: 12pt }
 		P.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA }
 	-->
 	</STYLE>
 </HEAD>
-<BODY LANG="en-US" TEXT="#000000" DIR="LTR">
+<BODY LANG="en-US" TEXT="#000000" >
 <div class="Section1">
 <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
 <FONT SIZE=4><B>ЛИСТОК</B></FONT></P>
 <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
 <FONT SIZE=4><B>ПРОХОЖДЕНИЯ СТАЖИРОВКИ ВОДИТЕЛЕМ</B></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; margin-bottom: 0in">
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE=" margin-bottom: 0in">
 <FONT SIZE=4><B>ТРАНСПОРТНОГО СРЕДСТВА
 (АВТОБУСА) № _____</B></FONT></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=4>Водитель
 </FONT><I><U><B>'. $fio .'</B></U></I></P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водительское
-удостоверение <I><U><B>'. $license_number .', категории:</B></U></I><FONT ><I><U><B>
+<P >Водительское
+удостоверение <I><U><B> '. $license_number .', категории:</B></U></I><FONT ><I><U><B>
 '.$category .'</P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Приказом
+<P>Приказом
 по <I><B>ООО «Новосибирскпрофстрой-ПАТП-1»</B></I>
 <I><U><B>№ 235  от 26.10.2017г., закреплен:</B></U></I>
-за водителем-наставником</P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">____________________________________________________________________________</P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
-</P>
+за водителем-наставником:<B>_______________________________________________________________________________</B> </P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">На
-транспортное средство <FONT SIZE=4><I><U><B>___________</B></U></I></FONT>
-<FONT SIZE=4>г.н.   </FONT><FONT SIZE=4><I><U><B>_____</B></U></I></FONT></P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
-</P>
+транспортное средство <FONT SIZE=4><I><B>___________</B></I></FONT>
+<FONT SIZE=4>г.н.   </FONT><FONT SIZE=4><I><B>_____</B></I></FONT></P>
+
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">По
 маршруту<SPAN LANG="en-US">__________________________________________________________________</SPAN></P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
-</P>
+
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Причина
 направления на стажировку <I><U><B>прием
 на работу, ознакомление с
-маршрутом					___________________					____</B></U></I></P>
+маршрутом					___________________				</B></U></I></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">	</P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Направляется
 для прохождения стажировки в объеме:
@@ -126,22 +121,18 @@ ____ часов</P>
 (практика)
                           </B></U></I>
 </P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
-</P>
+
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Начальник
-отдела кадров_____________________     _________<U>Л.В.
-Рыльская</U>___________</P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
-</P>
+отдела кадров_____________________     _________Л.В.
+Рыльская___________</P>
+
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">'. $chief_dol .'___________________
 __________<U>'. $chiefFIO .'</U>________</P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
-</P>
+
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водитель
 прошел инструктаж в количестве
 <U><B>______________</B></U></P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
-</P>
+
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">
 </P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водитель
@@ -354,8 +345,7 @@ _______________________________</P>
 		</TD>
 	</TR>
 </TABLE>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
-</P>
+
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Замечания
 и предложения  водителя - наставника</P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">_______________________________<I><U><B>допустить

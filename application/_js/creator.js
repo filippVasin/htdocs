@@ -419,11 +419,7 @@ $(document).ready(function() {
                     $("#landing_form_offer_one").addClass("landing_form_offer_one");
                     if(status == "ok"){
                         if(dol_id == 183) {
-                            var click_link = $('<a id="click_link" style="color: #fff" class="button" href="' + link + '" target="_blank">Стартовый бланк</a>');
-                            $("#test_block").append(click_link);
-                            document.getElementById("click_link").click();
-                            $("#click_link").remove();
-
+                            print_link(link);
                         }
                         $(".create_box input").val("");
                         $("#node_docs").html("");
@@ -443,7 +439,8 @@ $(document).ready(function() {
 
     // Выбрать узел
     $(document).on("click", "#node_docs", function () {
-        $("#popup_context_menu_update").css("display","block")
+        $("#popup_context_menu_update").css("display","block");
+        $('#popup_update_tree').html("");
         var emp_id = "";
         var report_type = "org_str_tree";
         $.ajax({
@@ -516,8 +513,25 @@ $(document).ready(function() {
     }
 
 
-    //  если есть отомки тогда в конец списка
+    //  если есть отомки тогда в конец списка и удаляем дубли
     function sort_stucture(){
+        $(".tree_item").each(function() {
+           var unique_item = $(this).attr('id_item');
+           var count = 0;
+            $(".tree_item").each(function() {
+                var regular_item = $(this).attr('id_item');
+                var regular_obj = $(this);
+                if(unique_item == regular_item){
+                    if(count == 0){
+                        ++count;
+                    } else {
+                        regular_obj.remove();
+                    }
+
+                }
+            });
+        });
+
         $("li").each(function() {
             var item =  $(this).children(".tree_item");
             var parent = $(this).closest("ul");

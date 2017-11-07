@@ -556,7 +556,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         $html='<ul id="tree_main" class="tree">%parent_0%</ul>';
         foreach ($level_array as $level_array_item) {
             foreach($tree as $tree_item) {
-                if($tree_item['level']==$level_array_item) {
+                if($tree_item['level'] == $level_array_item) {
                     $parent_id = $tree_item['parent'];
                     $item_html = '<ul class="none">';
                     foreach($tree as $tree_item) {

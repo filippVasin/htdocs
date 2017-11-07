@@ -46,18 +46,20 @@ if(__DIR__ == "C:\MAMP\htdocs"){
 
 
 
-// конец стажировки
-end_probation();
-// обновляем календарь
-calendar_refresh();
 
 
-exit();
+
+//exit();
 $result_status = "ok";
 $cron_task = "";
 $comment = "Начали работать";
 $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
 $db->query($sql);
+
+// конец стажировки
+end_probation();
+// обновляем календарь
+calendar_refresh();
 
 // глобольный цикл по компаниям
 $sql = "SELECT id FROM company";
@@ -1385,40 +1387,54 @@ function end_probation(){
                 AND organization_structure.company_id =". $comp;
         $employees = $db->all($sql);
         foreach ($employees as $employee){
-            $emp = $employee['id'];
-            $sql = "SELECT *
-                    FROM history_step
-                    WHERE history_step.employee_id = ". $emp ."
-                    AND history_step.step_id = 122
-                    AND  ( NOW() >= (history_step.data_finish + INTERVAL 14 DAY))";
-            $history = $db->row($sql);
+            $emp = $employee['employe_id'];
 
-            if($history['id'] != '') {
+            // есть ли доп. роуты для этого сотрудника
+            $sql = "SELECT delay_routes.delay, delay_routes.step_flag, delay_routes.new_route,delay_routes.type
+                        FROM employees_items_node,delay_routes
+                        WHERE delay_routes.org_str_obj = employees_items_node.org_str_id
+                        AND employees_items_node.employe_id = ". $emp;
+            $delay_routes = $db->all($sql);
+            foreach ($delay_routes as $delay_route){
+                $delay = $delay_route['delay']; // отсрочка по введению роута
+                $step_flag = $delay_route['step_flag']; // если этот шаг пройден
+                $new_route = $delay_route['new_route']; // новый роут
+                $delay_type = $delay_route['type']; // тип роута
+
                 $sql = "SELECT *
+                    FROM history_step
+                    WHERE history_step.employee_id = " . $emp . "
+                    AND history_step.step_id = " . $step_flag . "
+                    AND  ( NOW() >= (history_step.data_finish + INTERVAL " . $delay . " DAY))";
+                $history = $db->row($sql);
+
+                if ($history['id'] != '') {
+
+                    $sql = "SELECT *
                     FROM route_doc,route_control_step
                     WHERE route_doc.employee_id = " . $emp . "
                     AND route_control_step.track_number_id = route_doc.id
-                    AND route_control_step.step_content_id = 65";
-                $route = $db->row($sql);
-                if($route['id'] == '') {
-                    $sql = "INSERT INTO `route_doc` (`company_id`, `employee_id`) VALUES ('". $comp ."', '". $emp ."')";
-                    $db->query($sql);
-                    $track_number_id = mysqli_insert_id($db->link_id);
+                    AND route_control_step.step_content_id =" . $new_route;
+                    $route = $db->row($sql);
+                    if ($route['id'] == '') {
+                        $sql = "INSERT INTO `route_doc` (`company_id`, `employee_id`) VALUES ('" . $comp . "', '" . $emp . "')";
+                        $db->query($sql);
+                        $track_number_id = mysqli_insert_id($db->link_id);
 
-                    $sql = "INSERT INTO `route_control_step` (`track_number_id`,`step_content_id`, `son_step`, `step_name`) VALUES ('". $track_number_id ."','65', '0', 'Стажировка')";
-                    $db->query($sql);
-                    $route_start_step = mysqli_insert_id($db->link_id);
+                        $sql = "INSERT INTO `route_control_step` (`track_number_id`,`step_content_id`, `son_step`, `step_name`) VALUES ('" . $track_number_id . "','" . $new_route . "', '0', '". $delay_type ."')";
+                        $db->query($sql);
+                        $route_start_step = mysqli_insert_id($db->link_id);
 
-                    $sql = "UPDATE `route_doc` SET `route_start_step`= '".$route_start_step."' WHERE  `id`=" . $track_number_id;
-                    $db->query($sql);
+                        $sql = "UPDATE `route_doc` SET `route_start_step`= '" . $route_start_step . "' WHERE  `id`=" . $track_number_id;
+                        $db->query($sql);
 
-                    $sql = "INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`,  `action_type_id`, `company_id`,  `step_id`, `date_create`)
-                    VALUES ('". $emp ."',  '19', '". $comp ."', '". $route_start_step ."', NOW())";
-                    $db->query($sql);
+                        $sql = "INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`,  `action_type_id`, `company_id`,  `step_id`, `date_create`)
+                    VALUES ('" . $emp . "',  '19', '" . $comp . "', '" . $route_start_step . "', NOW())";
+                        $db->query($sql);
+                    }
                 }
             }
         }
-
     }
 }
 

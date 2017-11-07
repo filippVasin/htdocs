@@ -264,6 +264,8 @@ $(document).ready(function() {
                 var result = jQuery.parseJSON(answer);
                 employee_id = result.employee_id;
                 var la_real_form_id_set = result.la_real_form_id;
+                var status = result.status;
+                var link = result.link;
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
@@ -273,6 +275,9 @@ $(document).ready(function() {
                     }
                 });
                 $(".btn-default").click();
+                if(status == "ok"){
+                    //print_link(link);
+                }
                 edit_driver();
             },
             error: function () {
@@ -306,12 +311,6 @@ $(document).ready(function() {
                     }
                 });
                 $(".btn-default").click();
-                if(status == "ok"){
-                        var click_link = $('<a id="click_link" style="color: #fff; display: none" class="button" href="' + link + '" target="_blank">Стартовый бланк</a>');
-                        $("body").append(click_link);
-                        document.getElementById("click_link").click();
-                        $("#click_link").remove();
-                }
 
             },
             error: function () {
@@ -445,6 +444,8 @@ $(document).ready(function() {
                         }
                     });
                     $(".btn-default").click();
+                    var link = "/doc_views?PATP1_Probationer&probation&" + item_id;
+                    print_link(link);
                 }
             },
             error: function () {
@@ -689,6 +690,23 @@ $(document).ready(function() {
         date_from = $('#datepicker_from').val();
         select();
     });
+
+    // проверка с какого устройтства вошли
+    if(isMobile.any()){
+        $("#popup_driver_start").attr("type","date");
+        $("#popup_driver_end").attr("type","date");
+    } else {
+        $('#popup_driver_start').datepicker({
+            language: "ru",
+            autoclose: true
+        });
+        $('#popup_driver_end').datepicker({
+            language: "ru",
+            autoclose: true
+        });
+    }
+    // datapickers
+
 
 });
 

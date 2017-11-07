@@ -66,7 +66,7 @@ $result_file =
 «НОВОСИБИРСКПРОФСТРОЙ-ПАТП-1»</U></FONT></FONT></P>
 <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in; line-height: 100%">
 <FONT FACE="Times New Roman, serif"><FONT SIZE=4><U>ОКВЭД
-60.21.11</U></FONT></FONT></P>
+49.31.2</U></FONT></FONT></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0.14in; line-height: 100%">
 <FONT FACE="Times New Roman, serif"><FONT SIZE=2 STYLE="font-size: 9pt">Код
 ОГРН</FONT></FONT></P>
@@ -162,7 +162,7 @@ $result_file =
 структурного подразделения работодателя -
  основное производство </FONT></FONT></P>
 <P LANG="ru-RU" CLASS="western" STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=3>6.Должность,
-профессия: водитель</FONT></FONT></P>
+профессия: '. $real_dol .'</FONT></FONT></P>
 <TABLE WIDTH=639 CELLPADDING=7 CELLSPACING=0>
 	<COL WIDTH=300>
 	<COL WIDTH=52>
@@ -397,7 +397,7 @@ $result_file =
 <P LANG="ru-RU" CLASS="western">1.Ф.И.О. '. $fio .'</P>
 <P LANG="ru-RU" CLASS="western">2.Дата
 рождения '. date("d.m.Y", strtotime($birthday)) .'</P>
-<P LANG="ru-RU" CLASS="western">3.Должность '. $dol .'</P>
+<P LANG="ru-RU" CLASS="western">3.Должность: '. $real_dol .'</P>
 <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in">
 <BR>
 </P>
@@ -451,7 +451,7 @@ $result_file =
 <P LANG="ru-RU" ALIGN=RIGHT STYLE="margin-bottom: 0in; line-height: 100%">
 <FONT FACE="Times New Roman, serif"><FONT SIZE=4>				</FONT></FONT></P>
 <P LANG="ru-RU" ALIGN=RIGHT STYLE="margin-bottom: 0in; line-height: 100%">
-                                          <FONT FACE="Courier New, monospace"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>«	»
+                                          <FONT FACE="Courier New, monospace"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>«____»
   ______________ 2017г.</FONT></FONT></FONT></FONT></P>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
 </P>

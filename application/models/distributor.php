@@ -292,18 +292,36 @@ class Model_distributor{
 
         $result_array['employee_id'] = $employee_id;
         $result_array['la_real_form_id'] = $la_real_form_id;
+
+        $blank = "PATP1_Probationer";
+        $result_array['link'] = "/doc_views?". $blank ."&probation&". $employee_id;
         return $result_array;
     }
 
     private function probation_actoin(){
-        global $db, $labro, $regisrt_temp_mail, $systems;
+        global $db;
         $emp = $this->post_array['emp'];
 
-        $sql = "UPDATE `laborpro`.`local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 19";
+        $sql = "SELECT * FROM `local_alerts` WHERE `initiator_employee_id` = ".$emp ." AND `action_type_id` = 19";
+        $result = $db->row($sql);
+        $step_id = $result['step_id'];
+
+        $sql = "UPDATE `local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 19";
         $db->query($sql);
 
-        $blank = "PATP1_Probationer";
-        $result_array['link'] = "/doc_views?". $blank ."&probation&". $emp;
+        $sql = "INSERT INTO `history_step` (`employee_id`,`step_id`,`data_finish`) VALUES ( ". $emp .", ". $step_id .",NOW())";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_docs` (`employee_id`,`step_id`,`date_start`,`date_finish`) VALUES ( ". $emp .", ". $step_id .",NOW(),NOW())";
+        $db->query($sql);
+
+        $sql= "INSERT INTO `form_status_now` (`track_number_form_id`,`track_form_step_now`, `doc_status_now`, `author_employee_id`, `step_id`) VALUES ('5','37','1', '". $emp ."', '". $step_id ."')";
+        $db->query($sql);
+
+        "INSERT INTO `history_forms` (`step_end_time`, `track_form_id`, `track_form_step`, `start_data`, `doc_status_now`, `author_employee_id`) VALUES (NOW(), '7', '37', NOW(), '1','". $emp ."')";
+        $db->query($sql);
+
+        $result_array['content'] = "";
         return $result_array;
     }
 }

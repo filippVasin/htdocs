@@ -370,7 +370,7 @@ class Model_forms{
         $page ='<div id="popup_update_select_position">
                     <div class="canvas" style="height: 120px; box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
                         <div class="popup_context_menu_title"> Подпишите '. $doc_name .'</div>
-                            <div class="row">
+                            <div class="row" style="display: flex; justify-content: center;">
                                 <div class="button" style="width: 180px;" id="popup_update_select_node_yes">Я подписал</div>
                                 <div class="button" style="width: 180px;" id="popup_update_select_position_cancel">Я не подписал</div>
                             </div>

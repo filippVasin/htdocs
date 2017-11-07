@@ -520,8 +520,10 @@ $(document).ready(function() {
             },
             success: function (answer) {
                 var result = jQuery.parseJSON(answer);
-                var la_real_form_id_set = result.la_real_form_id;
                 employee_id = result.employee_id;
+                var la_real_form_id_set = result.la_real_form_id;
+                var status = result.status;
+                var link = result.link;
 
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
@@ -531,6 +533,9 @@ $(document).ready(function() {
                     }
                 });
                 $(".btn-default").click();
+                if(status == "ok"){
+                    //print_link(link);
+                }
                 edit_driver();
             },
             error: function () {
@@ -663,6 +668,8 @@ $(document).ready(function() {
                         }
                     });
                     $(".btn-default").click();
+                    var link = "/doc_views?PATP1_Probationer&probation&" + item_id;
+                    print_link(link);
                 }
             },
             error: function () {
@@ -738,19 +745,21 @@ $(".fc-day-grid-container").css("height","100%");
 
 
 
-    //// рубрика - эксперементы
-    //$(".progress-group").each(function() {
-    //    if($(this).children('.progress-group').length == 1){
-    //        $(this).addClass("colorGreen");
-    //    };
-    //});
-    //$(".progress-group").each(function() {
-    //    if($(this).attr('left_key') == 223){
-    //        var fact = $(this).children('.num_fact');
-    //        var int = Number(fact.html());
-    //        fact.html(int - 4);
-    //    }
-    //});
+    // проверка с какого устройтства вошли
+    if(isMobile.any()){
+        $("#popup_driver_start").attr("type","date");
+        $("#popup_driver_end").attr("type","date");
+    } else {
+        $('#popup_driver_start').datepicker({
+            language: "ru",
+            autoclose: true
+        });
+        $('#popup_driver_end').datepicker({
+            language: "ru",
+            autoclose: true
+        });
+    }
+    // datapickers
 
     // отработка нажетия Enter
     $("#search_local_alert_input").keypress(function(e){
@@ -759,5 +768,8 @@ $(".fc-day-grid-container").css("height","100%");
             $("#search_local_alert").click();
         }
     });
+
+
+
 
 });

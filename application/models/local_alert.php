@@ -216,8 +216,6 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
         $db->query($sql);
 
 
-
-
         $html ="";
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';

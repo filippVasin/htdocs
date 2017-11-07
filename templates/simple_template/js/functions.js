@@ -35,16 +35,10 @@ function message(text, type){
     }, 200);
 }
 
-//function preloader(text, type){
-//    var preloader_div = $('#preloader');
-//    var message_div = $('#preloader_text');
-//    message_div.html(text);
-//
-//    if(type == 'show'){
-//        preloader_div.fadeIn(200);
-//    }   else{
-//        setTimeout(function(){
-//            preloader_div.fadeOut(200);
-//        }, 5000);
-//    }
-//}
+// открыть прияный файл в отдельном окне и вызвать форму печати
+function print_link(link){
+    var click_link = $('<a id="click_link" style="color: #fff" class="button" href="' + link + '" target="_blank">Стартовый бланк</a>');
+    $("body").append(click_link);
+    document.getElementById("click_link").click();
+    $("#click_link").remove();
+};
