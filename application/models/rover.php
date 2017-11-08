@@ -178,17 +178,8 @@ class Model_rover{
                         }
                     } while ($content == "");
 
-//                    print_r($link);
-//                    print_r($_SESSION);
+
                      $_SESSION['step_id'] = $link[$step_pointer]['id']; // номер шага
-//                    echo '<br>';
-//                    echo $link[$step_pointer]['HistoryStep'];
-//                    echo '<br>';
-//                    echo $link[$step_pointer]['periodicity'];
-//                    echo '<br>';
-//                    echo $link[$step_pointer]['data_finish'];
-//                    echo '<br>';
-//                    echo  '<br>' . $step_pointer;
 
                     if($_SESSION['step_id']>0 && ($flag_list=="")){
 

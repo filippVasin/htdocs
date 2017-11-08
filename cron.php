@@ -58,6 +58,7 @@ $db->query($sql);
 
 // конец стажировки
 end_probation();
+exit();
 // обновляем календарь
 calendar_refresh();
 
@@ -1370,7 +1371,7 @@ route_control_step.track_number_id AS id,
 }
 
 
-
+// добавляет отложенные роуты
 function end_probation(){
     global $db;
 
@@ -1389,53 +1390,109 @@ function end_probation(){
         foreach ($employees as $employee){
             $emp = $employee['employe_id'];
 
-            // есть ли доп. роуты для этого сотрудника
-            $sql = "SELECT delay_routes.delay, delay_routes.step_flag, delay_routes.new_route,delay_routes.type
+            // есть ли доп.роуты для этого сотрудника?
+            $sql = "SELECT delay_routes.delay, delay_routes.step_flag, delay_routes.new_route,delay_routes.type, delay_routes.periodicity
                         FROM employees_items_node,delay_routes
                         WHERE delay_routes.org_str_obj = employees_items_node.org_str_id
                         AND employees_items_node.employe_id = ". $emp;
             $delay_routes = $db->all($sql);
+            // проходим по всем доп.роутам сотрудника
             foreach ($delay_routes as $delay_route){
                 $delay = $delay_route['delay']; // отсрочка по введению роута
                 $step_flag = $delay_route['step_flag']; // если этот шаг пройден
                 $new_route = $delay_route['new_route']; // новый роут
                 $delay_type = $delay_route['type']; // тип роута
+                $delay_periodicity = $delay_route['periodicity']; // тип роута
 
-                $sql = "SELECT *
-                    FROM history_step
-                    WHERE history_step.employee_id = " . $emp . "
-                    AND history_step.step_id = " . $step_flag . "
+                // соблюдаються ли условия для добавления роута?
+                $sql="SELECT *
+                        FROM history_step,route_control_step
+                        WHERE history_step.employee_id = " . $emp . "
+                        AND history_step.step_id = route_control_step.id
+                        AND route_control_step.step_content_id = " . $step_flag . "
                     AND  ( NOW() >= (history_step.data_finish + INTERVAL " . $delay . " DAY))";
                 $history = $db->row($sql);
-
+                // если соблюдаются - тогда добавляем
                 if ($history['id'] != '') {
 
-                    $sql = "SELECT *
-                    FROM route_doc,route_control_step
-                    WHERE route_doc.employee_id = " . $emp . "
-                    AND route_control_step.track_number_id = route_doc.id
-                    AND route_control_step.step_content_id =" . $new_route;
-                    $route = $db->row($sql);
-                    if ($route['id'] == '') {
+                    // доcтаём все шаги нового роута
+                        $sql="SELECT *
+                                    FROM route_control_step
+                                    WHERE route_control_step.track_number_id =".$new_route;
+                        $result = $db->all($sql);
+
+                        $link = array();
+                        foreach ($result as $result_item) {
+                            $link[$result_item['id']] =
+                                    ["step_content_id" => $result_item['step_content_id'],
+                                    "son_step" => $result_item['son_step'],
+                                    "step_name" => $result_item['step_name'],
+                                    "periodicity" => $result_item['periodicity'],
+                                    "id" => $result_item['id']
+                                    ];
+                        }
+
+                        // начинаем запись
                         $sql = "INSERT INTO `route_doc` (`company_id`, `employee_id`) VALUES ('" . $comp . "', '" . $emp . "')";
                         $db->query($sql);
                         $track_number_id = mysqli_insert_id($db->link_id);
+                        // создаём новый роут для сотрудника из примера
+                        $route_start_step = 0;
+                        $count = 0;
+                        foreach ($result as $item){
+                            $step_content_id = $item['step_content_id'];
+                            $step_name = $item['step_name'];
+                            $periodicity = $item['periodicity'];
+                            $id = $item['id'];
+                            // заносим шаги
+                            $sql = "INSERT INTO `route_control_step` (`track_number_id`,`step_content_id`, `step_name`, `periodicity`) VALUES ('" . $track_number_id . "','" . $step_content_id . "', '". $step_name ."', '". $periodicity ."')";
+                            $db->query($sql);
+                            $route_step_id = mysqli_insert_id($db->link_id);
+                            // записали в массив сыновей новый id
+                            $link[$id]["new_id"] = $route_step_id;
+                            // запись номера стартового шага(только первый шаг нам нужен)
+                            if($count == 0){
+                                $route_start_step = $route_step_id;
+                            }
+                            ++$count;
+                        }
 
-                        $sql = "INSERT INTO `route_control_step` (`track_number_id`,`step_content_id`, `son_step`, `step_name`) VALUES ('" . $track_number_id . "','" . $new_route . "', '0', '". $delay_type ."')";
-                        $db->query($sql);
-                        $route_start_step = mysqli_insert_id($db->link_id);
+                        // создание массива для новых сыновей
+                        foreach ($link as $key=>$link_item) {
+                            $son_step = $link_item['son_step'];
+                            $id = $link_item['id'];
+                            foreach ($link as $link_item_tow) {
+                                if($son_step == $link_item_tow['id']){
+                                    $son_step_two = $link_item_tow['new_id'];
+                                    $link[$id]["new_son"]= $son_step_two;
+                                } else {
+                                    if($son_step == 0){
+                                        $son_step_two = 0;
+                                        $link[$id]["new_son"]= $son_step_two;
+                                    }
+                                }
+                            }
+                        }
+                        // запись новых сыновей
+                        foreach ($link as $link_item) {
+                            $sql = "UPDATE `route_control_step` SET `son_step`= '" . $link_item['new_son'] . "' WHERE  `id`=" . $link_item['new_id'];
+                            $db->query($sql);
+                        }
 
+                        // запись в роут стартового шага
                         $sql = "UPDATE `route_doc` SET `route_start_step`= '" . $route_start_step . "' WHERE  `id`=" . $track_number_id;
                         $db->query($sql);
 
+                        // создание уведомления
                         $sql = "INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`,  `action_type_id`, `company_id`,  `step_id`, `date_create`)
-                    VALUES ('" . $emp . "',  '19', '" . $comp . "', '" . $route_start_step . "', NOW())";
+                         VALUES ('" . $emp . "',  '19', '" . $comp . "', '" . $route_start_step . "', NOW())";
                         $db->query($sql);
-                    }
+
                 }
             }
         }
     }
 }
+
 
 ?>

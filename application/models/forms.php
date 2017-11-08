@@ -116,6 +116,9 @@ class Model_forms{
             case "bailee_alert":
                 $result_array = $this->bailee_alert();
                 break;
+            case "probation_alert":
+                $result_array = $this->probation_alert();
+                break;
         }
 
         $result = json_encode($result_array, true);
@@ -146,7 +149,9 @@ class Model_forms{
             $file_name = '';
             // Все глобальные переменные этого метода и $employees_array будут использоваться в подключеннмо файле документа;
             // Далее нам надо подключить щаблон файла который мы будем формировать;
-
+        $company_id = $_SESSION['control_company'];
+        $employee_id = $_SESSION['employee_id'];
+        $flag = "";
             include(ROOT_PATH.'/application/templates_form/'.$doc_item.'.php');
 
 
@@ -695,4 +700,31 @@ class Model_forms{
         return $result_array;
     }// local_alert();
 
+    private function probation_alert(){
+        global $db, $labro;
+        $observer = $labro->bailee($_SESSION['employee_id']);
+        $observer_org_str_id = $observer['ORG_chief_id'];
+
+        $action_type_id = 18;// Подписать ответственному
+        $this->history_insert($action_type_id);
+
+        $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
+                                       VALUES( '" .  $_SESSION['employee_id'] .
+            "','" . $observer_org_str_id .
+            "','" . $action_type_id .
+            "','" . $_SESSION['control_company'] .
+            "','" . $_SESSION['real_form_id'] .
+            "','" . $_SESSION['step_id'] .
+            "',NOW());";
+        $db->query($sql);
+
+
+        $form_actoin = "local_alert";
+        $result_array['form_actoin'] = $form_actoin;
+        $result_array['page'] = "local_alert";
+        // дописываем историю
+        $this->logs_form_file();
+        $this->session_clear();
+        return $result_array;
+    }
 }

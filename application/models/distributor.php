@@ -30,6 +30,9 @@ class Model_distributor{
             case "probation_actoin":
                 $result_array = $this->probation_actoin();
                 break;
+            case "probation_alert":
+                $result_array = $this->probation_alert();
+                break;
         }
 
 
@@ -293,8 +296,8 @@ class Model_distributor{
         $result_array['employee_id'] = $employee_id;
         $result_array['la_real_form_id'] = $la_real_form_id;
 
-        $blank = "PATP1_Probationer";
-        $result_array['link'] = "/doc_views?". $blank ."&probation&". $employee_id;
+//        $blank = "PATP1_Probationer";
+//        $result_array['link'] = "/doc_views?". $blank ."&probation&". $employee_id;
         return $result_array;
     }
 
@@ -324,4 +327,20 @@ class Model_distributor{
         $result_array['content'] = "";
         return $result_array;
     }
+
+
+
+    private function probation_alert(){
+        global $db;
+        $emp = $this->post_array['emp'];
+        $blank = "PATP1_Probationer";
+        $result_array['link'] = "/doc_views?". $blank ."&probation&". $emp;
+
+        $sql = "DELETE FROM `local_alerts` WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;
+        $db->query($sql);
+
+        return $result_array;
+    }
+
+
 }

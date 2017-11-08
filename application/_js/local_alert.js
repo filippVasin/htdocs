@@ -121,6 +121,10 @@ $(document).ready(function() {
             $("#driver_name_popup").html(name);
             $("#alert_create_driver_popup_button").click();
         }
+        if( action_type == 18 ){
+            $("#print_probationer_popup_name").html(name);
+            $("#alert_print_probationer_button").click();
+        }
         if( action_type == 19 ){
             $("#driver_probation_actoin_popup").html(name);
             $("#alert_probation_actoin_popup_button").click();
@@ -319,6 +323,42 @@ $(document).ready(function() {
         });// ajax
     });
 
+
+
+    $(document).on("click", "#yes_popup_18", function () {
+        var action_name = "probation_alert";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+                var link = result.link;
+
+                $(".alert_row").each(function() {
+                    if(file_id == $(this).attr("file_id")){
+                        if(18 == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $(".btn-default").click();
+                if(status == "ok"){
+                    print_link(link);
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+
     // показываем карточку редактированния для забивания данных о документах водителя после мед осмотра
     function edit_driver(){
         var item_id = employee_id;
@@ -444,8 +484,8 @@ $(document).ready(function() {
                         }
                     });
                     $(".btn-default").click();
-                    var link = "/doc_views?PATP1_Probationer&probation&" + item_id;
-                    print_link(link);
+                    //var link = "/doc_views?PATP1_Probationer&probation&" + item_id;
+                    //print_link(link);
                 }
             },
             error: function () {

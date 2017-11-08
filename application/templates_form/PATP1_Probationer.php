@@ -376,8 +376,14 @@ if($flag !="open") {
         file_put_contents($folder_name . '/' . $doc_name . '.doc', $result_file, FILE_APPEND);
         $doc_download_url = 'application/real_forms/'.md5($result_file).'/'.$doc_name.'.doc';
         $file_name = $doc_name;
+
+        if($_SESSION['form_id'] !=""){
+            $sql = "INSERT INTO `save_temp_files` (`path`, `name`, `employee_id`,`company_temps_id`) VALUES( '" . $doc_download_url . "','" . $file_name . "','" . $employee_id . "','". $_SESSION['form_id'] ."');";
+        } else {
+            $sql = "INSERT INTO `save_temp_files` (`path`, `name`, `employee_id`) VALUES( '" . $doc_download_url . "','" . $file_name . "','" . $employee_id . "');";
+        }
         // записали данные о файле
-        $sql = "INSERT INTO `save_temp_files` (`path`, `name`, `employee_id`) VALUES( '" . $doc_download_url . "','" . $file_name . "','" . $employee_id . "');";
+
         $db->query($sql);
 //    echo $sql . " insert";
 
