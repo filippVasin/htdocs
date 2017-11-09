@@ -174,36 +174,13 @@ class Model_creator
         $fio = $surname." ".$name." ".$patronymic;
         $result_array = array();
 
-//        $reg_address = $this->post_array['reg_address'];
-//        $driver_categories = $this->post_array['driver_categories'];
-//        $driver_number = $this->post_array['driver_number'];
-//        $driver_start = $this->post_array['driver_start'];
-//        $driver_end = $this->post_array['driver_end'];
-
         // подготовка дат к записи в базу
         $work_start = date_create($work_start)->Format('Y-m-d');
         $birthday = date_create($birthday)->Format('Y-m-d');
-//        $driver_start = date_create($driver_start)->Format('Y-m-d');
-//        $driver_end = date_create($driver_end)->Format('Y-m-d');
-
-//        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
-        $email = "vasin.filipp@yandex.ru";// Пока Филипп
-
-        // проверяем есть ли такая почта уже
-//        $sql="Select *
-//              FROM employees
-//              WHERE employees.email ='".$email."'";
-//
-//        $email_data = $db->row($sql);
 
 
-//        if($email_data['id'] != '') {
-//            // уже есть такая почта
-//            $result_array['content'] = 'Ошибка, Почта занята';
-//        } else {
-            // почта девственна - продолжаем
-
-
+        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
+//        $email = "vasin.filipp@yandex.ru";// Пока Филипп
 
             if(isset($this->post_array['personnel_number'])){
                 $personnel_number = $this->post_array['personnel_number'];
@@ -217,11 +194,6 @@ class Model_creator
             }
             $employee_id = mysqli_insert_id($db->link_id);
 
-//            $sql = "SELECT employees.id, employees.name
-//                    FROM employees
-//                    WHERE employees.email ='" . $email . "'";
-//            $form_content_jj = $db->row($sql);
-            // генерируем логин и пароль
             $login = $labro->generate_password();
             $pass = $labro->generate_password();
 
@@ -232,14 +204,7 @@ class Model_creator
 
             $sql = 'INSERT INTO `employees_items_node` (`employe_id`, `org_str_id`) VALUES("' . $employee_id . '","' . $dol_id . '")';
             $db->query($sql);
-//            if($reg_address !="") {
-//                // регистрация
-//                $sql = 'INSERT INTO `registration_address` (`emp_id`, `address`) VALUES("' . $employee_id . '","' . $reg_address . '")';
-//                $db->query($sql);
-//                // водительские права
-//                $sql = 'INSERT INTO `drivers_license` (`emp_id`, `company_id`, `category`, `license_number`, `start_date`, `end_date`) VALUES("' . $employee_id . '","' . $_SESSION['control_company'] . '","' . $driver_categories . '","' . $driver_number . '","' . $driver_start . '","' . $driver_end . '")';
-//                $db->query($sql);
-//            }
+
             $subject = "Уведомление";
             $mail_type = "reg";
             // запрашиваем шаблон письма
@@ -252,16 +217,14 @@ class Model_creator
             // данные для логов
             $template_mail_id = $email_temp['id'];
 
-            $path = ROOT_PATH.'/application/templates_mail/'.$email_temp['path'];
-//            echo $path;
-//            $message = file_get_contents($path);
+//            $path = ROOT_PATH.'/application/templates_mail/'.$email_temp['path'];
+
             $message = $regisrt_temp_mail;
             $message = str_replace('%fio%', $fio, $message);
             $message = str_replace('%login%', $login, $message);
             $message = str_replace('%pass%', $pass, $message);
             $hash = $labro->url_hash($labro->employees_to_user($employee_id));
             $message = str_replace('%link%', $hash, $message);
-//            echo $message;
             $send_mailer = $systems->create_mailer_object();
 
             $send_mailer->From = 'noreply@laborpro.ru';
@@ -355,8 +318,8 @@ class Model_creator
 
 
 
-//        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
-        $email = "vasin.filipp@yandex.ru";// Пока Филипп
+        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
+//        $email = "vasin.filipp@yandex.ru";// Пока Филипп
         $sql="INSERT INTO `sump_for_employees` (`reg_address`,`personnel_number`,`name`,`surname`,`patronymic`,`work_start`,`birthday`,`email`,`id_item`,`company_id`,`category`,`license_number`,`start_date`,`end_date`,`dol_id`,`author_id`,`creator_time`)
               VALUES ('". $reg_address ."','". $personnel_number ."','". $name ."','". $surname ."','". $patronymic ."','". $work_start ."','". $birthday ."','". $email ."','". $id_item ."','". $_SESSION['control_company'] ."','". $categories ."','". $number ."','". $driver_start ."','". $driver_end ."','". $dol_id ."','". $_SESSION['employee_id'] ."', NOW());";
 

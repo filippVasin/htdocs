@@ -19,12 +19,10 @@ class Model_local_alert{
 
     public function start()
     {
-        global $db;
+        global $db,$labro;
 
-
-
-        $select_item_status = $_SESSION['select_item_status_local_alert'];
-        $select_item = $_SESSION['select_item_local_alert'];
+//        $select_item_status = $_SESSION['select_item_status_local_alert'];
+//        $select_item = $_SESSION['select_item_local_alert'];
         $date_from = $_SESSION['date_from_local_alert'];
         $date_to = $_SESSION['date_to_local_alert'];
 
@@ -35,34 +33,10 @@ class Model_local_alert{
             $_SESSION['select_item_local_alert'] = "";
         }
 
-        // какие права имеет получатель
-        $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
-                    organization_structure.boss_type,
-                       CASE
-                       WHEN organization_structure.boss_type = 1
-                       THEN 'none'
-                       WHEN organization_structure.boss_type = 2
-                       THEN organization_structure.left_key
-                       WHEN organization_structure.boss_type = 3
-                       THEN 'all'
-                       END  AS `left`,
-                       CASE
-                       WHEN organization_structure.boss_type = 1
-                       THEN 'none'
-                       WHEN organization_structure.boss_type = 2
-                       THEN organization_structure.right_key
-                       WHEN organization_structure.boss_type = 3
-                       THEN 'all'
-                       END  AS `right`
-
-                    FROM organization_structure, employees, employees_items_node
-                    WHERE organization_structure.id = employees_items_node.org_str_id
-                    AND employees_items_node.employe_id = employees.id
-                    AND employees.id =". $_SESSION['employee_id'];
-//        echo $sql;
-        $observer_data = $db->row($sql);
-        $left = $observer_data['left'];
-        $right = $observer_data['right'];
+        // границы дозволенного
+        $keys =  $labro->observer_keys();
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
 
 
         if(!isset($_SESSION['left_key_local_alert'])){
@@ -76,32 +50,36 @@ class Model_local_alert{
         $right_key = $_SESSION['right_key_local_alert'];
 // запрашиваем все алерты(документ на подпись)
         $sql = "(SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
-form_step_action.action_name,form_step_action.user_action_name,
-CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
-local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
-items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
-document_status_now.id AS doc_trigger
-FROM (local_alerts,employees_items_node, employees AS init_em,
-cron_action_type, form_step_action)
-LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
-LEFT JOIN organization_structure ON organization_structure.id = NODE.org_str_id
-LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
-LEFT JOIN organization_structure AS org_parent
-ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
-    AND org_parent.level =(organization_structure.level - 1) )
-LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
-LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+                    form_step_action.action_name,form_step_action.user_action_name,
+                    CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
+                    local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
+                    items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
+                    document_status_now.id AS doc_trigger
+                    FROM (local_alerts,employees_items_node, employees AS init_em,
+                    cron_action_type, form_step_action , organization_structure AS bounds)
+                    LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
+                    LEFT JOIN organization_structure ON organization_structure.id = NODE.org_str_id
+                    LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
+                    LEFT JOIN organization_structure AS org_parent
+                    ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
+                        AND org_parent.level =(organization_structure.level - 1) )
+                    LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+                    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
 
-LEFT JOIN form_status_now ON form_status_now.save_temps_file_id = local_alerts.save_temp_files_id
-LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
-LEFT JOIN save_temp_files ON save_temp_files.id = local_alerts.save_temp_files_id
-LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
+                    LEFT JOIN form_status_now ON form_status_now.save_temps_file_id = local_alerts.save_temp_files_id
+                    LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
+                    LEFT JOIN save_temp_files ON save_temp_files.id = local_alerts.save_temp_files_id
+                    LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
 
-WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
+                    WHERE local_alerts.company_id = " . $_SESSION['control_company'] . "
 
-    AND local_alerts.initiator_employee_id = init_em.id
-    AND form_step_action.id = local_alerts.action_type_id
-    AND local_alerts.date_finish IS NULL";
+                        AND local_alerts.initiator_employee_id = init_em.id
+                        AND form_step_action.id = local_alerts.action_type_id
+                        AND local_alerts.date_finish IS NULL
+                        AND employees_items_node.employe_id =  local_alerts.initiator_employee_id
+                        AND employees_items_node.org_str_id = bounds.id
+                        AND bounds.left_key > ". $node_left_key ."
+                        AND bounds.right_key < ". $node_right_key ."";
 
         // если указаны даты выборки
         if ($date_from != "") {
@@ -125,33 +103,25 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
         }
 
 
-        // частичный доступ
-        if(($left!='none')&&($left!="all")) {
-            $sql .= " AND organization_structure.left_key >= " . $left . "
-                AND organization_structure.right_key <= " . $right ;
-        }
-
-        // полный доступ
-        if($left=='all') {
-            // не добавляем фильтры
-        }
-
         // без доступа
-        if($left=='none') {
+        if($node_left_key == 0 ) {
             // не показываем ничего
             $html = "Нет доступа";
         } else {
 
             $sql .= " GROUP BY local_alerts.id";
 //        echo $sql;
-            $sql.=" )
+            $sql .= " )
      UNION
      (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
-		FROM local_alerts, sump_for_employees
+		FROM local_alerts, sump_for_employees,organization_structure,employees_items_node
 		WHERE local_alerts.action_type_id = 17
 		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
-		AND sump_for_employees.id = local_alerts.save_temp_files_id )";
-
+		AND employees_items_node.employe_id =  local_alerts.initiator_employee_id
+      AND employees_items_node.org_str_id = organization_structure.id
+      AND organization_structure.left_key > " . $node_left_key . "
+      AND organization_structure.right_key < " . $node_right_key . "
+		AND sump_for_employees.id = local_alerts.save_temp_files_id)";
 
 
             $alert_every_days = $db->all($sql);
@@ -159,7 +129,7 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
             $html = "";
             $employees = array();
             foreach ($alert_every_days as $key => $alert_every_day) {
-                        $html .= '<tr class="alert_row" observer_em=' . $_SESSION['employee_id'] . '
+                $html .= '<tr class="alert_row" observer_em=' . $_SESSION['employee_id'] . '
                                                     dol="' . $alert_every_day['position'] . '"
                                                     emp="' . $alert_every_day['em_id'] . '"
                                                     doc_trigger="' . $alert_every_day['doc_trigger'] . '"
@@ -183,9 +153,9 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
             $select_em = "<option value='' >Все сотрудники</option>";
             $emp = 0;
             foreach ($alert_every_days as $alert_every_day) {
-                if($alert_every_day['em_id'] != $emp) {
+                if ($alert_every_day['em_id'] != $emp) {
                     $select_em .= "<option value='" . $alert_every_day['em_id'] . "'>" . $alert_every_day['fio'] . "</option>";
-                    $emp =  $alert_every_day['em_id'];
+                    $emp = $alert_every_day['em_id'];
                 }
             }
 
@@ -197,7 +167,6 @@ WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
             foreach ($select_array as $select_array_item) {
                 $select .= "<option value='" . $select_array_item['id'] . "'>" . $select_array_item['name'] . "</option>";
             }
-
 
         }
 

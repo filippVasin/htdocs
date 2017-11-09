@@ -103,6 +103,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="open_doc_popup" class="btn btn-primary">Открыть документ</button>
+                    <button type="button" id="open_doc_popup_print" class="btn btn-primary">Печать</button>
                     <button type="button" class="btn btn-default"  data-dismiss="modal">Закрыть карточку</button>
                 </div>
             </div><!-- /.modal-content -->

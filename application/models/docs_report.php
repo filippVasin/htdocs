@@ -16,7 +16,7 @@ class Model_docs_report{
 
     public function start()
     {
-        global $db;
+        global $db, $labro;
 
         $select_item_status = $_SESSION['select_item_status_docs_report'];
         $select_item = $_SESSION['select_item_docs_report'];
@@ -30,35 +30,11 @@ class Model_docs_report{
             $_SESSION['select_item_docs_report'] = "";
         }
 
-        // какие права имеет получатель
-        $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
-                    organization_structure.boss_type,
-                       CASE
-                       WHEN organization_structure.boss_type = 1
-                       THEN 'none'
-                       WHEN organization_structure.boss_type = 2
-                       THEN organization_structure.left_key
-                       WHEN organization_structure.boss_type = 3
-                       THEN 'all'
-                       END  AS `left`,
-                       CASE
-                       WHEN organization_structure.boss_type = 1
-                       THEN 'none'
-                       WHEN organization_structure.boss_type = 2
-                       THEN organization_structure.right_key
-                       WHEN organization_structure.boss_type = 3
-                       THEN 'all'
-                       END  AS `right`
+        // границы дозволенного
+        $keys =  $labro->observer_keys();
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
 
-                    FROM organization_structure, employees, employees_items_node
-                    WHERE organization_structure.id = employees_items_node.org_str_id
-                    AND employees_items_node.employe_id = employees.id
-                    AND employees.id =". $_SESSION['employee_id'];
-
-        $observer_data = $db->row($sql);
-
-        $left = $observer_data['left'];
-        $right = $observer_data['right'];
 
         if(!isset($_SESSION['left_key_docs_report'])){
             $_SESSION['left_key_docs_report'] = 0;
@@ -213,6 +189,8 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
 																		AND
 																		(DATE(history_docs.date_finish) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y'))))
 				)
+				AND organization_structure.left_key > " . $node_left_key . "
+                AND organization_structure.right_key < ". $node_right_key ."
     ";
 
 
@@ -235,7 +213,6 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                 $sql .= "
                                             GROUP BY EMPLOY, STEP, name_doc";
             }
-
 
             $docs_array = $db->all($sql);
             $html = "";

@@ -56,12 +56,21 @@ $comment = "Начали работать";
 $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
 $db->query($sql);
 
-// конец стажировки
-end_probation();
-exit();
+
+
 // обновляем календарь
 calendar_refresh();
 
+$result_status = "ok";
+$cron_task = "";
+$comment = "Закончили работать";
+$sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
+$db->query($sql);
+exit();
+
+
+// конец стажировки
+end_probation();
 // глобольный цикл по компаниям
 $sql = "SELECT id FROM company";
 $companys = $db->all($sql);
@@ -1201,7 +1210,7 @@ function calendar_refresh(){
         $comp = $company['id'];
 
 
-        $sql = "SELECT
+        $sql = "(SELECT
 /* Вывод даннных */
 route_control_step.track_number_id AS id,
   employees.id AS employee_id,
@@ -1324,25 +1333,42 @@ route_control_step.track_number_id AS id,
     		AND employees.id = employees_items_node.employe_id
     		AND organization_structure.id = employees_items_node.org_str_id
     		AND organization_structure.company_id = org_parent.company_id
-    		AND org_parent.company_id = " . $comp . "
+    		AND org_parent.company_id = ". $comp ."
 	     AND
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
-      GROUP BY employee_id, ID_STEP";
+      GROUP BY employee_id, ID_STEP)
+      UNION
+     (SELECT NULL, employees.id as employee_id, history_step.step_id AS ID_STEP,
+employees.start_date as employees_start,
+NULL,
+NULL,
+CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+delay_routes.`type` AS step_name,
+DATE_FORMAT((history_step.data_finish + INTERVAL delay_routes.delay DAY), '%Y-%m-%d')  AS START_DATE,
+0 AS progress
+FROM delay_routes,history_step,employees,employees_items_node,organization_structure
+WHERE delay_routes.org_str_obj = employees_items_node.org_str_id
+AND employees_items_node.employe_id = employees.id
+AND history_step.employee_id = employees.id
+AND organization_structure.id = employees_items_node.org_str_id
+AND organization_structure.company_id = ". $comp ."
+AND ( NOW() < (history_step.data_finish + INTERVAL delay_routes.delay DAY))
+GROUP BY employees.id)";
 
         $briefings = $db->all($sql);
         $result_array = array();
         foreach ($briefings as $key => $briefing) {
-            $result_array [$key]['id'] = $briefing['id'];
-            $result_array [$key]['employee_id'] = $briefing['employee_id'];
-            $result_array [$key]['ID_STEP'] = $briefing['ID_STEP'];
-            $result_array [$key]['employees_start'] = $briefing['employees_start'];
-            $result_array [$key]['date_finish'] = $briefing['date_finish'];
-            $result_array [$key]['periodicity'] = $briefing['periodicity'];
-            $result_array [$key]['fio'] = $briefing['fio'];
-            $result_array [$key]['step_name'] = $briefing['step_name'];
-            $result_array [$key]['start'] = $briefing['START_DATE'];
-            $result_array [$key]['progress'] = $briefing['progress'];
+            $result_array[$key]['id'] = $briefing['id'];
+            $result_array[$key]['employee_id'] = $briefing['employee_id'];
+            $result_array[$key]['ID_STEP'] = $briefing['ID_STEP'];
+            $result_array[$key]['employees_start'] = $briefing['employees_start'];
+            $result_array[$key]['date_finish'] = $briefing['date_finish'];
+            $result_array[$key]['periodicity'] = $briefing['periodicity'];
+            $result_array[$key]['fio'] = $briefing['fio'];
+            $result_array[$key]['step_name'] = $briefing['step_name'];
+            $result_array[$key]['start'] = $briefing['START_DATE'];
+            $result_array[$key]['progress'] = $briefing['progress'];
         }// конец цикла
 
         foreach ($result_array as $item) {

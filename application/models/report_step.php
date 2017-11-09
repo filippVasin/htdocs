@@ -15,8 +15,8 @@ class Model_report_step{
     }
 
     public function start(){
+        global $db,$labro;
 
-        global $db;
         $select_item = $this->post_array['select_item'];
         $date_from = $_SESSION['date_from_report_step'];
         $date_to = $_SESSION['date_to_report_step'];
@@ -31,34 +31,12 @@ class Model_report_step{
         if($_SESSION['employee_id'] == ""){
             $_SESSION['employee_id'] = 2;
         }
-        // какие права имеет получатель
-        $sql="SELECT employees.id AS emp_id, employees.email, organization_structure.id AS org_id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
-                    organization_structure.boss_type,
-                       CASE
-                       WHEN organization_structure.boss_type = 1
-                       THEN 'none'
-                       WHEN organization_structure.boss_type = 2
-                       THEN organization_structure.left_key
-                       WHEN organization_structure.boss_type = 3
-                       THEN 'all'
-                       END  AS `left`,
-                       CASE
-                       WHEN organization_structure.boss_type = 1
-                       THEN 'none'
-                       WHEN organization_structure.boss_type = 2
-                       THEN organization_structure.right_key
-                       WHEN organization_structure.boss_type = 3
-                       THEN 'all'
-                       END  AS `right`
 
-                    FROM organization_structure, employees, employees_items_node
-                    WHERE organization_structure.id = employees_items_node.org_str_id
-                    AND employees_items_node.employe_id = employees.id
-                    AND employees.id =". $_SESSION['employee_id'];
-//        echo $sql;
-        $observer_data = $db->row($sql);
-        $left = $observer_data['left'];
-        $right = $observer_data['right'];
+        // границы дозволенного
+        $keys =  $labro->observer_keys();
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+
 
         if(!isset($_SESSION['left_key_report_step'])){
             $_SESSION['left_key_report_step'] = 0;
@@ -217,22 +195,14 @@ class Model_report_step{
 						((('". $date_from ."' != ' ' ) AND ('". $date_to ."' != '')) AND ((DATE(history_docs.date_start) >= STR_TO_DATE('". $date_from ."', '%d.%m.%Y'))
 																		OR
 																		(DATE(history_docs.date_finish) <= STR_TO_DATE('". $date_to ."', '%d.%m.%Y'))))
-				) 	 ";
+				)
+					 AND organization_structure.left_key > " . $node_left_key . "
+                AND organization_structure.right_key < ". $node_right_key;
 
 
-        // частичный доступ у сотрудика котрый запрашивает отчёт
-        if(($left!='none')&&($left!="all")) {
-            $sql .= " AND organization_structure.left_key >= " . $left . "
-                AND organization_structure.right_key <= " . $right ;
-        }
-
-        // полный доступ на данные у сотрудника которые запрашивает отчёт
-        if($left=='all') {
-            // не добавляем фильтры
-        }
 
         // без доступа, отчёт не показываеи
-        if($left=='none') {
+        if($node_left_key == 0) {
             // не показываем ничего
         } else {
 

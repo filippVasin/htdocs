@@ -197,6 +197,7 @@ $(document).ready(function() {
                 if(content !="") {
                     $('#popup_action_list').html(content);
                     $("#open_doc_popup").attr("file_id",file_id);
+                    $("#open_doc_popup_print").attr("file_id",file_id);
                 }
             },
             error: function () {
@@ -294,6 +295,10 @@ $(document).ready(function() {
         window.open("/emp_doc_views?" + file);
     });
 
+    $(document).on("click",'#open_doc_popup_print',function(){
+        var file = $(this).attr("file_id");
+        window.open("/doc_views?" + file + "&emp_doc");
+    });
 
 });
 

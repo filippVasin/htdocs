@@ -9,3 +9,8 @@
     width: 1200px;
     margin: 0 auto;
 }
+#print{
+    position: fixed!important;
+    top: 0!important;
+    left: 10px!important;
+}

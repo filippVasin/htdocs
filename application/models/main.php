@@ -15,7 +15,7 @@ class Model_main{
     }
 
     public function start(){
-        global $db;
+        global $db,$labro;
 
 //        print_r($_SESSION);
 
@@ -27,6 +27,13 @@ class Model_main{
             $result = json_encode($result_array, true);
             die($result);
         }
+        // границы обзора
+        $keys =  $labro->observer_keys();
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+
+
+
         // шаблон дашборда
         $html =<<< HERE
 
@@ -529,9 +536,9 @@ FORM_NOW.doc_status_now,
 
 
 
-    public function journal()
-    {
-        global $db;
+    public function journal(){
+
+        global $db,$labro;
 
 
         if (!(isset($_SESSION['control_company']))) {
@@ -544,6 +551,10 @@ FORM_NOW.doc_status_now,
 
         }
 
+        // границы дозволенного
+        $keys =  $labro->observer_keys();
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
 
         $html = "";
 
@@ -554,7 +565,7 @@ FORM_NOW.doc_status_now,
                     items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
                     document_status_now.id AS doc_trigger
                     FROM (local_alerts,employees_items_node, employees AS init_em,
-                    cron_action_type, form_step_action)
+                    cron_action_type, form_step_action , organization_structure AS bounds)
                     LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
                     LEFT JOIN organization_structure ON organization_structure.id = NODE.org_str_id
                     LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
@@ -574,13 +585,21 @@ FORM_NOW.doc_status_now,
                         AND local_alerts.initiator_employee_id = init_em.id
                         AND form_step_action.id = local_alerts.action_type_id
                         AND local_alerts.date_finish IS NULL
+                        AND employees_items_node.employe_id =  local_alerts.initiator_employee_id
+                        AND employees_items_node.org_str_id = bounds.id
+                        AND bounds.left_key > ". $node_left_key ."
+                        AND bounds.right_key < ". $node_right_key ."
                          GROUP BY local_alerts.id   )
      UNION
      (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
-		FROM local_alerts, sump_for_employees
+		FROM local_alerts, sump_for_employees,organization_structure,employees_items_node
 		WHERE local_alerts.action_type_id = 17
 		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
-		AND sump_for_employees.id = local_alerts.save_temp_files_id )";
+		AND employees_items_node.employe_id =  local_alerts.initiator_employee_id
+      AND employees_items_node.org_str_id = organization_structure.id
+      AND organization_structure.left_key > ". $node_left_key ."
+      AND organization_structure.right_key < ". $node_right_key ."
+		AND sump_for_employees.id = local_alerts.save_temp_files_id)";
         $alert_every_days = $db->all($sql);
         $count = 0;
         foreach ($alert_every_days as $alert_every_day) {
@@ -864,7 +883,7 @@ route_control_step.track_number_id AS id,
     }
 
     public function calendar($get_date) {
-        global $db;
+        global $db, $labro;
 
         $get_dates = explode('&', $get_date);
         $get_dates_start = str_replace('start=', '', $get_dates[0]);
@@ -876,11 +895,22 @@ route_control_step.track_number_id AS id,
         $red = '#f44336';
         $blue = "#4285f4";
         $today = date("Y-m-d");
-        $result_array = array();
 
-        $sql = "SELECT *
-                    FROM calendar
-                    WHERE calendar.company_id =". $_SESSION['control_company'];
+        // границы дозволенного
+        $keys =  $labro->observer_keys();
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+
+
+        $sql = "SELECT calendar.*
+                    FROM calendar,employees_items_node, organization_structure
+                    WHERE calendar.company_id = " . $_SESSION['control_company'] . "
+                    AND calendar.`start` >= '". $get_dates_start ."'
+                    AND calendar.`start` <= '". $get_dates_end ."'
+                    AND calendar.emp_id = employees_items_node.employe_id
+                    AND organization_structure.id = employees_items_node.org_str_id
+                    AND organization_structure.left_key > ". $node_left_key ."
+                    AND organization_structure.right_key < ". $node_right_key ;
         $calendar = $db->all($sql);
 
         $dir_array = array();
@@ -893,7 +923,6 @@ route_control_step.track_number_id AS id,
         $result_array = array();
         $key = 0;
         foreach ($dir_array as $date) {
-            if(($get_dates_start <= $date)&&(($get_dates_end >= $date))) {
                 $count = 0;
                 foreach ($calendar as $event) {
                     // создаём для дня один элемент
@@ -923,8 +952,6 @@ route_control_step.track_number_id AS id,
                 }
                 $result_array[$key]['title'] = $count . " ";
                 ++$key;
-            }
-
         }
 
 

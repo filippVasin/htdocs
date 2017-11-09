@@ -20,7 +20,7 @@ class Model_emp_doc_views{
         $page = ROOT_PATH.'/'.$path;
 
         $page = file_get_contents($page);
-
+        $page .='<div id="print" class="button">Печать</div>';
         return $page;
     }
 

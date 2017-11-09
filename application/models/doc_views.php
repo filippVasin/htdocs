@@ -22,6 +22,9 @@ class Model_doc_views{
             case "probation":
                 $page = $this->probation($doc,$emp);
                 break;
+            case "emp_doc":
+                $page = $this->emp_doc($doc);
+                break;
         }
         return $page;
     }
@@ -78,7 +81,22 @@ class Model_doc_views{
         return $page;
     }
 
+    private function emp_doc($file_id){
+        global $db;
+        $flag = "open";
+        $page = "";
 
+        $sql="SELECT * FROM save_temp_files WHERE save_temp_files.id =". $file_id;
+        $doc_data = $db->row($sql);
+
+        $path = $doc_data['path'];
+
+        $page = ROOT_PATH.'/'.$path;
+
+        $page = file_get_contents($page);
+        $page .='<div id="print" class="button">Печать</div>';
+        return $page;
+    }
 }
 
 

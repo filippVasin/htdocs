@@ -525,6 +525,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
 
         global $db;
 
+
         $sql="SELECT
                 CONCAT_WS (':', items_control_types.name, items_control.name) AS erarh,
                 organization_structure.`level`,
@@ -541,7 +542,8 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                 inner join items_control_types on organization_structure.items_control_id = items_control_types.id
                 left join employees_items_node on employees_items_node.org_str_id = organization_structure.id
                 left join employees on employees_items_node.employe_id = employees.id
-                Where organization_structure.company_id = " . $_SESSION['control_company'] . "  ORDER BY left_key";
+                Where organization_structure.company_id = " . $_SESSION['control_company'] . "
+                 ORDER BY left_key";
 
 
         $tree = $db->all($sql);
@@ -601,8 +603,9 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         foreach($tree as $tree_item) {
             $html = str_replace("Должность:", "", $html);
         }
-
-
+        if($html == '<ul id="tree_main" class="tree">%parent_0%</ul>'){
+            $html = "Нет данных";
+        }
         $result_array['role'] = $_SESSION['role_id'];
         $result_array['content'] = $html;
 
@@ -1029,20 +1032,30 @@ route_control_step.track_number_id AS id,
     }
 
     private function get_calendary_all_event($str_date){
-        global $db;
+        global $db,$labro;
         $green = '#00a65a';
         $yellow = '#f39c12';
         $gray = '#a6a6a6';
         $red = '#f44336';
         $blue = "#4285f4";
 
-        $sql = "SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
-                    route_control_step.step_name,
+
+        // границы обзора
+        $keys =  $labro->observer_keys();
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+
+        $sql = "SELECT calendar.dataset AS fio,
+                    calendar.title ,
                     calendar.`start`
-                    FROM calendar,route_control_step,employees
+                    FROM calendar,route_control_step,employees_items_node, organization_structure
                     WHERE calendar.company_id = ". $_SESSION['control_company'] ."
                     AND route_control_step.id = calendar.step_id
-                    AND employees.id = calendar.emp_id";
+                    AND calendar.emp_id = employees_items_node.employe_id
+                    AND organization_structure.id = employees_items_node.org_str_id
+                    AND organization_structure.left_key > ". $node_left_key ."
+                    AND organization_structure.right_key < ". $node_right_key ."
+                    AND calendar.`start` ='" .$str_date ."'";
         $calendar = $db->all($sql);
 
         // перебираем для схлопывания по дате
@@ -1057,15 +1070,12 @@ route_control_step.track_number_id AS id,
                 <tbody>";
 
         foreach ($calendar as $item) {
-            if($item['start'] == $str_date){
                 $color = $blue;
-
                 $html .= '<tr>
                         <td>' . $item['fio'] . '</td>
-                        <td style="color:'. $color .'">' . $item['step_name'] . '</td>
+                        <td style="color:'. $color .'">' . $item['title'] . '</td>
                         <td>' . $item['start'] . '</td>
                     </tr>';
-            }
         }
 
         $html .= '</tbody> </table>';

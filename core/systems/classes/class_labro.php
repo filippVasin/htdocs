@@ -225,4 +225,37 @@ class labro
         return $company;
     }
 
+    // возвращяем границы обзорной области в зависимости от должности и прав
+    public function observer_keys() {
+        global $db;
+        $keys = array();
+        $sql = "SELECT DIR.left_key,DIR.right_key, organization_structure.boss_type, min(bounds.left_key) AS min_left ,max(bounds.right_key) AS max_right
+                FROM employees_items_node,organization_structure
+                    LEFT JOIN organization_structure AS bounds ON bounds.company_id = organization_structure.company_id
+                    LEFT JOIN organization_structure AS DIR ON (DIR.left_key < organization_structure.left_key
+													 			AND
+													 			DIR.right_key > organization_structure.right_key
+													 			AND
+																organization_structure.`level` = (DIR.`level` + 1)
+																AND
+																DIR.company_id = organization_structure.company_id)
+                WHERE employees_items_node.employe_id = ".  $_SESSION['employee_id'] ."
+                AND organization_structure.id = employees_items_node.org_str_id";
+        $observer = $db->row($sql);
+
+        if($observer['boss_type'] == 1){
+            $keys['left'] = 0;
+            $keys['right'] = 0;
+        }
+        if($observer['boss_type'] == 2){
+            $keys['left'] = $observer['left_key'];
+            $keys['right'] = $observer['right_key'];
+        }
+        if($observer['boss_type'] == 3) {
+            $keys['left'] = $observer['min_left'];
+            $keys['right'] = $observer['max_right'];
+        }
+
+        return $keys;
+    }
 }
