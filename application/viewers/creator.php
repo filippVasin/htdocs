@@ -8,16 +8,16 @@
 
         <span id="name_dol"></span>
     <div class="create_box">
-        <div id="speed_button" dol="Водитель"><i class="plus_item_button fa fa-mail-reply"></i></div>
+        <div id="speed_button" dol="Водитель"><i class="plus_item_button fa fa-mail-reply "></i></div>
         <div title="Должность" class="buttom_input" id="node_docs" data-toggle="modal" data-target="#popup_context_menu_update"></div>
-        <div title="Фамилия" class="bef_input"><input type="text" id="form_surname" name="surname" placeholder="Фамилия" class="contacts-inp input_form" required=""></div>
-        <div title="Имя" class="bef_input"><input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp input_form" required=""></div>
-        <div title="Отчество" class="bef_input"><input type="text" id="form_patronymic" name="patronymic" placeholder="Отчество" class="contacts-inp input_form" required=""></div>
+        <div title="Фамилия" class="bef_input"><input type="text" id="form_surname" name="surname" placeholder="Фамилия" class="contacts-inp input_form tab_vs_enter" required=""></div>
+        <div title="Имя" class="bef_input"><input type="text" id="form_name" name="name" placeholder="Имя" class="contacts-inp input_form tab_vs_enter" required=""></div>
+        <div title="Отчество" class="bef_input"><input type="text" id="form_patronymic" name="patronymic" placeholder="Отчество" class="contacts-inp input_form tab_vs_enter" required=""></div>
         <div id="today_button" dol="Сегодня"><i class="plus_item_button fa fa-mail-reply"></i></div>
-        <div title="Дата устройства" class="bef_input"><input type="text" id="form_work_start" name="work_start" placeholder="Дата устройства" class="contacts-inp form_work_start_cl input_form" required=""></div>
-        <div title="Дата рождения" class="bef_input"><input type="text" id="form_birthday" name="birthday" placeholder="Дата рождения" class="form_birthday_cl contacts-inp input_form" required=""></div>
-        <div title="Электронная почта" class="bef_input"><input type="email" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form" required=""></div>
-        <div title="Табельный номер" class="bef_input"><input type="text" id="personnel_number" name="personnel_number" placeholder="Табельный номер(не обязательно)" class="contacts-inp input_form" required=""></div>
+        <div title="Дата устройства" class="bef_input"><input type="text" id="form_work_start" name="work_start" placeholder="Дата устройства" class=" valid_date tab_vs_enter" required=""></div>
+        <div title="Дата рождения" class="bef_input"><input type="text" id="form_birthday" name="birthday" placeholder="Дата рождения" class=" valid_date tab_vs_enter" required="" ></div>
+<!--        <div title="Электронная почта" class="bef_input"><input type="email" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form tab_vs_enter" required=""></div>-->
+        <div title="Табельный номер" id="personnel_number_box" class="bef_input"><input type="text" id="personnel_number" name="personnel_number" placeholder="Табельный номер(не обязательно)" class="contacts-inp input_form tab_vs_enter" required=""></div>
         <input type="hidden" id="form_id_item" name="id_item" value="36" required="">
         <div id="landing_form_offer_one" class="button landing_form_offer_one">Записать</div></div>
     </div>

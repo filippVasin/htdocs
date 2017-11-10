@@ -6,6 +6,7 @@ $(document).ready(function() {
     var  news_num_id = 0;
     var dol_id = 0;
 
+    tab_vs_enter();
 
     $(document).on("change", ".target", function () {
         var select_item_id = $(this).val();
@@ -259,10 +260,7 @@ $(document).ready(function() {
 
 
     function check_time(){
-
         return false; // и этим false отменяем отправку формы
-
-
     }
 
     $(document).on('click',".landing_form_offer_one", function () {
@@ -306,16 +304,6 @@ $(document).ready(function() {
             setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
         }
 
-            //$('.new_input').each(function() {
-            //    var child = $(this).children("input");
-            //        if(child.val()=="") {
-            //            child.css("border-color", "red");
-            //            flag = 1;
-            //        }
-            //    setTimeout("$('.new_input input').css('border-color','#ccc');", 3000);
-            //});
-
-
         // возраст не ниже 14ти лет
         hex_today.setFullYear(hex_today.getFullYear() - 14);
         // и не больше 100 лет
@@ -323,70 +311,108 @@ $(document).ready(function() {
         if(Date.parse(birthday)>hex_today){
             $("#form_birthday").css("border-color","red");
             setTimeout("$('#form_birthday').css('border-color','#ccc')", 3000);
-            flag = 1;
+            flag = 2;
         }
         if(Date.parse(birthday)<hex_today_sto){
             $("#form_birthday").css("border-color","yellow");
             setTimeout("$('#form_birthday').css('border-color','#ccc')", 3000);
-            flag = 1;
+            flag = 3;
         }
 
         if($("#form_surname").val()==""){
             $("#form_surname").css("border-color","red");
-            flag = 1;
+            flag = 4;
         } else {
             surname = $("#form_surname").val();
         }
 
         if($("#form_name").val()==""){
             $("#form_name").css("border-color","red");
-            flag = 1;
+            flag = 5;
         } else {
             name = $("#form_name").val();
         }
         if($("#form_patronymic").val()==""){
             $("#form_patronymic").css("border-color","red");
-            flag = 1;
+            flag = 6;
         } else {
             patronymic = $("#form_patronymic").val();
         }
+
+
         // валидация почты
-        if($("#form_email").val() != '') {
-            var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-            if(pattern.test($("#form_email").val())){
-                $("#form_email").css({'border' : '1px solid #569b44'});
-                email = $("#form_email").val();
+        //if($("#form_email").val() != '') {
+        //    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+        //    if(pattern.test($("#form_email").val())){
+        //        $("#form_email").css({'border' : '1px solid #569b44'});
+        //        email = $("#form_email").val();
+        //    } else {
+        //        $("#form_email").css({'border' : '1px solid #ff0000'});
+        //        flag = 7;
+        //    }
+        //}
+
+
+
+
+        var  ajax_url = "";
+        // если водитель
+        if(dol_id == 183){
+            ajax_url = "/creator/create_drivers";
+            var pattern =/^(?:(?:31(\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/i;
+
+            if(pattern.test($("#form_birthday").val())) {
+                // всё норм
             } else {
-                $("#form_email").css({'border' : '1px solid #ff0000'});
-                flag = 1;
+                $("#form_birthday").css("border-color", "red");
+                setTimeout("$('#form_birthday').css('border-color','#ccc')", 3000);
+                flag == 8
             }
-        }
 
+        } else {
+            ajax_url = "/creator/create_form";
+            // маска для ввода даты
+            var pattern =/^(?:(?:31(\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/i;
 
+                // проверяем дату трудоустройства
+                var hex_today_30 = new Date(today);
+                var hex_today_40 = new Date(today);
+                // дата трудоустройства не может быть вперёд больше чем на месяц
+                hex_today_30.setDate(hex_today_30.getDate() + 30);
+                // и не больше 100 лет
+                hex_today_40.setFullYear(hex_today_40.getFullYear() - 40);
+                if (Date.parse(work_start) > hex_today_30) {
+                    $("#form_work_start").css("border-color", "red");
+                    setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
+                    flag == 9
+                }
+                if (Date.parse(work_start) < hex_today_40) {
+                    $("#form_work_start").css("border-color", "red");
+                    setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
+                    flag == 10
+                }
 
-        var hex_today_30 = new Date(today);
-        var hex_today_40 = new Date(today);
-        // дата трудоустройства не может быть вперёд больше чем на месяц
-        hex_today_30.setDate(hex_today_30.getDate() + 30);
-        // и не больше 100 лет
-        hex_today_40.setFullYear(hex_today_40.getFullYear() - 40);
-        if(Date.parse(work_start)>hex_today_30){
-            $("#form_work_start").css("border-color","red");
-            setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
-        }
-        if(Date.parse(work_start)<hex_today_40){
-            $("#form_work_start").css("border-color","yellow");
-            setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
+                if(pattern.test($("#form_work_start").val())) {
+                    // всё норм
+                } else {
+                    $("#form_work_start").css("border-color", "red");
+                    setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
+                    flag == 11
+                }
+                if(pattern.test($("#form_birthday").val())) {
+                    // всё норм
+                } else {
+                    $("#form_birthday").css("border-color", "red");
+                    setTimeout("$('#form_birthday').css('border-color','#ccc')", 3000);
+                    flag == 12
+                }
         }
 
         $("#landing_form_offer_one").removeClass("landing_form_offer_one");
         setTimeout("$('#landing_form_offer_one').addClass('landing_form_offer_one')", 3000);
-
-        var  ajax_url = "/creator/create_form";
-        if(dol_id == 183){
-            ajax_url = "/creator/create_drivers";
-        }
+        //alert(flag);
         if(flag == 0) {// всё норм
+
             $.ajax({
                 type: "POST",
                 url: ajax_url,
@@ -413,8 +439,8 @@ $(document).ready(function() {
                     var status = result.status;
                     var link = result.link;
 
-                    $("#test_block").after("<div class='result_creater'>"+content+"</div>");
-
+                    //$("#test_block").after("<div class='result_creater'>"+content+"</div>");
+                    message(content, status);
 
                     $("#landing_form_offer_one").addClass("landing_form_offer_one");
                     if(status == "ok"){
@@ -482,10 +508,6 @@ $(document).ready(function() {
     });
 
 
-
-
-
-
     $(document).on('click','.open_item',function(){
 
         if($(this).hasClass("open_ul")){
@@ -543,12 +565,6 @@ $(document).ready(function() {
         });
     }
 
-    //$(document).on('focusout','.input_form', function(){
-    //    if($(this).val()==""){
-    //        $(this).css("border-color","red");
-    //        setTimeout("$('.input_form').css('border-color','#ccc')", 3000);
-    //    }
-    //});
     // отмена действия
     $(document).on("click", ".cancel_popup", function () {
         $("#popup_context_menu_update").css("display","none");
@@ -570,6 +586,13 @@ $(document).ready(function() {
             $(".new_input").remove();
              dol_id = $(this).attr("id_item");
             var name_dol = $(this).html();
+
+            // обрезаем  длинные строки
+            var limit_str_position = 39;
+            if (name_dol.length > limit_str_position) {
+                name_dol = name_dol.slice(0, limit_str_position);
+                name_dol = name_dol + "...";
+            }
             $("#node_docs").html(name_dol);
             $(".btn-default").click();
             $.ajax({
@@ -584,7 +607,6 @@ $(document).ready(function() {
                     var content = result.content;
                     if(request_result == 'ok'){
                         $('#form_id_item').before(content);
-
                         // проверка с какого устройтства вошли
                         if(isMobile.any()){
                             $("#driver_start").attr("type","date");
@@ -599,7 +621,20 @@ $(document).ready(function() {
                                 autoclose: true
                             });
                         }
-                        // datapickers
+                        if(dol_id == 183){
+                            $("#form_work_start").addClass("none");
+                            $("#today_button").addClass("none");
+                            $("#personnel_number_box").addClass("none");
+                            $("#personnel_number_box").removeClass("tab_vs_enter")
+                            $("#form_work_start").removeClass("tab_vs_enter");
+                        } else {
+                            $("#form_work_start").removeClass("none");
+                            $("#today_button").removeClass("none");
+                            $("#personnel_number_box").removeClass("none");
+                            $("#personnel_number_box").addClass("tab_vs_enter")
+                            $("#form_work_start").addClass("tab_vs_enter");
+                        }
+                        tab_vs_enter();
                     }
                 },
                 error: function () {
@@ -614,14 +649,7 @@ $(document).ready(function() {
         $("#form_work_start").attr("type","date");
         $("#form_birthday").attr("type","date");
     } else {
-        $('#form_birthday').datepicker({
-            language: "ru",
-            autoclose: true
-        });
-        $('#form_work_start').datepicker({
-            language: "ru",
-            autoclose: true
-        });
+        $(".valid_date").mask("99.99.9999");
     }
     // datapickers
 
@@ -632,42 +660,16 @@ $(document).ready(function() {
                 $("#node_docs").html("Водитель автобуса на регулярные городск...");
                 $(".new_input").remove();
                 $(".btn-default").click();
-                //$.ajax({
-                //    type: "POST",
-                //    url: "/creator/get_input",
-                //    data: {
-                //        dol_id:dol_id
-                //    },
-                //    success: function (answer) {
-                //        var result = jQuery.parseJSON(answer);
-                //        var request_result = result.status;
-                //        var content = result.content;
-                //        if(request_result == 'ok'){
-                //            $('#form_id_item').before(content);
-                //
-                //            // проверка с какого устройтства вошли
-                //            if(isMobile.any()){
-                //                $("#driver_start").attr("type","date");
-                //                $("#driver_end").attr("type","date");
-                //            } else {
-                //                $('#driver_start').datepicker({
-                //                    language: "ru",
-                //                    autoclose: true
-                //                });
-                //                $('#driver_end').datepicker({
-                //                    language: "ru",
-                //                    autoclose: true
-                //                });
-                //            }
-                //            // datapickers
-                //        }
-                //    },
-                //    error: function () {
-                //        console.log('error');
-                //    }
-                //})
+
                 $("#speed_button").addClass("none");
                 setTimeout("$('#speed_button').removeClass('none')", 5000);
+
+                 $("#form_work_start").addClass("none");
+                 $("#today_button").addClass("none");
+                 $("#personnel_number_box").addClass("none")
+                 $("#personnel_number_box").removeClass("tab_vs_enter")
+                 $("#form_work_start").removeClass("tab_vs_enter");
+                    tab_vs_enter();
     });
 
 
@@ -681,5 +683,23 @@ $(document).ready(function() {
         };
         $("#form_work_start").val(date.toLocaleString("ru", options));
     });
+
+
+    // работаем ентером как табом
+    function tab_vs_enter() {
+        var $inputs = $("body").find('.tab_vs_enter');
+        $inputs.each(function (i) {
+            $(this).keypress(function (ev) {
+                if (ev.which == 13 && i == $inputs.length - 1) {
+                    $("#landing_form_offer_one").click();
+                }
+                if (ev.which == 13) {
+                    $inputs.eq(i + 1).focus();
+                    return false;
+                }
+            });
+        });
+    }
+
 });
 

@@ -33,6 +33,9 @@ class Model_distributor{
             case "probation_alert":
                 $result_array = $this->probation_alert();
                 break;
+            case "print_med_form":
+                $result_array = $this->print_med_form();
+                break;
         }
 
 
@@ -338,6 +341,15 @@ class Model_distributor{
 
         $sql = "DELETE FROM `local_alerts` WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;
         $db->query($sql);
+
+        return $result_array;
+    }
+
+    private function print_med_form(){
+
+        $file_id = $this->post_array['file_id'];
+        $blank = "driver_start";
+        $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$file_id;
 
         return $result_array;
     }

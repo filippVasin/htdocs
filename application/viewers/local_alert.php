@@ -189,10 +189,11 @@
                 </div>
                 <div class="modal-body">
                     <div id="driver_name_popup"></div>
-                    <div class="popup_context_menu_title"> Прошел медосмотр? </div>
+                    <div class="popup_context_menu_title"> Прошел медосмотр?</div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="yes_popup_17" class="btn btn-primary">Прошел</button>
+                    <button type="button" id="print_med_form" class="btn btn-primary">Распечатать направление</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Не прошел</button>
 
                 </div>
@@ -305,7 +306,7 @@
                 </div>
                 <div class="modal-body">
                     <div id="print_probationer_popup_name"></div>
-                    <div class="popup_context_menu_title"> На стажировку? </div>
+                    <div class="popup_context_menu_title"> На стажировку?</div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="yes_popup_18" class="btn btn-primary">Отправить</button>

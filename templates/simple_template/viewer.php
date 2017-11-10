@@ -10,6 +10,7 @@
 
 
     <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.js"></script>
+    <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.maskedinput.min.js"></script>
 
 
 <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
@@ -605,48 +606,30 @@ if(isset($_SESSION['control_company_name'])){
     </script>
 
 
-<script type="application/javascript" src="/templates/<?echo $current_template;?>/js/functions.js"></script>
-<script type="application/javascript" src="/templates/<?echo $current_template;?>/js/jquery.maskedinput.min.js"></script>
-<script type="text/javascript" src="/templates/<?echo $current_template;?>/js/tcal.js"></script>
-
-<script src="/templates/<?echo $current_template;?>/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="/templates/<?echo $current_template;?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/templates/<?echo $current_template;?>/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-
-
-<script src="/templates/<?echo $current_template;?>/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="/templates/<?echo $current_template;?>/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="/templates/<?echo $current_template;?>/bower_components/fastclick/lib/fastclick.js"></script>
-<script src="/templates/<?echo $current_template;?>/dist/js/adminlte.min.js"></script>
-<script src="/templates/<?echo $current_template;?>/dist/js/demo.js"></script>
-
-
-
-
+    <script type="application/javascript" src="/templates/<?echo $current_template;?>/js/functions.js"></script>
+    <script type="text/javascript" src="/templates/<?echo $current_template;?>/js/tcal.js"></script>
+    <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/templates/<?echo $current_template;?>/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/templates/<?echo $current_template;?>/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/templates/<?echo $current_template;?>/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/templates/<?echo $current_template;?>/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="/templates/<?echo $current_template;?>/dist/js/adminlte.min.js"></script>
+    <script src="/templates/<?echo $current_template;?>/dist/js/demo.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/jquery-ui/jquery-ui.min.js"></script>
-
     <script src="/templates/<?echo $current_template;?>/bower_components/moment/moment.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-
     <script src="/templates/<?echo $current_template;?>/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-
     <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     <script src="/templates/<?echo $current_template;?>/dist/js/pages/dashboard.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/moment/locale/locale-all.js"></script>
     <script src="/templates/<?echo $current_template;?>/bower_components/moment/locale/ru.js"></script>
-<script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-daterangepicker/bootstrap-datepicker.ru.js" charset="UTF-8"></script>
+    <script src="/templates/<?echo $current_template;?>/bower_components/bootstrap-daterangepicker/bootstrap-datepicker.ru.js" charset="UTF-8"></script>
+    <script src="/templates/<?echo $current_template;?>/bower_components/filter/dataTables.tableTools.js"></script>
 
-
-
-<script src="/templates/<?echo $current_template;?>/bower_components/filter/dataTables.tableTools.js"></script>
-<!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/TableTools.ShowSelectedOnly.js"></script>-->
-<!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/range_dates.js"></script>-->
-<!--<script src="/templates/--><?//echo $current_template;?><!--/bower_components/filter/range_numbers.js"></script>-->
 
 
 <script type="text/javascript">
@@ -674,6 +657,9 @@ if(isset($_SESSION['control_company_name'])){
             $preloader.delay(2500).fadeOut('slow');
         });
     }
+
+
+
 
 </script>
 

@@ -180,7 +180,9 @@ class Model_creator
 
 
         $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
-//        $email = "vasin.filipp@yandex.ru";// Пока Филипп
+        if($_SESSION['employee_id'] == 43){
+            $email = "vasin.filipp@yandex.ru";// Пока Филипп
+        }
 
             if(isset($this->post_array['personnel_number'])){
                 $personnel_number = $this->post_array['personnel_number'];
@@ -237,6 +239,7 @@ class Model_creator
 
             if ($send_mailer->send()) {
                 $result_array['content'] = 'Сотрудник добавлен, письмо с паролем отправленно';
+                $result_array['status'] = "ok";
                 $send_result = 'Письмо отправлено';
                 // пишим логи
                 $sql = 'INSERT INTO `mails_log` (`employee_id`, `email`,`mail_type`,`template_mail_id`,`send_result`,`send_date`)
@@ -251,6 +254,7 @@ class Model_creator
             } else {
                 $send_result = 'Ошибка при отправки письма: ' . $send_mailer->ErrorInfo;
                 $result_array['content'] = $send_result;
+                $result_array['status'] = "error";
                 // пишим логи
                 $sql = 'INSERT INTO `mails_log` (`employee_id`, `email`,`mail_type`,`template_mail_id`,`send_result`,`send_date`)
                                           VALUES("' . $employee_id .
@@ -264,11 +268,8 @@ class Model_creator
 
             }
 
-//        }
-
        $blank = "driver_start";
        $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$employee_id;
-       $result_array['status'] = "ok";
        $result = json_encode($result_array, true);
         die($result);
     }
@@ -319,7 +320,10 @@ class Model_creator
 
 
         $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
-//        $email = "vasin.filipp@yandex.ru";// Пока Филипп
+        if($_SESSION['employee_id'] == 43){
+            $email = "vasin.filipp@yandex.ru";// Пока Филипп
+        }
+
         $sql="INSERT INTO `sump_for_employees` (`reg_address`,`personnel_number`,`name`,`surname`,`patronymic`,`work_start`,`birthday`,`email`,`id_item`,`company_id`,`category`,`license_number`,`start_date`,`end_date`,`dol_id`,`author_id`,`creator_time`)
               VALUES ('". $reg_address ."','". $personnel_number ."','". $name ."','". $surname ."','". $patronymic ."','". $work_start ."','". $birthday ."','". $email ."','". $id_item ."','". $_SESSION['control_company'] ."','". $categories ."','". $number ."','". $driver_start ."','". $driver_end ."','". $dol_id ."','". $_SESSION['employee_id'] ."', NOW());";
 
@@ -327,10 +331,14 @@ class Model_creator
 
         $sump_employees_id = mysqli_insert_id($db->link_id);
         $action_type_id = 17;// Секретарь должен получить документ
-//        $this->history_insert($action_type_id);
+        //$this->history_insert($action_type_id);
 
+        // узнаём оргструктурную принадлежность вводящего данные
+        $sql="SELECT employees_items_node.org_str_id FROM employees_items_node WHERE employees_items_node.employe_id =".  $_SESSION['employee_id'];
+        $observer_org_str_id = $db->one($sql);
+        $observer_org_str_id = 166;
         $sql = "INSERT INTO `local_alerts` (`observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`date_create`)
-                                       VALUES( '" .  $_SESSION['employee_id'] .
+                                       VALUES( '" .  $observer_org_str_id.
             "','" . $action_type_id .
             "','" . $_SESSION['control_company'] .
             "','" . $sump_employees_id .
@@ -623,12 +631,11 @@ class Model_creator
         $result = $db->row($sql);
         $input_group = $result['input_group'];
         $html = "";
-        switch ($input_group) {
-            case 1:
-                $html = $this->driver_inputs();
-                break;
-        }
-
+//        switch ($input_group) {
+//            case 1:
+//                $html = $this->driver_inputs();
+//                break;
+//        }
 
         $result_array['status'] = "ok";
         $result_array['content'] = $html;
@@ -675,7 +682,6 @@ class Model_creator
                  <div title="№ удостоверения" class="bef_input new_input"><input type="text" id="driver_number" name="driver_number" placeholder="№ водительского удостоверения" class="contacts-inp input_form" required=""></div>
                  <div title="Начало действия" class="bef_input new_input"><input type="text" id="driver_start" name="driver_start" placeholder="Начало действия удостоверения" class="contacts-inp input_form" required=""></div>
                  <div title="Срок действия" class="bef_input new_input"><input type="text" id="driver_end" name="driver_end" placeholder="Срок действия удостоверения" class="contacts-inp input_form" required=""></div>';
-
         return $html;
     }
 }

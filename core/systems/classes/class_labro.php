@@ -251,10 +251,11 @@ class labro
             $keys['left'] = $observer['left_key'];
             $keys['right'] = $observer['right_key'];
         }
-        if($observer['boss_type'] == 3) {
+        if($observer['boss_type'] == 3 ) {
             $keys['left'] = $observer['min_left'];
             $keys['right'] = $observer['max_right'];
         }
+
 
         return $keys;
     }

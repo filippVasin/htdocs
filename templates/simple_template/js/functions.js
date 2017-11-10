@@ -41,4 +41,6 @@ function print_link(link){
     $("body").append(click_link);
     document.getElementById("click_link").click();
     $("#click_link").remove();
-};
+}
+
+

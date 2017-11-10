@@ -1,6 +1,7 @@
 <?php
 // * 1 * * 1-5 sudo /usr/bin/php /var/www/cron.php - прописать в крон файле /etc crontab -e
 
+// собираем ядро
 require_once(__DIR__ . '/core/systems/classes/class_controller.php');
 require_once(__DIR__ . '/core/systems/classes/class_elements.php');
 require_once(__DIR__ . '/core/systems/classes/class_labro.php');
@@ -13,14 +14,6 @@ require_once(__DIR__ . '/core/systems/classes/class_smtp.php');
 require_once(__DIR__ . '/core/systems/classes/class_systems.php');
 require_once(__DIR__ . '/config.php');
 require_once(__DIR__ . '/templates/simple_template/template_mails/temp_mail.php');
-
-//include('core/systems/core.php');
-//include('core/systems/classes/class_systems.php');
-//global $systems;
-//$sql="Select *
-//                  FROM employees
-//                  WHERE employees.id = 2";
-
 
 
 // совместимость с локалхостом
@@ -44,12 +37,7 @@ if(__DIR__ == "C:\MAMP\htdocs"){
     $labro = new labro;
 
 
-
-
-
-
-
-//exit();
+// запись о начале работы
 $result_status = "ok";
 $cron_task = "";
 $comment = "Начали работать";
@@ -57,7 +45,8 @@ $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `
 $db->query($sql);
 
 
-
+// чистим кандидатов не прошедших медосмотр
+clear_sump();
 // обновляем календарь
 calendar_refresh();
 
@@ -68,9 +57,10 @@ $sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `
 $db->query($sql);
 exit();
 
-
 // конец стажировки
 end_probation();
+
+
 // глобольный цикл по компаниям
 $sql = "SELECT id FROM company";
 $companys = $db->all($sql);
@@ -80,9 +70,9 @@ foreach ($companys as $company) {
 
 // Время
     $today = date("Y-m-d H:i:s");
-// тест
+
     $arrays = "";
-// Получаем массив всех сатрудников
+// Получаем массив всех сотрудников
     $sql = "SELECT employees_items_node.employe_id
 FROM employees_items_node, organization_structure
 WHERE employees_items_node.org_str_id = organization_structure.id
@@ -95,6 +85,7 @@ AND organization_structure.company_id =" . $control_company;
         $arrays .= $item['employe_id'] . "<br>";;
     }
 
+// Получаем массив ответственных
     $sql = "SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.boss_type, ORG_boss.`level` as level,
                 chief_employees.id AS chief_employees_id,
                 chief_employees.surname AS chief_surname, chief_employees.name AS chief_name, chief_employees.second_name AS chief_second_name,
@@ -121,7 +112,6 @@ AND organization_structure.company_id =" . $control_company;
                 GROUP BY ORG_chief_id
                 ORDER BY level DESC, boss_type DESC";
     $bailees_sql = $db->all($sql);
-// Получаем массив ответственных
     $bailees = array();
     $arrays .= "ответственные  <br>";
     foreach ($bailees_sql as $item) {
@@ -183,7 +173,7 @@ AND users.role_id = 4";
     add_hash(); // добавили хеш авторизации к ссылке
     clear(); // отчишаем от якорей склейки
     mails_send(); // отсылаем составленные письма
-    test_fun();       // кусаем арбу
+    test_fun();       // кусаем арбуз
 
 }
 
@@ -401,7 +391,7 @@ FORM_NOW.doc_status_now,
     $test_array = $db->all($sql);
 
 
-    // считаем законьченные документы
+    // считаем законченные документы
     $sql="SELECT *
         FROM form_status_now,employees_items_node,organization_structure
         WHERE form_status_now.doc_status_now>=7
@@ -482,7 +472,7 @@ function mails_send(){
 
 
             // валидация почты
-            if ( is_email($item["email"])) {
+            if (is_email($item["email"])) {
 
                 $send_mailer = $systems->create_mailer_object();
                 $email = $item["email"];
@@ -644,7 +634,7 @@ FORM_NOW.doc_status_now,
                 $fio = $test_item['emp_name'];
             }
         }
-        // запись в масси в для рассылки для соответствующего сотрудника
+        // запись в массив для рассылки для соответствующего сотрудника
         if ($employee_html!=""){
             $inst_report_mail = str_replace('%text%', $employee_html, $inst_report_mail);
 
@@ -1518,6 +1508,12 @@ function end_probation(){
             }
         }
     }
+}
+
+function clear_sump(){
+    global $db;
+    $sql="DELETE FROM `sump_for_employees` WHERE  NOW() > (`creator_time` + INTERVAL 2 MONTH";
+    $db->query($sql);
 }
 
 

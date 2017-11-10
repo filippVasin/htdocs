@@ -359,6 +359,33 @@ $(document).ready(function() {
     });
 
 
+
+    $(document).on("click", "#print_med_form", function () {
+        var action_name = "print_med_form";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                file_id:file_id,
+                action_name:action_name
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+                var link = result.link;
+
+                if(status == "ok"){
+                    print_link(link);
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+
     // показываем карточку редактированния для забивания данных о документах водителя после мед осмотра
     function edit_driver(){
         var item_id = employee_id;
