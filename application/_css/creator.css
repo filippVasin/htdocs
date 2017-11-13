@@ -357,3 +357,6 @@ ul {
 #today_button:hover:before{
     opacity: .8;
 }
+#medical_organization{
+    margin-left: 0!important;
+}

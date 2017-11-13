@@ -299,8 +299,6 @@ class Model_distributor{
         $result_array['employee_id'] = $employee_id;
         $result_array['la_real_form_id'] = $la_real_form_id;
 
-//        $blank = "PATP1_Probationer";
-//        $result_array['link'] = "/doc_views?". $blank ."&probation&". $employee_id;
         return $result_array;
     }
 
@@ -346,9 +344,16 @@ class Model_distributor{
     }
 
     private function print_med_form(){
-
+        global $db;
         $file_id = $this->post_array['file_id'];
-        $blank = "driver_start";
+        $type_emp = "sump";
+        $sql = " SELECT medical_organization.referral
+            FROM med_org_statistician , medical_organization
+            WHERE med_org_statistician.emp_id = ". $file_id ."
+            AND med_org_statistician.type_emp ='". $type_emp ."'
+            AND medical_organization.id = med_org_statistician.med_id";
+        $blank = $db->one($sql);
+
         $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$file_id;
 
         return $result_array;

@@ -266,6 +266,7 @@ $(document).ready(function() {
     $(document).on('click',".landing_form_offer_one", function () {
 
         var flag = 0;
+        var medical = $("#medical_organization").val();
         var surname = "";
         var name = "";
         var patronymic = "";
@@ -366,7 +367,7 @@ $(document).ready(function() {
             } else {
                 $("#form_birthday").css("border-color", "red");
                 setTimeout("$('#form_birthday').css('border-color','#ccc')", 3000);
-                flag == 8
+                flag = 8;
             }
 
         } else {
@@ -384,12 +385,12 @@ $(document).ready(function() {
                 if (Date.parse(work_start) > hex_today_30) {
                     $("#form_work_start").css("border-color", "red");
                     setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
-                    flag == 9
+                    flag = 9;
                 }
                 if (Date.parse(work_start) < hex_today_40) {
                     $("#form_work_start").css("border-color", "red");
                     setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
-                    flag == 10
+                    flag = 10;
                 }
 
                 if(pattern.test($("#form_work_start").val())) {
@@ -397,20 +398,20 @@ $(document).ready(function() {
                 } else {
                     $("#form_work_start").css("border-color", "red");
                     setTimeout("$('#form_work_start').css('border-color','#ccc')", 3000);
-                    flag == 11
+                    flag = 11;
                 }
                 if(pattern.test($("#form_birthday").val())) {
                     // всё норм
                 } else {
                     $("#form_birthday").css("border-color", "red");
                     setTimeout("$('#form_birthday').css('border-color','#ccc')", 3000);
-                    flag == 12
+                    flag = 12;
                 }
         }
 
         $("#landing_form_offer_one").removeClass("landing_form_offer_one");
         setTimeout("$('#landing_form_offer_one').addClass('landing_form_offer_one')", 3000);
-        //alert(flag);
+        //alert(flag);// выводим где ошибка
         if(flag == 0) {// всё норм
 
             $.ajax({
@@ -430,7 +431,8 @@ $(document).ready(function() {
                     driver_categories:driver_categories,
                     driver_number:driver_number,
                     driver_start:driver_start,
-                    driver_end:driver_end
+                    driver_end:driver_end,
+                    medical:medical
 
                 },
                 success: function (answer) {
@@ -625,13 +627,13 @@ $(document).ready(function() {
                             $("#form_work_start").addClass("none");
                             $("#today_button").addClass("none");
                             $("#personnel_number_box").addClass("none");
-                            $("#personnel_number_box").removeClass("tab_vs_enter")
+                            $("#personnel_number").removeClass("tab_vs_enter")
                             $("#form_work_start").removeClass("tab_vs_enter");
                         } else {
                             $("#form_work_start").removeClass("none");
                             $("#today_button").removeClass("none");
                             $("#personnel_number_box").removeClass("none");
-                            $("#personnel_number_box").addClass("tab_vs_enter")
+                            $("#personnel_number").addClass("tab_vs_enter")
                             $("#form_work_start").addClass("tab_vs_enter");
                         }
                         tab_vs_enter();
@@ -667,7 +669,7 @@ $(document).ready(function() {
                  $("#form_work_start").addClass("none");
                  $("#today_button").addClass("none");
                  $("#personnel_number_box").addClass("none")
-                 $("#personnel_number_box").removeClass("tab_vs_enter")
+                 $("#personnel_number").removeClass("tab_vs_enter")
                  $("#form_work_start").removeClass("tab_vs_enter");
                     tab_vs_enter();
     });

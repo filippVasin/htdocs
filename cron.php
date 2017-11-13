@@ -64,10 +64,10 @@ end_probation();
 // глобольный цикл по компаниям
 $sql = "SELECT id FROM company";
 $companys = $db->all($sql);
-foreach ($companys as $company) {
-
-    $control_company = $company['id'];
-
+//foreach ($companys as $company) {
+////
+//    $control_company = $company['id'];
+$control_company = 29;
 // Время
     $today = date("Y-m-d H:i:s");
 
@@ -173,9 +173,9 @@ AND users.role_id = 4";
     add_hash(); // добавили хеш авторизации к ссылке
     clear(); // отчишаем от якорей склейки
     mails_send(); // отсылаем составленные письма
-    test_fun();       // кусаем арбуз
+//    test_fun();       // кусаем арбуз
 
-}
+//}
 
 $result_status = "ok";
 $cron_task = "";
@@ -467,7 +467,7 @@ function mails_send(){
         $item["mail_body"] = str_replace('%report_bailees%', "",  $item["mail_body"]);
         $item["mail_body"] = str_replace('%inst_report_mail%', "",  $item["mail_body"]);
 
-        if( $item["flag"] != 1) {
+        if( $item["flag"] != 0) {
 
 
 
@@ -648,7 +648,7 @@ FORM_NOW.doc_status_now,
 function secretars_alerts($control_company){
     global $db, $labro, $secretars, $dispatch, $local_alert_mail;
 
-    $sql="SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
+    $sql="(SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
 form_step_action.action_name,form_step_action.user_action_name,
 CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
 local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
@@ -676,7 +676,43 @@ WHERE local_alerts.company_id = ". $control_company ."
     AND form_step_action.id = local_alerts.action_type_id
     AND local_alerts.date_finish IS NULL
      GROUP BY local_alerts.id
-     ORDER BY em_id";
+     ORDER BY em_id)
+UNION
+(SELECT
+NULL,
+NULL,
+local_alerts.id,
+local_alerts.action_type_id,
+form_step_action.action_name,
+form_step_action.user_action_name,
+CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,
+NULL,
+NULL,
+local_alerts.date_create,
+CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
+items_control.name AS `position`,
+NULL,
+NULL,
+NULL
+FROM (local_alerts,sump_for_employees,form_step_action)
+
+LEFT JOIN organization_structure ON (organization_structure.id = sump_for_employees.dol_id
+													AND
+													organization_structure.company_id = sump_for_employees.company_id)
+LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
+LEFT JOIN organization_structure AS org_parent
+ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
+    AND org_parent.level =(organization_structure.level - 1)
+	 AND
+	 org_parent.company_id = organization_structure.company_id)
+LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+
+WHERE sump_for_employees.employee_id is NULL
+AND sump_for_employees.id = local_alerts.save_temp_files_id
+AND form_step_action.id = local_alerts.action_type_id
+AND local_alerts.company_id = ". $control_company ."
+)";
 
     $alert_array = $db->all($sql);
     foreach ($secretars as $secretar) {
@@ -704,6 +740,11 @@ WHERE local_alerts.company_id = ". $control_company ."
                 $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
                 $chief_dol = $boss['chief_dol'];
                 $secretar_html .= " нужна подпись ответственного - <b>" . $chiefFIO . "</b>(" . $chief_dol . "), в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd.m.Y') .") <br>";
+            }
+            // есле сотрудник должен пройти медосмотр
+            if ($alert_item['action_type_id'] == 17) {
+                $secretar_html .= "<br><b> Сотрудник -" . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - </b><br>";
+                $secretar_html .= " <b>должен пройти мед.осмотр </b>(". date_format($date, 'd.m.Y') .") <br>";
             }
 
         }
@@ -1039,23 +1080,23 @@ function send_excel_report($observer_emplyoee_id,$control_company){
 function test_fun(){
     global $systems, $today, $dispatch, $report_temp;
 
-            $send_mailer = $systems->create_mailer_object();
-            $email = "gamanov.d@gmail.com";
-            $send_mailer->From = 'noreply@laborpro.ru';
-            $send_mailer->FromName = "Охрана Труда";
-            $send_mailer->addAddress($email);
-            $send_mailer->isHTML(true);
-            $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[73]['mail_body'];
-            if($dispatch[73]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[73]['excel_url']);
-            }
-            if (!$send_mailer->send()) {
-				$error = $send_mailer->ErrorInfo;
-				echo 'Mailer Error: ' . $error;
-			} else {
-				echo 'Message sent!';
-			};
+//            $send_mailer = $systems->create_mailer_object();
+//            $email = "gamanov.d@gmail.com";
+//            $send_mailer->From = 'noreply@laborpro.ru';
+//            $send_mailer->FromName = "Охрана Труда";
+//            $send_mailer->addAddress($email);
+//            $send_mailer->isHTML(true);
+//            $send_mailer->Subject = "Охрана Труда";
+//            $send_mailer->Body = $today . "<br>" . $dispatch[73]['mail_body'];
+//            if($dispatch[73]['excel_url']!=""){
+//                $send_mailer->addAttachment($dispatch[73]['excel_url']);
+//            }
+//            if (!$send_mailer->send()) {
+//				$error = $send_mailer->ErrorInfo;
+//				echo 'Mailer Error: ' . $error;
+//			} else {
+//				echo 'Message sent!';
+//			};
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1075,23 +1116,23 @@ function test_fun(){
 				echo 'Message sent!';
 			}
 
-            $send_mailer = $systems->create_mailer_object();
-            $email = "gamanov.d@gmail.com";
-            $send_mailer->From = 'noreply@laborpro.ru';
-            $send_mailer->FromName = "Охрана Труда";
-            $send_mailer->addAddress($email);
-            $send_mailer->isHTML(true);
-            $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[43]['mail_body'];
-            if($dispatch[43]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[43]['excel_url']);
-            }
-            if (!$send_mailer->send()) {
-				$error = $send_mailer->ErrorInfo;
-				echo 'Mailer Error: ' . $error;
-			} else {
-				echo 'Message sent!';
-			}
+//            $send_mailer = $systems->create_mailer_object();
+//            $email = "gamanov.d@gmail.com";
+//            $send_mailer->From = 'noreply@laborpro.ru';
+//            $send_mailer->FromName = "Охрана Труда";
+//            $send_mailer->addAddress($email);
+//            $send_mailer->isHTML(true);
+//            $send_mailer->Subject = "Охрана Труда";
+//            $send_mailer->Body = $today . "<br>" . $dispatch[43]['mail_body'];
+//            if($dispatch[43]['excel_url']!=""){
+//                $send_mailer->addAttachment($dispatch[43]['excel_url']);
+//            }
+//            if (!$send_mailer->send()) {
+//				$error = $send_mailer->ErrorInfo;
+//				echo 'Mailer Error: ' . $error;
+//			} else {
+//				echo 'Message sent!';
+//			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1111,23 +1152,23 @@ function test_fun(){
 				echo 'Message sent!';
 			}
 
-            $send_mailer = $systems->create_mailer_object();
-            $email = "gamanov.d@gmail.com";
-            $send_mailer->From = 'noreply@laborpro.ru';
-            $send_mailer->FromName = "Охрана Труда";
-            $send_mailer->addAddress($email);
-            $send_mailer->isHTML(true);
-            $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[2]['mail_body'];
-            if($dispatch[2]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[2]['excel_url']);
-            }
-            if (!$send_mailer->send()) {
-				$error = $send_mailer->ErrorInfo;
-				echo 'Mailer Error: ' . $error;
-			} else {
-				echo 'Message sent!';
-			}
+//            $send_mailer = $systems->create_mailer_object();
+//            $email = "gamanov.d@gmail.com";
+//            $send_mailer->From = 'noreply@laborpro.ru';
+//            $send_mailer->FromName = "Охрана Труда";
+//            $send_mailer->addAddress($email);
+//            $send_mailer->isHTML(true);
+//            $send_mailer->Subject = "Охрана Труда";
+//            $send_mailer->Body = $today . "<br>" . $dispatch[2]['mail_body'];
+//            if($dispatch[256]['excel_url']!=""){
+//                $send_mailer->addAttachment($dispatch[2]['excel_url']);
+//            }
+//            if (!$send_mailer->send()) {
+//				$error = $send_mailer->ErrorInfo;
+//				echo 'Mailer Error: ' . $error;
+//			} else {
+//				echo 'Message sent!';
+//			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1136,9 +1177,9 @@ function test_fun(){
             $send_mailer->addAddress($email);
             $send_mailer->isHTML(true);
             $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[2]['mail_body'];
-            if($dispatch[2]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[2]['excel_url']);
+            $send_mailer->Body = $today . "<br>" . $dispatch[256]['mail_body'];
+            if($dispatch[256]['excel_url']!=""){
+                $send_mailer->addAttachment($dispatch[256]['excel_url']);
             }
             if (!$send_mailer->send()) {
 				$error = $send_mailer->ErrorInfo;
@@ -1512,7 +1553,7 @@ function end_probation(){
 
 function clear_sump(){
     global $db;
-    $sql="DELETE FROM `sump_for_employees` WHERE  NOW() > (`creator_time` + INTERVAL 2 MONTH";
+    $sql="DELETE FROM `sump_for_employees` WHERE  NOW() > (`creator_time` + INTERVAL 2 MONTH)";
     $db->query($sql);
 }
 

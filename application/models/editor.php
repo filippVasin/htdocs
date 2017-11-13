@@ -110,8 +110,10 @@ class Model_editor
         $result_array['surname'] = $result['surname'];
         $result_array['name'] = $result['name'];
         $result_array['second_name'] = $result['second_name'];
-        $result_array['birthday'] = $result['birthday'];
-        $result_array['start_date'] = $result['start_date'];
+
+        $result_array['birthday'] = date_create($result['birthday'])->Format('d.m.Y');
+        $result_array['start_date'] = date_create($result['start_date'])->Format('d.m.Y');
+
         $result_array['em_status'] = $result['status'];
         $result_array['personnel_number'] = $result['personnel_number'];
 
@@ -126,8 +128,8 @@ class Model_editor
         if($result['id'] != 0){
             $result_array['category'] = $result['category'];
             $result_array['license_number'] = $result['license_number'];
-            $result_array['start_date_driver'] = date_create($result['start_date'])->Format('d-m-Y');
-            $result_array['end_date_driver'] = date_create($result['end_date'])->Format('d-m-Y');
+            $result_array['start_date_driver'] = date_create($result['start_date'])->Format('d.m.Y');
+            $result_array['end_date_driver'] = date_create($result['end_date'])->Format('d.m.Y');
 //            $result_array['start_date_driver'] = $result['start_date'];
 //            $result_array['end_date_driver'] = $result['end_date'];
         }
@@ -158,8 +160,19 @@ class Model_editor
         $end_date_driver = $this->post_array['end_date_driver'];
 
         // подготовка дат к записи в базу
-        $start_date_driver = date_create($start_date_driver)->Format('Y-m-d');
-        $end_date_driver = date_create($end_date_driver)->Format('Y-m-d');
+        if($start_date_driver !=""){
+            $start_date_driver = date_create($start_date_driver)->Format('Y-m-d');
+        }
+        if($end_date_driver !=""){
+            $end_date_driver = date_create($end_date_driver)->Format('Y-m-d');
+        }
+        if($start_date !=""){
+            $start_date = date_create($start_date)->Format('Y-m-d');
+        }
+        if($birthday !=""){
+            $birthday = date_create($birthday)->Format('Y-m-d');
+        }
+
 
         // меняем данные сотрудника
         if($personnel_number!="") {

@@ -18,6 +18,14 @@
         <div title="Дата рождения" class="bef_input"><input type="text" id="form_birthday" name="birthday" placeholder="Дата рождения" class=" valid_date tab_vs_enter" required="" ></div>
 <!--        <div title="Электронная почта" class="bef_input"><input type="email" id="form_email" name="email" placeholder="Электронная почта" class="contacts-inp input_form tab_vs_enter" required=""></div>-->
         <div title="Табельный номер" id="personnel_number_box" class="bef_input"><input type="text" id="personnel_number" name="personnel_number" placeholder="Табельный номер(не обязательно)" class="contacts-inp input_form tab_vs_enter" required=""></div>
+        <div title="Мед.организация" class="bef_input">
+            <div class="select_triangle">
+                <select class="form-control tab_vs_enter"  id="medical_organization">
+                    <option value="1">ООО "Астра-Мед"</option>
+                    <option value="2">ООО "Городской Центр Медосмотра"</option>
+                </select>
+            </div>
+         </div>
         <input type="hidden" id="form_id_item" name="id_item" value="36" required="">
         <div id="landing_form_offer_one" class="button landing_form_offer_one">Записать</div></div>
     </div>

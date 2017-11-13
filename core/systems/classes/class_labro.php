@@ -33,14 +33,11 @@ class labro
     }
 
     // получаем ответственного по инструктажам
-    public function bailee($emp)
-    {
+    public function bailee($emp) {
         global $db;
-        if (isset($_SESSION['control_company'])) {
-            $control_company = $_SESSION['control_company'];
-        } else {
-            $control_company = 15;
-        }
+
+        $control_company = $this->control_company($emp);
+
         $sql = "SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.boss_type, ORG_boss.`level` as level,
                 chief_employees.id AS chief_employees_id,
                 chief_employees.surname AS chief_surname, chief_employees.name AS chief_name, chief_employees.second_name AS chief_second_name,
@@ -71,6 +68,14 @@ class labro
         return $boss;
     }
 
+    public function control_company($emp){
+        global $db;
+        $sql="SELECT organization_structure.company_id
+                FROM employees_items_node,organization_structure
+                WHERE organization_structure.id = employees_items_node.org_str_id
+                AND employees_items_node.employe_id =". $emp;
+        return $db->one($sql);
+    }
 
     // получаем почту сотрудника
     public function employees_email($emp)

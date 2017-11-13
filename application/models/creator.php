@@ -171,6 +171,7 @@ class Model_creator
         $email = $this->post_array['email'];
         $id_item = $this->post_array['id_item'];
         $dol_id = $this->post_array['dol_id'];
+        $medical = $this->post_array['medical'];
         $fio = $surname." ".$name." ".$patronymic;
         $result_array = array();
 
@@ -178,8 +179,22 @@ class Model_creator
         $work_start = date_create($work_start)->Format('Y-m-d');
         $birthday = date_create($birthday)->Format('Y-m-d');
 
+        // почта структурного подразделения
+        $sql = "SELECT org_str_email.email
+                    FROM organization_structure
+                         LEFT JOIN organization_structure AS mail_org_str ON (mail_org_str.left_key <= organization_structure.left_key
+                                                                                                AND
+                                                                                                 mail_org_str.right_key >= organization_structure.right_key
+                                                                                                 AND
+                                                                                                 mail_org_str.company_id = organization_structure.company_id)
+                            LEFT JOIN org_str_email ON org_str_email.org_str_id = mail_org_str.id
+                    WHERE organization_structure.id = ". $dol_id ."
+                    AND org_str_email.id is not NULL
+                    ORDER BY mail_org_str.`level` DESC
+                    LIMIT 1";
+        $email =  $db->one($sql);
 
-        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
+//        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
         if($_SESSION['employee_id'] == 43){
             $email = "vasin.filipp@yandex.ru";// Пока Филипп
         }
@@ -265,10 +280,22 @@ class Model_creator
                                                 '",NOW())';
                 $db->query($sql);
 
-
             }
 
-       $blank = "driver_start";
+        // статистика по медецинским организациям
+        $type_emp = "employees";
+        $med_emp_id = $employee_id;
+        $sql="INSERT INTO `med_org_statistician` (`med_id`,`emp_id`,`type_emp`)
+              VALUES ('". $medical ."','". $med_emp_id ."','". $type_emp ."');";
+        $db->query($sql);
+        // выбираем нужное направление на мед.осмотр
+        $sql = " SELECT medical_organization.referral
+            FROM med_org_statistician , medical_organization
+            WHERE med_org_statistician.emp_id = ". $med_emp_id ."
+            AND med_org_statistician.type_emp ='". $type_emp ."'
+            AND medical_organization.id = med_org_statistician.med_id";
+        $blank = $db->one($sql);
+
        $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$employee_id;
        $result = json_encode($result_array, true);
         die($result);
@@ -287,6 +314,7 @@ class Model_creator
         $email = $this->post_array['email'];
         $id_item = $this->post_array['id_item'];
         $dol_id = $this->post_array['dol_id'];
+        $medical = $this->post_array['medical'];
 
         if(isset($this->post_array['personnel_number'])){
             $personnel_number = $this->post_array['personnel_number'];
@@ -316,10 +344,23 @@ class Model_creator
             $result = json_encode($result_array, true);
             die($result);
         }
+        // почта структурного подразделения
+        $sql = "SELECT org_str_email.email
+                    FROM organization_structure
+                         LEFT JOIN organization_structure AS mail_org_str ON (mail_org_str.left_key <= organization_structure.left_key
+                                                                                                AND
+                                                                                                 mail_org_str.right_key >= organization_structure.right_key
+                                                                                                 AND
+                                                                                                 mail_org_str.company_id = organization_structure.company_id)
+                            LEFT JOIN org_str_email ON org_str_email.org_str_id = mail_org_str.id
+                    WHERE organization_structure.id = ". $dol_id ."
+                    AND org_str_email.id is not NULL
+                    ORDER BY mail_org_str.`level` DESC
+                    LIMIT 1";
+        $email =  $db->one($sql);
 
 
-
-        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
+//        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
         if($_SESSION['employee_id'] == 43){
             $email = "vasin.filipp@yandex.ru";// Пока Филипп
         }
@@ -345,7 +386,21 @@ class Model_creator
             "',NOW());";
         $db->query($sql);
 
-        $blank = "driver_start";
+        // статистика по медецинским организациям
+        $type_emp = "sump";
+        $med_emp_id = $sump_employees_id;
+        $sql="INSERT INTO `med_org_statistician` (`med_id`,`emp_id`,`type_emp`)
+              VALUES ('". $medical ."','". $med_emp_id ."','". $type_emp ."');";
+        $db->query($sql);
+        // выбираем нужное направление на мед.осмотр
+       $sql = " SELECT medical_organization.referral
+            FROM med_org_statistician , medical_organization
+            WHERE med_org_statistician.emp_id = ". $med_emp_id ."
+            AND med_org_statistician.type_emp ='". $type_emp ."'
+            AND medical_organization.id = med_org_statistician.med_id";
+        $blank = $db->one($sql);
+
+
         $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$sump_employees_id;
         $result_array['content'] = "Данные добавлены, ожидаем прохождения медосмотра";
         $result_array['status'] = "ok";
