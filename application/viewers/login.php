@@ -26,11 +26,11 @@
 
 
             <div class="form-group has-feedback">
-                <input type="login" id="login_user_name" class="form-control" placeholder="Электронная почта">
+                <input type="login" id="login_user_name" class="form-control tab_vs_enter" placeholder="Электронная почта">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" id="login_user_password" class="form-control" placeholder="Пароль">
+                <input type="password" id="login_user_password" class="form-control tab_vs_enter" placeholder="Пароль">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">

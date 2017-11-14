@@ -32,23 +32,8 @@ $report_temp_mail = <<< HERE
                       <tr>
                         <td style=" font-family:Merriweather,Charter,Georgia,serif;padding-top:20px;padding-bottom:20px;padding-right:10%;padding-left:10%;background-color:#ffffff;">
                           <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;font-size:16px;line-height:25px;text-align:left;color:#777777  ;">
-                                            <h2>Здравствуйте %fio%,</h2>
-                                             Вы успешно
-                                                авторизовались в системе LaborPRO. Данная
-                                                система поможет Вам ознакомиться с
-                                                материалами   по безопасности на вашем
-                                                рабочем месте. Вашему вниманию будет
-                                                представлен набор инструкций обязательный
-                                                для ознакомления в соответствии с вашей
-                                                профессией. Каждый вид инструктажа
-                                                (кроме водного), будет заканчиваться
-                                                тестированием, в случае не прохождения
-                                                Вами тестирования, система будет
-                                                возвращать Вас к изучению материала до
-                                                момента успешного прохождения
-                                                тестирования. Для успешного прохождения
-                                                тестирования, внимательно изучайте
-                                                материалы инструкций. В случае
+                                            <h2>Здравствуйте %fio%.</h2>
+                                             Система по управлению охраной труда LaborPRO. В случае
                                                 возникновения у Вас вопросов, либо
                                                 обнаружении сбоев работы системы
                                                 обратитесь по телефону 89293812214
@@ -189,25 +174,11 @@ $login_mail = '<tr>
                            </td>
                         </tr>
 
-                      <tr>
-                        <td style=" font-family:Merriweather,Charter,Georgia,serif;padding-top:20px;padding-bottom:20px;padding-right:10%;padding-left:10%;background-color:#ffffff;">
-                          <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777  ;">
 
-                                    %text%
-                                    <br>
-                                    <span>Перейдите на сайт</span>
-                                    <br>
-                                    <a href="%link%"><span style="color:#000000;font-weight:700;">Laborpro.ru</span></span></a>
-
-
-                              </div>
-                          </div>
-                        </td>
-                      </tr>
 
                       <tr>
                         <td style=" font-family:Merriweather,Charter,Georgia,serif;padding-top:20px;padding-bottom:20px; text-align: center;background-color:#ffffff;">
-                          <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:0;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777; text-align: center;">
+                          <div style="font-family:Merriweather,Charter,Georgia,serif;margin-top:25px;margin-bottom:25px;font-size:16px;line-height:25px;text-align:left;color:#777777; text-align: center;">
 
 
                                     <a href="%link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейти в систему</span></span></a>
@@ -226,7 +197,7 @@ $inst_report_mail ='<tr>
                                           margin-top: 0;
                                           margin-bottom: 10px;
                                           color: #ffffff;
-                                          margin: 0 auto;">Вы не прошли следующие инструктажи: :</h2>
+                                          margin: 0 auto;">Вы не прошли следующие инструктажи:</h2>
                            </td>
                         </tr>
 

@@ -475,6 +475,17 @@ route_control_step.track_number_id AS id,
         return "Всё";
     }
     public function test($doc_link){
-        echo $_SERVER['SERVER_NAME'];
+        global $db;
+        $sql= "SELECT observer_company.id
+                    FROM  observer_company
+                LEFT JOIN company ON company.id = observer_company.company_id
+                WHERE company.id is NULL";
+
+        $briefings = $db->all($sql);
+//        foreach ($briefings as $briefing) {
+//            $sql="DELETE FROM `laborpro`.`observer_company`  WHERE  `id` =" . $briefing['id'];
+//            $db->query($sql);
+//        }
+
     }
 }

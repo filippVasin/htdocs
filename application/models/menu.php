@@ -112,7 +112,9 @@ class Model_menu{
             $company_buttons  .= '<li><a href="/docs_report" class="pril_start"> <span>Отчёт по документам</span><i class="fa fa-book"></i> </a></li>
             <li><a href="/report_step" class="pril_start"> <span>Отчёт по сотрудникам</span><i class="fa fa-users"></i> </a></li>
             <li><a href="/company_forms" class="pril_start"> <span>Документы компании</span><i class="fa  fa-files-o"></i></a></li>
+            <li><a href="/editor" class="pril_start"> <span>Редактор сотрудников</span><i class="fa fa-edit"></i></a></li>
             <li><a href="/local_alert" class="pril_start"> <span>Уведомления</span><i class="fa fa-paper-plane"></i></a> </li>
+            <li><a href="/rover" class="pril_start"> <span>Пройти инструктаж</span><i class="fa fa-graduation-cap"></i></a> </li>
             ';
 
 //

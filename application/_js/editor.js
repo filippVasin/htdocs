@@ -4,11 +4,35 @@ $(document).ready(function() {
     var type = "";
     var user_id = "";
 
+    if($("#table_type").html() == ""){
+        $("#table_titles").addClass("none");
+        $("#table_type").css("display","none");
+        $("#table_employees").css("display","block");
+    }
+
+
+
+
     // выбираем элемент для редактированния
     $(document).on("click", ".table_row", function () {
         item_id =  $(this).attr("item_id");
         item_name =  $(this).attr("item_name");
         type =  $(this).attr("type");
+        $.ajax({
+            type: "POST",
+            url: "/editor/select_node_list",
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
+
+                if(request_result == 'ok'){
+                    $("#select_node_item").html(content);
+                }
+            },
+            error: function () {
+            }
+        });
         $("#edit_popup_button").click();
         $("#edit_popup_input").val(item_name);
     });
@@ -121,7 +145,7 @@ $(document).ready(function() {
     });
 
 
-    // выбираем элемент для редактированния
+
     $(document).on("click", ".table_mix_row", function () {
         item_id =  $(this).attr("emp_id");
         user_id =  $(this).attr("user_id");
@@ -196,7 +220,7 @@ $(document).ready(function() {
 
 
 
-    // выбираем элемент для редактированния
+
     $(document).on("click", "#save_popup_input_employees", function () {
         item_id =  $("#edit_popup_employees").attr("item_id");
        var surname  = $("#edit_popup_input_surname").val();
@@ -257,7 +281,7 @@ $(document).ready(function() {
 
 
 
-    // выбираем элемент для редактированния
+
     $(document).on("click", ".table_row_user", function () {
         item_id =  $(this).attr("item_id");
 
@@ -303,7 +327,7 @@ $(document).ready(function() {
         $("#edit_popup_user").css("display","block");
     });
 
-// выбираем элемент для редактированния
+
     $(document).on("click", "#save_popup_input_user", function () {
         item_id =  $("#edit_popup_user").attr("item_id");
         if((($("#edit_popup_input_pass").val()) == ($("#edit_popup_input_next_pass").val()))&&($("#edit_popup_input_next_pass").val() !="")) {
@@ -391,6 +415,7 @@ $(document).ready(function() {
 
     // добавление нуменклатуру
     $(document).on("click", ".directory_plus", function () {
+
         $("#plus_directory_button").click();
     });
 

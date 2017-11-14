@@ -385,6 +385,14 @@ $(document).ready(function() {
             $("#driver_name_popup").html(name);
             $("#alert_create_driver_popup_button").click();
         }
+        if( action_type == 18 ){
+            $("#print_probationer_popup_name").html(name);
+            $("#alert_print_probationer_button").click();
+        }
+        if( action_type == 19 ){
+            $("#driver_probation_actoin_popup").html(name);
+            $("#alert_probation_actoin_popup_button").click();
+        }
 
     });
 
@@ -537,6 +545,73 @@ $(document).ready(function() {
                     //print_link(link);
                 }
                 edit_driver();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+
+    $(document).on("click", "#yes_popup_18", function () {
+        var action_name = "probation_alert";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+                var link = result.link;
+
+                $(".alert_row").each(function() {
+                    if(file_id == $(this).attr("file_id")){
+                        if(18 == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $(".btn-default").click();
+                if(status == "ok"){
+                    print_link(link);
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+    $(document).on("click", "#yes_popup_19", function () {
+        var la_real_form_id = emp;
+        var action_name = "probation_actoin";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                employee_id = result.employee_id;
+                var la_real_form_id_set = result.la_real_form_id;
+                var status = result.status;
+                var link = result.link;
+
+                $(".alert_row").each(function() {
+                    if(emp == $(this).attr("emp")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $(".btn-default").click();
+
             },
             error: function () {
                 console.log('error');

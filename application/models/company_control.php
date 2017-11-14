@@ -316,20 +316,20 @@ class Model_company_control{
 		 Высылаем тестовые аккаунты для изнакомления с нашей системой.
 		</p>
  		<br>                <p>Тестированние:</p>
- 		                    <br>
+
                             <p>Логин: %Tes_login%</p>
-                            <br>
+
                             <p>Пароль: %Tes_pass% </p>
                             <br>
-                            <a href="%Tes_link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейдите на сайт</span></span></a>
-<br>
+                            <a href="%Tes_link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Зайти как сотрудник</span></span></a>
+<br><br>
                             <p>Отчётность:</p>
- 		                    <br>
+
                             <p>Логин: %Sel_login%</p>
-                            <br>
+
                             <p>Пароль: %Sel_pass% </p>
                             <br>
-                            <a href="%Sel_link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Перейдите на сайт</span></span></a>
+                            <a href="%Sel_link%" style="border-radius:10px;text-decoration:none;color:#000000;font-family:Arial,sans-serif;font-size:22px;text-transform:uppercase;background:#FFE74F;margin:0px;padding: 20px 30px; white-space: nowrap;"><span style="color:#000000;"><span style="color:#000000;font-weight:700;">Зайти как руководитель</span></span></a>
                         </body>
                     </html>
 HERH;

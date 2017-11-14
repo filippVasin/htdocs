@@ -28,7 +28,7 @@ class Model_main{
             die($result);
         }
         // границы обзора
-        $keys =  $labro->observer_keys();
+        $keys =  $labro->observer_keys($_SESSION['employee_id']);
         $node_left_key = $keys['left'];
         $node_right_key = $keys['right'];
 
@@ -552,7 +552,7 @@ FORM_NOW.doc_status_now,
         }
 
         // границы дозволенного
-        $keys =  $labro->observer_keys();
+        $keys =  $labro->observer_keys($_SESSION['employee_id']);
         $node_left_key = $keys['left'];
         $node_right_key = $keys['right'];
 
@@ -897,7 +897,7 @@ route_control_step.track_number_id AS id,
         $today = date("Y-m-d");
 
         // границы дозволенного
-        $keys =  $labro->observer_keys();
+        $keys =  $labro->observer_keys($_SESSION['employee_id']);
         $node_left_key = $keys['left'];
         $node_right_key = $keys['right'];
 

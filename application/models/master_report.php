@@ -1041,7 +1041,7 @@ route_control_step.track_number_id AS id,
 
 
         // границы обзора
-        $keys =  $labro->observer_keys();
+        $keys =  $labro->observer_keys($_SESSION['employee_id']);
         $node_left_key = $keys['left'];
         $node_right_key = $keys['right'];
 

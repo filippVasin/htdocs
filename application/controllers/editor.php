@@ -73,4 +73,11 @@ class Controller_editor extends Controller{
         // Вызываем метод показа всего дерева
         $this->model->delete_item();
     }
+
+    public function select_node_list(){
+        // Записываем массив с даннми в модель;
+        $this->model->post_array = $this->post_params;
+        // Вызываем метод показа всего дерева
+        $this->model->select_node_list();
+    }
 }

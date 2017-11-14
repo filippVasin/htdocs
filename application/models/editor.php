@@ -13,37 +13,47 @@ class Model_editor
     // выводим таблицы
     public function table_type(){
         global $db;
-        // получаем и выводим таблицу типов
-        $sql  ="SELECT items_control_types.id, items_control_types.name FROM items_control_types";
-      $employees = $db->all($sql);
-        $html = '<div>';
-        $html .='<div class="type_title">Тип:</div>';
-        $html .='<div class="type_plus"></div>';
-        foreach($employees as $employee){
-            $html .= '<div class="table_row" type="type" item_id="' . $employee['id'] . '"  item_name="' . $employee['name'] . '">';
-                $html .= '<div class="type_id">'.  $employee['id'].'</div><div class="type_name">'.  $employee['name'].'</div>';
+        $html = "";
+        if ($_SESSION['role_id'] == 4) {
+            return $html;
+        } else {
+            // получаем и выводим таблицу типов
+            $sql = "SELECT items_control_types.id, items_control_types.name FROM items_control_types";
+            $employees = $db->all($sql);
+            $html .= '<div>';
+            $html .= '<div class="type_title">Тип:</div>';
+            $html .= '<div class="type_plus"></div>';
+            foreach ($employees as $employee) {
+                $html .= '<div class="table_row" type="type" item_id="' . $employee['id'] . '"  item_name="' . $employee['name'] . '">';
+                $html .= '<div class="type_id">' . $employee['id'] . '</div><div class="type_name">' . $employee['name'] . '</div>';
+                $html .= '</div>';
+            }
             $html .= '</div>';
+            return $html;
         }
-        $html .= '</div>';
-        return $html;
     }
 
     public function table_num(){
-            global $db;
-        // получаем и выводим справочник
-        $sql  ="SELECT items_control.id, items_control.name FROM items_control";
-        $employees = $db->all($sql);
-        $html = '<div>';
-        $html .='<div class="type_title">Справочник:</div>';
-        $html .='<div class="directory_plus"></div>';
-        foreach($employees as $employee){
-            $html .= '<div class="table_row" type="num" item_id="' . $employee['id'] . '"  item_name="' . $employee['name'] . '" >';
-            $html .= '<div class="type_id">'.  $employee['id'].'</div><div class="type_name">'.  $employee['name'].'</div>';
+        global $db;
+        $html = "";
+        if ($_SESSION['role_id'] == 4) {
+            return $html;
+        } else {
+            // получаем и выводим справочник
+            $sql = "SELECT items_control.id, items_control.name FROM items_control WHERE items_control.company_id =".$_SESSION['control_company'];
+            $employees = $db->all($sql);
+            $html .= '<div>';
+            $html .= '<div class="type_title">Справочник:</div>';
+            $html .= '<div class="directory_plus"></div>';
+            foreach ($employees as $employee) {
+                $html .= '<div class="table_row" type="num" item_id="' . $employee['id'] . '"  item_name="' . $employee['name'] . '" >';
+                $html .= '<div class="type_id">' . $employee['id'] . '</div><div class="type_name">' . $employee['name'] . '</div>';
+                $html .= '</div>';
+            }
             $html .= '</div>';
-        }
-        $html .= '</div>';
             return $html;
         }
+    }
 
     public function mix_table(){
         global $db;
@@ -69,6 +79,7 @@ class Model_editor
             $html .=    '<td class="fio" rowspan="1" colspan="1">'.  $employee['fio'].'</td>';
             $html .= '</tr>';
         }
+
 
 
         return $html;
@@ -130,8 +141,7 @@ class Model_editor
             $result_array['license_number'] = $result['license_number'];
             $result_array['start_date_driver'] = date_create($result['start_date'])->Format('d.m.Y');
             $result_array['end_date_driver'] = date_create($result['end_date'])->Format('d.m.Y');
-//            $result_array['start_date_driver'] = $result['start_date'];
-//            $result_array['end_date_driver'] = $result['end_date'];
+
         }
 
 
@@ -295,7 +305,7 @@ class Model_editor
         $result = $db->row($sql);
 
         if($result['id']=="") {
-            $sql = "INSERT INTO `items_control` (`name`) VALUES('" . $new_directory . "');";
+            $sql = "INSERT INTO `items_control` (`name`, `company_id`) VALUES('" . $new_directory . "','" . $_SESSION['control_company'] . "');";
             $db->query($sql);
 
             $sql ="SELECT *
@@ -359,6 +369,24 @@ class Model_editor
         }
 
 
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+    public function select_node_list(){
+        global $db;
+
+        $sql="	SELECT *
+                FROM items_control_types
+                WHERE items_control_types.id not IN(10,11)";
+        $group_companys = $db->all($sql);
+        $html = "<option value=0></option>";
+        foreach ($group_companys as $group_companys_item) {
+            $html .="<option value='". $group_companys_item['id'] ."' >". $group_companys_item['name'] ."</option>";
+        }
+
+        $result_array['content'] = $html;
+        $result_array['status'] = 'ok';
         $result = json_encode($result_array, true);
         die($result);
     }

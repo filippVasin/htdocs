@@ -17,7 +17,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>e-mail</th>
+                        <th>login/e-mail</th>
                         <th>Сотрудник</th>
                     </tr>
                     </thead>
@@ -151,24 +151,6 @@
 
 
 
-<!--<div id="edit_popup_user" item_id="">-->
-<!--    <div class="canvas" style="padding-top: 30px; box-sizing: border-box;">-->
-<!--    <div>Введите новый пароль два раза</div>-->
-<!--    <div class="input_name_row">-->
-<!--        <input type="password" class="edit_popup_input pass"  id="edit_popup_input_pass" placeholder="Пароль">-->
-<!--        <input type="password" class="edit_popup_input pass"  id="edit_popup_input_next_pass" placeholder="Ещё раз пароль">-->
-<!--    </div>-->
-<!--    <div class="button_row">-->
-<!--        <div class="button" id="save_popup_input_user">Сохранить</div>-->
-<!--        <div class="button" id="cancel_popup_input_user">Отмена</div>-->
-<!--    </div>-->
-<!--        </div>-->
-<!--</div>-->
-
-<!---->
-<!--<button id="edit_popup_user_button" class="none" data-toggle="modal" data-target="#edit_popup_user">-->
-<!--</button>-->
-
 <div class="modal fade" tabindex="-1" id="edit_popup_user" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -225,6 +207,13 @@
                 <!--                <h4 class="modal-title" id="myModalLabel"> Можете поменять название:</h4>-->
             </div>
             <div class="modal-body">
+                <label>Выберите тип подразделений:</label>
+                <div class="select_triangle">
+                    <select class="form-control" id="select_node_item">
+
+                    </select>
+                </div>
+                <br>
                 <input id="plus_directory_popup_input" class="form-control" placeholder="Введите новую нуменклатуру">
             </div>
             <div class="modal-footer">

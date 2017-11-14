@@ -3,7 +3,7 @@
  */
 $(document).ready(function() {
 
-
+    tab_vs_enter()
 
     $(document).on("click", "#try_login", function () {
         var login = $('#login_user_name').val();
@@ -48,4 +48,21 @@ $(document).ready(function() {
             }
         });
     });
+
+
+    function tab_vs_enter() {
+        var $inputs = $("body").find('.tab_vs_enter');
+        $inputs.each(function (i) {
+            $(this).keypress(function (ev) {
+                if (ev.which == 13 && i == $inputs.length - 1) {
+                    $("#try_login").click();
+                }
+                if (ev.which == 13) {
+                    $inputs.eq(i + 1).focus();
+                    return false;
+                }
+            });
+        });
+    }
+
 });

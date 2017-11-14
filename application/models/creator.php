@@ -142,8 +142,7 @@ class Model_creator
                 $html.=        '<input type="text" id="form_id_item" name="id_item" value="'. $item_id .'" required="">';
                 $html.=        '<div id="landing_form_offer_one" style="margin-left: 100px;" class="button">Записать</div>';
                 $html.=  '</div>';
-            // скрипт валидации форм
-//            $html.=  ' <script> $(function() {$("#form_work_start").mask("99.99.9999", {placeholder: "дд.мм.гггг" }); $("#form_birthday").mask("99.99.9999", {placeholder: "дд.мм.гггг" });});</script>';
+
 
         }
 
@@ -178,9 +177,10 @@ class Model_creator
         // подготовка дат к записи в базу
         $work_start = date_create($work_start)->Format('Y-m-d');
         $birthday = date_create($birthday)->Format('Y-m-d');
-
-        // почта структурного подразделения
-        $sql = "SELECT org_str_email.email
+        // если почта не задана
+        if($email == "") {
+            // почта структурного подразделения
+            $sql = "SELECT org_str_email.email
                     FROM organization_structure
                          LEFT JOIN organization_structure AS mail_org_str ON (mail_org_str.left_key <= organization_structure.left_key
                                                                                                 AND
@@ -188,17 +188,16 @@ class Model_creator
                                                                                                  AND
                                                                                                  mail_org_str.company_id = organization_structure.company_id)
                             LEFT JOIN org_str_email ON org_str_email.org_str_id = mail_org_str.id
-                    WHERE organization_structure.id = ". $dol_id ."
+                    WHERE organization_structure.id = " . $dol_id . "
                     AND org_str_email.id is not NULL
                     ORDER BY mail_org_str.`level` DESC
                     LIMIT 1";
-        $email =  $db->one($sql);
+            $email = $db->one($sql);
 
-//        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
-        if($_SESSION['employee_id'] == 43){
-            $email = "vasin.filipp@yandex.ru";// Пока Филипп
+            if ($_SESSION['employee_id'] == 43) {
+                $email = "vasin.filipp@yandex.ru";// Пока Филипп
+            }
         }
-
             if(isset($this->post_array['personnel_number'])){
                 $personnel_number = $this->post_array['personnel_number'];
                 $sql = "INSERT INTO `employees` (`personnel_number`,`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $personnel_number . "','" . $surname . "','" . $name . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
@@ -233,8 +232,6 @@ class Model_creator
 
             // данные для логов
             $template_mail_id = $email_temp['id'];
-
-//            $path = ROOT_PATH.'/application/templates_mail/'.$email_temp['path'];
 
             $message = $regisrt_temp_mail;
             $message = str_replace('%fio%', $fio, $message);
@@ -344,8 +341,10 @@ class Model_creator
             $result = json_encode($result_array, true);
             die($result);
         }
-        // почта структурного подразделения
-        $sql = "SELECT org_str_email.email
+        // если почта не задана
+        if($email == "") {
+            // почта структурного подразделения
+            $sql = "SELECT org_str_email.email
                     FROM organization_structure
                          LEFT JOIN organization_structure AS mail_org_str ON (mail_org_str.left_key <= organization_structure.left_key
                                                                                                 AND
@@ -353,18 +352,16 @@ class Model_creator
                                                                                                  AND
                                                                                                  mail_org_str.company_id = organization_structure.company_id)
                             LEFT JOIN org_str_email ON org_str_email.org_str_id = mail_org_str.id
-                    WHERE organization_structure.id = ". $dol_id ."
+                    WHERE organization_structure.id = " . $dol_id . "
                     AND org_str_email.id is not NULL
                     ORDER BY mail_org_str.`level` DESC
                     LIMIT 1";
-        $email =  $db->one($sql);
+            $email = $db->one($sql);
 
-
-//        $email = "PTP-NSK-Driver@laborpro.ru";// Пока Данилу
-        if($_SESSION['employee_id'] == 43){
-            $email = "vasin.filipp@yandex.ru";// Пока Филипп
+            if ($_SESSION['employee_id'] == 43) {
+                $email = "vasin.filipp@yandex.ru";// Пока Филипп
+            }
         }
-
         $sql="INSERT INTO `sump_for_employees` (`reg_address`,`personnel_number`,`name`,`surname`,`patronymic`,`work_start`,`birthday`,`email`,`id_item`,`company_id`,`category`,`license_number`,`start_date`,`end_date`,`dol_id`,`author_id`,`creator_time`)
               VALUES ('". $reg_address ."','". $personnel_number ."','". $name ."','". $surname ."','". $patronymic ."','". $work_start ."','". $birthday ."','". $email ."','". $id_item ."','". $_SESSION['control_company'] ."','". $categories ."','". $number ."','". $driver_start ."','". $driver_end ."','". $dol_id ."','". $_SESSION['employee_id'] ."', NOW());";
 
@@ -377,7 +374,7 @@ class Model_creator
         // узнаём оргструктурную принадлежность вводящего данные
         $sql="SELECT employees_items_node.org_str_id FROM employees_items_node WHERE employees_items_node.employe_id =".  $_SESSION['employee_id'];
         $observer_org_str_id = $db->one($sql);
-        $observer_org_str_id = 166;
+
         $sql = "INSERT INTO `local_alerts` (`observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`date_create`)
                                        VALUES( '" .  $observer_org_str_id.
             "','" . $action_type_id .
@@ -407,13 +404,11 @@ class Model_creator
         $result = json_encode($result_array, true);
         die($result);
     }
-//  /doc_views?driver_start&start_blank&9
 
     // добавляем тип
     public function button_plus()
     {
-
-        global $db, $systems, $elements;
+        global $db;
 
         // получаем данные из POST запроса
         $id_item = $this->post_array['id_item'];
@@ -455,8 +450,7 @@ class Model_creator
     // добавляем наменклатуру;
     public function new_type_select()
     {
-
-        global $db, $systems, $elements;
+        global $db;
 
 
         $select_item_id = $this->post_array['select_item_id'];
@@ -489,7 +483,7 @@ class Model_creator
     public function save_new_type_select()
     {
 
-        global $db, $systems, $elements;
+        global $db;
 
         $parent = $this->post_array['parent'];
         // новый тип и нуменклатура

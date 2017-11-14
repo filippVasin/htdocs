@@ -24,7 +24,7 @@ class Model_rover{
         } else {
 
             //  если пользователь сотрудник
-            if (($_SESSION['role_id']) && ($_SESSION['role_id'] == 3)) {
+            if (($_SESSION['role_id'] == 4) || ($_SESSION['role_id'] == 3)) {
                 // ищим непройденный материалы
                 $sql = "SELECT
 /* Вывод наименьшего непройденого трека*/

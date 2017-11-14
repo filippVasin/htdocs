@@ -115,8 +115,10 @@ class Model_supervisor{
                     if($item['company_id'] != 0) {
                         $sql = "SELECT * FROM company WHERE company.id =".$item['company_id'];
                         $company = $db->row($sql);
-                        $html_company .= '<div class="box-body" >'. $company['name'] .'<button type="button" class="btn btn-box-tool delete_company_item" data-widget="" company_id="'. $company['id'] .'" user_id="'. $item['id'] .'" data-toggle="tooltip" title="Лишить прав наблюдения">
+                        if($company['id'] !=""){
+                            $html_company .= '<div class="box-body" >'. $company['name'] .'<button type="button" class="btn btn-box-tool delete_company_item" data-widget="" company_id="'. $company['id'] .'" user_id="'. $item['id'] .'" data-toggle="tooltip" title="Лишить прав наблюдения">
                               <i style="color: #ccc" class="fa fa-remove"></i></button></div>';
+                        }
                     }
                 }
             }
