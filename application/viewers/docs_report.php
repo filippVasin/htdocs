@@ -17,7 +17,9 @@
 
 
     <div class="button" id="reset"  style="float: left;" id="rebut_node_docs">Сброс</div>
+
     <div class="button" style="float: left;" id="node_docs" data-toggle="modal" data-target="#popup_context_menu_update">Выбор подразделения</div>
+
     <div id="select">
     </div>
 

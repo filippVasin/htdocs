@@ -17,13 +17,18 @@ ul {
     flex-direction: row;
     align-items: center;
 }
-.title_item:hover, .plus_item_button:hover{
-    color: rgba(224, 136, 51, .7);
+.title_item:hover, .plus_item_button:hover, .minus_item_button:hover{
+    opacity: .7;
     cursor: pointer;
 }
 .plus_item_button {
     margin-left: 10px;
     font-size: 16px;
+}
+.minus_item_button{
+    margin-left: 10px;
+    font-size: 16px;
+    color: red;
 }
 .open_item{
     color: #e08833;

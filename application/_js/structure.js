@@ -1,12 +1,14 @@
 
 $(document).ready(function() {
     var id_node_plus = 0;
+    var delete_item_id = 0;
+
 
 
     // всё дерево
     $(document).on("click", "#whole_tree", function () {
-        var sel = document.getElementById("tree"); // Получаем наш список
-        var item_id = sel.options[sel.selectedIndex].value;
+        //var sel = document.getElementById("tree"); // Получаем наш список
+        //var item_id = sel.options[sel.selectedIndex].value;
         var emp_id = "";
         var report_type = "org_str_tree";
         $.ajax({
@@ -40,6 +42,7 @@ $(document).ready(function() {
                     });
                     sort_stucture();
                     add_node_button(role);
+                    $(".tree_item ").append('<i class="minus_item_button fa fa-close"></i>');
                 }
             },
             error: function () {
@@ -49,7 +52,7 @@ $(document).ready(function() {
     });
 
 
-    // всё дерево
+
     $(document).on("click", "#tree_up", function () {
         var sel = document.getElementById("tree"); // Получаем наш список
         var item_id = sel.options[sel.selectedIndex].value;
@@ -96,7 +99,7 @@ $(document).ready(function() {
 
 
 
-    // всё дерево
+
     $(document).on("click", "#whole_branch", function () {
         var sel = document.getElementById("tree"); // Получаем наш список
         var item_id = sel.options[sel.selectedIndex].value;
@@ -180,6 +183,45 @@ $(document).ready(function() {
         var parent  = $(this).closest(".tree_item ");
         id_node_plus = parent.attr("id_item");
         $("#add_department_form_button").click();
+    });
+
+    $(document).on('click','.minus_item_button',function(){
+        var delete_item  = $(this).closest(".tree_item ");
+        delete_item_id = delete_item.attr("id_item");
+        $("#delete_node_content").html("Вы правда хотите удалить - " + delete_item.attr("erarh") + "?");
+        $("#delete_node_popup_button").click();
+    });
+
+    $(document).on('click','#delete_node_yes',function(){
+        $.ajax({
+            type: "POST",
+            url: "/structure/delete_node",
+            data: {
+                delete_item_id:delete_item_id
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+                var report = result.report;
+
+                $(".btn-outline").click();
+                if (status == "ok") {
+                    // убираем удалённый элемент из DOM
+                    $(".tree_item").each(function () {
+                        if($(this).attr("id_item") == delete_item_id){
+                            var parent  = $(this).closest("li");
+                            parent.remove();
+                        }
+                    });
+                    message(report, status);
+                } else {
+                    message(report, status);
+                }
+
+            },
+            error: function () {
+            }
+        });
     });
 
 

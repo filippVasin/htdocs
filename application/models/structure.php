@@ -44,8 +44,8 @@ class Model_structure
         $employees = $db->all($sql);
         $html = '<select id="tree" class="" style="">';
         foreach ($employees as $key => $employee_box) {
-            $left_key = str_pad($employee_box['left_key'] , 3, "0", STR_PAD_LEFT);
-            $right_key = str_pad($employee_box['right_key'] , 3, "0", STR_PAD_LEFT);
+            $left_key = str_pad($employee_box['left_key'] , 5, "0", STR_PAD_LEFT);
+            $right_key = str_pad($employee_box['right_key'] , 5, "0", STR_PAD_LEFT);
             $html .= '<option value="' . $employee_box['id'] . '" left_key="' . $left_key . '" right_key="' . $right_key . '" >' . $employee_box['erarh'] . '</option>';
         }
         $html .= '</select>';
@@ -223,4 +223,51 @@ class Model_structure
         die($result);
     }
 
+    public function delete_node(){
+        global $db;
+        $delete_item_id = $this->post_array['delete_item_id'];
+        $sql="SELECT organization_structure.left_key, organization_structure.right_key, employees_items_node.employe_id, ORG.*
+                FROM (organization_structure, employees_items_node)
+                LEFT JOIN organization_structure AS ORG ON (ORG.left_key >= organization_structure.left_key
+                                                                            AND
+                                                                            ORG.right_key <= organization_structure.right_key
+                                                                            AND
+                                                                            ORG.company_id = 	organization_structure.company_id)
+                WHERE organization_structure.id = ". $delete_item_id ."
+                AND employees_items_node.org_str_id = ORG.id
+                LIMIT 1";
+        $delete_emps = $db->row($sql);
+        //
+        if($delete_emps['employe_id']!=""){
+            $result_array['status'] = 'error';
+            $result_array['report'] = 'Ошибка! За элементом закреплены сотрудники';
+        } else {
+            // получаем данные о удаляемом элемента
+            $sql="SELECT (organization_structure.right_key - organization_structure.left_key + 1) AS delta, organization_structure.left_key,
+                  organization_structure.right_key,
+                  organization_structure.company_id
+                    FROM organization_structure
+                    WHERE organization_structure.id =".$delete_item_id;
+            $delete_node = $db->row($sql);
+            $delta = $delete_node ["delta"];
+            $left_key = $delete_node ["left_key"];
+            $right_key = $delete_node ["right_key"];
+            $company_id = $delete_node ["company_id"];
+            // удаляем элемент со всеми вложенными
+            $sql="DELETE FROM `organization_structure` WHERE  `left_key`>=". $left_key ." AND `right_key`<=". $right_key ." AND `company_id`=". $company_id;
+            $db->query($sql);
+
+            // обновляем оставшиеся элементы
+            $sql="UPDATE `organization_structure` SET `left_key`=(left_key - ". $delta .") WHERE  `left_key`>".$left_key;
+            $db->query($sql);
+            $sql="UPDATE `organization_structure` SET `right_key`=(right_key - ". $delta .") WHERE  `right_key`>".$right_key;
+            $db->query($sql);
+
+            $result_array['status'] = 'ok';
+            $result_array['report'] = 'Элемент успешно удалён';
+        }
+
+        $result = json_encode($result_array, true);
+        die($result);
+    }
 }

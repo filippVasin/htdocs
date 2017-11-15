@@ -592,11 +592,10 @@ FORM_NOW.doc_status_now,
                          GROUP BY local_alerts.id   )
      UNION
      (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
-		FROM local_alerts, sump_for_employees,organization_structure,employees_items_node
-		WHERE local_alerts.action_type_id = 17
+		FROM local_alerts, sump_for_employees,organization_structure
+		WHERE local_alerts.action_type_id IN (17,18,19)
 		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
-		AND employees_items_node.employe_id =  local_alerts.initiator_employee_id
-      AND employees_items_node.org_str_id = organization_structure.id
+		AND sump_for_employees.dol_id = organization_structure.id
       AND organization_structure.left_key > ". $node_left_key ."
       AND organization_structure.right_key < ". $node_right_key ."
 		AND sump_for_employees.id = local_alerts.save_temp_files_id)";
@@ -756,10 +755,6 @@ route_control_step.track_number_id AS id,
 
         $briefings = $db->all($sql);
         $result_array = array();
-//        foreach ($briefings as $key=>$briefing) {
-//
-//        }
-
 
         foreach ($briefings as $key=>$briefing) {
 //            $result_array [$key]['title']= $briefing['step_name'];
@@ -874,10 +869,6 @@ route_control_step.track_number_id AS id,
             }
         }
 
-
-//        print_r($dir_array);
-//        print_r($result_array_two);
-//        print_r($result_array);
         $result = json_encode($result_array_two, true);
         die($result);
     }

@@ -18,21 +18,7 @@ $(document).ready(function() {
         item_id =  $(this).attr("item_id");
         item_name =  $(this).attr("item_name");
         type =  $(this).attr("type");
-        $.ajax({
-            type: "POST",
-            url: "/editor/select_node_list",
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var request_result = result.status;
-                var content = result.content;
 
-                if(request_result == 'ok'){
-                    $("#select_node_item").html(content);
-                }
-            },
-            error: function () {
-            }
-        });
         $("#edit_popup_button").click();
         $("#edit_popup_input").val(item_name);
     });
@@ -415,7 +401,21 @@ $(document).ready(function() {
 
     // добавление нуменклатуру
     $(document).on("click", ".directory_plus", function () {
+        $.ajax({
+            type: "POST",
+            url: "/editor/select_node_list",
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var request_result = result.status;
+                var content = result.content;
 
+                if(request_result == 'ok'){
+                    $("#select_node_item").html(content);
+                }
+            },
+            error: function () {
+            }
+        });
         $("#plus_directory_button").click();
     });
 
@@ -425,23 +425,26 @@ $(document).ready(function() {
 
     $(document).on("click", "#plus_directory_popup", function () {
         var new_directory = $('#plus_directory_popup_input').val();
+        var directory_type =$("#select_node_item").val();
         if(new_directory!="") {
             $("#plus_directory").addClass("none");
             $.ajax({
                 type: "POST",
                 url: "/editor/plus_directory",
                 data: {
-                    new_directory: new_directory
+                    new_directory: new_directory,
+                    directory_type:directory_type
                 },
                 success: function (answer) {
                     var result = jQuery.parseJSON(answer);
                     var request_result = result.status;
+                    var report = result.message;
                     var content = result.content;
                     if (request_result == "ok") {
-                        message('Запись прошла успешна', request_result);
+                        message(report, request_result);
                         $("#table_num").append(content);
                     } else {
-                        message('Такой тип уже есть', request_result);
+                        message(report, request_result);
                     }
                 }
             });

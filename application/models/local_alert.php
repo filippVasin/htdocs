@@ -115,7 +115,7 @@ class Model_local_alert{
      UNION
      (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 		FROM local_alerts, sump_for_employees,organization_structure
-		WHERE local_alerts.action_type_id = 17
+		WHERE local_alerts.action_type_id IN (17,18,19)
 		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
 		AND sump_for_employees.dol_id = organization_structure.id
       AND organization_structure.left_key > ". $node_left_key ."
@@ -126,7 +126,6 @@ class Model_local_alert{
             $alert_every_days = $db->all($sql);
 
             $html = "";
-            $employees = array();
             foreach ($alert_every_days as $key => $alert_every_day) {
                 $html .= '<tr class="alert_row" observer_em=' . $_SESSION['employee_id'] . '
                                                     dol="' . $alert_every_day['position'] . '"

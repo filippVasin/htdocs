@@ -61,8 +61,6 @@
                         </select>
                     </div>
                 </div>
-
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary"  id="add_new_item">Добавить</button>
@@ -71,4 +69,21 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+<button id="delete_node_popup_button" class="btn btn-default none" data-toggle="modal" data-target="#delete_node_popup"></button>
+<div class="modal fade modal-warning bs-example-modal-lg" tabindex="-1" role="dialog" id="delete_node_popup" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="delete_node_content">
+                Вы правда хотите удалить X?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"  id="delete_node_yes">Удалить</button>
+                <button type="button" class="btn btn-outline" data-dismiss="modal">Отмена</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 

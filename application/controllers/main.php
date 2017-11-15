@@ -11,23 +11,18 @@ class Controller_main extends Controller{
 
 
     public function exec_default(){
-
         $result=$this->model->journal();
         $this->view = str_replace('%journal%', $result, $this->view);
-
     }
 
 
     public function start(){
-        // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
         $this->model->start();
     }
 
     public function show_something(){
-        //echo 'Метод выполняется в контроллере вызванные маршрутом '.__FUNCTION__.'<br>';
-        // Предположим что этот метод должен вызвать метод из модели;
         $this->model->show_something_else();
     }
 

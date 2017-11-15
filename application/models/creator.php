@@ -341,6 +341,7 @@ class Model_creator
             $result = json_encode($result_array, true);
             die($result);
         }
+
         // если почта не задана
         if($email == "") {
             // почта структурного подразделения
@@ -667,25 +668,23 @@ class Model_creator
 
     public function get_input(){
         global $db;
+        $email = "";
         $dol_id = $this->post_array['dol_id'];
-        $sql = "SELECT organization_structure.kladr_id
-                FROM organization_structure
-                WHERE organization_structure.id =" . $dol_id;
-        $result = $db->row($sql);
-        $position_id = $result['kladr_id'];
-
-        $sql = "SELECT additional_inputs.input_group
-                FROM additional_inputs
-                WHERE additional_inputs.position_id =" . $position_id;
-        $result = $db->row($sql);
-        $input_group = $result['input_group'];
+        $sql = "SELECT org_str_email.email
+                    FROM organization_structure
+                         LEFT JOIN organization_structure AS mail_org_str ON (mail_org_str.left_key <= organization_structure.left_key
+                                                                                                AND
+                                                                                                 mail_org_str.right_key >= organization_structure.right_key
+                                                                                                 AND
+                                                                                                 mail_org_str.company_id = organization_structure.company_id)
+                            LEFT JOIN org_str_email ON org_str_email.org_str_id = mail_org_str.id
+                    WHERE organization_structure.id = " . $dol_id . "
+                    AND org_str_email.id is not NULL
+                    ORDER BY mail_org_str.`level` DESC
+                    LIMIT 1";
+        $email = $db->one($sql);
         $html = "";
-//        switch ($input_group) {
-//            case 1:
-//                $html = $this->driver_inputs();
-//                break;
-//        }
-
+        $result_array['email'] = $email;
         $result_array['status'] = "ok";
         $result_array['content'] = $html;
         $result = json_encode($result_array, true);
@@ -699,12 +698,9 @@ class Model_creator
                 FROM organization_structure
                 WHERE organization_structure.id=". $new_parent_id;
         $result = $db->row($sql);
-//        $left_key = $result['left_key'];
         $right_key = $result['right_key'];
         $parent_level = $result['level'];
 
-
-//        $new_left_key = $right_key;
         // добавляем в конец списка
 
         $sql="UPDATE `organization_structure` SET `left_key` = `left_key` + 2 WHERE `left_key` > {$right_key} AND `company_id` = {$company_id}";

@@ -571,7 +571,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                                 $plus_class = "pluses";
                             }
 
-                            $item_html .= '<li><div class="tree_item ' .$plus_class .'" level="' . $tree_item['level'] .'" parent="' . $tree_item['parent'] . '"id_item="' . $tree_item['id'] . '"left_key="' . $left_key . '"right_key="' . $right_key . '">' . $tree_item['erarh'] . '</div>';
+                            $item_html .= '<li><div class="tree_item ' .$plus_class .'" level="' . $tree_item['level'] .'" parent="' . $tree_item['parent'] . '"id_item="' . $tree_item['id'] . '"left_key="' . $left_key . '"right_key="' . $right_key . '"  erarh="'. $tree_item['erarh'] .'">' . $tree_item['erarh'] . '</div>';
                             if ($tree_item['fio'] != "") {
                                 $item_html .= '<div class="tree_item_fio">' . $tree_item['fio'] . '</div>';
                             }

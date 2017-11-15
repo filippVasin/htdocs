@@ -299,28 +299,26 @@ class Model_editor
     public function plus_directory(){
         global $db;
         $new_directory = $this->post_array['new_directory'];
+        $directory_type = $this->post_array['directory_type'];
         $sql = "SELECT *
         FROM items_control
-            WHERE name ='".$new_directory."'";
+            WHERE name ='".$new_directory."'  AND `company_id`=". $_SESSION['control_company'];
         $result = $db->row($sql);
 
         if($result['id']=="") {
-            $sql = "INSERT INTO `items_control` (`name`, `company_id`) VALUES('" . $new_directory . "','" . $_SESSION['control_company'] . "');";
+            $sql = "INSERT INTO `items_control` (`name`, `company_id`,`type_id`) VALUES('" . $new_directory . "','" . $_SESSION['control_company'] . "','" . $directory_type . "');";
             $db->query($sql);
+            $new_directory_id = mysqli_insert_id($db->link_id);
 
-            $sql ="SELECT *
-            FROM  items_control
-            WHERE items_control.name = '".$new_directory ."'";
-            $result = $db->row($sql);
-
-
-            $result_array['status'] = 'ok';
-            $html = '<div class="table_row" type="num" item_id="' . $result['id'] . '"  item_name="' . $new_directory . '" >';
-            $html .= '<div class="type_id">'.  $result['id'].'</div><div class="type_name">'.  $new_directory.'</div>';
+            $html = '<div class="table_row" type="num" item_id="' . $new_directory_id . '"  item_name="' . $new_directory . '" >';
+            $html .= '<div class="type_id">'.  $new_directory_id .'</div><div class="type_name">'.  $new_directory.'</div>';
             $html .= '</div>';
             $result_array['content'] = $html;
+            $result_array['status'] = 'ok';
+            $result_array['message'] = 'Элемент добавлен успешно';
         } else {
             $result_array['status'] = 'error';
+            $result_array['message'] = 'Такой элемент уже есть в вашей компании';
         }
         $result = json_encode($result_array, true);
         die($result);
@@ -376,11 +374,11 @@ class Model_editor
     public function select_node_list(){
         global $db;
 
-        $sql="	SELECT *
+        $sql="SELECT *
                 FROM items_control_types
                 WHERE items_control_types.id not IN(10,11)";
         $group_companys = $db->all($sql);
-        $html = "<option value=0></option>";
+        $html = "";
         foreach ($group_companys as $group_companys_item) {
             $html .="<option value='". $group_companys_item['id'] ."' >". $group_companys_item['name'] ."</option>";
         }

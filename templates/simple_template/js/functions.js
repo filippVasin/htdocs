@@ -44,3 +44,21 @@ function print_link(link){
 }
 
 
+function get_session(session_variable){
+    var res = 0;
+     $.ajax({
+        type: "POST",
+        url: "/session/get_session",
+        async:false,
+        data: {
+            session_variable:session_variable
+        },
+        success: function (answer) {
+            var result = jQuery.parseJSON(answer);
+            res = result.content;
+        }
+    });// ajax
+    return res;
+}
+
+

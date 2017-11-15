@@ -5,8 +5,16 @@ $(document).ready(function() {
     var  new_type_id = 0;
     var  news_num_id = 0;
     var dol_id = 0;
+    var email = "";
+
+    if(get_session("control_company") == 29 ) {
+        $("#email_box").remove();
+    } else {
+        $("#speed_button").remove();
+    }
 
     tab_vs_enter();
+
 
     $(document).on("change", ".target", function () {
         var select_item_id = $(this).val();
@@ -272,7 +280,7 @@ $(document).ready(function() {
         var patronymic = "";
         var work_start = $("#form_work_start").val();
         var birthday = $("#form_birthday").val();
-        var email = "";
+
         var id_item = $("#form_id_item").val();
         var personnel_number = "";
         personnel_number = $("#personnel_number").val();
@@ -340,18 +348,18 @@ $(document).ready(function() {
             patronymic = $("#form_patronymic").val();
         }
 
-
-        // валидация почты
-        //if($("#form_email").val() != '') {
-        //    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-        //    if(pattern.test($("#form_email").val())){
-        //        $("#form_email").css({'border' : '1px solid #569b44'});
-        //        email = $("#form_email").val();
-        //    } else {
-        //        $("#form_email").css({'border' : '1px solid #ff0000'});
-        //        flag = 7;
-        //    }
-        //}
+         if(get_session("control_company") != 29 ) {
+             // валидация почты
+             var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+             if (pattern.test($("#form_email").val())) {
+                 $("#form_email").css({'border': '1px solid #569b44'});
+                 email = $("#form_email").val();
+             } else {
+                 $("#form_email").css("border-color", "red");
+                 setTimeout("$('#form_email').css('border-color','#ccc')", 3000);
+                 flag = 7;
+             }
+         }
 
 
 
@@ -607,6 +615,8 @@ $(document).ready(function() {
                     var result = jQuery.parseJSON(answer);
                     var request_result = result.status;
                     var content = result.content;
+                    var email = result.email;
+
                     if(request_result == 'ok'){
                         $('#form_id_item').before(content);
                         // проверка с какого устройтства вошли
@@ -630,6 +640,9 @@ $(document).ready(function() {
                             $("#personnel_number").removeClass("tab_vs_enter")
                             $("#form_work_start").removeClass("tab_vs_enter");
                         } else {
+                            if(email != "") {
+                                $("#form_email").val(email);
+                            }
                             $("#form_work_start").removeClass("none");
                             $("#today_button").removeClass("none");
                             $("#personnel_number_box").removeClass("none");

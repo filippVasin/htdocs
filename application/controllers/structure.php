@@ -32,4 +32,9 @@ class Controller_structure extends Controller{
         $this->model->add_item();
     }
 
+    public  function delete_node(){
+        $this->model->post_array = $this->post_params;
+        $this->model->delete_node();
+    }
+
 }

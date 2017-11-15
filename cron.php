@@ -50,12 +50,13 @@ clear_sump();
 // обновляем календарь
 calendar_refresh();
 
-$result_status = "ok";
-$cron_task = "";
-$comment = "Закончили работать";
-$sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
-$db->query($sql);
-exit();
+// для частичных тестов
+//$result_status = "ok";
+//$cron_task = "";
+//$comment = "Закончили работать";
+//$sql = "INSERT INTO `cron_history` (`result_status`, `cron_task`, `cron_date`, `comment`) VALUES( '". $result_status ."','". $cron_task ."',NOW(),'". $comment ."');";
+//$db->query($sql);
+//exit();
 
 // конец стажировки
 end_probation();
