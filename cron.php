@@ -174,7 +174,7 @@ AND users.role_id = 4";
     add_hash(); // добавили хеш авторизации к ссылке
     clear(); // отчишаем от якорей склейки
     mails_send(); // отсылаем составленные письма
-//    test_fun();       // кусаем арбуз
+    test_fun();       // кусаем арбуз
 
 }
 
@@ -1085,25 +1085,25 @@ function send_excel_report($observer_emplyoee_id,$control_company){
 
 
 function test_fun(){
-    global $systems, $today, $dispatch, $report_temp;
+    global $systems, $today, $dispatch;
 
-//            $send_mailer = $systems->create_mailer_object();
-//            $email = "gamanov.d@gmail.com";
-//            $send_mailer->From = 'noreply@laborpro.ru';
-//            $send_mailer->FromName = "Охрана Труда";
-//            $send_mailer->addAddress($email);
-//            $send_mailer->isHTML(true);
-//            $send_mailer->Subject = "Охрана Труда";
-//            $send_mailer->Body = $today . "<br>" . $dispatch[73]['mail_body'];
-//            if($dispatch[73]['excel_url']!=""){
-//                $send_mailer->addAttachment($dispatch[73]['excel_url']);
-//            }
-//            if (!$send_mailer->send()) {
-//				$error = $send_mailer->ErrorInfo;
-//				echo 'Mailer Error: ' . $error;
-//			} else {
-//				echo 'Message sent!';
-//			};
+            $send_mailer = $systems->create_mailer_object();
+            $email = "gamanov.d@gmail.com";
+            $send_mailer->From = 'noreply@laborpro.ru';
+            $send_mailer->FromName = "Охрана Труда";
+            $send_mailer->addAddress($email);
+            $send_mailer->isHTML(true);
+            $send_mailer->Subject = "Охрана Труда";
+            $send_mailer->Body = $today . "<br>" . $dispatch[291]['mail_body'];
+            if($dispatch[291]['excel_url']!=""){
+                $send_mailer->addAttachment($dispatch[291]['excel_url']);
+            }
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			};
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1112,9 +1112,9 @@ function test_fun(){
             $send_mailer->addAddress($email);
             $send_mailer->isHTML(true);
             $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[73]['mail_body'];
-            if($dispatch[73]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[73]['excel_url']);
+            $send_mailer->Body = $today . "<br>" . $dispatch[291]['mail_body'];
+            if($dispatch[291]['excel_url']!=""){
+                $send_mailer->addAttachment($dispatch[291]['excel_url']);
             }
             if (!$send_mailer->send()) {
 				$error = $send_mailer->ErrorInfo;
@@ -1123,23 +1123,23 @@ function test_fun(){
 				echo 'Message sent!';
 			}
 
-//            $send_mailer = $systems->create_mailer_object();
-//            $email = "gamanov.d@gmail.com";
-//            $send_mailer->From = 'noreply@laborpro.ru';
-//            $send_mailer->FromName = "Охрана Труда";
-//            $send_mailer->addAddress($email);
-//            $send_mailer->isHTML(true);
-//            $send_mailer->Subject = "Охрана Труда";
-//            $send_mailer->Body = $today . "<br>" . $dispatch[43]['mail_body'];
-//            if($dispatch[43]['excel_url']!=""){
-//                $send_mailer->addAttachment($dispatch[43]['excel_url']);
-//            }
-//            if (!$send_mailer->send()) {
-//				$error = $send_mailer->ErrorInfo;
-//				echo 'Mailer Error: ' . $error;
-//			} else {
-//				echo 'Message sent!';
-//			}
+            $send_mailer = $systems->create_mailer_object();
+            $email = "gamanov.d@gmail.com";
+            $send_mailer->From = 'noreply@laborpro.ru';
+            $send_mailer->FromName = "Охрана Труда";
+            $send_mailer->addAddress($email);
+            $send_mailer->isHTML(true);
+            $send_mailer->Subject = "Охрана Труда";
+            $send_mailer->Body = $today . "<br>" . $dispatch[43]['mail_body'];
+            if($dispatch[43]['excel_url']!=""){
+                $send_mailer->addAttachment($dispatch[43]['excel_url']);
+            }
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1159,23 +1159,23 @@ function test_fun(){
 				echo 'Message sent!';
 			}
 
-//            $send_mailer = $systems->create_mailer_object();
-//            $email = "gamanov.d@gmail.com";
-//            $send_mailer->From = 'noreply@laborpro.ru';
-//            $send_mailer->FromName = "Охрана Труда";
-//            $send_mailer->addAddress($email);
-//            $send_mailer->isHTML(true);
-//            $send_mailer->Subject = "Охрана Труда";
-//            $send_mailer->Body = $today . "<br>" . $dispatch[2]['mail_body'];
-//            if($dispatch[256]['excel_url']!=""){
-//                $send_mailer->addAttachment($dispatch[2]['excel_url']);
-//            }
-//            if (!$send_mailer->send()) {
-//				$error = $send_mailer->ErrorInfo;
-//				echo 'Mailer Error: ' . $error;
-//			} else {
-//				echo 'Message sent!';
-//			}
+            $send_mailer = $systems->create_mailer_object();
+            $email = "gamanov.d@gmail.com";
+            $send_mailer->From = 'noreply@laborpro.ru';
+            $send_mailer->FromName = "Охрана Труда";
+            $send_mailer->addAddress($email);
+            $send_mailer->isHTML(true);
+            $send_mailer->Subject = "Охрана Труда";
+            $send_mailer->Body = $today . "<br>" . $dispatch[256]['mail_body'];
+            if($dispatch[256]['excel_url']!=""){
+                $send_mailer->addAttachment($dispatch[256]['excel_url']);
+            }
+            if (!$send_mailer->send()) {
+				$error = $send_mailer->ErrorInfo;
+				echo 'Mailer Error: ' . $error;
+			} else {
+				echo 'Message sent!';
+			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
