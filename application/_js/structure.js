@@ -42,7 +42,9 @@ $(document).ready(function() {
                     });
                     sort_stucture();
                     add_node_button(role);
-                    $(".tree_item ").append('<i class="minus_item_button fa fa-close"></i>');
+                    if(role == 1){
+                        $(".tree_item ").append('<i class="minus_item_button fa fa-close"></i>');
+                    }
                 }
             },
             error: function () {
