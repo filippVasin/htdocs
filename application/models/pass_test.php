@@ -223,11 +223,11 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
                         // прогресс бар с количеством вопросов($need_count);
                         $result .= '<div id="progress_box">
                                     <div id="progress_box_cell">
-                                    <table class="table table-condensed" >
+                                    <table id="table_test" class="table table-condensed" >
                                     <tbody>
                                     <tr>
                                       <td>Вы читаете:</td>
-                                      <td>'. $doc_name .'</td>
+                                      <td id="inst_name_doc">'. $doc_name .'</td>
                                       <td>'. $_SESSION['employee_id'] .'</td>
                                       <td> '.  $_SESSION['$employee_full_name'] .' </td>
                                     </tr>
