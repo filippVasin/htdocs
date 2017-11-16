@@ -412,7 +412,7 @@ HERH;
         // если была почта
         if($email!=""){
 
-            $sql = "INSERT INTO `test_emp_mail_log` (`email`,`test_user_id`, `select_user_id`) VALUES('". $email ."','". $test_user_id ."','". $select_user_id ."')";
+            $sql = "INSERT INTO `test_emp_mail_log` (`email`,`test_user_id`, `select_user_id`,`create_date`) VALUES('". $email ."','". $test_user_id ."','". $select_user_id ."', NOW())";
             $db->query($sql);
 
             $send_mailer = $systems->create_mailer_object();
