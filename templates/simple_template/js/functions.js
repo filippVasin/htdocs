@@ -62,3 +62,4 @@ function get_session(session_variable){
 }
 
 
+

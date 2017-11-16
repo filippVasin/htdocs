@@ -65,7 +65,6 @@ $(document).ready(function() {
     $('#table1_wrapper>.row>div').addClass("col-sm-4");
     $('#table1_wrapper .col-sm-4').removeClass("col-sm-6");
 
-    //$('#table1_wrapper .col-sm-6').addClass("col-sm-4");
     // отмена действия
     $(document).on("click", ".cancel_popup", function () {
         $("#popup_context_menu_update").css("display","none");

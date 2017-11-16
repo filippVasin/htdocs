@@ -338,19 +338,10 @@ if(isset($_SESSION['control_company_name'])){
 
 <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
 
-
-<!-- Control Sidebar -->
-
-<!-- /.control-sidebar -->
-<!-- Add the sidebar's background. This div must be placed
-     immediately after the control sidebar -->
-
-<!-- ./wrapper -->
 
 <script>
-//    $.widget.bridge('uibutton', $.ui.button);
+
 </script>
 
 <div class="daterangepicker dropdown-menu ltr opensleft"><div class="calendar left"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_start" value=""><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="calendar right"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_end" value=""><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="ranges"><ul><li data-range-key="Today">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="This Month">This Month</li><li data-range-key="Last Month">Last Month</li><li data-range-key="Custom Range">Custom Range</li></ul><div class="range_inputs"><button class="applyBtn btn btn-sm btn-success" disabled="disabled" type="button">Apply</button> <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button></div></div></div><div class="jvectormap-label"></div></body>
@@ -639,13 +630,10 @@ if(isset($_SESSION['control_company_name'])){
 
 
     stop_preloader();
-
+    // убираем лишний скролл
+    setTimeout('$(".content-wrapper").css("min-height", $(window).height())', 1000);
     $(document).ready(function() {
         $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
-
-        if($(document).width() > 414){
-            $(".content-wrapper").css("min-height",($(window).height()));
-        }
 
     });
 
@@ -657,9 +645,6 @@ if(isset($_SESSION['control_company_name'])){
             $preloader.delay(2500).fadeOut('slow');
         });
     }
-
-
-
 
 </script>
 

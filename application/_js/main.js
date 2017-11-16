@@ -19,6 +19,8 @@ $(document).ready(function() {
 
     start();
 
+
+
     $(document).on("click",'.open_list_report',function(){
         if($(".open_list_report").hasClass("open_dept")){
             $(".open_list_report").removeClass("open_dept");

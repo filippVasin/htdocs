@@ -133,3 +133,10 @@ tfoot th{
     width: 200px;
     margin: 10px 0px;
 }
+@media (max-width: 570px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

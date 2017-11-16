@@ -151,3 +151,15 @@ tfoot th{
 #popup_action_list{
     overflow-x: auto;
 }
+
+
+@media (max-width: 570px){
+    #select_item_status{
+        margin-bottom: 10px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

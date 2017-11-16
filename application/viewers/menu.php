@@ -50,7 +50,7 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height: 916px;">
+    <div class="content-wrapper" style="min-height: 100px;">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <section class="content">
