@@ -298,7 +298,7 @@ class Model_company_control{
         die($result);
     }
 
-    // Устанавливаем компанию для упарвления;
+    // создаём тестовые аккаунты
     public function plus_test_users_couple(){
         global $db, $labro, $systems;
 
@@ -354,7 +354,7 @@ HERH;
         $sql = "INSERT INTO `users` (`password`, `role_id`,`employee_id`,`full_name`) VALUES('" . md5($pass) . "','" . $role_id . "','" . $emp_id . "','" . $surname . "');";
         $db->query($sql);
         $user_id = mysqli_insert_id($db->link_id);
-
+        $test_user_id = $user_id;
         // пометили что пользователь - тестировщик
         $sql = "INSERT INTO `user_test` (`user_id`) VALUES('". $user_id ."');";
         $db->query($sql);
@@ -389,7 +389,7 @@ HERH;
         $sql = "INSERT INTO `users` (`password`, `role_id`,`employee_id`,`full_name`) VALUES('" . md5($pass) . "','" . $role_id . "','" . $emp_id . "','" . $surname . "');";
         $db->query($sql);
         $user_id = mysqli_insert_id($db->link_id);
-
+        $select_user_id = $user_id;
         // пометили что пользователь - тестировщик
         $sql = "INSERT INTO `user_test` (`user_id`) VALUES('". $user_id ."');";
         $db->query($sql);
@@ -411,6 +411,10 @@ HERH;
 
         // если была почта
         if($email!=""){
+
+            $sql = "INSERT INTO `test_emp_mail_log` (`email`,`test_user_id`, `select_user_id`) VALUES('". $email ."','". $test_user_id ."','". $select_user_id ."')";
+            $db->query($sql);
+
             $send_mailer = $systems->create_mailer_object();
             $send_mailer->From = 'noreply@laborpro.ru';
             $send_mailer->FromName = 'Охрана Труда';
