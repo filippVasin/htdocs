@@ -485,12 +485,11 @@ $result_file =
 __________________________________________________________________</FONT></FONT></P>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Последнее
 место работы
-__________________________________________________________________</FONT></FONT></P>
+</FONT></FONT></P>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; border-top: none; border-bottom: 1.50pt solid #000000; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; line-height: 100%">
 <BR>
 </P>
-<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
-</P>
+
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
 </P>
 <TABLE WIDTH=639 CELLPADDING=7 CELLSPACING=0>
@@ -595,13 +594,8 @@ __________________________________________________________________</FONT></FONT>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>	</FONT></FONT></P>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>			</FONT></FONT></P>
 
-<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
-</P>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif" attr="'.$today .'"><FONT SIZE=4>Начальник
 отдела кадров				Л.В. Рыльская</FONT></FONT></P>
-
-
-
 </div>
 </BODY>
 </HTML>';

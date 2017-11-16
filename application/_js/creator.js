@@ -454,6 +454,7 @@ $(document).ready(function() {
 
                     $("#landing_form_offer_one").addClass("landing_form_offer_one");
                     if(status == "ok"){
+                        // печатаем мед направление
                         if(dol_id == 183) {
                             print_link(link);
                         }
