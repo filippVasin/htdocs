@@ -298,7 +298,14 @@ $(document).ready(function() {
                 $(this).detach().appendTo("#test_node_report");
             }
         });
-
+        // ищим отделы только с сотрудниками без дочерних отделов и показываем сразу сотрудников
+        $(".people").each(function() {
+            if($(this).siblings(".progress-group").length == 0){
+                var parent = $(this);
+                $(".fio_box",parent).removeClass("none");
+                $(".people_title",parent).addClass("none");
+            }
+        });
     }
 
 
@@ -845,6 +852,7 @@ $(".fc-day-grid-container").css("height","100%");
             $("#search_local_alert").click();
         }
     });
+
 
 
 
