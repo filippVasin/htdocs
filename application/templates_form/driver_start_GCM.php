@@ -561,12 +561,88 @@ __________________________________________________________________</FONT></FONT>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>	</FONT></FONT></P>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>			</FONT></FONT></P>
 
-<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
-</P>
 <P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif" attr="'.$today .'"><FONT SIZE=4>Начальник
 отдела кадров				Л.В. Рыльская</FONT></FONT></P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%"><A NAME="_GoBack"></A>
+<FONT SIZE=4><B>ПАМЯТКА<br></B></FONT>
+
+<FONT SIZE=4><B>по прохождению  профосмотра,
+водительской, оружейной комиссии в
+               ООО<br> « Городской Центр Медосмотра»</B></FONT></P>
+
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%">
+<FONT SIZE=4><B>ул. Вокзальная магистраль 1/1,
+этаж 2, каб.205</B></FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%">
+<FONT SIZE=4><B>Время работы: пн-пт с 7.30 до 17ч,
+в субботу с 8 до 14ч.</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=4>В нашем
+медицинском центре производится
+</FONT><FONT SIZE=4><B>предварительная запись на
+прохождение медицинского осмотра, по
+телефонам 328-01-03, 209-03-01</B></FONT></P>
+
+<P CLASS="western" STYLE="margin-bottom: 0in"><IMG SRC="application/templates_form/converted_file_bff16380_html_d2030b6.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=584 HEIGHT=339 BORDER=0></P>
 
 
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>1.	Пациент,
+пришедший на медицинский осмотр, должен
+иметь при себе:</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>-
+направление от организации с указанием
+проф. вредности согласно приказу 302н и
+профессии, а так же вид осмотра (первичный
+или периодический);</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>-
+паспорт;</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>-
+результаты ФЛГ (если проходили менее
+чем год назад);</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>-
+необходимые анализы (для сан.книжек:
+кал и моча, для проф.осмотра-моча).  </FONT>
+</P>
+
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>2.	За
+сутки до сдачи анализов не есть жирную
+и сильно сладкую пищу, не употреблять
+алкоголь. За 1 час до ЭКГ – не курить, не
+пить кофе/чай.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>При
+прохождении осмотра в дневное время
+для сдачи анализа (кровь), не кушать за
+3ч. Процедурный кабинет работает до 17ч!
+Анализы можно сдавать в течение всего
+дня!</FONT></P>
+
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>3.	При
+прохождении любого осмотра или комиссии
+с участием офтальмолога, контактные
+линзы необходимо снять не менее чем за
+12 часов до начала осмотра. </FONT>
+</P>
+
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>4.	Для
+прохождения УЗИ молочных желез (для
+женщин старше 40 лет) необходима
+предварительная запись по тел. 328-01-03,
+209-03-01. </FONT>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=3>5.	Для
+водительской справки, комиссия нарколога
+и психиатра с 1 апреля 2014г проводится
+только в специализированных диспансерах:
+ул.Светлая, 86 и ул.Каинская, 21а. В нашем
+медцентре можно получить бланк справки
+и пройти осмотр остальных врачей.</FONT></P>
 
 </div>
 </BODY>
