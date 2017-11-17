@@ -28,7 +28,7 @@ class Model_dead_end{
         $sql = "SELECT * FROM user_test WHERE user_test.user_id =" . $_SESSION['user_id'];
         $login_data = $db->row($sql);
 
-        if($login_data['id'] != '' && $_SESSION['role_id'] == 3 ) {
+        if($login_data['id'] != '') {
             $html = '<div class="button" id="reset_progress" reset_id="' . $_SESSION['employee_id'] . '">Сбросить результаты</div>';
         }
 
