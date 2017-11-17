@@ -26,11 +26,20 @@ class Model_master_report{
             case "doc":
                 $result_array = $this->doc_emp_report($emp_id);
                 break;
-            case "test_doc":
+            case "fact_test_doc":
                 $result_array = $this->test_emp_report($emp_id);
                 $content = '<br><label for="recipient-name" class="control-label">Отчёт по тестам:</label>';
                 $content .= $result_array['content'];
                 $result_array = $this->doc_emp_report($emp_id);
+                $content .='<br><label for="recipient-name" class="control-label">Отчёт по документам:</label>';
+                $content .= $result_array['content'];
+                $result_array['content'] =  $content;
+                break;
+            case "fact_test_doc":
+                $result_array = $this->fact_test_emp_report($emp_id);
+                $content = '<br><label for="recipient-name" class="control-label">Отчёт по тестам:</label>';
+                $content .= $result_array['content'];
+                $result_array = $this->fact_doc_emp_report($emp_id);
                 $content .='<br><label for="recipient-name" class="control-label">Отчёт по документам:</label>';
                 $content .= $result_array['content'];
                 $result_array['content'] =  $content;
@@ -41,14 +50,26 @@ class Model_master_report{
             case "local_alert_journal":
                 $result_array = $this->local_alert_journal();
                 break;
+            case "fact_local_alert_journal":
+                $result_array = $this->fact_local_alert_journal();
+                break;
             case "calendary_item":
                 $result_array = $this->calendary_item($str_date);
+                break;
+            case "fact_calendary_item":
+                $result_array = $this->fact_calendary_item($str_date);
                 break;
             case "calendary_item_type_emp":
                 $result_array = $this->calendary_item_type_emp($str_emp,$str_date);
                 break;
             case "get_calendary_all_event":
                 $result_array = $this->get_calendary_all_event($str_date);
+                break;
+            case "fact_get_calendary_all_event":
+                $result_array = $this->fact_get_calendary_all_event($str_date);
+                break;
+            case "fact_calendary_item_type_emp":
+                $result_array = $this->fact_calendary_item_type_emp($str_emp,$str_date);
                 break;
         }
 
@@ -216,6 +237,169 @@ FORM_NOW.doc_status_now,
         $result_array['content'] = $html;
         return $result_array;
     }
+
+
+    private function fact_test_emp_report($emp_id){
+        global $db;
+
+        $sql ="SELECT
+/* Вывод даннных */
+FORM_CHECK.form_id AS doc_all,
+FORM_NOW.doc_status_now,
+  employees.id AS EMPLOY, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+   route_control_step.id AS STEP, route_control_step.`periodicity`, history_docs.`id` AS history_docs,history_docs.date_finish,
+   /* условный вывод */
+  CASE
+   WHEN MIN(history_docs.date_start) IS NULL
+   THEN 'Не начинал'
+   ELSE MIN(history_docs.date_start)
+   END AS StartStep,
+   CASE
+   WHEN MAX(history_docs.date_finish) IS NULL
+   THEN 'Не прошел'
+   ELSE MAX(history_docs.date_finish)
+   END  AS FinishStep,
+  items_control.name,
+  /* клеем фио */
+  org_parent.id AS dir_id, org_parent.left_key, org_parent.right_key, org_parent.level,
+   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
+  route_control_step.step_name AS manual, TempTest.SaveTempID
+
+  FROM (route_control_step,route_doc,employees)
+  LEFT JOIN
+    history_docs
+    /* история документов по шагам */
+    ON (history_docs.step_id = route_control_step.id
+       AND
+       history_docs.employee_id = employees.id)
+       /* привязка сотрудника к должности */
+       LEFT JOIN employees_items_node ON employees_items_node.employe_id = employees.id
+       LEFT JOIN fact_organization_structure ON employees_items_node.org_str_id = fact_organization_structure.id
+       LEFT JOIN items_control ON items_control.id = fact_organization_structure.kladr_id
+       /* находим родительскузел, должность и тип должности */
+     LEFT JOIN fact_organization_structure AS org_parent
+     ON (org_parent.left_key < fact_organization_structure.left_key AND org_parent.right_key > fact_organization_structure.right_key
+     AND org_parent.level =(fact_organization_structure.level - 1) )
+     LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+     /* узлы с индивидуальными треками */
+    LEFT JOIN fact_organization_structure AS TreeOfParents
+     ON TreeOfParents.id = route_doc.organization_structure_id
+    LEFT JOIN
+    /*  получаем id сохранённого файла если он сеть*/
+    	(SELECT
+			save_temp_files.id AS SaveTempID, history_forms.step_end_time AS TempIdDateStatus, type_form.name AS TempName,
+			save_temp_files.employee_id AS TempEmpliD, company_temps.id AS TempCompanyId, step_content.id AS ContentFormId,
+			form_step_action.action_name AS ActionName
+			FROM
+				(save_temp_files, form_status_now, history_forms, type_temp, company_temps, type_form, form_step_action, temps_form_step)
+				/* нужны те шаги где есть form_id */
+				LEFT JOIN step_content
+					ON step_content.form_id = company_temps.id
+			WHERE
+				save_temp_files.id = form_status_now.save_temps_file_id
+				AND
+				form_status_now.history_form_id = history_forms.id
+				AND
+				type_temp.id = company_temps.temp_type_id
+				AND
+				save_temp_files.company_temps_id = company_temps.id
+				AND
+				type_form.id = type_temp.temp_form_id
+				AND
+				temps_form_step.id = form_status_now.track_form_step_now
+				AND
+				form_step_action.id = temps_form_step.action_form) AS TempTest
+				/* приклееваем по совпадению пар сотрудников и шагов */
+		ON (TempTest.TempEmpliD=employees.id AND TempTest.ContentFormId = route_control_step.step_content_id)
+		LEFT JOIN step_content AS FORM_CHECK ON FORM_CHECK.id = route_control_step.step_content_id
+		LEFT JOIN form_status_now AS FORM_NOW ON FORM_NOW.author_employee_id = employees.id
+  WHERE
+      /* все роуты с треками */
+    route_control_step.track_number_id = route_doc.id
+    AND
+  /* для всех должностей ... */
+   (route_doc.item_type_id IS NULL
+          OR
+          /* ... или по паре должность  - конкретный сотрудник*/
+        route_doc.item_type_id IN
+          /* Start Ищем ID Должности из таблици employees_item_node для заданного сотрудника employe.id */
+          (SELECT EmplOrg.kladr_id
+            FROM
+              employees AS Empl, employees_items_node AS EmplItem, fact_organization_structure AS EmplOrg
+            WHERE
+              Empl.id = EmplItem.employe_id
+              AND
+              EmplItem.org_str_id=EmplOrg.id
+              )
+    )
+    AND
+    /* для всех узлов или конкретных узлов по конкретным сотрудникам */
+    (route_doc.organization_structure_id IS NULL
+   OR
+     (fact_organization_structure.left_key >= TreeOfParents.left_key
+     AND
+     fact_organization_structure.right_key <= TreeOfParents.right_key)
+     )
+	AND	fact_organization_structure.company_id
+   AND
+   /* по фирме*/
+
+    route_doc.company_id = ". $_SESSION['control_company'] ."
+    		AND employees.id = employees_items_node.employe_id
+    		AND fact_organization_structure.id = employees_items_node.org_str_id
+    		AND fact_organization_structure.company_id = ". $_SESSION['control_company'] ."
+    		AND org_parent.company_id = ". $_SESSION['control_company'] ."
+	     AND
+    /* для всех сотрудников или только для конкретного */
+    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
+    AND employees.id = ". $emp_id ."
+    GROUP BY EMPLOY, STEP";
+
+
+        $docs_array = $db->all($sql);
+        $html = "<table id='table_test_emp_report_popup' class='table table-bordered table-striped'>
+                <thead>
+                <tr>
+                    <th>Документ</th>
+                    <th>Начало</th>
+                    <th>Окончание</th>
+                </tr>
+                </thead>
+                <tbody>";
+        foreach ($docs_array as $docs_array_item) {
+
+            if($docs_array_item['StartStep'] == "Не начинал"){
+                $class_one = "br_color";
+            } else {
+                $class_one = "";
+            }
+            if($docs_array_item['FinishStep'] == "Не прошел"){
+                $class_two = "br_color";
+            } else {
+                $class_two = "";
+            }
+            // проверяем по фильтрам
+            $html .= '<tr>
+                        <td>' . $docs_array_item['manual'] . '</td>
+                        <td class = "'. $class_one .'" >' . $docs_array_item['StartStep'] . '</td>
+                        <td class = "'. $class_two .'" >' . $docs_array_item['FinishStep'] . '</td>
+                    </tr>';
+
+        }
+        $html .='</tbody> </table>';
+
+
+
+        $result_array['content'] = $html;
+        return $result_array;
+    }
+
+
+
+
+
+
     private function emp_emp_report($emp_id){
         global $db;
 
@@ -521,6 +705,178 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
     }
 
 
+
+    private function fact_doc_emp_report($emp_id){
+        global $db;
+
+        $sql ="SELECT
+/* Вывод даннных */
+form_status_now.save_temps_file_id AS ID_FILES,
+temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step_id, form_step_action.user_action_name AS action,
+  employees.id AS EMPLOY, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+   route_control_step.id AS STEP, route_control_step.`periodicity`, history_docs.`id` AS history_docs,history_docs.date_finish,
+   /* условный вывод */
+ 	/* чтобы выводить все записи без учёта переодики, оставитьтолько
+	MIN(history_docs.date_start) в условии NULL в CASE*/
+  CASE
+   WHEN (history_docs.date_finish IS NULL)
+			OR
+			((route_control_step.periodicity is not NULL)
+			 	AND
+			( NOW() > (history_docs.date_start + INTERVAL route_control_step.periodicity MONTH)))
+   THEN 'Ещё не создан'
+   ELSE document_status_now.name
+   END AS DoC_Status,
+
+  items_control.name AS DOL,document_status_now.id AS doc_status_id,form_step_action.action_triger,
+  /* клеем фио */
+   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir
+
+  FROM (route_control_step,route_doc,employees)
+  LEFT JOIN
+    history_docs
+    /* история документов по шагам */
+    ON (history_docs.step_id = route_control_step.id
+       AND
+       history_docs.employee_id = employees.id
+       /* чтобы выводить все записи без учёта переодики, убрать этот AND*** */
+       AND
+		 		((route_control_step.periodicity is NULL)
+		 		OR
+				( NOW() < (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH))
+				OR
+				( NOW() < (history_docs.date_start + INTERVAL route_control_step.periodicity MONTH)))
+       )
+       /* достяём докуменны*/
+       LEFT JOIN step_content ON step_content.id = route_control_step.step_content_id
+       LEFT JOIN company_temps ON step_content.form_id = company_temps.id
+		 LEFT JOIN type_temp ON type_temp.id =  company_temps.temp_type_id
+		 LEFT JOIN temp_doc_form ON temp_doc_form.id = type_temp.temp_form_id
+		 LEFT JOIN type_form ON type_form.id =  type_temp.type_form_id
+		 /* пошли за экшенами*/
+		 LEFT JOIN form_status_now ON (form_status_now.step_id = route_control_step.id
+		 										AND
+												 form_status_now.author_employee_id = employees.id)
+		 LEFT JOIN temps_form_step ON temps_form_step.id = form_status_now.track_form_step_now
+		 LEFT JOIN form_step_action ON form_step_action.id = temps_form_step.action_form
+		 LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
+
+       /* привязка сотрудника к должности */
+       LEFT JOIN employees_items_node ON employees_items_node.employe_id = employees.id
+       LEFT JOIN fact_organization_structure ON employees_items_node.org_str_id = fact_organization_structure.id
+       LEFT JOIN items_control ON items_control.id = fact_organization_structure.kladr_id
+       /* находим родительскузел, должность и тип должности */
+     LEFT JOIN fact_organization_structure AS org_parent
+     ON (org_parent.left_key < fact_organization_structure.left_key AND org_parent.right_key > fact_organization_structure.right_key
+     AND org_parent.level =(fact_organization_structure.level - 1) )
+     LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+     /* узлы с индивидуальными треками */
+    LEFT JOIN fact_organization_structure AS TreeOfParents
+     ON TreeOfParents.id = route_doc.organization_structure_id
+    LEFT JOIN
+    /*  получаем id сохранённого файла если он сеть*/
+    	(SELECT
+			save_temp_files.id AS SaveTempID, history_forms.step_end_time AS TempIdDateStatus, type_form.name AS TempName,
+			save_temp_files.employee_id AS TempEmpliD, company_temps.id AS TempCompanyId, step_content.id AS ContentFormId,
+			form_step_action.action_name AS ActionName
+			FROM
+				(save_temp_files, form_status_now, history_forms, type_temp, company_temps, type_form, form_step_action, temps_form_step)
+				/* нужны те шаги где есть form_id */
+				LEFT JOIN step_content
+					ON step_content.form_id = company_temps.id
+			WHERE
+				save_temp_files.id = form_status_now.save_temps_file_id
+				AND
+				form_status_now.history_form_id = history_forms.id
+				AND
+				type_temp.id = company_temps.temp_type_id
+				AND
+				save_temp_files.company_temps_id = company_temps.id
+				AND
+				type_form.id = type_temp.temp_form_id
+				AND
+				temps_form_step.id = form_status_now.track_form_step_now
+				AND
+				form_step_action.id = temps_form_step.action_form) AS TempTest
+				/* приклееваем по совпадению пар сотрудников и шагов */
+		ON (TempTest.TempEmpliD=employees.id AND TempTest.ContentFormId = route_control_step.step_content_id)
+  WHERE
+      /* все роуты с треками */
+    route_control_step.track_number_id = route_doc.id
+    AND
+  /* для всех должностей ... */
+   (route_doc.item_type_id IS NULL
+          OR
+          /* ... или по паре должность  - конкретный сотрудник*/
+        route_doc.item_type_id IN
+          /* Start Ищем ID Должности из таблици employees_item_node для заданного сотрудника employe.id */
+          (SELECT EmplOrg.kladr_id
+            FROM
+              employees AS Empl, employees_items_node AS EmplItem, fact_organization_structure AS EmplOrg
+            WHERE
+              Empl.id = EmplItem.employe_id
+              AND
+              EmplItem.org_str_id=EmplOrg.id
+              )
+    )
+    AND
+    /* для всех узлов или конкретных узлов по конкретным сотрудникам */
+    (route_doc.organization_structure_id IS NULL
+   OR
+     (fact_organization_structure.left_key >= TreeOfParents.left_key
+     AND
+     fact_organization_structure.right_key <= TreeOfParents.right_key)
+     )
+	AND	fact_organization_structure.company_id
+   AND
+   /* по фирме*/
+
+    route_doc.company_id = ". $_SESSION['control_company'] ."
+    		AND employees.id = employees_items_node.employe_id
+    		AND organization_structure.id = employees_items_node.org_str_id
+    		AND organization_structure.company_id = ". $_SESSION['control_company'] ."
+    		AND org_parent.company_id = ". $_SESSION['control_company'] ."
+    		/* только те шаги где надо создать документы */
+	     AND step_content.form_id is not NULL
+   		AND (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
+   		AND employees.id =  ". $emp_id ."
+   		GROUP BY EMPLOY, STEP, name_doc";
+
+
+
+        $docs_array = $db->all($sql);
+        $html = "<table id='table_doc_emp_report_popup' class='table table-bordered table-striped'>
+                <thead>
+                <tr>
+                    <td>Документ</td>
+                    <td>Начало</td>
+                    <td>Окончание</td>
+                </tr>
+                </thead>
+                <tbody>";
+
+        foreach ($docs_array as $docs_array_item) {
+            if($docs_array_item['DoC_Status']=="Ещё не создан"){
+                $class_one = "br_color";
+            } else {
+                $class_one = "";
+            }
+            // проверяем по фильтрам
+            $html .= '<tr>
+                        <td>' . $docs_array_item['name_doc'] . '</td>
+                        <td>' . $docs_array_item['action'] . '</td>
+                        <td class = "'. $class_one .'" >' . $docs_array_item['DoC_Status'] . '</td>
+                    </tr>';
+
+        }
+        $html .= '</tbody> </table>';
+
+        $result_array['content'] = $html;
+        return $result_array;
+    }
+
+
     public function org_str_tree(){
 
         global $db;
@@ -695,49 +1051,93 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         return $result_array;
     }
 
+    private function fact_local_alert_journal(){
+        global $db;
+        $search_string = $this->post_array['search_string'];
+
+        $html = "";
+
+        $sql = "(SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
+                    form_step_action.action_name,form_step_action.user_action_name,
+                    CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
+                    local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
+                    items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
+                    document_status_now.id AS doc_trigger
+                    FROM (local_alerts,employees_items_node, employees AS init_em,
+                    cron_action_type, form_step_action)
+                    LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
+                    LEFT JOIN fact_organization_structure ON fact_organization_structure.id = NODE.org_str_id
+                    LEFT JOIN items_control ON items_control.id = fact_organization_structure.kladr_id
+                    LEFT JOIN fact_organization_structure AS org_parent
+                    ON (org_parent.left_key < fact_organization_structure.left_key AND org_parent.right_key > fact_organization_structure.right_key
+                        AND org_parent.level =(fact_organization_structure.level - 1) )
+                    LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+                    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+
+                    LEFT JOIN form_status_now ON form_status_now.save_temps_file_id = local_alerts.save_temp_files_id
+                    LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
+                    LEFT JOIN save_temp_files ON save_temp_files.id = local_alerts.save_temp_files_id
+                    LEFT JOIN route_control_step ON route_control_step.`id`= local_alerts.step_id
+
+                    WHERE local_alerts.company_id = ". $_SESSION['control_company'] ."
+
+                        AND local_alerts.initiator_employee_id = init_em.id
+                        AND form_step_action.id = local_alerts.action_type_id
+                        AND local_alerts.date_finish IS NULL
+                         GROUP BY local_alerts.id ";
+
+        $sql.=" )
+     UNION
+     (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+		FROM local_alerts, sump_for_employees
+		WHERE local_alerts.action_type_id = 17
+		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
+		AND sump_for_employees.id = local_alerts.save_temp_files_id )";
+        $alert_every_days = $db->all($sql);
+        $count = 0;
+        foreach ($alert_every_days as $alert_every_day) {
+
+            if((stristr($alert_every_day['fio'], $search_string)) || ((stristr($alert_every_day['file'], $search_string))) || ($search_string == "")) {
+
+                // лимит
+                if ($count < 7) {
+                    $html .= '<li>
+                <!-- todo text -->
+                <span class="text alert_row" action_type="' . $alert_every_day['action_type_id'] . '"
+                                                    observer_em=' . $_SESSION['employee_id'] . '
+                                                    dol="' . $alert_every_day['position'] . '"
+                                                    emp="' . $alert_every_day['em_id'] . '"
+                                                    doc_trigger="' . $alert_every_day['doc_trigger'] . '"
+                                                     dir="' . $alert_every_day['dir'] . '"
+                                                     doc="' . $alert_every_day['file'] . '"
+                                                     name="' . $alert_every_day['fio'] . '"
+                                                     local_id="' . $alert_every_day['id'] . '"
+                                                      file_id="' . $alert_every_day['save_temp_files_id'] . '"
+                  style=" font-size: 13px;width: 75%;cursor: pointer;">' . $alert_every_day['fio'] . " / " . $alert_every_day['file'] . '</span>
+                <!-- Emphasis label -->
+                    <small class="label label-danger" style="line-height: 31px;" ><i class="fa fa-clock-o"></i> ' . date_create($alert_every_day['date_create'])->Format('d-m-Y') . '</small>
+                <!-- General tools such as edit or delete-->
+                <div class="tools" style="display: none">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                </div>
+            </li>';
+                }
+                ++$count;
+            }
+        }
+
+
+        $result_array['content'] = $html;
+        return $result_array;
+    }
 
 
 
     private function calendary_item($str_date){
         global $db;
         $today = date("Y-m-d");
-//        $sql="SELECT route_doc.id,
-//                      employees.id as employee_id,
-//                      CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
-//                      route_control_step.id AS step_id,
-//                      employees.start_date as employees_start,
-//                      history_step.data_finish,
-//                      route_control_step.periodicity,
-//                      route_control_step.step_name as step_name
-//                     FROM (employees,organization_structure, employees_items_node)
-//                         LEFT JOIN route_doc  ON ((route_doc.company_id = organization_structure.company_id)
-//                                                         AND
-//                                                         ((route_doc.employee_id = employees.id)
-//                                                             OR
-//                                                             (route_doc.item_type_id = organization_structure.kladr_id)
-//                                                             OR
-//                                                             (organization_structure.id IN (SELECT org_child.id
-//                                                                 FROM (organization_structure,route_doc)
-//                                                                     LEFT JOIN organization_structure AS org_child ON (org_child.left_key >= organization_structure.left_key
-//                                                                                                                                         AND
-//                                                                                                                                         org_child.right_key <= organization_structure.right_key
-//                                                                                                                                         AND
-//                                                                                                                                         org_child.company_id = organization_structure.company_id)
-//                                                                 WHERE  organization_structure.id = route_doc.organization_structure_id
-//                                                                 AND route_doc.company_id = " . $_SESSION['control_company'] . "))))
-//
-//                                LEFT JOIN route_control_step ON route_control_step.track_number_id = route_doc.id
-//
-//                          LEFT JOIN history_step ON (history_step.employee_id = employees.id
-//                                                                 AND
-//                                                             history_step.step_id = route_control_step.id)
-//
-//                     WHERE organization_structure.company_id = " . $_SESSION['control_company'] . "
-//                     AND employees_items_node.employe_id = employees.id
-//                     AND organization_structure.id = employees_items_node.org_str_id
-//                     AND route_doc.id is not NULL
-//
-//                     ORDER BY employee_id";
+
 
         $sql="SELECT
 /* Вывод даннных */
@@ -917,6 +1317,186 @@ route_control_step.track_number_id AS id,
         return $result_array;
     }
 
+
+
+    private function fact_calendary_item($str_date){
+        global $db;
+        $today = date("Y-m-d");
+
+
+        $sql="SELECT
+/* Вывод даннных */
+route_control_step.track_number_id AS id,
+  employees.id AS employee_id,
+  route_control_step.id AS ID_STEP,
+   employees.start_date as employees_start,
+   history_docs.date_finish,
+     route_control_step.`periodicity`,
+   CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+  route_control_step.step_name
+  FROM (route_control_step,route_doc,employees)
+  LEFT JOIN
+    history_docs
+    /* история документов по шагам */
+    ON (history_docs.step_id = route_control_step.id
+       AND
+       history_docs.employee_id = employees.id
+       /* чтобы выводить все записи без учёта переодики, убрать этот AND*** */
+       AND
+		 		((route_control_step.periodicity is NULL)
+		 		OR
+				( NOW() < (history_docs.date_finish + INTERVAL route_control_step.periodicity MONTH))
+				OR
+				( NOW() < (history_docs.date_start + INTERVAL route_control_step.periodicity MONTH)))
+       )
+       /* привязка сотрудника к должности */
+       LEFT JOIN employees_items_node ON employees_items_node.employe_id = employees.id
+       LEFT JOIN fact_organization_structure ON employees_items_node.org_str_id = fact_organization_structure.id
+       LEFT JOIN items_control ON items_control.id = fact_organization_structure.kladr_id
+       /* находим родительскузел, должность и тип должности */
+     LEFT JOIN fact_organization_structure AS org_parent
+     ON (org_parent.left_key < fact_organization_structure.left_key AND org_parent.right_key > fact_organization_structure.right_key
+     AND org_parent.level =(fact_organization_structure.level - 1) )
+     LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
+    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+     /* узлы с индивидуальными треками */
+    LEFT JOIN fact_organization_structure AS TreeOfParents
+     ON TreeOfParents.id = route_doc.organization_structure_id
+    LEFT JOIN
+    /*  получаем id сохранённого файла если он сеть*/
+    	(SELECT
+			save_temp_files.id AS SaveTempID, history_forms.step_end_time AS TempIdDateStatus, type_form.name AS TempName,
+			save_temp_files.employee_id AS TempEmpliD, company_temps.id AS TempCompanyId, step_content.id AS ContentFormId,
+			form_step_action.action_name AS ActionName
+			FROM
+				(save_temp_files, form_status_now, history_forms, type_temp, company_temps, type_form, form_step_action, temps_form_step)
+				/* нужны те шаги где есть form_id */
+				LEFT JOIN step_content
+					ON step_content.form_id = company_temps.id
+			WHERE
+				save_temp_files.id = form_status_now.save_temps_file_id
+				AND
+				form_status_now.history_form_id = history_forms.id
+				AND
+				type_temp.id = company_temps.temp_type_id
+				AND
+				save_temp_files.company_temps_id = company_temps.id
+				AND
+				type_form.id = type_temp.temp_form_id
+				AND
+				temps_form_step.id = form_status_now.track_form_step_now
+				AND
+				form_step_action.id = temps_form_step.action_form) AS TempTest
+				/* приклееваем по совпадению пар сотрудников и шагов */
+		ON (TempTest.TempEmpliD=employees.id AND TempTest.ContentFormId = route_control_step.step_content_id)
+  WHERE
+      /* все роуты с треками */
+    route_control_step.track_number_id = route_doc.id
+    AND
+  /* для всех должностей ... */
+   (route_doc.item_type_id IS NULL
+          OR
+          /* ... или по паре должность  - конкретный сотрудник*/
+        route_doc.item_type_id IN
+          /* Start Ищем ID Должности из таблици employees_item_node для заданного сотрудника employe.id */
+          (SELECT EmplOrg.kladr_id
+            FROM
+              employees AS Empl, employees_items_node AS EmplItem, fact_organization_structure AS EmplOrg
+            WHERE
+              Empl.id = EmplItem.employe_id
+              AND
+              EmplItem.org_str_id=EmplOrg.id
+              )
+    )
+    AND
+    /* для всех узлов или конкретных узлов по конкретным сотрудникам */
+    (route_doc.fact_organization_structure IS NULL
+   OR
+     (fact_organization_structure.left_key >= TreeOfParents.left_key
+     AND
+     fact_organization_structure.right_key <= TreeOfParents.right_key)
+     )
+	AND	fact_organization_structure.company_id
+   AND
+   /* по фирме*/
+
+    route_doc.company_id = fact_organization_structure.company_id
+    		AND employees.id = employees_items_node.employe_id
+    		AND fact_organization_structure.id = employees_items_node.org_str_id
+    		AND fact_organization_structure.company_id = org_parent.company_id
+    		AND org_parent.company_id = " . $_SESSION['control_company'] . "
+	     AND
+    /* для всех сотрудников или только для конкретного */
+    (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
+      GROUP BY employee_id, ID_STEP";
+        $briefings = $db->all($sql);
+        $result_array = array();
+
+        foreach ($briefings as $key=>$briefing) {
+            $result_array [$key]['step_name']= $briefing['step_name'];
+            $result_array [$key]['id']= $briefing['id'];
+            $result_array [$key]['fio']= $briefing['fio'];
+            $result_array [$key]['emp']= $briefing['employee_id'];
+            $result_array [$key]['start']= $briefing['employees_start'];
+            $result_array [$key]['end']= $briefing['employees_start'];
+            $result_array [$key]['periodicity']= $briefing['periodicity'];
+            $result_array [$key]['data_finish'] = $briefing['date_finish'];
+            $result_array [$key]['textColor']= '#fff';
+
+            $periodicity = $briefing['periodicity'];
+
+
+            // выставляем дату и приводим к одному виду
+            $result_array [$key]['start'] = $briefing['employees_start'];
+            if($periodicity > 0 ){
+                if($briefing['date_finish']){
+                    // как много времени прошло с момента прохождения
+                    if((strtotime("+".$periodicity." month", strtotime($briefing['date_finish']))) >= (strtotime("-7 day", strtotime($today)))){
+                        // если период ещё не закончился
+                        $result_array [$key]['start'] = date_create($briefing['date_finish'])->Format('Y-m-d');
+                    } else {
+                        // если период закончился - назначаем новый срок прохождения
+                        $next_data =  (strtotime("+".$periodicity." month", strtotime($briefing['date_finish'])));
+                        $result_array [$key]['start'] =  date_create($next_data)->Format('Y-m-d');
+                    }
+                } else {
+                    // сотрудник не проходил с момента трудоустройства
+                }
+            } else {
+                //  если нет периодики и инструктаж пройден
+                if($briefing['date_finish']){
+                    $result_array [$key]['start'] = date_create($briefing['date_finish'])->Format('Y-m-d');
+                }
+            }
+
+        }// конец цикла
+
+        // перебираем для схлопывания по дате
+        $html = "<table id='calendary_item_popup' class='table table-bordered table-striped'>
+                <thead>
+                <tr>
+                    <td><b>Сотрудник</b></td>
+                    <td><b>Инструктаж</b></td>
+                    <td><b>Дата</b></td>
+                </tr>
+                </thead>
+                <tbody>";
+
+        foreach ($result_array as $item) {
+            if(($item['start'] == $str_date) && ($item['step_name'] !="")){
+                $html .= '<tr>
+                        <td>' . $item['fio'] . '</td>
+                        <td>' . $item['step_name'] . '</td>
+                        <td>' . $item['start'] . '</td>
+                    </tr>';
+            }
+        }
+
+        $html .= '</tbody> </table>';
+        $result_array['content'] = $html;
+        return $result_array;
+    }
+
     private function calendary_item_type_emp($str_emp,$str_date){
         global $db;
         $today = date("Y-m-d");
@@ -1032,6 +1612,122 @@ route_control_step.track_number_id AS id,
         return $result_array;
     }
 
+
+
+    private function fact_calendary_item_type_emp($str_emp,$str_date){
+        global $db;
+        $today = date("Y-m-d");
+        $sql="SELECT route_doc.id,
+                      employees.id as employee_id,
+                      CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
+                      route_control_step.id AS step_id,
+                      employees.start_date as employees_start,
+                      history_step.data_finish,
+                      route_control_step.periodicity,
+                      route_control_step.step_name as step_name
+                     FROM (employees,fact_organization_structure, employees_items_node)
+                         LEFT JOIN route_doc  ON ((route_doc.company_id = fact_organization_structure.company_id)
+                                                         AND
+                                                         ((route_doc.employee_id = employees.id)
+                                                             OR
+                                                             (route_doc.item_type_id = fact_organization_structure.kladr_id)
+                                                             OR
+                                                             (fact_organization_structure.id IN (SELECT org_child.id
+                                                                 FROM (fact_organization_structure,route_doc)
+                                                                     LEFT JOIN fact_organization_structure AS org_child ON (org_child.left_key >= fact_organization_structure.left_key
+                                                                                                                                         AND
+                                                                                                                                         org_child.right_key <= fact_organization_structure.right_key
+                                                                                                                                         AND
+                                                                                                                                         org_child.company_id = fact_organization_structure.company_id)
+                                                                 WHERE  fact_organization_structure.id = route_doc.organization_structure_id
+                                                                 AND route_doc.company_id = " . $_SESSION['control_company'] . "))))
+
+                                LEFT JOIN route_control_step ON route_control_step.track_number_id = route_doc.id
+
+                          LEFT JOIN history_step ON (history_step.employee_id = employees.id
+                                                                 AND
+                                                             history_step.step_id = route_control_step.id)
+
+                     WHERE fact_organization_structure.company_id = " . $_SESSION['control_company'] . "
+                     AND employees_items_node.employe_id = employees.id
+                     AND fact_organization_structure.id = employees_items_node.org_str_id
+                     AND route_doc.id is not NULL
+
+                     ORDER BY employee_id";
+
+
+        $briefings = $db->all($sql);
+        $result_array = array();
+
+        foreach ($briefings as $key=>$briefing) {
+            $result_array [$key]['step_name']= $briefing['step_name'];
+            $result_array [$key]['id']= $briefing['id'];
+            $result_array [$key]['fio']= $briefing['fio'];
+            $result_array [$key]['emp']= $briefing['employee_id'];
+            $result_array [$key]['start']= $briefing['employees_start'];
+            $result_array [$key]['end']= $briefing['employees_start'];
+            $result_array [$key]['periodicity']= $briefing['periodicity'];
+            $result_array [$key]['data_finish'] = $briefing['data_finish'];
+            $result_array [$key]['textColor']= '#fff';
+
+            $periodicity = $briefing['periodicity'];
+
+
+            // выставляем дату и приводим к одному виду
+            $result_array [$key]['start'] = $briefing['employees_start'];
+            if($periodicity > 0 ){
+                if($briefing['data_finish']){
+                    // как много времени прошло с момента прохождения
+                    if((strtotime("+".$periodicity." month", strtotime($briefing['data_finish']))) >= (strtotime("-7 day", strtotime($today)))){
+                        // если период ещё не закончился
+                        $result_array [$key]['start'] = date_create($briefing['data_finish'])->Format('Y-m-d');
+                    } else {
+                        // если период закончился - назначаем новый срок прохождения
+                        $next_data =  (strtotime("+".$periodicity." month", strtotime($briefing['data_finish'])));
+                        $result_array [$key]['start'] =  date_create($next_data)->Format('Y-m-d');
+                    }
+                } else {
+                    // сотрудник не проходил с момента трудоустройства
+                }
+            } else {
+                //  если нет периодики и инструктаж пройден
+                if($briefing['data_finish']){
+                    $result_array [$key]['start'] = date_create($briefing['data_finish'])->Format('Y-m-d');
+                }
+            }
+
+        }// конец цикла
+
+        // перебираем для схлопывания по дате
+        $html = "<table id='calendary_item_popup' class='table table-bordered table-striped'>
+                <thead>
+                <tr>
+                    <td><b>Сотрудник</b></td>
+                    <td><b>Инструктаж</b></td>
+                    <td><b>Дата</b></td>
+                </tr>
+                </thead>
+                <tbody>";
+
+        foreach ($result_array as $item) {
+            if(($item['emp'] == $str_emp) && ($item['start'] == $str_date) && ($item['step_name'] !="")){
+                $html .= '<tr>
+                        <td>' . $item['fio'] . '</td>
+                        <td>' . $item['step_name'] . '</td>
+                        <td>' . $item['start'] . '</td>
+                    </tr>';
+            }
+        }
+
+        $html .= '</tbody> </table>';
+        $result_array['content'] = $html;
+        return $result_array;
+    }
+
+
+
+
+
     private function get_calendary_all_event($str_date){
         global $db,$labro;
         $green = '#00a65a';
@@ -1073,6 +1769,60 @@ route_control_step.track_number_id AS id,
         foreach ($calendar as $item) {
                 $color = $blue;
                 $html .= '<tr>
+                        <td>' . $item['fio'] . '</td>
+                        <td style="color:'. $color .'">' . $item['title'] . '</td>
+                        <td>' . $item['start'] . '</td>
+                    </tr>';
+        }
+
+        $html .= '</tbody> </table>';
+
+        $result_array['content'] = $html;
+        return $result_array;
+    }
+
+
+    private function fact_get_calendary_all_event($str_date){
+        global $db,$labro;
+        $green = '#00a65a';
+        $yellow = '#f39c12';
+        $gray = '#a6a6a6';
+        $red = '#f44336';
+        $blue = "#4285f4";
+
+
+        // границы обзора
+        $keys =  $labro->observer_keys($_SESSION['employee_id']);
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+
+        $sql = "SELECT calendar.dataset AS fio,
+                    calendar.title ,
+                    calendar.`start`
+                    FROM calendar,route_control_step,employees_items_node, fact_organization_structure
+                    WHERE calendar.company_id = ". $_SESSION['control_company'] ."
+                    AND route_control_step.id = calendar.step_id
+                    AND calendar.emp_id = employees_items_node.employe_id
+                    AND fact_organization_structure.id = employees_items_node.org_str_id
+                    AND fact_organization_structure.left_key > ". $node_left_key ."
+                    AND fact_organization_structure.right_key < ". $node_right_key ."
+                    AND calendar.`start` ='" .$str_date ."'";
+        $calendar = $db->all($sql);
+
+        // перебираем для схлопывания по дате
+        $html = "<table id='calendary_item_popup' class='table table-bordered table-striped'>
+                <thead>
+                <tr>
+                    <td><b>Сотрудник</b></td>
+                    <td><b>Инструктаж</b></td>
+                    <td><b>Дата</b></td>
+                </tr>
+                </thead>
+                <tbody>";
+
+        foreach ($calendar as $item) {
+            $color = $blue;
+            $html .= '<tr>
                         <td>' . $item['fio'] . '</td>
                         <td style="color:'. $color .'">' . $item['title'] . '</td>
                         <td>' . $item['start'] . '</td>

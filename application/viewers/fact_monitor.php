@@ -3,36 +3,36 @@
 
 
 <div class="col-lg-4 col-xs-12">
-<div class="box box-primary">
-    <div class="box-header ui-sortable-handle" style="text-align: left;">
-        <i class="ion ion-clipboard" ></i>
+    <div class="box box-primary">
+        <div class="box-header ui-sortable-handle" style="text-align: left;">
+            <i class="ion ion-clipboard" ></i>
 
-        <h3 class="box-title">Задачи</h3>
+            <h3 class="box-title">Задачи</h3>
 
 
-        <div class="box-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
-                <input type="text" id="search_local_alert_input"  name="table_search" class="form-control pull-right" placeholder="Поиск">
+            <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" id="search_local_alert_input"  name="table_search" class="form-control pull-right" placeholder="Поиск">
 
-                <div class="input-group-btn" id="search_local_alert">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    <div class="input-group-btn" id="search_local_alert">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="padding: 1px;">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+            <ul class="todo-list ui-sortable" id="ul_alert_journal">
+                %journal%
+            </ul>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer clearfix no-border">
+            <button  id="link_docs_report" type="button" class="btn pull-right"> Все</button>
+        </div>
     </div>
-    <!-- /.box-header -->
-    <div class="box-body" style="padding: 1px;">
-        <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
-        <ul class="todo-list ui-sortable" id="ul_alert_journal">
-            %journal%
-        </ul>
-    </div>
-    <!-- /.box-body -->
-    <div class="box-footer clearfix no-border">
-        <button  id="link_docs_report" type="button" class="btn pull-right"> Все</button>
-    </div>
-</div>
 </div>
 
 <div class="col-lg-4  col-xs-12">
@@ -168,7 +168,7 @@
 
             </div>
             <div class="modal-footer">
-<!--                <button type="button" id="yes_popup_3" class="btn btn-primary">Подписал</button>-->
+                <!--                <button type="button" id="yes_popup_3" class="btn btn-primary">Подписал</button>-->
                 <button type="button" class="btn alert_cancel btn-default" data-dismiss="modal">Закрыть</button>
             </div>
         </div>
