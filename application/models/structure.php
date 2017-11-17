@@ -38,7 +38,8 @@ class Model_structure
                 inner join items_control_types on organization_structure.items_control_id = items_control_types.id
                 left join employees_items_node on employees_items_node.org_str_id = organization_structure.id
                 left join employees on employees_items_node.employe_id = employees.id
-                Where organization_structure.company_id =" . $_SESSION['control_company'] . "  ORDER BY left_key";
+                Where organization_structure.company_id =" . $_SESSION['control_company'] . "
+                AND organization_structure.left_key > 0  ORDER BY left_key";
 
 
         $employees = $db->all($sql);
@@ -156,11 +157,30 @@ class Model_structure
             $sql = "UPDATE `organization_structure` SET `left_key` = (left_key + 2) WHERE `left_key` >= {$paren_data['right_key']}";
             $db->query($sql);
 
-
-            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`)
-            VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
+            $mail_period = 0;
+            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`, `kladr_id`, `boss_type`,`mail_period`)
+            VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."', '".$mail_period."');";
             $db->query($sql);
             $id_item = mysqli_insert_id($db->link_id);
+
+            // записываем информацию о создании в бэкап базу (0,parent_new - добавление)
+            $parent_old = 0;
+            $parent_new = $parent;
+            $org_struct_node = $id_item;
+            $sql = "INSERT INTO `parent_backup` (`org_struct_node`, `parent_old`, `parent_new`, `company_id`, `date_update`,`level`,`left_key`,`right_key`,`items_control_id`,`kladr_id`,`boss_type`,`mail_period`)
+            VALUES('". $org_struct_node ."',
+                    '". $parent_old ."',
+                     '". $parent_new ."',
+                      '".$company_id."',
+                        NOW(),
+                        '". $level ."',
+                         '".$left_key."',
+                          '". $right_key ."',
+                           '". $items_control_id ."',
+                            '".$kladr_id."',
+                             '". $boss_type ."',
+                              '". $mail_period ."');";
+            $db->query($sql);
 
             $sql = "SELECT * FROM items_control WHERE items_control.id ='".$kladr_id."';";
             $item_data = $db->row($sql);
@@ -192,12 +212,32 @@ class Model_structure
             $sql = "UPDATE `organization_structure` SET `left_key` = (left_key + 2) WHERE `left_key` >= {$paren_data['right_key']}";
             $db->query($sql);
 
-
             $boss_type = 1;
-            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`,`kladr_id`,  `boss_type`)
-            VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."');";
+            $mail_period = 0;
+            $sql = "INSERT INTO `organization_structure` (`level`, `left_key`, `right_key`, `parent`, `company_id`, `items_control_id`,`kladr_id`,  `boss_type`, `mail_period`)
+            VALUES('". $level ."', '". $left_key ."', '". $right_key ."', '".$parent."', '".$company_id."', '".$items_control_id."', '". $kladr_id ."', '".$boss_type."', '". $mail_period ."');";
             $db->query($sql);
             $id_item = mysqli_insert_id($db->link_id);
+
+            // записываем информацию о создании в бэкап базу (0,parent_new - добавление)
+            $parent_old = 0;
+            $parent_new = $parent;
+            $org_struct_node = $id_item;
+            $sql = "INSERT INTO `parent_backup` (`org_struct_node`, `parent_old`, `parent_new`, `company_id`, `date_update`,`level`,`left_key`,`right_key`,`items_control_id`,`kladr_id`,`boss_type`,`mail_period`)
+            VALUES('". $org_struct_node ."',
+                    '". $parent_old ."',
+                     '". $parent_new ."',
+                      '".$company_id."',
+                        NOW(),
+                        '". $level ."',
+                         '".$left_key."',
+                          '". $right_key ."',
+                           '". $items_control_id ."',
+                            '".$kladr_id."',
+                             '". $boss_type ."',
+                              '". $mail_period ."');";
+            $db->query($sql);
+
 
             $sql = "SELECT * FROM items_control WHERE items_control.id =".$kladr_id ;
             $item_data = $db->row($sql);
@@ -242,10 +282,14 @@ class Model_structure
             $result_array['status'] = 'error';
             $result_array['report'] = 'Ошибка! За элементом закреплены сотрудники';
         } else {
+
+
+
             // получаем данные о удаляемом элемента
             $sql="SELECT (organization_structure.right_key - organization_structure.left_key + 1) AS delta, organization_structure.left_key,
                   organization_structure.right_key,
-                  organization_structure.company_id
+                  organization_structure.company_id,
+                  organization_structure.parent
                     FROM organization_structure
                     WHERE organization_structure.id =".$delete_item_id;
             $delete_node = $db->row($sql);
@@ -253,14 +297,48 @@ class Model_structure
             $left_key = $delete_node ["left_key"];
             $right_key = $delete_node ["right_key"];
             $company_id = $delete_node ["company_id"];
+            $parent = $delete_node ["parent"];
+
+
+            // записываем информацию о удалении в бэкап базу (parent_old, 0 - удаление)
+            $sql="SELECT *
+                    FROM  `organization_structure`
+                    WHERE  `left_key`>= ". $left_key ."
+                    AND `right_key`<= ". $right_key ."
+                    AND `company_id`=". $company_id;
+            $delete_group = $db->all($sql);
+            foreach ($delete_group as $delete_item) {
+                if($delete_item['parent'] == 0){
+                    $parent_old = -1;// это был корневой элемент
+                } else {
+                   $parent_old = $delete_item['parent'];
+                }
+                $parent_new = 0;
+                $org_struct_node = $delete_item['id'];
+                $sql = "INSERT INTO `parent_backup` (`org_struct_node`, `parent_old`, `parent_new`, `company_id`, `date_update`,`level`,`left_key`,`right_key`,`items_control_id`,`kladr_id`,`boss_type`,`mail_period`)
+            VALUES('". $org_struct_node ."',
+                    '". $parent_old ."',
+                     '". $parent_new ."',
+                      '".$company_id."',
+                        NOW(),
+                        '". $delete_item['level'] ."',
+                         '". $delete_item['left_key']."',
+                          '".$delete_item['right_key'] ."',
+                           '".$delete_item['items_control_id'] ."',
+                            '".$delete_item['kladr_id'] ."',
+                             '".$delete_item['boss_type'] ."',
+                              '".$delete_item['mail_period'] ."');";
+                $db->query($sql);
+            }
+
             // удаляем элемент со всеми вложенными
-            $sql="DELETE FROM `organization_structure` WHERE  `left_key`>=". $left_key ." AND `right_key`<=". $right_key ." AND `company_id`=". $company_id;
+            $sql="UPDATE `organization_structure` SET `left_key`= 0, `right_key`= 0 WHERE  `left_key`>=". $left_key ." AND `right_key`<=". $right_key ." AND `company_id`=". $company_id;
             $db->query($sql);
 
             // обновляем оставшиеся элементы
-            $sql="UPDATE `organization_structure` SET `left_key`=(left_key - ". $delta .") WHERE  `left_key`>".$left_key;
+            $sql="UPDATE `organization_structure` SET `left_key`=(left_key - ". $delta .") WHERE  `left_key`>".$left_key ." AND `company_id`=". $company_id;
             $db->query($sql);
-            $sql="UPDATE `organization_structure` SET `right_key`=(right_key - ". $delta .") WHERE  `right_key`>".$right_key;
+            $sql="UPDATE `organization_structure` SET `right_key`=(right_key - ". $delta .") WHERE  `right_key`>".$right_key ." AND `company_id`=". $company_id;
             $db->query($sql);
 
             $result_array['status'] = 'ok';

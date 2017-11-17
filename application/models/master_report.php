@@ -543,6 +543,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                 left join employees_items_node on employees_items_node.org_str_id = organization_structure.id
                 left join employees on employees_items_node.employe_id = employees.id
                 Where organization_structure.company_id = " . $_SESSION['control_company'] . "
+                AND organization_structure.left_key > 0
                  ORDER BY left_key";
 
 
