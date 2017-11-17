@@ -188,3 +188,6 @@ input{
 #edit_popup_input_status{
     margin-bottom: 10px;
 }
+.dismissed{
+    background-color: #ff8570!important;
+}

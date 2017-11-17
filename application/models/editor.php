@@ -63,7 +63,8 @@ class Model_editor
         }
         // получаем и выводим сотрудников
         $sql = "SELECT employees.id AS emp_id, CONCAT_WS(' ', employees.surname, employees.name, employees.second_name) AS `fio`,
-                users.id AS user_id, users.name AS login, organization_structure.company_id
+                users.id AS user_id, users.name AS login, organization_structure.company_id,
+                employees.status
                 FROM users,employees,employees_items_node, organization_structure
                 WHERE users.employee_id = employees.id
                 AND employees_items_node.employe_id = employees.id
@@ -73,7 +74,11 @@ class Model_editor
 
         $html = '';
         foreach($employees as $employee){
-            $html .= '<tr class="table_mix_row" emp_id="' . $employee['emp_id'] . '" user_id="' . $employee['user_id'] . '">';
+            $plus_class = "";
+            if($employee['status'] == 0){
+                $plus_class = "dismissed";
+            }
+            $html .= '<tr class="table_mix_row '. $plus_class .'" emp_id="' . $employee['emp_id'] . '" user_id="' . $employee['user_id'] . '">';
             $html .=    '<td class="emp_id" rowspan="1" colspan="1">'.  $employee['emp_id'].'</td>';
             $html .=    '<td class="login" rowspan="1" colspan="1">'.  $employee['login'].'</td>';
             $html .=    '<td class="fio" rowspan="1" colspan="1">'.  $employee['fio'].'</td>';
