@@ -1551,7 +1551,6 @@ function end_probation(){
                         $sql = "INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`,  `action_type_id`, `company_id`,  `step_id`, `date_create`)
                          VALUES ('" . $emp . "',  '19', '" . $comp . "', '" . $route_start_step . "', NOW())";
                         $db->query($sql);
-
                 }
             }
         }

@@ -418,7 +418,7 @@ FORM_NOW.doc_status_now,
                         $count_test_fio_fact = $count_test_fio_fact + $count_doc_fio_fact;
                         $count_test_fio_target = $count_test_fio_target + $count_doc_fio_target;
                         $fio_test_proc = round($count_test_fio_fact/$count_test_fio_target*100);
-                        $test_fio_html .= ' <div class="fio_box none" emp_id="'. $emp .'" dol="'. $test_item['name'] .'"  fio="'. $test_item['fio'] .'" >
+                        $test_fio_html .= ' <div class="fio_box none" emp_id="'. $emp .'" dol="'. $test_item['name'] .'"  fio="'. $test_item['fio'] .'" fact="'. $count_test_fio_fact .'" target="'. $count_test_fio_target .'">
                                             <div class="dol_row">'. $test_item['name'] .'</div>
                                             <div class="fio_row">'. $test_item['fio'] .'</div>
                                               <span class="progress-number"><b>'. $count_test_fio_fact .'</b>/'.$count_test_fio_target.'</span>

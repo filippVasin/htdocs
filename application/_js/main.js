@@ -269,10 +269,6 @@ $(document).ready(function() {
                 }
                 //$(this).append("<br> " + parent_left + "<"+ child_left+" : " + parent_right + ">" + child_right);
             });
-            // выводим суммарную цыфру по отделам
-            $('.progress-text-row>.progress-number:first',this).html("<b>"+ fact +"</b>/" + target);
-            var width_proc = (Math.round(fact/target*100)) + "%";
-            $('.progress-bar:first',this).css("width",width_proc);
 
             if(count_child>0){
                 $(this).addClass("parent");
@@ -306,6 +302,21 @@ $(document).ready(function() {
                 $(".people_title",parent).addClass("none");
             }
         });
+        // выводим суммарную цифру по отделам
+        $(".progress-group").each(function() {
+            var parent = $(this);
+            var childs = parent.find(".fio_box");
+            var fact = 0;
+            var target = 0;
+            childs.each(function() {
+               fact += parseInt($(this).attr("fact"));
+               target += parseInt($(this).attr("target"));
+            });
+            $('.progress-number:first',parent).html("<b>"+ fact +"</b>/" + target);
+            var width_proc = (Math.round(fact/target*100)) + "%";
+            $('.progress-bar:first',parent).css("width",width_proc);
+        });
+
     }
 
 
