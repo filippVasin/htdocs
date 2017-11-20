@@ -114,10 +114,9 @@ class Model_fact_monitor{
 </div>
 HERE;
 
+        $fact_org_id = $labro->fact_org_str_id($_SESSION['employee_id']);
 
-
-
-        $sql="(SELECT
+$sql="(SELECT
 /* Вывод даннных */
 FORM_CHECK.form_id AS doc_all,
 FORM_NOW.doc_status_now,
@@ -136,11 +135,11 @@ FORM_NOW.doc_status_now,
    END  AS FinishStep,
   items_control.name,
   /* клеем фио */
-  org_parent.id AS dir_id, org_parent.left_key, org_parent.right_key, org_parent.level,
+  fact_org_parent.id AS dir_id,  FACT.left_key, FACT.right_key, FACT.level,
    CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
   route_control_step.step_name AS manual, TempTest.SaveTempID
 
-  FROM (route_control_step,route_doc,employees)
+  FROM (route_control_step,route_doc,employees, fact_organization_structure)
   LEFT JOIN
     history_docs
     /* история документов по шагам */
@@ -149,17 +148,19 @@ FORM_NOW.doc_status_now,
        history_docs.employee_id = employees.id)
        /* привязка сотрудника к должности */
        LEFT JOIN employees_items_node ON employees_items_node.employe_id = employees.id
-       LEFT JOIN fact_organization_structure ON employees_items_node.org_str_id = fact_organization_structure.id
-       LEFT JOIN items_control ON items_control.id = fact_organization_structure.kladr_id
+       LEFT JOIN organization_structure ON employees_items_node.org_str_id = organization_structure.id
+       LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
        /* находим родительскузел, должность и тип должности */
-     LEFT JOIN fact_organization_structure AS org_parent
-     ON (org_parent.left_key < fact_organization_structure.left_key AND org_parent.right_key > fact_organization_structure.right_key
-     AND org_parent.level =(fact_organization_structure.level - 1) )
-     LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
-    LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
+       LEFT JOIN fact_organization_structure AS FACT ON FACT.org_str_id = organization_structure.id
+     LEFT JOIN fact_organization_structure AS fact_org_parent
+     ON (fact_org_parent.left_key < FACT.left_key AND fact_org_parent.right_key > FACT.right_key
+     AND fact_org_parent.level =(FACT.level - 1) )
+     LEFT JOIN items_control AS item_par ON item_par.id = fact_org_parent.kladr_id
+    LEFT JOIN items_control_types ON items_control_types.id = fact_org_parent.items_control_id
      /* узлы с индивидуальными треками */
-    LEFT JOIN fact_organization_structure AS TreeOfParents
-     ON TreeOfParents.id = route_doc.organization_structure_id
+    LEFT JOIN organization_structure AS TreeOfParents
+						ON TreeOfParents.id = route_doc.organization_structure_id
+
     LEFT JOIN
     /*  получаем id сохранённого файла если он сеть*/
     	(SELECT
@@ -189,6 +190,7 @@ FORM_NOW.doc_status_now,
 		ON (TempTest.TempEmpliD=employees.id AND TempTest.ContentFormId = route_control_step.step_content_id)
 		LEFT JOIN step_content AS FORM_CHECK ON FORM_CHECK.id = route_control_step.step_content_id
 		LEFT JOIN form_status_now AS FORM_NOW ON FORM_NOW.author_employee_id = employees.id
+
   WHERE
       /* все роуты с треками */
     route_control_step.track_number_id = route_doc.id
@@ -201,7 +203,7 @@ FORM_NOW.doc_status_now,
           /* Start Ищем ID Должности из таблици employees_item_node для заданного сотрудника employe.id */
           (SELECT EmplOrg.kladr_id
             FROM
-              employees AS Empl, employees_items_node AS EmplItem, fact_organization_structure AS EmplOrg
+              employees AS Empl, employees_items_node AS EmplItem, organization_structure AS EmplOrg
             WHERE
               Empl.id = EmplItem.employe_id
               AND
@@ -212,26 +214,34 @@ FORM_NOW.doc_status_now,
     /* для всех узлов или конкретных узлов по конкретным сотрудникам */
     (route_doc.organization_structure_id IS NULL
    OR
-     (fact_organization_structure.left_key >= TreeOfParents.left_key
+     (organization_structure.left_key >= TreeOfParents.left_key
      AND
-     fact_organization_structure.right_key <= TreeOfParents.right_key)
+     organization_structure.right_key <= TreeOfParents.right_key)
      )
-	AND	fact_organization_structure.company_id
+	AND	organization_structure.company_id
    AND
    /* по фирме*/
-
     route_doc.company_id = " . $_SESSION['control_company'] . "
     		AND employees.id = employees_items_node.employe_id
-    		AND fact_organization_structure.id = employees_items_node.org_str_id
-    		AND fact_organization_structure.company_id = " . $_SESSION['control_company'] . "
-    		AND org_parent.company_id = " . $_SESSION['control_company'] . "
+    		AND organization_structure.id = employees_items_node.org_str_id
+    		AND organization_structure.company_id = " . $_SESSION['control_company'] . "
+    		AND fact_org_parent.company_id = " . $_SESSION['control_company'] . "
+    		AND organization_structure.id  in (SELECT organization_structure.id
+							FROM (fact_organization_structure, organization_structure)
+							LEFT JOIN fact_organization_structure AS FACT ON (FACT.left_key <= fact_organization_structure.left_key
+																								AND
+																								FACT.right_key >= fact_organization_structure.right_key
+																								AND
+																								FACT.company_id = fact_organization_structure.company_id)
+							WHERE fact_organization_structure.org_str_id = organization_structure.id
+							AND FACT.id = ". $fact_org_id .")
 	     AND
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)";
         // если сработал выбор по отделам
         if(($node_left_key!="")&&($node_right_key!="")){
-            $sql.=" AND org_parent.left_key >= ". $node_left_key ."
-                    AND org_parent.right_key <= ". $node_right_key ;
+            $sql.=" AND fact_org_parent.left_key >= ". $node_left_key ."
+                    AND fact_org_parent.right_key <= ". $node_right_key ;
         }
 
         $sql.="  GROUP BY EMPLOY, STEP
@@ -256,26 +266,26 @@ FORM_NOW.doc_status_now,
                 employees_items_node.id AS StartStep,
                 employees_items_node.id AS FinishStep,
                 employees_items_node.id AS name,
-                fact_organization_structure.id AS dir_id,
-                fact_organization_structure.left_key,
-                fact_organization_structure.right_key,
-                fact_organization_structure.`level`,
+                organization_structure.id AS dir_id,
+                organization_structure.left_key,
+                organization_structure.right_key,
+                organization_structure.`level`,
                  CONCAT_WS (' - ',items_control_types.name, items_control.name) AS dir,
                 employees_items_node.id  AS manual,
                 employees_items_node.id  AS SaveTempID
-                    FROM (fact_organization_structure, items_control_types, items_control)
+                    FROM (organization_structure, items_control_types, items_control)
                  LEFT JOIN employees_items_node ON employees_items_node.employe_id = 0
-                WHERE items_control.id = fact_organization_structure.kladr_id
-                AND fact_organization_structure.items_control_id = items_control_types.id
-                AND fact_organization_structure.company_id = " . $_SESSION['control_company'] . "
-                AND fact_organization_structure.`level` = 1
-                AND fact_organization_structure.items_control_id = 10)
+                WHERE items_control.id = organization_structure.kladr_id
+                AND organization_structure.items_control_id = items_control_types.id
+                AND organization_structure.company_id = " . $_SESSION['control_company'] . "
+                AND organization_structure.`level` = 1
+                AND organization_structure.items_control_id = 10)
         ";
 
 
 
 //        $sql .= $sqlTwo;
-
+//        echo $sql;
         $test_array = $db->all($sql);
         $endSQL = microtime(true) - $startSQL;
         $timeSQL += $endSQL;
@@ -305,11 +315,11 @@ FORM_NOW.doc_status_now,
 
         // считаем законьченные документы
         $sql="SELECT *
-        FROM form_status_now,employees_items_node,fact_organization_structure
+        FROM form_status_now,employees_items_node,organization_structure
         WHERE form_status_now.doc_status_now>=7
         AND form_status_now.author_employee_id = employees_items_node.employe_id
-        AND employees_items_node.org_str_id = fact_organization_structure.id
-        AND fact_organization_structure.company_id =". $_SESSION['control_company'];
+        AND employees_items_node.org_str_id = organization_structure.id
+        AND organization_structure.company_id =". $_SESSION['control_company'];
         $startSQL = microtime(true);
         $result= $db->all($sql);
         $endSQL = microtime(true) - $startSQL;
@@ -455,14 +465,14 @@ FORM_NOW.doc_status_now,
 
             // документы
             $sql="SELECT *
-                    FROM form_status_now,employees_items_node,fact_organization_structure
-                    LEFT JOIN fact_organization_structure AS parent_org ON parent_org.id = ". $dir_array_item ."
+                    FROM form_status_now,employees_items_node,organization_structure
+                    LEFT JOIN organization_structure AS parent_org ON parent_org.id = ". $dir_array_item ."
                     WHERE form_status_now.author_employee_id = employees_items_node.employe_id
-                    AND employees_items_node.org_str_id = fact_organization_structure.id
-                    AND fact_organization_structure.left_key >=parent_org.left_key
-                    AND fact_organization_structure.right_key <= parent_org.right_key
+                    AND employees_items_node.org_str_id = organization_structure.id
+                    AND organization_structure.left_key >=parent_org.left_key
+                    AND organization_structure.right_key <= parent_org.right_key
                     AND form_status_now.step_id is not NULL
-                    AND fact_organization_structure.company_id = ". $_SESSION['control_company'];
+                    AND organization_structure.company_id = ". $_SESSION['control_company'];
 
             $startSQL = microtime(true);
             $result= $db->all($sql);
@@ -599,6 +609,7 @@ FORM_NOW.doc_status_now,
       AND fact_organization_structure.left_key > ". $node_left_key ."
       AND fact_organization_structure.right_key < ". $node_right_key ."
 		AND sump_for_employees.id = local_alerts.save_temp_files_id)";
+//        echo $sql;
         $alert_every_days = $db->all($sql);
         $count = 0;
         foreach ($alert_every_days as $alert_every_day) {

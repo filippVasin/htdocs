@@ -26,7 +26,7 @@ class Model_master_report{
             case "doc":
                 $result_array = $this->doc_emp_report($emp_id);
                 break;
-            case "fact_test_doc":
+            case "test_doc":
                 $result_array = $this->test_emp_report($emp_id);
                 $content = '<br><label for="recipient-name" class="control-label">Отчёт по тестам:</label>';
                 $content .= $result_array['content'];

@@ -172,7 +172,8 @@ $(document).ready(function() {
     }
 
     function get_calendary_item(str_date){
-        var report_type = "fact_calendary_item";
+        var report_type = "calendary_item";
+        //var report_type = "fact_calendary_item";
         $.ajax({
             type: "POST",
             url: "/master_report/main",
@@ -193,7 +194,8 @@ $(document).ready(function() {
     }
 
     function get_calendary_type_emp(str_emp,str_date){
-        var report_type = "fact_calendary_item_type_emp";
+        var report_type = "calendary_item_type_emp";
+        //var report_type = "fact_calendary_item_type_emp";
         $.ajax({
             type: "POST",
             url: "/master_report/main",
@@ -215,7 +217,8 @@ $(document).ready(function() {
     }
 
     function get_calendary_all_event(str_date){
-        var report_type = "fact_get_calendary_all_event";
+        //var report_type = "fact_get_calendary_all_event";
+        var report_type = "get_calendary_all_event";
         $.ajax({
             type: "POST",
             url: "/master_report/main",
@@ -334,7 +337,8 @@ $(document).ready(function() {
         var dol = $(this).attr('dol');
         var fio = $(this).attr('fio');
         var all_content = "";
-        var report_type = "fact_test_doc";
+        //var report_type = "fact_test_doc";
+        var report_type = "test_doc";
         $.ajax({
             type: "POST",
             url: "/master_report/main",
@@ -786,8 +790,9 @@ $(document).ready(function() {
 
     $(document).on("click", "#search_local_alert", function () {
 
-        var search_string = $("#search_local_alert_input").val();
-        var report_type = "fact_local_alert_journal";
+        var search_string = $("#search_local_alert_$resinput").val();
+        //var report_type = "fact_local_alert_journal";
+        var report_type = "local_alert_journal";
 
         $.ajax({
             type: "POST",

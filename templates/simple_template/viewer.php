@@ -632,10 +632,14 @@ if(isset($_SESSION['control_company_name'])){
     stop_preloader();
     // убираем лишний скролл
     setTimeout('$(".content-wrapper").css("min-height", $(window).height())', 1000);
-    $(document).ready(function() {
-        $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
 
-    });
+    // выделяем активный пункт меню
+    $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
+
+//    $(document).ready(function() {
+//        $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
+//    });
+
 
  function stop_preloader(){
         $(window).on('load', function () {

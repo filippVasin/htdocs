@@ -129,8 +129,6 @@ $(document).ready(function() {
 
     function start() {
 
-
-
         var node_left_key = $("#nods_key").attr('left');
         var node_right_key = $("#nods_key").attr('right');
         $.ajax({
@@ -281,7 +279,7 @@ $(document).ready(function() {
         $("#test_node_report .progress-group").each(function() {
             var level = $(this).attr('level');
             var left = $(this).attr('left_key');
-            if ((level ==  1)&&(left>002)){
+            if ((level ==  1)&&(left > 002)){
                 $(this).detach().appendTo("#test_node_report");
             }
         });
