@@ -35,8 +35,11 @@
     }
     .page_title{
         width: 100%;
-        font-size: 13px;
+        font-size: 30px;
+        word-wrap: normal;
+        height: -webkit-fill-available;
         text-align: center;
+        margin-left: 0px;
     }
     .pril_start{
         display: none!important;

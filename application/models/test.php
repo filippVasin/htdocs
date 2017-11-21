@@ -475,17 +475,37 @@ route_control_step.track_number_id AS id,
         return "Всё";
     }
     public function test($doc_link){
-        global $db;
-        $sql= "SELECT observer_company.id
-                    FROM  observer_company
-                LEFT JOIN company ON company.id = observer_company.company_id
-                WHERE company.id is NULL";
+//        global $db;
+        $sql= "SELECT * FROM organization_structure";
 
-        $briefings = $db->all($sql);
-//        foreach ($briefings as $briefing) {
-//            $sql="DELETE FROM `laborpro`.`observer_company`  WHERE  `id` =" . $briefing['id'];
-//            $db->query($sql);
-//        }
+        $org = $db->all($sql);
+        foreach ($org as $org_item) {
+            $parent_old = 0;
+            $org_struct_node = $org_item['id'];
+            $parent_new = $org_item['parent'];
+            $company_id = $org_item['company_id'];
+            $level = $org_item['level'];
+            $left_key = $org_item['left_key'];
+            $right_key = $org_item['right_key'];
+            $items_control_id = $org_item['items_control_id'];
+            $kladr_id = $org_item['kladr_id'];
+            $boss_type = $org_item['boss_type'];
+            $mail_period = $org_item['mail_period'];
+            $sql = "INSERT INTO `parent_backup` (`org_struct_node`, `parent_old`, `parent_new`, `company_id`, `date_update`,`level`,`left_key`,`right_key`,`items_control_id`,`kladr_id`,`boss_type`,`mail_period`)
+            VALUES('". $org_struct_node ."',
+                    '". $parent_old ."',
+                     '". $parent_new ."',
+                      '".$company_id."',
+                        NOW(),
+                        '". $level ."',
+                         '".$left_key."',
+                          '". $right_key ."',
+                           '". $items_control_id ."',
+                            '".$kladr_id."',
+                             '". $boss_type ."',
+                              '". $mail_period ."');";
+            $db->query($sql);
+        }
 
     }
 }
