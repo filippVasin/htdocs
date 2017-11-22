@@ -12,11 +12,11 @@ class Controller_buses extends Controller
     }
 
 
-//    // получаем дерево должностей
-//    public function load_node_docs_tree()
-//    {
-//        $this->model->load_node_docs_tree();
-//    }
+    // получаем дерево должностей
+    public function bus_row_edit(){
+        $this->model->post_array = $this->post_params;
+        $this->model->bus_row_edit();
+    }
 //
 //    public function action_history_docs()
 //    {

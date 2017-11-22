@@ -636,6 +636,7 @@ if(isset($_SESSION['control_company_name'])){
     // выделяем активный пункт меню
     $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
 
+    $(".valid_phone").mask("8-999-999-99-99");
 //    $(document).ready(function() {
 //        $("li>a[href^='"+ window.location.pathname +"']").addClass("active_a");
 //    });
