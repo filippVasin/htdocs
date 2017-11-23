@@ -18,6 +18,7 @@ $(document).ready(function() {
     var local_id =  0;
     var action_type =  0;
     var employee_id = 0;
+    var inst_routs_edit = 0;
 
     tab_vs_enter_one();
     tab_vs_enter_two();
@@ -428,7 +429,7 @@ $(document).ready(function() {
                 }
             });// ajax
         } else {
-            alert(flag);
+            //alert(flag);
         }
     });
 
@@ -488,9 +489,38 @@ $(document).ready(function() {
                     console.log('error');
                 }
             });// ajax
-        }s
+        }
     });
 
+
+
+
+    $(document).on("click", "#inst_list_19", function () {
+        //$(".btn-default").click();
+        $.ajax({
+            type: "POST",
+            url: "/local_alert/internship_list_edit",
+            data: {
+                emp:emp
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var content = result.content;
+                $("#popup_inst_list_edit").html(content);
+                $(".valid_date").mask("99.99.9999");
+                tab_vs_enter_inst_edit();
+
+
+                $("#popup_inst_list_button").click();
+                $("#yes_popup_19 .btn-default").click();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+
+    });
 
     $(document).on("click", "#print_med_form", function () {
         var action_name = "print_med_form";
@@ -515,6 +545,104 @@ $(document).ready(function() {
                 console.log('error');
             }
         });// ajax
+    });
+
+
+
+    $(document).on("click", "#inst_list_19_plus_route", function () {
+        $.ajax({
+            type: "POST",
+            url: "/local_alert/internship_list_edit_plus_route",
+            data: {
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var content = result.content;
+                $("#popup_inst_list_edit_plus_route").html(content);
+                $(".valid_date").mask("99.99.9999");
+                tab_vs_enter_inst_edit_plus_route();
+                check_route_and_bus()
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+        $("#popup_inst_list_plus_route_button").click();
+    });
+
+
+    $(document).on("click", "#inst_list_19_plus_route_save", function () {
+        var flag = 0
+
+
+        if($("#18_mentor_plus").val() == 0){
+            $("#18_mentor_plus").css("border-color","red");
+            setTimeout("$('#18_mentor_plus').css('border-color','#ccc')", 3000);
+            flag = 1;
+        }
+        if($("#18_bus_plus").val() == 0){
+            $("#18_bus_plus").css("border-color","red");
+            setTimeout("$('#18_bus_plus').css('border-color','#ccc')", 3000);
+            flag = 2;
+        }
+        if($("#18_route_plus").val() == 0){
+            $("#18_route_plus").css("border-color","red");
+            setTimeout("$('#18_route_plus').css('border-color','#ccc')", 3000);
+            flag = 3;
+        }
+        if($("#18_hours_plus").val() == 0){
+            $("#18_hours_plus").css("border-color","red");
+            setTimeout("$('#18_hours_plus').css('border-color','#ccc')", 3000);
+            flag = 4;
+        }
+        if($("#18_inst_date_plus").val()==""){
+            $("#18_inst_date_plus").css("border-color","red");
+            setTimeout("$('#18_inst_date_plus').css('border-color','#ccc')", 3000);
+            flag = 5;
+        }
+
+        var mentor_id = $("#18_mentor_plus").val();
+        var bus_id = $("#18_bus_plus").val();
+        var route_id = $("#18_route_plus").val();
+        var hours = $("#18_hours_plus").val();
+        var inst_date = $("#18_inst_date_plus").val();
+
+        if(flag == 0){
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/inst_save_new_route",
+                data: {
+                    emp: emp,
+                    mentor_id: mentor_id,
+                    bus_id: bus_id,
+                    route_id: route_id,
+                    hours: hours,
+                    inst_date: inst_date
+                },
+                success: function (answer) {
+
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    var link = result.link;
+                    var content = result.content;
+                    if (status == "ok") {
+                        $("#inst_table_router_rows").html(content);
+                        $("#inst_list_19_plus_route_cancel").click();
+                    }
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+        } else {
+            //alert(flag);
+        }
+    });
+
+    $(document).on("click", "#inst_list_19_print", function () {
+        var link = "/doc_views?PATP1_Probationer&probation&" + emp;
+        print_link(link);
     });
 
 
@@ -696,8 +824,6 @@ $(document).ready(function() {
         }
     });
 
-
-
 // выбор статуса
     $(document).on("change", "#node_docs_select", function () {
         select_item = $(this).val();
@@ -720,6 +846,235 @@ $(document).ready(function() {
         });
     });
 
+
+    $(document).on("click", ".inst_routs_row", function () {
+        inst_routs_edit = $(this).attr("id_routs");
+        $.ajax({
+            type: "POST",
+            url: "/local_alert/internship_list_edit_route",
+            data: {
+                inst_routs_edit:inst_routs_edit
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var content = result.content;
+                $("#popup_inst_list_edit_route_body").html(content);
+                $(".valid_date").mask("99.99.9999");
+                tab_vs_enter_inst_edit_route()
+                check_route_and_bus()
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+
+        $("#popup_inst_list_edit_route_button").click();
+    });
+
+    $(document).on("click", "#inst_list_19_edit_route_save", function () {
+        var flag = 0
+
+        if($("#18_mentor_edit").val() == 0){
+            $("#18_mentor_edit").css("border-color","red");
+            setTimeout("$('#18_mentor_edit').css('border-color','#ccc')", 3000);
+            flag = 1;
+        }
+        if($("#18_bus_edit").val() == 0){
+            $("#18_bus_edit").css("border-color","red");
+            setTimeout("$('#18_bus_edit').css('border-color','#ccc')", 3000);
+            flag = 2;
+        }
+        if($("#18_route_edit").val() == 0){
+            $("#18_route_edit").css("border-color","red");
+            setTimeout("$('#18_route_edit').css('border-color','#ccc')", 3000);
+            flag = 3;
+        }
+        if($("#18_hours_edit").val() == 0){
+            $("#18_hours_edit").css("border-color","red");
+            setTimeout("$('#18_hours_edit').css('border-color','#ccc')", 3000);
+            flag = 4;
+        }
+        if($("#18_inst_date_edit").val()==""){
+            $("#18_inst_date_edit").css("border-color","red");
+            setTimeout("$('#18_inst_date_edit').css('border-color','#ccc')", 3000);
+            flag = 5;
+        }
+
+        var mentor_id = $("#18_mentor_edit").val();
+        var bus_id = $("#18_bus_edit").val();
+        var route_id = $("#18_route_edit").val();
+        var hours = $("#18_hours_edit").val();
+        var inst_date = $("#18_inst_date_edit").val();
+
+        if(flag == 0){
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/inst_edit_new_route",
+                data: {
+                    inst_routs_edit: inst_routs_edit,
+                    mentor_id: mentor_id,
+                    bus_id: bus_id,
+                    route_id: route_id,
+                    hours: hours,
+                    inst_date: inst_date
+                },
+                success: function (answer) {
+
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    var link = result.link;
+                    var content = result.content;
+                    if (status == "ok") {
+                        $("#inst_table_router_rows").html(content);
+                        $("#inst_list_19_edit_route_cancel").click();
+                    }
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+        } else {
+            //alert(flag);
+        }
+        // сохранить
+    });
+
+
+    $(document).on("click", "#inst_list_19_edit_route_delete", function () {
+        $.ajax({
+            type: "POST",
+            url: "/local_alert/inst_delete_new_route",
+            data: {
+                inst_routs_edit: inst_routs_edit
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+                var link = result.link;
+                var content = result.content;
+                if (status == "ok") {
+                    $("#inst_table_router_rows").html(content);
+                    $("#inst_list_19_edit_route_cancel").click();
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+    $(document).on("click", "#inst_list_19_edit_instr_list", function () {
+        $.ajax({
+            type: "POST",
+            url: "/local_alert/edit_instr_list",
+            data: {
+                emp:emp
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+                var link = result.link;
+                var content = result.content;
+                if (status == "ok") {
+                    $("#popup_edit_instr_list_body").html(content);
+                    $("#popup_edit_instr_list_button").click();
+                }
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+    $(document).on("click", "#inst_list_19_edit_instr_list_save", function () {
+        var flag = 0
+
+        if($("#18_order_number_inst_edit").val()==""){
+            $("#18_order_number_inst_edit").css("border-color","red");
+            setTimeout("$('#18_order_number_inst_edit').css('border-color','#ccc')", 3000);
+            flag = 1;
+        }
+        if($("#18_order_date_inst_edit").val()==""){
+            $("#18_order_date_inst_edit").css("border-color","red");
+            setTimeout("$('#18_order_date_inst_edit').css('border-color','#ccc')", 3000);
+            flag = 2;
+        }
+        if($("#18_mentor_inst_edit").val() == 0){
+            $("#18_mentor_inst_edit").css("border-color","red");
+            setTimeout("$('#18_mentor_inst_edit').css('border-color','#ccc')", 3000);
+            flag = 3;
+        }
+        if($("#18_bus_inst_edit").val() == 0){
+            $("#18_bus_inst_edit").css("border-color","red");
+            setTimeout("$('#18_bus_inst_edit').css('border-color','#ccc')", 3000);
+            flag = 4;
+        }
+        if($("#18_route_inst_edit").val() == 0){
+            $("#18_route_inst_edit").css("border-color","red");
+            setTimeout("$('#18_route_inst_edit').css('border-color','#ccc')", 3000);
+            flag = 5;
+        }
+        if($("#18_hours_inst_edit").val() == 0){
+            $("#18_hours_inst_edit").css("border-color","red");
+            setTimeout("$('#18_hours_inst_edit').css('border-color','#ccc')", 3000);
+            flag = 6;
+        }
+        if($("#18_inst_date_inst_edit").val()==""){
+            $("#18_inst_date_inst_edit").css("border-color","red");
+            setTimeout("$('#18_inst_date_inst_edit').css('border-color','#ccc')", 3000);
+            flag = 7;
+        }
+        if($("#18_ass_bus_inst_edit").val()==0){
+            $("#18_ass_bus_inst_edit").css("border-color","red");
+            setTimeout("$('#18_ass_bus_inst_edit').css('border-color','#ccc')", 3000);
+            flag = 7;
+        }
+
+        var order = $("#18_order_number_inst_edit").val() + " от " + $("#18_order_date_inst_edit").val();
+        var mentor_id = $("#18_mentor_inst_edit").val();
+        var bus_id = $("#18_bus_inst_edit").val();
+        var route_id = $("#18_route_inst_edit").val();
+        var hours = $("#18_hours_inst_edit").val();
+        var inst_date = $("#18_inst_date_inst_edit").val();
+        var ass_bus_id = $("#18_ass_bus_inst_edit").val();
+
+        if(flag == 0){
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/edit_instr_list_save",
+                data: {
+                    emp: emp,
+                    order: order,
+                    mentor_id: mentor_id,
+                    bus_id: bus_id,
+                    route_id: route_id,
+                    hours: hours,
+                    inst_date: inst_date,
+                    ass_bus_id:ass_bus_id
+                },
+                success: function (answer) {
+
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    if(status == "ok"){
+                        //$("#inst_list_19_plus_route_cancel").click();
+
+                        $("#inst_list_19_edit_instr_list_cancel").click();
+                        $("#inst_list_19").click();
+                    }
+
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+        } else {
+            //alert(flag);
+        }
+
+    });
 
 
     // упорядочить по сотруднику
@@ -992,6 +1347,115 @@ $(document).ready(function() {
             });
         });
     }
+
+    // работаем ентером как табом форме стажировочного листа
+    function tab_vs_enter_inst_edit() {
+        var $inputs = $("body").find('.tab_vs_enter_inst_edit');
+        $inputs.each(function (i) {
+            $(this).keypress(function (ev) {
+                if (ev.which == 13 && i == $inputs.length - 1) {
+                    $("#inst_list_19_save").click();
+                }
+                if (ev.which == 13) {
+                    $inputs.eq(i + 1).focus();
+                    return false;
+                }
+            });
+        });
+    }
+    function tab_vs_enter_inst_edit_plus_route() {
+        var $inputs = $("body").find('.tab_vs_enter_plus_route');
+        $inputs.each(function (i) {
+            $(this).keypress(function (ev) {
+                if (ev.which == 13 && i == $inputs.length - 1) {
+                    $("#inst_list_19_plus_route_save").click();
+                }
+                if (ev.which == 13) {
+                    $inputs.eq(i + 1).focus();
+                    return false;
+                }
+            });
+        });
+    }
+
+    function tab_vs_enter_inst_edit_route() {
+        var $inputs = $("body").find('.tab_vs_enter_edit_route');
+        $inputs.each(function (i) {
+            $(this).keypress(function (ev) {
+                if (ev.which == 13 && i == $inputs.length - 1) {
+                    $("#inst_list_19_edit_route_save").click();
+                }
+                if (ev.which == 13) {
+                    $inputs.eq(i + 1).focus();
+                    return false;
+                }
+            });
+        });
+    }
+
+
+
+    function check_route_and_bus(){
+        // событие выбора автобуса
+        $(document).on("change", '#18_bus_plus', function () {
+            var bus_id = $("#18_bus_plus").val();
+            // получаем маршруты автобуса
+            // если маршрут ещё не выбирали
+            if ($("#18_route_plus").val() == 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "/local_alert/get_bus_routes",
+                    data: {
+                        bus_id: bus_id
+                    },
+                    success: function (answer) {
+                        var result = jQuery.parseJSON(answer);
+                        var status = result.status;
+                        var content = result.content;
+                        // помешаем доступные маршруты в выпадашку
+                        if (status == "ok") {
+                            $("#18_route_plus").html(content);
+                        }
+
+                    },
+                    error: function () {
+                        console.log('error');
+                    }
+                });// ajax
+            }
+        });
+
+        // событие выбора маршрута
+        $(document).on("change", '#18_route_plus', function () {
+            var route_id = $("#18_route_plus").val();
+            // получаем автобусы на маршруте
+            // если автобус ещё не выбирали
+            if ($("#18_bus_plus").val() == 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "/local_alert/get_route_buses",
+                    data: {
+                        route_id: route_id
+                    },
+                    success: function (answer) {
+
+                        var result = jQuery.parseJSON(answer);
+                        var status = result.status;
+                        var content = result.content;
+                        // помешаем доступные автобусы в выпадашку
+                        if (status == "ok") {
+                            $("#18_bus_plus").html(content);
+                        }
+
+                    },
+                    error: function () {
+                        console.log('error');
+                    }
+                });// ajax
+            }
+        });
+    }
+
 
 
 });

@@ -168,7 +168,73 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="yes_popup_19" class="btn btn-primary">Прошел</button>
+                    <button type="button" id="inst_list_19" class="btn btn-primary">Стажировочный лист</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Не прошел</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <button id="popup_inst_list_button" class="none" data-toggle="modal" data-target="#popup_inst_list">
+    </button>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" id="popup_inst_list" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Стажировочный лист</h4>
+                </div>
+                <div class="modal-body" id="popup_inst_list_edit">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="inst_list_19_plus_route" class="btn btn-primary">Добавить маршрут</button>
+                    <button type="button" id="inst_list_19_edit_instr_list" class="btn btn-primary">Редактировать</button>
+                    <button type="button" id="inst_list_19_print" class="btn btn-primary">Печать</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <button id="popup_inst_list_plus_route_button" class="none" data-toggle="modal" data-target="#popup_inst_list_plus_route">
+    </button>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" id="popup_inst_list_plus_route" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Добавить мaршрут</h4>
+                </div>
+                <div class="modal-body" id="popup_inst_list_edit_plus_route">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="inst_list_19_plus_route_save" class="btn btn-primary">Добавить маршрут</button>
+                    <button type="button" class="btn btn-default" id="inst_list_19_plus_route_cancel" data-dismiss="modal">Отмена</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <button id="popup_inst_list_edit_route_button" class="none" data-toggle="modal" data-target="#popup_inst_list_edit_route">
+    </button>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" id="popup_inst_list_edit_route" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Мaршрут</h4>
+                </div>
+                <div class="modal-body" id="popup_inst_list_edit_route_body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="inst_list_19_edit_route_save" class="btn btn-primary">Сохранить</button>
+                    <button type="button" id="inst_list_19_edit_route_delete" class="btn btn-danger">Удалить</button>
+                    <button type="button" class="btn btn-default" id="inst_list_19_edit_route_cancel" data-dismiss="modal">Отмена</button>
 
                 </div>
             </div>
@@ -311,6 +377,28 @@
                     <button type="button" id="yes_popup_18" class="btn btn-primary">Отправить</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <button id="popup_edit_instr_list_button" class="none" data-toggle="modal" data-target="#popup_edit_instr_list">
+    </button>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" id="popup_edit_instr_list" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Редактировать лист инструктажа</h4>
+                </div>
+                <div class="modal-body" id="popup_edit_instr_list_body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="inst_list_19_edit_instr_list_save" class="btn btn-primary">Сохранить</button>
+                    <button type="button" class="btn btn-default" id="inst_list_19_edit_instr_list_cancel" data-dismiss="modal">Отмена</button>
                 </div>
             </div>
         </div>

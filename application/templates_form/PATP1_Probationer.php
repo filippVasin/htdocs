@@ -60,8 +60,11 @@ $fioFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $fio);
 
 $sql="SELECT internship_list.*,CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS mentor_fio,
         bus_list.brand_of_bus, bus_list.gos_number,
-        bus_list_routes.route_name
-        FROM internship_list, employees, bus_list,bus_list_routes
+        bus_list_routes.route_name,
+        ASS_BUS.brand_of_bus AS assigned_brand_of_bus,
+        ASS_BUS.gos_number AS assigned_gos_number
+        FROM (internship_list, employees, bus_list,bus_list_routes)
+        LEFT JOIN bus_list AS ASS_BUS ON ASS_BUS.id = internship_list.assigned_bus_id
         WHERE internship_list.mentor_id = employees.id
         AND internship_list.bus_id = bus_list.id
         AND internship_list.route_id = bus_list_routes.id
@@ -77,6 +80,67 @@ $hours_all = $internship_list_row['hours_all'];
 $hours_inst = $internship_list_row['hours_ints'];
 $hours_driving = $internship_list_row['hours_driving'];
 $inst_date = date_create($internship_list_row['date'])->Format('d.m.Y');
+$assigned_brand_of_bus = $internship_list_row['assigned_brand_of_bus'];
+$assigned_gos_number = $internship_list_row['assigned_gos_number'];
+
+
+$sql = "SELECT internship_routes.id,
+						  internship_routes.inst_date,
+                    bus_list_routes.route_name,
+                    bus_list.brand_of_bus,
+                    bus_list.gos_number,
+                    CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS mentor_fio,
+                    internship_routes.hours_all
+                    FROM internship_routes,employees,bus_list,bus_list_routes
+                    WHERE internship_routes.route_id = bus_list_routes.id
+                    AND internship_routes.bus_id = bus_list.id
+                    AND internship_routes.mentor_id = employees.id
+                    AND internship_routes.employee_id =" . $employee_id;
+$route_array = $db->all($sql);
+$table_routs = "";
+foreach ($route_array as $route_item) {
+    $table_routs .='<TR VALIGN=TOP>
+		<TD WIDTH=100 HEIGHT=27 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+        <P LANG="ru-RU" CLASS="western">
+            '. date_create($route_item['inst_date'])->Format('d.m.Y').'
+			</P>
+		</TD>
+		<TD WIDTH=173 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western">
+			'.$route_item['route_name'].'
+			</P>
+		</TD>
+		<TD WIDTH=91 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER>
+			'.$route_item['brand_of_bus'].'
+			</P>
+		</TD>
+		<TD WIDTH=52 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER>
+			'.$route_item['hours_all'].'
+			</P>
+		</TD>
+		<TD WIDTH=77 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western">
+			'. preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $route_item['mentor_fio']).'
+			</P>
+		</TD>
+		<TD WIDTH=59 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+			<P LANG="ru-RU" CLASS="western">
+			</P>
+		</TD>
+	</TR>';
+}
+
+
+
+
+
+
+
+
+
+
 
 $result_file =
     '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
@@ -175,13 +239,13 @@ ________________'.$mentorFIO.'</P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Маршрутная
 стажировка- '. $hours_driving .' ч.
 </P>
-<TABLE WIDTH=639 CELLPADDING=7 CELLSPACING=0>
+<TABLE WIDTH=800 CELLPADDING=7 CELLSPACING=0>
 	<COL WIDTH=100>
-	<COL WIDTH=173>
+	<COL WIDTH=550>
 	<COL WIDTH=91>
 	<COL WIDTH=52>
 	<COL WIDTH=77>
-	<COL WIDTH=59>
+	<COL WIDTH=159>
 	<TR VALIGN=TOP>
 		<TD WIDTH=100 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
 			<P LANG="ru-RU" CLASS="western">Дата, время прохождения
@@ -207,174 +271,19 @@ ________________'.$mentorFIO.'</P>
 			<P LANG="ru-RU" CLASS="western">Подпись</P>
 		</TD>
 	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=100 HEIGHT=27 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=173 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=91 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
-			</P>
-		</TD>
-		<TD WIDTH=52 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
-			</P>
-		</TD>
-		<TD WIDTH=77 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=59 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=100 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=173 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=91 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
-			</P>
-		</TD>
-		<TD WIDTH=52 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
-			</P>
-		</TD>
-		<TD WIDTH=77 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=59 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=100 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=173 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=91 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=52 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
-			</P>
-		</TD>
-		<TD WIDTH=77 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=59 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=100 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=173 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=91 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=52 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
-			</P>
-		</TD>
-		<TD WIDTH=77 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=59 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=100 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=173 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=91 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=52 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
-			</P>
-		</TD>
-		<TD WIDTH=77 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=59 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=100 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=173 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=91 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=52 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
-			</P>
-		</TD>
-		<TD WIDTH=77 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-		<TD WIDTH=59 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
-			<P LANG="ru-RU" CLASS="western"><BR>
-			</P>
-		</TD>
-	</TR>
+	'. $table_routs .'
+
 </TABLE>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Замечания
-и предложения  водителя - наставника</P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">_______________________________<I><U><B>допустить
-к самостоятельной работе</B></U></I>__________</P>
+и предложения  водителя - наставника: допустить
+к самостоятельной работе </P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Заключение:
 Допустить (не допустить) водителя
 <I><B>'. $fioFIO .'</B></I>к самостоятельной
- работе на  <I><U><B>__________________</B></U></I><FONT SIZE=4><I><B>
- </B></I></FONT><FONT SIZE=4>г.н.
-</FONT><FONT SIZE=4><SPAN LANG="en-US"><I><U><B>_______________________________________________________________________________________</B></U></I></SPAN></FONT></P>
+ работе на  <I><B> '. $assigned_brand_of_bus .' </B></I><FONT SIZE=4><I><B>
+ </B></I></FONT><FONT SIZE=4>г.н. '. $assigned_gos_number .'
+</FONT><FONT SIZE=4><SPAN LANG="en-US"><I><B>_______________________________________________________________________________________</B></I></SPAN></FONT></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Ответственный
 за обеспечение безопасности дорожного
 движения в

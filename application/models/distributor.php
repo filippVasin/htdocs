@@ -360,7 +360,8 @@ class Model_distributor{
 
 //        $sql = "DELETE FROM `local_alerts` WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;
 //        $db->query($sql);
-
+//  /doc_views?PATP1_Probationer&probation&477
+//  /doc_views?PATP1_Probationer&probation&477
 
         return $result_array;
     }
