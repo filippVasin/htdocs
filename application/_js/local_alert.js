@@ -17,7 +17,6 @@ $(document).ready(function() {
     var observer_em =  0;
     var local_id =  0;
     var action_type =  0;
-    var observer_em = 0;
     var employee_id = 0;
 
     tab_vs_enter_one();
@@ -123,6 +122,25 @@ $(document).ready(function() {
             $("#alert_create_driver_popup_button").click();
         }
         if( action_type == 18 ){
+
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/internship_list",
+                data: {
+                },
+                success: function (answer) {
+
+                    var result = jQuery.parseJSON(answer);
+                    var content = result.content;
+                    $("#internship_list_content").html(content);
+                    $(".valid_date").mask("99.99.9999");
+                    tab_vs_enter_inst();
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+
             $("#print_probationer_popup_name").html(name);
             $("#alert_print_probationer_button").click();
         }
@@ -327,38 +345,151 @@ $(document).ready(function() {
 
 
     $(document).on("click", "#yes_popup_18", function () {
+        var flag = 0
+
+        if($("#18_order_number").val()==""){
+            $("#18_order_number").css("border-color","red");
+            setTimeout("$('#18_order_number').css('border-color','#ccc')", 3000);
+            flag = 1;
+        }
+        if($("#18_order_date").val()==""){
+            $("#18_order_date").css("border-color","red");
+            setTimeout("$('#18_order_date').css('border-color','#ccc')", 3000);
+            flag = 2;
+        }
+        if($("#18_mentor").val() == 0){
+            $("#18_mentor").css("border-color","red");
+            setTimeout("$('#18_mentor').css('border-color','#ccc')", 3000);
+            flag = 3;
+        }
+        if($("#18_bus").val() == 0){
+            $("#18_bus").css("border-color","red");
+            setTimeout("$('#18_bus').css('border-color','#ccc')", 3000);
+            flag = 4;
+        }
+        if($("#18_route").val() == 0){
+            $("#18_route").css("border-color","red");
+            setTimeout("$('#18_route').css('border-color','#ccc')", 3000);
+            flag = 5;
+        }
+        if($("#18_hours").val() == 0){
+            $("#18_hours").css("border-color","red");
+            setTimeout("$('#18_hours').css('border-color','#ccc')", 3000);
+            flag = 6;
+        }
+        if($("#18_inst_date").val()==""){
+            $("#18_inst_date").css("border-color","red");
+            setTimeout("$('#18_inst_date').css('border-color','#ccc')", 3000);
+            flag = 7;
+        }
+
+        var order = $("#18_order_number").val() + " от " + $("#18_order_date").val();
+        var mentor_id = $("#18_mentor").val();
+        var bus_id = $("#18_bus").val();
+        var route_id = $("#18_route").val();
+        var hours = $("#18_hours").val();
+        var inst_date = $("#18_inst_date").val();
+
         var action_name = "probation_alert";
-        $.ajax({
-            type: "POST",
-            url: "/distributor/main",
-            data: {
-                emp:emp,
-                action_name:action_name
-            },
-            success: function (answer) {
+        if(flag == 0){
+            $.ajax({
+                type: "POST",
+                url: "/distributor/main",
+                data: {
+                    emp: emp,
+                    action_name: action_name,
+                    order: order,
+                    mentor_id: mentor_id,
+                    bus_id: bus_id,
+                    route_id: route_id,
+                    hours: hours,
+                    inst_date: inst_date
+                },
+                success: function (answer) {
 
-                var result = jQuery.parseJSON(answer);
-                var status = result.status;
-                var link = result.link;
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    var link = result.link;
 
-                $(".alert_row").each(function() {
-                    if(file_id == $(this).attr("file_id")){
-                        if(18 == $(this).attr("action_type")) {
-                            $(this).css("display", "none");
+                    $(".alert_row").each(function () {
+                        if (file_id == $(this).attr("file_id")) {
+                            if (18 == $(this).attr("action_type")) {
+                                $(this).css("display", "none");
+                            }
                         }
+                    });
+                    $(".btn-default").click();
+                    if (status == "ok") {
+                        print_link(link);
                     }
-                });
-                $(".btn-default").click();
-                if(status == "ok"){
-                    print_link(link);
+                },
+                error: function () {
+                    console.log('error');
                 }
-            },
-            error: function () {
-                console.log('error');
-            }
-        });// ajax
+            });// ajax
+        } else {
+            alert(flag);
+        }
     });
 
+    // событие выбора автобуса
+    $(document).on("change",'#18_bus',function(){
+        var bus_id = $("#18_bus").val();
+        // получаем маршруты автобуса
+        // если маршрут ещё не выбирали
+        if($("#18_route").val() == 0){
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/get_bus_routes",
+                data: {
+                    bus_id: bus_id
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    var content = result.content;
+                    // помешаем доступные маршруты в выпадашку
+                    if (status == "ok") {
+                        $("#18_route").html(content);
+                    }
+
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+        }
+    });
+
+    // событие выбора маршрута
+    $(document).on("change",'#18_route',function(){
+        var route_id = $("#18_route").val();
+        // получаем автобусы на маршруте
+        // если автобус ещё не выбирали
+        if($("#18_bus").val() == 0) {
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/get_route_buses",
+                data: {
+                    route_id: route_id
+                },
+                success: function (answer) {
+
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    var content = result.content;
+                    // помешаем доступные автобусы в выпадашку
+                    if (status == "ok") {
+                        $("#18_bus").html(content);
+                    }
+
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+        }s
+    });
 
 
     $(document).on("click", "#print_med_form", function () {
@@ -768,6 +899,8 @@ $(document).ready(function() {
     //} );
 
 
+
+
     $(document).on("click",'.select_button',function(){
         if($(this).hasClass("open_select")){
             $(this).removeClass("open_select");
@@ -834,6 +967,23 @@ $(document).ready(function() {
             $(this).keypress(function (ev) {
                 if (ev.which == 13 && i == $inputs.length - 1) {
                     $(".enter_click_two").click();
+                }
+                if (ev.which == 13) {
+                    $inputs.eq(i + 1).focus();
+                    return false;
+                }
+            });
+        });
+    }
+
+
+    // работаем ентером как табом форме стажировочного листа
+    function tab_vs_enter_inst() {
+        var $inputs = $("body").find('.tab_vs_enter_inst');
+        $inputs.each(function (i) {
+            $(this).keypress(function (ev) {
+                if (ev.which == 13 && i == $inputs.length - 1) {
+                    $("#yes_popup_18").click();
                 }
                 if (ev.which == 13) {
                     $inputs.eq(i + 1).focus();

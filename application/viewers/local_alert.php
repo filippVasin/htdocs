@@ -302,11 +302,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Отправить:</h4>
+                    <h4 class="modal-title" id="myModalLabel">Чтоб отправить на стажировку заполните поля:</h4>
                 </div>
-                <div class="modal-body">
-                    <div id="print_probationer_popup_name"></div>
-                    <div class="popup_context_menu_title"> На стажировку?</div>
+                <div class="modal-body" id="internship_list_content">
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="yes_popup_18" class="btn btn-primary">Отправить</button>

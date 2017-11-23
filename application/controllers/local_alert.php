@@ -35,4 +35,20 @@ class Controller_local_alert extends Controller{
         $this->model->post_array = $this->post_params;
         $this->model->select();
     }
+
+    // получаем форму заполнения для стажировочного листа
+    public function internship_list(){
+        $this->model->internship_list();
+    }
+
+    public function get_bus_routes(){
+        $this->model->post_array = $this->post_params;
+        $this->model->get_bus_routes();
+    }
+
+    public function get_route_buses() {
+        $this->model->post_array = $this->post_params;
+        $this->model->get_route_buses();
+    }
+
 }

@@ -334,11 +334,33 @@ class Model_distributor{
     private function probation_alert(){
         global $db;
         $emp = $this->post_array['emp'];
+        $order = $this->post_array['order'];
+        $mentor_id = $this->post_array['mentor_id'];
+        $bus_id = $this->post_array['bus_id'];
+        $route_id = $this->post_array['route_id'];
+        $hours = $this->post_array['hours'];
+        $inst_date = $this->post_array['inst_date'];
+
+        $hours_ints = 8;
+        $hours_driving = $hours - $hours_ints;
+        // подготовка дат к записи в базу
+        $inst_date = date_create($inst_date)->Format('Y-m-d');
+
+        $sql= "INSERT INTO `internship_list` (`employee_id`, `order`, `mentor_id`, `bus_id`, `route_id`, `hours_all`, `hours_ints`, `hours_driving`, `date`)
+        VALUES ('". $emp ."', '". $order ."', '". $mentor_id ."', '". $bus_id ."', '". $route_id ."', '". $hours ."', '". $hours_ints ."', '". $hours_driving ."', '". $inst_date ."');";
+        $db->query($sql);
+
+
+
         $blank = "PATP1_Probationer";
         $result_array['link'] = "/doc_views?". $blank ."&probation&". $emp;
 
-        $sql = "DELETE FROM `local_alerts` WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;
+        $sql = "UPDATE `local_alerts` SET `action_type_id`= 19 WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;
         $db->query($sql);
+
+//        $sql = "DELETE FROM `local_alerts` WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;
+//        $db->query($sql);
+
 
         return $result_array;
     }

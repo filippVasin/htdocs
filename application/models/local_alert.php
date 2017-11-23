@@ -218,5 +218,131 @@ class Model_local_alert{
     }
 
 
+    public function internship_list(){
+        global $db;
+
+            $html = '<label>Номер Приказ:</label>
+                     <input class="form-control tab_vs_enter_inst"  id="18_order_number">
+                     <label>Дата Приказа:</label>
+                     <input class="form-control valid_date tab_vs_enter_inst"  id="18_order_date">
+                     <label>Наставник:</label>
+                        <div class="select_triangle" >
+                            <select class="form-control tab_vs_enter_inst"  id="18_mentor">
+                                <option value="0"></option>
+                                %mentor%
+                            </select>
+                        </div>
+
+                     <label>Маршрут:</label>
+                        <div class="select_triangle" >
+                            <select class="form-control tab_vs_enter_inst"  id="18_route">
+                                <option value="0"></option>
+                                %route%
+                            </select>
+                        </div>
+                     <label>Автобус:</label>
+                        <div class="select_triangle" >
+                            <select class="form-control tab_vs_enter_inst"  id="18_bus">
+                                <option value="0"></option>
+                                %bus%
+                            </select>
+                        </div>
+                     <label>Длительность стажировки:</label>
+                        <div class="select_triangle" >
+                            <select class="form-control tab_vs_enter_inst"  id="18_hours">
+                                <option value="0"></option>
+                                <option value="16">16 часов</option>
+                                <option value="24">24 часа</option>
+                                <option value="32">32 часа</option>
+                            </select>
+                        </div>
+                     <label>Дата:</label>
+                     <input class="form-control valid_date tab_vs_enter_inst"  id="18_inst_date">';
+
+//        <option value="0">Уволен</option>
+//        <option value="1">Работает</option>
+
+        // ищим наставников
+        $sql="SELECT employees.id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio
+                FROM employees,employees_items_node,organization_structure
+                WHERE organization_structure.kladr_id = 179
+                AND employees_items_node.org_str_id = organization_structure.id
+                AND employees.id = employees_items_node.employe_id";
+        $mentor_array = $db->all($sql);
+
+        $mentor_html = "";
+        foreach ($mentor_array as $mentor_item) {
+            $mentor_html .= '<option value="'. $mentor_item['id']  .'">'. $mentor_item['fio'] .'</option>';
+        }
+        $html = str_replace('%mentor%', $mentor_html, $html);
+
+        // ищим автобусы
+        $sql="SELECT * FROM bus_list";
+        $bus_array = $db->all($sql);
+
+        $bus_html = "";
+        foreach ($bus_array as $bus_item) {
+            $bus_html .= '<option value="'. $bus_item['id']  .'">'. $bus_item['brand_of_bus']. " - " .$bus_item['gos_number']  .'</option>';
+        }
+        $html = str_replace('%bus%', $bus_html, $html);
+
+
+        // ищим маршруты
+        $sql="SELECT * FROM bus_list_routes";
+        $route_array = $db->all($sql);
+
+        $route_html = "";
+        foreach ($route_array as $route_item) {
+            $route_html .= '<option value="'. $route_item['id']  .'">'. $route_item['route_name'] .'</option>';
+        }
+        $html = str_replace('%route%', $route_html, $html);
+
+
+        $result_array['content'] = $html;
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+    // получаем маршруты автобуса
+    public function get_bus_routes(){
+        global $db;
+        $bus_id = $this->post_array['bus_id'];
+        $sql = "SELECT bus_list_routes.*
+                FROM bus_vs_route, bus_list_routes
+                WHERE bus_list_routes.id = bus_vs_route.route_id
+                AND bus_vs_route.bus_id =".$bus_id;
+        $route_array = $db->all($sql);
+        $html ='<option value="0"></option>';
+        foreach ($route_array as $route_item) {
+            $html .= '<option value="'. $route_item['id']  .'">'. $route_item['route_name'] .'</option>';
+        }
+
+        $result_array['content'] = $html;
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+    // получаем автобусы на маршруте
+    public function get_route_buses(){
+        global $db;
+        $route_id = $this->post_array['route_id'];
+
+        $sql = "SELECT bus_list.*
+                FROM bus_vs_route, bus_list
+                WHERE bus_list.id = bus_vs_route.bus_id
+                AND bus_vs_route.route_id =".$route_id;
+        $bus_array = $db->all($sql);
+        $html ='<option value="0"></option>';
+        foreach ($bus_array as $bus_item) {
+            $html .= '<option value="'. $bus_item['id']  .'">'. $bus_item['brand_of_bus']. " - " .$bus_item['gos_number']  .'</option>';
+        }
+
+        $result_array['content'] = $html;
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
 
 }

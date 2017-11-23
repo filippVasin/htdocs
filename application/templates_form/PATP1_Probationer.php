@@ -58,6 +58,25 @@ $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
 $chief_dol = $boss['chief_dol'];
 $fioFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $fio);
 
+$sql="SELECT internship_list.*,CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS mentor_fio,
+        bus_list.brand_of_bus, bus_list.gos_number,
+        bus_list_routes.route_name
+        FROM internship_list, employees, bus_list,bus_list_routes
+        WHERE internship_list.mentor_id = employees.id
+        AND internship_list.bus_id = bus_list.id
+        AND internship_list.route_id = bus_list_routes.id
+        AND internship_list.employee_id =".$employee_id;
+$internship_list_row = $db->row($sql);
+$order = $internship_list_row['order'];
+$mentor_fio = $internship_list_row['mentor_fio'];
+$mentorFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $mentor_fio);
+$brand_of_bus = $internship_list_row['brand_of_bus'];
+$gos_number = $internship_list_row['gos_number'];
+$route_name = $internship_list_row['route_name'];
+$hours_all = $internship_list_row['hours_all'];
+$hours_inst = $internship_list_row['hours_ints'];
+$hours_driving = $internship_list_row['hours_driving'];
+$inst_date = date_create($internship_list_row['date'])->Format('d.m.Y');
 
 $result_file =
     '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
@@ -90,36 +109,36 @@ $result_file =
 <FONT SIZE=4><B>ТРАНСПОРТНОГО СРЕДСТВА
 (АВТОБУСА) № _____</B></FONT></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=4>Водитель
-</FONT><I><U><B>'. $fio .'</B></U></I></P>
+</FONT><I><B>'. $fio .'</B></I></P>
 <P >Водительское
-удостоверение <I><U><B> '. $license_number .', категории:</B></U></I><FONT ><I><U><B>
+удостоверение <I><B> '. $license_number .', категории:</B></I><FONT ><I><B>
 '.$category .'</P>
 <P>Приказом
 по <I><B>ООО «Новосибирскпрофстрой-ПАТП-1»</B></I>
-<I><U><B>№ 235  от 26.10.2017г., закреплен:</B></U></I>
-за водителем-наставником:<B>_______________________________________________________________________________</B> </P>
+<I><B>'. $order .'г., закреплен:</B></I>
+за водителем-наставником:<B>'. $mentor_fio .'</B> </P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">На
-транспортное средство <FONT SIZE=4><I><B>___________</B></I></FONT>
-<FONT SIZE=4>г.н.   </FONT><FONT SIZE=4><I><B>_____</B></I></FONT></P>
+транспортное средство <FONT SIZE=4><I><B>'. $brand_of_bus .'</B></I></FONT>
+<FONT SIZE=4>г.н.   </FONT><FONT SIZE=4><I><B>'. $gos_number .'</B></I></FONT></P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">По
-маршруту<SPAN LANG="en-US">__________________________________________________________________</SPAN></P>
+маршруту<SPAN LANG="en-US">'. $route_name .'</SPAN></P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Причина
-направления на стажировку <I><U><B>прием
+направления на стажировку <I><B>прием
 на работу, ознакомление с
-маршрутом					___________________				</B></U></I></P>
+маршрутом					___________________				</B></I></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">	</P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Направляется
 для прохождения стажировки в объеме:
-____ часов</P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><U>
-  <I><B>часов – инструктаж (вводный,
-предрейсовый, сезонный)</B></U></I></P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><U>
-  <I><B>часов - маршрутная стажировка
+'. $hours_all .' часов</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">
+  <I><B>'. $hours_inst .' часов – инструктаж (вводный,
+предрейсовый, сезонный)</B></I></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">
+  <I><B>'. $hours_driving .' часов - маршрутная стажировка
 (практика)
-                          </B></U></I>
+                          </B></I>
 </P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Начальник
@@ -127,11 +146,11 @@ ____ часов</P>
 Рыльская___________</P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">'. $chief_dol .'___________________
-__________<U>'. $chiefFIO .'</U>________</P>
+__________'. $chiefFIO .'________</P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водитель
 прошел инструктаж в количестве
-<U><B>______________</B></U></P>
+<B> '. $hours_inst .' часов - '. $inst_date .'</B></P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">
 </P>
@@ -146,7 +165,7 @@ __________________		           <FONT SIZE=1 STYLE="font-size: 8pt">(дата)
 водителя)</FONT></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водитель
 наставник____________________
-_______________________________</P>
+________________'.$mentorFIO.'</P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">
 
 <FONT SIZE=1 STYLE="font-size: 8pt">(подпись)
@@ -154,7 +173,7 @@ _______________________________</P>
 (ФИО)                           </FONT>
 </P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Маршрутная
-стажировка- ____ ч.
+стажировка- '. $hours_driving .' ч.
 </P>
 <TABLE WIDTH=639 CELLPADDING=7 CELLSPACING=0>
 	<COL WIDTH=100>
