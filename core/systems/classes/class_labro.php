@@ -298,4 +298,19 @@ class labro
         }
         return $fact_org_str_id;
     }
+
+
+    public function get_org_str_id($employees) {
+        global $db;
+        $sql = "SELECT employees_items_node.*
+                FROM employees_items_node
+                WHERE employees_items_node.employe_id =".$employees;
+        $result = $db->row($sql);
+        if($result['id']!=""){
+            $org_str_id = $result['org_str_id'];
+        } else {
+            $org_str_id = 0;
+        }
+        return $org_str_id;
+    }
 }

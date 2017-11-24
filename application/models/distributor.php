@@ -36,6 +36,21 @@ class Model_distributor{
             case "print_med_form":
                 $result_array = $this->print_med_form();
                 break;
+            case "ACS_signature_from_the_driver":
+                $result_array = $this->ACS_signature_from_the_driver();
+                break;
+            case "transfer_to_personnel_department":
+                $result_array = $this->transfer_to_personnel_department();
+                break;
+            case "personnel_department_receive":
+                $result_array = $this->personnel_department_receive();
+                break;
+            case "sign_staff_department":
+                $result_array = $this->sign_staff_department();
+                break;
+            case "sign_Deputy_TB_and_DB":
+                $result_array = $this->sign_Deputy_TB_and_DB();
+                break;
         }
 
 
@@ -304,11 +319,20 @@ class Model_distributor{
 
     private function probation_actoin(){
         global $db;
+
         $emp = $this->post_array['emp'];
 
         $sql = "SELECT * FROM `local_alerts` WHERE `initiator_employee_id` = ".$emp ." AND `action_type_id` = 19";
         $result = $db->row($sql);
         $step_id = $result['step_id'];
+        $observer_org_str_id = $result['observer_org_str_id'];
+        $action_type_id = 20;  // получить АСУ подпись у водителя
+        $company_id= $result['company_id'];
+        $save_temp_files_id = $result['save_temp_files_id'];
+
+        $sql="INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`, `company_id`, `save_temp_files_id`, `step_id`, `date_create`)
+              VALUES ('". $emp ."', '". $observer_org_str_id ."', '". $action_type_id ."', '". $company_id ."', '". $save_temp_files_id ."', '". $step_id ."', NOW());";
+        $db->query($sql);
 
         $sql = "UPDATE `local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 19";
         $db->query($sql);
@@ -382,5 +406,173 @@ class Model_distributor{
         return $result_array;
     }
 
+    private function ACS_signature_from_the_driver(){
+        global $db;
+        $emp= $this->post_array['emp'];
+
+        $sql = "SELECT * FROM `local_alerts` WHERE `initiator_employee_id` = ".$emp ." AND `action_type_id` = 20";
+        $result = $db->row($sql);
+        $step_id = $result['step_id'];
+        $observer_org_str_id = $result['observer_org_str_id'];
+        $action_type_id = 21;  // передать документ в отдел персонала
+        $company_id= $result['company_id'];
+        $save_temp_files_id = $result['save_temp_files_id'];
+
+        $sql="INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`, `company_id`, `save_temp_files_id`, `step_id`, `date_create`)
+              VALUES ('". $emp ."', '". $observer_org_str_id ."', '". $action_type_id ."', '". $company_id ."', '". $save_temp_files_id ."', '". $step_id ."', NOW());";
+        $db->query($sql);
+
+        $sql = "UPDATE `local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 20";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_step` (`employee_id`,`step_id`,`data_finish`) VALUES ( ". $emp .", ". $step_id .",NOW())";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_docs` (`employee_id`,`step_id`,`date_start`,`date_finish`) VALUES ( ". $emp .", ". $step_id .",NOW(),NOW())";
+        $db->query($sql);
+
+        $sql= "INSERT INTO `form_status_now` (`track_number_form_id`,`track_form_step_now`, `doc_status_now`, `author_employee_id`, `step_id`) VALUES ('5','37','1', '". $emp ."', '". $step_id ."')";
+        $db->query($sql);
+
+        "INSERT INTO `history_forms` (`step_end_time`, `track_form_id`, `track_form_step`, `start_data`, `doc_status_now`, `author_employee_id`) VALUES (NOW(), '7', '37', NOW(), '1','". $emp ."')";
+        $db->query($sql);
+
+        $result_array['content'] = "";
+        return $result_array;
+    }
+
+
+    private function transfer_to_personnel_department(){
+        global $db;
+        $emp= $this->post_array['emp'];
+
+        $sql = "SELECT * FROM `local_alerts` WHERE `initiator_employee_id` = ".$emp ." AND `action_type_id` = 21";
+        $result = $db->row($sql);
+        $step_id = $result['step_id'];
+        $observer_org_str_id = 0;// виден только boss_type - 3(отдел персонала)
+        $action_type_id = 22;  // получил ли отдел персонала?
+        $company_id= $result['company_id'];
+        $save_temp_files_id = $result['save_temp_files_id'];
+
+        $sql="INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`, `company_id`, `save_temp_files_id`, `step_id`, `date_create`)
+              VALUES ('". $emp ."', '". $observer_org_str_id ."', '". $action_type_id ."', '". $company_id ."', '". $save_temp_files_id ."', '". $step_id ."', NOW());";
+        $db->query($sql);
+
+        $sql = "UPDATE `local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 21";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_step` (`employee_id`,`step_id`,`data_finish`) VALUES ( ". $emp .", ". $step_id .",NOW())";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_docs` (`employee_id`,`step_id`,`date_start`,`date_finish`) VALUES ( ". $emp .", ". $step_id .",NOW(),NOW())";
+        $db->query($sql);
+
+        $sql= "INSERT INTO `form_status_now` (`track_number_form_id`,`track_form_step_now`, `doc_status_now`, `author_employee_id`, `step_id`) VALUES ('5','37','1', '". $emp ."', '". $step_id ."')";
+        $db->query($sql);
+
+        "INSERT INTO `history_forms` (`step_end_time`, `track_form_id`, `track_form_step`, `start_data`, `doc_status_now`, `author_employee_id`) VALUES (NOW(), '7', '37', NOW(), '1','". $emp ."')";
+        $db->query($sql);
+
+        $result_array['content'] = "";
+        return $result_array;
+    }
+
+    private function personnel_department_receive(){
+        global $db;
+        $emp= $this->post_array['emp'];
+
+        $sql = "SELECT * FROM `local_alerts` WHERE `initiator_employee_id` = ".$emp ." AND `action_type_id` = 22";
+        $result = $db->row($sql);
+        $step_id = $result['step_id'];
+        $observer_org_str_id = 0;// виден только boss_type - 3(отдел персонала)
+        $action_type_id = 23;  // подписать отделу кадров
+        $company_id= $result['company_id'];
+        $save_temp_files_id = $result['save_temp_files_id'];
+
+        $sql="INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`, `company_id`, `save_temp_files_id`, `step_id`, `date_create`)
+              VALUES ('". $emp ."', '". $observer_org_str_id ."', '". $action_type_id ."', '". $company_id ."', '". $save_temp_files_id ."', '". $step_id ."', NOW());";
+        $db->query($sql);
+
+        $observer_org_str_id = 164;// виден Зам.Дтр по ТБ и БД и отделу персонала
+        $action_type_id = 24;  // подписать Зам.Дтр по ТБ и БД
+
+        $sql="INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`, `company_id`, `save_temp_files_id`, `step_id`, `date_create`)
+              VALUES ('". $emp ."', '". $observer_org_str_id ."', '". $action_type_id ."', '". $company_id ."', '". $save_temp_files_id ."', '". $step_id ."', NOW());";
+        $db->query($sql);
+
+        $sql = "UPDATE `local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 22";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_step` (`employee_id`,`step_id`,`data_finish`) VALUES ( ". $emp .", ". $step_id .",NOW())";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_docs` (`employee_id`,`step_id`,`date_start`,`date_finish`) VALUES ( ". $emp .", ". $step_id .",NOW(),NOW())";
+        $db->query($sql);
+
+        $sql= "INSERT INTO `form_status_now` (`track_number_form_id`,`track_form_step_now`, `doc_status_now`, `author_employee_id`, `step_id`) VALUES ('5','37','1', '". $emp ."', '". $step_id ."')";
+        $db->query($sql);
+
+        "INSERT INTO `history_forms` (`step_end_time`, `track_form_id`, `track_form_step`, `start_data`, `doc_status_now`, `author_employee_id`) VALUES (NOW(), '7', '37', NOW(), '1','". $emp ."')";
+        $db->query($sql);
+
+        $result_array['content'] = "";
+        return $result_array;
+    }
+
+    private function sign_staff_department(){
+        global $db;
+        $emp= $this->post_array['emp'];
+
+        $sql = "SELECT * FROM `local_alerts` WHERE `initiator_employee_id` = ".$emp ." AND `action_type_id` = 23";
+        $result = $db->row($sql);
+        $step_id = $result['step_id'];
+
+
+        $sql = "UPDATE `local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 23";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_step` (`employee_id`,`step_id`,`data_finish`) VALUES ( ". $emp .", ". $step_id .",NOW())";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_docs` (`employee_id`,`step_id`,`date_start`,`date_finish`) VALUES ( ". $emp .", ". $step_id .",NOW(),NOW())";
+        $db->query($sql);
+
+        $sql= "INSERT INTO `form_status_now` (`track_number_form_id`,`track_form_step_now`, `doc_status_now`, `author_employee_id`, `step_id`) VALUES ('5','37','1', '". $emp ."', '". $step_id ."')";
+        $db->query($sql);
+
+        "INSERT INTO `history_forms` (`step_end_time`, `track_form_id`, `track_form_step`, `start_data`, `doc_status_now`, `author_employee_id`) VALUES (NOW(), '7', '37', NOW(), '1','". $emp ."')";
+        $db->query($sql);
+
+        $result_array['content'] = "";
+        return $result_array;
+    }
+
+
+    private function sign_Deputy_TB_and_DB(){
+        global $db;
+        $emp= $this->post_array['emp'];
+
+        $sql = "SELECT * FROM `local_alerts` WHERE `initiator_employee_id` = ".$emp ." AND `action_type_id` = 24";
+        $result = $db->row($sql);
+        $step_id = $result['step_id'];
+
+        $sql = "UPDATE `local_alerts` SET `date_finish`= NOW() WHERE  `initiator_employee_id`=" . $emp ." AND `action_type_id`= 24";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_step` (`employee_id`,`step_id`,`data_finish`) VALUES ( ". $emp .", ". $step_id .",NOW())";
+        $db->query($sql);
+
+        $sql = "INSERT INTO `history_docs` (`employee_id`,`step_id`,`date_start`,`date_finish`) VALUES ( ". $emp .", ". $step_id .",NOW(),NOW())";
+        $db->query($sql);
+
+        $sql= "INSERT INTO `form_status_now` (`track_number_form_id`,`track_form_step_now`, `doc_status_now`, `author_employee_id`, `step_id`) VALUES ('5','37','1', '". $emp ."', '". $step_id ."')";
+        $db->query($sql);
+
+        "INSERT INTO `history_forms` (`step_end_time`, `track_form_id`, `track_form_step`, `start_data`, `doc_status_now`, `author_employee_id`) VALUES (NOW(), '7', '37', NOW(), '1','". $emp ."')";
+        $db->query($sql);
+
+        $result_array['content'] = "";
+        return $result_array;
+    }
 
 }

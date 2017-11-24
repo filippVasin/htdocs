@@ -86,4 +86,11 @@ class Controller_local_alert extends Controller{
         $this->model->edit_instr_list_save();
     }
 
+    public function check_inst_complete() {
+        $this->model->post_array = $this->post_params;
+        $this->model->check_inst_complete();
+    }
+
+
+
 }

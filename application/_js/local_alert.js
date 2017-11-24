@@ -146,8 +146,49 @@ $(document).ready(function() {
             $("#alert_print_probationer_button").click();
         }
         if( action_type == 19 ){
-            $("#driver_probation_actoin_popup").html(name);
-            $("#alert_probation_actoin_popup_button").click();
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/check_inst_complete",
+                data: {
+                    emp:emp
+                },
+                success: function (answer) {
+
+                    var result = jQuery.parseJSON(answer);
+                    var content = result.content;
+                    if(content == "yes"){
+                        // прошли стажировку
+                        $("#yes_popup_19").removeClass("none");
+                    } else {
+                        $("#yes_popup_19").addClass("none");
+                    }
+                    $("#driver_probation_actoin_popup").html(name);
+                    $("#alert_probation_actoin_popup_button").click();
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+        }
+        if( action_type == 20 ){
+            $("#driver_probation_actoin_popup_20").html(name);
+            $("#alert_probation_actoin_popup_20_button").click();
+        }
+        if( action_type == 21 ){
+            $("#driver_probation_actoin_popup_21").html(name);
+            $("#alert_probation_actoin_popup_21_button").click();
+        }
+        if( action_type == 22 ){
+            $("#driver_probation_actoin_popup_22").html(name);
+            $("#alert_probation_actoin_popup_22_button").click();
+        }
+        if( action_type == 23 ){
+            $("#driver_probation_actoin_popup_23").html(name);
+            $("#alert_probation_actoin_popup_23_button").click();
+        }
+        if( action_type == 24 ){
+            $("#driver_probation_actoin_popup_24").html(name);
+            $("#alert_probation_actoin_popup_24_button").click();
         }
     });
 
@@ -334,7 +375,9 @@ $(document).ready(function() {
                         }
                     }
                 });
-                $(".btn-default").click();
+                var link = "/doc_views?PATP1_Probationer&probation&" + emp;
+                print_link(link);
+                $("#inst_list_19_cancel").click();
 
             },
             error: function () {
@@ -496,7 +539,6 @@ $(document).ready(function() {
 
 
     $(document).on("click", "#inst_list_19", function () {
-        //$(".btn-default").click();
         $.ajax({
             type: "POST",
             url: "/local_alert/internship_list_edit",
@@ -504,13 +546,11 @@ $(document).ready(function() {
                 emp:emp
             },
             success: function (answer) {
-
                 var result = jQuery.parseJSON(answer);
                 var content = result.content;
                 $("#popup_inst_list_edit").html(content);
                 $(".valid_date").mask("99.99.9999");
                 tab_vs_enter_inst_edit();
-
 
                 $("#popup_inst_list_button").click();
                 $("#yes_popup_19 .btn-default").click();
@@ -519,7 +559,6 @@ $(document).ready(function() {
                 console.log('error');
             }
         });// ajax
-
     });
 
     $(document).on("click", "#print_med_form", function () {
@@ -550,6 +589,7 @@ $(document).ready(function() {
 
 
     $(document).on("click", "#inst_list_19_plus_route", function () {
+
         $.ajax({
             type: "POST",
             url: "/local_alert/internship_list_edit_plus_route",
@@ -561,6 +601,9 @@ $(document).ready(function() {
                 var content = result.content;
                 $("#popup_inst_list_edit_plus_route").html(content);
                 $(".valid_date").mask("99.99.9999");
+                $("#inst_list_19_cancel").click();
+                $("#inst_list_19_edit_cancel").click();
+                $("#popup_inst_list_plus_route_button").click();
                 tab_vs_enter_inst_edit_plus_route();
                 check_route_and_bus()
             },
@@ -568,13 +611,12 @@ $(document).ready(function() {
                 console.log('error');
             }
         });// ajax
-        $("#popup_inst_list_plus_route_button").click();
+
     });
 
 
     $(document).on("click", "#inst_list_19_plus_route_save", function () {
         var flag = 0
-
 
         if($("#18_mentor_plus").val() == 0){
             $("#18_mentor_plus").css("border-color","red");
@@ -609,6 +651,7 @@ $(document).ready(function() {
         var inst_date = $("#18_inst_date_plus").val();
 
         if(flag == 0){
+            $("#inst_list_19_plus_route_cancel").click();
             $.ajax({
                 type: "POST",
                 url: "/local_alert/inst_save_new_route",
@@ -628,7 +671,9 @@ $(document).ready(function() {
                     var content = result.content;
                     if (status == "ok") {
                         $("#inst_table_router_rows").html(content);
-                        $("#inst_list_19_plus_route_cancel").click();
+
+                        $("#popup_inst_list_button").click();
+
                     }
                 },
                 error: function () {
@@ -640,11 +685,178 @@ $(document).ready(function() {
         }
     });
 
+    $(document).on("click", "#inst_list_19_plus_route_cancel", function () {
+        setTimeout('$("#popup_inst_list_button").click()', 500);
+    });
+
     $(document).on("click", "#inst_list_19_print", function () {
         var link = "/doc_views?PATP1_Probationer&probation&" + emp;
         print_link(link);
     });
+    $(document).on("click", ".print_inst_list", function () {
+        var link = "/doc_views?PATP1_Probationer&probation&" + emp;
+        print_link(link);
+    });
 
+
+    $(document).on("click", "#yes_popup_20", function () {
+        var action_name = "ACS_signature_from_the_driver";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+
+                $(".alert_row").each(function() {
+                    if(emp == $(this).attr("emp")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $("#popup_20_edut_cancel").click();
+
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+
+    $(document).on("click", "#yes_popup_21", function () {
+        var action_name = "transfer_to_personnel_department";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+
+                $(".alert_row").each(function() {
+                    if(emp == $(this).attr("emp")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $("#popup_21_edut_cancel").click();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+    $(document).on("click", "#yes_popup_22", function () {
+        var action_name = "personnel_department_receive";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+
+                $(".alert_row").each(function() {
+                    if(emp == $(this).attr("emp")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $("#popup_22_edut_cancel").click();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+    $(document).on("click", "#yes_popup_23", function () {
+        var action_name = "sign_staff_department";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+
+                $(".alert_row").each(function() {
+                    if(emp == $(this).attr("emp")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $("#popup_23_edut_cancel").click();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+    $(document).on("click", "#yes_popup_24", function () {
+        var action_name = "sign_Deputy_TB_and_DB";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                emp:emp,
+                action_name:action_name
+            },
+            success: function (answer) {
+                var result = jQuery.parseJSON(answer);
+
+                $(".alert_row").each(function() {
+                    if(emp == $(this).attr("emp")){
+                        if(action_type == $(this).attr("action_type")) {
+                            $(this).css("display", "none");
+                        }
+                    }
+                });
+                $("#popup_24_edut_cancel").click();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+    $(document).on("click", "#popup_22_edut_button", function () {
+        $("#popup_22_edut_cancel").click();
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/internship_list_edit",
+                data: {
+                    emp:emp
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var content = result.content;
+                    $("#popup_inst_list_edit").html(content);
+                    $(".valid_date").mask("99.99.9999");
+                    tab_vs_enter_inst_edit();
+                    $("#popup_inst_list_button").click();
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+    });
 
     // показываем карточку редактированния для забивания данных о документах водителя после мед осмотра
     function edit_driver(){
@@ -848,6 +1060,8 @@ $(document).ready(function() {
 
 
     $(document).on("click", ".inst_routs_row", function () {
+        $("#inst_list_19_cancel").click();
+        $("#inst_list_19_edit_cancel").click();
         inst_routs_edit = $(this).attr("id_routs");
         $.ajax({
             type: "POST",
@@ -860,6 +1074,7 @@ $(document).ready(function() {
                 var result = jQuery.parseJSON(answer);
                 var content = result.content;
                 $("#popup_inst_list_edit_route_body").html(content);
+                $("#popup_inst_list_edit_route_button").click();
                 $(".valid_date").mask("99.99.9999");
                 tab_vs_enter_inst_edit_route()
                 check_route_and_bus()
@@ -869,7 +1084,7 @@ $(document).ready(function() {
             }
         });// ajax
 
-        $("#popup_inst_list_edit_route_button").click();
+
     });
 
     $(document).on("click", "#inst_list_19_edit_route_save", function () {
@@ -908,6 +1123,7 @@ $(document).ready(function() {
         var inst_date = $("#18_inst_date_edit").val();
 
         if(flag == 0){
+            //setTimeout('$("#inst_list_19").click()', 500);
             $.ajax({
                 type: "POST",
                 url: "/local_alert/inst_edit_new_route",
@@ -928,6 +1144,7 @@ $(document).ready(function() {
                     if (status == "ok") {
                         $("#inst_table_router_rows").html(content);
                         $("#inst_list_19_edit_route_cancel").click();
+
                     }
                 },
                 error: function () {
@@ -942,6 +1159,7 @@ $(document).ready(function() {
 
 
     $(document).on("click", "#inst_list_19_edit_route_delete", function () {
+        //setTimeout('$("#inst_list_19").click()', 500);
         $.ajax({
             type: "POST",
             url: "/local_alert/inst_delete_new_route",
@@ -957,6 +1175,7 @@ $(document).ready(function() {
                 if (status == "ok") {
                     $("#inst_table_router_rows").html(content);
                     $("#inst_list_19_edit_route_cancel").click();
+
                 }
             },
             error: function () {
@@ -966,6 +1185,8 @@ $(document).ready(function() {
     });
 
     $(document).on("click", "#inst_list_19_edit_instr_list", function () {
+        $("#inst_list_19_cancel").click();
+        $("#inst_list_19_edit_cancel").click();
         $.ajax({
             type: "POST",
             url: "/local_alert/edit_instr_list",
@@ -979,7 +1200,7 @@ $(document).ready(function() {
                 var content = result.content;
                 if (status == "ok") {
                     $("#popup_edit_instr_list_body").html(content);
-                    $("#popup_edit_instr_list_button").click();
+                    setTimeout('$("#popup_edit_instr_list_button").click()', 500);
                 }
             },
             error: function () {
@@ -1041,6 +1262,9 @@ $(document).ready(function() {
         var ass_bus_id = $("#18_ass_bus_inst_edit").val();
 
         if(flag == 0){
+
+            $("#inst_list_19_cancel").click();
+            $("#inst_list_19_edit_instr_list_cancel").click();
             $.ajax({
                 type: "POST",
                 url: "/local_alert/edit_instr_list_save",
@@ -1059,10 +1283,8 @@ $(document).ready(function() {
                     var result = jQuery.parseJSON(answer);
                     var status = result.status;
                     if(status == "ok"){
-                        //$("#inst_list_19_plus_route_cancel").click();
 
-                        $("#inst_list_19_edit_instr_list_cancel").click();
-                        $("#inst_list_19").click();
+                        //setTimeout('$("#popup_inst_list_button").click()', 500);
                     }
 
                 },
@@ -1074,6 +1296,13 @@ $(document).ready(function() {
             //alert(flag);
         }
 
+    });
+
+    $(document).on("click", "#inst_list_19_edit_instr_list_cancel", function () {
+        setTimeout('$("#inst_list_19").click()', 500);
+    });
+    $(document).on("click", "#inst_list_19_edit_route_cancel", function () {
+        setTimeout('$("#inst_list_19").click()', 500);
     });
 
 

@@ -47,6 +47,9 @@ class Model_local_alert
 
         $left_key = $_SESSION['left_key_local_alert'];
         $right_key = $_SESSION['right_key_local_alert'];
+
+        $observer = $labro->get_org_str_id($_SESSION['employee_id']);
+
 // запрашиваем все алерты(документ на подпись)
         $sql = "(SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
                     form_step_action.action_name,form_step_action.user_action_name,
@@ -77,8 +80,16 @@ class Model_local_alert
                         AND local_alerts.date_finish IS NULL
                         AND employees_items_node.employe_id =  local_alerts.initiator_employee_id
                         AND employees_items_node.org_str_id = bounds.id
-                        AND bounds.left_key > " . $node_left_key . "
-                        AND bounds.right_key < " . $node_right_key . "";
+                        AND
+                        (
+                            ( bounds.left_key > " . $node_left_key . "
+                                AND bounds.right_key < " . $node_right_key . "
+                            )
+                            OR local_alerts.observer_org_str_id = ". $observer ."
+                        )";
+
+
+
 
         // если указаны даты выборки
         if ($date_from != "") {
@@ -102,11 +113,7 @@ class Model_local_alert
         }
 
 
-        // без доступа
-        if ($node_left_key == 0) {
-            // не показываем ничего
-            $html = "Нет доступа";
-        } else {
+
 
             $sql .= " GROUP BY local_alerts.id";
 
@@ -114,12 +121,18 @@ class Model_local_alert
      UNION
      (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 		FROM local_alerts, sump_for_employees,organization_structure
-		WHERE local_alerts.action_type_id IN (17,18,19)
+		WHERE
+		local_alerts.action_type_id IN (14,17,18,19)
 		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
+		AND sump_for_employees.id = local_alerts.save_temp_files_id
 		AND sump_for_employees.dol_id = organization_structure.id
-      AND organization_structure.left_key > " . $node_left_key . "
-      AND organization_structure.right_key < " . $node_right_key . "
-		AND sump_for_employees.id = local_alerts.save_temp_files_id)";
+		AND
+		(
+			( organization_structure.left_key > " . $node_left_key . "
+      	AND organization_structure.right_key < " . $node_right_key . "
+			)
+		OR local_alerts.observer_org_str_id = ". $observer ."
+		))";
 
 
             $alert_every_days = $db->all($sql);
@@ -165,7 +178,7 @@ class Model_local_alert
                 $select .= "<option value='" . $select_array_item['id'] . "'>" . $select_array_item['name'] . "</option>";
             }
 
-        }
+
 
 //        return  '<div id="selects">' . $status_select . $select . '</div>'. $html;
         return $html;
@@ -908,4 +921,27 @@ class Model_local_alert
         $result = json_encode($result_array, true);
         die($result);
     }
+
+    public function check_inst_complete(){
+        global $db;
+        $emp = $this->post_array['emp'];
+        $sql = "SELECT *
+                    FROM internship_list, internship_routes
+                    WHERE internship_list.employee_id = ". $emp ."
+                    AND internship_routes.employee_id = internship_list.employee_id
+                    AND internship_list.assigned_bus_id > 0
+                    LIMIT 1";
+        $inst_row = $db->row($sql);
+        if($inst_row['id'] !=""){
+            $content = "yes";
+        } else {
+            $content = "no";
+        }
+        $result_array['content'] = $content;
+        $result_array['status'] = 'ok';
+        $result = json_encode($result_array, true);
+        die($result);
+    }
+
+
 }
