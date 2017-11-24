@@ -229,10 +229,10 @@ FORM_NOW.doc_status_now,
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)";
         // если сработал выбор по отделам
-        if(($node_left_key!="")&&($node_right_key!="")){
+
             $sql.=" AND org_parent.left_key >= ". $node_left_key ."
                     AND org_parent.right_key <= ". $node_right_key ;
-        }
+
 
         $sql.="  GROUP BY EMPLOY, STEP
                  ORDER BY EMPLOY)";

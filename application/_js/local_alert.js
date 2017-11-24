@@ -277,9 +277,7 @@ $(document).ready(function() {
     $(document).on("click", "#yes_popup_14", function () {
         var la_real_form_id = file_id;
         var la_employee = observer_em;
-
         var action_name = "bailee_action";
-
         $.ajax({
             type: "POST",
             url: "/distributor/main",
@@ -378,7 +376,6 @@ $(document).ready(function() {
                 var link = "/doc_views?PATP1_Probationer&probation&" + emp;
                 print_link(link);
                 $("#inst_list_19_cancel").click();
-
             },
             error: function () {
                 console.log('error');
