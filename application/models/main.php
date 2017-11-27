@@ -556,6 +556,8 @@ FORM_NOW.doc_status_now,
         $node_left_key = $keys['left'];
         $node_right_key = $keys['right'];
 
+        $observer = $labro->get_org_str_id($_SESSION['employee_id']);
+
         $html = "";
 
         $sql = "(SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
@@ -587,8 +589,13 @@ FORM_NOW.doc_status_now,
                         AND local_alerts.date_finish IS NULL
                         AND employees_items_node.employe_id =  local_alerts.initiator_employee_id
                         AND employees_items_node.org_str_id = bounds.id
-                        AND bounds.left_key > ". $node_left_key ."
-                        AND bounds.right_key < ". $node_right_key ."
+                        AND
+                        (
+                            ( organization_structure.left_key > " . $node_left_key . "
+                                AND organization_structure.right_key < " . $node_right_key . "
+                            )
+                            OR local_alerts.observer_org_str_id = ". $observer ."
+                        )
                          GROUP BY local_alerts.id   )
      UNION
      (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
@@ -596,8 +603,13 @@ FORM_NOW.doc_status_now,
 		WHERE local_alerts.action_type_id IN (17,18,19)
 		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
 		AND sump_for_employees.dol_id = organization_structure.id
-      AND organization_structure.left_key > ". $node_left_key ."
-      AND organization_structure.right_key < ". $node_right_key ."
+      AND
+                        (
+                            ( organization_structure.left_key > " . $node_left_key . "
+                                AND organization_structure.right_key < " . $node_right_key . "
+                            )
+                            OR local_alerts.observer_org_str_id = ". $observer ."
+                        )
 		AND sump_for_employees.id = local_alerts.save_temp_files_id)";
         $alert_every_days = $db->all($sql);
         $count = 0;
