@@ -482,8 +482,8 @@ FORM_NOW.doc_status_now,
 
 
             // уровнять по длинне для сравниения для коректного суммирования на клиете
-            $left_key = str_pad($left_key, 3, "0", STR_PAD_LEFT);
-            $right_key = str_pad($right_key, 3, "0", STR_PAD_LEFT);
+            $left_key = str_pad($left_key, 5, "0", STR_PAD_LEFT);
+            $right_key = str_pad($right_key, 5, "0", STR_PAD_LEFT);
 
             $people_proc = round($people_proc_fact/$people_proc_target*100);
 

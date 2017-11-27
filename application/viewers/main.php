@@ -507,7 +507,7 @@
             </div>
             <div class="modal-body">
                 <div id="driver_probation_actoin_popup_22"></div>
-                <div class="popup_context_menu_title">Получен от АСУ?</div>
+                <div class="popup_context_menu_title">Получен от Диспетчера?</div>
             </div>
             <div class="modal-footer">
                 <button type="button" id="yes_popup_22" class="btn btn-primary">Да</button>

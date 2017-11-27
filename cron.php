@@ -652,12 +652,17 @@ FORM_NOW.doc_status_now,
 function secretars_alerts($control_company){
     global $db, $labro, $secretars, $dispatch, $local_alert_mail;
 
+
+
     $sql="(SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
 form_step_action.action_name,form_step_action.user_action_name,
 CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
 local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
 items_control.name AS `position`,document_status_now.name as doc_status, route_control_step.step_name AS manual,
-document_status_now.id AS doc_trigger
+document_status_now.id AS doc_trigger,
+local_alerts.observer_org_str_id,
+organization_structure.left_key,
+organization_structure.right_key
 FROM (local_alerts,employees_items_node, employees AS init_em,
 cron_action_type, form_step_action)
 LEFT JOIN employees_items_node AS NODE ON NODE.employe_id = local_alerts.initiator_employee_id
@@ -697,7 +702,10 @@ CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
 items_control.name AS `position`,
 NULL,
 NULL,
-NULL
+NULL,
+local_alerts.observer_org_str_id,
+organization_structure.left_key,
+organization_structure.right_key
 FROM (local_alerts,sump_for_employees,form_step_action)
 
 LEFT JOIN organization_structure ON (organization_structure.id = sump_for_employees.dol_id
@@ -720,40 +728,77 @@ AND local_alerts.company_id = ". $control_company ."
 
     $alert_array = $db->all($sql);
     foreach ($secretars as $secretar) {
+        // границы дозволенного
+        $keys =  $labro->observer_keys($secretar);
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+
+        $observer = $labro->get_org_str_id($secretar);
+
         $secretar_html = "";
         $emp_id = 0;
         foreach ($alert_array as $alert_item) {
-            $date = date_create($alert_item['date_create']);
-            if ($alert_item['em_id'] != $emp_id  && $alert_item['action_type_id'] != 17 && $alert_item['action_type_id'] != 18) {
-                $emp_id = $alert_item['em_id'];
-                $secretar_html .= "<br><b> Сотрудник -" . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - </b><br>";
-            }
+            $left_key = str_pad($alert_item['left_key'], 5, "0", STR_PAD_LEFT);
+            $right_key = str_pad($alert_item['right_key'], 5, "0", STR_PAD_LEFT);
+            // фильтруем по уровню доступа секретаря
+            if(($observer == $alert_item['observer_org_str_id'] )|| ($left_key >= $node_left_key && $right_key <=  $node_right_key)) {
 
-            // если надо расписаться у секреторя
-            if ($alert_item['action_type_id'] == 10) {
-                $secretar_html .= " дожен расписаться в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd.m.Y') .") <br>";
-            }
-            // если надо сдать документ
-            if ($alert_item['action_type_id'] == 12) {
-                $secretar_html .= " дожен сдать документ - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd.m.Y') .") <br>";
-            }
-            // если нужна подпись ответственного лица
-            if ($alert_item['action_type_id'] == 14) {
-                $boss = $labro->bailee($alert_item['em_id']);
-                $chief = $boss['chief_surname'] . " " . $boss['chief_name'] . " " . $boss['chief_second_name'];
-                $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
-                $chief_dol = $boss['chief_dol'];
-                $secretar_html .= " нужна подпись ответственного - <b>" . $chiefFIO . "</b>(" . $chief_dol . "), в документе - <b>'" . $alert_item['manual'] . "'</b>(". date_format($date, 'd.m.Y') .") <br>";
-            }
-            // если сотрудник должен пройти медосмотр
-            if ($alert_item['action_type_id'] == 17) {
-                $secretar_html .= "<br><b> Сотрудник - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b>должен пройти мед.осмотр </b>(". date_format($date, 'd.m.Y') .") <br>";
-            }
-            // если сотрудник должен пройти медосмотр
-            if ($alert_item['action_type_id'] == 18) {
-                $secretar_html .= "<br><b> Сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b>отправить на стаировку </b>(". date_format($date, 'd.m.Y') .") <br>";
-            }
+                $date = date_create($alert_item['date_create']);
+                if ($alert_item['em_id'] != $emp_id && $alert_item['action_type_id'] != 17 && $alert_item['action_type_id'] != 18) {
+                    $emp_id = $alert_item['em_id'];
+                    $secretar_html .= "<br><b> Сотрудник -" . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - </b><br>";
+                }
 
+                // если надо расписаться у секреторя
+                if ($alert_item['action_type_id'] == 10) {
+                    $secretar_html .= " дожен расписаться в документе - <b>'" . $alert_item['manual'] . "'</b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если надо сдать документ
+                if ($alert_item['action_type_id'] == 12) {
+                    $secretar_html .= " дожен сдать документ - <b>'" . $alert_item['manual'] . "'</b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если нужна подпись ответственного лица
+                if ($alert_item['action_type_id'] == 14) {
+                    $boss = $labro->bailee($alert_item['em_id']);
+                    $chief = $boss['chief_surname'] . " " . $boss['chief_name'] . " " . $boss['chief_second_name'];
+                    $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
+                    $chief_dol = $boss['chief_dol'];
+                    $secretar_html .= " нужна подпись ответственного - <b>" . $chiefFIO . "</b>(" . $chief_dol . "), в документе - <b>'" . $alert_item['manual'] . "'</b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если сотрудник должен пройти медосмотр
+                if ($alert_item['action_type_id'] == 17) {
+                    $secretar_html .= "<br><b> Сотрудник - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b>должен пройти мед.осмотр </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если сотрудник должен пройти медосмотр
+                if ($alert_item['action_type_id'] == 18) {
+                    $secretar_html .= "<br><b> Сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b>отправить на стажировку </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+
+                // если сотрудник должен пройти медосмотр
+                if ($alert_item['action_type_id'] == 19) {
+                    $secretar_html .= "<br><b> Сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b>должне пройти стажировку </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если сотрудник должен пройти медосмотр
+                if ($alert_item['action_type_id'] == 20) {
+                    $secretar_html .= "<br><b> Сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b>должне подписать стажировочный лист </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если сотрудник должен пройти медосмотр
+                if ($alert_item['action_type_id'] == 21) {
+                    $secretar_html .= "<br><b> Стажировочный лист сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b> надо передать в отдел персонала </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если сотрудник должен пройти медосмотр
+                if ($alert_item['action_type_id'] == 22) {
+                    $secretar_html .= "<br><b> Стажировочный лист сотрудника  - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b> получить от Диспетчера </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если сотрудник должен пройти медосмотр
+                if ($alert_item['action_type_id'] == 23) {
+                    $secretar_html .= "<br><b> Стажировочный лист сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b> подписать отделу кадров </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+                // если сотрудник должен пройти медосмотр
+                if ($alert_item['action_type_id'] == 24) {
+                    $secretar_html .= "<br><b> Стажировочный лист сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b> подписать зам.Дир по ТБ и БД </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                }
+            }
         }
         // запись в масси в для рассылки для соответствующего сотрудника
         if ($secretar_html != "") {
@@ -1087,23 +1132,23 @@ function send_excel_report($observer_emplyoee_id,$control_company){
 function test_fun(){
     global $systems, $today, $dispatch;
 
-            $send_mailer = $systems->create_mailer_object();
-            $email = "gamanov.d@gmail.com";
-            $send_mailer->From = 'noreply@laborpro.ru';
-            $send_mailer->FromName = "Охрана Труда";
-            $send_mailer->addAddress($email);
-            $send_mailer->isHTML(true);
-            $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[291]['mail_body'];
-            if($dispatch[291]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[291]['excel_url']);
-            }
-            if (!$send_mailer->send()) {
-				$error = $send_mailer->ErrorInfo;
-				echo 'Mailer Error: ' . $error;
-			} else {
-				echo 'Message sent!';
-			};
+//            $send_mailer = $systems->create_mailer_object();
+//            $email = "gamanov.d@gmail.com";
+//            $send_mailer->From = 'noreply@laborpro.ru';
+//            $send_mailer->FromName = "Охрана Труда";
+//            $send_mailer->addAddress($email);
+//            $send_mailer->isHTML(true);
+//            $send_mailer->Subject = "Охрана Труда";
+//            $send_mailer->Body = $today . "<br>" . $dispatch[271]['mail_body'];
+//            if($dispatch[271]['excel_url']!=""){
+//                $send_mailer->addAttachment($dispatch[271]['excel_url']);
+//            }
+//            if (!$send_mailer->send()) {
+//				$error = $send_mailer->ErrorInfo;
+//				echo 'Mailer Error: ' . $error;
+//			} else {
+//				echo 'Message sent!';
+//			};
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1112,9 +1157,9 @@ function test_fun(){
             $send_mailer->addAddress($email);
             $send_mailer->isHTML(true);
             $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[291]['mail_body'];
-            if($dispatch[291]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[291]['excel_url']);
+            $send_mailer->Body = $today . "<br>" . $dispatch[271]['mail_body'];
+            if($dispatch[271]['excel_url']!=""){
+                $send_mailer->addAttachment($dispatch[271]['excel_url']);
             }
             if (!$send_mailer->send()) {
 				$error = $send_mailer->ErrorInfo;
@@ -1123,23 +1168,23 @@ function test_fun(){
 				echo 'Message sent!';
 			}
 
-            $send_mailer = $systems->create_mailer_object();
-            $email = "gamanov.d@gmail.com";
-            $send_mailer->From = 'noreply@laborpro.ru';
-            $send_mailer->FromName = "Охрана Труда";
-            $send_mailer->addAddress($email);
-            $send_mailer->isHTML(true);
-            $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[43]['mail_body'];
-            if($dispatch[43]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[43]['excel_url']);
-            }
-            if (!$send_mailer->send()) {
-				$error = $send_mailer->ErrorInfo;
-				echo 'Mailer Error: ' . $error;
-			} else {
-				echo 'Message sent!';
-			}
+//            $send_mailer = $systems->create_mailer_object();
+//            $email = "gamanov.d@gmail.com";
+//            $send_mailer->From = 'noreply@laborpro.ru';
+//            $send_mailer->FromName = "Охрана Труда";
+//            $send_mailer->addAddress($email);
+//            $send_mailer->isHTML(true);
+//            $send_mailer->Subject = "Охрана Труда";
+//            $send_mailer->Body = $today . "<br>" . $dispatch[249]['mail_body'];
+//            if($dispatch[249]['excel_url']!=""){
+//                $send_mailer->addAttachment($dispatch[249]['excel_url']);
+//            }
+//            if (!$send_mailer->send()) {
+//				$error = $send_mailer->ErrorInfo;
+//				echo 'Mailer Error: ' . $error;
+//			} else {
+//				echo 'Message sent!';
+//			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
@@ -1148,9 +1193,9 @@ function test_fun(){
             $send_mailer->addAddress($email);
             $send_mailer->isHTML(true);
             $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[43]['mail_body'];
-            if($dispatch[43]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[43]['excel_url']);
+            $send_mailer->Body = $today . "<br>" . $dispatch[250]['mail_body'];
+            if($dispatch[250]['excel_url']!=""){
+                $send_mailer->addAttachment($dispatch[250]['excel_url']);
             }
             if (!$send_mailer->send()) {
 				$error = $send_mailer->ErrorInfo;
@@ -1159,23 +1204,23 @@ function test_fun(){
 				echo 'Message sent!';
 			}
 
-            $send_mailer = $systems->create_mailer_object();
-            $email = "gamanov.d@gmail.com";
-            $send_mailer->From = 'noreply@laborpro.ru';
-            $send_mailer->FromName = "Охрана Труда";
-            $send_mailer->addAddress($email);
-            $send_mailer->isHTML(true);
-            $send_mailer->Subject = "Охрана Труда";
-            $send_mailer->Body = $today . "<br>" . $dispatch[256]['mail_body'];
-            if($dispatch[256]['excel_url']!=""){
-                $send_mailer->addAttachment($dispatch[256]['excel_url']);
-            }
-            if (!$send_mailer->send()) {
-				$error = $send_mailer->ErrorInfo;
-				echo 'Mailer Error: ' . $error;
-			} else {
-				echo 'Message sent!';
-			}
+//            $send_mailer = $systems->create_mailer_object();
+//            $email = "gamanov.d@gmail.com";
+//            $send_mailer->From = 'noreply@laborpro.ru';
+//            $send_mailer->FromName = "Охрана Труда";
+//            $send_mailer->addAddress($email);
+//            $send_mailer->isHTML(true);
+//            $send_mailer->Subject = "Охрана Труда";
+//            $send_mailer->Body = $today . "<br>" . $dispatch[256]['mail_body'];
+//            if($dispatch[256]['excel_url']!=""){
+//                $send_mailer->addAttachment($dispatch[256]['excel_url']);
+//            }
+//            if (!$send_mailer->send()) {
+//				$error = $send_mailer->ErrorInfo;
+//				echo 'Mailer Error: ' . $error;
+//			} else {
+//				echo 'Message sent!';
+//			}
 
             $send_mailer = $systems->create_mailer_object();
             $email = "vasin.filipp@yandex.ru";
