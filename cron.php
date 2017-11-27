@@ -744,7 +744,7 @@ AND local_alerts.company_id = ". $control_company ."
             if(($observer == $alert_item['observer_org_str_id'] )|| ($left_key >= $node_left_key && $right_key <=  $node_right_key)) {
 
                 $date = date_create($alert_item['date_create']);
-                if ($alert_item['em_id'] != $emp_id && $alert_item['action_type_id'] != 17 && $alert_item['action_type_id'] != 18) {
+                if ($alert_item['em_id'] != $emp_id && $alert_item['action_type_id'] < 17) {
                     $emp_id = $alert_item['em_id'];
                     $secretar_html .= "<br><b> Сотрудник -" . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - </b><br>";
                 }
@@ -776,7 +776,16 @@ AND local_alerts.company_id = ". $control_company ."
 
                 // если сотрудник должен пройти медосмотр
                 if ($alert_item['action_type_id'] == 19) {
-                    $secretar_html .= "<br><b> Сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b>должне пройти стажировку </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+                    // если диспетчер давно не заходил в систему
+                    $sql="SELECT *
+                            FROM users
+                            WHERE users.employee_id = ". $secretar ."
+                            AND  ( NOW() >= (users.date_last_login + INTERVAL 1 DAY))";
+                    $date_last = $db->row($sql);
+                    if ($date_last['id'] != '') {
+                        $secretar_html .= "<br><b> Сотрудника - " . $alert_item["fio"] . ", " . $alert_item["dir"] . ", " . $alert_item["position"] . " - <b>должне пройти стажировку </b>(" . date_format($date, 'd.m.Y') . ") <br>";
+
+                    }
                 }
                 // если сотрудник должен пройти медосмотр
                 if ($alert_item['action_type_id'] == 20) {
