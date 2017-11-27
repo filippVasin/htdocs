@@ -150,6 +150,9 @@ $(document).ready(function() {
                     $("#load_dashboard").html(content);
                     create_node_structure();
                 }// if
+                if(request_result =="not_data"){
+                    $("#load_dashboard").remove();
+                }
                 if(request_result == 'not company'){
                     window.location = "/company_control";
                 }// if

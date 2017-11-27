@@ -275,7 +275,7 @@ FORM_NOW.doc_status_now,
 
 
 //        $sql .= $sqlTwo;
-
+//        echo $sql;
         $test_array = $db->all($sql);
         $endSQL = microtime(true) - $startSQL;
         $timeSQL += $endSQL;
@@ -298,7 +298,11 @@ FORM_NOW.doc_status_now,
                 ++$doc_count_all;
             }
         }
-
+        if($test_target == 0){
+            $result_array['status'] = "not_data";
+            $result = json_encode($result_array, true);
+            die($result);
+        }
         $endPHP = microtime(true) - $startPHP;
         $timePHP += $endPHP;
 
