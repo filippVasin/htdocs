@@ -17,6 +17,10 @@ $(document).ready(function() {
     var employee_id = 0;
     var inst_routs_edit = 0;
     var emp = "";
+    // если сотрудник - делать ему тут нечего
+    if (get_session("role_id") == 3) {
+        window.location = "/rover";
+    }
 
 
     start();
