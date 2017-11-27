@@ -444,3 +444,15 @@ ul {
 .colorGreen{
     background-color: #008000;
 }
+
+label {
+    text-align: left;
+    width: 100%;
+    margin-top: 5px;
+}
+thead th {
+    text-align: center;
+}
+.inst_routs_row{
+    cursor: pointer;
+}

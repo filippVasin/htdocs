@@ -309,7 +309,7 @@ class labro
         if($result['id']!=""){
             $org_str_id = $result['org_str_id'];
         } else {
-            $org_str_id = s0;
+            $org_str_id = 0;
         }
         return $org_str_id;
     }

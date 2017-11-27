@@ -420,7 +420,7 @@
                     <div class="popup_context_menu_title">Подписал стажировочный лист?</div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="yes_popup_20" class="btn btn-primary">Прошел</button>
+                    <button type="button" id="yes_popup_20" class="btn btn-primary">Подписал</button>
                     <button type="button" class="btn btn-primary print_inst_list">Печать</button>
                     <button type="button" id="popup_20_edut_cancel" class="btn btn-default" data-dismiss="modal">Не подписал</button>
 

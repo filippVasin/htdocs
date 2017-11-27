@@ -310,6 +310,29 @@
         </div>
     </div>
 </div>
+<!---->
+<!--<!-- Modal -->
+<!--<button id="alert_probation_actoin_popup_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup">-->
+<!--</button>-->
+<!--<div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup" role="dialog" aria-labelledby="myModalLabel">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--                <h4 class="modal-title" id="myModalLabel">Водитель:</h4>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <div id="driver_probation_actoin_popup"></div>-->
+<!--                <div class="popup_context_menu_title">Прошел стражировку?</div>-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--                <button type="button" id="yes_popup_19" class="btn btn-primary">Прошел</button>-->
+<!--                <button type="button" class="btn btn-default" data-dismiss="modal">Не прошел</button>-->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!-- Modal -->
 <button id="alert_probation_actoin_popup_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup">
@@ -327,8 +350,216 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="yes_popup_19" class="btn btn-primary">Прошел</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Не прошел</button>
+                <button type="button" id="inst_list_19" class="btn btn-primary">Стажировочный лист</button>
+                <button type="button" id="inst_list_19_cancel" class="btn btn-default" data-dismiss="modal">Не прошел</button>
 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<button id="popup_inst_list_button" class="none" data-toggle="modal" data-target="#popup_inst_list">
+</button>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" id="popup_inst_list" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Стажировочный лист</h4>
+            </div>
+            <div class="modal-body" id="popup_inst_list_edit">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="inst_list_19_plus_route" class="btn btn-primary">Добавить маршрут</button>
+                <button type="button" id="inst_list_19_edit_instr_list" class="btn btn-primary">Редактировать</button>
+                <button type="button" id="inst_list_19_print" class="btn btn-primary">Печать</button>
+                <button type="button" id="inst_list_19_edit_cancel" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<button id="popup_inst_list_plus_route_button" class="none" data-toggle="modal" data-target="#popup_inst_list_plus_route">
+</button>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" id="popup_inst_list_plus_route" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Добавить мaршрут</h4>
+            </div>
+            <div class="modal-body" id="popup_inst_list_edit_plus_route">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="inst_list_19_plus_route_save" class="btn btn-primary">Добавить маршрут</button>
+                <button type="button" class="btn btn-default" id="inst_list_19_plus_route_cancel" data-dismiss="modal">Отмена</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<button id="popup_inst_list_edit_route_button" class="none" data-toggle="modal" data-target="#popup_inst_list_edit_route">
+</button>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" id="popup_inst_list_edit_route" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Мaршрут</h4>
+            </div>
+            <div class="modal-body" id="popup_inst_list_edit_route_body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="inst_list_19_edit_route_save" class="btn btn-primary">Сохранить</button>
+                <button type="button" id="inst_list_19_edit_route_delete" class="btn btn-danger">Удалить</button>
+                <button type="button" class="btn btn-default" id="inst_list_19_edit_route_cancel" data-dismiss="modal">Отмена</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<button id="popup_edit_instr_list_button" class="none" data-toggle="modal" data-target="#popup_edit_instr_list">
+</button>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" id="popup_edit_instr_list" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Редактировать лист инструктажа</h4>
+            </div>
+            <div class="modal-body" id="popup_edit_instr_list_body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="inst_list_19_edit_instr_list_save" class="btn btn-primary">Сохранить</button>
+                <button type="button" class="btn btn-default" id="inst_list_19_edit_instr_list_cancel" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<button id="alert_probation_actoin_popup_20_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup_20">
+</button>
+<div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup_20" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Водитель:</h4>
+            </div>
+            <div class="modal-body">
+                <div id="driver_probation_actoin_popup_20"></div>
+                <div class="popup_context_menu_title">Подписал стажировочный лист?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="yes_popup_20" class="btn btn-primary">Подписал</button>
+                <button type="button" class="btn btn-primary print_inst_list">Печать</button>
+                <button type="button" id="popup_20_edut_cancel" class="btn btn-default" data-dismiss="modal">Не подписал</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<button id="alert_probation_actoin_popup_21_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup_21">
+</button>
+<div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup_21" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Стажировичный лист Водителя:</h4>
+            </div>
+            <div class="modal-body">
+                <div id="driver_probation_actoin_popup_21"></div>
+                <div class="popup_context_menu_title">Передали в отдел персонала?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="yes_popup_21" class="btn btn-primary">Да</button>
+                <button type="button" id="popup_21_edut_cancel"  class="btn btn-default" data-dismiss="modal">Не передали</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<button id="alert_probation_actoin_popup_22_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup_22">
+</button>
+<div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup_22" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Стажировичный лист Водителя:</h4>
+            </div>
+            <div class="modal-body">
+                <div id="driver_probation_actoin_popup_22"></div>
+                <div class="popup_context_menu_title">Получен от АСУ?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="yes_popup_22" class="btn btn-primary">Да</button>
+                <button type="button" class="btn btn-primary print_inst_list">Печать</button>
+                <button type="button" id="popup_22_edut_button" class="btn btn-primary">Редактировать</button>
+                <button type="button" id="popup_22_edut_cancel" class="btn btn-default" data-dismiss="modal">Нет, не получен</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<button id="alert_probation_actoin_popup_23_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup_23">
+</button>
+<div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup_23" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Стажировичный лист Водителя:</h4>
+            </div>
+            <div class="modal-body">
+                <div id="driver_probation_actoin_popup_23"></div>
+                <div class="popup_context_menu_title">Подписан в отделе кадров?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="yes_popup_23" class="btn btn-primary">Да</button>
+                <button type="button" id="popup_23_edut_cancel" class="btn btn-default" data-dismiss="modal">Нет, не подписан</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<button id="alert_probation_actoin_popup_24_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup_24">
+</button>
+<div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup_24" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Стажировичный лист Водителя:</h4>
+            </div>
+            <div class="modal-body">
+                <div id="driver_probation_actoin_popup_24"></div>
+                <div class="popup_context_menu_title">Подписан Зам.Дир. по ТБ и БД?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="yes_popup_24" class="btn btn-primary">Да</button>
+                <button type="button" id="popup_24_edut_cancel" class="btn btn-default" data-dismiss="modal">Нет, не подписан</button>
             </div>
         </div>
     </div>

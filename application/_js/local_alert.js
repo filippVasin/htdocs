@@ -648,7 +648,6 @@ $(document).ready(function() {
         var inst_date = $("#18_inst_date_plus").val();
 
         if(flag == 0){
-            $("#inst_list_19_plus_route_cancel").click();
             $.ajax({
                 type: "POST",
                 url: "/local_alert/inst_save_new_route",
@@ -668,8 +667,7 @@ $(document).ready(function() {
                     var content = result.content;
                     if (status == "ok") {
                         $("#inst_table_router_rows").html(content);
-
-                        $("#popup_inst_list_button").click();
+                        $("#inst_list_19_plus_route_cancel").click();
 
                     }
                 },
@@ -834,7 +832,7 @@ $(document).ready(function() {
     });
 
     $(document).on("click", "#popup_22_edut_button", function () {
-        $("#popup_22_edut_cancel").click();
+
             $.ajax({
                 type: "POST",
                 url: "/local_alert/internship_list_edit",
@@ -847,7 +845,8 @@ $(document).ready(function() {
                     $("#popup_inst_list_edit").html(content);
                     $(".valid_date").mask("99.99.9999");
                     tab_vs_enter_inst_edit();
-                    $("#popup_inst_list_button").click();
+                    $("#popup_22_edut_cancel").click();
+                    setTimeout('$("#popup_inst_list_button").click()', 500);
                 },
                 error: function () {
                     console.log('error');
