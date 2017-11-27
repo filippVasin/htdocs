@@ -670,7 +670,9 @@ LEFT JOIN organization_structure ON organization_structure.id = NODE.org_str_id
 LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
 LEFT JOIN organization_structure AS org_parent
 ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
-    AND org_parent.level =(organization_structure.level - 1) )
+    AND org_parent.level =(organization_structure.level - 1)
+     AND
+	 org_parent.company_id = organization_structure.company_id)
 LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
 LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
 
