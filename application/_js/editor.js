@@ -4,14 +4,14 @@ $(document).ready(function() {
     var type = "";
     var user_id = "";
 
+    tab_vs_enter_tab_one();
+    tab_vs_enter_tab_two();
+
     if($("#table_type").html() == ""){
         $("#table_titles").addClass("none");
         $("#table_type").css("display","none");
         $("#table_employees").css("display","block");
     }
-
-
-
 
     // выбираем элемент для редактированния
     $(document).on("click", ".table_row", function () {
@@ -479,5 +479,36 @@ $(document).ready(function() {
             'autoWidth'   : false
         })
     })
+
+
+    function tab_vs_enter_tab_one() {
+        var $inputs = $("body").find('.tab_vs_enter_tab_one');
+        $inputs.each(function (i) {
+            $(this).keypress(function (ev) {
+                if (ev.which == 13 && i == $inputs.length - 1) {
+                    $("#save_popup_input_employees").click();
+                }
+                if (ev.which == 13) {
+                    $inputs.eq(i + 1).focus();
+                    return false;
+                }
+            });
+        });
+    }
+
+    function tab_vs_enter_tab_two() {
+        var $inputs = $("body").find('.tab_vs_enter_tab_two');
+        $inputs.each(function (i) {
+            $(this).keypress(function (ev) {
+                if (ev.which == 13 && i == $inputs.length - 1) {
+                    $("#save_popup_input_employees").click();
+                }
+                if (ev.which == 13) {
+                    $inputs.eq(i + 1).focus();
+                    return false;
+                }
+            });
+        });
+    }
 
 });

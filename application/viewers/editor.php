@@ -84,48 +84,48 @@
                         <div class="tab-pane active" id="tab_1">
 
                             <label>Фамилия</label>
-                            <input type="text" class="form-control" id="edit_popup_input_surname" placeholder="Фамилия">
+                            <input type="text" class="form-control tab_vs_enter_tab_one" id="edit_popup_input_surname" placeholder="Фамилия">
 
                             <label>Имя</label>
-                            <input  class="form-control" id="edit_popup_input_name" placeholder="Имя">
+                            <input  class="form-control tab_vs_enter_tab_one" id="edit_popup_input_name" placeholder="Имя">
 
                             <label>Отчество</label>
-                            <input  class="form-control"  id="edit_popup_input_second_name" placeholder="Отчество">
+                            <input  class="form-control tab_vs_enter_tab_one"  id="edit_popup_input_second_name" placeholder="Отчество">
 
                             <label>Дата трудоустройства</label>
-                            <input type="text" class="form-control"  id="edit_popup_input_start_date" placeholder="Дата трудоустройства">
+                            <input type="text" class="form-control tab_vs_enter_tab_one"  id="edit_popup_input_start_date" placeholder="Дата трудоустройства">
 
                             <label>Дата рождения</label>
-                            <input type="text" class="form-control"  id="edit_popup_input_birthday" placeholder="Дата рождения">
+                            <input type="text" class="form-control tab_vs_enter_tab_one"  id="edit_popup_input_birthday" placeholder="Дата рождения">
 
                             <label>Статус</label>
                             <div class="select_triangle" >
-                                <select class="form-control "  id="edit_popup_input_status">
+                                <select class="form-control tab_vs_enter_tab_one"  id="edit_popup_input_status">
                                     <option value="0">Уволен</option>
                                     <option value="1">Работает</option>
                                 </select>
                             </div>
                             <label>Табельный номер</label>
-                            <input class="form-control"  id="edit_popup_input_personnel_number" placeholder="Табельный номер">
+                            <input class="form-control tab_vs_enter_tab_one"  id="edit_popup_input_personnel_number" placeholder="Табельный номер">
 
                         </div>
                         <!-- /.tab-pane -->
                         <div class="tab-pane" id="tab_2">
 
                             <label>Адрес регистрации</label>
-                            <input type="text" class="form-control" id="popup_reg_address" placeholder="Адрес регистрации">
+                            <input type="text" class="form-control tab_vs_enter_tab_two" id="popup_reg_address" placeholder="Адрес регистрации">
 
                             <label>Категории</label>
-                            <input  class="form-control" id="popup_driver_categories" placeholder="Категории">
+                            <input  class="form-control tab_vs_enter_tab_two" id="popup_driver_categories" placeholder="Категории">
 
                             <label>№ удостоверения</label>
-                            <input  class="form-control"  id="popup_driver_number" placeholder="№ удостоверения">
+                            <input  class="form-control tab_vs_enter_tab_two"  id="popup_driver_number" placeholder="№ удостоверения">
 
                             <label>Начало действия</label>
-                            <input type="text" class="form-control"  id="popup_driver_start" placeholder="Начало действия">
+                            <input type="text" class="form-control tab_vs_enter_tab_two"  id="popup_driver_start" placeholder="Начало действия">
 
                             <label>Срок действия</label>
-                            <input type="text" class="form-control"  id="popup_driver_end" placeholder="Срок действия">
+                            <input type="text" class="form-control tab_vs_enter_tab_two"  id="popup_driver_end" placeholder="Срок действия">
 
                         </div>
 
