@@ -29,6 +29,10 @@ $(document).ready(function() {
     });
 
 
+    $(document).on("click", "#edit_buses", function () {
+        window.location = "/buses_edit";
+    });
+
     $(document).on("click", ".bus_row", function () {
         driver_id = $(this).attr("driver_id");
         $.ajax({

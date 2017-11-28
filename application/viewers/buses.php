@@ -1,4 +1,5 @@
 <div class="container">
+    <div class="button" id="edit_buses">Редактирование</div>
 
     <div class="box">
         <!-- /.box-header -->
