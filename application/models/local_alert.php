@@ -186,8 +186,7 @@ class Model_local_alert
 
 
     // запрос на дерево позиций
-    public function new_action_name()
-    {
+    public function new_action_name(){
         global $db;
         $trigger = $this->post_array['trigger'];
         $action_name = $this->post_array['action_name'];
@@ -285,7 +284,10 @@ class Model_local_alert
                 FROM employees,employees_items_node,organization_structure
                 WHERE organization_structure.kladr_id = 179
                 AND employees_items_node.org_str_id = organization_structure.id
-                AND employees.id = employees_items_node.employe_id";
+                AND
+					 (employees.id = employees_items_node.employe_id
+                 OR
+                 employees.id = 250)";
         $mentor_array = $db->all($sql);
 
         $mentor_html = "";
@@ -480,7 +482,10 @@ class Model_local_alert
                 FROM employees,employees_items_node,organization_structure
                 WHERE organization_structure.kladr_id = 179
                 AND employees_items_node.org_str_id = organization_structure.id
-                AND employees.id = employees_items_node.employe_id";
+                AND
+					 (employees.id = employees_items_node.employe_id
+                 OR
+                 employees.id = 250)";
         $mentor_array = $db->all($sql);
 
         $mentor_html = "";
@@ -612,7 +617,10 @@ class Model_local_alert
                 FROM employees,employees_items_node,organization_structure
                 WHERE organization_structure.kladr_id = 179
                 AND employees_items_node.org_str_id = organization_structure.id
-                AND employees.id = employees_items_node.employe_id";
+                AND
+					 (employees.id = employees_items_node.employe_id
+                 OR
+                 employees.id = 250)";
         $mentor_array = $db->all($sql);
 
         $mentor_html = "";
@@ -833,7 +841,10 @@ class Model_local_alert
                 FROM employees,employees_items_node,organization_structure
                 WHERE organization_structure.kladr_id = 179
                 AND employees_items_node.org_str_id = organization_structure.id
-                AND employees.id = employees_items_node.employe_id";
+                AND
+					 (employees.id = employees_items_node.employe_id
+                 OR
+                 employees.id = 250)";
         $mentor_array = $db->all($sql);
 
         $mentor_html = "";
