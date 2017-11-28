@@ -642,37 +642,154 @@ $(document).ready(function() {
 
 
     $(document).on("click", "#yes_popup_18", function () {
+        var flag = 0
+
+        if($("#18_order_number").val()==""){
+            $("#18_order_number").css("border-color","red");
+            setTimeout("$('#18_order_number').css('border-color','#ccc')", 3000);
+            flag = 1;
+        }
+        if($("#18_order_date").val()==""){
+            $("#18_order_date").css("border-color","red");
+            setTimeout("$('#18_order_date').css('border-color','#ccc')", 3000);
+            flag = 2;
+        }
+        if($("#18_mentor").val() == 0){
+            $("#18_mentor").css("border-color","red");
+            setTimeout("$('#18_mentor').css('border-color','#ccc')", 3000);
+            flag = 3;
+        }
+        if($("#18_bus").val() == 0){
+            $("#18_bus").css("border-color","red");
+            setTimeout("$('#18_bus').css('border-color','#ccc')", 3000);
+            flag = 4;
+        }
+        if($("#18_route").val() == 0){
+            $("#18_route").css("border-color","red");
+            setTimeout("$('#18_route').css('border-color','#ccc')", 3000);
+            flag = 5;
+        }
+        if($("#18_hours").val() == 0){
+            $("#18_hours").css("border-color","red");
+            setTimeout("$('#18_hours').css('border-color','#ccc')", 3000);
+            flag = 6;
+        }
+        if($("#18_inst_date").val()==""){
+            $("#18_inst_date").css("border-color","red");
+            setTimeout("$('#18_inst_date').css('border-color','#ccc')", 3000);
+            flag = 7;
+        }
+
+        var order = $("#18_order_number").val() + " от " + $("#18_order_date").val();
+        var mentor_id = $("#18_mentor").val();
+        var bus_id = $("#18_bus").val();
+        var route_id = $("#18_route").val();
+        var hours = $("#18_hours").val();
+        var inst_date = $("#18_inst_date").val();
+
         var action_name = "probation_alert";
-        $.ajax({
-            type: "POST",
-            url: "/distributor/main",
-            data: {
-                emp:emp,
-                action_name:action_name
-            },
-            success: function (answer) {
+        if(flag == 0){
+            $.ajax({
+                type: "POST",
+                url: "/distributor/main",
+                data: {
+                    emp: emp,
+                    action_name: action_name,
+                    order: order,
+                    mentor_id: mentor_id,
+                    bus_id: bus_id,
+                    route_id: route_id,
+                    hours: hours,
+                    inst_date: inst_date
+                },
+                success: function (answer) {
 
-                var result = jQuery.parseJSON(answer);
-                var status = result.status;
-                var link = result.link;
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    var link = result.link;
 
-                $(".alert_row").each(function() {
-                    if(file_id == $(this).attr("file_id")){
-                        if(18 == $(this).attr("action_type")) {
-                            $(this).css("display", "none");
+                    $(".alert_row").each(function () {
+                        if (file_id == $(this).attr("file_id")) {
+                            if (18 == $(this).attr("action_type")) {
+                                $(this).css("display", "none");
+                            }
                         }
-                    }
-                });
-                $(".btn-default").click();
-                if(status == "ok"){
-                    print_link(link);
+                    });
+                    $(".btn-default").click();
+                    //if (status == "ok") {
+                    //    print_link(link);
+                    //}
+                },
+                error: function () {
+                    console.log('error');
                 }
-            },
-            error: function () {
-                console.log('error');
-            }
-        });// ajax
+            });// ajax
+        } else {
+            //alert(flag);
+        }
     });
+
+    // событие выбора автобуса
+    $(document).on("change",'#18_bus',function(){
+        var bus_id = $("#18_bus").val();
+        // получаем маршруты автобуса
+        // если маршрут ещё не выбирали
+        if($("#18_route").val() == 0){
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/get_bus_routes",
+                data: {
+                    bus_id: bus_id
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    var content = result.content;
+                    // помешаем доступные маршруты в выпадашку
+                    if (status == "ok") {
+                        $("#18_route").html(content);
+                    }
+
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+        }
+    });
+
+    // событие выбора маршрута
+    $(document).on("change",'#18_route',function(){
+        var route_id = $("#18_route").val();
+        // получаем автобусы на маршруте
+        // если автобус ещё не выбирали
+        if($("#18_bus").val() == 0) {
+            $.ajax({
+                type: "POST",
+                url: "/local_alert/get_route_buses",
+                data: {
+                    route_id: route_id
+                },
+                success: function (answer) {
+
+                    var result = jQuery.parseJSON(answer);
+                    var status = result.status;
+                    var content = result.content;
+                    // помешаем доступные автобусы в выпадашку
+                    if (status == "ok") {
+                        $("#18_bus").html(content);
+                    }
+
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });// ajax
+        }
+    });
+
+
+
 
     // показываем карточку редактированния для забивания данных о документах водителя после мед осмотра
     function edit_driver(){

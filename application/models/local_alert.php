@@ -274,7 +274,7 @@ class Model_local_alert
                                 <option value="32">32 часа</option>
                             </select>
                         </div>
-                     <label>Дата:</label>
+                     <label>Дата инструктажа:</label>
                      <input class="form-control valid_date tab_vs_enter_inst"  id="18_inst_date">';
 
 //        <option value="0">Уволен</option>
@@ -393,7 +393,7 @@ class Model_local_alert
                 <label>Маршрут: </label>' . $inst_list['route_name'] . '
                 <label>Автобус: </label>' . $inst_list['brand_of_bus'] . " - " . $inst_list['gos_number'] . '
                  <label>Длительность стажировки: </label>' . $inst_list['hours_all'] . ' часа
-                 <label>Дата: </label> ' . date_create($inst_list['date'])->Format('d.m.Y');
+                 <label>Дата инструктажа: </label> ' . date_create($inst_list['date'])->Format('d.m.Y');
 
         $table_html = ' <br><br>
                         <table id="table_inst_popup" class="table table-bordered table-striped">
@@ -472,7 +472,7 @@ class Model_local_alert
                         </div>
                      <label>Количество часов:</label>
                      <input class="form-control tab_vs_enter_plus_route"  id="18_hours_plus">
-                     <label>Дата:</label>
+                     <label>Дата инструктажа:</label>
                      <input class="form-control valid_date tab_vs_enter_plus_route"  id="18_inst_date_plus">';
 
         // ищим наставников
@@ -604,7 +604,7 @@ class Model_local_alert
                         </div>
                      <label>Количество часов:</label>
                      <input class="form-control tab_vs_enter_edit_route"  id="18_hours_edit" value="' . $hours_all_now . '">
-                     <label>Дата:</label>
+                     <label>Дата инструктажа:</label>
                      <input class="form-control valid_date tab_vs_enter_edit_route"  id="18_inst_date_edit" value="' . date_create($inst_date_now)->Format('d.m.Y') . '">';
 
         // ищим наставников
@@ -815,7 +815,7 @@ class Model_local_alert
                         </div>
                      <label>Длительность стажировки:</label>
                      <input class="form-control valid_date tab_vs_enter_inst"  id="18_hours_inst_edit" value="'. $hours_all_now .'">
-                     <label>Дата:</label>
+                     <label>Дата инструктажа:</label>
                      <input class="form-control valid_date tab_vs_enter_inst"  id="18_inst_date_inst_edit" value="'. $date_now .'">
                      <label>Назначить на автобус:</label>
                         <div class="select_triangle" >

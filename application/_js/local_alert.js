@@ -460,9 +460,9 @@ $(document).ready(function() {
                         }
                     });
                     $(".btn-default").click();
-                    if (status == "ok") {
-                        print_link(link);
-                    }
+                    //if (status == "ok") {
+                    //    print_link(link);
+                    //}
                 },
                 error: function () {
                     console.log('error');
