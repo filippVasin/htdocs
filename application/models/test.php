@@ -474,8 +474,8 @@ route_control_step.track_number_id AS id,
 
         return "Всё";
     }
-    public function test($doc_link){
-//        global $db;
+    public function test1($doc_link){
+        global $db;
         $sql= "SELECT * FROM organization_structure";
 
         $org = $db->all($sql);
@@ -508,4 +508,66 @@ route_control_step.track_number_id AS id,
         }
 
     }
+
+
+    public function test($doc_link){
+        global $db;
+
+        $csv = iconv('windows-1251','UTF-8', file_get_contents(ROOT_PATH . '/application/drivers.csv'));
+        $drv_arr = explode("\n", $csv);
+        $company_id = 29;
+        foreach($drv_arr as $key=>$item){
+//            echo "<br>".$item . "<br>";
+            $drv_row = explode(";", $item);
+
+            $fio_csv = $drv_row[1]; // ищим совпадения по fio
+
+            $sql="SELECT employees.id , CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio
+                    FROM employees
+                    WHERE CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) = '". $fio_csv . "'";
+            $drv = $db->row($sql);
+
+            $emp_id = $drv['id'];
+            $number = $drv_row[5];
+            $categiry = $drv_row[4];
+            $end_date = date_create($drv_row[6])->Format('Y.m.d');
+            $address = $drv_row[3];
+            // если есть совпадение
+            if($emp_id != "") {
+
+                $sql = "SELECT * FROM drivers_license WHERE drivers_license.emp_id =" . $emp_id;
+                $res = $db->row($sql);
+
+                // права
+                // если есть такой документ - тогда обнвляем, если нет - создаём
+                if ($res["id"] != "") {
+                    $sql = "UPDATE drivers_license SET `company_id`='" . $company_id . "', `category`='" . $categiry . "', `license_number`='" . $number . "', `end_date`='" . $end_date . "' WHERE  `emp_id`=" . $emp_id;
+                    $db->query($sql);
+                } else {
+                    $sql = "INSERT INTO drivers_license (`emp_id`, `company_id`, `category`, `license_number`, `end_date`)
+                VALUES ('" . $emp_id . "', '" . $company_id . "', '" . $categiry . "', '" . $number . "', '" . $end_date . "')";
+                    $db->query($sql);
+                }
+
+                $sql = "SELECT * FROM registration_address WHERE registration_address.emp_id =" . $emp_id;
+                $res = $db->row($sql);
+
+                // рег адресс
+                // если есть такой документ - тогда обнвляем, если нет - создаём
+                if ($res["id"] != "") {
+                    $sql = "UPDATE registration_address SET `address`='" . $address . "' WHERE  `id`=" . $emp_id;
+                    $db->query($sql);
+                } else {
+                    $sql = "INSERT INTO registration_address (`emp_id`, `address`) VALUES ('" . $emp_id . "', '" . $address . "')";
+                    $db->query($sql);
+                }
+
+            } else {
+                echo $fio_csv . "<br>";
+            }
+        }
+    }
+
+
+
 }
