@@ -1037,9 +1037,19 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         $alert_every_days = $db->all($sql);
         $count = 0;
         foreach ($alert_every_days as $alert_every_day) {
+            // подготовка строк к сравнению
             $fio_s = $alert_every_day['fio'];
-            $file_s =  $alert_every_day['file'];
-            if((mb_stripos($alert_every_day['fio'], $search_string ) !== false ) || (mb_stripos($alert_every_day['file'], $search_string) !== false) || ($search_string == "")) {
+            $fio_s = mb_strtolower($fio_s);
+            $fio_s = str_replace(" ", "", $fio_s);
+
+            $file_s = $alert_every_day['file'];
+            $file_s = mb_strtolower($file_s);
+            $file_s = str_replace(" ", "", $file_s);
+
+            $search_string = mb_strtolower($search_string);
+            $search_string = str_replace(" ", "", $search_string);
+
+            if((mb_stripos($fio_s, $search_string ) !== false ) || (mb_stripos($file_s, $search_string) !== false) || ($search_string == "")) {
 
                 // лимит
                 if ($count < 7) {
@@ -1119,10 +1129,19 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         $alert_every_days = $db->all($sql);
         $count = 0;
         foreach ($alert_every_days as $alert_every_day) {
-           $fio_s = $alert_every_day['fio'];
-           $file_s =  $alert_every_day['file'];
-            if((stristr($alert_every_day['fio'], $search_string)) || ((stristr($alert_every_day['file'], $search_string))) || ($search_string == "")) {
-//            if(($this->fuzzy_compare($alert_every_day['fio'], $search_string, 1,4) > 80) || (($this->fuzzy_compare($alert_every_day['file'], $search_string, 1,)> 80)) || ($search_string == "")) {
+            // подготовка строк к сравнению
+            $fio_s = $alert_every_day['fio'];
+            $fio_s = mb_strtolower($fio_s);
+            $fio_s = str_replace(" ", "", $fio_s);
+
+            $file_s = $alert_every_day['file'];
+            $file_s = mb_strtolower($file_s);
+            $file_s = str_replace(" ", "", $file_s);
+
+            $search_string = mb_strtolower($search_string);
+            $search_string = str_replace(" ", "", $search_string);
+
+            if((mb_stripos($fio_s, $search_string ) !== false ) || (mb_stripos($file_s, $search_string) !== false) || ($search_string == "")) {
 
                 // лимит
                 if ($count < 7) {
@@ -1157,25 +1176,6 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         return $result_array;
     }
 
-    // неточное сравнение строк
-    private function fuzzy_compare($x,$y,$minLen=1,$maxLen=0)
-    {
-        $l1 = strlen($x);
-        $l2 = strlen($y);
-        if ($maxLen ==0 ) $maxLen = min($l1,$l2);
-        $summ = 0;
-        $count = 0;
-        for($l = $minLen; $l<=$maxLen;$l++)
-        {
-            for ($i = 0; $i< ($l1 - $l); $i++)
-            {
-                $part = substr($x,$i,$l);
-                $count ++;
-                if (strpos($y,$part)!==FALSE) $summ++;
-            }
-        }
-        return 100*$summ/$count;
-    }
 
     private function calendary_item($str_date){
         global $db;
