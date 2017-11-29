@@ -324,6 +324,17 @@ $(document).ready(function() {
             $('.progress-bar:first',parent).css("width",width_proc);
         });
 
+
+        $(".dol_row").each(function() {
+            var dol = $(this).html();
+            var limit_str_position = 23;
+            if (dol.length > limit_str_position) {
+                dol = dol.slice(0, limit_str_position);
+                dol = dol + "...";
+            }
+            $(this).html(dol);
+        });
+
     }
 
 
