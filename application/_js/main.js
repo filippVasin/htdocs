@@ -481,8 +481,39 @@ $(document).ready(function() {
             $("#driver_probation_actoin_popup_24").html(name);
             $("#alert_probation_actoin_popup_24_button").click();
         }
+        if( action_type == 25 ){
+            $("#driver_probation_actoin_popup_25").html(name);
+            $("#alert_probation_actoin_popup_25_button").click();
+        }
+        if( action_type == 26 ){
+            $("#driver_probation_actoin_popup_26").html(name);
+            $("#alert_probation_actoin_popup_26_button").click();
+        }
+        if( action_type == 27 ){
+            $("#driver_probation_actoin_popup_27").html(name);
+            $("#alert_probation_actoin_popup_27_button").click();
+        }
 
     });
+
+
+    // печатаем протокол доступа
+    $(document).on("click", "#print_popup_25", function () {
+        var link = "/doc_views?PATP1_Protocol&probation&" + emp;
+        print_link(link);
+    });
+
+    // печатаем распоряжение о допуске к работе
+    $(document).on("click", "#print_popup_26", function () {
+        var link = "/doc_views?PATP1_disposition_to_admission_to_work&probation&" + emp;
+        print_link(link);
+    });
+
+    // печатаем распоряжение о допуске к работе
+    $(document).on("click", "#print_popup_27", function () {
+        var link = "/doc_views?PATP1_disposal_of_exploration&probation&" + emp;
+        print_link(link);
+    })
 
 // отправляем на исполнение в forms и передаём нужные параметры
     $(document).on("click", "#yes_popup_3", function () {
@@ -624,15 +655,41 @@ $(document).ready(function() {
                 $(".alert_row").each(function() {
                     if(la_real_form_id_set == $(this).attr("file_id")){
                         if(action_type == $(this).attr("action_type")) {
-                            $(this).css("display", "none");
+                            $(this).closest("li").css("display", "none");
                         }
                     }
                 });
-                $(".btn-default").click();
+                $("#cancel_popup_17").click();
                 if(status == "ok"){
                     //print_link(link);
                 }
                 edit_driver();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });// ajax
+    });
+
+
+    $(document).on("click", "#print_med_form", function () {
+        var action_name = "print_med_form";
+        $.ajax({
+            type: "POST",
+            url: "/distributor/main",
+            data: {
+                file_id:file_id,
+                action_name:action_name
+            },
+            success: function (answer) {
+
+                var result = jQuery.parseJSON(answer);
+                var status = result.status;
+                var link = result.link;
+
+                if(status == "ok"){
+                    print_link(link);
+                }
             },
             error: function () {
                 console.log('error');
@@ -711,7 +768,7 @@ $(document).ready(function() {
                     $(".alert_row").each(function () {
                         if (file_id == $(this).attr("file_id")) {
                             if (18 == $(this).attr("action_type")) {
-                                $(this).css("display", "none");
+                                $(this).closest("li").css("display", "none");
                             }
                         }
                     });
@@ -879,50 +936,93 @@ $(document).ready(function() {
         var license_number   = $("#popup_driver_number").val();
         var start_date_driver   = $("#popup_driver_start").val();
         var end_date_driver   = $("#popup_driver_end").val();
+        var flag = 0;
+        var pattern =/^(?:(?:31(\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/i;
 
-
-
-        $.ajax({
-            type: "POST",
-            url: "/editor/save_employee_card",
-            data: {
-                item_id:item_id,
-                surname:surname,
-                name:name,
-                second_name:second_name,
-                start_date:start_date,
-                birthday:birthday,
-                em_status:em_status,
-                personnel_number:personnel_number,
-                address:address,
-                category:category,
-                license_number:license_number,
-                start_date_driver:start_date_driver,
-                end_date_driver:end_date_driver
-            },
-            success: function (answer) {
-                var result = jQuery.parseJSON(answer);
-                var surname = result.surname;
-                var name = result.name;
-                var second_name = result.second_name;
-                var request_result = result.status;
-                // если 'ok' - рисуем тест
-                if(request_result == 'ok'){
-                    $(".table_row_employee").each(function() {
-                        if($(this).attr("item_id")==item_id) {
-                            var content = surname + " " + name + " " + second_name;
-                            $(this).children(".type_name").html(content);
-                        }
-                    });
-                    $(".btn-default").click();
-                    var link = "/doc_views?PATP1_Probationer&probation&" + item_id;
-                    print_link(link);
-                }
-            },
-            error: function () {
-                console.log('error');
+        if(start_date != ""){
+            if(pattern.test(start_date)){
+                // норм
+            } else {
+                $("#edit_popup_input_start_date").css("border-color", "red");
+                setTimeout("$('#edit_popup_input_start_date').css('border-color','#ccc')", 3000);
+                flag = 1;
             }
-        });
+        }
+
+        if(birthday != ""){
+            if(pattern.test(birthday)){
+                // норм
+            } else {
+                $("#edit_popup_input_birthday").css("border-color", "red");
+                setTimeout("$('#edit_popup_input_birthday').css('border-color','#ccc')", 3000);
+                flag = 2;
+            }
+        }
+
+        if(start_date_driver != ""){
+            if(pattern.test(start_date_driver)){
+                // норм
+            } else {
+                $("#popup_driver_start").css("border-color", "red");
+                setTimeout("$('#popup_driver_start').css('border-color','#ccc')", 3000);
+                flag = 3;
+            }
+        }
+
+        if(end_date_driver != ""){
+            if(pattern.test(end_date_driver)){
+                // норм
+            } else {
+                $("#popup_driver_end").css("border-color", "red");
+                setTimeout("$('#popup_driver_end').css('border-color','#ccc')", 3000);
+                flag = 4;
+            }
+        }
+
+
+        if(flag == 0) {// всё норм
+            $.ajax({
+                type: "POST",
+                url: "/editor/save_employee_card",
+                data: {
+                    item_id: item_id,
+                    surname: surname,
+                    name: name,
+                    second_name: second_name,
+                    start_date: start_date,
+                    birthday: birthday,
+                    em_status: em_status,
+                    personnel_number: personnel_number,
+                    address: address,
+                    category: category,
+                    license_number: license_number,
+                    start_date_driver: start_date_driver,
+                    end_date_driver: end_date_driver
+                },
+                success: function (answer) {
+                    var result = jQuery.parseJSON(answer);
+                    var surname = result.surname;
+                    var name = result.name;
+                    var second_name = result.second_name;
+                    var request_result = result.status;
+                    // если 'ok' - рисуем тест
+                    if (request_result == 'ok') {
+                        $(".table_row_employee").each(function () {
+                            if ($(this).attr("item_id") == item_id) {
+                                var content = surname + " " + name + " " + second_name;
+                                $(this).children(".type_name").html(content);
+                            }
+                        });
+                        $("#cancel_save_popup_input_employees").click();
+                        //var link = "/doc_views?PATP1_Probationer&probation&" + item_id;
+                        //print_link(link);
+                    }
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });
+        }
     });
 
 

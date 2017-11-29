@@ -260,7 +260,7 @@
                 <div class="modal-footer">
                     <button type="button" id="yes_popup_17" class="btn btn-primary">Прошел</button>
                     <button type="button" id="print_med_form" class="btn btn-primary">Распечатать направление</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Не прошел</button>
+                    <button type="button" class="btn btn-default" id="cancel_popup_17" data-dismiss="modal">Не прошел</button>
 
                 </div>
             </div>
@@ -349,8 +349,8 @@
                     <!-- nav-tabs-custom -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="enter_click_one enter_click_two" id="save_popup_input_employees" class="btn btn-primary">Сохранить</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                    <button type="button" class="enter_click_one enter_click_two btn btn-primary" id="save_popup_input_employees">Сохранить</button>
+                    <button type="button" class="btn btn-default" id="cancel_save_popup_input_employees" data-dismiss="modal">Отмена</button>
                 </div>
 
 
@@ -519,6 +519,78 @@
                 <div class="modal-footer">
                     <button type="button" id="yes_popup_24" class="btn btn-primary">Да</button>
                     <button type="button" id="popup_24_edut_cancel" class="btn btn-default" data-dismiss="modal">Нет, не подписан</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <button id="alert_probation_actoin_popup_25_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup_25">
+    </button>
+    <div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup_25" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Протокол допуска по Водителю:</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="driver_probation_actoin_popup_25"></div>
+                    <div class="popup_context_menu_title"> </div>
+                </div>
+                <div class="modal-footer">
+<!--                    <button type="button" id="yes_popup_25" class="btn btn-primary">Ок</button>-->
+                    <button type="button" id="print_popup_25" class="btn btn-primary">Распечатать</button>
+                    <button type="button" id="popup_25_edut_cancel" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <button id="alert_probation_actoin_popup_26_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup_26">
+    </button>
+    <div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup_26" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Распоряжение о допуске к работе Водителя:</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="driver_probation_actoin_popup_26"></div>
+                    <div class="popup_context_menu_title"> </div>
+                </div>
+                <div class="modal-footer">
+<!--                    <button type="button" id="yes_popup_26" class="btn btn-primary">Ок</button>-->
+                    <button type="button" id="print_popup_26" class="btn btn-primary">Распечатать</button>
+                    <button type="button" id="popup_26_edut_cancel" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <button id="alert_probation_actoin_popup_27_button" class="none" data-toggle="modal" data-target="#alert_probation_actoin_popup_27">
+    </button>
+    <div class="modal fade" tabindex="-1" id="alert_probation_actoin_popup_27" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Распоряжение о назначении стажировки сотрудника:</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="driver_probation_actoin_popup_27"></div>
+                    <div class="popup_context_menu_title"> </div>
+                </div>
+                <div class="modal-footer">
+                    <!--                    <button type="button" id="yes_popup_26" class="btn btn-primary">Ок</button>-->
+                    <button type="button" id="print_popup_27" class="btn btn-primary">Распечатать</button>
+                    <button type="button" id="popup_27_edut_cancel" class="btn btn-default" data-dismiss="modal">Отмена</button>
                 </div>
             </div>
         </div>

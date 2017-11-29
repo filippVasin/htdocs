@@ -1522,7 +1522,7 @@ function end_probation(){
                 $step_flag = $delay_route['step_flag']; // если этот шаг пройден
                 $new_route = $delay_route['new_route']; // новый роут
                 $delay_type = $delay_route['type']; // тип роута
-                $delay_periodicity = $delay_route['periodicity']; // тип роута
+                $delay_periodicity = $delay_route['periodicity']; // переодика по роуту
 
                 // соблюдаються ли условия для добавления роута?
                 $sql="SELECT *
@@ -1605,7 +1605,7 @@ function end_probation(){
 
                         // создание уведомления - всем кроме водителей назначить конец стажировки через две недели
                         $sql = "INSERT INTO `laborpro`.`local_alerts` (`initiator_employee_id`,  `action_type_id`, `company_id`,  `step_id`, `date_create`)
-                         VALUES ('" . $emp . "',  '18', '" . $comp . "', '" . $route_start_step . "', NOW())";
+                         VALUES ('" . $emp . "',  '". $delay_type ."', '" . $comp . "', '" . $route_start_step . "', NOW())";
                         $db->query($sql);
                 }
             }

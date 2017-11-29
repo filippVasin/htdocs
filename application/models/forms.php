@@ -119,6 +119,9 @@ class Model_forms{
             case "probation_alert":
                 $result_array = $this->probation_alert();
                 break;
+            case "order_for_an_internship":
+                $result_array = $this->order_for_an_internship();
+                break;
         }
 
         $result = json_encode($result_array, true);
@@ -722,6 +725,36 @@ class Model_forms{
         $form_actoin = "local_alert";
         $result_array['form_actoin'] = $form_actoin;
         $result_array['page'] = "local_alert";
+        // дописываем историю
+        $this->logs_form_file();
+        $this->session_clear();
+        return $result_array;
+    }
+
+
+
+    private function order_for_an_internship(){
+        global $db, $labro;
+        $observer = $labro->bailee($_SESSION['employee_id']);
+        $observer_org_str_id = $observer['ORG_chief_id'];
+
+        $action_type_id = 27;// распоряжение о назначении стажировки
+        $this->history_insert($action_type_id);
+
+        $sql = "INSERT INTO `local_alerts` (`initiator_employee_id`, `observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`step_id`,`date_create`)
+                                       VALUES( '" .  $_SESSION['employee_id'] .
+            "','" . $observer_org_str_id .
+            "','" . $action_type_id .
+            "','" . $_SESSION['control_company'] .
+            "','" . $_SESSION['real_form_id'] .
+            "','" . $_SESSION['step_id'] .
+            "',NOW());";
+        $db->query($sql);
+
+
+        $form_actoin = "order_for_an_internship";
+        $result_array['form_actoin'] = $form_actoin;
+        $result_array['page'] = "order_for_an_internship";
         // дописываем историю
         $this->logs_form_file();
         $this->session_clear();

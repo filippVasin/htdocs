@@ -9,7 +9,7 @@ $company = $comp['name'];
 $sql="SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio, items_control.name AS dol,
         employees.birthday
         FROM employees,employees_items_node,organization_structure,items_control
-        WHERE employees.id = ". $_SESSION['employee_id'] ."
+        WHERE employees.id = ". $employee_id ."
         AND employees.id = employees_items_node.employe_id
         AND organization_structure.id = employees_items_node.org_str_id
         AND organization_structure.kladr_id = items_control.id
@@ -42,7 +42,7 @@ LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organizat
 		LEFT JOIN employees AS chief_employees ON chief_employees.id = chief_node.employe_id
 		LEFT JOIN items_control AS  chief_items_control ON chief_items_control.id = ORG_boss.kladr_id
 
-WHERE employees_items_node.employe_id = ". $_SESSION['employee_id'] ."
+WHERE employees_items_node.employe_id = ". $employee_id ."
 AND organization_structure.id = employees_items_node.org_str_id
 AND organization_structure.company_id = ". $_SESSION['control_company'] ."
 AND chief_employees.id is not NULL
@@ -84,6 +84,7 @@ $result_file =
 	</STYLE>
 </HEAD>
 <BODY LANG="ru-RU" LINK="#0000ff" DIR="LTR">
+<div class="Section1">
 <TABLE WIDTH=676 CELLPADDING=7 CELLSPACING=0 STYLE="page-break-before: always">
 	<COL WIDTH=81>
 	<COL WIDTH=4361>
@@ -386,6 +387,7 @@ $result_file =
 </TABLE>
 <P CLASS="western" STYLE="margin-bottom: 0.14in" attr="'. $today .'"><BR><BR>
 </P>
+</div>
 </BODY>
 </HTML>';
 $error = "";

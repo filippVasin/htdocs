@@ -190,8 +190,37 @@ $(document).ready(function() {
             $("#driver_probation_actoin_popup_24").html(name);
             $("#alert_probation_actoin_popup_24_button").click();
         }
+        if( action_type == 25 ){
+            $("#driver_probation_actoin_popup_25").html(name);
+            $("#alert_probation_actoin_popup_25_button").click();
+        }
+        if( action_type == 26 ){
+            $("#driver_probation_actoin_popup_26").html(name);
+            $("#alert_probation_actoin_popup_26_button").click();
+        }
+        if( action_type == 27 ){
+            $("#driver_probation_actoin_popup_27").html(name);
+            $("#alert_probation_actoin_popup_27_button").click();
+        }
     });
 
+
+    // печатаем протокол доступа
+    $(document).on("click", "#print_popup_25", function () {
+        var link = "/doc_views?PATP1_Protocol&probation&" + emp;
+        print_link(link);
+    });
+    // печатаем распоряжение о допуске к работе
+    $(document).on("click", "#print_popup_26", function () {
+        var link = "/doc_views?PATP1_disposition_to_admission_to_work&probation&" + emp;
+        print_link(link);
+    })
+
+    // печатаем распоряжение о допуске к работе
+    $(document).on("click", "#print_popup_27", function () {
+        var link = "/doc_views?PATP1_disposal_of_exploration&probation&" + emp;
+        print_link(link);
+    })
 
 // отправляем на исполнение в forms и передаём нужные параметры
     $(document).on("click", "#yes_popup_3", function () {
@@ -337,7 +366,7 @@ $(document).ready(function() {
                         }
                     }
                 });
-                $(".btn-default").click();
+                $("#cancel_popup_17").click();
                 if(status == "ok"){
                     //print_link(link);
                 }
@@ -1020,7 +1049,7 @@ $(document).ready(function() {
                                 $(this).children(".type_name").html(content);
                             }
                         });
-                        $(".btn-default").click();
+                        $("#cancel_save_popup_input_employees").click();
                         //var link = "/doc_views?PATP1_Probationer&probation&" + item_id;
                         //print_link(link);
                     }

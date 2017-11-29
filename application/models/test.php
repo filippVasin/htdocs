@@ -511,9 +511,9 @@ route_control_step.track_number_id AS id,
 
 
     public function test($doc_link){
-        global $db;
+//        global $db;
 
-        $csv = iconv('windows-1251','UTF-8', file_get_contents(ROOT_PATH . '/application/drivers.csv'));
+        $csv = iconv('windows-1251','UTF-8', file_get_contents(ROOT_PATH . '/application/parse_csv/drivers.csv'));
         $drv_arr = explode("\n", $csv);
         $company_id = 29;
         foreach($drv_arr as $key=>$item){

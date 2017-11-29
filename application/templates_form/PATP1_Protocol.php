@@ -407,10 +407,7 @@ $result_file =
 	</TBODY>
 
 </TABLE>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
+
 <TABLE WIDTH=669 CELLPADDING=7 CELLSPACING=0>
 	<COL WIDTH=154>
 	<COL WIDTH=487>
