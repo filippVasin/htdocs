@@ -32,6 +32,13 @@ $(document).ready(function() {
     $(document).on("click", "#edit_buses", function () {
         window.location = "/buses_edit";
     });
+    $(document).on("click", "#print_list", function () {
+        var link = "/doc_views?PATP1_list_of_drivers&probation";
+        print_link(link);
+    });
+
+
+
 
     $(document).on("click", ".bus_row", function () {
         driver_id = $(this).attr("driver_id");

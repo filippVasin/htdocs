@@ -186,7 +186,8 @@ class Model_rover{
                         header("Location:/pass_test");// переходим на тест
 
                     } else {
-                        print_r($_SESSION) .  " <br><br><>br" ;
+                        header("Location: /dead_end");// переходим в тупик
+//                        print_r($_SESSION) .  " <br><br><>br" ;
 
                     }
 

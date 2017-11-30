@@ -104,6 +104,7 @@ class Model_menu{
                 $company_buttons .= '<li><a href="/select_company_control" class="pril_start"> <span>Компании</span><i class="fa fa-leanpub"></i></a></li>';
             }
 
+
             $company_buttons  .= '<li><a href="/structure" class="pril_start"> <span>Cтруктура</span><i class="fa  fa-sitemap"></i> </a></li>';
             // если права позваляют - позволим добавлять сотрудников
             if($boss_type == 3){
@@ -116,6 +117,10 @@ class Model_menu{
             <li><a href="/local_alert" class="pril_start"> <span>Уведомления</span><i class="fa fa-paper-plane"></i></a> </li>
             <li><a href="/rover" class="pril_start"> <span>Пройти инструктаж</span><i class="fa fa-graduation-cap"></i></a> </li>
             ';
+
+            if($_SESSION['control_company'] == 29){
+                $company_buttons .= '<li><a href="/buses" class="pril_start"> <span>Автопарк</span><i class="fa fa-bus"></i></a></li>';
+            }
 
 //
         }   else{

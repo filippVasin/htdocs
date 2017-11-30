@@ -1,0 +1,40 @@
+
+.table_title{
+    font-weight: 700;
+    font-size: 22px;
+}
+label {
+    text-align: left;
+    width: 100%;
+    margin-top: 5px;
+}
+thead th {
+    text-align: center;
+}
+.inst_routs_row{
+    cursor: pointer;
+}
+.tab_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.tab_menu li{
+    list-style-type:none;
+    margin: 5px;
+    background-color: #3c8dbc;
+    color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.tab_menu li:hover{
+    opacity: .7;
+    cursor: pointer;
+}
+
+.active_li{
+  background-color: #777777!important;
+}
