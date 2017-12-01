@@ -474,7 +474,7 @@ class Model_local_alert
                         </div>
                      <label>Количество часов:</label>
                      <input class="form-control tab_vs_enter_plus_route"  id="18_hours_plus">
-                     <label>Дата инструктажа:</label>
+                     <label>Дата, время прохождения стажировки:</label>
                      <input class="form-control valid_date tab_vs_enter_plus_route"  id="18_inst_date_plus">';
 
         // ищим наставников

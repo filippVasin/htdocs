@@ -91,6 +91,8 @@ $(document).ready(function() {
                             $(".gos_number",this).html(gos_number);
                             $(this).attr('brand_of_bus',brand_of_bus);
                             $(this).attr('gos_number',gos_number);
+                            $(".bus_row").removeClass("aquamarine");
+                            $(this).addClass("aquamarine");
                         }
                     });
 
@@ -172,6 +174,8 @@ $(document).ready(function() {
                             $(this).attr('second_name',second_name);
                             $(this).attr('phone',phone);
                             $(this).attr('phone_2',phone_2);
+                            $(".driver_row").removeClass("aquamarine");
+                            $(this).addClass("aquamarine");
                         }
                     });
 
@@ -219,6 +223,8 @@ $(document).ready(function() {
                             $(".route_name",this).html(route_name);
                             $(this).attr('route_number',route_number);
                             $(this).attr('route_name',route_name);
+                            $(".route_row").removeClass("aquamarine");
+                            $(this).addClass("aquamarine");
                         }
                     });
 
@@ -277,6 +283,8 @@ $(document).ready(function() {
                             $(this).attr('patronymic',second_name);
                             $(this).attr('phone_one',phone);
                             $(this).attr('phone_two',phone_2);
+                            $(".owner_row").removeClass("aquamarine");
+                            $(this).addClass("aquamarine");
                         }
                     });
 
