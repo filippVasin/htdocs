@@ -13,7 +13,7 @@
         <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
                 <input type="text" id="search_local_alert_input"  name="table_search" class="form-control pull-right" placeholder="Поиск">
-
+                    <input type="hidden" id="search_popup_open_action"  name="table_search">
                 <div class="input-group-btn" id="search_local_alert">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                 </div>

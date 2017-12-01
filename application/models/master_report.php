@@ -973,6 +973,8 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
     private function local_alert_journal(){
         global $db, $labro;
         $search_string = $this->post_array['search_string'];
+        $open_action = $this->post_array['open_action'];
+        $open_emp = $this->post_array['open_emp'];
 
         // границы дозволенного
         $keys =  $labro->observer_keys($_SESSION['employee_id']);
@@ -983,7 +985,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
 
         $html = "";
 
-        $sql = "(SELECT local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
+        $sql = "(SELECT local_alerts.observer_org_str_id, local_alerts.save_temp_files_id, save_temp_files.name AS file, local_alerts.id,local_alerts.action_type_id,
                     form_step_action.action_name,form_step_action.user_action_name,
                     CONCAT_WS (' ',init_em.surname , init_em.name, init_em.second_name) AS fio, local_alerts.step_id,init_em.id AS em_id,
                     local_alerts.date_create,   CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
@@ -1021,7 +1023,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                         )
                          GROUP BY local_alerts.id   )
      UNION
-     (SELECT local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+     (SELECT local_alerts.observer_org_str_id, local_alerts.save_temp_files_id, NULL,NULL, local_alerts.action_type_id,NULL, NULL,CONCAT_WS (' ',sump_for_employees.surname , sump_for_employees.name, sump_for_employees.patronymic) AS fio,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 		FROM local_alerts, sump_for_employees,organization_structure
 		WHERE local_alerts.action_type_id IN (17,18,19)
 		AND local_alerts.company_id =  " . $_SESSION['control_company'] . "
@@ -1050,11 +1052,16 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
             $search_string = str_replace(" ", "", $search_string);
 
             if((mb_stripos($fio_s, $search_string ) !== false ) || (mb_stripos($file_s, $search_string) !== false) || ($search_string == "")) {
+                    // если есть запрост на откытие какойто карточки на клиенте и наблюдатель не отдел кадров тогда накидываем спец класс
+                if($alert_every_day['em_id'] == $open_emp && $open_emp!="" && $open_action == $alert_every_day['action_type_id'] && $open_action!="" && $alert_every_day['observer_org_str_id'] == $observer && $observer != 166){
+                    $open_class = "click_li";
+                } else {
+                    $open_class = "";
+                }
 
                 // лимит
                 if ($count < 7) {
-                    $html .= '<li>
-                <!-- todo text -->
+                    $html .= '<li class="'. $open_class .'">
                 <span class="text alert_row" action_type="' . $alert_every_day['action_type_id'] . '"
                                                     observer_em=' . $_SESSION['employee_id'] . '
                                                     dol="' . $alert_every_day['position'] . '"
@@ -1066,9 +1073,7 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
                                                      local_id="' . $alert_every_day['id'] . '"
                                                       file_id="' . $alert_every_day['save_temp_files_id'] . '"
                   style=" font-size: 13px;width: 75%;cursor: pointer;">' . $alert_every_day['fio'] . " / " . $alert_every_day['file'] . '</span>
-                <!-- Emphasis label -->
                     <small class="label label-danger" style="line-height: 31px;" ><i class="fa fa-clock-o"></i> ' . date_create($alert_every_day['date_create'])->Format('d-m-Y') . '</small>
-                <!-- General tools such as edit or delete-->
                 <div class="tools" style="display: none">
                     <i class="fa fa-edit"></i>
                     <i class="fa fa-trash-o"></i>

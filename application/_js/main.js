@@ -1056,16 +1056,22 @@ $(document).ready(function() {
     });
 
     $(document).on("click", "#search_local_alert", function () {
-
+        // запрост на поиск
         var search_string = $("#search_local_alert_input").val();
-        var report_type = "local_alert_journal";
+        // какое открыть окно из результатов
+        var open_action = $("#search_popup_open_action").val();
+        $("#search_popup_open_action").val("");
+        $("#search_popup_open_emp").val("");
 
+        var report_type = "local_alert_journal";
         $.ajax({
             type: "POST",
             url: "/master_report/main",
             data: {
                 report_type:report_type,
-                search_string:search_string
+                search_string:search_string,
+                open_action:open_action,
+                open_emp:emp
             },
             success: function (answer) {
 
@@ -1076,6 +1082,8 @@ $(document).ready(function() {
 
                 if(status == "ok"){
                     $("#ul_alert_journal").html(content);
+
+                    $(".click_li .alert_row").click();
                 }
 
             },
@@ -1158,6 +1166,10 @@ $(".fc-day-grid-container").css("height","100%");
                 var link = "/doc_views?PATP1_Probationer&probation&" + emp;
                 print_link(link);
                 $("#inst_list_19_cancel").click();
+
+                //клик по поиску и какое уведомление надо сразу открыть после ответа по поиску
+                $("#search_popup_open_action").val(20);
+                $("#search_local_alert").click();
             },
             error: function () {
                 console.log('error');
