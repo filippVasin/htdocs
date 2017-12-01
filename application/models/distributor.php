@@ -378,8 +378,8 @@ class Model_distributor{
 
         $blank = "PATP1_Probationer";
         $result_array['link'] = "/doc_views?". $blank ."&probation&". $emp;
-
-        $sql = "UPDATE `local_alerts` SET `action_type_id`= 19 WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;
+        $observer_org_str_id = 181; // Диспетчер
+        $sql = "UPDATE `local_alerts` SET `action_type_id`= 19,`observer_org_str_id`= '". $observer_org_str_id ."' WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;
         $db->query($sql);
 
 //        $sql = "DELETE FROM `local_alerts` WHERE  `action_type_id`= 18 AND `initiator_employee_id`=". $emp;

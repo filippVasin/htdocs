@@ -198,13 +198,15 @@ class Model_creator
                 $email = "vasin.filipp@yandex.ru";// Пока Филипп
             }
         }
+            $emp_email = $email;
             if(isset($this->post_array['personnel_number'])){
                 $personnel_number = $this->post_array['personnel_number'];
-                $sql = "INSERT INTO `employees` (`personnel_number`,`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $personnel_number . "','" . $surname . "','" . $name . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
+
+                $sql = "INSERT INTO `employees` (`personnel_number`,`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $personnel_number . "','" . $surname . "','" . $name . "','" . $patronymic . "','1','" . $emp_email . "','". $work_start ."','". $birthday ."');";
 
                 $db->query($sql);
             } else {
-                $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $surname . "','" . $name . "','" . $patronymic . "','1','" . $email . "','". $work_start ."','". $birthday ."');";
+                $sql = "INSERT INTO `employees` (`surname`, `name`, `second_name`,`status`,`email`,`start_date`,`birthday`) VALUES('" . $surname . "','" . $name . "','" . $patronymic . "','1','" . $emp_email . "','". $work_start ."','". $birthday ."');";
 
                 $db->query($sql);
             }
