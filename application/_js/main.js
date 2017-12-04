@@ -21,6 +21,12 @@ $(document).ready(function() {
     if (get_session("role_id") == 3) {
         window.location = "/rover";
     }
+    //  если это диспетчер, тогда убираем меню
+    if (get_session("org_str_id") == 181) {
+        $(".main-sidebar").css("width","0");
+        $(".content-wrapper").css("margin-left",0);
+        $(".sidebar-toggle").css("display","none");
+    }
 
 
     start();

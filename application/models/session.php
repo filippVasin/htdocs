@@ -13,6 +13,7 @@ class Model_session
 
     // Начинаем прохождение тестирования;
     public function get_session(){
+        global $labro;
         $session_variable = $this->post_array['session_variable'];
 
         switch ($session_variable) {
@@ -27,6 +28,9 @@ class Model_session
                 break;
             case "user_id":
                 $result_array['content'] =  $_SESSION['user_id'];
+                break;
+            case "org_str_id":
+                $result_array['content'] = $labro->get_org_str_id($_SESSION['employee_id']);
                 break;
         }
 
