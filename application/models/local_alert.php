@@ -395,7 +395,8 @@ class Model_local_alert
                 <label>Маршрут: </label>' . $inst_list['route_name'] . '
                 <label>Автобус: </label>' . $inst_list['brand_of_bus'] . " - " . $inst_list['gos_number'] . '
                  <label>Длительность стажировки: </label>' . $inst_list['hours_all'] . ' часа
-                 <label>Дата инструктажа: </label> ' . date_create($inst_list['date'])->Format('d.m.Y');
+                 <label>Дата инструктажа: </label> ' . date_create($inst_list['date'])->Format('d.m.Y').'
+                <label>Назначить на автобус: </label> ' . $inst_list['assigned_brand_of_bus'] . " - " . $inst_list['assigned_gos_number'] ;
 
         $table_html = ' <br><br>
                         <table id="table_inst_popup" class="table table-bordered table-striped">
