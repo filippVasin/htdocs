@@ -1008,7 +1008,7 @@ function send_excel_report($observer_emplyoee_id,$control_company){
     $right = $observer_data['right'];
 
     $sql="SELECT employees.id AS emp,
-                organization_structure.id AS org,
+                ORG.id AS org,
                 CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
                 items_control.name AS dol,
                 PAR.name AS otdel,document_status_now.name AS doc_status, document_status_now.id AS doc_status_id,
@@ -1016,11 +1016,10 @@ function send_excel_report($observer_emplyoee_id,$control_company){
                      form_status_now.id,form_step_action.user_action_name, form_step_action.action_triger, DATE(history_forms.step_end_time)AS step_end_time, temp_doc_form.name,type_form.name as form_type
 
                 FROM  (form_status_now, temps_form_step, form_step_action, history_forms,
-                  save_temp_files, company_temps, type_temp, type_form, temp_doc_form, employees)
-                 LEFT JOIN employees_items_node ON employees_items_node.employe_id = employees.id
-                LEFT JOIN organization_structure ON organization_structure.id = employees_items_node.org_str_id
-                LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
-                LEFT JOIN organization_structure AS org_par ON org_par.id = organization_structure.parent
+                  save_temp_files, company_temps, type_temp, type_form, temp_doc_form, employees, organization_structure, employees_items_node)
+                LEFT JOIN organization_structure AS ORG ON ORG.id = employees_items_node.org_str_id
+                LEFT JOIN items_control ON items_control.id = ORG.kladr_id
+                LEFT JOIN organization_structure AS org_par ON org_par.id = ORG.parent
                 LEFT JOIN items_control AS PAR ON PAR.id = org_par.kladr_id
                 LEFT JOIN document_status_now ON document_status_now.id = form_status_now.doc_status_now
                 WHERE
@@ -1039,6 +1038,9 @@ function send_excel_report($observer_emplyoee_id,$control_company){
                   AND company_temps.temp_type_id = type_temp.id
                   AND company_temps.company_id =  ". $control_company ."
                   AND employees.id = save_temp_files.employee_id
+                  AND employees.id = employees_items_node.employe_id
+                  AND organization_structure.id = employees_items_node.org_str_id
+                  AND organization_structure.company_id = ". $control_company ."
                   GROUP BY save_temp_files.id
                                             ORDER BY  emp";
 
