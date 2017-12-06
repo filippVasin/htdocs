@@ -443,6 +443,7 @@ $(document).ready(function() {
                     var content = result.content;
                     $("#internship_list_content").html(content);
                     $(".valid_date").mask("99.99.9999");
+                    $(".valid_time").mask("99.99");
                     tab_vs_enter_inst();
                 },
                 error: function () {
@@ -1195,6 +1196,7 @@ $(".fc-day-grid-container").css("height","100%");
                 var content = result.content;
                 $("#popup_inst_list_edit").html(content);
                 $(".valid_date").mask("99.99.9999");
+                $(".valid_time").mask("99.99");
                 tab_vs_enter_inst_edit();
 
                 $("#popup_inst_list_button").click();
@@ -1219,6 +1221,7 @@ $(".fc-day-grid-container").css("height","100%");
                 var content = result.content;
                 $("#popup_inst_list_edit_plus_route").html(content);
                 $(".valid_date").mask("99.99.9999");
+                $(".valid_time").mask("99.99");
                 $("#inst_list_19_cancel").click();
                 $("#inst_list_19_edit_cancel").click();
                 $("#popup_inst_list_plus_route_button").click();
@@ -1256,10 +1259,36 @@ $(".fc-day-grid-container").css("height","100%");
             setTimeout("$('#18_hours_plus').css('border-color','#ccc')", 3000);
             flag = 4;
         }
-        if($("#18_inst_date_plus").val()==""){
+        if($("#18_inst_date_plus").val() == ""){
             $("#18_inst_date_plus").css("border-color","red");
             setTimeout("$('#18_inst_date_plus').css('border-color','#ccc')", 3000);
             flag = 5;
+        }
+
+        if($("#18_start_plus").val() == ""){
+            $("#18_start_plus").css("border-color", "red");
+            setTimeout("$('#18_start_plus').css('border-color','#ccc')", 3000);
+            flag = 6;
+        } else {
+            var patt = /^([01][0-9]|2[0-3]).[0-5][0-9]$/;
+            if(!patt.test($("#18_start_plus").val())) {
+                $("#18_start_plus").css("border-color", "red");
+                setTimeout("$('#18_start_plus').css('border-color','#ccc')", 3000);
+                flag = 6;
+            }
+        }
+
+        if($("#18_end_plus").val()==""){
+            $("#18_end_plus").css("border-color", "red");
+            setTimeout("$('#18_end_plus').css('border-color','#ccc')", 3000);
+            flag = 7;
+        } else {
+            var patt = /^([01][0-9]|2[0-3]).[0-5][0-9]$/;
+            if(!patt.test($("#18_end_plus").val())) {
+                $("#18_end_plus").css("border-color", "red");
+                setTimeout("$('#18_end_plus').css('border-color','#ccc')", 3000);
+                flag = 7;
+            }
         }
 
         var mentor_id = $("#18_mentor_plus").val();
@@ -1267,6 +1296,8 @@ $(".fc-day-grid-container").css("height","100%");
         var route_id = $("#18_route_plus").val();
         var hours = $("#18_hours_plus").val();
         var inst_date = $("#18_inst_date_plus").val();
+        var start = $("#18_start_plus").val();
+        var end = $("#18_end_plus").val();
 
         if(flag == 0){
             $.ajax({
@@ -1278,7 +1309,9 @@ $(".fc-day-grid-container").css("height","100%");
                     bus_id: bus_id,
                     route_id: route_id,
                     hours: hours,
-                    inst_date: inst_date
+                    inst_date: inst_date,
+                    start:start,
+                    end:end
                 },
                 success: function (answer) {
 
@@ -1470,6 +1503,7 @@ $(".fc-day-grid-container").css("height","100%");
                 var content = result.content;
                 $("#popup_inst_list_edit").html(content);
                 $(".valid_date").mask("99.99.9999");
+                $(".valid_time").mask("99.99");
                 tab_vs_enter_inst_edit();
                 $("#popup_22_edut_cancel").click();
                 setTimeout('$("#popup_inst_list_button").click()', 500);
@@ -1496,6 +1530,7 @@ $(".fc-day-grid-container").css("height","100%");
                 $("#popup_inst_list_edit_route_body").html(content);
                 $("#popup_inst_list_edit_route_button").click();
                 $(".valid_date").mask("99.99.9999");
+                $(".valid_time").mask("99.99");
                 tab_vs_enter_inst_edit_route()
                 check_route_and_bus()
             },
@@ -1536,11 +1571,39 @@ $(".fc-day-grid-container").css("height","100%");
             flag = 5;
         }
 
+        if($("#18_start").val() == ""){
+            $("#18_start").css("border-color", "red");
+            setTimeout("$('#18_start').css('border-color','#ccc')", 3000);
+            flag = 6;
+        } else {
+            var patt = /^([01][0-9]|2[0-3]).[0-5][0-9]$/;
+            if(!patt.test($("#18_start").val())) {
+                $("#18_start").css("border-color", "red");
+                setTimeout("$('#18_start').css('border-color','#ccc')", 3000);
+                flag = 6;
+            }
+        }
+
+        if($("#18_end").val()==""){
+            $("#18_end").css("border-color", "red");
+            setTimeout("$('#18_end').css('border-color','#ccc')", 3000);
+            flag = 7;
+        } else {
+            var patt = /^([01][0-9]|2[0-3]).[0-5][0-9]$/;
+            if(!patt.test($("#18_end").val())) {
+                $("#18_end").css("border-color", "red");
+                setTimeout("$('#18_end').css('border-color','#ccc')", 3000);
+                flag = 7;
+            }
+        }
+
         var mentor_id = $("#18_mentor_edit").val();
         var bus_id = $("#18_bus_edit").val();
         var route_id = $("#18_route_edit").val();
         var hours = $("#18_hours_edit").val();
         var inst_date = $("#18_inst_date_edit").val();
+        var start = $("#18_start").val();
+        var end = $("#18_end").val();
 
         if(flag == 0){
             //setTimeout('$("#inst_list_19").click()', 500);
@@ -1553,7 +1616,9 @@ $(".fc-day-grid-container").css("height","100%");
                     bus_id: bus_id,
                     route_id: route_id,
                     hours: hours,
-                    inst_date: inst_date
+                    inst_date: inst_date,
+                    start:start,
+                    end:end
                 },
                 success: function (answer) {
 

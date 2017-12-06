@@ -86,6 +86,8 @@ $assigned_gos_number = $internship_list_row['assigned_gos_number'];
 
 $sql = "SELECT internship_routes.id,
 						  internship_routes.inst_date,
+						  internship_routes.end,
+						  internship_routes.start,
                     bus_list_routes.route_name,
                     bus_list.brand_of_bus,
                     bus_list.gos_number,
@@ -102,7 +104,7 @@ foreach ($route_array as $route_item) {
     $table_routs .='<TR VALIGN=TOP>
 		<TD WIDTH=100 HEIGHT=27 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
         <P LANG="ru-RU" CLASS="western">
-            '. date_create($route_item['inst_date'])->Format('d.m.Y').'
+            '. date_create($route_item['inst_date'])->Format('d.m.Y'). " C " . $route_item['start'] . " по " . $route_item['end'] .'
 			</P>
 		</TD>
 		<TD WIDTH=173 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
@@ -112,7 +114,7 @@ foreach ($route_array as $route_item) {
 		</TD>
 		<TD WIDTH=91 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
 			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER>
-			'.$route_item['brand_of_bus'].'
+			'.$route_item['brand_of_bus'].' '. $route_item['gos_number'] .'
 			</P>
 		</TD>
 		<TD WIDTH=52 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
@@ -240,8 +242,8 @@ ________________'.$mentorFIO.'</P>
 стажировка- '. $hours_driving .' ч.
 </P>
 <TABLE WIDTH=800 CELLPADDING=7 CELLSPACING=0>
-	<COL WIDTH=100>
-	<COL WIDTH=550>
+	<COL WIDTH=120>
+	<COL WIDTH=530>
 	<COL WIDTH=91>
 	<COL WIDTH=52>
 	<COL WIDTH=77>

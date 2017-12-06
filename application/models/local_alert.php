@@ -416,6 +416,8 @@ class Model_local_alert
 
         $sql = "SELECT internship_routes.id,
 						  internship_routes.inst_date,
+						  internship_routes.end,
+						  internship_routes.start,
                     bus_list_routes.route_name,
                     bus_list.brand_of_bus,
                     bus_list.gos_number,
@@ -430,7 +432,7 @@ class Model_local_alert
         $html_route = "";
         foreach ($inst_routes as $inst_route) {
             $html_route .= '<tr class="inst_routs_row" id_routs="' . $inst_route['id'] . '">
-                                <td >' . date_create($inst_route['inst_date'])->Format('d.m.Y') . '</td>
+                                <td >' . date_create($inst_route['inst_date'])->Format('d.m.Y') . " C " . $inst_route['start'] . " по " . $inst_route['end'] .'</td>
                                 <td >' . $inst_route['route_name'] . '</td>
                                 <td >' . $inst_route['brand_of_bus'] . ' - ' . $inst_route['gos_number'] . '</td>
                                 <td >' . $inst_route['hours_all'] . '</td>
@@ -473,10 +475,14 @@ class Model_local_alert
                                 %bus%
                             </select>
                         </div>
-                     <label>Количество часов:</label>
-                     <input class="form-control tab_vs_enter_plus_route"  id="18_hours_plus">
                      <label>Дата, время прохождения стажировки:</label>
-                     <input class="form-control valid_date tab_vs_enter_plus_route"  id="18_inst_date_plus">';
+                     <input class="form-control valid_date tab_vs_enter_plus_route"  id="18_inst_date_plus">
+                     <label>Начало:</label>
+                     <input class="form-control tab_vs_enter_plus_route valid_time"  id="18_start_plus">
+                     <label>Окончание:</label>
+                     <input class="form-control tab_vs_enter_plus_route valid_time"  id="18_end_plus">
+                     <label>Количество часов:</label>
+                     <input class="form-control tab_vs_enter_plus_route"  id="18_hours_plus">';
 
         // ищим наставников
         $sql = "SELECT employees.id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio
@@ -533,17 +539,21 @@ class Model_local_alert
         $route_id = $this->post_array['route_id'];
         $hours = $this->post_array['hours'];
         $inst_date = $this->post_array['inst_date'];
+        $start = $this->post_array['start'];
+        $end = $this->post_array['end'];
 
         // подготовка дат к записи в базу
         $inst_date = date_create($inst_date)->Format('Y-m-d');
 
-        $sql = "INSERT INTO `internship_routes` (`employee_id`, `inst_date`, `route_id`, `bus_id`, `mentor_id`, `hours_all`)
-        VALUES ('" . $emp_id . "', '" . $inst_date . "', '" . $route_id . "', '" . $bus_id . "', '" . $mentor_id . "', '" . $hours . "')";
+        $sql = "INSERT INTO `internship_routes` (`employee_id`, `inst_date`, `route_id`, `bus_id`, `mentor_id`, `hours_all`, `start`, `end`)
+        VALUES ('" . $emp_id . "', '" . $inst_date . "', '" . $route_id . "', '" . $bus_id . "', '" . $mentor_id . "', '" . $hours . "', '" . $start . "', '" . $end . "')";
         $db->query($sql);
 
 
         $sql = "SELECT internship_routes.id,
 						  internship_routes.inst_date,
+						  internship_routes.end,
+						  internship_routes.start,
                     bus_list_routes.route_name,
                     bus_list.brand_of_bus,
                     bus_list.gos_number,
@@ -558,7 +568,7 @@ class Model_local_alert
         $html_route = "";
         foreach ($inst_routes as $inst_route) {
             $html_route .= '<tr class="inst_routs_row" id_routs="' . $inst_route['id'] . '">
-                                <td >' . date_create($inst_route['inst_date'])->Format('d.m.Y') . '</td>
+                                <td >' . date_create($inst_route['inst_date'])->Format('d.m.Y') . " C " . $inst_route['start'] . " по " . $inst_route['end'] .'</td>
                                 <td >' . $inst_route['route_name'] . '</td>
                                 <td >' . $inst_route['brand_of_bus'] . ' - ' . $inst_route['gos_number'] . '</td>
                                 <td >' . $inst_route['hours_all'] . '</td>
@@ -585,6 +595,8 @@ class Model_local_alert
         $mentor_id_now = $inst_route_row["mentor_id"];
         $hours_all_now = $inst_route_row["hours_all"];
         $inst_date_now = $inst_route_row["inst_date"];
+        $inst_start = $inst_route_row["start"];
+        $inst_end = $inst_route_row["end"];
 
         $html = '<label>Наставник:</label>
                         <div class="select_triangle" >
@@ -608,10 +620,15 @@ class Model_local_alert
                                 %bus%
                             </select>
                         </div>
-                     <label>Количество часов:</label>
-                     <input class="form-control tab_vs_enter_edit_route"  id="18_hours_edit" value="' . $hours_all_now . '">
+
                      <label>Дата инструктажа:</label>
-                     <input class="form-control valid_date tab_vs_enter_edit_route"  id="18_inst_date_edit" value="' . date_create($inst_date_now)->Format('d.m.Y') . '">';
+                     <input class="form-control valid_date tab_vs_enter_edit_route"  id="18_inst_date_edit" value="' . date_create($inst_date_now)->Format('d.m.Y') . '">
+                     <label>Начало:</label>
+                     <input class="form-control tab_vs_enter_edit_route valid_time"  id="18_start" value="' .  $inst_start.'">
+                     <label>Конец:</label>
+                     <input class="form-control tab_vs_enter_edit_route valid_time"  id="18_end" value="' .  $inst_end.'">
+                     <label>Количество часов:</label>
+                     <input class="form-control tab_vs_enter_edit_route"  id="18_hours_edit" value="' . $hours_all_now . '">';
 
         // ищим наставников
         $sql = "SELECT employees.id, CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio
@@ -681,6 +698,8 @@ class Model_local_alert
         $route_id = $this->post_array['route_id'];
         $hours = $this->post_array['hours'];
         $inst_date = $this->post_array['inst_date'];
+        $start = $this->post_array['start'];
+        $end = $this->post_array['end'];
 
         // подготовка дат к записи в базу
         $inst_date = date_create($inst_date)->Format('Y-m-d');
@@ -689,7 +708,9 @@ class Model_local_alert
                                                         `route_id`='" . $route_id . "',
                                                          `bus_id`='" . $bus_id . "',
                                                         `mentor_id`='" . $mentor_id . "',
-                                                        `hours_all`='" . $hours . "'
+                                                        `hours_all`='" . $hours . "',
+                                                        `start`='" . $start . "',
+                                                        `end`='" . $end . "'
                                                           WHERE  `id`=" . $inst_routs_edit;
         $db->query($sql);
 
@@ -701,6 +722,8 @@ class Model_local_alert
 
         $sql = "SELECT internship_routes.id,
 						  internship_routes.inst_date,
+						  internship_routes.start,
+						  internship_routes.end,
                     bus_list_routes.route_name,
                     bus_list.brand_of_bus,
                     bus_list.gos_number,
@@ -715,8 +738,8 @@ class Model_local_alert
         $html_route = "";
         foreach ($inst_routes as $inst_route) {
             $html_route .= '<tr class="inst_routs_row" id_routs="' . $inst_route['id'] . '">
-                                <td >' . date_create($inst_route['inst_date'])->Format('d.m.Y') . '</td>
-                                <td >' . $inst_route['route_name'] . '</td>
+                                <td >' . date_create($inst_route['inst_date'])->Format('d.m.Y') . " C " . $inst_route['start'] . " по " . $inst_route['end'] . '</td>
+                                <td >' . $inst_route['route_nasame'] . '</td>
                                 <td >' . $inst_route['brand_of_bus'] . ' - ' . $inst_route['gos_number'] . '</td>
                                 <td >' . $inst_route['hours_all'] . '</td>
                                 <td >' . $inst_route['mentor_fio'] . '</td>
