@@ -262,6 +262,40 @@ class labro
             $keys['right'] = $observer['max_right'];
         }
 
+        return $keys;
+    }
+
+    // возвращяем границы обзорной области в зависимости от должности и прав
+    public function fact_observer_keys($employees) {
+        global $db;
+
+        $keys = array();
+        $sql = "SELECT DIR.left_key,DIR.right_key, fact_organization_structure.boss_type, min(bounds.left_key) AS min_left ,max(bounds.right_key) AS max_right
+                FROM employees_items_node,fact_organization_structure
+                    LEFT JOIN fact_organization_structure AS bounds ON bounds.company_id = fact_organization_structure.company_id
+                    LEFT JOIN fact_organization_structure AS DIR ON (DIR.left_key < fact_organization_structure.left_key
+													 			AND
+													 			DIR.right_key > fact_organization_structure.right_key
+													 			AND
+																fact_organization_structure.`level` = (DIR.`level` + 1)
+																AND
+																DIR.company_id = fact_organization_structure.company_id)
+                WHERE employees_items_node.employe_id = ". $employees ."
+                AND fact_organization_structure.id = employees_items_node.fact_org_str_id";
+        $observer = $db->row($sql);
+
+        if($observer['boss_type'] == 1){
+            $keys['left'] = 0;
+            $keys['right'] = 0;
+        }
+        if($observer['boss_type'] == 2){
+            $keys['left'] = $observer['left_key'];
+            $keys['right'] = $observer['right_key'];
+        }
+        if($observer['boss_type'] == 3 ) {
+            $keys['left'] = $observer['min_left'];
+            $keys['right'] = $observer['max_right'];
+        }
 
         return $keys;
     }

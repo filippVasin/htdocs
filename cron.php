@@ -267,7 +267,7 @@ function boss_data($control_company){
 }
 
 function boss_alert($control_company){
-    global $db, $boss, $dispatch, $report_dir_mail;
+    global $db, $boss, $dispatch, $report_dir_mail,$labro;
 
 
 
@@ -371,6 +371,7 @@ FORM_NOW.doc_status_now,
      organization_structure.right_key <= TreeOfParents.right_key)
      )
 	AND	organization_structure.company_id
+
    AND
    /* по фирме*/
 
@@ -379,6 +380,7 @@ FORM_NOW.doc_status_now,
     		AND organization_structure.id = employees_items_node.org_str_id
     		AND organization_structure.company_id = ". $control_company ."
     		AND org_parent.company_id = ". $control_company ."
+
 	     AND
     /* для всех сотрудников или только для конкретного */
     (route_doc.employee_id IS NULL OR route_doc.employee_id =employees.id)
@@ -412,14 +414,37 @@ FORM_NOW.doc_status_now,
         //        $doc_count_end = 0; // количество пройденных документов
         $flag = 0;
 
+        $keys = $labro->fact_org_str_id($boss_item);
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+        $sql = "SELECT employees_items_node.employe_id
+                    FROM fact_organization_structure, employees_items_node
+                    WHERE employees_items_node.fact_org_str_id = fact_organization_structure.id
+                    AND fact_organization_structure.left_key >= ". $node_left_key ."
+                    AND fact_organization_structure.right_key <= ". $node_right_key ."
+                    AND fact_organization_structure.company_id = ". $control_company;
+        $visible_emps = $db->all($sql);
 
+        // удаляем строки с сотрудниками которые не надо показывать конкретному боссу
+        $temp = $test_array;
+        foreach($temp as $key=>$test_item){
+            $flag = 0;
+            foreach($visible_emps as $emp){
+                if($test_item['EMPLOY'] == $emp['id']){
+                    ++$flag;
+                }
+            }
+            if($flag == 0){
+                unset($test_array[$key]);
+            }
+        }
 
         foreach ($test_array as $test_item) {
 
             $left_key = str_pad($test_item['left_key'], 5, "0", STR_PAD_LEFT);
             $right_key = str_pad($test_item['right_key'], 5, "0", STR_PAD_LEFT);
 
-            if (($boss_item['boss_type'] == 3) || ($boss_item['left_key'] <= $left_key && $boss_item['right_key'] >= $right_key)) {
+//            if (($boss_item['boss_type'] == 3) || ($boss_item['left_key'] <= $left_key && $boss_item['right_key'] >= $right_key)) {
 
                 if ($test_item['FinishStep'] != 'Не прошел') {
                     ++$test_fact;
@@ -439,7 +464,7 @@ FORM_NOW.doc_status_now,
                 if ($test_item['doc_all'] != "") {
                     ++$doc_count_all;
                 }
-            }
+//            }
         }
 
         foreach($result_doc as $item_doc){
@@ -1035,6 +1060,7 @@ function send_excel_report($observer_emplyoee_id,$control_company){
 
                   AND type_temp.type_form_id = type_form.id
 
+
                   AND company_temps.temp_type_id = type_temp.id
                   AND company_temps.company_id =  ". $control_company ."
                   AND employees.id = save_temp_files.employee_id
@@ -1131,7 +1157,9 @@ function send_excel_report($observer_emplyoee_id,$control_company){
 //        header ( "Content-type: application/vnd.ms-excel" );
 //        header ( "Content-Disposition: attachment; filename=matrix.xls" );
         $url_hahs = md5($observer_emplyoee_id . "&" . $today);
-        $file_url = 'C:\MAMP\htdocs\application\real_forms\report_two.xls';
+        $file_url = 'C:\MAMP\htdocs\application\real_forms\report_'. $url_hahs .'.xls';
+//        $today =  date_create($today)->Format('_d_m_Y');
+//        $file_url = 'C:\MAMP\htdocs\application\real_forms\report_id'. $observer_emplyoee_id .'_date'. $today .'_'.$url_hahs.'.xls';
 //        $objWriter_two = new PHPExcel_Writer_Excel5($xls_two);
 //        $objWriter_two = PHPExcel_IOFactory::createWriter($xls_two, 'Excel2007');
         $objWriter_two = new PHPExcel_Writer_Excel5($xls_two);
