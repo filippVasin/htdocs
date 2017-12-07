@@ -1468,14 +1468,15 @@ employees.start_date as employees_start,
 NULL,
 NULL,
 CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio,
-delay_routes.`type` AS step_name,
+form_step_action.user_action_name AS step_name,
 DATE_FORMAT((history_step.data_finish + INTERVAL delay_routes.delay DAY), '%Y-%m-%d')  AS START_DATE,
 0 AS progress
-FROM delay_routes,history_step,employees,employees_items_node,organization_structure
+FROM delay_routes,history_step,employees,employees_items_node,organization_structure,form_step_action
 WHERE delay_routes.org_str_obj = employees_items_node.org_str_id
 AND employees_items_node.employe_id = employees.id
 AND history_step.employee_id = employees.id
 AND organization_structure.id = employees_items_node.org_str_id
+AND form_step_action.id = delay_routes.type
 AND organization_structure.company_id = ". $comp ."
 AND ( NOW() < (history_step.data_finish + INTERVAL delay_routes.delay DAY))
 GROUP BY employees.id)";

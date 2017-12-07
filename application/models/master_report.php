@@ -1339,7 +1339,7 @@ route_control_step.track_number_id AS id,
                 <thead>
                 <tr>
                     <td><b>Сотрудник</b></td>
-                    <td><b>Инструктаж</b></td>
+                    <td><b>Мероприятие</b></td>
                     <td><b>Дата</b></td>
                 </tr>
                 </thead>
@@ -1524,7 +1524,7 @@ route_control_step.track_number_id AS id,
                 <thead>
                 <tr>
                     <td><b>Сотрудник</b></td>
-                    <td><b>Инструктаж</b></td>
+                    <td><b>Мероприятие</b></td>
                     <td><b>Дата</b></td>
                 </tr>
                 </thead>
@@ -1634,7 +1634,7 @@ route_control_step.track_number_id AS id,
                 <thead>
                 <tr>
                     <td><b>Сотрудник</b></td>
-                    <td><b>Инструктаж</b></td>
+                    <td><b>Мероприятие</b></td>
                     <td><b>Дата</b></td>
                 </tr>
                 </thead>
@@ -1751,7 +1751,7 @@ route_control_step.track_number_id AS id,
                 <thead>
                 <tr>
                     <td><b>Сотрудник</b></td>
-                    <td><b>Инструктаж</b></td>
+                    <td><b>Мероприятие</b></td>
                     <td><b>Дата</b></td>
                 </tr>
                 </thead>
@@ -1808,7 +1808,7 @@ route_control_step.track_number_id AS id,
                 <thead>
                 <tr>
                     <td><b>Сотрудник</b></td>
-                    <td><b>Инструктаж</b></td>
+                    <td><b>Мероприятие</b></td>
                     <td><b>Дата</b></td>
                 </tr>
                 </thead>
@@ -1862,7 +1862,7 @@ route_control_step.track_number_id AS id,
                 <thead>
                 <tr>
                     <td><b>Сотрудник</b></td>
-                    <td><b>Инструктаж</b></td>
+                    <td><b>Мероприятие</b></td>
                     <td><b>Дата</b></td>
                 </tr>
                 </thead>
