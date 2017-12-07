@@ -30,7 +30,7 @@ class Model_doc_views{
     }
 
     private function company_forms_views($doc){
-        global $db;
+        global $db, $labro;
         $flag = "open";
         $page = "";
         $lorem = 0;
@@ -38,6 +38,8 @@ class Model_doc_views{
             $_SESSION['employee_id'] = 2; // рыба
             $lorem = 1;
         }
+        $employee_id = $_SESSION['employee_id'];
+        $company_id = $labro->get_org_str_id($_SESSION['employee_id']);
 
         include(ROOT_PATH . '/application/templates_form/' . $doc . '.php');
 
@@ -49,7 +51,7 @@ class Model_doc_views{
     }
 
     private function creator_views($doc,$emp){
-        global $db;
+        global $db, $labro;
         $flag = "open";
         $page = "";
         $lorem = 0;
@@ -58,6 +60,7 @@ class Model_doc_views{
             $_SESSION['employee_id'] = 2; // рыба
             $lorem = 1;
         }
+        $company_id = $labro->get_org_str_id($_SESSION['employee_id']);
 
         include(ROOT_PATH . '/application/templates_form/' . $doc . '.php');
 
@@ -69,13 +72,21 @@ class Model_doc_views{
     }
 
     private function probation($doc,$emp){
-        global $db;
+        global $db, $labro;
         $flag = "open";
         $page = "";
         $lorem = 0;
         $employee_id = $emp;
-        $company_id = 29;
+        if ($_SESSION['employee_id'] == "") {
+            $_SESSION['employee_id'] = 2; // рыба
+            $lorem = 1;
+        }
+        $company_id = $labro->get_org_str_id($_SESSION['employee_id']);
         include(ROOT_PATH . '/application/templates_form/' . $doc . '.php');
+
+        if ($lorem == 1) {
+            $_SESSION['employee_id'] = "";
+        }
 
         $page .='<div id="print" class="button">Печать</div>';
         return $page;
