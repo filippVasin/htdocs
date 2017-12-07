@@ -376,8 +376,9 @@ class Model_creator
 
         // узнаём оргструктурную принадлежность вводящего данные
         $sql="SELECT employees_items_node.org_str_id FROM employees_items_node WHERE employees_items_node.employe_id =".  $_SESSION['employee_id'];
-        $observer_org_str_id = $db->one($sql);
-        $observer_org_str_id = 181;// Диспетчер автомобильного и городского наземного электротранспорта
+//        $observer_org_str_id = $db->one($sql);
+//        $observer_org_str_id = 181   ;// Диспетчер автомобильного и городского наземного электротранспорта
+        $observer_org_str_id = 0   ;// показвать только отделу кадров
         $sql = "INSERT INTO `local_alerts` (`observer_org_str_id`, `action_type_id`,`company_id`,`save_temp_files_id`,`date_create`)
                                        VALUES( '" .  $observer_org_str_id.
             "','" . $action_type_id .
