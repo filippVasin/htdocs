@@ -320,5 +320,7 @@ $(document).ready(function() {
 
     // готовим название курса к публикации
 
-
+    $(document).on("click", ".go_hm", function () {
+        window.location = "/main";
+    });
 });

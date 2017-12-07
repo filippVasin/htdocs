@@ -407,9 +407,9 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
         $test_id = $result_array['test_id'];
 
         // Получаем ID попытки;
-        $sql = "SELECT `id` FROM `start_step_history` WHERE `step_id` = '".$_SESSION['step_id']."' ORDER BY `start_date` DESC LIMIT 1;";
-        $try_id = $db->one($sql);
-
+//        $sql = "SELECT `id` FROM `start_step_history` WHERE `step_id` = '".$_SESSION['step_id']."' ORDER BY `start_date` DESC LIMIT 1;";
+//        $try_id = $db->one($sql);
+//        echo $sql;
         // Ответы;
         $result_answers = $result_array['answers'];
 
@@ -426,7 +426,10 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
             }
 
             // Записываем таблицу в базу информацию о сделанных ответах;
-            $sql = "INSERT INTO `control_tests_questions_results` (`try_id`, `answer_id`, `date`) VALUES('".$try_id."', '".$answer_id."', NOW());";
+//            if(){
+//
+//            }
+            $sql = "INSERT INTO `control_tests_questions_results` (`answer_id`, `date`) VALUES( '".$answer_id."', NOW());";
             $db->query($sql);
         }
 
