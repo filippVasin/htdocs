@@ -250,7 +250,7 @@ function boss_data($control_company){
                 WHERE organization_structure.id = employees_items_node.org_str_id
                 AND organization_structure.company_id = ". $control_company ."
                 AND chief_employees.id is not NULL
-                GROUP BY ORG_chief_id
+                GROUP BY chief_employees_id
                 ORDER BY level DESC, boss_type DESC";
     $boss_sql = $db->all($sql);
 
@@ -1156,8 +1156,9 @@ function send_excel_report($observer_emplyoee_id,$control_company){
 //        header ( "Pragma: no-cache" );
 //        header ( "Content-type: application/vnd.ms-excel" );
 //        header ( "Content-Disposition: attachment; filename=matrix.xls" );
+        $today = date("Y-m-d H:i:s");
         $url_hahs = md5($observer_emplyoee_id . "&" . $today);
-        $file_url = 'C:\MAMP\htdocs\application\real_forms\report_'. $url_hahs .'.xls';
+        $file_url = 'C:\MAMP\htdocs\application\cron_temp_files\report_id'.$observer_emplyoee_id. "_". $control_company ."_". $url_hahs .'.xls';
 //        $today =  date_create($today)->Format('_d_m_Y');
 //        $file_url = 'C:\MAMP\htdocs\application\real_forms\report_id'. $observer_emplyoee_id .'_date'. $today .'_'.$url_hahs.'.xls';
 //        $objWriter_two = new PHPExcel_Writer_Excel5($xls_two);
