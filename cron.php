@@ -168,7 +168,7 @@ AND users.role_id = 4";
     secretars_alerts($control_company); // проходим по секретарям
     bailees_alerts($control_company); // проходим по наставникам
     boss_data($control_company); // собираем массив босcов
-    boss_alert($control_company); // проходим по боссам
+//    boss_alert($control_company); // проходим по боссам
     send_get_excel($control_company); // Excel отчёт
     pass_send(); // ложим пароли
     add_hash(); // добавили хеш авторизации к ссылке
@@ -413,8 +413,8 @@ FORM_NOW.doc_status_now,
         $doc_count_all = 0;// количество документов всего
         //        $doc_count_end = 0; // количество пройденных документов
         $flag = 0;
-
-        $keys = $labro->fact_org_str_id($boss_item);
+        $boss_emp = $boss_item;
+        $keys = $labro->fact_org_str_id($boss_emp);
         $node_left_key = $keys['left'];
         $node_right_key = $keys['right'];
         $sql = "SELECT employees_items_node.employe_id
@@ -428,13 +428,13 @@ FORM_NOW.doc_status_now,
         // удаляем строки с сотрудниками которые не надо показывать конкретному боссу
         $temp = $test_array;
         foreach($temp as $key=>$test_item){
-            $flag = 0;
+            $flag_two = 0;
             foreach($visible_emps as $emp){
                 if($test_item['EMPLOY'] == $emp['id']){
                     ++$flag;
                 }
             }
-            if($flag == 0){
+            if($flag_two == 0){
                 unset($test_array[$key]);
             }
         }
