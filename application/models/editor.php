@@ -177,15 +177,23 @@ class Model_editor
         // подготовка дат к записи в базу
         if($start_date_driver !=""){
             $start_date_driver = date_create($start_date_driver)->Format('Y-m-d');
+        } else {
+            $start_date_driver = '0000.00.00';
         }
         if($end_date_driver !=""){
             $end_date_driver = date_create($end_date_driver)->Format('Y-m-d');
+        } else {
+            $end_date_driver = '0000.00.00';
         }
         if($start_date !=""){
             $start_date = date_create($start_date)->Format('Y-m-d');
+        } else {
+            $start_date = '0000.00.00';
         }
         if($birthday !=""){
             $birthday = date_create($birthday)->Format('Y-m-d');
+        } else {
+            $birthday = '0000.00.00';
         }
 
 
