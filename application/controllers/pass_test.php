@@ -9,7 +9,8 @@ class Controller_pass_test extends Controller{
     // model, view и pointer - объявлены в родительском классе;
 
     public function exec_default(){
-
+        $html = $this->model->go_hm();
+        $this->view = str_replace('%go_hm%', $html, $this->view);
     }
 
     // Начало выполнения теста;

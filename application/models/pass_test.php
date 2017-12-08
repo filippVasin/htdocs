@@ -454,4 +454,14 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
         $result = json_encode($result_array, true);
         die($result);
     }
+    // если у нас role = 4, тогда даём возможносто вернуться на главную
+     function go_hm(){
+         $html= "";
+         if($_SESSION['role'] == 4){
+           $html = '<div class="go_hm">
+                       <span>На главную </span><i class="fa fa-mail-reply-all"></i>
+                    </div>';
+         }
+         return $html;
+     }
 }
