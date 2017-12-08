@@ -1561,6 +1561,7 @@ function end_probation(){
                 $delay_periodicity = $delay_route['periodicity']; // переодика по роуту
 
                 // соблюдаються ли условия для добавления роута?
+                // Временные
                 $sql="SELECT *
                         FROM history_step,route_control_step
                         WHERE history_step.employee_id = " . $emp . "
@@ -1568,8 +1569,17 @@ function end_probation(){
                         AND route_control_step.step_content_id = " . $step_flag . "
                     AND  ( NOW() >= (history_step.data_finish + INTERVAL " . $delay . " DAY))";
                 $history = $db->row($sql);
+                // не добавляли ли уже?
+                $sql="SELECT count(route_control_step.id) as count
+                        FROM route_control_step,route_doc
+                        WHERE route_control_step.track_number_id = route_doc.id
+                        AND route_doc.employee_id = " . $emp . "
+                        AND route_control_step.step_content_id = (SELECT route_control_step.step_content_id
+														FROM route_control_step
+														WHERE route_control_step.track_number_id =  " . $new_route . ")";
+                $repeat= $db->row($sql);
                 // если соблюдаются - тогда добавляем
-                if ($history['id'] != '') {
+                if ($history['id'] != '' &&  $repeat['count'] == 0) {
 
                     // доcтаём все шаги нового роута
                         $sql="SELECT *
