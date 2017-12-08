@@ -23,7 +23,6 @@ $fioFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $fio);
 $birthday = $employee['birthday'];
 $birthdays = explode('-', $birthday);
 $years = $birthdays[0];
-$company = $employee['company_id'];
 $dol = "Водитель";
 
 $doc = $get_data[0];
@@ -32,7 +31,7 @@ $doc = $get_data[0];
 $sql = "SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS boss_fio
         FROM organization_structure,employees_items_node,employees
         WHERE organization_structure.kladr_id = 164
-        AND organization_structure.company_id = ". $company ."
+        AND organization_structure.company_id = ". $company_id ."
         AND employees_items_node.org_str_id = organization_structure.id
         AND employees_items_node.employe_id = employees.id";
 $bosses = $db->row($sql);

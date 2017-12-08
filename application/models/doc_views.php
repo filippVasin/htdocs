@@ -61,7 +61,7 @@ class Model_doc_views{
             $lorem = 1;
         }
         $company_id = $labro->get_org_str_id($_SESSION['employee_id']);
-
+//        $company_id = 29;
         include(ROOT_PATH . '/application/templates_form/' . $doc . '.php');
 
         if ($lorem == 1) {
