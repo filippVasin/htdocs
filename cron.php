@@ -434,7 +434,7 @@ FORM_NOW.doc_status_now,
             $flag_two = 0;
             foreach($visible_emps as $emp){
                 if($test_item['EMPLOY'] == $emp['id']){
-                    ++$flag;
+                    ++$flag_two;
                 }
             }
             if($flag_two == 0){
@@ -934,7 +934,7 @@ function send_get_excel($control_company){
 
 
 function send_excel_report($observer_emplyoee_id,$control_company){
-    global $db, $today;
+    global $db, $today, $labro;
 
     $file_url = "";
     // Создаем объект класса PHPExcel
@@ -1089,6 +1089,35 @@ function send_excel_report($observer_emplyoee_id,$control_company){
 
         $docs_array = $db->all($sql);
         $coutn = 0;
+
+        // фильтр фактической структуры
+        $boss_emp = $observer_emplyoee_id;
+        $keys = $labro->fact_org_str_id($boss_emp);
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+        $sql = "SELECT employees_items_node.employe_id
+                    FROM fact_organization_structure, employees_items_node
+                    WHERE employees_items_node.fact_org_str_id = fact_organization_structure.id
+                    AND fact_organization_structure.left_key >= ". $node_left_key ."
+                    AND fact_organization_structure.right_key <= ". $node_right_key ."
+                    AND fact_organization_structure.company_id = ". $control_company;
+        $visible_emps = $db->all($sql);
+
+        // удаляем строки с сотрудниками которые не надо показывать конкретному боссу
+        $temp = $docs_array;
+        foreach($temp as $key=>$test_item){
+            $flag_two = 0;
+            foreach($visible_emps as $emp){
+                if($test_item['emp'] == $emp['id']){
+                    ++$flag_two;
+                }
+            }
+            if($flag_two == 0){
+                unset($docs_array[$key]);
+            }
+        }
+
+
         foreach ($docs_array as $key => $docs_array_item) {
 
             if ($docs_array_item['file_id'] == "") {
