@@ -61,33 +61,34 @@ calendar_refresh();
 // конец стажировки
 end_probation();
 
-
+//  если будний день - занимаемся рассылкой:
+if(intval(date('N')) <= 5) {
 // глобольный цикл по компаниям
-$sql = "SELECT id FROM company";
-$companys = $db->all($sql);
-foreach ($companys as $company) {
+    $sql = "SELECT id FROM company";
+    $companys = $db->all($sql);
+    foreach ($companys as $company) {
 //
-    $control_company = $company['id'];
+        $control_company = $company['id'];
 //$control_company = 29;
 // Время
-    $today = date("Y-m-d H:i:s");
+        $today = date("Y-m-d H:i:s");
 
-    $arrays = "";
+        $arrays = "";
 // Получаем массив всех сотрудников
-    $sql = "SELECT employees_items_node.employe_id
+        $sql = "SELECT employees_items_node.employe_id
 FROM employees_items_node, organization_structure
 WHERE employees_items_node.org_str_id = organization_structure.id
 AND organization_structure.company_id =" . $control_company;
-    $employees_sql = $db->all($sql);
-    $employees = array();
-    $arrays .= "сотрудники  <br>";
-    foreach ($employees_sql as $item) {
-        $employees[] = $item['employe_id'];
-        $arrays .= $item['employe_id'] . "<br>";;
-    }
+        $employees_sql = $db->all($sql);
+        $employees = array();
+        $arrays .= "сотрудники  <br>";
+        foreach ($employees_sql as $item) {
+            $employees[] = $item['employe_id'];
+            $arrays .= $item['employe_id'] . "<br>";;
+        }
 
 // Получаем массив ответственных
-    $sql = "SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.boss_type, ORG_boss.`level` as level,
+        $sql = "SELECT ORG_chief.id AS ORG_chief_id,ORG_boss.boss_type, ORG_boss.`level` as level,
                 chief_employees.id AS chief_employees_id,
                 chief_employees.surname AS chief_surname, chief_employees.name AS chief_name, chief_employees.second_name AS chief_second_name,
                     chief_items_control.name AS chief_dol
@@ -112,69 +113,70 @@ AND organization_structure.company_id =" . $control_company;
                 AND chief_employees.id is not NULL
                 GROUP BY ORG_chief_id
                 ORDER BY level DESC, boss_type DESC";
-    $bailees_sql = $db->all($sql);
-    $bailees = array();
-    $arrays .= "ответственные  <br>";
-    foreach ($bailees_sql as $item) {
-        $bailees[] = $item['chief_employees_id'];
-        $arrays .= $item['chief_employees_id'] . "<br>";
-    }
+        $bailees_sql = $db->all($sql);
+        $bailees = array();
+        $arrays .= "ответственные  <br>";
+        foreach ($bailees_sql as $item) {
+            $bailees[] = $item['chief_employees_id'];
+            $arrays .= $item['chief_employees_id'] . "<br>";
+        }
 
 // Получаем массив руководителей
-    $sql = "SELECT employees_items_node.employe_id
+        $sql = "SELECT employees_items_node.employe_id
 FROM employees_items_node, organization_structure
 WHERE employees_items_node.org_str_id = organization_structure.id
 AND organization_structure.company_id = " . $control_company . "
 AND organization_structure.boss_type > 1";
-    $leaders_sql = $db->all($sql);
-    $leaders = array();
-    $arrays .= "руководители <br>";
-    foreach ($leaders_sql as $item) {
-        $leaders[] = $item['employe_id'];
-        $arrays .= $item['employe_id'] . "<br>";
-    }
+        $leaders_sql = $db->all($sql);
+        $leaders = array();
+        $arrays .= "руководители <br>";
+        foreach ($leaders_sql as $item) {
+            $leaders[] = $item['employe_id'];
+            $arrays .= $item['employe_id'] . "<br>";
+        }
 
 // Получаем массив секретарей
-    $sql = "SELECT employees_items_node.employe_id
+        $sql = "SELECT employees_items_node.employe_id
 FROM employees_items_node, organization_structure,users
 WHERE employees_items_node.org_str_id = organization_structure.id
 AND organization_structure.company_id = " . $control_company . "
 AND employees_items_node.employe_id = users.employee_id
 AND users.role_id = 4";
-    $secretars_sql = $db->all($sql);
-    $secretars = array();
-    $arrays .= "секретари <br>";
-    foreach ($secretars_sql as $item) {
-        $secretars[] = $item['employe_id'];
-        $arrays .= $item['employe_id'] . "<br>";
-    }
+        $secretars_sql = $db->all($sql);
+        $secretars = array();
+        $arrays .= "секретари <br>";
+        foreach ($secretars_sql as $item) {
+            $secretars[] = $item['employe_id'];
+            $arrays .= $item['employe_id'] . "<br>";
+        }
 
 // глобальный массив для рассылки
-    $dispatch = array();
-    $arrays = "";
-    foreach ($employees as $item) {
-        $dispatch[$item]["email"] = $labro->employees_email($item);
-        $dispatch[$item]["emp_id"] = $item;
-        $dispatch[$item]["mail_body"] = $report_temp_mail;
-        $dispatch[$item]["excel_url"] = "";
-        $dispatch[$item]["flag"] = 0;
-        $dispatch[$item]["user_id"] = $labro->employees_to_user($item);
-    }
+        $dispatch = array();
+        $arrays = "";
+        foreach ($employees as $item) {
+            $dispatch[$item]["email"] = $labro->employees_email($item);
+            $dispatch[$item]["emp_id"] = $item;
+            $dispatch[$item]["mail_body"] = $report_temp_mail;
+            $dispatch[$item]["excel_url"] = "";
+            $dispatch[$item]["flag"] = 0;
+            $dispatch[$item]["user_id"] = $labro->employees_to_user($item);
+        }
 
-    $boss = array();
+        $boss = array();
 
 
-    employee_alerts($control_company); // проходим по сотрудникам
-    secretars_alerts($control_company); // проходим по секретарям
-    bailees_alerts($control_company); // проходим по наставникам
-    boss_data($control_company); // собираем массив босcов
+        employee_alerts($control_company); // проходим по сотрудникам
+        secretars_alerts($control_company); // проходим по секретарям
+        bailees_alerts($control_company); // проходим по наставникам
+        boss_data($control_company); // собираем массив босcов
 //    boss_alert($control_company); // проходим по боссам
-    send_get_excel($control_company); // Excel отчёт
-    pass_send(); // ложим пароли
-    add_hash(); // добавили хеш авторизации к ссылке
-    clear(); // отчишаем от якорей склейки
-    mails_send(); // отсылаем составленные письма
-    test_fun();       // кусаем арбуз
+        send_get_excel($control_company); // Excel отчёт
+        pass_send(); // ложим пароли
+        add_hash(); // добавили хеш авторизации к ссылке
+        clear(); // отчишаем от якорей склейки
+        mails_send(); // отсылаем составленные письма
+        test_fun();       // кусаем арбуз
+    }
 
 }
 

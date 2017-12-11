@@ -10,6 +10,7 @@ class Controller_login extends Controller{
 
     public function exec_default(){
 //        echo phpinfo();
+
     }
 
     // Попытка авторизаци;
