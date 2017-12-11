@@ -28,8 +28,9 @@ class Model_appointments_control{
         $result_array['message'] = 'Новая должность успешно добавлена';
         $result_array['new_item'] = $elements->item($new_appointment_name, 'appointment_'.$new_item_id, '', '', 'appointment_id='.$new_item_id);
 
-        $result = json_encode($result_array, true);
-        die($result);
+
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // Получаем список должностей в компании;

@@ -19,7 +19,8 @@ class Controller_pass_test extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Запршиваем у модели начало тестирования;
-        $this->model->start();
+        $result = $this->model->start();
+        $this->view = $result;
     }
 
     // Обработка результатов тестирования;
@@ -28,6 +29,7 @@ class Controller_pass_test extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Обрабатываем результат;
-        $this->model->processing_results();
+        $result = $this->model->processing_results();
+        $this->view = $result;
     }
 }

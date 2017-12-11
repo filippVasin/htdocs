@@ -74,9 +74,8 @@ class Model_master_report{
         }
 
         $result_array['status'] = "ok";
-        //
-        $result = json_encode($result_array, true);
-        die($result);
+
+        return json_encode($result_array);
     }
 
 

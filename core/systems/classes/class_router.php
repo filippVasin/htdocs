@@ -92,11 +92,16 @@ class router{
             }
         }
 
-        // Включаем меню;
-        $this->load_menu();
-
-        // Грузим шаблон с представлением;
-        $this->show_template();
+        // Если контроллер возвращает json - тогда чтоб фронт мог его распарсить, меню и шаблон не подключаем
+        if($this->viewer_result != "" && count(json_decode($this->viewer_result, true)) == 0) {
+            // Включаем меню;
+            $this->load_menu();
+            // Грузим шаблон с представлением;
+            $this->show_template();
+        } else {
+            //  Если контроллер отдаёт JSON - просто отдаём его фронту
+            echo $this->viewer_result;
+        }
     }
 
     private function load_menu(){

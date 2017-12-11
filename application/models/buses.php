@@ -133,8 +133,10 @@ class Model_buses
         $result_array['company_id'] = $bus_array['company_id'];
         $result_array['message'] = 'ok';
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+
+
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 }

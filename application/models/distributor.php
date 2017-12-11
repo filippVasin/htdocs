@@ -57,9 +57,9 @@ class Model_distributor{
 
         $result_array['content'] = $_SESSION['employee_id'];
         $result_array['status'] = 'ok';
-        //
-        $result = json_encode($result_array, true);
-        die($result);
+
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 

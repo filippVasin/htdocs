@@ -110,8 +110,8 @@ class Model_editor
         $result_array['content'] = $result;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -152,8 +152,8 @@ class Model_editor
 
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
     // меняем карточку сотрудника
     public function save_employee_card(){
@@ -233,8 +233,8 @@ class Model_editor
         $result_array['name'] = $name;
         $result_array['second_name'] = $second_name;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // карточка user
@@ -252,8 +252,8 @@ class Model_editor
 
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // меняем карточку user
@@ -273,8 +273,8 @@ class Model_editor
         }
 
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function plus_type(){
@@ -305,8 +305,8 @@ class Model_editor
         }
 
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function plus_directory(){
@@ -333,8 +333,8 @@ class Model_editor
             $result_array['status'] = 'error';
             $result_array['message'] = 'Такой элемент уже есть в вашей компании';
         }
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -380,8 +380,8 @@ class Model_editor
         }
 
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function select_node_list(){
@@ -398,8 +398,8 @@ class Model_editor
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 }

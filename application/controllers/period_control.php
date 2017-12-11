@@ -19,6 +19,7 @@ class Controller_period_control extends Controller{
         // Записываем массив с даннми в домель;
         $this->model->post_array = $this->post_params;
         // Обрабатываем результат;
-        $this->model->save_period();
+        $result = $this->model->save_period();
+        $this->view = $result;
     }
 }

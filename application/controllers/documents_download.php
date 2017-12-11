@@ -28,6 +28,7 @@ class Controller_documents_download extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
-        $this->model->download();
+        $result = $this->model->download();
+        $this->view = $result;
     }
 }

@@ -22,7 +22,9 @@ class Controller_company_control extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
-        $this->model->add();
+        $result = $this->model->add();
+        $this->view = $result;
+
     }
 
     // Включение управление компании;
@@ -31,19 +33,22 @@ class Controller_company_control extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
-        $this->model->set_company_control();
+        $result = $this->model->set_company_control();
+        $this->view = $result;
     }
 
     public  function plus_test_users_couple(){
 
         $this->model->post_array = $this->post_params;
 
-        $this->model->plus_test_users_couple();
+        $result = $this->model->plus_test_users_couple();
+        $this->view = $result;
     }
 
     public  function select_group_companys_item(){
 
-        $this->model->select_group_companys_item();
+        $result = $this->model->select_group_companys_item();
+        $this->view = $result;
 
     }
 
@@ -51,7 +56,8 @@ class Controller_company_control extends Controller{
 
         $this->model->post_array = $this->post_params;
 
-        $this->model->delete_company();
+        $result = $this->model->delete_company();
+        $this->view = $result;
     }
 
 }

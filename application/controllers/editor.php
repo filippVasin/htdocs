@@ -20,7 +20,8 @@ class Controller_editor extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->save_popup_input();
+        $result = $this->model->save_popup_input();
+        $this->view = $result;
     }
 
     // карточка сотрудника
@@ -28,21 +29,24 @@ class Controller_editor extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->employee_card();
+        $result = $this->model->employee_card();
+        $this->view = $result;
     }
     // меняем карточку сотрудника
     public function save_employee_card(){
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->save_employee_card();
+        $result = $this->model->save_employee_card();
+        $this->view = $result;
     }
     // получаем карточку user
     public function user_card(){
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->user_card();
+        $result = $this->model->user_card();
+        $this->view = $result;
     }
 
     // меняем карточку user
@@ -50,34 +54,39 @@ class Controller_editor extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->save_user_card();
+        $result = $this->model->save_user_card();
+        $this->view = $result;
     }
 
     public function plus_type(){
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->plus_type();
+        $result = $this->model->plus_type();
+        $this->view = $result;
     }
 
     public function plus_directory(){
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->plus_directory();
+        $result = $this->model->plus_directory();
+        $this->view = $result;
     }
 
     public function delete_item(){
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->delete_item();
+        $result = $this->model->delete_item();
+        $this->view = $result;
     }
 
     public function select_node_list(){
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->select_node_list();
+        $result = $this->model->select_node_list();
+        $this->view = $result;
     }
 }

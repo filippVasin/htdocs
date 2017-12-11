@@ -35,7 +35,6 @@ class Model_login{
             $result_array['message'] = 'Неверный логин или пароль!';
         }
         // Отправили зезультат
-        $result = json_encode($result_array, true);
-        die($result);
+        return json_encode($result_array);
     }
 }

@@ -95,16 +95,16 @@ class Model_manual
 //        echo $sql;
         $db->query($sql);
         $result_array['status'] = 'yes';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function error(){
         //  здесь надо добавить запись в лог ошибок
 
         $result_array['status'] = 'error';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 

@@ -307,8 +307,8 @@ class Model_report_step{
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -353,8 +353,8 @@ class Model_report_step{
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -372,8 +372,8 @@ class Model_report_step{
         $_SESSION['date_from_report_step'] = $date_from;
         $_SESSION['date_to_report_step'] = $date_to;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function date_from(){

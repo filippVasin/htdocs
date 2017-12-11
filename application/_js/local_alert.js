@@ -1546,6 +1546,7 @@ $(document).ready(function() {
             "url": "Russian.json"
         }
     });
+    //replase_england();
     //table.columns().flatten().each( function ( colIdx ) {
     //    // Create the select list and search operation
     //    var select = $('<button type="button" class="btn btn-primary btn-sm pull-right select_button" data-toggle="tooltip" title="" data-original-title="Date range" aria-describedby=""> <i class="fa fa-check-square-o"></i></button>')

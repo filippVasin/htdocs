@@ -8,7 +8,8 @@ class Controller_session extends Controller{
 
     public  function get_session(){
         $this->model->post_array = $this->post_params;
-        $this->model->get_session();
+        $result = $this->model->get_session();
+        $this->view = $result;
     }
 
 

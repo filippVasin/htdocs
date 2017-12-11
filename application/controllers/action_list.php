@@ -15,12 +15,7 @@ class Controller_action_list extends Controller{
 
     public function new_action_name(){
         $this->model->post_array = $this->post_params;
-        $this->model->new_action_name();
+        $result = $this->model->new_action_name();
+        $this->view = $result;
     }
-//
-//
-//    public function action_history_docs($post_data){
-//        $this->model->post_array = $post_data;
-//        $this->model->action_history_docs();
-//    }
 }

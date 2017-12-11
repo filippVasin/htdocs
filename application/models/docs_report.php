@@ -303,8 +303,8 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -354,8 +354,8 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function select(){
@@ -373,8 +373,8 @@ temp_doc_form.name AS name_doc, type_form.name AS type_doc, form_status_now.step
         $_SESSION['date_from_docs_report'] = $date_from;
         $_SESSION['date_to_docs_report'] = $date_to;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function date_from(){

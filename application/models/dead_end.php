@@ -85,8 +85,8 @@ class Model_dead_end{
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // cron тестим здесь

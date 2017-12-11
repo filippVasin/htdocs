@@ -63,9 +63,8 @@ class Model_period_control
         }
         $db->query($sql);
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 }
 

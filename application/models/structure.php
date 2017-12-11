@@ -72,8 +72,8 @@ class Model_structure
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -91,8 +91,8 @@ class Model_structure
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function select_kladr_list(){
@@ -114,8 +114,8 @@ class Model_structure
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -125,8 +125,8 @@ class Model_structure
         if($_SESSION['role_id'] != 1 ) {
             $result_array['status'] = 'error';
             $result_array['content'] = 'У вас нет прав на изменение структуры';
-            $result = json_encode($result_array, true);
-            die($result);
+            // Отправили зезультат
+            return json_encode($result_array);
         }
 
         $post_data = $this->post_array;
@@ -259,8 +259,8 @@ class Model_structure
 
         $result_array['status'] = 'ok';
         $result_array['content'] = 'Элемент успешно добавлен';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function delete_node(){
@@ -345,7 +345,7 @@ class Model_structure
             $result_array['report'] = 'Элемент успешно удалён';
         }
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 }

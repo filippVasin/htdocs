@@ -22,6 +22,7 @@ class Controller_appointments_control extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
-        $this->model->add();
+        $result = $this->model->add();
+        $this->view = $result;
     }
 }

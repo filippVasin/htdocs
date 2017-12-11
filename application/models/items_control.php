@@ -30,8 +30,8 @@ class Model_items_control{
         $result_array['message'] = 'Новый элемент успешно добавлен';
         $result_array['new_item'] = $elements->item($item_name, 'item_'.$new_item_id, '', '', 'item_id='.$new_item_id);
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // Получаем список типов элементов;
@@ -71,7 +71,7 @@ class Model_items_control{
             $result_array['items'][] = $elements->small_title('В выбранной комбинации нет сотрудников', 'no_apps');
         }
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 }

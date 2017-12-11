@@ -18,7 +18,8 @@ class Controller_employee_update extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->load_positions_tree();
+        $result = $this->model->load_positions_tree();
+        $this->view = $result;
     }
 
     // меняем должность сотрудника
@@ -26,7 +27,8 @@ class Controller_employee_update extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->update_position_yes();
+        $result = $this->model->update_position_yes();
+        $this->view = $result;
     }
 
 
@@ -35,7 +37,8 @@ class Controller_employee_update extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->delete_employee_yes();
+        $result = $this->model->delete_employee_yes();
+        $this->view = $result;
     }
 
     // получаем ереархию новой должности
@@ -43,6 +46,7 @@ class Controller_employee_update extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->load_new_erarch();
+        $result = $this->model->load_new_erarch();
+        $this->view = $result;
     }
 }

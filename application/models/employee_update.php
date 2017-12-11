@@ -137,8 +137,8 @@ class Model_employee_update
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -163,8 +163,8 @@ class Model_employee_update
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // меняем должность сотруднику и пишим логи
@@ -186,8 +186,8 @@ class Model_employee_update
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -223,8 +223,8 @@ class Model_employee_update
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 

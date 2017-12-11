@@ -24,8 +24,8 @@ class Model_fact_monitor{
         // перенапровление если нет подключенной компании
         if(!(isset($_SESSION['control_company']))){
             $result_array['status'] = "not company";
-            $result = json_encode($result_array, true);
-            die($result);
+            // Отправили зезультат
+            return json_encode($result_array);
         }
         // границы обзора
         $keys =  $labro->observer_keys($_SESSION['employee_id']);
@@ -526,8 +526,8 @@ FORM_NOW.doc_status_now,
         $result_array['timeSQL'] = $timeSQL;
         $result_array['content'] = $html;
         $result_array['status'] = "ok";
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
     // возвращаем цвет в зависимости от процента
     private function color($proc){
@@ -866,8 +866,8 @@ route_control_step.track_number_id AS id,
             }
         }
 
-        $result = json_encode($result_array_two, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array_two);
     }
 
     public function calendar($get_date) {
@@ -943,7 +943,7 @@ route_control_step.track_number_id AS id,
         }
 
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 }

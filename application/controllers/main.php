@@ -19,11 +19,13 @@ class Controller_main extends Controller{
     public function start(){
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->start();
+        $result = $this->model->start();
+        $this->view = $result;
     }
 
     public function show_something(){
-        $this->model->show_something_else();
+        $result = $this->model->show_something_else();
+        $this->view = $result;
     }
 
     public function change_viewer(){
@@ -32,11 +34,13 @@ class Controller_main extends Controller{
 
     public function events(){
         $get_date = $this->get_params;
-        $this->model->events($get_date);
+        $result = $this->model->events($get_date);
+        $this->view = $result;
     }
 
     public function calendar(){
         $get_date = $this->get_params;
-        $this->model->calendar($get_date);
+        $result = $this->model->calendar($get_date);
+        $this->view = $result;
     }
 }

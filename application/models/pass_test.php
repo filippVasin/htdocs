@@ -181,9 +181,8 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
 
                         $result_array['content'] = '';
                         $result_array['status'] = 'not test';// флаг для view - перейти на следующий щаг
-                        $result = json_encode($result_array, true);
-
-                        die($result);// ответ view
+                        // Отправили зезультат
+                        return json_encode($result_array);
                     }
 
                     // записываем начало прохождения док
@@ -269,8 +268,8 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
                 }
             }
         }
-            $result = json_encode($result_array, true);
-            die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
 
     }
     // отчистка сессии
@@ -451,13 +450,13 @@ WHERE route_control_step.id =" . $_SESSION['step_id'];
             $result_array['status'] = 'error';
         }
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
     // если у нас role = 4, тогда даём возможносто вернуться на главную
      function go_hm(){
          $html= "";
-         if($_SESSION['role'] == 4){
+         if($_SESSION['role_id'] == 4){
            $html = '<div class="go_hm">
                        <span>На главную </span><i class="fa fa-mail-reply-all"></i>
                     </div>';

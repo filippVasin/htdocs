@@ -29,8 +29,8 @@ class Model_boards_control{
         $result_array['message'] = 'Новый департамент успешно добавлен';
         $result_array['new_item'] = $elements->item($department_name, 'board_'.$new_item_id, '', '', 'board_id='.$new_item_id);
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // Получаем список отделов в компании;

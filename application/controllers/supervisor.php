@@ -11,33 +11,40 @@ class Controller_supervisor extends Controller{
     }
 
     public  function select_admin_list(){
-        $this->model->select_admin_list();
+        $result = $this->model->select_admin_list();
+        $this->view = $result;
     }
 
     public  function select_select_list(){
-        $this->model->select_select_list();
+        $result = $this->model->select_select_list();
+        $this->view = $result;
     }
 
     public  function add_item(){
         $this->model->post_array = $this->post_params;
-        $this->model->add_item();
+        $result = $this->model->add_item();
+        $this->view = $result;
     }
     public  function add_observer_item(){
-        $this->model->add_observer_item();
+        $result = $this->model->add_observer_item();
+        $this->view = $result;
     }
     public  function add_observer_item_yes(){
         $this->model->post_array = $this->post_params;
-        $this->model->add_observer_item_yes();
+        $result = $this->model->add_observer_item_yes();
+        $this->view = $result;
     }
 
     public  function delete_observer_item_yes(){
         $this->model->post_array = $this->post_params;
-        $this->model->delete_observer_item_yes();
+        $result = $this->model->delete_observer_item_yes();
+        $this->view = $result;
     }
 
     public  function delete_company_item_yes(){
         $this->model->post_array = $this->post_params;
-        $this->model->delete_company_item_yes();
+        $result = $this->model->delete_company_item_yes();
+        $this->view = $result;
     }
 
 }

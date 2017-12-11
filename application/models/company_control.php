@@ -117,8 +117,8 @@ class Model_company_control{
                 $result_array = array();
                 $result_array['status'] = 'mail_is_busy';
                 $result_array['message'] = 'Такая почта уже занята';
-                $result = json_encode($result_array, true);
-            die($result);
+                // Отправили зезультат
+                return json_encode($result_array);
             }
 
 
@@ -198,8 +198,8 @@ class Model_company_control{
                 $result_array = array();
                 $result_array['status'] = 'mail_is_busy';
                 $result_array['message'] = 'Такая почта уже занята';
-                $result = json_encode($result_array, true);
-                die($result);
+                // Отправили зезультат
+                return json_encode($result_array);
             }
 
             $sql="SELECT organization_structure.right_key, organization_structure.company_id
@@ -272,8 +272,8 @@ class Model_company_control{
 
 
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // Устанавливаем компанию для упарвления;
@@ -294,8 +294,8 @@ class Model_company_control{
         $result_array['status'] = 'ok';
         $result_array['message'] = 'Включен контроль выбранной компании';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // создаём тестовые аккаунты
@@ -428,8 +428,8 @@ HERH;
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
 
     }
 
@@ -448,8 +448,8 @@ HERH;
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -519,7 +519,7 @@ HERH;
             $result_array['content'] = "Ошибка, компания не являеться пустой";
         }
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 }

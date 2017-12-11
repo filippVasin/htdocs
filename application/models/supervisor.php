@@ -143,8 +143,8 @@ class Model_supervisor{
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -162,8 +162,8 @@ class Model_supervisor{
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -173,8 +173,8 @@ class Model_supervisor{
         if($_SESSION['role_id'] != 1 ) {
             $result_array['status'] = 'error';
             $result_array['content'] = 'У вас нет прав на изменение структуры';
-            $result = json_encode($result_array, true);
-            die($result);
+            // Отправили зезультат
+            return json_encode($result_array);
         }
 
         $post_data = $this->post_array;
@@ -214,8 +214,8 @@ class Model_supervisor{
 
         $result_array['status'] = 'ok';
         $result_array['message'] = 'Смотрящий успешно добавлен';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -235,8 +235,8 @@ class Model_supervisor{
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // ставим компанию под наблюдение
@@ -265,8 +265,8 @@ class Model_supervisor{
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
         $result_array['message'] = 'Наблюдение за компанией включено';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function delete_observer_item_yes(){
@@ -280,8 +280,8 @@ class Model_supervisor{
 
         $result_array['status'] = 'ok';
         $result_array['message'] = 'Наблюдатель удалён';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function delete_company_item_yes(){
@@ -296,8 +296,8 @@ class Model_supervisor{
 
         $result_array['status'] = 'ok';
         $result_array['message'] = 'Наблюдение за компанией убрано';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 }

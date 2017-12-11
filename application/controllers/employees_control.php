@@ -28,10 +28,10 @@ class Controller_employees_control extends Controller{
     // Добавление сотрудника;
     public function add(){
         // Записываем массив с даннми в домель;
-        $this->model->post_array = $this->post_params;
-
+       $this->model->post_array = $this->post_params;
         // Запускаем метод;
-        $this->model->add();
+        $result = $this->model->add();
+        $this->view = $result;
     }
 
     // ПОлучаем спискок сотрудников когда у нас выбран какой-то отдел или должность;
@@ -40,6 +40,7 @@ class Controller_employees_control extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
-        $this->model->get_employees();
+        $result = $this->model->get_employees();
+        $this->view = $result;
     }
 }

@@ -198,8 +198,8 @@ class Model_local_alert
         $html = "";
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -219,8 +219,8 @@ class Model_local_alert
         $_SESSION['date_from_local_alert'] = $date_from;
         $_SESSION['date_to_local_alert'] = $date_to;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function date_from()
@@ -320,8 +320,8 @@ class Model_local_alert
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // получаем маршруты автобуса
@@ -341,8 +341,8 @@ class Model_local_alert
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // получаем автобусы на маршруте
@@ -363,8 +363,8 @@ class Model_local_alert
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // получаем автобусы на маршруте
@@ -446,8 +446,8 @@ class Model_local_alert
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function internship_list_edit_plus_route()
@@ -525,8 +525,8 @@ class Model_local_alert
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -578,8 +578,8 @@ class Model_local_alert
 
         $result_array['content'] = $html_route;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function internship_list_edit_route()
@@ -684,8 +684,8 @@ class Model_local_alert
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -748,8 +748,8 @@ class Model_local_alert
 
         $result_array['content'] = $html_route;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -794,8 +794,8 @@ class Model_local_alert
 
         $result_array['content'] = $html_route;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -922,8 +922,8 @@ class Model_local_alert
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
     public function edit_instr_list_save() {
         global $db;
@@ -953,8 +953,8 @@ class Model_local_alert
                                                   WHERE  `employee_id`=". $emp;
         $db->query($sql);
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function check_inst_complete(){
@@ -974,8 +974,8 @@ class Model_local_alert
         }
         $result_array['content'] = $content;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 

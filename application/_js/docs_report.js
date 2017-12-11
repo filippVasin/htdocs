@@ -14,6 +14,7 @@ $(document).ready(function() {
     var date_to = "";
 
 
+
     $(document).on("click", "#reset", function () {
         $(".cancel_popup").click();
         $('#datepicker_from').val("");
@@ -238,7 +239,7 @@ $(document).ready(function() {
             } );
         var parent= $(select).closest("th");
         parent.append('<select class="dropdownmenu none">' +html +'</select> ');
-
+        //replase_england();
     } );
 
 
@@ -298,6 +299,8 @@ $(document).ready(function() {
         var file = $(this).attr("file_id");
         window.open("/doc_views?" + file + "&emp_doc");
     });
+
+
 
 });
 

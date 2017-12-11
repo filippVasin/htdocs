@@ -18,15 +18,18 @@ class Controller_dead_end extends Controller{
         // Записываем массив с даннми в домель;
         $this->model->post_array = $this->post_params;
         // функция сброса
-        $this->model->reset_progress();
+        $result = $this->model->reset_progress();
+        $this->view = $result;
     }
 
 
     public function cron(){
-        $this->model->cron();
+        $result = $this->model->cron();
+        $this->view = $result;
     }
 
     public function phpexcel(){
-        $this->model->phpexcel();
+        $result = $this->model->phpexcel();
+        $this->view = $result;
     }
 }

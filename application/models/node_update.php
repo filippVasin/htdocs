@@ -124,8 +124,8 @@ class Model_node_update
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -161,8 +161,8 @@ class Model_node_update
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -179,8 +179,9 @@ class Model_node_update
 //        print_r($result);
         if(isset($result['id'])){
             $result_array['status'] = 'Занятно';
-            $result = json_encode($result_array, true);
-            die($result);
+
+            // Отправили зезультат
+            return json_encode($result_array);
         } else {
 
 
@@ -196,8 +197,8 @@ class Model_node_update
             $result_array['content'] = $item_id;
             $result_array['status'] = 'ok';
 
-            $result = json_encode($result_array, true);
-            die($result);
+            // Отправили зезультат
+            return json_encode($result_array);
         }
     }
 
@@ -223,8 +224,8 @@ class Model_node_update
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 

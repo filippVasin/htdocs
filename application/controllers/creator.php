@@ -20,21 +20,24 @@ class Controller_creator extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->select_event();
+        $result = $this->model->select_event();
+        $this->view = $result;
     }
 
     public function create_form(){
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-         $this->model->create_form();
+        $result = $this->model->create_form();
+        $this->view = $result;
     }
 
     public function create_drivers(){
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->create_drivers();
+        $result = $this->model->create_drivers();
+        $this->view = $result;
     }
 
 
@@ -42,26 +45,30 @@ class Controller_creator extends Controller{
         // Записываем массив с даннми в домель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->button_plus();
+        $result = $this->model->button_plus();
+        $this->view = $result;
     }
 
     public function new_type_select(){
         // Записываем массив с даннми в домель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->new_type_select();
+        $result = $this->model->new_type_select();
+        $this->view = $result;
     }
     public function save_new_type_select(){
         // Записываем массив с даннми в домель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->save_new_type_select();
+        $result = $this->model->save_new_type_select();
+        $this->view = $result;
     }
     public function get_input(){
         // Записываем массив с даннми в домель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->get_input();
+        $result = $this->model->get_input();
+        $this->view = $result;
     }
 
 }

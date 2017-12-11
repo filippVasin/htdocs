@@ -124,8 +124,8 @@ class Model_forms{
                 break;
         }
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     private function create(){
@@ -329,8 +329,8 @@ class Model_forms{
         $this->logs_form_file();
         $this->session_clear();
         $result_array['status'] = 'yes';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }//
 
     // отчистка сессии

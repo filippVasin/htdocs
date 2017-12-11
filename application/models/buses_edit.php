@@ -136,8 +136,8 @@ class Model_buses_edit{
         $result_array['status'] = "ok";
         $result_array['message'] = "";
         $result_array['content'] = $route_html;
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -156,8 +156,8 @@ class Model_buses_edit{
 
         $result_array['status'] = 'ok';
         $result_array['message'] = "";
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -184,8 +184,8 @@ class Model_buses_edit{
         $result_array['status'] = "ok";
         $result_array['message'] = "";
         $result_array['content'] = $bus_html;
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -219,8 +219,8 @@ class Model_buses_edit{
 
             $result_array['status'] = 'ok';
             $result_array['message'] = "";
-            $result = json_encode($result_array, true);
-            die($result);
+            // Отправили зезультат
+            return json_encode($result_array);
         }
 
     public function route_edit_save(){
@@ -234,8 +234,8 @@ class Model_buses_edit{
 
         $result_array['status'] = 'ok';
         $result_array['message'] = "";
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -259,8 +259,8 @@ class Model_buses_edit{
 
         $result_array['status'] = 'ok';
         $result_array['message'] = "";
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 }

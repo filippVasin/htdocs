@@ -41,3 +41,6 @@ thead th {
 .aquamarine{
     background:aquamarine!important;
 }
+.input-sm{
+    line-height: 20px!important;
+}

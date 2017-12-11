@@ -18,7 +18,8 @@ class Controller_node_update extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->load_positions_tree();
+        $result = $this->model->load_positions_tree();
+        $this->view = $result;
     }
 
     // меняем положение узла
@@ -26,7 +27,8 @@ class Controller_node_update extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->update_node_yes();
+        $result = $this->model->update_node_yes();
+        $this->view = $result;
     }
 
 
@@ -35,7 +37,8 @@ class Controller_node_update extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->delete_node_yes();
+        $result = $this->model->delete_node_yes();
+        $this->view = $result;
     }
 
 
@@ -44,6 +47,7 @@ class Controller_node_update extends Controller{
         // Записываем массив с даннми в модель;
         $this->model->post_array = $this->post_params;
         // Вызываем метод показа всего дерева
-        $this->model->load_old_erarch();
+        $result = $this->model->load_old_erarch();
+        $this->view = $result;
     }
 }

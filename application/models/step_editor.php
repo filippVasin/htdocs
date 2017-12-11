@@ -171,8 +171,8 @@ class Model_step_editor
         $db->query($sql);
 
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function save_doc(){
@@ -193,8 +193,8 @@ class Model_step_editor
         $db->query($sql);
 
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function save_form(){
@@ -215,8 +215,8 @@ class Model_step_editor
         $db->query($sql);
 
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     public function save_manual()
@@ -238,32 +238,10 @@ class Model_step_editor
         $db->query($sql);
 
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
-    // Обработка результатов тестирования;
-//    public function save_period(){
-//        global $db;
-//
-//        $id = $this->post_array['id'];
-//        $period_id = $this->post_array['period_id'];
-//
-//        if($period_id == 0){
-//            $sql = "UPDATE route_control_step
-//                SET periodicity = NULL
-//                WHERE id =" .$id;
-//        } else {
-//            $sql = "UPDATE route_control_step
-//                SET periodicity = ". $period_id ."
-//                WHERE id =" .$id;
-//        }
-//        $db->query($sql);
-//
-//        $result_array['status'] = 'ok';
-//        $result = json_encode($result_array, true);
-//        die($result);
-//    }
 }
 
 

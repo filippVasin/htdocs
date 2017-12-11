@@ -14,10 +14,12 @@ class Controller_manual extends Controller{
     }
     // ознакомился
     public function yes(){
-        $this->model->yes();
+        $result = $this->model->yes();
+        $this->view = $result;
     }
     // документ не показали
     public function error(){
-        $this->model->error();
+        $result = $this->model->error();
+        $this->view = $result;
     }
 }

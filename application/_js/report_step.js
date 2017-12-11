@@ -228,9 +228,9 @@ $(document).ready(function() {
     //var table = $('#table1').DataTable({"scrollX" : true});
 
     var table = $('#table1').DataTable({
-        //"language": {
-        //    "url": "Russian.json"
-        //}
+        "language": {
+            "url": "Russian.json"
+        }
     });
     table.columns().flatten().each( function ( colIdx ) {
         // Create the select list and search operation
@@ -255,7 +255,7 @@ $(document).ready(function() {
             } );
 
         select.append('<div class="dropdownmenu none"><div class="ranges"><ul>' +html +'</ul> <div class="range_inputs"> </div> </div> </div>');
-
+        //replase_england();
     } );
 
 

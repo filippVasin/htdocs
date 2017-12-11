@@ -14,7 +14,8 @@ class Controller_distributor extends Controller{
 
     public function main(){
         $this->model->post_array = $this->post_params;
-        $this->model->main();
+        $result = $this->model->main();
+        $this->view = $result;
     }
 
 }

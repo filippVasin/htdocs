@@ -19,25 +19,22 @@ class Controller_docs_report extends Controller{
         $this->view = str_replace('%date_to%', $date_to, $this->view);
     }
 
-//    public function start(){
-//        $this->model->post_array = $this->post_params;
-//        $this->model->start();
-//    }
-
-
     // получаем дерево должностей
     public function load_node_docs_tree(){
-        $this->model->load_node_docs_tree();
+        $result = $this->model->load_node_docs_tree();
+        $this->view = $result;
     }
 
     public function action_history_docs(){
         $this->model->post_array = $this->post_params;
-        $this->model->action_history_docs();
+        $result = $this->model->action_history_docs();
+        $this->view = $result;
     }
 
     public function select()
     {
         $this->model->post_array = $this->post_params;
-        $this->model->select();
+        $result =  $this->model->select();
+        $this->view = $result;
     }
 }

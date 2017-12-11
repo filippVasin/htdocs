@@ -1,6 +1,6 @@
 <div class="container">
     <div class="button" id="edit_buses">Редактирование</div>
-    <div class="button" id="print_list">Распечатать Список Автобусов </div>
+    <div class="button" style="width: 250px" id="print_list">Распечатать Список Автобусов </div>
     <div class="box">
         <!-- /.box-header -->
         <div class="box-body">

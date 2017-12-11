@@ -152,8 +152,8 @@ class Model_creator
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -296,8 +296,8 @@ class Model_creator
         $blank = $db->one($sql);
 
        $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$employee_id;
-       $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -340,8 +340,8 @@ class Model_creator
         if($sump_data['id'] != '') {
             $result_array['content'] = "Такой человек уже есть в системе";
             $result_array['status'] = "error";
-            $result = json_encode($result_array, true);
-            die($result);
+            // Отправили зезультат
+            return json_encode($result_array);
         }
 
         // если почта не задана
@@ -405,8 +405,8 @@ class Model_creator
         $result_array['link'] = "/doc_views?". $blank ."&start_blank&".$sump_employees_id;
         $result_array['content'] = "Данные добавлены, ожидаем прохождения медосмотра";
         $result_array['status'] = "ok";
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // добавляем тип
@@ -438,8 +438,8 @@ class Model_creator
 
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -479,8 +479,8 @@ class Model_creator
 
         $result_array['content'] = $html;
 
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // добавляем наменклатуру;
@@ -664,8 +664,8 @@ class Model_creator
 
         $result_array['status'] = $status;
         $result_array['content'] = $html;
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
 
@@ -690,8 +690,8 @@ class Model_creator
         $result_array['email'] = $email;
         $result_array['status'] = "ok";
         $result_array['content'] = $html;
-        $result = json_encode($result_array, true);
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 
     // функция добавление элемента в дерево компании

@@ -15,19 +15,8 @@ class Controller_buses extends Controller
     // получаем дерево должностей
     public function bus_row_edit(){
         $this->model->post_array = $this->post_params;
-        $this->model->bus_row_edit();
+        $result = $this->model->bus_row_edit();
+        $this->view = $result;
     }
-//
-//    public function action_history_docs()
-//    {
-//        $this->model->post_array = $this->post_params;
-//        $this->model->action_history_docs();
-//    }
-//
-//    public function select()
-//    {
-//        $this->model->post_array = $this->post_params;
-//        $this->model->select();
-//    }
 
 }

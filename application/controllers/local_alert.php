@@ -22,73 +22,88 @@ class Controller_local_alert extends Controller{
 
     // получаем дерево должностей
     public function load_node_docs_tree(){
-        $this->model->load_node_docs_tree();
+        $result = $this->model->load_node_docs_tree();
+        $this->view = $result;
     }
 
     public function action_history_docs(){
         $this->model->post_array = $this->post_params;
-        $this->model->action_history_docs();
+        $result = $this->model->action_history_docs();
+        $this->view = $result;
     }
 
     public function select()
     {
         $this->model->post_array = $this->post_params;
-        $this->model->select();
+        $result = $this->model->select();
+        $this->view = $result;
     }
 
     // получаем форму заполнения для стажировочного листа
     public function internship_list(){
-        $this->model->internship_list();
+        $result = $this->model->internship_list();
+        $this->view = $result;
     }
 
     public function get_bus_routes(){
         $this->model->post_array = $this->post_params;
-        $this->model->get_bus_routes();
+        $result = $this->model->get_bus_routes();
+        $this->view = $result;
     }
 
     public function internship_list_edit(){
         $this->model->post_array = $this->post_params;
-        $this->model->internship_list_edit();
+        $result = $this->model->internship_list_edit();
+        $this->view = $result;
     }
 
     public function get_route_buses() {
         $this->model->post_array = $this->post_params;
-        $this->model->get_route_buses();
+        $result = $this->model->get_route_buses();
+        $this->view = $result;
     }
 
     public function internship_list_edit_plus_route(){
-        $this->model->internship_list_edit_plus_route();
+        $result = $this->model->internship_list_edit_plus_route();
+        $this->view = $result;
     }
 
     public function inst_save_new_route() {
         $this->model->post_array = $this->post_params;
-        $this->model->inst_save_new_route();
+        $result = $this->model->inst_save_new_route();
+        $this->view = $result;
     }
     public function internship_list_edit_route() {
         $this->model->post_array = $this->post_params;
-        $this->model->internship_list_edit_route();
+        $result = $this->model->internship_list_edit_route();
+        $this->view = $result;
     }
     public function inst_edit_new_route() {
         $this->model->post_array = $this->post_params;
-        $this->model->inst_edit_new_route();
+        $result = $this->model->inst_edit_new_route();
+        $this->view = $result;
     }
     public function inst_delete_new_route() {
         $this->model->post_array = $this->post_params;
-        $this->model->inst_delete_new_route();
+        $result = $this->model->inst_delete_new_route();
+        $this->view = $result;;
     }
     public function edit_instr_list() {
         $this->model->post_array = $this->post_params;
-        $this->model->edit_instr_list();
+        $result = $this->model->edit_instr_list();
+        $this->view = $result;
     }
 
     public function edit_instr_list_save() {
         $this->model->post_array = $this->post_params;
-        $this->model->edit_instr_list_save();
+        $result = $this->model->edit_instr_list_save();
+        $this->view = $result;
     }
 
     public function check_inst_complete() {
         $this->model->post_array = $this->post_params;
-        $this->model->check_inst_complete();
+        $result = $this->model->check_inst_complete();
+        $this->view = $result;
     }
 
 

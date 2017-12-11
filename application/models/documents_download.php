@@ -126,8 +126,7 @@ class Model_documents_download{
         $result_array['message'] = 'Сейчас произойдет загрузка сформированного файла';
         $result_array['download_link'] = $links;
 
-        $result = json_encode($result_array, true);
-
-        die($result);
+        // Отправили зезультат
+        return json_encode($result_array);
     }
 }

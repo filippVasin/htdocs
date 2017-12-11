@@ -59,8 +59,7 @@ class Model_action_list
         $html ="";
         $result_array['content'] = $html;
         $result_array['status'] = 'ok';
-        $result = json_encode($result_array, true);
-        die($result);
+        return json_encode($result_array);
     }
 
 

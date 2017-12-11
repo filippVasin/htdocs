@@ -23,45 +23,38 @@ class Controller_buses_edit extends Controller{
 
     public  function bus_edit(){
         $this->model->post_array = $this->post_params;
-        $this->model->bus_edit();
+        $result = $this->model->bus_edit();
+        $this->view = $result;
     }
 
     public  function bus_edit_save(){
         $this->model->post_array = $this->post_params;
-        $this->model->bus_edit_save();
+        $result = $this->model->bus_edit_save();
+        $this->view = $result;
     }
 
     public  function driver_edit(){
         $this->model->post_array = $this->post_params;
-        $this->model->driver_edit();
+        $result = $this->model->driver_edit();
+        $this->view = $result;
     }
 
     public  function driver_edit_save(){
         $this->model->post_array = $this->post_params;
-        $this->model->driver_edit_save();
+        $result = $this->model->driver_edit_save();
+        $this->view = $result;
     }
 
     public  function route_edit_save(){
         $this->model->post_array = $this->post_params;
-        $this->model->route_edit_save();
+        $result = $this->model->route_edit_save();
+        $this->view = $result;
     }
 
     public  function owner_edit_save(){
         $this->model->post_array = $this->post_params;
-        $this->model->owner_edit_save();
+        $result = $this->model->owner_edit_save();
+        $this->view = $result;
     }
-
-
-
-//
-//    public  function add_item(){
-//        $this->model->post_array = $this->post_params;
-//        $this->model->add_item();
-//    }
-//
-//    public  function delete_node(){
-//        $this->model->post_array = $this->post_params;
-//        $this->model->delete_node();
-//    }
 
 }

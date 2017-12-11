@@ -22,7 +22,8 @@ class Controller_items_control extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
-        $this->model->add();
+        $result = $this->model->add();
+        $this->view = $result;
     }
 
     // Получаемс содержимое для выбранного элемента;
@@ -31,6 +32,7 @@ class Controller_items_control extends Controller{
         $this->model->post_array = $this->post_params;
 
         // Запускаем метод;
-        $this->model->get_exist_elements();
+        $result = $this->model->get_exist_elements();
+        $this->view = $result;
     }
 }
