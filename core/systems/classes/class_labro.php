@@ -307,7 +307,7 @@ class labro
                 FROM fact_organization_structure,organization_structure,employees_items_node
                 WHERE employees_items_node.employe_id = ". $employees ."
                 AND organization_structure.id = employees_items_node.org_str_id
-                AND fact_organization_structure.org_str_id = organization_structure.id";
+                AND employees_items_node.fact_org_str_id = fact_organization_structure.id";
         $result = $db->row($sql);
 
         if($result['id']!=""){
@@ -321,9 +321,11 @@ class labro
             $sql = "SELECT FACT.id
                         FROM fact_organization_structure
                             LEFT JOIN fact_organization_structure AS FACT ON (FACT.company_id = fact_organization_structure.company_id
-                                                                                                AND
-                                                                                                FACT.left_key = 1)
-                        WHERE fact_organization_structure.id =". $result['id'];
+                                                                             AND
+                                                                             FACT.left_key = 1
+                                                                            AND
+                                                                            FACT.company_id = fact_organization_structure.company_id)
+                        WHERE fact_organization_structure.id". $result['id'];
                 $res = $db->row($sql);
                 $fact_org_str_id = $res['id'];
             }

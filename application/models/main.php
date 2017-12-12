@@ -140,7 +140,7 @@ FORM_NOW.doc_status_now,
    CONCAT_WS (' - ',items_control_types.name, item_par.name) AS dir,
   route_control_step.step_name AS manual, TempTest.SaveTempID
 
-  FROM (route_control_step,route_doc,employees)
+  FROM (route_control_step,route_doc,employees,fact_organization_structure)
   LEFT JOIN
     history_docs
     /* история документов по шагам */
@@ -152,9 +152,9 @@ FORM_NOW.doc_status_now,
        LEFT JOIN organization_structure ON employees_items_node.org_str_id = organization_structure.id
        LEFT JOIN items_control ON items_control.id = organization_structure.kladr_id
        /* находим родительскузел, должность и тип должности */
-     LEFT JOIN organization_structure AS org_parent
-     ON (org_parent.left_key < organization_structure.left_key AND org_parent.right_key > organization_structure.right_key
-     AND org_parent.level =(organization_structure.level - 1) )
+     LEFT JOIN fact_organization_structure AS org_parent
+     ON (org_parent.left_key < fact_organization_structure.left_key AND org_parent.right_key > fact_organization_structure.right_key
+     AND org_parent.level =(fact_organization_structure.level - 1) )
      LEFT JOIN items_control AS item_par ON item_par.id = org_parent.kladr_id
     LEFT JOIN items_control_types ON items_control_types.id = org_parent.items_control_id
      /* узлы с индивидуальными треками */
@@ -222,7 +222,7 @@ FORM_NOW.doc_status_now,
 
     route_doc.company_id = " . $_SESSION['control_company'] . "
     		AND employees.id = employees_items_node.employe_id
-    		AND organization_structure.id = employees_items_node.org_str_id
+    		AND fact_organization_structure.id = employees_items_node.fact_org_str_id
     		AND organization_structure.company_id = " . $_SESSION['control_company'] . "
     		AND org_parent.company_id = " . $_SESSION['control_company'] . "
 	     AND
@@ -905,10 +905,12 @@ route_control_step.track_number_id AS id,
         $blue = "#4285f4";
         $today = date("Y-m-d");
 
+
+
         // границы дозволенного
-        $keys =  $labro->observer_keys($_SESSION['employee_id']);
-        $node_left_key = $keys['left'];
-        $node_right_key = $keys['right'];
+//        $keys =  $labro->observer_keys($_SESSION['employee_id']);
+//        $node_left_key = $keys['left'];
+//        $node_right_key = $keys['right'];
 
 
         $sql = "SELECT calendar.*
@@ -916,17 +918,44 @@ route_control_step.track_number_id AS id,
                     WHERE calendar.company_id = " . $_SESSION['control_company'] . "
                     AND calendar.`start` >= '". $get_dates_start ."'
                     AND calendar.`start` <= '". $get_dates_end ."'
-                    AND calendar.emp_id = employees_items_node.employe_id
-                    AND organization_structure.id = employees_items_node.org_str_id
-                    AND organization_structure.left_key > ". $node_left_key ."
-                    AND organization_structure.right_key < ". $node_right_key ;
+                    AND calendar.emp_id = employees_items_node.employe_id";
+
         $calendar = $db->all($sql);
+
+
+
+        // фильтр фактической структуры
+        $keys =  $labro->fact_observer_keys($_SESSION['employee_id']);
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+        $sql = "SELECT employees_items_node.employe_id
+                    FROM fact_organization_structure, employees_items_node
+                    WHERE employees_items_node.fact_org_str_id = fact_organization_structure.id
+                    AND fact_organization_structure.left_key >= ". $node_left_key ."
+                    AND fact_organization_structure.right_key <= ". $node_right_key ."
+                    AND fact_organization_structure.company_id = ". $_SESSION['control_company'];
+        $visible_emps = $db->all($sql);
+
+        // удаляем строки с сотрудниками которые не надо показывать конкретному боссу
+        $new_arr = array();
+        foreach($visible_emps as $emp){
+            $flag = 0;
+            foreach($calendar as $key=>$cal){
+                if($cal['emp_id'] == $emp['employe_id'] && $flag == 0){
+                    $new_arr[] =  $calendar[$key];
+                    ++$flag;
+                }
+            }
+        }
+        $calendar = $new_arr;
+
 
         $dir_array = array();
         foreach ($calendar as $item) {
             $dir_array[] = $item['start'];
         }
         $dir_array = array_unique($dir_array);
+
 
         // перебираем для схлопывания по дате
         $result_array = array();

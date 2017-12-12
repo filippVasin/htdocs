@@ -137,6 +137,36 @@ class Model_local_alert
 
             $alert_every_days = $db->all($sql);
 
+
+        // фильтр фактической структуры
+        $keys =  $labro->fact_observer_keys($_SESSION['employee_id']);
+        $node_left_key = $keys['left'];
+        $node_right_key = $keys['right'];
+        $sql = "SELECT employees_items_node.employe_id
+                    FROM fact_organization_structure, employees_items_node
+                    WHERE employees_items_node.fact_org_str_id = fact_organization_structure.id
+                    AND fact_organization_structure.left_key >= ". $node_left_key ."
+                    AND fact_organization_structure.right_key <= ". $node_right_key ."
+                    AND fact_organization_structure.company_id = ". $_SESSION['control_company'];
+        $visible_emps = $db->all($sql);
+
+        // удаляем строки с сотрудниками которые не надо показывать конкретному боссу
+        $new_arr = array();
+        foreach($visible_emps as $emp){
+            foreach($alert_every_days as $key=>$cal){
+                if($cal['em_id'] == $emp['employe_id']){
+                    $new_arr[] = $alert_every_days[$key];
+                }
+            }
+        }
+        // обавляем уведомления с неоформленным сотрудником
+        foreach($alert_every_days as $key=>$cal){
+            if($cal['em_id'] == ""){
+                $new_arr[] = $alert_every_days[$key];
+            }
+        }
+        $alert_every_days = $new_arr;
+
             $html = "";
             foreach ($alert_every_days as $key => $alert_every_day) {
                 $html .= '<tr class="alert_row" observer_em=' . $_SESSION['employee_id'] . '
