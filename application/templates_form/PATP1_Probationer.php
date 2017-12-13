@@ -208,11 +208,11 @@ $result_file =
 </P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Начальник
-отдела кадров_____________________     _________Л.В.
-Рыльская___________</P>
+отдела кадров_____________________Л.В.
+Рыльская</P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">'. $chief_dol .'___________________
-__________'. $chiefFIO .'________</P>
+'. $chiefFIO .'</P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водитель
 прошел инструктаж в количестве
@@ -220,23 +220,22 @@ __________'. $chiefFIO .'________</P>
 
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">
 </P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водитель
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; font-size: 20px">Водитель
 ознакомлен с основными маршрутами и
-особенностями перевозки пассажиров:							</P>
+особенностями перевозки пассажиров:						</P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">
-«______»________________20___г.	__________________
-__________________		           <FONT SIZE=1 STYLE="font-size: 8pt">(дата)
+«______»________________20___г.	____________________________________________________</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">  <FONT SIZE=1 STYLE="font-size: 8pt;padding-left:100px"">(дата)
 
-        (подпись)                                  (ФИО
+         </FONT>     <FONT SIZE=1  STYLE="font-size: 8pt; padding-left:240px">     (подпись) <FONT SIZE=1  STYLE="font-size: 8pt; padding-left:100px">  </FONT>                     (ФИО
 водителя)</FONT></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Водитель
-наставник____________________
-________________'.$mentorFIO.'</P>
+наставник___________________________________________'.$mentorFIO.'</FONT></P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">
 
-<FONT SIZE=1 STYLE="font-size: 8pt">(подпись)
+<FONT SIZE=1 STYLE="font-size: 8pt;padding-left:300px">(подпись)
 
-(ФИО)                           </FONT>
+<FONT SIZE=1 STYLE="font-size: 8pt;padding-left:180px"></FONT>(ФИО)                           </FONT>
 </P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in">Маршрутная
 стажировка- '. $hours_driving .' ч.
@@ -292,8 +291,7 @@ ________________'.$mentorFIO.'</P>
 </P>
 <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><I><B>ООО
 «Новосибирскпрофстрой-ПАТП-1»__________________________Е.В.Мухамечин</B></I></P>
-<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in" attr="'. $today .'"><I><B>«_____»__________________20
-     г.</B></I></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in" attr="'. $today .'"><I><B>«_____»__________________20___г.</B></I></P>
      </div>
 </BODY>
 </HTML>';

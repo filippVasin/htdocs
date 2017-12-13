@@ -232,9 +232,9 @@ class Model_creator
                   AND mail_template.mail_type = '".$mail_type ."'";
             $email_temp = $db->row($sql);
 
+            $email = 'PTP-NSK-Driver@laborpro.ru';
             // данные для логов
             $template_mail_id = $email_temp['id'];
-
             $message = $regisrt_temp_mail;
             $message = str_replace('%fio%', $fio, $message);
             $message = str_replace('%login%', $login, $message);
@@ -365,6 +365,9 @@ class Model_creator
                 $email = "vasin.filipp@yandex.ru";// Пока Филипп
             }
         }
+
+//        PTP-NSK-Driver@laborpro.ru
+
         $sql="INSERT INTO `sump_for_employees` (`reg_address`,`personnel_number`,`name`,`surname`,`patronymic`,`work_start`,`birthday`,`email`,`id_item`,`company_id`,`category`,`license_number`,`start_date`,`end_date`,`dol_id`,`author_id`,`creator_time`)
               VALUES ('". $reg_address ."','". $personnel_number ."','". $name ."','". $surname ."','". $patronymic ."','". $work_start ."','". $birthday ."','". $email ."','". $id_item ."','". $_SESSION['control_company'] ."','". $categories ."','". $number ."','". $driver_start ."','". $driver_end ."','". $dol_id ."','". $_SESSION['employee_id'] ."', NOW());";
 

@@ -375,12 +375,38 @@ class Model_forms{
         $doc_item = $form_content['path'];
         $doc_name = $form_content['name'];
    //     $page = file_get_contents($doc_item);
+
+        $table = "";
+
+        if($doc_name == "№3 Журнал инструктажа по пожарной безопасности"){
+            $table = $this->table_number_five();
+        }
+        if($doc_name == "№4 Журнал присвоения I гр по электробезопасности"){
+            $table = $this->table_number_three();
+        }
+
+        if($doc_name == "№2 Журнал инструктажа на раб месте"){
+            $table = $this->table_number_two();
+        }
+
+        if($doc_name == "№1 Журнал вводного инструктажа"){
+            $table = $this->table_number_one();
+        }
+        if($doc_name == "№5 Журнал по безопасности дорожного движения"){
+            $table = $this->table_number_four();
+        }
+
+
+
+
+
         $page ='<div id="popup_update_select_position">
-                    <div class="canvas" style="height: 120px; box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
+                    <div class="canvas" style=" box-sizing: border-box;    padding-left: 65px; padding-right: 65px;">
                         <div class="popup_context_menu_title"> Подпишите '. $doc_name .'</div>
+                        '. $table .'
                             <div class="row" style="display: flex; justify-content: center;">
-                                <div class="button" style="width: 180px;" id="popup_update_select_node_yes">Я подписал</div>
-                                <div class="button" style="width: 180px;" id="popup_update_select_position_cancel">Я не подписал</div>
+                                <div class="button" style="width: 180px;margin-bottom: 10px;" id="popup_update_select_node_yes">Я подписал</div>
+                                <div class="button" style="width: 180px;margin-bottom: 10px;" id="popup_update_select_position_cancel">Я не подписал</div>
                             </div>
                         </div>
                     </div>
@@ -391,6 +417,933 @@ class Model_forms{
         $result_array['page'] = $page;
         return $result_array;
     }// signature();
+
+
+    private function table_number_five(){
+        global $db;
+        $today = date("Y-m-d H:i:s");
+
+        $sql="SELECT * FROM company WHERE company.id=". $_SESSION['control_company'];
+        $comp = $db->row($sql);
+        $company = $comp['name'];
+
+        $sql = "SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio, items_control.name AS dol,
+        employees.birthday, drivers_license.category,drivers_license.license_number
+        FROM employees,employees_items_node,organization_structure,items_control, drivers_license
+        WHERE employees.id = ". $_SESSION['employee_id'] ."
+        AND employees.id = employees_items_node.employe_id
+        AND organization_structure.id = employees_items_node.org_str_id
+        AND organization_structure.kladr_id = items_control.id
+        AND employees.id = drivers_license.emp_id
+        AND organization_structure.company_id =". $_SESSION['control_company'];
+
+        $sql = "SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio, items_control.name AS dol,
+        employees.birthday, drivers_license.category,drivers_license.license_number
+        FROM (employees,employees_items_node,organization_structure,items_control)
+        LEFT JOIN drivers_license ON  drivers_license.emp_id = employees.id
+        WHERE employees.id = ". $_SESSION['employee_id'] ."
+        AND employees.id = employees_items_node.employe_id
+        AND organization_structure.id = employees_items_node.org_str_id
+        AND organization_structure.kladr_id = items_control.id
+        AND organization_structure.company_id =". $_SESSION['control_company'];
+        $employees = $db->row($sql);
+        $fio = $employees['fio'];
+        $fioFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $fio);
+        $dol = $employees['dol'];
+        $birthday = date_create($employees['birthday'])->Format('d-m-Y');
+        $category = $employees['category'];
+        $license_number = $employees['license_number'];
+        $day = date("d-m-Y", strtotime("+14 days"));
+        $day_now = date("d-m-Y");
+// получаем ответственного по инструктажам
+        $sql = "SELECT ORG_chief.id,ORG_boss.boss_type,chief_employees.surname, ORG_boss.`level` as level,
+chief_employees.surname AS chief_surname, chief_employees.name AS chief_name, chief_employees.second_name AS chief_second_name,
+	chief_items_control.name AS chief_dol
+FROM (organization_structure, employees_items_node)
+LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organization_structure.left_key
+																	AND
+																  ORG_chief.right_key > organization_structure.right_key
+																  AND
+																  ORG_chief.company_id = ". $_SESSION['control_company'] ." )
+		LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $_SESSION['control_company'] ."
+																		AND ORG_boss.left_key > ORG_chief.left_key
+																		AND ORG_boss.right_key < ORG_chief.right_key
+																		AND 	ORG_boss.`level` = (ORG_chief.`level` +1)
+																		AND ORG_boss.boss_type > 1
+																			)
+		LEFT JOIN employees_items_node AS chief_node ON chief_node.org_str_id = ORG_boss.id
+		LEFT JOIN employees AS chief_employees ON chief_employees.id = chief_node.employe_id
+		LEFT JOIN items_control AS  chief_items_control ON chief_items_control.id = ORG_boss.kladr_id
+
+WHERE employees_items_node.employe_id = ". $_SESSION['employee_id'] ."
+AND organization_structure.id = employees_items_node.org_str_id
+AND organization_structure.company_id = ". $_SESSION['control_company']."
+AND chief_employees.id is not NULL
+ORDER BY level DESC, boss_type DESC
+LIMIT 1";
+        $boss = $db->row($sql);
+
+        $chief = $boss['chief_surname']." ". $boss['chief_name'] ." ". $boss['chief_second_name'];
+        $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
+        $chief_dol = $boss['chief_dol'];
+
+
+        $table = '<TABLE WIDTH=986 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=62>
+	<COL WIDTH=214>
+	<COL WIDTH=157>
+	<COL WIDTH=156>
+	<COL WIDTH=156>
+	<COL WIDTH=157>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>Дата</FONT></P>
+		</TD>
+		<TD WIDTH=214 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Вид</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>инструктажа</FONT></P>
+		</TD>
+		<TD WIDTH=157 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Ф.И.О.,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>должность лица,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>проводившего
+			инструктаж</FONT></P>
+		</TD>
+		<TD WIDTH=156 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Ф.И.О.</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>водителя,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>прошедшего
+			инструктаж</FONT></P>
+		</TD>
+		<TD WIDTH=156 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Подпись водителя,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>прошедшего</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>инструктаж</FONT></P>
+		</TD>
+		<TD WIDTH=157 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Подпись лица,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>проводившего</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>инструктаж</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>'. $day_now .'</FONT></P>
+		</TD>
+		<TD WIDTH=214 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>Первичный</FONT></P>
+		</TD>
+		<TD WIDTH=157 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>'.$chiefFIO .', '. $chief_dol .'</FONT></P>
+		</TD>
+		<TD WIDTH=156 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>'. $fio .'</FONT></P>
+		</TD>
+		<TD WIDTH=156 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2><span class="red">Подписать тут</span></FONT></P>
+		</TD>
+		<TD WIDTH=157 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2></FONT></P>
+		</TD>
+	</TR>
+	</TABLE>';
+
+        return $table;
+    }
+
+    private function table_number_four()
+    {
+        global $db;
+
+        $today = date("Y-m-d H:i:s");
+
+        $sql="SELECT * FROM company WHERE company.id=". $_SESSION['control_company'];
+        $comp = $db->row($sql);
+        $company = $comp['name'];
+
+        $sql = "SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio, items_control.name AS dol,
+        employees.birthday, drivers_license.category,drivers_license.license_number
+        FROM employees,employees_items_node,organization_structure,items_control, drivers_license
+        WHERE employees.id = ". $_SESSION['employee_id'] ."
+        AND employees.id = employees_items_node.employe_id
+        AND organization_structure.id = employees_items_node.org_str_id
+        AND organization_structure.kladr_id = items_control.id
+        AND employees.id = drivers_license.emp_id
+        AND organization_structure.company_id =". $_SESSION['control_company'];
+
+        $sql = "SELECT CONCAT_WS (' ',employees.surname , employees.name, employees.second_name) AS fio, items_control.name AS dol,
+        employees.birthday, drivers_license.category,drivers_license.license_number
+        FROM (employees,employees_items_node,organization_structure,items_control)
+        LEFT JOIN drivers_license ON  drivers_license.emp_id = employees.id
+        WHERE employees.id = ". $_SESSION['employee_id'] ."
+        AND employees.id = employees_items_node.employe_id
+        AND organization_structure.id = employees_items_node.org_str_id
+        AND organization_structure.kladr_id = items_control.id
+        AND organization_structure.company_id =". $_SESSION['control_company'];
+        $employees = $db->row($sql);
+        $fio = $employees['fio'];
+        $fioFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $fio);
+        $dol = $employees['dol'];
+        $birthday = date_create($employees['birthday'])->Format('d-m-Y');
+        $category = $employees['category'];
+        $license_number = $employees['license_number'];
+        $day = date("d-m-Y", strtotime("+14 days"));
+        $day_now = date("d-m-Y");
+// получаем ответственного по инструктажам
+        $sql = "SELECT ORG_chief.id,ORG_boss.boss_type,chief_employees.surname, ORG_boss.`level` as level,
+chief_employees.surname AS chief_surname, chief_employees.name AS chief_name, chief_employees.second_name AS chief_second_name,
+	chief_items_control.name AS chief_dol
+FROM (organization_structure, employees_items_node)
+LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organization_structure.left_key
+																	AND
+																  ORG_chief.right_key > organization_structure.right_key
+																  AND
+																  ORG_chief.company_id = ". $_SESSION['control_company'] ." )
+		LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $_SESSION['control_company'] ."
+																		AND ORG_boss.left_key > ORG_chief.left_key
+																		AND ORG_boss.right_key < ORG_chief.right_key
+																		AND 	ORG_boss.`level` = (ORG_chief.`level` +1)
+																		AND ORG_boss.boss_type > 1
+																			)
+		LEFT JOIN employees_items_node AS chief_node ON chief_node.org_str_id = ORG_boss.id
+		LEFT JOIN employees AS chief_employees ON chief_employees.id = chief_node.employe_id
+		LEFT JOIN items_control AS  chief_items_control ON chief_items_control.id = ORG_boss.kladr_id
+
+WHERE employees_items_node.employe_id = ". $_SESSION['employee_id'] ."
+AND organization_structure.id = employees_items_node.org_str_id
+AND organization_structure.company_id = ". $_SESSION['control_company']."
+AND chief_employees.id is not NULL
+ORDER BY level DESC, boss_type DESC
+LIMIT 1";
+        $boss = $db->row($sql);
+
+        $chief = $boss['chief_surname']." ". $boss['chief_name'] ." ". $boss['chief_second_name'];
+        $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
+        $chief_dol = $boss['chief_dol'];
+
+
+        $table = '<TABLE WIDTH=986 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=62>
+	<COL WIDTH=214>
+	<COL WIDTH=157>
+	<COL WIDTH=156>
+	<COL WIDTH=156>
+	<COL WIDTH=157>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>Дата</FONT></P>
+		</TD>
+		<TD WIDTH=214 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Вид</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>инструктажа</FONT></P>
+		</TD>
+		<TD WIDTH=157 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Ф.И.О.,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>должность лица,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>проводившего
+			инструктаж</FONT></P>
+		</TD>
+		<TD WIDTH=156 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Ф.И.О.</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>водителя,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>прошедшего
+			инструктаж</FONT></P>
+		</TD>
+		<TD WIDTH=156 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Подпись водителя,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>прошедшего</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>инструктаж</FONT></P>
+		</TD>
+		<TD WIDTH=157 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>Подпись лица,</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in">
+			<FONT SIZE=2>проводившего</FONT></P>
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>инструктаж</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>'. $day_now .'</FONT></P>
+		</TD>
+		<TD WIDTH=214 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>Первичный</FONT></P>
+		</TD>
+		<TD WIDTH=157 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>'.$chiefFIO .', '. $chief_dol .'</FONT></P>
+		</TD>
+		<TD WIDTH=156 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2>'. $fio .'</FONT></P>
+		</TD>
+		<TD WIDTH=156 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2><span class="red">Подписать тут</span></FONT></P>
+		</TD>
+		<TD WIDTH=157 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+			<P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=2></FONT></P>
+		</TD>
+	</TR>
+	</TABLE>';
+        return $table;
+    }
+
+
+    private function table_number_three(){
+        global $db;
+
+        $sql = "SELECT
+	FIO.id,FIO.birthday AS birthday,
+	CONCAT_WS (' ', FIO.surname, FIO.name, FIO.second_name) AS 'FIO',
+	CONCAT_WS (':', ITEMCONTROL2.name, ITEM2.name) AS 'OTDEl',
+	ITEM1.name AS 'DOLGNOST',
+	company.name
+FROM
+		employees AS FIO
+	LEFT JOIN
+		employees_items_node
+		ON
+		FIO.id = employees_items_node.employe_id
+	LEFT JOIN
+		organization_structure AS ORG1
+		ON
+		ORG1.id = employees_items_node.org_str_id
+	LEFT JOIN
+		organization_structure AS ORG2
+		ON
+        (
+            ORG1.`left_key` > ORG2.`left_key`
+            AND
+            ORG1.`right_key` < ORG2.`right_key`
+            AND
+            (ORG1.`level`-1)= ORG2.`level`
+        )
+
+	INNER JOIN
+		items_control AS ITEM1
+		ON
+		ITEM1.id = ORG1.kladr_id
+	INNER JOIN
+		items_control_types AS ITEMCONTROL1
+		ON
+		ITEMCONTROL1.id = ITEM1.type_id
+	INNER JOIN
+		items_control AS ITEM2
+		ON
+		ITEM2.id = ORG2.kladr_id
+	INNER JOIN
+		items_control_types AS ITEMCONTROL2
+		ON
+		ITEMCONTROL2.id = ITEM2.type_id
+		LEFT JOIN company ON company.id = ORG1.company_id
+
+
+
+
+WHERE
+FIO.id = ". $_SESSION['employee_id'] ."
+AND ORG2.company_id = ". $_SESSION['control_company'] ."
+
+ORDER BY
+	FIO.id";
+
+
+//echo $sql;
+        $employees = $db->row($sql);
+        $table_line = '';
+
+
+
+//print_r($employees);
+        $company_name = $employees['name'];
+        $today = date("Y-m-d H:i:s");
+
+
+        $fio = $employees['FIO'];
+        $dir = $employees['OTDEl'];
+        $dol = $employees['DOLGNOST'];
+        $yesr = date("Y", strtotime($employees['birthday']));
+// дата присвоения
+        $appropriation_day = date("d-m-Y");
+
+
+
+// получаем ответственного по инструктажам
+        $sql = "SELECT ORG_chief.id,ORG_boss.boss_type,chief_employees.surname, ORG_boss.`level` as level,
+chief_employees.surname AS chief_surname, chief_employees.name AS chief_name, chief_employees.second_name AS chief_second_name,
+	chief_items_control.name AS chief_dol
+FROM (organization_structure, employees_items_node)
+LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organization_structure.left_key
+																	AND
+																  ORG_chief.right_key > organization_structure.right_key
+																  AND
+																  ORG_chief.company_id = ". $_SESSION['control_company'] ." )
+		LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $_SESSION['control_company'] ."
+																		AND ORG_boss.left_key > ORG_chief.left_key
+																		AND ORG_boss.right_key < ORG_chief.right_key
+																		AND 	ORG_boss.`level` = (ORG_chief.`level` +1)
+																		AND ORG_boss.boss_type > 1
+																			)
+		LEFT JOIN employees_items_node AS chief_node ON chief_node.org_str_id = ORG_boss.id
+		LEFT JOIN employees AS chief_employees ON chief_employees.id = chief_node.employe_id
+		LEFT JOIN items_control AS  chief_items_control ON chief_items_control.id = ORG_boss.kladr_id
+
+WHERE employees_items_node.employe_id = ". $_SESSION['employee_id'] ."
+AND organization_structure.id = employees_items_node.org_str_id
+AND organization_structure.company_id = ". $_SESSION['control_company'] ."
+AND chief_employees.id is not NULL
+ORDER BY level DESC, boss_type DESC
+LIMIT 1";
+        $boss = $db->row($sql);
+
+        $chief = $boss['chief_surname']." ". $boss['chief_name'] ." ". $boss['chief_second_name'];
+        $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
+        $chief_dol = $boss['chief_dol'];
+
+        $table ='<TABLE WIDTH=1001 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=93>
+	<COL WIDTH=158>
+	<COL WIDTH=63>
+	<COL WIDTH=126>
+	<COL WIDTH=133>
+	<COL WIDTH=168>
+	<COL WIDTH=72>
+	<COL WIDTH=74>
+	<TR>
+		<TD ROWSPAN=2 WIDTH=33 HEIGHT=15 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1.50pt solid #000000; border-left: 1.50pt solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+			</P>
+			<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Дата</FONT></FONT></P>
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">инструктажа</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=178 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1.50pt solid #000000; border-left: 1.50pt solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Фамилия,
+			имя, </FONT></FONT>
+			</P>
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">отчество
+			инструктируемого</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=63 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1.50pt solid #000000; border-left: 1.50pt solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+			</P>
+			<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Год
+			</FONT></FONT>
+			</P>
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">рождения</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=136 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1.50pt solid #000000; border-left: 1.50pt solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Профессия,
+			должность </FONT></FONT>
+			</P>
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Courier New, monospace"><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">инструктируемого</FONT></FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=143 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1.50pt solid #000000; border-left: 1.50pt solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Наименование
+			</FONT></FONT>
+			</P>
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Courier New, monospace"><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">производственного
+			подразделения, в которое направляется
+			инструктируемый</FONT></FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=178 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1.50pt solid #000000; border-left: 1.50pt solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Фамилия,
+			инициалы, </FONT></FONT>
+			</P>
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">должность
+			инструктирующего</FONT></FONT></P>
+
+		</TD>
+		<TD COLSPAN=2 WIDTH=170 STYLE="border: 1.50pt solid #000000; padding: 0in 0.08in">
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Подпись</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=82 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1.50pt solid #000000; border-left: 1.50pt solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Инструктирующего</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74 STYLE="border: 1.50pt solid #000000; padding: 0in 0.08in">
+			<P LANG="ru-RU" ALIGN=CENTER><FONT FACE="Times New Roman, serif"><FONT SIZE=1 STYLE="font-size: 8pt">Инструктируемого
+			</FONT></FONT>
+			</P>
+		</TD>
+	</TR><TR>
+		<TD WIDTH=33 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU"><BR>
+			'. $appropriation_day .'
+			</P>
+		</TD>
+		<TD WIDTH=178 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU"><BR>
+			'. $fio .'
+			</P>
+		</TD>
+		<TD WIDTH=63 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER><BR>
+			'. $yesr .'
+			</P>
+		</TD>
+		<TD WIDTH=136 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER><BR>
+			'. $dol .'
+			</P>
+		</TD>
+		<TD WIDTH=143 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER><BR>
+			'. $dir .'
+			</P>
+		</TD>
+		<TD WIDTH=178 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER><BR>
+			'.$chiefFIO .'
+			<br>
+			'.$chief_dol .'
+			</P>
+		</TD>
+		<TD WIDTH=82 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+			<P LANG="ru-RU" ALIGN=CENTER><BR>
+
+			</P>
+		</TD>
+		<TD WIDTH=74 STYLE="border-top: 1.50pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0in 0.08in">
+			<P LANG="ru-RU" ALIGN=CENTER><BR>
+			<span class="red">Подписать тут</span>
+			</P>
+		</TD>
+	</TR>
+</TABLE> ';
+        return $table;
+    }
+
+    private function table_number_one(){
+        global $db;
+        $sql = "SELECT
+	FIO.id,
+	CONCAT_WS (' ', FIO.surname, FIO.name, FIO.second_name) AS 'FIO',
+	CONCAT_WS (':', ITEMCONTROL2.name, ITEM2.name) AS 'OTDEl',
+	CONCAT_WS (':', ITEMCONTROL1.name, ITEM1.name) AS 'DOLGNOST',
+	FIO.birthday
+
+FROM
+		employees AS FIO
+	LEFT JOIN
+		employees_items_node
+		ON
+		FIO.id = employees_items_node.employe_id
+	LEFT JOIN
+		organization_structure AS ORG1
+		ON
+		ORG1.id = employees_items_node.org_str_id
+	LEFT JOIN
+		organization_structure AS ORG2
+		ON
+        (
+            ORG1.`left_key` > ORG2.`left_key`
+            AND
+            ORG1.`right_key` < ORG2.`right_key`
+            AND
+            (ORG1.`level`-1)= ORG2.`level`
+        )
+
+	INNER JOIN
+		items_control AS ITEM1
+		ON
+		ITEM1.id = ORG1.kladr_id
+	INNER JOIN
+		items_control_types AS ITEMCONTROL1
+		ON
+		ITEMCONTROL1.id = ITEM1.type_id
+	INNER JOIN
+		items_control AS ITEM2
+		ON
+		ITEM2.id = ORG2.kladr_id
+	INNER JOIN
+		items_control_types AS ITEMCONTROL2
+		ON
+		ITEMCONTROL2.id = ITEM2.type_id
+WHERE
+	FIO.id = ".$_SESSION['employee_id']."
+AND
+    ORG2.company_id = ".$_SESSION['control_company']."
+ORDER BY
+	FIO.id";
+
+
+
+//echo $sql;
+        $employees = $db->all($sql);
+        $table_line = '';
+//print_r($employees);
+        $company_name = '';
+        $today = date("Y-m-d H:i:s");
+        foreach($employees as $employee){
+
+            $company_name = $_SESSION['control_company_name'];
+            $table_line .= '
+                    <tr>
+                    <td width="48">
+                    ' . date('d.m.Y') . '
+                    </td>
+                    <td width="192">
+                    ' . $employee['FIO'] . '
+                    </td>
+                    <td width="77">
+                        ' . $employee['birthday'] . '
+                    </td>
+                    <td width="150">
+                    ' . str_replace('Должность:', "", $employee['DOLGNOST']) . '
+                    </td>
+                    <td width="157">
+                    ' . $employee['OTDEl'] . '
+                    </td>
+                    <td width="192">
+                    <p>&nbsp;</p>
+                    </td>
+                    <td width="96">
+                    <p>&nbsp;</p>
+                    </td>
+                    <td width="87">
+                    <p>&nbsp;<span class="red">Подписать тут</span></p>
+                    </td>
+                </tr>
+    ';
+
+        }
+        $table = '<table style="font-size: 8pt;border-color: black; text-align: center;" border="1" width="999" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td rowspan="2" width="48">
+                        Дата инструктажа
+                    </td>
+                    <td rowspan="2" width="192">
+                        Фамилия, имя, отчество инструктируемого
+                    </td>
+                    <td rowspan="2" width="77">
+                        Год рождения
+                    </td>
+                    <td rowspan="2" width="150">
+                        Профессия, должность инструктируемого
+                    </td>
+                    <td rowspan="2" width="157">
+                        Наименование производственного подразделения, в которое направляется инструктируемый
+                    </td>
+                    <td rowspan="2" width="192">
+                        Фамилия, инициалы, должность инструктирующего
+                    </td>
+                    <td colspan="2" width="183">
+                        Подпись
+                    </td>
+                </tr>
+                <tr>
+                    <td width="96">
+                        Инструктирующего
+                    </td>
+                    <td width="87">
+                        Инструктируемого
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="48">
+                        <b>1</b>
+                    </td>
+                    <td width="192">
+                        <b>2</b>
+                    </td>
+                    <td width="77">
+                        <b>3</b>
+                    </td>
+                    <td width="150">
+                        <b>4</b>
+                    </td>
+                    <td width="157">
+                        <b>5</b>
+                    </td>
+                    <td width="192">
+                        <b>6</b>
+                    </td>
+                    <td width="96">
+                        <b>7</b>
+                    </td>
+                    <td width="87">
+                        <b>8</b>
+                    </td>
+                </tr>
+
+               '.$table_line.'
+
+                </tbody>
+                </table>';
+
+        return $table;
+    }
+
+
+    private function table_number_two(){
+        global $db;
+
+
+        $sql = "SELECT
+	FIO.id,FIO.birthday AS birthday,
+	CONCAT_WS (' ', FIO.surname, FIO.name, FIO.second_name) AS 'FIO',
+	CONCAT_WS (':', ITEMCONTROL2.name, ITEM2.name) AS 'OTDEl',
+	ITEM1.name AS 'DOLGNOST',
+	company.name
+FROM
+		employees AS FIO
+	LEFT JOIN
+		employees_items_node
+		ON
+		FIO.id = employees_items_node.employe_id
+	LEFT JOIN
+		organization_structure AS ORG1
+		ON
+		ORG1.id = employees_items_node.org_str_id
+	LEFT JOIN
+		organization_structure AS ORG2
+		ON
+        (
+            ORG1.`left_key` > ORG2.`left_key`
+            AND
+            ORG1.`right_key` < ORG2.`right_key`
+            AND
+            (ORG1.`level`-1)= ORG2.`level`
+        )
+
+	INNER JOIN
+		items_control AS ITEM1
+		ON
+		ITEM1.id = ORG1.kladr_id
+	INNER JOIN
+		items_control_types AS ITEMCONTROL1
+		ON
+		ITEMCONTROL1.id = ITEM1.type_id
+	INNER JOIN
+		items_control AS ITEM2
+		ON
+		ITEM2.id = ORG2.kladr_id
+	INNER JOIN
+		items_control_types AS ITEMCONTROL2
+		ON
+		ITEMCONTROL2.id = ITEM2.type_id
+		LEFT JOIN company ON company.id = ORG1.company_id
+
+
+
+
+WHERE
+FIO.id =". $_SESSION['employee_id'] ."
+AND ORG2.company_id = ". $_SESSION['control_company'] ."
+
+ORDER BY
+	FIO.id";
+
+
+//echo $sql;
+        $employees = $db->row($sql);
+        $table_line = '';
+
+
+
+//print_r($employees);
+        $company_name = $employees['name'];
+        $today = date("Y-m-d H:i:s");
+
+
+        $fio = $employees['FIO'];
+        $dir = $employees['OTDEl'];
+        $dol = $employees['DOLGNOST'];
+        $yesr = date("Y", strtotime($employees['birthday']));
+// дата присвоения
+        $appropriation_day = date("d.m.Y");
+        $s_po = $appropriation_day. " ". date('d.m.Y',strtotime( $appropriation_day.'+14 day'));
+
+
+// получаем ответственного по инструктажам
+        $sql = "SELECT ORG_chief.id,ORG_boss.boss_type,chief_employees.surname, ORG_boss.`level` as level,
+chief_employees.surname AS chief_surname, chief_employees.name AS chief_name, chief_employees.second_name AS chief_second_name,
+	chief_items_control.name AS chief_dol
+FROM (organization_structure, employees_items_node)
+LEFT JOIN organization_structure AS ORG_chief ON (ORG_chief.left_key < organization_structure.left_key
+																	AND
+																  ORG_chief.right_key > organization_structure.right_key
+																  AND
+																  ORG_chief.company_id = ". $_SESSION['control_company'] ." )
+		LEFT JOIN organization_structure AS ORG_boss ON ( ORG_boss.company_id = ". $_SESSION['control_company'] ."
+																		AND ORG_boss.left_key > ORG_chief.left_key
+																		AND ORG_boss.right_key < ORG_chief.right_key
+																		AND 	ORG_boss.`level` = (ORG_chief.`level` +1)
+																		AND ORG_boss.boss_type > 1
+																			)
+		LEFT JOIN employees_items_node AS chief_node ON chief_node.org_str_id = ORG_boss.id
+		LEFT JOIN employees AS chief_employees ON chief_employees.id = chief_node.employe_id
+		LEFT JOIN items_control AS  chief_items_control ON chief_items_control.id = ORG_boss.kladr_id
+
+WHERE employees_items_node.employe_id = ". $_SESSION['employee_id'] ."
+AND organization_structure.id = employees_items_node.org_str_id
+AND organization_structure.company_id = ". $_SESSION['control_company'] ."
+AND chief_employees.id is not NULL
+ORDER BY level DESC, boss_type DESC
+LIMIT 1";
+        $boss = $db->row($sql);
+
+        $chief = $boss['chief_surname']." ". $boss['chief_name'] ." ". $boss['chief_second_name'];
+        $chiefFIO = preg_replace('#(.*)\s+(.).*\s+(.).*#usi', '$1 $2.$3.', $chief);
+        $chief_dol = $boss['chief_dol'];
+
+        $table = '<TABLE WIDTH=976 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=94>
+	<COL WIDTH=165>
+	<COL WIDTH=69>
+	<COL WIDTH=180>
+	<COL WIDTH=217>
+	<COL WIDTH=113>
+	<COL WIDTH=107>
+	<COL WIDTH=113>
+	<COL WIDTH=107>
+	<COL WIDTH=113>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD ROWSPAN=2 WIDTH=44 HEIGHT=27 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+        <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Дата</FONT></P>
+			</TD>
+			<TD ROWSPAN=2 WIDTH=165 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Фамилия, имя,
+				отчество инструктируемого</FONT></P>
+			</TD>
+			<TD ROWSPAN=2 WIDTH=69 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Год рождения</FONT></P>
+			</TD>
+			<TD ROWSPAN=2 WIDTH=180 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Профессия, должность
+				инструктируемого</FONT></P>
+			</TD>
+			<TD ROWSPAN=2 WIDTH=180 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Вид инструктажа</FONT></P>
+			</TD>
+			<TD ROWSPAN=2 WIDTH=267 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Фамилия, инициалы,
+				должность инструктирующего, допускающего</FONT></P>
+			</TD>
+			<TD COLSPAN=2 WIDTH=224 STYLE="border: 1px solid #000000; padding: 0.04in 0.02in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Подпись</FONT></P>
+			</TD>
+			<TD COLSPAN=3 WIDTH=224 STYLE="border: 1px solid #000000; padding: 0.04in 0.02in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">стажировка на рабочем месте</FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=113 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Инструктирующего</FONT></P>
+			</TD>
+			<TD WIDTH=107 STYLE="border: 1px solid #000000; padding: 0.04in 0.02in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Инструктируемого</FONT></P>
+			</TD>
+
+			<TD WIDTH=113 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">кол-во смен (с)_(по)</FONT></P>
+			</TD>
+			<TD WIDTH=107 STYLE="border: 1px solid #000000; padding: 0.04in 0.02in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Стажровку прошел, подпись работника</FONT></P>
+			</TD>
+			<TD WIDTH=107 STYLE="border: 1px solid #000000; padding: 0.04in 0.02in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+				<FONT FACE="Times New Roman, serif">Знания проверил, работника отпустил</FONT></P>
+			</TD>
+		</TR>
+
+	</THEAD>
+	<THEAD>
+		<TR VALIGN=TOP>
+			<TD WIDTH=44 HEIGHT=10 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+
+				<FONT FACE="Times New Roman, serif">'. $appropriation_day .'</FONT></P>
+			</TD>
+			<TD WIDTH=165 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+
+				<FONT FACE="Times New Roman, serif">'. $fio .'</FONT></P>
+			</TD>
+			<TD WIDTH=69 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+
+				<FONT FACE="Times New Roman, serif">'. $yesr .'</FONT></P>
+			</TD>
+			<TD WIDTH=180 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+
+				<FONT FACE="Times New Roman, serif">'. $dol .'</FONT></P>
+			</TD>
+			<TD WIDTH=180 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+
+				<FONT FACE="Times New Roman, serif">Первичный</FONT></P>
+			</TD>
+			<TD WIDTH=267 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+
+				<FONT FACE="Times New Roman, serif">
+            '.$chiefFIO .'
+                    <br>
+        '.$chief_dol .'</FONT></P>
+			</TD>
+			<TD WIDTH=113 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+
+				<FONT FACE="Times New Roman, serif"></FONT></P>
+			</TD>
+			<TD WIDTH=107 STYLE="border: 1px solid #000000; padding: 0.04in 0.02in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+                        <span class="red">Подписать тут</span>
+				<FONT FACE="Times New Roman, serif"></FONT></P>
+			</TD>
+			<TD WIDTH=113 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.02in; padding-right: 0in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+                            '. $s_po .'
+				<FONT FACE="Times New Roman, serif"></FONT></P>
+			</TD>
+			<TD WIDTH=107 STYLE="border: 1px solid #000000; padding: 0.04in 0.02in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+                        <span class="red">Подписать тут</span>
+				<FONT FACE="Times New Roman, serif"></FONT></P>
+			</TD>
+			<TD WIDTH=107 STYLE="border: 1px solid #000000; padding: 0.04in 0.02in">
+				<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; widows: 2; orphans: 2">
+
+				<FONT FACE="Times New Roman, serif"></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+
+</TABLE>';
+        return $table;
+    }
 
 
     private function save()

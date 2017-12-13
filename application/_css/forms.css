@@ -161,10 +161,9 @@
     z-index: 99999999;
     top: 20px;
     left: 20px;
-    width: 600px;
-    height: 120px;
+    width: 1170px;
     background-color: #ccc;
-    left: calc(50% - 300px);
+    left: calc(50% - 576px);
     top: calc(50% - 60px);
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -193,7 +192,7 @@
     height: 130px;
     background-color: #ccc;
     left: calc(50% - 250px);
-    top: calc(50% - 65px);
+    top: 150px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
@@ -331,4 +330,7 @@
 
 .main-sidebar {
     background-color: #ecf0f5!important;
+}
+.red{
+    color: red!important;
 }
